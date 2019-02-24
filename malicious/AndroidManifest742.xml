@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.wqmobile.sdk.protocol">
+    <application android:label="@string/wqprotocol_app_name"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>
