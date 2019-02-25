@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.BoschSecurity.RSCplus.Android" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.BoschSecurity.RSCplus.Android.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <permission android:name="com.BoschSecurity.RSCplus.Android.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/ic_launcher" android:label="RSC+" android:name="android.support.multidex.MultiDexApplication">
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.BoschSecurity.RSCplus.Android"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md54392a7246b61fec0d3663a77829d46e6.PanelService"/>
+        <service android:exported="false" android:name="md54392a7246b61fec0d3663a77829d46e6.RegistrationIntentService"/>
+        <service android:exported="false" android:name="md54392a7246b61fec0d3663a77829d46e6.a">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="md54392a7246b61fec0d3663a77829d46e6.TutkBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.BoschSecurity.RSCplus.Android"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.BoschSecurity.RSCplus.Android"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.BoschSecurity.RSCplus.Android"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/Legal" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.LegalNoticesActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="@string/AboutApp" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.AboutActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="AddDeviceActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.EditDeviceActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="AddDeviceActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.AddDeviceActivity" android:theme="@style/BoschTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Connected" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.ConnectedActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="DeviceManagementActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.DeviceManagementActivity" android:theme="@style/BoschTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/ApplicationName" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.DisconnectedActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="IdleTimeoutActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.IdleTimeoutActivity" android:theme="@style/BoschTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:icon="@drawable/ic_launcher" android:label="@string/ApplicationName" android:launchMode="singleTop" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.LoginActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="PushNotificationActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.PushNotificationActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="UserRegistrationActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.RegisterUserActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="ResetPasswordActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.ResetPasswordActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="SessionLogActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.SessionLogActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="RSC +" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.SplashActivity" android:noHistory="true" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="UserRegistrationActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.UserRegistrationActivity" android:theme="@style/BoschTheme"/>
+        <activity android:label="UserSettingsActivity" android:name="md565afdce3b6e37c2f11cfccd7c6a483dc.UserSettingsActivity" android:theme="@style/BoschTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" android:name="md55109d95aac470e32f9a4031a908f0227.ZxingActivity"/>
+        <provider android:authorities="com.BoschSecurity.RSCplus.Android.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.testfairy.activities.ProvideFeedbackActivity" android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.testfairy.activities.AutoUpdateActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+</manifest>

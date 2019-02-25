@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.dialbest231">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.USE_SIP"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <permission android:description="@string/permdesc_useSip" android:label="@string/permlab_configureSip" android:name="android.permission.USE_SIP" android:permissionGroup="android.permission-group.COST_MONEY" android:protectionLevel="dangerous"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_phone" android:label="@string/app_name">
+        <meta-data android:name="app_type" android:value="nightly"/>
+        <meta-data android:name="app_channel" android:value="trunk"/>
+        <activity android:label="@string/app_name" android:name="com.dialbest231.ui.ScreenSplash" android:screenOrientation="portrait" android:theme="@style/DarkTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.dialbest231.ui.SipHome" android:screenOrientation="portrait" android:theme="@style/DarkTheme1" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter android:priority="10">
+                <action android:name="com.dialbest231.phone.action.DIALER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:priority="10">
+                <action android:name="android.intent.action.DIAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sip"/>
+                <data android:scheme="csip"/>
+            </intent-filter>
+            <intent-filter android:priority="10">
+                <action android:name="com.dialbest231.phone.action.CALLLOG"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:priority="10">
+                <action android:name="com.dialbest231.phone.action.FAVORITES"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:priority="10">
+                <action android:name="com.dialbest231.phone.action.MESSAGES"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:label="@string/app_name" android:launchMode="singleTask" android:name="com.dialbest231.ui.SipDialer" android:targetActivity="com.dialbest231.ui.SipHome" android:theme="@style/DarkTheme" android:uiOptions="splitActionBarWhenNarrow">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="csip"/>
+                <data android:scheme="sip"/>
+                <data android:scheme="sips"/>
+                <data android:host="csip" android:scheme="imto"/>
+                <data android:host="sip" android:scheme="imto"/>
+                <data android:host="skype" android:scheme="imto"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="csip"/>
+                <data android:scheme="sip"/>
+                <data android:scheme="sips"/>
+            </intent-filter>
+        </activity-alias>
+        <service android:exported="true" android:name="com.dialbest231.service.SipService" android:permission="android.permission.CONFIGURE_SIP" android:process=":sipStack">
+            <intent-filter>
+                <action android:name="com.dialbest231.service.SipService"/>
+                <action android:name="com.dialbest231.service.SipConfiguration"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.dialbest231.service.Downloader"/>
+        <service android:name="com.dialbest231.ui.MyWebService"/>
+        <receiver android:name="com.dialbest231.service.DeviceStateReceiver" android:process=":sipStack">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dialbest231.service.DeviceStateReceiver" android:process=":sipStack">
+            <intent-filter>
+                <action android:name="com.dialbest231.accounts.activate"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.dialbest231.ui.calllog.CallLogDetailsActivity" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/filters" android:name="com.dialbest231.ui.filters.AccountFilters" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/filters" android:name="com.dialbest231.ui.filters.EditFilter" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/choose_wizard" android:name="com.dialbest231.wizards.WizardChooser" android:theme="@style/DarkTheme.Dialog"/>
+        <activity android:configChanges="orientation" android:enabled="@bool/use_hc_prefs" android:label="@string/prefs" android:name="com.dialbest231.ui.prefs.hc.MainPrefs" android:theme="@style/Sherlock.__Theme.Light">
+            <intent-filter>
+                <action android:name="com.dialbest231.ui.action.PREFS_GLOBAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:enabled="@bool/use_cupcake_prefs" android:label="@string/prefs" android:name="com.dialbest231.ui.prefs.cupcake.MainPrefs" android:theme="@style/DarkTheme">
+            <intent-filter>
+                <action android:name="com.dialbest231.ui.action.PREFS_GLOBAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.dialbest231.ui.prefs.cupcake.PrefsLoaderActivity" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/filters" android:name="com.dialbest231.ui.prefs.PrefsFilters" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/prefs_fast" android:name="com.dialbest231.ui.prefs.PrefsFast" android:permission="android.permission.CONFIGURE_SIP" android:theme="@style/DarkTheme.Dialog">
+            <intent-filter>
+                <action android:name="com.dialbest231.ui.action.PREFS_FAST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:label="@string/codecs" android:name="com.dialbest231.ui.prefs.Codecs" android:theme="@style/DarkTheme"/>
+        <activity android:label="@string/test_audio" android:name="com.dialbest231.ui.prefs.AudioTester" android:screenOrientation="portrait" android:theme="@style/DarkTheme.Dialog"/>
+        <activity android:configChanges="orientation" android:label="@string/edit" android:name="com.dialbest231.wizards.BasePrefsWizard" android:theme="@style/DarkTheme"/>
+        <activity android:label="Log in" android:name="com.dialbest231.ui.account.AccountWizard" android:screenOrientation="portrait" android:theme="@style/DarkTheme"/>
+        <activity android:allowTaskReparenting="false" android:configChanges="orientation" android:excludeFromRecents="true" android:label="@string/call" android:launchMode="singleTask" android:name="com.dialbest231.ui.outgoingcall.OutgoingCallChooser" android:permission="android.permission.USE_SIP" android:process=":sipStack" android:taskAffinity="" android:theme="@style/DarkTheme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="csip"/>
+                <data android:scheme="sip"/>
+                <data android:scheme="sips"/>
+            </intent-filter>
+            <intent-filter android:priority="10">
+                <action android:name="android.phone.extra.NEW_CALL_INTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="csip"/>
+                <data android:scheme="sip"/>
+                <data android:scheme="sips"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.dialbest231.ui.PrivilegedOutgoingSipCallBroadcaster" android:permission="android.permission.CALL_PRIVILEGED" android:targetActivity="com.dialbest231.ui.outgoingcall.OutgoingCallChooser" android:theme="@style/DarkTheme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_PRIVILEGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sip"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:configChanges="orientation" android:enabled="false" android:excludeFromRecents="true" android:label="@string/sip_call" android:launchMode="singleTask" android:name="com.dialbest231.ui.PrivilegedOutgoingCallBroadcaster" android:permission="android.permission.CALL_PRIVILEGED" android:targetActivity="com.dialbest231.ui.outgoingcall.OutgoingCallChooser" android:theme="@style/DarkTheme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_PRIVILEGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="tel"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CALL_PRIVILEGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/phone"/>
+                <data android:mimeType="vnd.android.cursor.item/phone_v2"/>
+                <data android:mimeType="vnd.android.cursor.item/person"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:allowTaskReparenting="true" android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.dialbest231.ui.incall.InCallActivity" android:process=":sipStack" android:taskAffinity="" android:theme="@style/DarkTheme.NoTitle">
+            <intent-filter android:priority="10">
+                <action android:name="com.dialbest231.phone.action.INCALL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:label="@string/pickup_sip_uri" android:name="com.dialbest231.ui.PickupSipUri" android:theme="@style/DarkTheme"/>
+        <activity android:configChanges="orientation" android:label="@string/prefs_media" android:name="com.dialbest231.ui.incall.InCallMediaControl" android:taskAffinity="com.dialbest231.ui.incall.InCallActivity" android:theme="@style/DarkTheme.Dialog"/>
+        <receiver android:name="com.dialbest231.service.HeadsetButtonReceiver"/>
+        <receiver android:icon="@drawable/ic_launcher_phone" android:label="@string/gadget_title" android:name="com.dialbest231.widgets.AccountWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.dialbest231.service.ACCOUNT_CHANGED"/>
+                <action android:name="com.dialbest231.service.REGISTRATION_CHANGED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info"/>
+        </receiver>
+        <activity android:name="com.dialbest231.widgets.AccountWidgetConfigure" android:theme="@style/DarkTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <receiver android:icon="@drawable/ic_ab_favourites_holo_dark" android:label="@string/csipsimple_shortcut" android:name="com.dialbest231.widgets.ShortcutWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appshortcut_info"/>
+        </receiver>
+        <activity android:name="com.dialbest231.widgets.ShortcutWidgetConfigure" android:theme="@style/DarkTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:launchMode="singleTop" android:name="com.dialbest231.ui.messages.MessageActivity" android:theme="@style/DarkTheme" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:name="com.dialbest231.plugins.telephony.CallHandler" android:permission="android.permission.PROCESS_OUTGOING_CALLS" android:process=":sipStack">
+            <intent-filter>
+                <action android:name="com.dialbest231.phone.action.HANDLE_CALL"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.dialbest231.prefs" android:name="com.dialbest231.service.PreferenceProvider"/>
+        <provider android:authorities="com.dialbest231.db" android:name="com.dialbest231.db.DBProvider" android:process=":sipStack"/>
+        <activity android:name="com.dialbest231.RefillVoucher" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.TermCondition" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.CountryDialog" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.DidFront" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.Rate" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.Did" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.MainActivity" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.MainActivity1" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.InviteFriend" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.LAccess" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.AccountUpdate" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.dialbest231.ui.more.Support" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.account.TermCondition" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.more.MobileMessage" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:name="com.dialbest231.ui.account.ForgotActivity" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:label="@string/accounts" android:name="com.dialbest231.ui.account.AccountsEditList" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.account.AccountEdit" android:theme="@style/DarkTheme"/>
+        <activity android:name="com.dialbest231.ui.more.BalanceTransfer" android:theme="@style/DarkTheme"/>
+        <activity android:label="Add Contact" android:name="com.dialbest231.ui.contacts.AddContactDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="About Us.." android:name="com.dialbest231.ui.more.AboutDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.dialbest231.wizards.impl.MondotalkCreate" android:theme="@style/DarkTheme"/>
+        <activity android:label="Verify Your One Time PIN Code" android:name="com.dialbest231.ui.VerifyOTPActivity"/>
+        <activity android:gravity="center" android:label="Verify your phone number" android:name="com.dialbest231.ui.OTPMainActivity" android:text="Custom Centered Title"/>
+        <receiver android:exported="true" android:name="com.dialbest231.ui.IncomingSms" android:permission="android.permission.READ_SMS">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

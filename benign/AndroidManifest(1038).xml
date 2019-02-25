@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rfo.GraphicCARDIACCPUSimulatorv10" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <supports-screens android:xlargeScreens="true"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name">
+        <receiver android:enabled="false" android:name=".BootUpReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/basic_screen" android:label="@string/app_name" android:name="Basic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:hardwareAccelerated="false" android:id="@id/editor_screen" android:label="@string/editor_name" android:name=".Editor"/>
+        <activity android:id="@id/settings_screen" android:label="@string/settings_name" android:name="Settings"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/load_screen" android:label="@string/load_name" android:name="LoadFile"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/delete_screen" android:label="@string/delete_name" android:name="Delete"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/run_screen" android:label="@string/run_name" android:name="Run"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false" android:id="@id/search_screen" android:label="@string/search_name" android:name="Search" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/format_screen" android:label="@string/format_name" android:name="Format"/>
+        <activity android:id="@id/help_screen" android:label="@string/help_name" android:name="Help" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/gr_screen" android:label="@string/gr_name" android:name="GR" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/select_screen" android:label="@string/select_name" android:name="Select"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/text_input_screen" android:label="@string/textinput_name" android:name="TextInput"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/text_get_screen" android:label="@string/textinput_name" android:name="TGet" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/web_view_screen" android:label="@string/web_view_name" android:name="Web" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/camera_screen" android:label="Camera" android:name="CameraView" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/notify_screen" android:label="Notify" android:name="HandleNotify" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:id="@id/device_list_screen" android:label="@string/select_device" android:name="DeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/select_name" android:name="Null"/>
+        <uses-library android:name="com.sec.android.app.multiwindow" android:required="false"/>
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632.0dip"/>
+        <meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip"/>
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip"/>
+        <meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

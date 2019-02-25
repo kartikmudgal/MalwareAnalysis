@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.newslivetv">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.newslivetv.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.newslivetv.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.newslivetv.push.MyApplication" android:theme="@style/Theme.Sherlock.Light.DarkActionBar">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="com.newslivetv.Mainsplash" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="com.newslivetv.MainActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="PhotoViewer" android:name="com.newslivetv.details.PhotoViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Tv_Schedule" android:name="com.newslivetv.Tv_Schedule" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Settings" android:name="com.newslivetv.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="PhotoViewer" android:name="com.newslivetv.details.News_detailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.newslivetv.helperclass.YouTubePlayerActivity" android:screenOrientation="sensor" android:theme="@style/Theme.Sherlock.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="PhotoViewer" android:name="com.newslivetv.details.News_detailsActivity_RSS" android:screenOrientation="portrait"/>
+        <activity android:name="Gallery_Web_View"/>
+        <activity android:name="MoreActivities"/>
+        <receiver android:name="com.newslivetv.ReminderService">
+            <intent-filter>
+                <action android:name="com.newslivetv.ACTION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.parse.PushService"/>
+        <receiver android:exported="false" android:name="com.newslivetv.push.CustomPushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="com.parse.push.intent.RECEIVE"/>
+                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.OPEN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.newslivetv"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

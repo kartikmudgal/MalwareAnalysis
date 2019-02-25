@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mobigamedccartoonscoloring" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.application.AdApplication" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.mobigamedccartoonscoloring.android.SplashActivity" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="@string/app_name" android:name="com.mobigamedccartoonscoloring.android.SketchActivity" android:screenOrientation="sensorPortrait"/>
+        <service android:enabled="true" android:name="com.mobigamedccartoonscoloring.android.MusicService"/>
+        <activity android:exported="true" android:name="com.mobigamedccartoonscoloring.android.SelectDrawingActivity" android:screenOrientation="sensorPortrait"/>
+        <activity android:name="com.mobigamedccartoonscoloring.android.HomeActivity" android:screenOrientation="sensorPortrait"/>
+        <provider android:authorities="com.mobigamedccartoonscoloring" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:name=".AppBaseActivity"/>
+        <activity android:exported="true" android:name="com.mobigamedccartoonscoloring.android.MyArtworksActivity" android:screenOrientation="sensorPortrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

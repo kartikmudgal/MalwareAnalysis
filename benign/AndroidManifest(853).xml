@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.my.chat">
+    <application android:icon="@drawable/icon" android:label="@string/app_label_main" android:largeHeap="true" android:name="com.my.chat.App" android:theme="@style/Theme.Custom">
+        <activity android:label="@string/share_file" android:name="com.my.chat.share.SharingActivity" android:theme="@style/Theme.Custom.Startup">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="ru.mail.instantmessanger.Launcher">
+            <intent-filter>
+                <action android:name="com.my.chat.action.RESTORE_CALL"/>
+                <action android:name="com.my.chat.action.OPEN_CALLS_TAB"/>
+                <action android:name="com.my.chat.action.OPEN_CHAT"/>
+                <action android:name="com.my.chat.action.ABG_READY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleTask" android:name="ru.mail.instantmessanger.flat.ChatListActivity" android:theme="@style/Theme.Custom" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="@bool/widget_enabled" android:name="ru.mail.appwidget.ChatsWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/chats_appwidget_info"/>
+        </receiver>
+        <activity android:name="ru.mail.instantmessanger.flat.SettingsActivity"/>
+        <activity android:exported="true" android:name="ru.mail.instantmessanger.flat.chat.IcqFlatChatActivity"/>
+        <activity android:name="ru.mail.instantmessanger.modernui.profile.StatusSelectActivity"/>
+        <activity android:launchMode="singleTop" android:name="ru.mail.instantmessanger.modernui.profile.ThemeSelectorActivity"/>
+        <activity android:name="ru.mail.eggs.SnowActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/status_extended" android:name="ru.mail.instantmessanger.modernui.profile.ProfileStatusTextActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="ru.mail.instantmessanger.flat.summary.LargeAvatarActivity"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="ru.mail.instantmessanger.modernui.profile.EditAccountDialog" android:noHistory="true"/>
+        <activity android:name="ru.mail.instantmessanger.webapp.WebAppActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault.NoActionBar"/>
+        <activity android:name="ru.mail.instantmessanger.modernui.store.PreviewActivity"/>
+        <activity android:configChanges="orientation" android:name="ru.mail.instantmessanger.modernui.store.BuyActivity"/>
+        <activity android:label="@string/stickers_title" android:name="ru.mail.instantmessanger.modernui.store.StoreActivity"/>
+        <activity android:label="@string/background_title" android:name="ru.mail.instantmessanger.background.BackgroundActivity"/>
+        <activity android:label="@string/background_confirmation_title" android:name="ru.mail.instantmessanger.background.BackgroundConfirmationActivity" android:theme="@style/Theme.Custom.TranslucentActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="ru.mail.instantmessanger.activities.preferences.MainPreferencesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="ru.mail.instantmessanger.activities.preferences.MrimOverrideActivity" android:theme="@style/Theme.Custom.Alert">
+            <intent-filter>
+                <action android:name=".SETUP_MRIM_OVERRIDE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="ru.mail.instantmessanger.modernui.sms.SmsComposeActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="ru.mail.instantmessanger.modernui.profile.MicropostComposeActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="ru.mail.fragments.MailWebViewActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="ru.mail.fragments.MyWorldWebViewActivity"/>
+        <activity android:label="@string/about_title" android:name="ru.mail.instantmessanger.modernui.about.AboutActivity"/>
+        <activity android:name="ru.mail.instantmessanger.filepicker.FilePickerActivity"/>
+        <activity android:name="ru.mail.instantmessanger.icq.FederatedLoginActivity"/>
+        <activity android:label="@string/wim_registration_edit_profile_title" android:name="ru.mail.instantmessanger.registration.EditProfileSummaryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ru.mail.instantmessanger.registration.EnterPhoneNumberActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:name="ru.mail.instantmessanger.registration.EnterSmsCodeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:label="@string/registration_select_country_title" android:name="ru.mail.instantmessanger.icq.registration.selectcountry.SelectCountryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="ru.mail.instantmessanger.flat.voip.IncallActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleInstance" android:name="ru.mail.instantmessanger.flat.voip.CallActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="ru.mail.instantmessanger.icq.ConnectorActivity"/>
+        <activity android:excludeFromRecents="true" android:name="ru.mail.fragments.BuddyRegisteredActivity" android:taskAffinity=".fragments.BuddyRegisteredActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="ru.mail.instantmessanger.flat.feedback.FeedbackComposeActivity"/>
+        <activity android:label="@string/about_contact_title" android:name="ru.mail.instantmessanger.flat.summary.SummaryActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:label="@string/group_invite_screen_title" android:name="ru.mail.invitation.ui.GroupInviteActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:label="" android:name="ru.mail.instantmessanger.flat.PickContactActivity" android:theme="@style/Theme.Custom" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:label="" android:name="ru.mail.instantmessanger.flat.CreateGroupChatActivity" android:theme="@style/Theme.Custom" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:name="ru.mail.instantmessanger.flat.search.SearchActivity" android:theme="@style/Theme.Custom" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/news_title" android:name="ru.mail.instantmessanger.flat.news.NewsActivity"/>
+        <activity android:name="ru.mail.instantmessanger.registration.LoginByPasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="ru.mail.instantmessanger.flat.chat.QuickResponseActivity" android:noHistory="true" android:taskAffinity="com.icq.mobile.client.ui.QuickResponseActivity" android:theme="@style/Theme.Custom.Dialog" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <service android:exported="true" android:name="ru.mail.instantmessanger.theme.ReferralService"/>
+        <service android:name="ru.mail.util.gcm.GcmIntentService"/>
+        <service android:name="ru.mail.util.KeepAliveService"/>
+        <service android:name="ru.mail.instantmessanger.dao.rock.RockTaskService"/>
+        <service android:name="ru.mail.instantmessanger.AppInitAwaiterService"/>
+        <service android:name="ru.mail.instantmessanger.notifications.NotificationBarService"/>
+        <service android:enabled="@bool/widget_enabled" android:exported="false" android:name="ru.mail.appwidget.ChatsRemoteViewsService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <receiver android:name="ru.mail.instantmessanger.theme.ThemeUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.util.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.invitation.NotificationReceiver"/>
+        <receiver android:name="ru.mail.util.ui.LocaleChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.instantmessanger.IMNetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.util.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="ru.mail"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="ru.mail"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RETRY"/>
+                <category android:name="ru.mail"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="ru.mail.statistics.MultipleInstallBroadcastReceiverImpl">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.statistics.StatisticsAlarmReceiver"/>
+        <receiver android:exported="true" android:name="ru.mail.util.NotificationDeletedReceiver">
+            <intent-filter>
+                <action android:name="ru.mail.util.NOTIFICATION_DELETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="ru.mail.util.TimeZoneChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <permission android:name=".permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name=".permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+</manifest>

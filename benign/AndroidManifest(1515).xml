@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="my.birthdayreminder">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:enabled="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name=".MyBirthday" android:theme="@style/Theme.AppCompat.Light">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name=".BirthdayActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:icon="@drawable/icon" android:label="@string/app_name" android:name=".widget.MyWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+        </receiver>
+        <service android:name=".widget.MyWidgetProvider$UpdateService"/>
+        <activity android:name=".widget.WidgetConfig" android:theme="@android:style/Theme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name="my.birthdayreminder.ChildActivity"/>
+        <activity android:configChanges="locale" android:exported="false" android:label="@string/preferences" android:name="my.birthdayreminder.PreferenceWindow">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/edit_event" android:name="EditBirthdayDialog" android:theme="@style/AppTheme.Dialog"/>
+        <activity android:name="AdFreeStart" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="ads_free"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".backup.BackupFilesGDrive" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".backup.RestoreFilesGDrive" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="Restore_drive"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".backup.BackupFilesSD" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".backup.RestoreFilesSD" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="Restore_sd"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="my.birthdayreminder.service.BirthdayBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.appbrain.AppBrainActivity"/>
+        <provider android:authorities="my.birthdayreminder.AppBrainInitProvider" android:exported="false" android:name="com.appbrain.AppBrainInitProvider"/>
+        <service android:name="com.appbrain.AppBrainService"/>
+        <service android:name="com.appbrain.AppBrainJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.appbrain.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

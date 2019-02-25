@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="net.hybz" platformBuildVersionCode="17" platformBuildVersionName="4.2.2-1425461">
+    <application android:icon="@drawable/logo" android:label="@string/app_name" android:logo="@drawable/logo" android:name="com.tencent.StubShell.TxAppEntry" android:theme="@style/HybzTheme">
+        <meta-data android:name="TxAppEntry" android:value="net.hybz.AppContext"/>
+        <activity android:name="AppStart" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.MainActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.RegistActivity" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.ServiceActivity" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.DatePickerActivity" android:theme="@style/Dialog" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.YearPickerActivity" android:theme="@style/Dialog" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name=".ui.ImageZoomDialog" android:theme="@style/Theme.ZoomLight.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.MessageActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.AddFriendActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.MemberUpgradeActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.Payment" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.SuggestActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.QiMenInputActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.FengshuiInputActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.LiuYaoInputActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.ArticleActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.ArticleDetail" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.ModifyUserInfoActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name=".ui.TaskActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.MoneyActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.UpdateRecordActivity" android:theme="@style/Theme.Sherlock.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name=".ui.FriendActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name=".ui.HelpActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name=".ui.GetPasswordActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name=".ui.InputBirthdayActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name=".ui.InputNameActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name=".ui.HehunInputActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name=".ui.CircleActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:launchMode="singleTask" android:name=".ui.AboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name=".ui.ImageDialog" android:screenOrientation="portrait" android:theme="@style/Theme.HalfTranslucent"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.alipay.android.app.sdk.WapPayActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="com.unionpay.uppay.PayActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="com.unionpay.uppay.PayActivityEx" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.CompassActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.rili.activity.CalendarActivity" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.QiMingActivity" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name=".ui.MingDetailActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.rili.activity.CalendarConvert" android:theme="@style/Theme.Sherlock.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name=".wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity"/>
+        <activity android:name="io.card.payment.DataEntryActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="13"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mob.tools.MobUIShell" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <data android:scheme="tencent100542929"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:launchMode="singleTop" android:name=".wxapi.WXPayEntryActivity"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="544c9c1dfd98c59282021ed7"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="Google"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+</manifest>

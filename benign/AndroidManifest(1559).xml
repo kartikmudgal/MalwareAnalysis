@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.socialradio.mybearwrbr">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="org.socialradio.socialradioplayerlibrary.MainActivity" android:theme="@android:style/Theme.Black.NoTitleBar" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.socialradio.socialradioplayerlibrary.License" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_account_nag" android:name="org.socialradio.socialradioplayerlibrary.AccountNagActivity" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="org.socialradio.socialradioplayerlibrary.SettingsActivity" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="org.socialradio.socialradioplayerlibrary.StorageActivity" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_buffer" android:name="org.socialradio.socialradioplayerlibrary.BufferActivity" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_login" android:name="org.socialradio.socialradioplayerlibrary.LoginActivity" android:theme="@android:style/Theme.Dialog" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_join" android:name="org.socialradio.socialradioplayerlibrary.JoinActivity" android:parentActivityName="org.socialradio.socialradioplayerlibrary.MainActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_join2" android:name="org.socialradio.socialradioplayerlibrary.Join2Activity" android:parentActivityName="org.socialradio.socialradioplayerlibrary.MainActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.socialradio.socialradioplayerlibrary.MainActivity"/>
+        </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="com.facebook.LoginActivity"/>
+        <activity android:label="@string/title_activity_twitter_oauth" android:name="org.socialradio.socialradioplayerlibrary.TwitterOAuth">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/oauth_host" android:scheme="oauth"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

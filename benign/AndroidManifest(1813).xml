@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="code.brain.maziaj" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:name="code.brain.maziaj.MaziajApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="code.brain.maziaj.StartScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name="code.brain.maziaj.SplashActivity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="code.brain.maziaj.browse.BrowseActivity" android:parentActivityName="code.brain.maziaj.StartScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name="code.brain.maziaj.ViewActivity" android:parentActivityName="code.brain.maziaj.browse.BrowseActivity" android:screenOrientation="portrait"/>
+        <activity android:name="code.brain.maziaj.DrawActivity" android:parentActivityName="code.brain.maziaj.StartScreenActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="1174184981d3fa342d4cb816e1b2b36435676bf6"/>
+        <provider android:authorities="code.brain.maziaj.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

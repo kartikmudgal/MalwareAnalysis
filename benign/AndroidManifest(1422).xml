@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hl.qzldxms.Activity">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="hl.qzldxms.Activity.ThisApp" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="hl.qzldxms.Activity.Welcome" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="hl.qzldxms.Activity.Main" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.TestActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.FirstActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.ThirdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.SecondActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.FourActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.DefinedActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.EditextActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.TypeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.ContentActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.StateActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.HelpActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.AboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_CJMCActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_SXSJActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_HFCSActivtity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_GJZActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_QJMSActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_ZDDXActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.Defined_BMDActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.SendMsgActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.ZDDXYHActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:name="hl.qzldxms.Activity.ContactPerson" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.ContactManageActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.ContactNew" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:launchMode="singleInstance" android:name="hl.qzldxms.Activity.ZMXBJActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.UsingGuide" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hl.qzldxms.Activity.CheckIfdown" android:screenOrientation="portrait" android:theme="@style/smsDialog" android:windowSoftInputMode="adjustPan"/>
+        <activity android:launchMode="singleInstance" android:name="hl.qzldxms.Activity.My_WebView" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:allowTaskReparenting="true" android:name="hl.qzldxms.mywindows.WindowsActivity" android:screenOrientation="portrait" android:taskAffinity="hl.qzldxms.mywindows" android:theme="@style/winDialog"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="52834f4756240b500701ea86"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="My_Channel"/>
+        <service android:name="hl.qzldxms.ThreadAndService.MyPhnoeS"/>
+        <service android:name="hl.qzldxms.ThreadAndService.Service_LoadingNews"/>
+        <receiver android:name="hl.qzldxms.ThreadAndService.RingBroadcastReceiver">
+            <intent-filter>
+                <action android:name="cn.abel.action.broadcast"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="hl.qzldxms.widget.MyAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="hl.qzldxms.widget.UPDATE_APP_WIDGET"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/register_appwidget"/>
+        </receiver>
+        <receiver android:name="hl.qzldxms.ThreadAndService.ActionMoveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

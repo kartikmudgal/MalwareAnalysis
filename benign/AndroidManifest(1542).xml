@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="nl.agnlinscriptum.recappt" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <permission android:name="nl.agnlinscriptum.recappt.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="nl.agnlinscriptum.recappt.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="Recappt" android:name="md53ae1547740ac95b062a2466b4437b394.App">
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="nl.agnlinscriptum.recappt"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="true" android:icon="@drawable/icon" android:label="Recappt" android:name="nl.linscriptum.recappt.android.phone.ACMenu" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:label="ACNotificationDetail" android:name="nl.linscriptum.recappt.android.phone.ACNotificationDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:label="ACPharmacyCode" android:name="md53ae1547740ac95b062a2466b4437b394.ACPharmacyCode" android:screenOrientation="portrait"/>
+        <activity android:label="ACNotifications" android:name="nl.linscriptum.recappt.android.phone.ACNotifications" android:screenOrientation="portrait"/>
+        <activity android:label="ACSettings" android:name="md53ae1547740ac95b062a2466b4437b394.ACSettings" android:screenOrientation="portrait"/>
+        <activity android:label="ACLanguage" android:name="md53ae1547740ac95b062a2466b4437b394.ACLanguage" android:screenOrientation="portrait"/>
+        <activity android:label="ACContactInfo" android:name="md53ae1547740ac95b062a2466b4437b394.ACContactInfo" android:screenOrientation="portrait"/>
+        <activity android:label="ACRequestStart" android:name="md53ae1547740ac95b062a2466b4437b394.ACRequestStart" android:screenOrientation="portrait"/>
+        <activity android:label="ACRequestDone" android:launchMode="singleInstance" android:name="md53ae1547740ac95b062a2466b4437b394.ACRequestDone" android:screenOrientation="portrait"/>
+        <activity android:label="ACRemarks" android:name="md53ae1547740ac95b062a2466b4437b394.ACRemarks" android:screenOrientation="portrait"/>
+        <activity android:label="ACDelivery" android:name="md53ae1547740ac95b062a2466b4437b394.ACDelivery" android:screenOrientation="portrait"/>
+        <activity android:icon="@drawable/icon" android:label="Recappt" android:name="md53ae1547740ac95b062a2466b4437b394.ACSplash" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="ACMedicineDetails" android:name="md53ae1547740ac95b062a2466b4437b394.ACMedicineDetails" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="md53ae1547740ac95b062a2466b4437b394.GcmRegistrationServiceRefresher">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="md53ae1547740ac95b062a2466b4437b394.GcmRegistrationService"/>
+        <service android:exported="false" android:name="md53ae1547740ac95b062a2466b4437b394.GcmIntentService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="md53ae1547740ac95b062a2466b4437b394.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="nl.agnlinscriptum.recappt"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="ACRequestDetails" android:name="md53ae1547740ac95b062a2466b4437b394.ACRequestDetails" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md5ebcbedcc9f4271e586379ac7977363a7.ConnectivityChangeBroadcastReceiver"/>
+        <provider android:authorities="nl.agnlinscriptum.recappt.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="nl.agnlinscriptum.recappt.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+</manifest>

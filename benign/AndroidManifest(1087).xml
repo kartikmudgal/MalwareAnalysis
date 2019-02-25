@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.secsign.secsignid" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <permission android:name="com.secsign.secsignid.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.secsign.secsignid.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher_transparent" android:label="@string/app_name" android:theme="@style/MyLightTheme">
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.secsign.secsignid"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+        <activity android:configChanges="locale" android:label="@string/title_activity_main" android:launchMode="singleTop" android:name="com.seccommerce.secsignid.ui.MainActivity" android:theme="@style/MyLightTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="com.secsign.secsignid"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_introduction" android:name="com.seccommerce.secsignid.ui.IntroductionActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/edit_account_description_textview" android:name="com.seccommerce.secsignid.ui.EditDescriptionActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:name="com.seccommerce.secsignid.ui.ExplanationActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_main" android:name="com.seccommerce.secsignid.ui.AccountListActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_main" android:name="com.seccommerce.secsignid.ui.StartActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_create_sec_sign_id" android:name="com.seccommerce.secsignid.ui.CreateSecSignIdActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_disabled_ids" android:name="com.seccommerce.secsignid.ui.DisabledIdsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_introduction_video" android:name="com.seccommerce.secsignid.ui.IntroductionVideoActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_introduction" android:name="com.seccommerce.secsignid.ui.IntroductionImageFlipperActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_more" android:name="com.seccommerce.secsignid.ui.MoreActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_password_input" android:name="com.seccommerce.secsignid.ui.PasswordInputActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_access_pass_chooser" android:name="com.seccommerce.secsignid.ui.AccessPassChooserActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_portal" android:name="com.seccommerce.secsignid.ui.PortalActivity" android:parentActivityName="com.seccommerce.secsignid.ui.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/title_activity_log" android:name="com.seccommerce.secsignid.ui.LogActivity" android:parentActivityName="com.seccommerce.secsignid.ui.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_edit_account" android:name="com.seccommerce.secsignid.ui.EditAccountActivity" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_edit_personal_data" android:name="com.seccommerce.secsignid.ui.EditPersonalDataActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.EditAccountActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_regenerate_keypair" android:name="com.seccommerce.secsignid.ui.RegenerateKeypairActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.seccommerce.secsignid.ui.EditAccountActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.seccommerce.secsignid.ui.ErrorDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.seccommerce.secsignid.ui.StartVideoActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_remote_logout" android:name="com.seccommerce.secsignid.ui.SessionAccountListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_restore_sec_sign_id" android:name="com.seccommerce.secsignid.ui.RestoreActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_restoration_settings" android:name="com.seccommerce.secsignid.ui.RestorationSettingActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_devices" android:name="com.seccommerce.secsignid.ui.DevicesOfIdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_remote_logout" android:name="com.seccommerce.secsignid.ui.SessionListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_show_restoration_code" android:name="com.seccommerce.secsignid.ui.ShowRestoreCodeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.seccommerce.secsignid.ui.GetFingerprintActivity" android:theme="@android:style/Theme.DeviceDefault.Light.Dialog"/>
+    </application>
+</manifest>

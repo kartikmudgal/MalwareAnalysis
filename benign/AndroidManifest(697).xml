@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.kt.univ.kau" platformBuildVersionCode="8" platformBuildVersionName="2.2">
+    <supports-screens android:anyDensity="false" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name="MainAppl">
+        <uses-library android:name="com.google.android.maps"/>
+        <receiver android:name="com.kt.android.common.NetworkCheck" android:process=":remote">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:allowTaskReparenting="true" android:label="@string/app_name" android:name=".Main" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:allowTaskReparenting="false" android:configChanges="locale" android:label="@string/app_name" android:name=".Menu" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.FirstGroup" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.FirstTab" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.FirstList" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.FirstNotice" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.schoolcalendar.SchoolCalendar" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".first.lunchmenu.LunchMenu" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.SecondGroup" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.SecondTab" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.SecondList" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.personalinfo.studentinfo.StudentInfo" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.personalinfo.contactedit.ContactEdit" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.personalinfo.registration.Registration" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.personalinfo.scholarship.Scholarship" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureplan.LecturePlan01" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureplan.LecturePlan02" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureplan.LecturePlan03" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureplan.LecturePlan04" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.professortimetable.ProfessorList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.professortimetable.ProfessorTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureroomtimetable.LectureRoomList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.lectureinfo.lectureroomtimetable.LectureRoomTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.courseinfo.coursehistory.CourseHistory" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.courseinfo.timetable.TimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.courseinfo.examtimetable.ExamTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.gradeinfo.semestergrade.SemesterGrade" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.gradeinfo.cumulativegrade.CumulativeListGrade" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.gradeinfo.cumulativegrade.CumulativeGrade" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.sleepoverinfo.sleepoverlist.SleepoverList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.sleepoverinfo.sleepoverapply.SleepoverApply" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.careerinfo.careerapply.CareerList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.careerinfo.careerapply.CareerApply" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.careerinfo.careersurvey.CareerSurveyList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.careerinfo.careersurvey.CareerSurvey" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".second.careerinfo.careerhistory.CareerHistory" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.ThirdGroup" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.ThirdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.ThirdAction" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.ThirdList" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.vacation.Vacation" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.alternativevacation.AlternativeVacation" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.payroll.PayrollTotal" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.payroll.PayrollDetail" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.gangsaryopayment.GangsaryoTotal" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.gangsaryopayment.GangsaryoDetail" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.administration.allowancepayment.AllowancePayment" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.research.grantusage.GrantUsageList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.research.grantusage.GrantUsage" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.research.laborpooling.LaborPoolingMenu" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.research.laborpooling.ProjectPayment" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.research.laborpooling.StudentPayment" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.ptimetable.pTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.attendance.AttendanceList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.attendance.Attendance" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.courseevaluation.CourseEvaluation" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.pexamtimetable.pExamTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.pprofessortimetable.pProfessorList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.pprofessortimetable.pProfessorTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.plectureroomtimetable.pLectureRoomList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.plectureroomtimetable.pLectureRoomTimeTable" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.StudentList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.StudentMenuList" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.pStudentInfo" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.pRegistration" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.pScholarship" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.pCourseHistory" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.bachelor.studentlist.pCumulativeListGrade" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.etc.failreport.FailReport01" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".third.etc.failreport.FailReport02" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".fourth.FourthGroup" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".fourth.FourthList" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".fifth.FifthGroup" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".fifth.FifthLogin" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".fifth.FifthList" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden" android:name=".fifth.FifthTab" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".common.ShowDnP" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowImage" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowImageResize" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowImageInWeb" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name=".common.ShowWeb" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name=".common.ShowWebSSL" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowWebTitle" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowMap" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowMediaPlayer" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowMovie" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowVideo" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowTelephony" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".common.ShowMapItemizedOverlay" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="NetworkCheck" android:screenOrientation="sensor" android:theme="@android:style/Theme.NoTitleBar"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

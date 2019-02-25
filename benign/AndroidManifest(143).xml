@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.app_ww.layout">
+    <application android:icon="@drawable/icon_icon" android:label="@string/app_name" android:name="com.biznessapps.layout.BAcore">
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:name="com.biznessapps.layout.views.MainView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.biznessapps.activities.HomeScreenActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.biznessapps.activities.GalleryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.biznessapps.activities.GalleryPreviewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.activities.SingleFragmentActivity" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.PUSH_NOTIFICATION_NEW_DATA"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.activities.AroundUsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.biznessapps.layout.views.scanning.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.layout.views.map.LocationView"/>
+        <activity android:configChanges="orientation" android:name="com.paypal.android.MEP.PayPalActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.layout.views.loyalty.LoyaltyCardListView" android:windowSoftInputMode="adjustPan"/>
+        <service android:name="com.biznessapps.api.MessagesService"/>
+        <service android:name="com.biznessapps.player.PlayerService"/>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+</manifest>

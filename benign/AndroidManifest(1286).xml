@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.vintcgroup.swappj" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="ANDROID.PERMISSION.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.vintcgroup.swappj.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.vintcgroup.swappj.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/AppTheme">
+        <activity android:name="com.vintcgroup.swappj.main.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.vintcgroup.swappj.main.MainActivity"/>
+        <activity android:name="com.vintcgroup.swappj.productdetail.ProductDetailActivity"/>
+        <activity android:clearTaskOnLaunch="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.vintcgroup.swappj.categorydetail.CatDetailActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.ProfileEditActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.ProfileUserFriendActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.UpdateDiaChiActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.UpdateThemDiaChiActivity"/>
+        <activity android:name="com.vintcgroup.swappj.postproduct.PostProducActivity"/>
+        <activity android:name="com.vintcgroup.swappj.postproduct.DanhMucActivity"/>
+        <activity android:name="com.vintcgroup.swappj.postproduct.LocationProducActivity"/>
+        <activity android:name="com.vintcgroup.swappj.productdetail.ManagerTransactionActivity" android:noHistory="true"/>
+        <activity android:name="com.vintcgroup.swappj.productdetail.ReportActivity" android:noHistory="true"/>
+        <activity android:name="com.vintcgroup.swappj.productdetail.EditProductAcitivity"/>
+        <activity android:name="com.vintcgroup.swappj.productdetail.MapsDetailActivity"/>
+        <activity android:name="com.vintcgroup.swappj.login.LoginActivity"/>
+        <activity android:name="com.vintcgroup.swappj.chat.ui.ChatConnectionActivity" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:name="com.vintcgroup.swappj.chatlist.ChatListActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.ThanhToanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlymuahang.QuanLy_MuaHang_Activity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlytraodoi.QuanLyTraoDoiHangActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlybanhang.QuanLy_BanHang_Activity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlytraodoi.QuanLyTraoDoiDetailActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlytraodoi.UpdateDichiTraoDoi"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlytraodoi.UpdateThemDiaChiTraodoi"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.AddressActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.AddressAddActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.ProvinceActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.CardActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.AddPayMentActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.BankActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.thongtinthanhtoan.AddPayMentCMTActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.quanlythuongthao.QuanLyThuongThaoActivity"/>
+        <activity android:name="com.vintcgroup.swappj.profile.QuanLyMuaBanDetailActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.ThanhToan_DonHang_Activity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.DiaChiActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.ThanhToan_XacNhanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.ThanhToan_ThanhToanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.PhuongThucThanhToanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.DistrictActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.FormGiaChiTietVanChuyen"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.ThanhToanPayMentActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.Bank123PayMentActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.traodoi.TraoDoiActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.traodoi.TraoDoi_DiaChiActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.traodoi.TraoDoi_ThanhToanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.traodoi.TraoDoi_XacNhanActivity"/>
+        <activity android:name="com.vintcgroup.swappj.thanhtoan_muaban.traodoi.ThanhToanSwapPayMentActivity"/>
+        <activity android:name="com.vintcgroup.swappj.notification.NotificationChatActivity"/>
+        <activity android:name="com.vintcgroup.swappj.notification.NotificationActivity"/>
+        <activity android:name="com.vintcgroup.swappj.donvivanchuyen.DonViVanChuyenActivty"/>
+        <activity android:name="com.vintcgroup.swappj.search.SearchActivity"/>
+        <activity android:name="com.vintcgroup.swappj.search.SearchAddressActivity"/>
+        <activity android:name="com.vintcgroup.swappj.main.FindFriendFacebookActivity"/>
+        <activity android:name="com.vintcgroup.swappj.main.ConfirmPhone"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/app_api_key"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:enabled="true" android:name="com.vintcgroup.swappj.chat.ui.ChatConnectionService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.vintcgroup.swappj.chat.service.service.ChatService">
+            <intent-filter>
+                <action android:name="com.hovans.netty.ACTION_CHECK_SESSION"/>
+                <action android:name="com.hovans.netty.ACTION_HEARTBEAT"/>
+                <action android:name="com.hovans.netty.ACTION_CONNECT_SESSION"/>
+                <action android:name="com.hovans.netty.ACTION_DISCONNECT_SESSION"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.vintcgroup.swappj"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.vintcgroup.swappj.GCMIntentService"/>
+    </application>
+</manifest>

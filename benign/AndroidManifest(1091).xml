@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Sericon.RouterCheck.client.android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.Sericon.RouterCheck.client.android.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.Sericon.RouterCheck.client.android.HistoryActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.BlogActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.AboutActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.StatusActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.StatusPageActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.ErrorActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.SettingsActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.WebPageFromStringActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.FeedbackActivity"/>
+        <activity android:name="com.Sericon.RouterCheck.client.android.FeedbackThankYouActivity"/>
+        <activity android:name="com.Sericon.ThingsCheck.android.ActivityDiscovery" android:screenOrientation="landscape"/>
+        <activity android:name="com.Sericon.ThingsCheck.android.ActivityPortscan" android:screenOrientation="landscape"/>
+    </application>
+</manifest>

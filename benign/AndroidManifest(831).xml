@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mqbapps.quraninpashto" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.mqbapps.quraninpashto.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.mqbapps.quraninpashto.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:icon="@drawable/logo" android:label="@string/app_name" android:name="com.mqbapps.quraninpashto.activities.App" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.Main"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.AyasDisplayActivity" android:theme="@style/AyaDisplayActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.BookmarkActivity" android:parentActivityName="com.mqbapps.quraninpashto.activities.Main" android:theme="@style/AyaDisplayActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.mqbapps.quraninpashto.activities.Main"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.SearchActivity" android:parentActivityName="com.mqbapps.quraninpashto.activities.Main" android:theme="@style/AyaDisplayActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.mqbapps.quraninpashto.activities.Main"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mqbapps.quraninpashto.activities.AboutActivity" android:parentActivityName="com.mqbapps.quraninpashto.activities.Main" android:theme="@style/AyaDisplayActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.mqbapps.quraninpashto.activities.Main"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <data android:scheme="mailto"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.parse.PushService"/>
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.mqbapps.quraninpashto"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.parse.ParsePushBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE"/>
+                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.OPEN"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/logo"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    </application>
+</manifest>

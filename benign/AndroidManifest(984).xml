@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.pliabull.Lakers.News">
+    <application android:icon="@drawable/icon_small" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.AndroidRssReader" android:theme="@style/NoTitle"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="com.pliabull.Lakers.News.MainActivity" android:theme="@style/NoTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name=".MyIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.millennialmedia.android.MMAdViewOverlayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.VideoPlayer" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.EmailAccountActivity" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.DetailsView" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.LiveScore" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.LiveScoreDetailsView" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.Schedule" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.Standings" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.TwitterUserList" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.TwitterFeedList" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name="com.pliabull.Lakers.News.Odds" android:theme="@style/NoTitle"/>
+        <activity android:label="@string/app_name" android:name=".OddDetailsView" android:theme="@style/NoTitle"/>
+        <service android:name=".FetcherService"/>
+        <meta-data android:name="ADMOB_PUBLISHER_ID" android:value="a14d3a6d2628057"/>
+    </application>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

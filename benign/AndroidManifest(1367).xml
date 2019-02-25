@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="de.aok.android.baby">
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="false" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="true"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="true"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="de.aok.android.baby.BabyApplication" android:theme="@style/BabyTheme">
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="de.aok.android.baby.view.activity.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.HomeActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.names.NameFinderListActivity" android:screenOrientation="portrait"/>
+        <activity android:clearTaskOnLaunch="true" android:icon="@drawable/icon" android:label="@string/decoder_name" android:name="com.jwetherell.quick_response_code.DecoderActivity" android:screenOrientation="landscape" android:stateNotNeeded="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.CropImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.FirstRunActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.SettingsBabyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.calendar.CalendarActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.ShowBabyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.provision.ProvisionListActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.provision.ProvisionDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.ForumActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.ImpressumActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.names.NameFinderDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.calendar.DateDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.calendar.NewDateActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.DiaryBabyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.DiaryListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.AddDiaryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="de.aok.android.baby.view.activity.VerifyActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.recipes.RecipeMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.recipes.RecipeFoodListActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.recipes.RecipeShowActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.address.AddressFinderMenuListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.address.AddressFinderListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.address.AddressFinderDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.maternity.MaternityLogActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.maternity.MaternityLogListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.SettingsActivity_" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.degeneration.DegenerationListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.VideoActivity" android:theme="@style/VideoTheme"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.PersonalDataActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.DoctorsListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.DoctorActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.maternity.MaternityLogDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.recommend.RecommendActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.activity.PregnancyHotlineActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Bundesland" android:name="de.aok.android.baby.view.activity.BundeslaenderActivity_"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.dentist.DentistLogActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.dentist.DentistLogDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.dentist.DentistLogListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.vaccination_record.VaccinationLogActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.vaccination_record.VaccinationLogDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="de.aok.android.baby.view.vaccination_record.VaccinationLogListActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="de.aok.android.baby.receiver.AlarmReceiver"/>
+        <provider android:authorities="de.aok.android.baby.babyphotostore" android:exported="true" android:name="de.aok.android.baby.BabyPhotoStore"/>
+        <service android:name="com.telly.groundy.GroundyService">
+            <meta-data android:name="groundy:mode" android:value="async"/>
+        </service>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="244a5de4f8ee9a726fee638b2cb2982d589a3639"/>
+    </application>
+</manifest>

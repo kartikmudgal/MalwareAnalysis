@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android" xmlns:android="http://schemas.android.com/apk/res/android" package="com.subsplash.thechurchapp.s_XSSHFV" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <permission android:name="com.subsplash.thechurchapp.s_XSSHFV.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.subsplash.thechurchapp.s_XSSHFV.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <permission android:name="com.subsplash.thechurchapp.s_XSSHFV.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.subsplash.thechurchapp.s_XSSHFV.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.subsplash.thechurchapp.TheChurchApp" android:resizeableActivity="false" android:theme="@android:style/Theme.Light">
+        <uses-library android:name="com.google.android.gcm.maps" android:required="false"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDjQtb8v-5P6HotPJJaoKKfCfDq2AohkOk"/>
+        <amazon:enable-feature android:name="com.amazon.geo.maps" android:required="false"/>
+        <activity android:alwaysRetainTaskState="false" android:clearTaskOnLaunch="true" android:launchMode="singleInstance" android:name="com.subsplash.thechurchapp.SplashActivity" android:noHistory="true" android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:host="sap" android:scheme="sapxsshfv"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.subsplash.thechurchapp.AppUtilityActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.ClipboardActivity" android:noHistory="true" android:theme="@style/FullscreenActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.DebugActivity" android:noHistory="true" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.ErrorActivity" android:noHistory="true" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.FullscreenFragmentActivity" android:theme="@style/FullscreenActivityTheme"/>
+        <activity android:configChanges="fontScale|locale" android:name="com.subsplash.thechurchapp.FragmentHostActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.handlers.inbox.InboxActivity" android:theme="@style/InboxActivityTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.subsplash.thechurchapp.handlers.audio.NowPlayingActivity" android:theme="@style/NowPlayingTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.subsplash.thechurchapp.handlers.browser.BrowserActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.handlers.detail.MediaDetailActivity" android:theme="@style/MediaDetailActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.handlers.video.VideoActivity" android:theme="@style/FullscreenActivityTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.subsplash.thechurchapp.handlers.eventDetail.AmazonEventMapActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.subsplash.thechurchapp.handlers.location.AmazonLocationsMapActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.handlers.reader.ReaderPostActivity" android:theme="@style/ReaderPostActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.MainActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.SubAppMainActivity" android:theme="@style/DefaultActivityTheme"/>
+        <activity android:name="com.subsplash.thechurchapp.CastActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.subsplash.thechurchapp.handlers.sharing.TwitterActivity" android:theme="@style/OverlaySharingTheme" android:windowSoftInputMode="stateVisible"/>
+        <service android:name="com.subsplash.thechurchapp.api.PushIntentService"/>
+        <service android:enabled="true" android:name="com.subsplash.thechurchapp.handlers.audio.AudioPlayerService"/>
+        <service android:exported="false" android:name="com.google.android.libraries.cast.companionlibrary.notification.VideoCastNotificationService">
+            <intent-filter>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.toggleplayback"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.stop"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.notificationvisibility"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.libraries.cast.companionlibrary.cast.reconnection.ReconnectionService"/>
+        <receiver android:name="com.subsplash.thechurchapp.api.PushActivationReceiver"/>
+        <receiver android:name="com.subsplash.thechurchapp.api.PushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.subsplash.thechurchapp.s_XSSHFV"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.subsplash.thechurchapp.handlers.audio.AudioIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.libraries.cast.companionlibrary.remotecontrol.VideoIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.toggleplayback"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.stop"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="com.subsplash.thechurchapp.s_XSSHFV.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.devbrackets.android.exomedia.receiver.MediaControlsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

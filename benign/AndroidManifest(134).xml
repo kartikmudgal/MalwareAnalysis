@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.app_10011.layout">
+    <application android:icon="@drawable/icon_icon" android:label="@string/app_name">
+        <uses-library android:name="com.google.android.maps"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.around_us.AroundUsActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.around_us.AroundUsDetailActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.biznessapps.camera.scanning.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.car_finder.CarFinderActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.car_finder.ChooseTimerActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.common.activities.SingleFragmentPortraitActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.common.activities.SingleFragmentActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.contact.ContactsMapActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.events.EventV2DetailsActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.gallery.GalleryActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.gallery.GalleryPreviewActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.google_plus.GooglePlusShareActivity" android:theme="@style/Theme.TwitterLoginTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.google_plus.SignInOutActivity" android:theme="@style/Theme.TwitterLoginTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.home_screen.HomeScreenActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.fan_wall.NewFanWallActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.biznessapps.layout.MainController" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.location.LocationView"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.reservation.PaymentIntegrateFragment" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.real_estate.RealEstateDetailActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.real_estate.RealEstateListActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.twitter.TwitterLoginActivity" android:theme="@style/Theme.TwitterLoginTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.youtube.YoutubeChannelActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.youtube.YoutubeDetailFragmentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.biznessapps.youtube.YoutubeLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.biznessapps.web.WebSingleFragmentActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <activity android:configChanges="orientation" android:name="com.paypal.android.MEP.PayPalActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.biznessapps.player.PlayerService"/>
+        <receiver android:name="com.biznessapps.pushnotifications.C2DMRegistrationReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.app_10011.layout"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.biznessapps.pushnotifications.C2DMMessagesReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.app_10011.layout"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.app_10011.layout.permission.C2D_MESSAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <permission android:name="com.app_10011.layout.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+</manifest>

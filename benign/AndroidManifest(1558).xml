@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.secfirst.umbrella" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_umbrella" android:label="@string/app_name" android:name="org.secfirst.umbrella.util.Global" android:theme="@style/AppTheme">
+        <service android:exported="false" android:name="org.secfirst.umbrella.RefreshService"/>
+        <receiver android:name="org.secfirst.umbrella.ServiceReceiver" android:process=":remote"/>
+        <activity android:exported="true" android:label="@string/app_name" android:name="org.secfirst.umbrella.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="lesson" android:scheme="umbrella"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="checklist" android:scheme="umbrella"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="tools" android:scheme="umbrella"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="org.secfirst.umbrella.LoginActivity"/>
+        <activity android:label="@string/title_activity_tour" android:name="org.secfirst.umbrella.TourActivity"/>
+        <activity android:label="@string/title_activity_search" android:name="org.secfirst.umbrella.SearchActivity">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="org.secfirst.umbrella.SettingsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.secfirst.umbrella.MainActivity"/>
+        </activity>
+        <meta-data android:name="DATABASE" android:value="umbrella_public.db"/>
+        <meta-data android:name="VERSION" android:value="1"/>
+        <meta-data android:name="QUERY_LOG" android:value="true"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="org.secfirst.umbrella"/>
+        <activity android:label="@string/title_activity_about" android:name="org.secfirst.umbrella.AboutActivity"/>
+        <activity android:name="org.secfirst.umbrella.PanicResponderActivity" android:noHistory="true" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="info.guardianproject.panic.action.TRIGGER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.secfirst.umbrella.ExitActivity" android:theme="@android:style/Theme.NoDisplay"/>
+    </application>
+</manifest>

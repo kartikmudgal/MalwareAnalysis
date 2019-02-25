@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.callrecord.auto" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-feature android:name="android.hardware.telephony"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-feature android:glEsVersion="20000"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_app" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/myAppTheme">
+        <activity android:label="@string/app_name" android:launchMode="standard" android:name=".MainActivity" android:screenOrientation="portrait" android:theme="@style/myAppTheme" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:name="com.tools.audio.callrecorder.RecordService"/>
+        <service android:exported="true" android:name="com.callrecord.auto.service.RecordServiceDefault"/>
+        <receiver android:enabled="true" android:exported="true" android:name=".listener.PhonecallReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="com.callrecord.auto.RECORD_ALL_CALL"/>
+                <action android:name="com.callrecord.auto.RECORD_OUT_CALL"/>
+                <action android:name="com.callrecord.auto.RECORD_IN_CALL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".BlackAndWhiteListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/app_name" android:name=".PatternUnlockActivity" android:screenOrientation="portrait" android:theme="@style/myAppTheme"/>
+        <activity android:label="PatternChangePassActivity" android:name=".PatternChangePassActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".PlayFileRecoderActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.treeview.folder.TreeViewActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <activity android:name="com.banana.lib.RateDialogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_alert" android:name=".AlertActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="" android:name=".FakeActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.motion.voice.recorder.maker.RingtoneEditActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

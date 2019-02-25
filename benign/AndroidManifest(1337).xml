@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.xapcamera" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <application android:allowBackup="true" android:hardwareAccelerated="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.xapcamera.global.App" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.xapcamera.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.ap.APAddDeviceActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.APSetWifiActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.APAddDeviceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APSetWiFiPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APDeviceSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APSecuritySetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APModifyDevicePwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APModifyVisitorPwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APTimeSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APAlarmSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APMediaSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APRecordSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.device.settings.APNetSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ap.APPlaybackListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ap.APVideoActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ap.APPlaybackActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.xapcamera.WifiApmodeSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.WifiApmodeSetActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.WifiApmodeSingleSetActivtiy" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.AddDeviceFirstActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.AddDeviceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.AddDeviceActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.PermissionSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.QRScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.XSetWifiActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.MultiMediaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SystemSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.LocalImageDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.LocalImageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.DeviceSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale|orientation" android:name="com.xapcamera.device.settings.DeviceUpdateActivity" android:screenOrientation="portrait" android:theme="@style/DeviceUpdateTranslucent" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.xapcamera.device.settings.SdcardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.DefenceAreaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.RecordSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.AlarmSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.AlarmPushAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.ModifyBoundEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.ModifyEmailCustomActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.NetSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.SecuritySetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.ModifyNpcPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.QrcodeSetActivity1" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.QrcodeSetActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SetWifiActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SetWifiActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SetWifiActivity3" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SetWifiSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.SetWifiFailedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.playback.PlaybackListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.playback.PlaybackActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.xapcamera.AlarmRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.ModifyNpcVisitorPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.VideoSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xapcamera.device.settings.TimeSetActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.xapcamera.XMonitorActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <service android:name="com.xapcamera.service.MainService"/>
+        <service android:name="ilnk.lib.service.BridgeService">
+            <intent-filter>
+                <action android:name="ilnk.lib.service.Bridgeservice"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleInstance" android:name="com.xapcamera.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="behind" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="Sricam1105220316"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider210067636021579" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+    </application>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+</manifest>

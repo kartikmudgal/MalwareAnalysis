@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="estonia.ee.estoniaonlineshops" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="estonia.ee.estoniaonlineshops.EstoniaOnlineShops" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="estonia.ee.estoniaonlineshops.Detail"/>
+        <activity android:label="@string/title_activity_main_all_menu" android:name="estonia.ee.estoniaonlineshops.MainAllMenu" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_main_all_menu" android:name="estonia.estoniaonlineshops.MainAllMenu" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewEuronics"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewOkidoki"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewKaup24"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewHansapost"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewOn24"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewHinnavaatlus"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewKlick"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewKuldnebors"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewOnoff"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewRde"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewPhotopoint"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewKrauta"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewGroupon"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewBauhof"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewGmarket"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewAliexpress"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewAmazon"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewOsta"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewAa"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewOomipood"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewAstri"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewDx"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewLightinthebox"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewApollo"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewShoppa"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewEbay"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewAlibaba"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewEtsy"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewRahvaraamat"/>
+        <activity android:name="estonia.ee.estoniaonlineshops.WebViewKaubamaja"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

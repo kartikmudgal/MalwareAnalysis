@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.portofarina.portodb" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="false" android:icon="@drawable/porto_db" android:label="@string/porto_db" android:name="com.portofarina.portodb.PortoDbApplication" android:theme="@style/Main">
+        <activity android:label="@string/porto_db" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.PortoDbActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIbcpaJ-UZnltW6VYLYMFd7B4pi3PhNY-OPBjxHA"/>
+        </activity>
+        <activity android:label="@string/settings" android:name="com.portofarina.portodb.activity.SettingsActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/database" android:launchMode="singleTask" android:name="com.portofarina.portodb.activity.DatabaseActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="@string/table" android:launchMode="singleTask" android:name="com.portofarina.portodb.activity.TableActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="@string/table" android:launchMode="singleTask" android:name="com.portofarina.portodb.activity.FormActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="@string/table" android:launchMode="singleTask" android:name="com.portofarina.portodb.activity.TableViewActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="@string/table" android:launchMode="singleTask" android:name="com.portofarina.portodb.activity.FormViewActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="@string/table" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.DataSelectionActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:exported="true" android:label="" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.ImageSelectionActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:exported="true" android:label="" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.FormulaActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:exported="true" android:label="@string/porto_db" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.DatabaseShortcutSelectionActivity" android:theme="@style/Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/database" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.TableShortcutSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/select_backup_file" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.BackupSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/select_backup_file" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.AllBackupSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/database" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.RelatedTableSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/table" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.RelatedColumnSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/database" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.TargetTableSelectionActivity" android:theme="@style/Dialog"/>
+        <activity android:label="@string/select_export_file" android:launchMode="singleTop" android:name="com.portofarina.portodb.activity.ExportSelectionActivity" android:theme="@style/Dialog"/>
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+        <provider android:authorities="com.portofarina.portodb.provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+    </application>
+</manifest>

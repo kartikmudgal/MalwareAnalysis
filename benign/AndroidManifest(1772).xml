@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ar.com.bcopatagonia.android" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <permission android:name="ar.com.bcopatagonia.android.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="br.com.bb.android.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/application_name" android:largeHeap="true" android:name="ar.com.bp.android.BPBaseApplication" android:theme="@style/AppTheme">
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTER"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="br.com.bb.android"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="br.com.bb.android.GCMIntentService"/>
+        <service android:name="br.com.bb.android.notifications.NotificationProtocolExcecutorService"/>
+        <service android:exported="false" android:name="com.appsflyer.InstanceIDListener">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/application_name" android:name="ar.com.bcopatagonia.android.StarterActivity" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoActionBar" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="ar.com.bcopatagonia.android.LoginActivity" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_bbmensagens_title" android:name="br.com.bb.android.messenger.MessengerActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_acesse_sua_conta" android:name="br.com.bb.android.appscontainer.tablet.AppsContainerActivityTablet" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_acesse_sua_conta" android:name="br.com.bb.android.login.LoginContainerActivitySmartphone" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_saque_movel" android:name="br.com.bb.android.saquemovel.SaqueMovelSmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_pve" android:name="br.com.bb.android.pve.PVESmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_cambio" android:name="br.com.bb.android.cambio.CambioSmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="" android:launchMode="singleTop" android:name="br.com.bb.android.telas.FragmentContainerActivitySmartphone" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_full_name" android:launchMode="singleTop" android:name="br.com.bb.android.telas.FragmentContainerActivityTablet" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_full_name" android:launchMode="singleTop" android:name="br.com.bb.android.telas.TransactionalActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.appscontainer.smartphone.AppsContainerActivitySmartphone" android:noHistory="false" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.appscontainer.MoreAppsActivity" android:noHistory="false" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_full_name" android:name="br.com.bb.android.nfc.NfcStartTransferenciaEntreContasActivity" android:noHistory="true" android:permission="android.permission.NFC" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/transferenciaentrecontas.bb.com.br"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.nfc.NfcAccountSelectionActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_rede_atendimento" android:launchMode="singleTop" android:name="br.com.bb.android.webview.PortalBBActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_sac" android:launchMode="singleTop" android:name="br.com.bb.android.sac.SACActivitySmartphone" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_new_password" android:launchMode="singleTop" android:name="br.com.bb.android.newpassword.NewPasswordActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_portal_bb" android:launchMode="singleTop" android:name="br.com.bb.android.webview.ServiceNetworkActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_portal_bb" android:launchMode="singleTop" android:name="br.com.bb.android.boleto.SegundaViaBoletoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.picturemanager.PictureActivity" android:screenOrientation="portrait" android:theme="@style/TransparentActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.codereader.barcode.ItfFrameActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.codereader.barcode.QrCodeFrameActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_full_name" android:name="br.com.bb.android.cloudprinting.PrintDialogActivity" android:screenOrientation="portrait" android:theme="@style/ApiBaseThemeNoTitleBarFullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_full_name" android:name="br.com.bb.android.user.configurations.UserProfileConfigActivitySmartphone" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_bb_code" android:name="br.com.bb.android.bbcode.BBCodeKnowHowActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_bb_code" android:name="br.com.bb.android.bbcode.BBCodeActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="br.com.bb.android.bbcode.BBCodeCameraActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_ourocard_e" android:name="br.com.bb.android.ourocard_e.OurocardESelectionActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_ourocard_e" android:name="br.com.bb.android.ourocard_e.OurocardESmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_telefones_bb" android:name="br.com.bb.android.telas.TelefoneActivitySmartphone" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/title_activity_about" android:name="br.com.bb.android.telas.AboutActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_notifications_title" android:name="br.com.bb.android.notifications.NotificationsActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_bbmensagens_browser" android:name="br.com.bb.android.webview.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="br.com.bb.android.bbcode.BBCodeSaibaComoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_notification_central_title" android:name="br.com.bb.android.notifications.externalpushes.PushOnContainerActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_unlock_device" android:name="br.com.bb.android.sms.WaitSMSForUnlockActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_deposito" android:name="br.com.bb.android.deposito.cheque.DepositoSmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:label="@string/app_container_consulta_deposito" android:name="br.com.bb.android.consulta.deposito.ConsultaDepositoSmartphoneActivity" android:screenOrientation="portrait" android:theme="@style/cameraTheme"/>
+        <activity android:name="br.com.bb.android.deposit.InputPerspectiveActivity" android:screenOrientation="sensorLandscape" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:label="@string/app_container_international" android:name="br.com.bb.android.international.BBInternationalActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:label="@string/app_container_international" android:name="br.com.bb.android.international.BBInternationalLoginActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_bb_code" android:name="br.com.bb.android.BBCodeConfirmationCodeActivity" android:screenOrientation="portrait" android:theme="@style/AppThemePessoaFisica"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_bb_code" android:name="ar.com.bcopatagonia.android.AdhesionActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_container_bb_code" android:name="ar.com.bcopatagonia.android.TabsActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="br.com.bb.android.ui.touchimage.BBImageViewerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.ATMInstruccionesActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.AyudaActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.BienvenidoActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OtroProblemaActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OlvideNombreUsuarioActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OlvideUsuarioCrearUsuarioActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OlvideUsuarioPreguntasActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.RespuestasMalActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.EmailYTycActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OlvideUsuarioYClaveActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaCrearClaveActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.OlvideUsuarioYaGenereClaveActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaOlvidoUsuarioDocumentoActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.ClaveBloqueada3erIntentoActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaOlvidoUsuarioCrearClaveActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaOlvidoUsuarioPreguntasActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisorioValidarUsuarioActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisorioCrearClaveEbank" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaOlvidoUsrPwdDocumentoActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.ForcedPasswordChangeActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.appscontainer.ContactenosActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.IngresoProvisoriaOlvidoUsuarioValidaPreguntaActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.CambiarClaveBanelcoValidarUsuarioActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.CambiarClaveBanelcoCrearClaveEbank" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="ar.com.bcopatagonia.android.HomeAyudaActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.TerminosCondicionesActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="" android:name="ar.com.bcopatagonia.android.accesoyadhesion.SucursalesCajerosActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeEstilo" android:windowSoftInputMode="adjustResize"/>
+    </application>
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+</manifest>

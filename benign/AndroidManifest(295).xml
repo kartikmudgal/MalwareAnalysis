@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <service android:label="@string/app_name" android:name="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal.wallpaper.TouchPalWallPaperService" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/touchpal_wallpaper"/>
+        </service>
+        <service android:name="com.cootek.eden.EdenActivateService"/>
+        <activity android:name="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal.PluginAgent">
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.PLUGIN"/>
+                <category android:name="com.cootek.smartinput.intent.category.SKIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal.ActionReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.language.action.SHOW_ICON"/>
+                <action android:name="com.cootek.smartinputv5.language.action.HIDE_ICON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.cootek.smartinputv5.skin.keyboard_theme_silver_colored_metal.func.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.usage.UsageAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.usage.alarm_operation"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+</manifest>

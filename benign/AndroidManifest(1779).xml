@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="az.xercim" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="az.xercim.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <application android:allowBackup="true" android:configChanges="locale|orientation" android:icon="@drawable/playicon" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/AppTheme">
+        <meta-data android:name="kontakt.io.API_KEY" android:value="kZOFxQinchKCuxJmBcOJJAILpVNJSsOP"/>
+        <activity android:label="@string/app_name" android:name="az.xercim.MainActivitynew" android:screenOrientation="portrait">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivitynew"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Login Account" android:name="az.xercim.LoginActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Register New Account" android:name="az.xercim.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.SingleOfferIn" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="az.xercim.Splash" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="az.xercim.Yerler_click" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name=".Yerler_click"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="@string/title_activity_yerler_category" android:name="az.xercim.Yerler_category" android:screenOrientation="portrait"/>
+        <activity android:label="about" android:name="az.xercim.AboutAct" android:screenOrientation="portrait"/>
+        <activity android:label="terms" android:name="az.xercim.Terms" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_kart_add" android:name="az.xercim.Kart_add" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.CardInfoClick" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.google.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="activity_profile" android:name="az.xercim.ProfileXercim" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_kart_add_new" android:name="az.xercim.Kart_add_new" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.PinActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_alkredit" android:name="az.xercim.Alkredit" android:screenOrientation="portrait"/>
+        <activity android:label="specials" android:name="az.xercim.Specials" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.SpecialGrid" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.SingleOfferInDeep" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="az.xercim.AlkreditIntent" android:screenOrientation="portrait"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="az.xercim"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="az.xercim.GCMIntentService"/>
+        <activity android:label="@string/title_activity_kartlar_in" android:name="az.xercim.KartlarIn" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:label="@string/title_activity_alkredit_end" android:name="az.xercim.Alkredit_end"/>
+        <activity android:label="@string/title_activity_settings" android:name="az.xercim.Settings"/>
+        <activity android:label="settings" android:name="az.xercim.SettingsActivity"/>
+        <service android:exported="false" android:name="az.xercim.BackgroundScanService"/>
+        <service android:exported="false" android:name="az.xercim.SyncService"/>
+        <service android:exported="false" android:name="com.kontakt.sdk.android.ble.service.ProximityService"/>
+        <receiver android:exported="false" android:name="az.xercim.BackgroundScanReceiver">
+            <intent-filter android:priority="1">
+                <action android:name="az.xercim.BackgroundScanService.BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/title_activity_test_places" android:name="az.xercim.TestPlaces"/>
+        <activity android:label="@string/title_activity_language" android:name="az.xercim.Language"/>
+        <activity android:label="@string/title_activity_slider" android:name="az.xercim.Slider"/>
+        <activity android:label="@string/title_activity_xidmet_qaydalari" android:name="az.xercim.XidmetQaydalari"/>
+    </application>
+</manifest>

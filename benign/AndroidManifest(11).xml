@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.aboutjsp.thedaybefore" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <permission android:name="com.aboutjsp.thedaybefore.provider.READ_DATABASE" android:protectionLevel="signature"/>
+    <permission android:name="com.aboutjsp.thedaybefore.provider.WRITE_DATABASE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <application android:allowBackup="false" android:icon="@drawable/icon_thedaybefore" android:label="@string/app_name" android:largeHeap="true" android:name="com.aboutjsp.thedaybefore.TheDayBeforeApplication" android:theme="@style/CustomActionBarTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:label="@string/app_name" android:name="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="apps.ibillstudio.com" android:path="/thedaybefore/keyboard.html" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/kakaolink_host" android:scheme="@string/kakao_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:label="@string/app_name" android:name="com.aboutjsp.thedaybefore.TheDayBeforeDetail" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeList"/>
+        </activity>
+        <receiver android:label="@string/app_name1x1" android:name="com.aboutjsp.thedaybefore.TheDayBeforeAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.buzzpia.aqua.appwidget.GET_VERSION"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/thedaybefore_info"/>
+        </receiver>
+        <receiver android:label="@string/app_name2x1" android:name="com.aboutjsp.thedaybefore.TheDayBeforeAppWidgetProvider2x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.buzzpia.aqua.appwidget.GET_VERSION"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/thedaybefore_info2x1"/>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.TheDayBeforeConfigure" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeDetail" android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeDetail"/>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.TheDayBeforeConfigure2x1" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.TheDayBeforeConfigureApp" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:enabled="true" android:name="com.aboutjsp.thedaybefore.notification.NotificationSettingActivity" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeDetail">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeDetail"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:enabled="true" android:name="com.aboutjsp.thedaybefore.AppInfo" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeList"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:enabled="true" android:name="com.aboutjsp.thedaybefore.setting.SettingActivity" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeList"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:enabled="true" android:name="com.aboutjsp.thedaybefore.web.WebViewer" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeList"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.backup.LoadDDayActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.keyboard.DDaySelectActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.keyboard.KakaoShareActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.shop.cp.ShopTabActivity" android:parentActivityName="com.aboutjsp.thedaybefore.TheDayBeforeList">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.aboutjsp.thedaybefore.TheDayBeforeList"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.shop.cp.ShopGoodsActivity" android:parentActivityName="com.aboutjsp.thedaybefore.shop.cp.ShopTabActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".shop.cp.ShopTabActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:name="com.aboutjsp.thedaybefore.shop.cp.ShopBuyActivity" android:parentActivityName="com.aboutjsp.thedaybefore.shop.cp.ShopGoodsActivity" android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".shop.cp.ShopGoodsActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_shop_initial" android:name="com.aboutjsp.thedaybefore.shop.cp.ShopInitialActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.aboutjsp.thedaybefore.shop.enuri.ShoppingZzimActivity"/>
+        <receiver android:name="com.aboutjsp.thedaybefore.receiver.MainReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.aboutjsp.thedaybefore.NEWDAY"/>
+                <action android:name="com.aboutjsp.thedaybefore.CHECK_NOTICE"/>
+                <action android:name="com.aboutjsp.thedaybefore.THEDAYCOUPLE_SHOW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.aboutjsp.thedaybefore.receiver.InstallReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.aboutjsp.thedaybefore.avoidsmartmanager.AvoidSmartManagerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.aboutjsp.thedaybefore.avoidsmartmanager.AvoidSmartManagerActivity" android:taskAffinity=":avoidSmartManager" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.aboutjsp.thedaybefore.provider" android:enabled="true" android:exported="true" android:multiprocess="true" android:name="com.aboutjsp.thedaybefore.provider.MemoryContentProvider" android:readPermission="com.aboutjsp.thedaybefore.provider.READ_DATABASE" android:writePermission="com.aboutjsp.thedaybefore.provider.WRITE_DATABASE"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="net.daum.adam.publisher.impl.AdInterstitialActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.mNewsK.sdk.cApp.CAppService"/>
+        <receiver android:name="com.mNewsK.sdk.receiver.CAppReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="ShallWeAd_Application_Key" android:value="70471996"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.co.shallwead.sdk.activity.ShallWeAdActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="Ad Activity" android:name="com.skplanet.tad.AdActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:name="com.skplanet.tad.SyrupAdReceiver">
+            <intent-filter>
+                <action android:name="com.skplanet.syrupad.action.SAID_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.aboutjsp.thedaybefore.keyboard.OnDDaySettingReceiver">
+            <intent-filter>
+                <action android:name="com.fineapptech.ddaykbd.ACTION_CLICK_DDAY_SETTING"/>
+                <action android:name="com.fineapptech.ddaykbd.ACTION_CLICK_DDAY"/>
+                <action android:name="com.fineapptech.ddaykbd.ACTION_CLICK_SHARE_VIA_KAKAO"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.fineapptech.ddaykbd.InstallerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.fineapptech.ddaykbd.SettingActivity" android:screenOrientation="portrait" android:theme="@style/ddkbd.preferenceScreen"/>
+        <activity android:name="com.fineapptech.ddaykbd.KoreanImeSelectorActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.fineapptech.ddaykbd.KoreanImeSelectorActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.fineapptech.ddaykbd.ChangeBackgroundActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.fineapptech.ddaykbd.ChangeBackgroundActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.fineapptech.ddaykbd.ImageCropActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.fineapptech.ddaykbd.ChangeKeyboardSizeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.fineapptech.ddaykbd.ChangeKeyboardSizeActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:icon="@drawable/main_icon" android:label="@string/ddkbd_keyboard_name" android:name="com.fineapptech.ddaykbd.Ime" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod"/>
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/ddkbd_method"/>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:name="com.inmobi.rendering.InMobiAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.inmobi.signals.activityrecognition.ActivityRecognitionManager"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibDialogActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibWebBrowserActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibVideoPlayer" android:theme="@android:style/Theme.NoTitleBar"/>
+        <meta-data android:name="tnkad_app_id" android:value="a0f0f030-f0e1-d566-665d-1e0f000b030c"/>
+        <activity android:name="com.tnkfactory.ad.AdWallActivity"/>
+        <activity android:name="com.tnkfactory.ad.AdMediaActivity" android:screenOrientation="landscape"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="740de4d26185f17a7b944fa762f6f987d394a408"/>
+        <meta-data android:name="igaworks_app_key" android:value="377213793"/>
+        <meta-data android:name="igaworks_hash_key" android:value="55f68b9a5d18430d"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider887441701368232" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

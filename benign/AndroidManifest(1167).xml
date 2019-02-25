@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.sugojika">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.sugojika.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight">
+        <activity android:label="@string/app_name" android:name=".ui.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="kakao89284049362385856"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".ui.StartActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SignupActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SignupRegisterActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <activity android:label="@string/app_name" android:name=".ui.SigninActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.UniversityListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.DepartmentListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.AdmissionListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.TimeTableActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CommunicationActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaPageIndicator"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseCreateInformationActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseIconListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseCreateTeachersActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseCreateTimePickerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseCreateTimeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTopicPostActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTopicResponseListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTopicResponsePostActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseEditActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendSearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendAllSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendFacebookSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendDepartmentSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.UserProfileActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaPageIndicator"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsUserEditActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsPushActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsPrivateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsPasswordChangeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsSkinChangeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendActivateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsFacebookConnectActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsYearTermActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsViewCourseNumActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsContactActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsFaqActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsTermsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsPrivacyPolicyActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsSkinSelectActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SettingsSkinSelectedActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.FriendFreeTrendActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.SignupTermSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.PasswordReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.StartupNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.WeeklyTimeCoursesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTaskCreateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTaskEditActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTaskCompleteListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.MyPageActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.MyPageCourseTaskCreateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.MyPageTakeCourseListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseReviewStartActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseReviewEndActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseMemberActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTimelinePostActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ui.MyPageWebViewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight.TitleBar"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseTaskTopicResponseListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <activity android:label="@string/app_name" android:name=".ui.CourseInformationActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <activity android:label="@string/app_name" android:name=".ui.TimeTableShareActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <activity android:label="@string/app_name" android:name="com.tadacopy.TadaCopyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Theme.SugojikaLight"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.sugojika"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.apps.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+        <service android:name=".service.TimetableImageService"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_facebook_id"/>
+    </application>
+</manifest>

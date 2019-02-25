@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ldm.pregnant.fortyweeks">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/applogo" android:label="@string/market_app_name" android:name="pregnant.PregnantApp">
+        <receiver android:name="alarm.CallAlarm" android:process=":remote"/>
+        <activity android:label="@string/app_name" android:name=".SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".PregnantActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PREGNANT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".PregnantActivityLargeScreen" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".PreferencesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant.Light">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PREFERENCE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name=".AdviceActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.ADVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".AboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.ABOUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".WhatBeingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.WHATBEING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".AskMainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.ASK.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".AskEditActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.ASK.Edit"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".AnswerMainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.ANSWER.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".ExpectedDateActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.EXPECTED.DATE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="KnowListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.KNOW.LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="KnowSchoolActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.KNOW.SCHOOL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="KnowFlowActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.KNOW.FLOW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="CommentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.COMMENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="KnowActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.KNOW.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="ResourceActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.RESOURCE.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="ResourceViewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.RESOURCE.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="ToolActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.ldm.pregnant.fortyweeks.DailyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.DAILY.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.ldm.pregnant.fortyweeks.PictureActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PICTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="DocWebActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.DOCWEBPAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".FavoriteActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.FAVORITE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.NoteActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.NOTE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.NoteViewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.record.noteview"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.FetalMovementActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.FETAL.MOVEMENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.FetalMovementRecordActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.FETAL.MOVEMENT.RECORD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.PhysiqueActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PHYSIQUE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.PhysiqueRecordActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PHYSIQUE.RECORD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.ScheduleRecordActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.SCHEDULE.RECORD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.ScheduleActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.SCHEDULE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="record.ScheduleDateTimeSetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.SCHEDULE.DATETIME.SET"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="calendar.CalendarActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.CALENDAR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="calendar.CalendarDayActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.CALENDAR.DAY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".WebActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name=".Web2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.WEB2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolWeightActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.WEIGHT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolPredictGenderActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.PREDICT.GENDER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolPredictHeightActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.PREDICT.HEIGHT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolConstellationActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.CONSTELLATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolBChaoChartActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.BCHAO.CHART"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolBloodTypeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.BLOODTYPE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolOvulatingActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.OVLATING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="tools.ToolOvulatingResultActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.TOOL.OVLATING.RESULT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.ldm.pregnant.fortyweeks.WeekLocalActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pregnant" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.WEEK.LOCAL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name=".PregnantAppWidgetProvider">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider"/>
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortweeeks.action.widget.click"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".PregnantAppWidgetConfigure">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:name=".PregnantBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.ldm.pregnant.fortyweek.EXPECTED.DATE.CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentActivity" android:theme="@style/Theme.UMDefault"/>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleTask" android:name="com.umeng.socialize.view.ShareActivity" android:noHistory="true" android:theme="@style/Theme.UMDialog" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentDetail" android:noHistory="true" android:theme="@style/Theme.UMDefault"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentDetailNoMap" android:noHistory="true" android:theme="@style/Theme.UMDefault"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="\ 100444094"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.plus.ImageActivity"/>
+        <activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="51144898527015776600001a"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="sanxin"/>
+        <service android:exported="true" android:name="com.umeng.common.net.DownloadingService" android:process=":DownloadingService"/>
+        <activity android:name="com.umeng.fb.ConversationActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.umeng.fb.ContactActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".PushMessageActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ldm.pregnant.fortyweek.PUSH.LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <user-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+</manifest>

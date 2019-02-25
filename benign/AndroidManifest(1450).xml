@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="jamessoft.mrcon">
+    <supports-screens android:anyDensity="false" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:icon="@drawable/icon" android:label="mRcon" android:name="anywheresoftware.b4a.objects.ParseObjectWrapper$ParseApplication">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <service android:name="com.parse.PushService"/>
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".main" android:screenOrientation="unspecified" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".bignumbers" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".serverinfo" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".miniconsole" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".playerlist" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".banlist" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="mRcon" android:launchMode="singleTop" android:name=".guide" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".srvplayers"/>
+        <receiver android:name=".srvplayers$srvplayers_BR"/>
+    </application>
+</manifest>

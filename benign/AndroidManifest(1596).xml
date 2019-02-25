@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="seven.quranabubakralshatri.music.sh">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_icon" android:label="@string/app_name" android:name="AndromoAcraApplication">
+        <activity android:label="@string/app_name" android:name=".Podcast8905" android:parentActivityName="seven.quranabubakralshatri.music.sh.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="seven.quranabubakralshatri.music.sh.Dashboard_000"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name=".AudioService">
+            <intent-filter>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.START"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.PLAY"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.PAUSE"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.SKIP"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.REWIND"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.STOP"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="seven.quranabubakralshatri.music.sh.audio.action.URL"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".AudioIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".Podcast8905_Episode" android:parentActivityName="seven.quranabubakralshatri.music.sh.Podcast8905" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="seven.quranabubakralshatri.music.sh.Podcast8905"/>
+        </activity>
+        <activity android:name=".PodcastPreferences" android:theme="@style/Theme.Andromo"/>
+        <service android:exported="false" android:name=".AudioCacheService">
+            <intent-filter>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.action.START"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.action.SAVE_CACHE"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.action.LOAD_CACHE"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.action.SET_ITEM"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.action.DOWNLOAD"/>
+                <action android:name="seven.quranabubakralshatri.music.sh.AudioCache.FileDownloader.broadcast.DOWNLOADED"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name=".AudioCacheLoader"/>
+        <service android:exported="false" android:name=".AudioCacheSaver"/>
+        <service android:exported="false" android:name=".Podcast8905_PlaylistManager"/>
+        <service android:exported="false" android:name=".FileDownloader">
+            <intent-filter>
+                <action android:name="seven.quranabubakralshatri.music.sh.FileDownloader.action.CANCEL"/>
+            </intent-filter>
+        </service>
+        <activity android:label="@string/app_name" android:name=".Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo.Dashboard_000"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+    </application>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

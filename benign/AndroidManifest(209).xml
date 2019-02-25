@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.bibliocommons.surreypl" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <supports-screens android:normalScreens="true" android:smallScreens="false"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/action_bar_text" android:name="com.bibliocommons.manager.BiblioCommonsApplication" android:theme="@style/CustomActionBarTheme">
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>     
+<action android:name="android.intent.action.VIEW"/>     
+<category android:name="android.intent.category.DEFAULT"/>     
+<category android:name="android.intent.category.BROWSABLE"/>     
+<data android:scheme="@string/url_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:launchMode="singleTask" android:name="com.bibliocommons.view.discover.MainMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.RecentReviewsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.UserContentsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.RecentArrivalsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.JustOrderedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.BestsellersActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.BibMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.FullRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.CommentsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.SummariesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.QuotationsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.AgesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.NoticesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.VideosActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.AvailableAtActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.RefineActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.RefineListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.ContentsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.BookCoverActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.UserRegistrationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.OnlineArticlesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.ProgramsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.discover.DigitalMediaActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.search.SearchActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.bibliocommons.zxing.client.android.SCAN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.search.EbooksAndAudiobooksActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.branches.BranchesMapActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.branches.BranchesListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.branches.BranchDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.branches.BranchHolidayClosuresActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreConnectMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreHelpActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreLoginSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreBranchSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreLanguageSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreBarcodeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.more.MoreCacheSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingAvailabilityDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingActiveHoldsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingAvailableNowActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingSuspendedHoldsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingRecentReturnsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingFinesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingOverDueActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingNextDueActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.borrowing.BorrowingTotalItemsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.shelves.ShelvesMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.shelves.ShelvesCompletedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.shelves.ShelvesForLaterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout" android:name="com.bibliocommons.view.shelves.ShelvesInProgressActivity" android:screenOrientation="portrait"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:name="com.bibliocommons.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:stateNotNeeded="true" android:theme="@style/CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/title_activity_web" android:name="com.bibliocommons.view.WebActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

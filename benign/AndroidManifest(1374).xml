@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="dk.backbone.cfmapp.CoreFM_App_Android" platformBuildVersionCode="17" platformBuildVersionName="4.2.2-1425461">
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:allowBackup="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name="dk.backbone.cfmapp.CoreFM_App_Android.CoreFM_App_Application" android:theme="@style/Theme.Sherlock.Light">
+        <activity android:label="@string/app_name" android:name=".Main_Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/about_title" android:name=".About_Activity"/>
+        <activity android:label="@string/menuitem_configuration" android:name=".Prefs_Activity"/>
+        <activity android:label="@string/placeme_title" android:name=".PlaceMe_Activity" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/areaselect_title" android:name=".Area_Select" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/sorting" android:name=".SortingOptionPopup_Activity" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/login_title" android:name=".Login_Activity"/>
+        <activity android:label="@string/log_title" android:name=".AppStatus_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Project_Activity"/>
+        <activity android:label="@string/app_name" android:name=".Addresses_Activity"/>
+        <activity android:label="@string/app_name" android:name=".DrawingsList_Activity"/>
+        <activity android:label="@string/app_name" android:name=".FlSiFa_Drawing_Activity"/>
+        <activity android:label="@string/app_name" android:name=".FlSiFa_RoomPolygons_Activity"/>
+        <activity android:label="@string/app_name" android:name=".FloorplanMarking_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Events_Activity"/>
+        <activity android:label="@string/event_change_status" android:name=".EventChangeStatus_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/event_change_checklistitem" android:name=".EventChangeChecklistItem_Activity" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/app_name" android:name=".Adhocs_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Instances_Activity"/>
+        <activity android:label="@string/app_name" android:name=".Instance_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Consumption_Activity"/>
+        <activity android:label="@string/meter_reading" android:name=".MeterReading_Activity" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/app_name" android:name=".Person_Activity"/>
+        <activity android:label="@string/app_name" android:name=".Company_Activity"/>
+        <activity android:label="@string/app_name" android:name=".Event_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Checklist_Activity"/>
+        <activity android:label="@string/app_name" android:name=".Adhoc_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".Flaws_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/app_name" android:name=".FlawForm_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/floorplan_title" android:name=".BuildingNavigator_Activity" android:theme="@style/Theme.Sherlock.Light.Dialog"/>
+        <activity android:label="@string/app_name" android:name=".BuildingSurveys_Activity"/>
+        <activity android:label="@string/app_name" android:name=".BuildingSurvey_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".BuildingSurveyAreas_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".BuildingSurvey_OneArea_Observations_Activity"/>
+        <activity android:label="@string/app_name" android:name=".BuildingSurvey_OneArea_OneChecklistItem_Activity" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:label="@string/app_name" android:name=".ObservationForm_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/app_name" android:name=".Observation_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistration_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistrations_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistrationAreas_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistration_OneArea_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistration_OneArea_Rooms_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstanceRegistration_OneArea_Instances_Activity"/>
+        <activity android:label="@string/app_name" android:name=".RoomForm_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/app_name" android:name=".InstanceForm_Activity" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="@string/app_name" android:name=".InfoGatherings_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InfoGathering_Activity"/>
+        <activity android:label="@string/app_name" android:name="InfoGatheringAreasForValues_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InfoGathering_OneAreaValues_Activity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/app_name" android:name=".Photo_Activity"/>
+        <activity android:label="@string/app_name" android:name=".BuildingElementForm_Activity"/>
+        <activity android:label="@string/app_name" android:name=".InstancesSelect_Activity"/>
+        <service android:name=".background.OSE_BackgroundScheduler"/>
+        <receiver android:name="CoreFMAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.net.wifi.WifiManager.NETWORK_STATE_CHANGED_ACTION"/>
+                <action android:name="android.net.wifi.WifiManager.WIFI_STATE_CHANGED_ACTION"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info"/>
+        </receiver>
+    </application>
+</manifest>

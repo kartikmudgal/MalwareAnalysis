@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.ganji.android">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <permission android:description="@string/read_subscribe_content_detail" android:label="@string/read_subscribe_content" android:name="com.ganji.android.permission.READ_SUBSCRIBE_CONTENT" android:protectionLevel="signature"/>
+    <permission android:description="@string/write_subscribe_content_detail" android:label="@string/write_subscribe_content" android:name="com.ganji.android.permission.WRITE_SUBSCRIBE_CONTENT" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.ganji.android.permission.READ_SUBSCRIBE_CONTENT"/>
+    <uses-permission android:name="com.ganji.android.permission.WRITE_SUBSCRIBE_CONTENT"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:hardwareAccelerated="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.ganji.android.ClientApplication" android:theme="@style/MyApp.Theme.Light.NoTitleBar" android:windowSoftInputMode="stateHidden">
+        <provider android:authorities="com.ganji.html5.localfile.1" android:multiprocess="true" android:name="com.ganji.android.jobs.html5.LocalFileContentProvider"/>
+        <activity android:name="com.ganji.android.control.LaunchActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="wx4c5690eb66e4e42a"/>
+            </intent-filter>
+        </activity>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.ganji.android.control.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.ganji.android.control.ACTION_MAIN_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.UnfrozenAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.GJLifeRegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.SubCategoryListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.NewFunctionIntroActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.GJLifeLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.ForgotPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.credit.CreditMessageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.WeiXinToGanJiLife" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:exported="true" android:label="@string/app_name" android:name="com.ganji.android.wxapi.WXEntryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.common.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.SetTimeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.SetInfoListDisplayModelActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.PostTitleListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.PostContentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.AgentPublishActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.template.control.PickXiaoquActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.HowToBeAnAgentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.OperateMsgListActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.ganji.android.action.VIEW_MESSAGE_LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.MessageActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.ganji.android.action.VIEW_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.PayActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.PayWebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.PayExplainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.ReportActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.UnfrozenAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.CollectActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.CityActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.SearchCityActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.FilterActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.DisplayContentImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.SearchCategroyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.LoadingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="赶集简易地图" android:name="com.ganji.android.control.WebMapActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.AboutScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.GjOperateActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.template.control.SecondHandPublicSucessActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.jobs.control.JobsMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.jobs.control.JobsPartTimeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.jobs.control.JobsPostListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.jobs.control.JobsPostContentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.jobs.control.JobsPostContentHTML5Activity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.jobs.control.JobsActivityCompanyCommentList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.jobs.control.JobsActivitySubmitCompanyComment" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.history.HistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.history.CallHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.myinfo.control.MemberCenterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.myinfo.control.MemberCenterPostContentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.myinfo.control.PhoneCreditActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.action.ActionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.myinfo.control.SmsDeleteActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.myinfo.control.SmsDeleteListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.jobs.control.MyWantedJob" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.jobs.control.JobsEmploymentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.secondhand.control.SecondHandActivity" android:screenOrientation="portrait"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.template.control.TemplateActivity" android:noHistory="false" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.template.control.FullImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.template.control.OptionActivitySecondhandCarBrandList" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.template.control.OptionActivitySecondhandCarSeriesList" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.template.control.OptionActivitySecondhandCarTypeList" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.template.control.TopConditionActivity" android:noHistory="false" android:screenOrientation="portrait"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.template.control.OrderContentActivity" android:noHistory="false" android:screenOrientation="portrait"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.template.control.TopConditionDes" android:noHistory="false" android:screenOrientation="portrait"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.lib.camera.CameraPicker" android:screenOrientation="landscape" android:taskAffinity="android.task.camera" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.ACTION_GET_GANJICAMERA_PHOTOLIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.camera.CameraPicker" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.ACTION_GET_GANJILIFECAMERA_PHOTOLIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:name="com.ganji.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:stateNotNeeded="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.ganji.zxing.client.android.action.CaptureActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.PhoneUploadPhotoActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.ACTION_PHONE_UPLOAD_PHOTOLIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.GJMapActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.BasePostListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.control.ContactActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.rss.control.RssCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.rss.control.RssSubCategroyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.rss.control.RssMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.rss.control.RssPostTitleListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.rss.control.RssPostContentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.rss.control.RssSetTimeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.rss.control.RssFilterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.friends.DisplayFriendsImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.webim.IMUserListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.webim.IMChatRoomActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.friends.FriendsDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsPrivateMsgActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.friends.FriendsPrivateMsgDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:launchMode="singleTask" android:name="com.ganji.android.friends.FriendsHomeManager" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsFilterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsDisplayImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.friends.GJFriendsLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.ganji.android.sina.ShareSina" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsRegisterLeadActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsInformActivity" android:screenOrientation="portrait" android:theme="@style/CustomDialogStyle"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsLifePhotosActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsCallBombActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsUpdateDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.FriendsSearchConditionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsHusbandWifeLooksActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.friends.user.FriendsUserFunActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.FeedbackNewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.control.FeedbackWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize|smallestScreenSize" android:name="com.ganji.android.phone.CalledCommentActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.ganji.android.phone.GJPhoneService"/>
+        <receiver android:name="com.ganji.android.rss.control.RssReceiver">
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_1"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_2"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_3"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_4"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_5"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_6"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_7"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_8"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_9"/>
+                <action android:name="com.ganji.android.intent.action.RSS_UPDATE_10"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/subscriber" android:scheme="content"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ganji.android.rss.control.GetDataService"/>
+        <receiver android:name="com.ganji.android.rss.control.GetDataReceiver">
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.ACTION_RSS_UPDATE_NOTIFICATION"/>
+                <action android:name="com.ganji.android.itnent.ACTION_RSS_CANCEL_NOTIFICATION"/>
+                <category android:name="com.ganji.android.itnent.CATEGORY_UPDATE_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ganji.android.webim.PollingAlarm">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ganji.android.action.POLLING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ganji.android.friends.AlarmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ganji.android.intent.action.FRIENDS_GET_DATA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ganji.android.webim.action.ACTION_FRIEND_PRIVATE_MSG_INCOMING_FROM_WEB_IM"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:launchMode="singleTask" android:name="com.tencent.tauth.TAuthView" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="auth"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.ganji.android.webim.IMOpenSocketReceiver">
+            <intent-filter>
+                <action android:name="com.ganji.android.action.ACTION_OPEN_SOCKET"/>
+                <action android:name="com.ganji.android.action.ACTION_CLOSE_SOCKET"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ganji.android.webim.IMPostDataReceiver">
+            <intent-filter>
+                <action android:name="com.ganji.android.webim.action.ACTION_WEB_IM_POST_NOT_RECV_MSG"/>
+                <action android:name="com.ganji.android.webim.action.ACTION_WEB_IM_MSG_TO_POST_NOTIFICATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ganji.android.friends.IMFriendDataReceiver">
+            <intent-filter>
+                <action android:name="com.ganji.android.webim.action.ACTION_WEB_IM_FRIEND_NOT_RECV_MSG"/>
+                <action android:name="com.ganji.android.webim.action.ACTION_WEB_IM_MSG_TO_FRIEND_NOTIFICATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ganji.android.data.status.UserStatusService"/>
+        <service android:name="com.ganji.android.camera.CameraService">
+            <intent-filter android:priority="1000">
+                <action android:name="com.ganji.android.camera.action.CameraService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="UMENG_APPKEY" android:value="50ab51185270155e85000060"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="yingyong04"/>
+    </application>
+</manifest>

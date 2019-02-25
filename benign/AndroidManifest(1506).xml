@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="mobi.infolife.weather.widget.snoopy" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="mobi.infolife.weather.widget.snoopy.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="mobi.infolife.weather.widget.snoopy.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="mobi.infolife.weather.widget.snoopy.App" android:supportsRtl="true" android:theme="@style/ApplicationTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name="mobi.infolife.weather.widget.snoopy.AppEnterActivity" android:screenOrientation="portrait" android:theme="@style/Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="mobi.infolife.weather.widget.snoopy.MainActivity" android:theme="@style/Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="mobi.infolife.weather.widget.snoopy.widget.SettingsActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:exported="true" android:name="mobi.infolife.weather.widget.snoopy.service.CoreService" android:process=":dae3">
+            <intent-filter>
+                <action android:name="mobi.infolife.weather.widget.snoopy.ACTION_CORE_SERVICE"/>
+                <action android:name="mobi.infolife.weather.widget.snoopy.ACTION_UPDATE_NOTIFICATION"/>
+            </intent-filter>
+        </service>
+        <activity android:name="mobi.infolife.weather.widget.snoopy.AddCityActivity1" android:screenOrientation="portrait" android:theme="@style/NoTitleTheme"/>
+        <activity android:name="mobi.infolife.weather.widget.snoopy.LocatingActivity" android:screenOrientation="portrait" android:theme="@style/NoTitleTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="mobi.infolife.weather.widget.snoopy.notify.NotificationActivity" android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+        <service android:exported="false" android:name="mobi.infolife.weather.widget.snoopy.beautywidget.BeautyWidgetService" android:process=":dae3">
+            <intent-filter>
+                <action android:name="mobi.infolife.weather.widget.snoopy.ACTION_WIDGET"/>
+            </intent-filter>
+        </service>
+        <receiver android:label="@string/app_name" android:name="mobi.infolife.weather.widget.snoopy.beautywidget.BeautyWidget4x2ProviderA" android:process=":dae3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/beauty_widget_4x2_a" android:value="true"/>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="mobi.infolife.weather.widget.snoopy.beautywidget.BeautyWidget4x2ProviderB" android:process=":dae3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/beauty_widget_4x2_b" android:value="true"/>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="mobi.infolife.weather.widget.snoopy.beautywidget.BeautyWidget4x2ProviderC" android:process=":dae3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/beauty_widget_4x2_c" android:value="true"/>
+        </receiver>
+        <service android:name="mobi.infolife.weather.widget.snoopy.Service2" android:process=":dae2"/>
+        <receiver android:name="mobi.infolife.weather.widget.snoopy.Receiver1" android:process=":dae3"/>
+        <receiver android:name="mobi.infolife.weather.widget.snoopy.Receiver2" android:process=":dae2"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="mobi.infolife.weather.widget.snoopy.TipsActivity" android:screenOrientation="portrait" android:theme="@style/Fullscreen"/>
+        <service android:enabled="true" android:exported="true" android:name="mobi.infolife.weather.widget.snoopy.adv.AdvService" android:process=":adv">
+            <intent-filter>
+                <action android:name="mobi.infolife.weather.widget.snoopy.ACTION_ADV_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="mobi.infolife.weather.widget.snoopy.adv.NotificationAdvService" android:process=":notifyadv">
+            <intent-filter>
+                <action android:name="mobi.infolife.weather.widget.snoopy.ACTION_NOTIFY_ADV_SERVICE"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="mobi.infolife.weather.widget.snoopy.adv.NotificationAdvActivity" android:process=":notifyadv" android:screenOrientation="portrait" android:theme="@style/NoTitleTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="mobi.infolife.weather.widget.snoopy.WidgetHelpActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@mipmap/ic_ad" android:label=" " android:name="com.google.android.gms.ads.AdActivity" android:process=":adv" android:taskAffinity="mobi.infolife.weather.widget.snoopy.second" android:theme="@android:style/Theme.Translucent"/>
+        <service android:enabled="true" android:exported="true" android:name="mobi.infolife.weather.widget.snoopy.adv.MyService" android:process=":adv">
+            <intent-filter>
+                <action android:name="mobi.infolife.weather.widget.snoopy.adv.ACTION_MY_SERVICE"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="mobi.infolife.weather.widget.snoopy.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="mobi.infolife.weather.widget.snoopy.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="mobi.infolife.weather.widget.snoopy"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

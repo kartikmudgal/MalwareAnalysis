@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cnr.porsche">
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name=".ui.MainActivity" android:screenOrientation="nosensor">
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.StartupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.DisplayActivity" android:screenOrientation="portrait"/>
+        <receiver android:name=".utils.CustomReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="com.cna.TIMER_SWITCH_INTERNAL"/>
+                <action android:name="com.cna.START_TASKS"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.datouniao.AdPublisher.AdsService">
+            <intent-filter>
+                <action android:name="com.datouniao.AdPublisher.AdsService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.datouniao.AdPublisher.AdsOffersWebView"/>
+        <meta-data android:name="DTN_APP_ID" android:value="b3a3f4aa-3886-42cb-afde-af7e1c04d2bf"/>
+        <meta-data android:name="DTN_SECRET_KEY" android:value="gkyhzutcgefe"/>
+        <meta-data android:name="DTN_PLACE_ID" android:value="gfan"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="50ed1df252701501c400000c"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="gfan"/>
+    </application>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+</manifest>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.mhriley.spendingtracker" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.fingerprint" android:required="false"/>
+    <application android:allowBackup="true" android:fullBackupContent="@xml/auto_backup" android:icon="@drawable/icon" android:label="Spending Tracker" android:name="md533a15f0a5fc3157a962bbcdb80d897a6.SpendingTrackerApp" android:theme="@style/Theme.Mhriley">
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleTask" android:name="md5e757c507ca854ef1e165ce43f7b6f1af.AuthActivity">
+            <intent-filter>
+                <data android:scheme="db-qmpwxl60qoac4b6"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="firebase_crash_collection_enabled" android:value="false"/>
+        <service android:enabled="true" android:exported="false" android:label="Dropbox Sync" android:name="com.dropbox.sync.android.DbxSyncService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.amazon.device.ads.AdActivity"/>
+        <receiver android:exported="true" android:label="Spending Tracker" android:name="com.mhriley.spendingtracker.Widget">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget"/>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+                <action android:name="ACTION.WIDGET.CALLBACK"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md5d38bb25ac9826a9c366a2247648f0715.WidgetService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:label="Backups" android:name="md53ad497fea3b19a8f7577a1e38fef685c.BackupsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="" android:name="md53ad497fea3b19a8f7577a1e38fef685c.CategoryActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.CategoriesActivity"/>
+        </activity>
+        <activity android:label="Icons" android:name="md53ad497fea3b19a8f7577a1e38fef685c.CategoryIconsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="" android:name="md53ad497fea3b19a8f7577a1e38fef685c.CategoryPickerActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TransactionActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Export to CSV" android:name="md53ad497fea3b19a8f7577a1e38fef685c.ExportActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="Help" android:name="md53ad497fea3b19a8f7577a1e38fef685c.HelpActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="Passcode" android:name="md53ad497fea3b19a8f7577a1e38fef685c.PasscodeActivity"/>
+        <activity android:label="Pdf Viewer" android:name="md53ad497fea3b19a8f7577a1e38fef685c.PdfViewActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="" android:name="md53ad497fea3b19a8f7577a1e38fef685c.ProfileActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.ProfilesActivity"/>
+        </activity>
+        <activity android:label="Accounts" android:name="md53ad497fea3b19a8f7577a1e38fef685c.ProfilesActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="Reports" android:name="md53ad497fea3b19a8f7577a1e38fef685c.ReportsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="Automatic Backup" android:name="md53ad497fea3b19a8f7577a1e38fef685c.AutoBackupActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Budget Mode" android:name="md53ad497fea3b19a8f7577a1e38fef685c.BudgetModeActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Carry Over" android:name="md53ad497fea3b19a8f7577a1e38fef685c.CarryOverActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Reminders" android:name="md53ad497fea3b19a8f7577a1e38fef685c.RemindersActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Settings" android:name="md53ad497fea3b19a8f7577a1e38fef685c.SettingsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="Setting" android:name="md53ad497fea3b19a8f7577a1e38fef685c.SettingSwitchActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Dropbox Sync" android:name="md53ad497fea3b19a8f7577a1e38fef685c.SyncActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:label="Time Period" android:name="md53ad497fea3b19a8f7577a1e38fef685c.TimePeriodActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.SettingsActivity"/>
+        </activity>
+        <activity android:icon="@drawable/icon" android:label="Spending Tracker" android:name="md53ad497fea3b19a8f7577a1e38fef685c.TabActivity" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="md53ad497fea3b19a8f7577a1e38fef685c.TransactionActivity" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="spendingtracker.views.TabActivity"/>
+        </activity>
+        <activity android:label="Widget Options" android:name="com.mhriley.spendingtracker.WidgetConfigActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <service android:name="md59c66760325329a31f107eeaec22a1dbf.BackupService"/>
+        <receiver android:name="md59ef98b7236ea622ab019db9d612f30ab.AlarmReceiver"/>
+        <provider android:authorities="com.mhriley.spendingtracker.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.2"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <provider android:authorities="com.mhriley.spendingtracker.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+</manifest>

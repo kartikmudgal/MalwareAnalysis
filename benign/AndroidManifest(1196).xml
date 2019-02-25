@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.thefansbook.hm">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name=".FansbookApp" android:theme="@style/AppTheme">
+        <provider android:authorities="hm" android:name=".Provider"/>
+        <activity android:name="com.thefansbook.module.main.activity.FansBookActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.thefansbook.module.main.activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.notification.NotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.fans.FansActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.fans.MyFansActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.fans.NearbyFansActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.fans.MyFollowingFansActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.fans.RecommendFansActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.GiftGalleryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.AccountEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.PersonalBuzzActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.zone.activity.ZoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.GiftsCategoriesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.PublishStatusActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.thefansbook.module.zone.activity.UserAlbumDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.buzz.BuzzActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.buzz.BuzzDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.buzz.BuzzRepostActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.thefansbook.module.buzz.BuzzCommentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.thefansbook.module.buzz.BuzzCommentListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.buzz.LatestBuzzActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.buzz.MyFollowingBuzzActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaWeiboActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaWeiboDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaWeiboCommentListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaImageViewActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaWeiboCommentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.thefansbook.module.officialweibo.SinaWeiboRepostActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.thefansbook.module.settings.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.AuthorizeSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.FaqActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.FaqDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.CooperationActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.thefansbook.module.main.activity.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.main.activity.WebViewActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:name="com.thefansbook.module.ranklist.RankListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.ranklist.RankListItemActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.about.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.goldcoin.GoldCoinActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.SuggestionFeedbacksActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="net.youmi.android.appoffers.YoumiOffersActivity"/>
+        <activity android:name="com.thefansbook.module.chatting.MainChattingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:name="com.thefansbook.module.chatting.SubChattingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officalalbum.OfficalAlbumActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officalalbum.OfficalAlbumDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.officalalbum.PhotoCommentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.shows.ShowsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.shows.ShowsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.shows.ApplyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.news.NewsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar"/>
+        <activity android:name="com.thefansbook.module.news.NewsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.vip.VipActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.vip.CommodityActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.vip.OwnActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.zone.activity.ReportsCreateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thefansbook.module.settings.BlackListActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="YOUMI_CHANNEL" android:value="0"/>
+        <meta-data android:name="DTN_PLACE_ID" android:value="DTN"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.datouniao.AdPublisher.AdsOffersWebView"/>
+        <service android:name="com.datouniao.AdPublisher.AdsService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.waps.OffersWebView"/>
+        <service android:name="com.thefansbook.module.main.activity.ChatService"/>
+        <service android:name="com.thefansbook.framework.xmpp.XmppService"/>
+    </application>
+</manifest>

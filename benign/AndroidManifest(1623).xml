@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="toplab18.app.simpleststopwatch2" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission-sdk-23 android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="android.support.multidex.MultiDexApplication" android:theme="@android:style/Theme.Holo.Light">
+        <receiver android:exported="true" android:name="com.tenjin.android.TenjinReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.calldorado.TenjinAPIKey" android:value="C1GW7VB1SZUR7OVSS6JT3ZQ1A6ECEX1U"/>
+        <activity android:label="@string/app_name" android:name="toplab18.app.simpleststopwatch2.MainActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.Holo.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="io.fabric.ApiKey" android:value="a043ef194dea51ca35888d56c94d03362e2b86b8"/>
+        <receiver android:enabled="true" android:name="toplab18.app.simpleststopwatch2.BroadcastFromCDO">
+            <intent-filter>
+                <action android:name="com.cdo.ad.fill_prio_success"/>
+                <action android:name="com.cdo.ad_too_old.stats"/>
+                <action android:name="com.cdo.ad.empty"/>
+                <action android:name="com.cdo.ad.load"/>
+                <action android:name="com.cdo.ad.prio_mgr"/>
+                <action android:name="com.cdo.ad.recovered"/>
+                <action android:name="com.cdo.ad.impression"/>
+                <action android:name="com.cdo.ad.impression_error"/>
+                <action android:name="com.cdo.ad.impression_time"/>
+                <action android:name="com.cdo.network.recovered"/>
+                <action android:name="com.cdo.network.started"/>
+                <action android:name="com.cdo.page.impression"/>
+                <action android:name="com.cdo.rapporting.other"/>
+                <action android:name="com.cdo.rapporting.provider"/>
+                <action android:name="com.cdo.rapporting.dontstart"/>
+                <action android:name="com.cdo.rapporting.settingstart"/>
+                <action android:name="com.cdo.rapporting.settings"/>
+                <action android:name="com.cdo.rapporting.nullcheck"/>
+                <action android:name="com.cdo.rapporting.phonestate.binding"/>
+                <action android:name="com.cdo.rapporting.network"/>
+                <action android:name="com.cdo.rapporting.waterfall"/>
+                <action android:name="com.cdo.rapporting.waterfall_exceptions"/>
+                <action android:name="com.cdo.rapporting.waterfall.fillspecific"/>
+                <action android:name="com.cdo.rapporting.waterfall_status_loaders"/>
+                <action android:name="com.cdo.rapporting.waterfall_chain"/>
+                <action android:name="com.cdo.service.stopped"/>
+                <action android:name="com.cdo.service.started"/>
+                <action android:name="com.cdo.service.killed"/>
+                <action android:name="com.cdo.stat_prio"/>
+                <action android:name="com.cdo.stat_prio_used"/>
+                <action android:name="com.cdo.timer.start"/>
+                <action android:name="com.cdo.rapporting.waterfall_logs"/>
+                <action android:name="com.cdo.rapporting.waterfall_dfp_logs"/>
+                <action android:name="com.cdo.rapporting.waterfall_facebook_logs"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.calldorado.android.actionreceiver.ActionReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <action android:name="com.calldorado.android.intent.SEND_RATING_REQ"/>
+                <action android:name="com.calldorado.android.intent.SEARCH"/>
+                <action android:name="com.calldorado.android.intent.INITSDK"/>
+                <action android:name="com.calldorado.android.intent.COMM_END"/>
+                <action android:name="com.calldorado.android.intent.WIC_POSITION"/>
+                <action android:name="com.calldorado.android.intent.MAKE_CALL"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.calldorado.android.intent.TRIGGER_SEND"/>
+                <action android:name="com.calldorado.android.intent.PACEMAKER"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="com.calldorado.android.intent.DYNAMIC_RE_ENGAGEMENT"/>
+                <action android:name="com.calldorado.android.intent.PRIORITY"/>
+                <action android:name="com.calldorado.android.intent.HEARTBEAT"/>
+                <action android:name="com.calldorado.android.intent.SET_CUSTOM_ICON"/>
+                <action android:name="com.calldorado.android.intent.CONTACT_MANUAL"/>
+                <action android:name="com.calldorado.android.intent.TARGETING"/>
+                <action android:name="com.calldorado.android.intent.SPAM_REQUEST"/>
+                <action android:name="com.calldorado.android.intent.SCRAPPING_COMM_END"/>
+                <action android:name="com.calldorado.android.intent.THROTTLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.calldorado.android.ui.SettingsActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="" android:name="com.calldorado.permissions.PermissionCheckActivity" android:taskAffinity="com.ciamedia.permissions.PermissionCheckActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="" android:name="com.calldorado.permissions.OptInActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.smaato.soma.ExpandedBannerActivity"/>
+        <activity android:name="com.smaato.soma.interstitial.InterstitialActivity"/>
+        <activity android:label="" android:name="com.calldorado.manual_search.LoadingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.calldorado.android.service.CalldoradoCommunicationService"/>
+        <service android:name="com.calldorado.android.ad.AdLoadingService"/>
+        <service android:name="com.calldorado.android.GoogleSyncService"/>
+        <service android:name="com.calldorado.android.service.DataUtilityService"/>
+        <service android:name="com.calldorado.analytics.CalldoradoStatsCommunicationService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.calldorado.analytics.CalldoradoStatsReceiver"/>
+        <activity android:name="com.calldorado.android.ui.CallerIdActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <receiver android:name="com.calldorado.android.notifications.LocalNotificationReceiver"/>
+        <service android:name="com.p3group.insight.service.InsightService"/>
+        <service android:name="com.p3group.insight.service.ConnectivityService"/>
+        <receiver android:name="com.p3group.insight.receiver.InsightReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobilesdk.receivers.MInstallReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <meta-data android:name="com.calldorado.AccountId" android:value="a1-63b15591-f368-4810-bdea-235c8773beeb"/>
+        <meta-data android:name="com.calldorado.AppId" android:value="b0-2000eda2-9736-4165-a890-a207b37785f1"/>
+    </application>
+</manifest>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.andromo.dev315366.app308000">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_icon" android:label="@string/app_name" android:name="AndromoAcraApplication">
+        <activity android:label="@string/app_name" android:name=".Radio46729" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".AudioService">
+            <intent-filter>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.START"/>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.PLAY"/>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.PAUSE"/>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.SKIP"/>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.REWIND"/>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.STOP"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.andromo.dev315366.app308000.audio.action.URL"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".AudioIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name=".Radio46729_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46730" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46730_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46731" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46731_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46732" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46732_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46733" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46733_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46734" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46734_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46735" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46735_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46736" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46736_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46737" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46737_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46738" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46738_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46739" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46739_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46740" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46740_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46741" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46741_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46742" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46742_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46743" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46743_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46744" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46744_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46745" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46745_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46746" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46746_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46747" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46747_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46748" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46748_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46749" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46749_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46750" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46750_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46751" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46751_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46752" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46752_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46753" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46753_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46754" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46754_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46755" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46755_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46756" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46756_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46757" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46757_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio46758" android:parentActivityName="com.andromo.dev315366.app308000.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.andromo.dev315366.app308000.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio46758_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo.Dashboard_000">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+    </application>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>

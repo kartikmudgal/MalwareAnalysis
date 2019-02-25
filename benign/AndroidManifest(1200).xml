@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.thinker.swift" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <permission android:name="com.thinker.swift.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.Manifest.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.thinker.swift.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <application android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:icon="@drawable/logo" android:label="@string/app_name" android:largeHeap="true" android:name="com.thinker.swift.MyApplication" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.thinker.swift.WelcomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.thinker.swift.UpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.QrcodeReaderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="com.thinker.swift.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.thinker.swift.CamAddWaysActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamSearchingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamConnectingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddSearchedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddSaveActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.GuideAddCamActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.GuideWiredConActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.JpushSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.VersionInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CreateQrcodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep1" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep2" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep3" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep6" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep7" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep8" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep9" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep10" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep11" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.ConnectSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.thinker.swift.VideoActivity1" android:screenOrientation="sensor" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.thinker.swift.VideoActivity2" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.thinker.swift.CamAddGuideWps4Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep5" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideLineActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideLine2Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideLine3Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep4" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideLine5Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideStep6_2" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamAddGuideLine7Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.GuideConCheckActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamFileListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.CamFilesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.AlarmActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.AlarmLogActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.LogDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.PictureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.DialogPtzControl" android:theme="@style/MyDialogStyle"/>
+        <activity android:name="com.thinker.swift.PictureViewDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.thinker.swift.VideoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.MyWebView" android:screenOrientation="portrait"/>
+        <activity android:name="com.thinker.swift.MyVideoPlayer" android:screenOrientation="sensor"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:launchMode="singleTop" android:name="io.vov.vitamio.activity.InitActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="cn.jpush.android.ui.PushActivity" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.thinker.swift"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.DownloadService"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="cn.jpush.android.service.DaemonService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService"/>
+                <category android:name="com.thinker.swift"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.thinker.swift"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <receiver android:enabled="true" android:name="com.thinker.jpush.MyReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.thinker.swift"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="402e0dfdd14fc0796424a9b2"/>
+        <activity android:label="@string/title_activity_alarm_show" android:name="com.thinker.swift.AlarmShowActivity"/>
+        <activity android:name="com.thinker.swift.TFCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:name="com.thinker.swift.TFCardVideoView" android:screenOrientation="sensor" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.wifi.config.CameraAPSearchctivity"/>
+    </application>
+</manifest>

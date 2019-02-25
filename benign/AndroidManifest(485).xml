@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gexing.zipai.ui">
+    <permission android:name="com.gexing.zipai.ui.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="com.gexing.zipai.ui.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <application android:icon="@drawable/logo" android:label="@string/app_name" android:name="com.gexing.zipai.app.MyApplication" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="BaiduMobAd_STAT_ID" android:value="98a75c621a"/>
+        <meta-data android:name="BaiduMobAd_CHANNEL" android:value="Baidu Market"/>
+        <meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="false"/>
+        <meta-data android:name="BaiduMobAd_SEND_STRATEGY" android:value="APP_START"/>
+        <meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false"/>
+        <meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="true"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="519b253856240b7df0017e4b"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="APPCHINA_APP"/>
+        <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.umeng.fb.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.umeng.fb.ui.FeedbackConversation"/>
+        <service android:exported="true" android:name="com.umeng.common.net.DownloadingService" android:process=":DownloadingService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="cn.jpush.android.ui.PushActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.gexing.zipai.ui"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.DownloadService"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.gexing.zipai.ui"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <receiver android:name="gexing.ui.framework.jpush.JPushNoticeReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <category android:name="com.gexing.zipai.ui"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="0b1b52c8cadf2a151caa6e25"/>
+        <activity android:label="@string/app_name" android:name=".LogoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".channel.ShaituActivity"/>
+        <activity android:name=".channel.BizhiActivity"/>
+        <activity android:name=".channel.ZipaiActivity"/>
+        <activity android:name=".channel.ShaituActivity2"/>
+        <activity android:name=".channel.RijiActivity"/>
+        <activity android:name=".channel.TouxiangActivity"/>
+        <activity android:name=".channel.QianmingActivity"/>
+        <activity android:name=".channel.WangmingActivity"/>
+        <activity android:name=".channel.WaterfallActivityf"/>
+        <activity android:name=".favorite.ShaituFavriteActivity"/>
+        <activity android:name=".favorite.ZipaiFavriteActivity"/>
+        <activity android:name=".favorite.BizhiFavriteActivity"/>
+        <activity android:name=".favorite.ShaituFavriteWaterfallActivity"/>
+        <activity android:name=".favorite.TouxiangFavriteActivity"/>
+        <activity android:name=".favorite.TouxiangSingleFavriteActivity"/>
+        <activity android:name=".favorite.RijiFavriteActivity"/>
+        <activity android:name=".favorite.WangmingFavriteActivity"/>
+        <activity android:name=".favorite.QianmingFavriteActivity"/>
+        <activity android:name=".itemfinal.ShaituFinalActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".itemfinal.RijiFinalActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".itemfinal.TouxiangFinalActivity"/>
+        <activity android:name=".itemfinal.ZipaiFinalActivity"/>
+        <activity android:name=".single.AboutActivity"/>
+        <activity android:name=".single.ChangeNicknameActivity"/>
+        <activity android:name=".single.ChangeXuanyanActivity"/>
+        <activity android:name=".single.FavoriteActivity"/>
+        <activity android:name=".single.MainActivity"/>
+        <activity android:name=".single.LoginActivity"/>
+        <activity android:name=".single.LabelActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".single.UserInfoActivity"/>
+        <activity android:name=".single.UserItemActivity"/>
+        <activity android:name=".single.RegisteActivity"/>
+        <activity android:name=".single.MessageActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".single.NoticeActivity"/>
+        <activity android:name=".single.InfoSetActivity"/>
+        <activity android:name=".single.WheelShowActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".single.UserInfoMoreActivity"/>
+        <activity android:name=".single.ShenmingActivity"/>
+        <activity android:name=".single.UpdateTipsActivity"/>
+        <activity android:launchMode="singleTask" android:name=".single.NewVersionActivity"/>
+        <activity android:name=".single.UserAdviceActivity"/>
+        <activity android:name=".single.PicFinalActivity"/>
+        <activity android:name=".single.FAQActivity"/>
+        <activity android:name=".single.ThemeActivity"/>
+        <activity android:name=".single.ZhuantiMainActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".single.EditPhotoActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".single.CommentActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".user.UserActivity"/>
+        <activity android:name=".useritem.UserShaituActivity"/>
+        <activity android:name=".useritem.UserTouxiangActivity"/>
+        <activity android:name=".useritem.UserRijiActivity"/>
+        <activity android:name=".useritem.UserWangmingActivity"/>
+        <activity android:name=".useritem.UserQianmingActivity"/>
+        <activity android:name=".write.WriteTouxiangActivity"/>
+        <activity android:name=".write.WriteQianmingActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".write.WriteWangmingActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".write.WriteRijiActivity"/>
+        <activity android:name=".write.WriteRijiEtActivity"/>
+        <activity android:name=".write.WriteShaituActivity"/>
+        <activity android:name=".write.WriteShaituActivityNew"/>
+        <activity android:name=".write.WriteZipaiActivity"/>
+        <activity android:name=".zhuanti.ZhuantiListActivity"/>
+        <activity android:name=".zhuanti.ZhuantiActivity"/>
+        <activity android:name=".zhuanti.ZhuantiLabelActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".ProgressActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:launchMode="singleTask" android:name="com.gexing.zipai.ui.single.AppActivity"/>
+        <activity android:name="com.gexing.zipai.ui.single.NotificationWebViewActivity"/>
+        <service android:name="com.gexing.zipai.logic.MainService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:largeHeap="true" android:name="com.aviary.android.feather.FeatherActivity" android:screenOrientation="unspecified" android:theme="@style/FeatherDefaultTheme.Custom"/>
+        <receiver android:exported="true" android:name="com.aviary.android.feather.library.receivers.AviarySystemReceiver" android:process=":feather_system_receiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.gexing.zipai.ui.HiResProvider" android:exported="false" android:name="com.aviary.android.feather.library.providers.FeatherContentProvider" android:process=":standalone"/>
+    </application>
+    <intent-filter>
+        <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:mimeType="text/plain"/>
+    </intent-filter>
+</manifest>

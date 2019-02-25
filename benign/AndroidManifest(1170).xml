@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.superapps.browser" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.android.ContactWidget.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:maxSdkVersion="20" android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.software.home_screen" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <meta-data android:name="android.max_aspect" android:value="2.5"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+    <application android:allowBackup="false" android:configChanges="locale" android:hardwareAccelerated="true" android:icon="@drawable/logo" android:label="@string/app_name" android:largeHeap="true" android:name="com.superapps.browser.app.SuperBrowserApplication" android:supportsRtl="true" android:theme="@style/BrowserTheme">
+        <meta-data android:name="xwalk_enable_download_mode" android:value="enable"/>
+        <meta-data android:name="xwalk_verify" android:value="disable"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.superapps.browser.main.AppEnterActivity" android:theme="@style/Theme.notAnimation"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.superapps.browser.main.SuperBrowserActivity" android:theme="@style/BrowserTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="about"/>
+                <data android:scheme="javascript"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:scheme="inline"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/x-webarchive-xml"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme=""/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.superapps.browser.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme=""/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.superapps.browser.CLIPBOARD_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.superapps.browser.NEWS_PUSH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.superapps.browser.searchbox.notification"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:name="com.superapps.browser.main.H5GameActivity" android:screenOrientation="portrait" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.bookmark.BookMarkAndHistoryActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.offlinereader.OfflineReaderListActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.offlinereader.OfflineReaderActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:excludeFromRecents="true" android:name="com.superapps.copy.SharedAppSettingsActivity" android:taskAffinity="com.superapps.copy" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.superapps.launcher.snsshare.SnsShareDialogActivity" android:theme="@style/dialog"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.SettingsActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.launcher.search.SearchEngineActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.BrowserDataClearActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.FontSizeSettingActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.FlashSettingsActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.adblock.AdBlockSettingActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.adblock.MarkedAdManageActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.AdjustNightModeBrightnessActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.homepage.manager.DisplaySettingActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.homepage.HomeTopSiteAddActivity" android:theme="@style/AnimTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.superapps.browser.shortcut.ShortcutEnterActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:icon="@drawable/logo" android:label="@string/app_name" android:name="com.superapps.browser.shortcut.AddWebsiteShortcutActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.nativenews.activity.NewsActivity" android:process=":news" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.nativenews.activity.NewsStoreActivity" android:process=":news" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.nativenews.activity.NewsDetailsActivity" android:process=":news" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.mnt.bat_app_key" android:value="HWGJ81XGTTFZ3DA3H6V62YP0"/>
+        <meta-data android:name="mob_power_app_Id" android:value="92306"/>
+        <meta-data android:name="mob_power_api_key" android:value="6dfe4e12177e42a45ad1bfc8f2209e2a"/>
+        <service android:exported="true" android:name="com.power.PowerService" android:permission="android.permission.BIND_JOB_SERVICE" android:persistent="true"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.power.PowerReceiver">
+            <intent-filter>
+                <action android:name="com.mobpower.sdk.probe"/>
+                <action android:name="com.mobpower.sdk.probe.action"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <action android:name="android.intent.action.TIME_TICK"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.superapps.browser.service.CoreService" android:process=":core">
+            <intent-filter>
+                <action android:name="com.superapps.browser.show.searchbox.notification"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/app_name" android:name="com.superapps.launcher.wallpaper.SuperBrowserWallPaperService" android:permission="android.permission.BIND_WALLPAPER" android:process=":wallpaper">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/livewallpaper"/>
+        </service>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:exported="true" android:name="com.superapps.browser.receiver.PlayReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:process=":core">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.superapps.browser.receiver.StartReceiver" android:process=":core">
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="com.superapps.widgets.SearchWidgetProvider" android:process=":core">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/search_box_widget_provider"/>
+        </receiver>
+        <provider android:authorities="com.superapps.browser.processprovider" android:exported="false" android:name="com.superapps.browser.app.ProcessProvider"/>
+        <provider android:authorities="com.superapps.browser.sharepref" android:exported="false" android:name="com.superapps.browser.statistic.sp.SharedPrefProvider" android:process=":core"/>
+        <provider android:authorities="org.saturn.stark.native.sharePref.Provider_com.superapps.browser" android:exported="false" android:name="org.saturn.stark.share.MutiProcessSharedPrefProvider" android:process=":core"/>
+        <provider android:authorities="com.superapps.browser.provider.Browser" android:exported="false" android:name="com.superapps.browser.provider.BrowserProvider"/>
+        <provider android:authorities="com.superapps.browser.provider.download" android:exported="false" android:name="com.superapps.browser.provider.DownloadProvider" android:process=":core"/>
+        <provider android:authorities="com.superapps.browser.provider.download2" android:exported="false" android:name="com.superapps.browser.provider.DownloadProvider2"/>
+        <provider android:authorities="com.superapps.browser.provider.UPLOAD" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <provider android:authorities="com.zurichsdk.ZurichProvider_com.superapps.browser" android:enabled="true" android:exported="false" android:name="com.apusapps.libzurich.ZurichProvider"/>
+        <provider android:authorities="com.superapps.downloads" android:exported="false" android:name="com.superapps.browser.download_v2.DownloadProvider" android:process=":core"/>
+        <receiver android:exported="false" android:name="com.superapps.browser.download_v2.DownloadReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="com.superapps.browser.download.DOWNLOAD_WAKEUP"/>
+                <action android:name="com.superapps.browser.download.DOWNLOAD_OPEN"/>
+                <action android:name="com.superapps.browser.download.DOWNLOAD_LIST"/>
+                <action android:name="com.superapps.browser.download.DOWNLOAD_HIDE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.download_v2.DownloadListActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.download_v2.location.FileExplorerActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.download_v2.location.EditDownloadFileNameActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.bookmark.EditActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.superapps.browser.privacy.ui.activity.PatternActivity" android:screenOrientation="portrait" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:label="@string/privacy_sites" android:launchMode="singleTask" android:name="com.superapps.browser.privacy.ui.activity.PrivacyHomeActivity" android:parentActivityName="com.superapps.browser.main.SuperBrowserActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:label="@string/add_privacy_sites" android:name="com.superapps.browser.privacy.ui.activity.PrivacyAddSitesActivity" android:parentActivityName="com.superapps.browser.privacy.ui.activity.PrivacyHomeActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:label="@string/privacy_question_set_activity" android:name="com.superapps.browser.privacy.ui.activity.PrivacyQuestionSetActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:label="@string/privacy_question_add_url" android:name="com.superapps.browser.privacy.ui.activity.PrivacyAddUrlActivity" android:parentActivityName="com.superapps.browser.privacy.ui.activity.PrivacyAddSitesActivity" android:theme="@style/AnimTheme"/>
+        <provider android:authorities="org.homeplanet.coreservice.provider_com.superapps.browser" android:enabled="true" android:exported="false" android:name="org.homeplanet.coreservice.ServiceProvider" android:process=":core"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.ad.locker.LockerSettingActivity" android:theme="@style/AnimTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="org.saturn.stark.interstitial.comb.activity.NativeAdActivity" android:taskAffinity="com.stark.interstitial.custom" android:theme="@style/custom_dialog_Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTop" android:name="org.mimas.notify.FbDialogActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.FbDialogActivity" android:theme="@style/dialog_Theme"/>
+        <receiver android:name="org.mimas.notify.NotifyUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.notifyads.UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotificationActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyBoostAdActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotificationActivity" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyBoostCardActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotificationActivity" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyCleanFlowActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyCleanFlowActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyCleanMiddleActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyCleanMiddleActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:name="org.enceladus.callshow.activate.CallShowProtectReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="org.enceladus.callshow.module.CallShowProtectService" android:process=":core"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.trade.popupad.module.scene.popup.ui.ScenePopupActivity" android:noHistory="true" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.trade.popupad.module.scene.popup.ui.ScenePopupActivity" android:theme="@style/popup_dialog_Theme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTask" android:name="org.tercel.searchlocker.activity.LockerWebViewActivity" android:process=":core" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.augeapps.battery.fview.LockerActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.battery.fview.LockerActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTop" android:name="com.augeapps.guide.TransparentGuideActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.TransparentGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.locker.activity.DismissActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.DismissActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.guide.DropPermissionGuideActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.DropPermissionGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.guide.LockerFullScreenGuideActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.LockerFullScreenGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.augeapps.battery.activity.ScreenLockSettingActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.battery.activity.ScreenLockSettingActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleInstance" android:name="com.augeapps.weather.activity.LockerWeatherSettingActivity" android:process=":core" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.augeapps.weather.activity.WeatherDetailActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.weather.activity.WeatherDetailActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <service android:enabled="true" android:exported="true" android:name="com.augeapps.battery.ChargingCoreService" android:process=":core">
+            <intent-filter>
+                <action android:name="com.battery.c.model.ACTION_CHARGING"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.boost.LoadingBoosterResultActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBoosterResultActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.battery.LoadingBatteryResultActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBatteryResultActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.battery.LoadingBatteryScanActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBatteryScanActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <provider android:authorities="org.saturn.sdk.coexist.provider_com.superapps.browser" android:enabled="true" android:exported="true" android:name="com.augeapps.coexist.LockerCoexistProvider" android:process=":core"/>
+        <receiver android:name="com.augeapps.notification.receiver.SMSReceiver" android:process=":core"/>
+        <service android:enabled="true" android:exported="false" android:name="com.libscene.userscene.SceneService" android:process=":core"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.staturn.usersdk.UserActivity" android:screenOrientation="portrait" android:taskAffinity="org.staturn.usersdk.UserActivity" android:theme="@style/Theme.notAnimation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.saturn.splash.sdk.activity.SplashMainActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.splash.sdk.activity.SplashMainActivity" android:theme="@style/Theme.notAnimation"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.saturn.splash.sdk.stark.SplashStarkActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="org.saturn.splash.sdk.stark.SplashStarkActivity" android:theme="@style/Theme.notAnimation"/>
+        <service android:enabled="true" android:exported="true" android:name="org.saturn.splash.sdk.stark.SplashService" android:process=":core"/>
+        <service android:enabled="true" android:exported="true" android:name="org.saturn.splash.sdk.service.SplashLoadDataService" android:process=":core"/>
+        <service android:exported="true" android:name="org.enceladus.appexit.monitor.AppLoggingService" android:process=":active"/>
+        <service android:name="org.enceladus.appexit.monitor.InnerService" android:process=":active"/>
+        <activity android:excludeFromRecents="true" android:name="org.enceladus.guide.UsageGuideTempActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:multiprocess="true" android:name="org.enceladus.appopen.SplashActivity" android:taskAffinity="org.enceladus.appopen.SplashActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:name="org.enceladus.security.ProtectReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.facebook.ads.AudienceNetworkActivity" android:taskAffinity="com.facebook.ads.AudienceNetworkActivity"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.mimas.uninstall.ui.CleanActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity="com.mimas.uninstall.ui.CleanActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:excludeFromRecents="true" android:name="com.mimas.uninstall.AdService" android:process=":core"/>
+        <service android:enabled="true" android:exported="false" android:name="org.homeplanet.coreservice.BinderService" android:process=":core"/>
+        <receiver android:exported="true" android:name="org.neptune.receiver.PlayReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:process=":core">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.superapps.browser.account.BrowserLoginActivity"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1826400467592489" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:name="com.superapps.browser.userpolicy.BrowserUserPolicyActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":core"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService" android:process=":core"/>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="false" android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" android:process=":core">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.evernote.android.job.JobRescheduleService" android:process=":core"/>
+        <receiver android:name="com.wasp.sdk.push.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:process=":core">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.superapps.browser"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.wasp.sdk.push.gcm.PushGatewayService" android:process=":core"/>
+        <provider android:authorities="com.superapps.browser.push.db" android:exported="false" android:name="com.wasp.sdk.push.data.DbProvider" android:process=":core"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.main.OpenVideoUrlActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.vungle.app.key" android:value="5a1e13dd8651ac977400df46"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.VideoFullScreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.MraidFullScreenAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.FlexViewAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <service android:exported="false" android:name="com.lachesis.innerservice.PlutoService" android:process=":core"/>
+        <service android:exported="false" android:name="com.lachesis.innerservice.InnerService" android:process=":core"/>
+        <service android:exported="true" android:name="com.lachesis.account.AuthenticationService" android:process=":core">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:exported="true" android:name="com.lachesis.account.SyncService" android:process=":core">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/sync_adapter"/>
+        </service>
+        <provider android:authorities="com.superapps.browser_daemon" android:exported="true" android:name="com.lachesis.account.AccountProvider" android:process=":core"/>
+        <service android:exported="false" android:name="com.lachesis.module.jobscheduler.PlutoJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":core"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.superapps.browser.reward.RewardLoadingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTop" android:name="com.lib.promote.PromoteSaleActivity" android:process=":core" android:screenOrientation="portrait" android:taskAffinity=".promote" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <service android:enabled="true" android:exported="true" android:name="com.lib.promote.service.PromoteSaleService" android:process=":core">
+            <intent-filter>
+                <action android:name="com.lib.promote.ID"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.lib.promote.service.StartReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="com.lib.promote.start"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="org.tercel.searchnotification.service.SearchNotifyService" android:process=":core">
+            <intent-filter>
+                <action android:name="org.tercel.searchnotify.show.searchbox.notification"/>
+            </intent-filter>
+        </service>
+        <activity android:enabled="false" android:name="com.superapps.browser.settings.ResetDefaultBrowserActivity" android:theme="@style/AnimTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="com.superapps.browser.settings.SetDefaultBrowserActivity" android:screenOrientation="portrait" android:theme="@style/AnimTheme"/>
+        <service android:exported="false" android:name="org.odin.OdinService" android:process=":core"/>
+        <receiver android:name="org.odin.PowerStateMonitor" android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.hummingbirdcloud.DService" android:process=":core"/>
+        <activity android:exported="false" android:name="com.hummingbirdcloud.DActivity" android:process=":core"/>
+        <receiver android:name="org.tercel.browser.facebooklikenotify.FacebookLikeBroadcastReceiver" android:process=":core">
+            <intent-filter>
+                <action android:name="notify_facebook_like"/>
+                <action android:name="notify_facebook_like_click"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.superapps.browser.account.AccountNotificationReceiver" android:process=":core"/>
+        <service android:exported="false" android:name="com.superapps.browser.account.credit.CreditActionService">
+            <intent-filter>
+                <action android:name="com.superapps.browser.credit.updateCloudFile"/>
+                <action android:name="com.superapps.browser.credit.handleService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="org.njord.account.redpack.ui.UserCenterActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/cutomUserCenterTheme">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.redpack.center"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.tercel.litebrowser.ui.SafeWebViewActivity" android:screenOrientation="portrait" android:taskAffinity="org.tercel.litebrowser.ui.SafeWebViewActivity"/>
+        <service android:exported="false" android:name="org.tercel.searchprotocol.SearchProtocolService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.my.target.ads.MyTargetActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tools.g3.loading.LoadingActivity" android:taskAffinity="" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.azck.AzckActivityWrapper" android:screenOrientation="portrait" android:theme="@style/ManualApkUpdateDialogActivity"/>
+        <activity android:launchMode="singleInstance" android:name="com.azck.AzckGuideActivity" android:theme="@style/GuideActivity"/>
+        <receiver android:exported="false" android:name="com.azck.UniversalReceiver">
+            <intent-filter>
+                <action android:name="com.nox.action.download.success"/>
+                <action android:name="action_receiver_deep_link_handle"/>
+                <action android:name="action_receiver_in_nox"/>
+                <action android:name="action_receiver_gp_in_nox"/>
+                <action android:name="action_receiver_official_in_nox"/>
+                <action android:name="action_receiver_remove_notification"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="org.hera.crash.upload.HeraCrashUploadActivity" android:process="org.hera.crash" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <service android:name="org.hera.crash.upload.HeraCrashService" android:process="org.hera.crash"/>
+        <receiver android:exported="true" android:name="org.neptune.receiver.GuardPlayReceiver">
+            <intent-filter android:priority="-1000">
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="org.mimas.notify.clean.utils.SafeWebViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tools.athene.loading.LoadingActivity" android:taskAffinity="" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.tools.athene.MonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.lachesis.gcm.PlutoGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="org.mimas.notify.flow.NotifyFlowActivity" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.flow.NotifyFlowActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="org.mimas.notify.utils.SafeWebViewActivity" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.utils.SafeWebViewActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <service android:name="org.trade.popupad.module.scene.popup.SceneTimingJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:name="org.njord.account.ui.view.AccountActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="org.njord.account.ui.view.LoginActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.account.login"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.njord.account.ui.view.VerifyEmailCodeActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="org.njord.account.ui.view.ProfileCenterActivity" android:theme="@style/ProfileTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.account.profile"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.njord.account.ui.view.AccountKitProfileActivity" android:theme="@style/AccountKitProfileTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="org.njord.account.ui.view.CropPhotoActivity" android:theme="@style/AccountTheme.CropPhoto"/>
+        <activity android:name="org.njord.account.ui.view.EditContentActivity" android:theme="@style/ProfileTheme" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="org.njord.account.ui.view.SelectRegionActivity" android:theme="@style/ProfileTheme"/>
+        <provider android:authorities="com.superapps.browser.db" android:name="org.njord.account.core.data.DbProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="org.njord.account.redpack.ui.RedPackWebActivity" android:screenOrientation="portrait" android:theme="@style/BaseRedpackTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="org.njord.account.redpack.ui.RedShowRevenueActivity" android:screenOrientation="portrait" android:theme="@style/DialogActivityThemeNoTitle" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="org.njord.account.redpack.ui.NoviceProblemWebActivity" android:screenOrientation="portrait" android:theme="@style/BaseRedpackTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="org.njord.account.redpack.ui.RedPacketSchemaControllerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoDisplay" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.superapps.browser" android:pathPrefix="/envelope" android:scheme="xapplink"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="org.njord.account.redpack.ui.TreasureBoxActivity" android:screenOrientation="portrait" android:theme="@style/Dialog.Center"/>
+        <activity android:excludeFromRecents="true" android:name="org.njord.account.red.lop.view.RedEnvelopeDialogActivity" android:screenOrientation="portrait" android:theme="@style/Red.Dialog.Center"/>
+        <activity android:excludeFromRecents="true" android:name="org.njord.account.red.lop.view.RedGuideDialogActivity" android:screenOrientation="portrait" android:theme="@style/Red.Dialog.Center"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTask" android:name="org.njord.activity.ActivityBrowserImp" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.activity.browserimp"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTask" android:name="org.njord.activity.WebActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.activity.web"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="org.njord.credit.core.CreditService">
+            <intent-filter>
+                <action android:name="com.superapps.browser.credit.valid"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.superapps.browser.credit.provider" android:exported="false" android:name="org.njord.credit.dao.CreditDBProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.credit.center"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.OwnExchangedActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.StoreListActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.CreditHistoryActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.VipListActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.ActivesActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.GoodsDetailActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.OrderDetailActivity" android:parentActivityName="org.njord.credit.ui.CreditCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.njord.credit.ui.CreditCenterActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.H5GameActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.InviteFriendActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.credit.invite"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.CreditInviteRulesActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme"/>
+        <activity android:name="org.njord.credit.ui.DefToastActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="com.superapps.browser.njord.credit.toast"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.DailyCheckActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.RedeemResultActivity" android:screenOrientation="portrait" android:theme="@style/BaseCreditTheme"/>
+        <activity android:launchMode="singleTop" android:name="org.njord.credit.invite.ui.InviteFriendActivity" android:theme="@style/InviteFriendSimpleStyle"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.SchemaControllerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.superapps.browser" android:pathPrefix="/credit" android:scheme="xapplink"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="org.njord.credit.ui.ShareControllerActivity" android:screenOrientation="portrait" android:theme="@style/shareAgentStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.superapps.browser" android:pathPrefix="/share" android:scheme="xapplink"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="org.njord.credit.ui.ShareLoginAgentActivity" android:theme="@style/shareAgentStyle"/>
+        <activity android:launchMode="singleTop" android:name="org.njord.share.sms.ui.SmsSelectContactActivity" android:screenOrientation="portrait" android:theme="@style/SmsSelectSimpleStyle"/>
+        <activity android:launchMode="singleTop" android:name="org.njord.share.sms.ui.FBShareActivity" android:theme="@style/FBShareStyle"/>
+        <provider android:authorities="libexportedwebview_com.superapps.browser_UPLOAD" android:exported="false" android:grantUriPermissions="true" android:name="org.tercel.libexportedwebview.upload.UploadFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/tersearch_file_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.hb.CS" android:process=":hb"/>
+        <activity android:name="com.hb.av.PA"/>
+        <activity android:name="com.hb.av.DA"/>
+        <activity android:launchMode="singleInstance" android:name="com.hb.av.PASI0"/>
+        <activity android:launchMode="singleTask" android:name="com.hb.av.PASTA0"/>
+        <activity android:launchMode="singleTop" android:name="com.hb.av.PASTO0"/>
+        <activity android:launchMode="singleInstance" android:name="com.hb.av.PASI1"/>
+        <activity android:launchMode="singleTask" android:name="com.hb.av.PASTA1"/>
+        <activity android:launchMode="singleTop" android:name="com.hb.av.PASTO1"/>
+        <activity android:launchMode="singleInstance" android:name="com.hb.av.PASI2"/>
+        <activity android:launchMode="singleTask" android:name="com.hb.av.PASTA2"/>
+        <activity android:launchMode="singleTop" android:name="com.hb.av.PASTO2"/>
+        <activity android:launchMode="singleInstance" android:name="com.hb.av.PASI3"/>
+        <activity android:launchMode="singleTask" android:name="com.hb.av.PASTA3"/>
+        <activity android:launchMode="singleTop" android:name="com.hb.av.PASTO3"/>
+        <service android:exported="false" android:name="com.hb.sv.PS1"/>
+        <service android:exported="false" android:name="com.hb.sv.PS2"/>
+        <service android:exported="false" android:name="com.hb.sv.PS3"/>
+        <service android:exported="false" android:name="com.hb.sv.PS0"/>
+        <service android:exported="false" android:name="com.hb.sv.DS"/>
+        <service android:exported="true" android:name="org.keese.support.v7.service.DownloadHelpers" android:process=":core"/>
+    </application>
+</manifest>

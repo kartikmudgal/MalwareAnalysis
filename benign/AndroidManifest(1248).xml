@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.tronton.cluzee.ui">
+    <supports-screens android:anyDensity="true" android:largeScreens="false" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <application android:icon="@drawable/icon3" android:label="@string/app_name" android:theme="@style/Theme.GreenDroid">
+        <meta-data android:name="android.app.default_searchable" android:value="com.tronton.cluzee.ui.CluzeeHomeActivity"/>
+        <activity android:label="@string/app_name" android:name=".SplashScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Essential" android:name=".essentials.EssentialActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="CitySearch" android:name=".CitySearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="RestaurantSearchActivity" android:name=".RestaurantSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="LocalSearch" android:name=".LocalBusinessSearch" android:screenOrientation="portrait"/>
+        <activity android:label="TaxiMagicActivity" android:name=".local.taxi.TaxiMagicActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeeHomeActivity" android:name=".CluzeeHomeActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="EssentialHomeActivity" android:name=".EssentialHomeActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="SocialHomeActivity" android:name=".SocialHomeActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="LocalSearchHomeActivity" android:name=".LocalSearchHomeActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="GoogleSearchActivity" android:name=".psm.GoogleSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeeConvIntSampleActivity" android:name=".psm.CluzeeConvIntSampleActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TaxiMagicInputActivity" android:name=".local.taxi.TaxiMagicInputActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneClient" android:name="com.pa.grid.floristone.FloristOneClient" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelSearchActivity" android:name=".ptm.ExpediaHotelSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaErrorActivity" android:name=".ptm.ExpediaErrorActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SelectHotelLandmark" android:name=".ptm.SelectHotelLandmark" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelListActivity" android:name=".ptm.ExpediaHotelListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaCarSearchActivity" android:name=".ptm.ExpediaCarSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaCarListActivity" android:name=".ptm.ExpediaCarListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaCarBookActivity" android:name=".ptm.ExpediaCarBookActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaCarConfirmationPage" android:name=".ptm.ExpediaCarConfirmationPage" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaFlightSearchActivity" android:name=".ptm.ExpediaFlightSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaFlightListActivity" android:name=".ptm.ExpediaFlightListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaFlightDetailActivity" android:name=".ptm.ExpediaFlightDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaFlightTabActivity" android:name=".ptm.ExpediaFlightTabActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaOnewayFlightSearchActivity" android:name=".ptm.ExpediaOnewayFlightSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpChartActivity" android:name=".php.PhpChartActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpInputActivity" android:name=".php.PhpInputActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ApplicationManagerActivity" android:name=".appmanager.ApplicationManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TravelActivity" android:name=".ptm.TravelActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GKBuddyActivity" android:name=".gkbuddy.GKBuddyActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MovieActivity" android:name=".movies.MovieActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MovieIndexActivity" android:name=".movies.MovieIndexActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingActivity" android:name=".local.parking.ParkingActivity" android:screenOrientation="portrait" android:theme="@style/generalnotitle"/>
+        <activity android:label="EventListActivity" android:name=".events.EventListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TripPlannerActivity" android:name=".ptm.TripPlannerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FriendsLocatorActivity" android:name=".social.friendslocator.FriendsLocatorActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FriendsListActivity" android:name=".social.friendslocator.FriendsListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SocialActivity" android:name=".SocialActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FacebookActivity" android:name="com.facebook.android.Example" android:screenOrientation="portrait"/>
+        <activity android:label="TwitterActivity" android:name="com.handycodeworks.tweety.Tweety" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneListActivity" android:name=".flowers.FloristOneListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PackageTrackerActivity" android:name=".pkgtracker.PackageTrackerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="VoiceDialActivity" android:name=".essentials.VoiceDialActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PeopleSearchByNameActivity" android:name=".PeopleSearchByNameActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ReverseLookupByPhoneActivity" android:name=".ReverseLookupByPhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PeopleSearchListActivity" android:name=".PeopleSearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PeopleSearchDetailActivity" android:name=".PeopleSearchDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ReverseLookupByAddrActivity" android:name=".ReverseLookupByAddrActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MoviesTopTenActivity" android:name=".movies.MoviesTopTenActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingMapActivity" android:name=".local.parking.ParkingMapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Preferences" android:name=".Preferences" android:screenOrientation="portrait"/>
+        <activity android:label="ReadPreferencesActivity" android:name=".misc.ReadPreferencesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TwitterUpdateActivity" android:name=".TwitterUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FacebookUpdateActivity" android:name=".FacebookUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneSearchActivity" android:name=".flowers.FloristOneSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneSearchActivity" android:name=".flowers.FloristOneOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingSearchActivity" android:name=".local.parking.ParkingSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingByCityActivity" android:name=".local.parking.ParkingByCityActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingByAirportActivity" android:name=".local.parking.ParkingByAirportActivity" android:screenOrientation="portrait"/>
+        <activity android:label="IncomingMessage" android:name="com.pa.pam.IncomingMessage" android:screenOrientation="portrait"/>
+        <activity android:label="IncomingMessageView" android:name="com.pa.pam.IncomingMessageView" android:screenOrientation="portrait"/>
+        <activity android:label="NotificationDisplay" android:name="com.pa.pam.NotificationDisplay" android:screenOrientation="portrait"/>
+        <activity android:label="NotifyingController" android:name="com.pa.pam.NotifyingController" android:screenOrientation="portrait"/>
+        <activity android:label="NotifyWithText" android:name="com.pa.pam.NotifyWithText" android:screenOrientation="portrait"/>
+        <activity android:label="StatusBarNotifications" android:name="com.pa.pam.StatusBarNotifications" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelDetailsActivity" android:name=".ptm.ExpediaHotelDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaFlightAirRulesActivity" android:name=".ptm.ExpediaFlightAirRulesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaCarRateRulesActivity" android:name=".ptm.ExpediaCarRateRulesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="WeatherActivity" android:name=".weather.WeatherActivity" android:screenOrientation="portrait"/>
+        <activity android:label="EssentialCluzeeActivity" android:name=".essentials.EssentialCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="EssentialUpdateActivity" android:name=".essentials.EssentialUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GoogleSearchCluzeeActivity" android:name=".psm.GoogleSearchCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ApplicationManagerCluzeeActivity" android:name=".appmanager.ApplicationManagerCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TravelCluzeeActivity" android:name=".ptm.TravelCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SocialUpdateActivity" android:name=".SocialUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GKBuddyCluzeeActivity" android:name=".gkbuddy.GKBuddyCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SocialInputActivity" android:name=".SocialInputActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SocialCluzeeActivity" android:name=".SocialCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PeopleSearchActivity" android:name=".PeopleSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MovieCluzeeActivity" android:name=".movies.MovieCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="EventsActivity" android:name=".local.events.EventsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="EventsCluzeeActivity" android:name=".local.events.EventsCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpHomeActivity" android:name=".php.PhpHomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="TestPHPSwitcher" android:name=".php.TestPHPSwitcher" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpDiaryActivity" android:name=".php.PhpDiaryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpMonthlyActivity" android:name=".php.PhpMonthlyActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpMonthlyActivity" android:name=".php.PhpMonthlyChartActivity" android:screenOrientation="portrait"/>
+        <activity android:label="DailyBriefActivity" android:name=".dailybrief.DailyBriefActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TripSummaryActivity" android:name=".ptm.TripSummaryActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsListActivity" android:name=".ptm.MyTripsListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsHotelDetailActivity" android:name=".ptm.MyTripsHotelDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsCarDetailActivity" android:name=".ptm.MyTripsCarDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsCarParkingDetailActivity" android:name=".ptm.MyTripsCarParkingDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsFlightDetailActivity" android:name=".ptm.MyTripsFlightDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsHotelListActivity" android:name=".ptm.MyTripsHotelListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsFlightListActivity" android:name=".ptm.MyTripsFlightListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsCarListActivity" android:name=".ptm.MyTripsCarListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MyTripsParkingListActivity" android:name=".ptm.MyTripsParkingListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="DemoTaxiMagicActivity" android:name=".DemoTaxiMagicActivity" android:screenOrientation="portrait"/> --.
+<activity android:label="xADTaxiListActivity" android:name=".local.taxi.xADTaxiListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADGasStationsListActivity" android:name=".local.gasstations.xADGasStationsListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADGasMapActivity" android:name=".local.gasstations.xADGasMapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AirlineDirectoryActivity" android:name=".ptm.AirlineDirectoryActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneCheckoutActivity" android:name=".flowers.FloristOneCheckoutActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FloristOneOrderConfirmActivity" android:name=".flowers.FloristOneOrderConfirmActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="FloristOneOrderConfirmationPage" android:name=".flowers.FloristOneOrderConfirmationPage" android:screenOrientation="portrait" android:theme="@style/Theme.White" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="AprOrderConfirmationPage" android:name=".local.parking.AprOrderConfirmationPage" android:screenOrientation="portrait" android:theme="@style/Theme.White" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="ScheduleActivity" android:name=".pdp.ScheduleActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FilteringFinalActivity" android:name=".FilteringFinalActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ReminderActivity" android:name=".pdp.ReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PDPItemDetailsActivity" android:name=".pdp.PDPItemDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="WeatherUpdatedActivity" android:name=".weather.WeatherUpdatedActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SafeReaderActivity" android:name=".SafeReaderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PNMUpdateActivity" android:name=".pnm.PNMUpdateActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PNMMapActivity" android:name=".pnm.PNMMapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeeHandsFreeActivity" android:name=".handsfree.CluzeeHandsFreeActivity" android:screenOrientation="portrait" android:theme="@style/HandsFreeTheme">
+            <intent-filter>
+                <category android:name="android.intent.category.CAR_MODE"/>
+                <category android:name="android.intent.category.CAR_DOCK"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="ParkingSearchFinalActivity" android:name=".local.parking.ParkingSearchFinalActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TextMemoListActivity" android:name=".pnm.TextMemoListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TextMemoActivity" android:name=".pnm.TextMemoActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpExerciseTracker" android:name=".php.PhpExerciseTracker" android:screenOrientation="portrait"/>
+        <activity android:label="PhpExerciseCalcActivity" android:name=".php.PhpExerciseCalcActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpFoodCalcActivity" android:name=".php.PhpFoodCalcActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpInputSelectionActivity" android:name=".php.PhpInputSelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="HealthNewsActivity" android:name=".php.HealthNewsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpExerciseHomeActivity" android:name=".php.PhpExerciseHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpFoodHomeActivity" android:name=".php.PhpFoodHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpFrequentExerciseTracker" android:name=".php.PhpFrequentExerciseTracker" android:screenOrientation="portrait"/>
+        <activity android:label="CustomExerciseListActivity" android:name=".php.PhpCustomExerciseListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpAddNewExerciseActivity" android:name=".php.PhpAddNewExerciseActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpAddCaloriesActivity" android:name=".php.PhpAddCaloriesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpFrequentFoodActivity" android:name=".php.PhpFrequentFoodActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpRecentFoodActivity" android:name=".php.PhpRecentFoodActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpCustomFoodListActivity" android:name=".php.PhpCustomFoodListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhpAddNewFoodActivity" android:name=".php.PhpAddNewFoodActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="PhpCluzeeActivity" android:name=".php.PhpCluzeeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeeBaseActivity" android:name=".CluzeeBaseActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PersonalInfoActivity" android:name=".personalprofile.PersonalInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PersonalDigitalProfile" android:name=".personalprofile.PersonalDigitalProfile" android:screenOrientation="portrait"/>
+        <activity android:label="PersonalFavoritesActivity" android:name=".personalprofile.PersonalFavoritesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PersonalShoppingActivity" android:name=".personalprofile.PersonalShoppingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PersonalHealthActivity" android:name=".personalprofile.PersonalHealthActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeeSettings" android:name=".settings.CluzeeSettings" android:screenOrientation="portrait"/>
+        <activity android:label="PRSettingsActivity" android:name=".settings.PRSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="MiscSettingsActivity" android:name=".settings.MiscSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SocialSettingsActivity" android:name=".settings.SocialSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TwitterLoginActivity" android:name=".settings.TwitterLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name=".settings.OAuthAccessTokenSettingsActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="oauthresponse" android:scheme="myapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="xADSearchListActivity" android:name=".xADSearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADSearchDetailActivity" android:name=".xADSearchDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADSearchDetailNewActivity" android:name=".xADSearchDetailNewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADRestaurantListActivity" android:name=".xADRestaurantListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="OpenTableListActivity" android:name=".OpenTableListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADRestaurantLookupActivity" android:name=".xADRestaurantLookupActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADRestaurantSearchListActivity" android:name=".xADRestaurantSearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADRestaurantCategoryActivity" android:name=".xADRestaurantCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FoursquareTestActivity" android:name=".social.friendslocator.FoursquareTestActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CluzeePagedViewActivity" android:name="com.tronton.cluzee.ui.personalradio.CluzeePagedViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="StocksPortfolioBuilderActivity" android:name="com.tronton.cluzee.ui.personalradio.StocksPortfolioBuilderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="StocksPortfolioActivity" android:name="com.tronton.cluzee.ui.personalradio.StocksPortfolioActivity" android:screenOrientation="portrait"/>
+        <activity android:label="LandmarkSelectionActivity" android:name="com.tronton.cluzee.ui.personalradio.LandmarkSelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="NewsSourceSelectionActivity1" android:name=".personalradio.NewsSourceSelectionActivity1" android:screenOrientation="portrait"/>
+        <activity android:label="NewsSourceActivity" android:name=".settings.NewsSourceSelectionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="NewsSourceActivity" android:name=".settings.NewsSourceActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SportsSourceActivity" android:name=".settings.SportsSourceActivity" android:screenOrientation="portrait"/>
+        <activity android:label="HealthSourceActivity" android:name=".settings.HealthSourceActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FoursquareActivity" android:launchMode="singleTask" android:name=".social.friendslocator.FoursquareActivity" android:noHistory="true"/>
+        <activity android:label="FoursquareApiSample" android:launchMode="singleTask" android:name=".social.friendslocator.FoursquareApiSample" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name=".social.friendslocator.FoursquareVenueList">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name=".social.friendslocator.FriendsListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="FoursquareCheckinActivity" android:launchMode="singleTask" android:name=".social.friendslocator.FoursquareCheckinActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="FriendsLocatorActivity" android:launchMode="singleTask" android:name=".social.friendslocator.FriendsLocatorActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="CalendarReadTestActivity" android:name=".misc.CalendarReadTestActivityTestActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GKBuddyAnswerActivity" android:name=".gkbuddy.GKBuddyAnswerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADTaxiDetailActivity" android:name=".local.taxi.xADTaxiDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AirportParkingSearchActivity" android:name=".local.parking.AirportParkingSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AirportParkingDetailActivity" android:name=".local.parking.AirportParkingDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="AirportParkingCheckoutActivity" android:name=".local.parking.AirportParkingCheckoutActivity" android:screenOrientation="portrait"/>
+        <activity android:label="APROrderConfirmActivity" android:name=".local.parking.APROrderConfirmActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ReminderManagerActivity" android:name=".pdp.ReminderManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GradientSampleActivity" android:name="misc.GradientSampleActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADTaxiMapActivity" android:name=".local.taxi.xADTaxiMapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelDetailsNewActivity" android:name=".ptm.ExpediaHotelDetailsNewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelDetailsSubActivity" android:name=".ptm.ExpediaHotelDetailsSubActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaHotelPhotosSubActivity" android:name=".ptm.ExpediaHotelPhotosSubActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelMapSubActivity" android:name=".ptm.ExpediaHotelMapSubActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaHotelRoomsActivity" android:name=".ptm.ExpediaHotelRoomsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaHotelReservationActivity" android:name=".ptm.ExpediaHotelReservationActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaHotelConfirmActivity" android:name=".ptm.ExpediaHotelConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaCarConfirmActivity" android:name=".ptm.ExpediaCarConfirmActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="ExpediaOrderConfirmationActivity" android:name=".ptm.ExpediaOrderConfirmationActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ExpediaHotelOrderConfirmationActivity" android:name=".ptm.ExpediaHotelOrderConfirmationActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="xADLocalMapActivity" android:name=".xADLocalMapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="xADAPRSearchListActivity" android:name=".local.parking.xADAPRSearchListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ParkingDetailActivity" android:name=".local.parking.ParkingDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="xADSearchAPRListActivity" android:name=".local.parking.xADSearchAPRListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="DragNDropListActivity" android:name="com.ericharlow.DragNDrop.DragNDropListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="FlightTrackerActivity" android:name=".ptm.FlightTrackerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="CurrencyConverterActivity" android:name=".ptm.CurrencyConverterActivity" android:screenOrientation="portrait" android:theme="@style/Theme.White"/>
+        <activity android:label="DailyDealsActivity" android:name=".DailyDealsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TripAddActivity" android:name=".ptm.TripAddActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TripUpdateActivity" android:name=".ptm.TripUpdateActivity" android:screenOrientation="portrait"/>
+        <receiver android:name=".SafeReaderSMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".CluzeeSMSService">
+            <intent-filter>
+                <action android:name=".CluzeeSMSService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.pa.pam.NotifyingService"/>
+        <meta-data android:name="ADMOB_PUBLISHER_ID" android:value="a14d59a77c02eb6"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.admob.android.ads.AdMobActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:exported="true" android:name="com.admob.android.ads.analytics.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="History" android:name=".HistoryActivity"/>
+        <activity android:label="Sample Datasets" android:name=".misc.SampleDatasetsActivity"/>
+        <activity android:label="Manual Data Input" android:name=".misc.InputDatasetActivityvity"/>
+        <activity android:label="Old Style Charts" android:name=".OldChartsActivity"/>
+        <activity android:label="SuperPagesTabs" android:name=".misc.DynTABSample"/>
+        <activity android:label="Demo" android:name=".misc.Demo"/>
+        <activity android:label="PDP" android:name=".pdp.CalendarActivity"/>
+        <activity android:label="PNM" android:name=".PersonalNoteActivity"/>
+        <activity android:label="QueryBuilderInterfaceL1" android:name=".misc.QueryBuilderInterfaceL1"/>
+        <activity android:label="QueryBuilderInterfaceL2" android:name=".misc.QueryBuilderInterfaceL2"/>
+        <activity android:label="ChannelSelectionListActivity" android:name=".ChannelSelectionListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ChannelOrderActivity" android:name=".ChannelOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.tronton.cluzee.ui.personalradio.CustomAdapterExample"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.NewsActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.StocksActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.StocksSelectionMainActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.StockSelectionListActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.LocalNewsActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.AstrologyActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.HealthNewsActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.WikiActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.TravelChannelActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.SportsChannelActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.MovieChannelActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.DealsAdsActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.TwitterChannelActivity"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.Activity2"/>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.TrafficActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="geoname"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tronton.cluzee.ui.personalradio.TrafficFinalActivity"/>
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:label="CluzeeServiceTestClient" android:name=".misc.CluzeeServiceTestClient"/>
+        <activity android:label="CluzeeServiceTestClient1" android:name=".misc.CluzeeServiceTestClient1"/>
+        <service android:name=".CluzeeService"/>
+        <activity android:label="CluzeeHelpActivity" android:name=".help.CluzeeHelpActivity"/>
+        <activity android:label="CluzeeHelpCommandsActivity" android:name=".help.AboutMeActivity" android:theme="@style/Theme.White"/>
+        <activity android:label="CluzeeHelpCommandsActivity" android:name=".help.GetStartedActivity" android:theme="@style/Theme.White"/>
+        <activity android:label="CluzeeHelpCommandsActivity" android:name=".help.VoiceActionsActivity" android:theme="@style/Theme.White"/>
+        <activity android:label="CluzeeHelpCommandsActivity" android:name=".help.CluzeeSupportActivity" android:theme="@style/Theme.White"/>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.software.live_wallpaper"/>
+</manifest>

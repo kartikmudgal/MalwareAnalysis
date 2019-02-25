@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rst.bedbooking">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.rst.bedbooking.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.rst.bedbooking.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:killAfterRestore="true" android:label="@string/app_name" android:name="com.rst.bedbooking.BedBookingApp" android:persistentDrawingCache="scrolling" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.rst.bedbooking.BedBookingMainActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_reservation" android:name="com.rst.bedbooking.ReservationActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:clearTaskOnLaunch="true" android:exported="true" android:label="@string/app_name" android:name="com.rst.bedbooking.RegisterUserActivity" android:theme="@style/AppTheme.Login" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="com.rst.bedbooking.LoginActivity" android:theme="@style/AppTheme.Login" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="bedbooking"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="com.rst.bedbooking.SettingsActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_sync_errors" android:name="com.rst.bedbooking.sync.SyncErrorsActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/system_notifications" android:name="com.rst.bedbooking.SystemNotificationsActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_comments_and_ideas" android:name="com.rst.bedbooking.CommentsAndIdeasActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/menu_help_and_contact" android:name="com.rst.bedbooking.HelpAndContactActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/menu_profile" android:name="com.rst.bedbooking.UserProfileActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:label="@string/menu_todolist" android:name="com.rst.bedbooking.TasksActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/info_premium_title_activity" android:name="com.rst.bedbooking.PremiumActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/application_block_dialog_title" android:name="com.rst.bedbooking.InfoUpgradeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/application_block_dialog_title" android:name="com.rst.bedbooking.InfoUpgradeNeededActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/promotion" android:launchMode="singleTask" android:name="com.rst.bedbooking.PromotionActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_export" android:name="com.rst.bedbooking.ExportActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/registration_book" android:name="com.rst.bedbooking.RegistrationBookActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/menu_finances_report" android:name="com.rst.bedbooking.FinancialReportActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/menu_finances_payment_list" android:name="com.rst.bedbooking.PaymentListActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_widget" android:name="com.rst.bedbooking.WidgetInfoActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/payment_activity" android:name="com.rst.bedbooking.PaymentMethodActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/payment_activity" android:name="com.rst.bedbooking.PaymentWebActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.rst.bedbooking.ServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.rst.bedbooking.push.NotificationsStartupReceiver" android:process=":stocks_background">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE"/>
+                <action android:name="android.intent.action.REBOOT"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <category android:name="com.rst.bedbooking"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.rst.bedbooking.sync.SyncService"/>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="374e24aa57dffdf49ed3b669845e7a45d29f69a1"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="374e24aa57dffdf49ed3b669845e7a45d29f69a1"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.analytics.globalConfigResource" android:resource="@xml/global_tracker"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:name="com.rst.bedbooking.NetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.rst.bedbooking.push.TodayReservationAlarmService"/>
+        <receiver android:name="com.rst.bedbooking.push.TodayReservationAlarmBroadcastReceiver"/>
+        <receiver android:name="com.rst.bedbooking.push.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.rst.bedbooking"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mobileapptracker.Tracker">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.ads.conversiontracking.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/menu_reservations" android:name="com.rst.bedbooking.ReservationsSummaryActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:theme="@style/MeasFiltersTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/add_room" android:name="com.rst.bedbooking.RoomActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:theme="@style/MeasFiltersTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/room_service_title" android:name="com.rst.bedbooking.RoomServiceActivity" android:parentActivityName="com.rst.bedbooking.BedBookingMainActivity" android:theme="@style/AppTheme.Financial">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.BedBookingMainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:label="@string/pref_screen_labels" android:name="com.rst.bedbooking.ReservationsLabelsActivity" android:parentActivityName="com.rst.bedbooking.SettingsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.SettingsActivity"/>
+        </activity>
+        <service android:name="com.rst.bedbooking.push.GCMNotificationIntentService"/>
+        <meta-data android:name="com.rst.bedbooking.platformid" android:value="PLATFORM_GOOGLE"/>
+        <meta-data android:name="com.rst.bedbooking.infrastructure.GlideConfiguration" android:value="GlideModule"/>
+        <activity android:label="@string/menu_contact" android:name="com.rst.bedbooking.ContactActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/pref_screen_statuses_personalisation" android:name="com.rst.bedbooking.CustomStatusActivity" android:parentActivityName="com.rst.bedbooking.SettingsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.rst.bedbooking.SettingsActivity"/>
+        </activity>
+        <activity android:label="@string/filter_dialog_title" android:name="com.rst.bedbooking.FilterActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateHidden"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.rst.bedbooking.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>

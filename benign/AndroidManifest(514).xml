@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.guardian.security.pri" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:maxSdkVersion="20" android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <permission android:description="@string/avl_permissionDescription" android:icon="@drawable/avl_ic_launcher" android:label="@string/avl_permissionLabel" android:name="com.guardian.security.pri.permission.ANTI_VIRUS" android:permissionGroup="@string/avl_permissionGroup" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_launcher_home_screen" android:label="@string/launcher_app_name" android:name="com.guardian.security.pro.app.BoosterApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <meta-data android:name="com.android.commonlib.glidemodel.ApkIconGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.HomeActivity" android:screenOrientation="portrait" android:theme="@style/windowDisablePreviewTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.saturn.splash.sdk.activity.SplashMainActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.splash.sdk.activity.SplashMainActivity" android:theme="@style/windowDisablePreviewTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.saturn.splash.sdk.stark.SplashStarkActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.splash.sdk.stark.SplashStarkActivity" android:theme="@style/windowDisablePreviewTheme"/>
+        <service android:enabled="true" android:exported="true" android:name="org.saturn.splash.sdk.stark.SplashService" android:process="com.guardian.security.pri.monitor"/>
+        <service android:enabled="true" android:exported="true" android:name="org.saturn.splash.sdk.service.SplashLoadDataService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BoostMainActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BoostMemoryActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.AccessibilityIntentActivity" android:taskAffinity=":automation" android:theme="@style/Transparent"/>
+        <activity android:name="com.guardian.security.pro.ui.GobackBridgeActivity" android:taskAffinity="com.guardian.security.pro.temp" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.whitelist.UserWhiteListActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.guardian.launcher.snsshare.SnsShareDialogActivity" android:screenOrientation="portrait" android:theme="@style/dialog"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.guardian.launcher.snsshare.QRCodeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.whitelist.AddUserWhiteListActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.RemindBoosterActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.guardian.security.pro.remind" android:theme="@style/dialog"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.OneTapCleanActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/dialog_transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.splash.SplashActvity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.OneTapTurboCleanActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/dialog_transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.cpu.ui.CpuTempDetectorActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.cpu.ui.CpuCoolerActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.cpu.ui.CpuCoolDownProgressActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.cpu.ui.CpuCoolResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.notification.nc.NotificationCleanResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.notification.ns.NotificationSecurityResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BoostResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BoostMemoryResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.rubbish.cache.support.SpecialAppCleanResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.CommonTransitionActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.antivirus.AntiVirusResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.SettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.SafeBrowserGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.guardian.security.pro.ui.SettingDesktopActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.guardian.security.pro.ui.AboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/feedback_title" android:name="com.guardian.security.pro.feedback.FeedbackActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.splash.AvIntroActivity" android:screenOrientation="portrait" android:theme="@style/Theme.notAnimationNoTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.OneTapTurboCleanWithoutLockActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/dialog_transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.OneTapTurboCleanApiActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTask" android:name="com.guardian.security.pro.ui.SmartLockerSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.NotificationBoostActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.SmartLockGuideActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.NotificationBoostResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BatteryResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.wifi.ui.WifiScanNormalResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.wifi.ui.WifiScanAbnormalResultActivity" android:screenOrientation="portrait" android:theme="@style/ResultTheme"/>
+        <receiver android:name="com.guardian.security.pro.receiver.StartReceiver" android:process="com.guardian.security.pri.monitor">
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x000003E7">
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.guardian.security.pro.receiver.PlayReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.guardian.security.pro.receiver.BatteryLevelReceiver" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <service android:description="@string/phone_acceleration_des" android:label="@string/app_name" android:name="com.apus.accessibility.monitor.service.AccessibilityMonitorService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/autokillconfig"/>
+        </service>
+        <service android:name="com.guardian.security.pro.service.CoreService" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.taskmanager_com.guardian.security.pri" android:exported="false" android:name="com.apus.taskmanager.OptimizerProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="org.saturn.stark.native.sharePref.Provider_com.guardian.security.pri" android:exported="false" android:name="org.saturn.stark.share.MutiProcessSharedPrefProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.memorylog.provider_com.guardian.security.pri" android:exported="false" android:name="com.guardian.security.pro.model.db.MemoryLogContentProvider"/>
+        <provider android:authorities="com.binder.provider_com.guardian.security.pri" android:exported="false" android:name="com.titan.binder.mgr.MultiProcessBinderProvider" android:process="com.guardian.security.pri.monitor"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:noHistory="false" android:taskAffinity="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.rubbish.cache.scanner.base.RubbishScanningActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.rubbish.cache.scanner.base.RubbishCleanProgressActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.rubbish.cache.support.RubbishCleanResultActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BoostMainPermissionGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.BatterySaverPermissionGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.batterysave.activity.BatterySaverActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.securitylevel.SecurityLevelActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.securitylevel.AddOpGuideActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <provider android:authorities="com.pkgcache.provider_com.guardian.security.pri" android:exported="false" android:name="com.rubbish.cache.provider.PkgCacheProvider"/>
+        <provider android:authorities="com.residual.provider_com.guardian.security.pri" android:exported="false" android:name="com.rubbish.residual.provider.ResidualProvider"/>
+        <provider android:authorities="com.fileindex.provider_com.guardian.security.pri" android:exported="false" android:name="com.rubbish.cache.provider.FileIndexProvider" android:process="com.guardian.security.pri.monitor"/>
+        <service android:exported="false" android:name="com.rubbish.cache.scanner.base.DataSaveService"/>
+        <service android:exported="false" android:name="com.guardian.security.pro.service.FileOperationService" android:process=":taskconsumer"/>
+        <service android:enabled="true" android:exported="false" android:name="com.libscene.userscene.SceneService" android:process="com.guardian.security.pri.monitor"/>
+        <service android:exported="false" android:name="com.guardian.security.pro.service.InnerService" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.zurichsdk.ZurichProvider_com.guardian.security.pri" android:enabled="true" android:exported="false" android:name="org.dions.zurich.ZurichProvider"/>
+        <provider android:authorities="com.boost.behavior.provider_com.guardian.security.pri" android:exported="false" android:name="com.guardian.security.pro.behavior.BehaviorProvider" android:process="com.guardian.security.pri.monitor"/>
+        <service android:exported="false" android:name="com.guardian.security.pro.service.MainService"/>
+        <service android:exported="false" android:name="com.titan.binder.mgr.BinderService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTop" android:name="org.mimas.notify.FbDialogActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.FbDialogActivity" android:theme="@style/dialog_Theme"/>
+        <service android:name="org.enceladus.callshow.module.CallShowProtectService" android:process="com.guardian.security.pri.monitor"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.mimas.uninstall.ui.CleanActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.ad" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:excludeFromRecents="true" android:name="com.mimas.uninstall.AdService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotificationActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotificationActivity" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyBoostAdActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyBoostAdActivity" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyBoostCardActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyBoostCardActivity" android:theme="@style/dialog_transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyCleanFlowActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyCleanFlowActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:name="org.mimas.notify.NotifyUpdateReceiver" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.intent.action.notifyads.UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.OneTapBoostResultActivity" android:screenOrientation="portrait" android:taskAffinity=":OneTapBoostResult" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.security.pro.ui.AccessibilityGuideActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.mimas.notify.clean.NotifyCleanMiddleActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.mimas.notify.clean.NotifyCleanMiddleActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="org.mimas.notify.clean.utils.SafeWebViewActivity" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.apus.accessibility.monitor.up.ui.UrlRiskTipsActivity" android:noHistory="true" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <meta-data android:name="com.mnt.bat_app_key" android:value="T4IEGCXI2QYSTQNUN6905M44"/>
+        <activity android:name="com.mnt.MntActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.mnt.MntBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="org.homeplanet.coreservice.provider_com.guardian.security.pri" android:enabled="true" android:exported="false" android:name="org.homeplanet.coreservice.ServiceProvider" android:process="com.guardian.security.pri.monitor"/>
+        <service android:enabled="true" android:exported="false" android:name="org.homeplanet.coreservice.BinderService" android:process="com.guardian.security.pri.monitor"/>
+        <service android:exported="false" android:name="com.apollo.downloadlibrary.DownloadService" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.apollo.downloadslibrary_com.guardian.security.pri" android:exported="false" android:name="com.apollo.downloadlibrary.DownloadProvider" android:process="com.guardian.security.pri.monitor"/>
+        <receiver android:exported="true" android:name="org.neptune.receiver.PlayReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.augeapps.battery.fview.LockerActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.battery.fview.LockerActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTop" android:name="com.augeapps.guide.TransparentGuideActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.TransparentGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.locker.activity.DismissActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.DismissActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.guide.DropPermissionGuideActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.DropPermissionGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.augeapps.guide.LockerFullScreenGuideActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="org.saturn.sdk.activity.LockerFullScreenGuideActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.augeapps.battery.activity.ScreenLockSettingActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.battery.activity.ScreenLockSettingActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleInstance" android:name="com.augeapps.weather.activity.LockerWeatherSettingActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.augeapps.weather.activity.WeatherDetailActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.weather.activity.WeatherDetailActivity" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <service android:enabled="true" android:exported="true" android:name="com.augeapps.battery.ChargingCoreService" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="com.battery.c.model.ACTION_CHARGING"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.boost.LoadingBoosterResultActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBoosterResultActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.battery.LoadingBatteryResultActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBatteryResultActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.augeapps.loadingpage.battery.LoadingBatteryScanActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="com.augeapps.loadingpage.LoadingBatteryScanActivity" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <provider android:authorities="org.saturn.sdk.coexist.provider_com.guardian.security.pri" android:enabled="true" android:exported="true" android:name="com.augeapps.coexist.LockerCoexistProvider" android:process="com.guardian.security.pri.monitor"/>
+        <receiver android:name="com.augeapps.notification.receiver.SMSReceiver" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.block.PhoneBottomMarkActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.block.TempAnimActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.block.PhoneInputMarkActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.block.PhoneFinishActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.block.PhoneMarkSuccessActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTask" android:name="org.tercel.searchlocker.activity.LockerWebViewActivity" android:process="com.guardian.security.pri.monitor" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.block.PhoneRemindDialogActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.block.PhoneRemindActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.protect.ui.PrivacyProtectActivity" android:screenOrientation="portrait" android:theme="@style/StatusBarTheme"/>
+        <service android:exported="false" android:name="org.odin.OdinService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.guardian.security.pro.cpu.ui.CpuUsagePermissionActivity" android:screenOrientation="portrait" android:theme="@style/StatusBarTheme"/>
+        <service android:name="com.hitapp.HitAppService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:name="com.guardian.security.pro.ui.EmptyFaceBookActivity" android:screenOrientation="portrait" android:theme="@style/StatusBarTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tools.g3.loading.LoadingActivity" android:taskAffinity="" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <provider android:authorities="org.tercel.liteborwser.provider.UPLOAD_com.guardian.security.pri" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="org.tercel.litebrowser.ui.SafeWebViewActivity" android:screenOrientation="portrait" android:taskAffinity="org.tercel.litebrowser.ui.SafeWebViewActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.doit.aar.applock.activity.AppLockMainActivity2" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppLockPasswordActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppLockPasswordInitActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppLockGpResetActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AccountVerifyActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppUnlockPasswordActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppLockSettingActivity2" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:excludeFromRecents="true" android:name="com.doit.aar.applock.activity.BridgeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.doit.aar.applock.activity.AppLockPermissionGuideActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.RemoveLockActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.doit.aar.applock.activity.AppLockVerifyPasswordActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.doit.aar.applock.activity.AppLockEntryActivity" android:screenOrientation="portrait" android:theme="@style/SwipeBackLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.doit.aar.applock.activity.AppLockIntroActivity" android:screenOrientation="portrait" android:theme="@style/StatusBarTheme"/>
+        <service android:name="com.doit.aar.applock.service.AppLockService" android:process="com.guardian.security.pri.monitor"/>
+        <activity android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.lib.notification.nc.NotificationCleanActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.lib.notification.ns.NotifySecurityActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTop" android:name="com.lib.notification.nc.setting.NotificationCleanSettingActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTop" android:name="com.lib.notification.ns.setting.NotifySecuritySettingActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTop" android:name="com.lib.notification.nc.NCIntroActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.lib.notification.NotificationAccessGuideActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.lib.notification.NSAccessGuideActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden" android:launchMode="singleTop" android:name="com.lib.notification.ns.NotifySecurityIntroActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <service android:name="com.lib.notification.service.NLHandleService" android:process="com.guardian.security.pri.monitor"/>
+        <service android:name="com.lib.notification.service.NLSActiviator" android:process="com.guardian.security.pri.monitor"/>
+        <service android:label="@string/string_app_name" android:name="com.lib.notification.service.NLService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.wifi.ui.WifiScanActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.wifi.ui.WifiUnConnectActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.wifi.ui.WifiSettingActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.wifi.ui.wifilist.WifiListActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <receiver android:name="com.guardian.wifi.ui.receiver.WifiStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE"/>
+                <action android:name="android.net.wifi.supplicant.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.phone.block.ui.BlockCallingActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.phone.block.ui.UserPhoneDetailActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.phone.block.ui.CallBlockSettingActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.phone.block.ui.PhoneBlockListActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.phone.block.ui.MarkContributionActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.phone.block.ui.NumberListActivity" android:screenOrientation="portrait" android:theme="@style/CallingBlockTheme"/>
+        <service android:name="com.phone.block.service.BlockService" android:process="com.guardian.security.pri.monitor"/>
+        <service android:name="com.phone.block.service.RemindBlockService" android:process="com.guardian.security.pri.monitor"/>
+        <receiver android:enabled="true" android:name="com.phone.block.receiver.PhoneStateReceiver" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="org.hera.crash.upload.HeraCrashUploadActivity" android:process="org.hera.crash" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <service android:name="org.hera.crash.upload.HeraCrashService" android:process="org.hera.crash"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvFastScanActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvFullScanActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <provider android:authorities="com.guardian.security.pri.ignore.provider" android:exported="false" android:name="com.guardian.av.lib.db.ignore.IgnoreProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.virus.provider" android:exported="false" android:name="com.guardian.av.lib.db.virus.VirusProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.cache.provider" android:exported="false" android:name="com.guardian.av.lib.db.cache.CacheProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.hash.provider" android:exported="false" android:name="com.guardian.av.lib.db.hash.HashProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.upload.provider" android:exported="false" android:name="com.guardian.av.lib.db.upload.UploadProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.mark.provider" android:exported="false" android:name="com.guardian.av.lib.db.mark.MarkProvider" android:process="com.guardian.security.pri.monitor"/>
+        <provider android:authorities="com.guardian.security.pri.abnormal.provider" android:exported="false" android:name="com.guardian.av.lib.db.abnormal.AbnormalProvider" android:process="com.guardian.security.pri.monitor"/>
+        <service android:name="com.guardian.av.lib.ipc.AvWorkerService" android:process="com.guardian.security.pri.worker"/>
+        <meta-data android:name="AVL_OPENSDK_APPKEY" android:value="8554B23B3AF26FAC0251FE7375E9C549"/>
+        <provider android:authorities="com.guardian.security.pri.AVLprovider" android:name="com.avl.engine.security.AVLProvider" android:permission="com.guardian.security.pri.permission.ANTI_VIRUS" android:process="com.guardian.security.pri.worker"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.guardian.av.ui.activity.AvDisclaimerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvSettingsActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvRtpActivity" android:screenOrientation="portrait" android:taskAffinity=".rtp" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvIgnoreListActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvRtpSafetyActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity=".rtp" android:theme="@style/dialog_transparent"/>
+        <service android:name="com.guardian.av.ui.rtp.RtpService" android:process="com.guardian.security.pri.monitor"/>
+        <receiver android:enabled="true" android:name="com.guardian.av.ui.NotificationReceiver"/>
+        <receiver android:enabled="true" android:name="com.guardian.av.ui.receiver.PackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.guardian.av.ui.activity.AvFullScanPermissionActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.rubbish.cache.AppCleanActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.rubbish.cache.AppCleanDetailListActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:launchMode="singleTop" android:name="com.rubbish.cache.ImagePreviewActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.rubbish.cache.scanner.base.RubbishPermissionActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.rubbish.cache.AppCleanPermissionActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.ui.lib.activity.CommonPermissionGuideActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.ui.lib.permission.StorageManualPerissionActivity" android:screenOrientation="portrait" android:theme="@style/BoostTheme"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <provider android:authorities="com.guardian.security.pri.keepalive.provider" android:enabled="true" android:exported="false" android:name="com.ultron.era.keepalive.KeepAliveProvider" android:process="com.guardian.security.pri.monitor" android:syncable="true"/>
+        <service android:exported="false" android:name="com.ultron.era.keepalive.KeepAliveService" android:permission="android.permission.BIND_JOB_SERVICE" android:process="com.guardian.security.pri.monitor"/>
+        <service android:name="com.ultron.era.keepalive.AuthenticatorService" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:name="com.ultron.era.keepalive.KeepAliveSyncService" android:process="com.guardian.security.pri.monitor">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/sync_adapter"/>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:label="keepalive" android:launchMode="singleInstance" android:name="com.ultron.era.keepalive.KeepAliveActivity" android:process="com.guardian.security.pri.monitor" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.k.permission.PermissionCheckActivity" android:screenOrientation="portrait" android:theme="@style/CustomTheme_Dialog"/>
+        <service android:exported="true" android:name="org.enceladus.appexit.monitor.AppLoggingService" android:process=":active"/>
+        <service android:name="org.enceladus.appexit.monitor.InnerService" android:process=":active"/>
+        <receiver android:name="org.enceladus.security.ProtectReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="org.enceladus.guide.UsageGuideTempActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:multiprocess="true" android:name="org.enceladus.appopen.SplashActivity" android:taskAffinity="org.enceladus.appopen.SplashActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:name="org.enceladus.callshow.activate.CallShowProtectReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.guardian.security.pri.push.db" android:exported="false" android:name="com.wasp.sdk.push.data.DbProvider"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.wasp.sdk.push.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.guardian.security.pri"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.wasp.sdk.push.gcm.PushGatewayService"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@drawable/icon_safe_browsing_desktop" android:label="@string/tercel_browser" android:launchMode="singleTask" android:name="org.tercel.litebrowser.main.LiteBrowserActivity" android:screenOrientation="portrait" android:theme="@style/lite_BrowserTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="about"/>
+                <data android:scheme="javascript"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="about"/>
+                <data android:scheme="javascript"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:scheme="inline"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/x-webarchive-xml"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme=""/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kirinmini.browser.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme=""/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.bookmark.BookMarkAndHistoryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.download.DownloadListActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="org.tercel.launcher.snsshare.SnsShareDialogActivity" android:screenOrientation="portrait" android:theme="@style/lite_dialog"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.settings.BrowserDataClearActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.homepage.manager.DisplaySettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.adblock.AdBlockSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.adblock.MarkedAdManageActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTop" android:name="org.tercel.litebrowser.main.PrivacyTextActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode" android:launchMode="singleTask" android:name="org.tercel.litebrowser.settings.SettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="libbrowser_com.guardian.security.pri_Browser" android:exported="false" android:name="org.tercel.litebrowser.provider.BrowserProvider"/>
+        <provider android:authorities="org.tercel.litebrowser.adblock.safebrowser_com.guardian.security.pri" android:exported="false" android:name="org.tercel.litebrowser.adblock.DownloadProvider2"/>
+        <activity android:label="@string/title_activity_privacy_base" android:name="org.tercel.litebrowser.password.ui.activity.PrivacyBaseActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/title_activity_pattern" android:name="org.tercel.litebrowser.password.ui.activity.PatternActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/title_activity_privacy_question_set" android:name="org.tercel.litebrowser.password.ui.activity.PrivacyQuestionSetActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/title_activity_password_manager" android:name="org.tercel.litebrowser.password.ui.activity.PasswordManagerActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="org.tercel.litebrowser.dialog.WebViewUnavailableDialogActivity" android:taskAffinity="org.tercel.litebrowser.dialog.WebViewUnavailableDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="org.tercel.litebrowser.download.DownloadService"/>
+        <receiver android:name="org.tercel.litebrowser.main.NotificationReceiver"/>
+        <receiver android:exported="false" android:name="com.apollo.downloadlibrary.DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="com.apollo.downloadlibrary.DOWNLOAD_WAKEUP"/>
+                <action android:name="com.apollo.downloadlibrary.DOWNLOAD_OPEN"/>
+                <action android:name="com.apollo.downloadlibrary.DOWNLOAD_LIST"/>
+                <action android:name="com.apollo.downloadlibrary.DOWNLOAD_HIDE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.azck.AzckActivityWrapper" android:screenOrientation="portrait" android:theme="@style/ManualApkUpdateDialogActivity"/>
+        <activity android:launchMode="singleInstance" android:name="com.azck.AzckGuideActivity" android:theme="@style/GuideActivity"/>
+        <receiver android:exported="false" android:name="com.azck.UniversalReceiver">
+            <intent-filter>
+                <action android:name="com.nox.action.download.success"/>
+                <action android:name="action_receiver_deep_link_handle"/>
+                <action android:name="action_receiver_in_nox"/>
+                <action android:name="action_receiver_gp_in_nox"/>
+                <action android:name="action_receiver_official_in_nox"/>
+                <action android:name="action_receiver_remove_notification"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService"/>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="false" android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.evernote.android.job.JobRescheduleService"/>
+        <receiver android:exported="true" android:name="org.neptune.receiver.GuardPlayReceiver">
+            <intent-filter android:priority="-1000">
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="org.saturn.stark.interstitial.comb.activity.NativeAdActivity" android:taskAffinity="org.saturn.stark.interstitial.comb.activity.NativeAdActivity" android:theme="@style/custom_dialog_Theme"/>
+        <service android:exported="false" android:name="org.tercel.searchprotocol.SearchProtocolService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tools.athene.loading.LoadingActivity" android:taskAffinity="" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.tools.athene.MonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="org.njord.account.ui.view.AccountActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="org.njord.account.ui.view.LoginActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.guardian.security.pri.njord.account.login"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.njord.account.ui.view.VerifyEmailCodeActivity" android:theme="@style/AccountTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="org.njord.account.ui.view.ProfileCenterActivity" android:theme="@style/ProfileTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.guardian.security.pri.njord.account.profile"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.njord.account.ui.view.CropPhotoActivity" android:theme="@style/AccountTheme.CropPhoto"/>
+        <activity android:name="org.njord.account.ui.view.EditContentActivity" android:theme="@style/ProfileTheme" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="org.njord.account.ui.view.SelectRegionActivity" android:theme="@style/ProfileTheme"/>
+        <provider android:authorities="com.guardian.security.pri.db" android:name="org.njord.account.core.data.DbProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|mcc|mnc|navigation|orientation|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.apusapps.userforum.ui.RateDialogActivity" android:screenOrientation="portrait" android:theme="@style/dialog"/>
+        <activity android:name="com.apusapps.userforum.ui.UserForumMainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.apusapps.userforum.ui.UserForumPostActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="true" android:name="com.apusapps.userforum.ui.PickBigImagesActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.apusapps.userforum.ui.PickOrTakeImageActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTask" android:name="org.njord.activity.ActivityBrowserImp" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.guardian.security.pri.njord.activity.browserimp"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="libexportedwebview_com.guardian.security.pri_UPLOAD" android:exported="false" android:grantUriPermissions="true" android:name="org.tercel.libexportedwebview.upload.UploadFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/tersearch_file_paths"/>
+        </provider>
+        <receiver android:name="org.odin.PowerStateMonitor">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+        <service android:exported="true" android:name="org.chuchu.minium.soy.service.WorkerService" android:process="com.guardian.security.pri.monitor"/>
+    </application>
+</manifest>

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.jb.zcamera" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <permission android:name="com.jb.zcamera.permission.SERVICE" android:protectionLevel="normal"/>
+    <uses-permission android:name="com.jb.zcamera.permission.SERVICE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <permission android:name="com.jb.zcamera.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jb.zcamera.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <receiver android:name="com.hp.mss.hpprint.MainActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+            <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            <data android:scheme="package"/>
+        </intent-filter>
+    </receiver>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_camera_main" android:label="@string/camera_app_name" android:largeHeap="true" android:name="com.jb.zcamera.CameraApp" android:process="com.jb.zcamera" android:supportsRtl="true" android:theme="@style/aj">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/g"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAJdGzVbRLnWfE6esQGsN-dFw8jG2UMU-o"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="cf559d1241420e6a0ed3db2936eeeaa1f3723884"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity=".googleAd" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/camera_app_name" android:launchMode="singleTop" android:name="com.jb.zcamera.camera.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IMAGE_CAPTURE_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IMAGE_CAPTURE_AND_EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.MOTION_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.MOTION_CAPTURE_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.CAPTURE_TO_EDIT_AND_PUBLISH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:scheme="http"/>
+                <data android:host="camera.gomo.com"/>
+                <data android:pathPrefix="/main"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"/>
+                <data android:scheme="http"/>
+                <data android:host="camera.gomo.com"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="com.jb.zcamera.firebase.deeplink.DeepLinkActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.zcamera.com" android:scheme="http"/>
+                <data android:host="www.zcamera.com" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|screenSize" android:excludeFromRecents="true" android:icon="@drawable/ic_gallery" android:label="@string/pj" android:launchMode="singleTop" android:name="com.jb.zcamera.image.PictureViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.MOTION_VIEW_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.jb.zcamera.image.compose.PictureTextActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="@string/gs" android:launchMode="singleTop" android:name="com.jb.zcamera.activity.ImageEditActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IAMGE_EDIT_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IAMGE_EDIT_AND_PUBLISH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.jb.zcamera.image.folder.FolderSelectActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleTop" android:name="com.jb.zcamera.activity.BeutyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.CameraSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.FeedbackHtmlActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.FeedbackActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.jb.zcamera.report.CrashReportDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.jb.zcamera.activity.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.jb.zcamera.store.activity.StoreActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.jb.zcamera.store.activity.StoreMoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.filterstore.activity.FilterDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.filterstore.activity.TempletDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.filterstore.activity.MyFilterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.vip.VipMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.vip.VipAgreeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.vip.VipRecoverResultActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.FacebookActiveActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.ChristmasActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/a70"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/a71"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/camera_app_name" android:name="com.facebook.FacebookActivity" android:theme="@style/n8"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider899210050141099" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/a72"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.jb.zcamera.analytic.ReferrerInfoReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.zcamera.facebooksdk.FBBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.platform.AppCallResultBroadcast"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.zcamera.background.OnAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.TASK_LOOPER_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.zcamera.background.OnStatistic19AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.TASK_LOOPER_STATISTIC19_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.jb.zcamera.camera.ProcessVideoService"/>
+        <receiver android:name="com.jb.zcamera.wecloudpush.WeCloudMessageClick">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.wecloud.custom.notification.click"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.zcamera.wecloudpush.WeCloudMessageShow">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.wecloud.custom.notification.show"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:label="ClientService" android:name="com.jb.zcamera.utils.WeCloudService" android:permission="com.jb.zcamera.permission.SERVICE" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="io.wecloud.message.action.PUSH_SERVICE"/>
+                <action android:name="io.wecloud.message.service.AIDL"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="io.wecloud.message.PushServiceReceiver" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="io.wecloud.message.action.METHOD"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="APPKEY" android:value="GVHQ8EM6OPH9ZQQ8EKXC8QR2"/>
+        <meta-data android:name="Channel" android:value="101"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:icon="@drawable/ic_gallery" android:label="@string/iu" android:launchMode="singleTop" android:name="com.jb.zcamera.gallery.common.GalleryActivity" android:screenOrientation="portrait" android:taskAffinity=".Gallery">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.APP_GALLERY"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="media/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="media/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IMAGE_PICK_TO_EDIT_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IMAGE_PICK_TO_EDIT_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.IMAGE_PICK_TO_EDIT_AND_SHARE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="media/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.PICK_TO_EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.PICK_TO_PIP_EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.PICK_TO_EDIT_AND_PUBLISH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.gallery.view.SetPasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.gallery.view.ConfirmPasswordActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.jb.zcamera.image.encryptMedia" android:exported="false" android:name="com.jb.zcamera.gallery.encrypt.EncryptMediaProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.ad.UcWebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.image.activity.MoreInfoActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.setting.ZeroPlusActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.AppLockActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.gift.LotteryWheelActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"/>
+        <activity android:name="com.jb.zcamera.community.activity.CommunityMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.LabelActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.CommunityLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.TopicDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.WinnersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.ShowDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.CommunityMessageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.MessageWebActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.ConfirmReleaseActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.AccountSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.PersonalPicturePWActivity" android:screenOrientation="portrait" android:theme="@style/f8"/>
+        <activity android:name="com.jb.zcamera.community.activity.OthersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.LikeMessageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.ShareMultiMediaActivity" android:screenOrientation="portrait" android:theme="@style/f8"/>
+        <activity android:name="com.jb.zcamera.community.activity.ShowReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.ShowWinnersActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.ClipPictureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.WebPActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.MyCoinsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.MyDiamondsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.CoinsFeedbackActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.IntegralWallForcedLoginActivity" android:screenOrientation="portrait" android:theme="@style/kr"/>
+        <activity android:name="com.jb.zcamera.community.activity.CancelPostActivity" android:screenOrientation="portrait" android:theme="@style/kr"/>
+        <activity android:name="com.jb.zcamera.community.activity.SelectedChallengesActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.jb.zcamera.community.service.PostTaskService"/>
+        <activity android:name="com.jb.zcamera.distribution.RecommendBeautyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.distribution.AppDistrActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.distribution.AppDistrDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.jb.zcamera.wxapi.WXEntryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.jb.zcamera.activity.VideoEditActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.image.collage.CollageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.zcamera.filterstore.theme.ThemeDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.zcamera.filterstore.sticker.StickerDetailActivity" android:screenOrientation="portrait"/>
+        <receiver android:icon="@drawable/ic_camera_main" android:label="@string/camera_app_name" android:name="com.jb.zcamera.widget.MainWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/c"/>
+        </receiver>
+        <receiver android:icon="@drawable/ic_gallery" android:label="@string/iu" android:name="com.jb.zcamera.widget.GalleryWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/a"/>
+        </receiver>
+        <service android:label="Intelligent Preload Service" android:name="com.jiubang.commerce.service.IntelligentPreloadService" android:process=":com.jiubang.commerce.service.IntelligentPreloadService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:icon="@drawable/widget_icon" android:label="@string/bz" android:name="com.jb.zcamera.widget.ImageWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.zcamera.widget.chang.folder.action"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/b"/>
+        </receiver>
+        <service android:name="com.jb.zcamera.widget.WidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <receiver android:name="com.jb.zcamera.download.DownloadClickReceiver"/>
+        <service android:name="com.jb.zcamera.download.DownloadManagerService"/>
+        <receiver android:name="com.jb.zcamera.theme.ThemeApplyBrocastReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.theme.free_theme_apply"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.zcamera.activity.TestActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.zcamera.image.shareimage.ShareImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.zcamera.vip.subscription.SVipActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.zcamera.recommend.activity.RecommendListActivity" android:screenOrientation="portrait" android:taskAffinity=".recommend" android:theme="@style/f3"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.zcamera.recommend.activity.RecommendSwipDeckActivity" android:screenOrientation="portrait" android:taskAffinity=".recommend" android:theme="@style/cy"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.zcamera.recommend.activity.RecommendPopupActivity" android:screenOrientation="portrait" android:taskAffinity=".recommend" android:theme="@style/cy"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.jb.zcamera.recommend.activity.RecommendPicturePreviewActivity" android:taskAffinity=".recommend"/>
+        <receiver android:name="com.jb.zcamera.recommend.receiver.RecommendAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.RecommendAlarm"/>
+                <action android:name="com.jb.zcamera.action.RecommendNotificationClick"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.jb.zcamera.application.PersistentProcessService"/>
+        <receiver android:name="com.jb.zcamera.application.PersistentProcessReceiver"/>
+        <service android:name="com.jb.zcamera.application.PersistentProcessService$InnerService1"/>
+        <service android:name="com.jb.zcamera.application.SecondProcessService" android:process=":process2"/>
+        <receiver android:name="com.jb.zcamera.application.SecondProcessReceiver" android:process=":process2"/>
+        <service android:name="com.jb.zcamera.application.SecondProcessService$InnerService2" android:process=":process2"/>
+        <service android:name="com.jiubang.commerce.daemon.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.jiubang.commerce.daemon.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jiubang.alock.ACTION_LOCKER_ACCOUNT_CHANGE"/>
+                <action android:name="com.jiubang.alocker.theme.change"/>
+                <action android:name="com.jiubang.alocker.monitor.vip"/>
+                <action android:name="com.jiubang.alocker.refresh.vip"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.zcamera.pip.gpuimage.camera.PipCameraActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.pip.activity.PipFreeStyleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.pip.activity.pip.PipRealTimeCameraActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.pip.activity.PipProcessActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.jb.zcamera.ad.notification.AdNotifyAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.AD_NOTIFY_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.zcamera.ad.notification.NotificationAdActivity"/>
+        <receiver android:name="com.jb.zcamera.ad.notification.NotificationAdRemoveReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.action.AD_NOTIFY_REMOVE"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.zcamera.staticsdkprovider" android:name="com.gau.go.gostaticsdk.StaticDataContentProvider"/>
+        <receiver android:name="com.jiubang.commerce.receiver.AppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/notification_icon_backgraound_color"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/icon_silhouette"/>
+        <service android:name="com.jb.zcamera.firebase.message.FirebaseMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.jb.zcamera.firebase.message.FirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.jb.zcamera.activity.GOSpeedActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MoPubActivity" android:taskAffinity=".MoPubSdk"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MraidActivity" android:taskAffinity=".MoPubSdk"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.common.MoPubBrowser" android:taskAffinity=".MoPubSdk"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MraidVideoPlayerActivity" android:taskAffinity=".MoPubSdk"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="com.jb.zcamera.fullscreen.activity.ClearTaskActivity"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.zcamera.fullscreen.activity.LoadAdActivity" android:taskAffinity=".loadAdTask" android:theme="@style/cy"/>
+        <receiver android:exported="false" android:name="com.jb.zcamera.report.CrashReportReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.report.CRASH_REPORT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.zcamera.permission.RequestPermissionsActivity"/>
+        <receiver android:name="com.jiubang.commerce.tokencoin.proxy.IntegralBroadCastReceiverProxy">
+            <meta-data android:name="from_where" android:value="commerce.tokencoin.IntegralBroadCastReceiver"/>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.jiubang.commerce.tokencoin.demo.integrawall.broadcast.start"/>
+                <action android:name="com.jiubang.commerce.tokencoin.demo.integrawall.broadcast.activate"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jiubang.commerce.tokencoin.proxy.IntegralBroadCastReceiverProcess2Proxy" android:process=":test_process2">
+            <meta-data android:name="from_where" android:value="commerce.tokencoin.IntegralBroadCastReceiver"/>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.jiubang.commerce.tokencoin.demo.integrawall.broadcast.start"/>
+                <action android:name="com.jiubang.commerce.tokencoin.demo.integrawall.broadcast.activate"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.zcamera.commerce.tokencoin.database.TokenCoinProvider" android:exported="false" android:name="com.jiubang.commerce.tokencoin.proxy.TokenCoinProviderProxy"/>
+        <provider android:authorities="com.jb.zcamera.commerce.MultiprocessSharedPreferences" android:exported="false" android:name="com.jb.ga0.commerce.util.io.MultiprocessSharedPreferences"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.proxy.IntegralwallActivityProxy" android:theme="@style/f4"/>
+        <activity android:launchMode="singleTask" android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.proxy.IntegralwallAwardActivityProxy" android:screenOrientation="portrait" android:theme="@style/f4"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.proxy.AwardDownloadActivityProxy" android:screenOrientation="portrait" android:theme="@style/f4"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.proxy.IntegralDetailActivityProxy" android:screenOrientation="portrait" android:theme="@style/f4"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.zcamera.fullscreen.activity.FullscreenAdmobBannerActivity" android:screenOrientation="portrait" android:taskAffinity=".fullscreen"/>
+        <provider android:authorities="com.jb.zcamera.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:name="com.jb.zcamera.community.area.activity.AreaMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.area.activity.AreaSecondOrThirdRegionActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.jb.zcamera.community.area.util.FetchAddressIntentService"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.community.activity.NewFansOrFollowActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="gomo_firebase_channel" android:value="101"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.community.activity.LikesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.InvolveMediaDetailActvity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.InvolveDetailActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.jb.zcamera.firebase.notification.FirebasePushNotificationBroadcastReceiver"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.jump.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.community.activity.GetRewardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.community.activity.NotificationsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.community.activity.CommentsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.monet.bidder.AdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.jb.zcamera.camera.ar.ArActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.jb.zcamera.camera.ar.ArLookCompletedActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyInterstitialActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyAdViewActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.zcamera.community.activity.GiftsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:taskAffinity=".flurry" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.jb.zcamera.store.activity.ArStickerDetailsActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="true" android:name="com.jb.zcamera.firebase.notification.CommunityMessageNotificationBroadcastReceiver"/>
+        <activity android:name="com.jb.zcamera.community.activity.MessageNotificationSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.zcamera.activity.EmptyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.aerserv.sdk.view.AerServFullScreenAdActivity" android:taskAffinity=".aerserv" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.aerserv.sdk.view.ASVastInterstitialActivity" android:taskAffinity=".aerserv" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.aerserv.sdk.view.ASWebviewInterstitialActivity" android:taskAffinity=".aerserv"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.aerserv.sdk.view.ASVpaidInterstitalActivity" android:taskAffinity=".aerserv"/>
+        <activity android:label="@string/yj" android:launchMode="singleTop" android:name="com.hp.mss.hpprint.activity.PrintPreview" android:theme="@style/i5"/>
+        <activity android:label="@string/yh" android:launchMode="singleTop" android:name="com.hp.mss.hpprint.activity.PrintHelp" android:theme="@style/i6"/>
+        <activity android:label="@string/xr" android:name="com.hp.mss.hpprint.activity.PrintPluginManagerActivity" android:theme="@style/i7"/>
+        <activity android:label="@string/yk" android:launchMode="singleTop" android:name="com.hp.mss.hpprint.activity.PrintServicePluginInformation" android:theme="@style/i7"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.jb.zcamera.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/kh"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:name="com.jiubang.commerce.ad.url.AdUrlPreParseLoadingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.jiubang.commerce.ad.h5.H5AdActivity" android:screenOrientation="portrait"/>
+        <service android:label="Ad Service" android:name="com.jiubang.commerce.service.AdService"/>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeBatteryProxyActivity" android:process=":com.jiubang.commerce.chargelocker" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <service android:exported="true" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeLockerProxyService" android:persistent="true" android:process=":com.jiubang.commerce.chargelocker"/>
+        <activity android:exported="true" android:multiprocess="true" android:name="com.jiubang.commerce.dyload.core.proxy.activity.StandarProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="false" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.commerce.notification.main.core.HandleNotificaionClickActivity" android:taskAffinity="com.commerce.notification" android:theme="@style/ks"/>
+        <service android:name="com.commerce.notification.main.core.NotificationSdkService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.mobileads.MraidVideoPlayerActivity"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService" android:process=":filedownloader"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/ka">
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.jb.zcamera"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jb.zcamera.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.gomo.firebasesdk.notification.ClickService"/>
+        <service android:name="com.gomo.firebasesdk.notification.DeleteService"/>
+        <receiver android:exported="true" android:name="com.gomo.firebasesdk.statistic.AlarmStatisticReceiver">
+            <intent-filter>
+                <action android:name="com.firebase.STATISTIC"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.twitter.sdk.android.tweetui.PlayerActivity" android:theme="@style/a4"/>
+        <activity android:name="com.twitter.sdk.android.tweetui.GalleryActivity" android:theme="@style/a4"/>
+        <activity android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.ComposerActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.TweetUploadService"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryShareActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryTileAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="layoutDirection|locale" android:label="@string/a7j" android:name="com.millennialmedia.internal.MMActivity" android:theme="@style/ki"/>
+        <activity android:configChanges="layoutDirection|locale" android:label="sdk" android:name="com.millennialmedia.internal.MMIntentWrapperActivity"/>
+    </application>
+</manifest>

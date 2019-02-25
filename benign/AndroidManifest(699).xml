@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.l23rf.android.stockphoto">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <application android:allowBackup="true" android:icon="@drawable/appicon" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.l23rf.android.stockphoto.HomeActivity" android:theme="@style/ThemeForHome" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_search_result" android:name="com.l23rf.android.stockphoto.SearchResultActivity" android:theme="@style/ThemeForHome" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/title_activity_detail" android:name="com.l23rf.android.stockphoto.DetailActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/settings_item" android:name="com.l23rf.android.stockphoto.SettingsActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:configChanges="orientation" android:label="@string/title_activity_detail" android:name="com.l23rf.android.stockphoto.DetailActivityFullImage" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/title_activity_image_information" android:name="com.l23rf.android.stockphoto.ImageInformation" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_login" android:name="com.l23rf.android.stockphoto.LoginActivity" android:theme="@style/ThemeForHome" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_profile" android:name="com.l23rf.android.stockphoto.ProfileActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:label="@string/title_activity_about_us" android:name="com.l23rf.android.stockphoto.AboutUsActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:label="@string/title_activity_term_of_use" android:name="com.l23rf.android.stockphoto.TermOfUseActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:label="@string/title_activity_term_of_use" android:name="com.l23rf.android.stockphoto.PrivacyPolicyActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:name="com.l23rf.android.stockphoto.WebViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_like_box" android:name="com.l23rf.android.stockphoto.LikeBoxActivity" android:theme="@style/ThemeForHome"/>
+        <activity android:name="com.dropbox.sync.android.DbxAuthActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.dropbox.client2.android.AuthActivity">
+            <intent-filter>
+                <data android:scheme="db-z8xs2b949qeigj2"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:label="Dropbox Sync" android:name="com.dropbox.sync.android.DbxSyncService"/>
+        <activity android:name="com.box.boxandroidlibv2.activities.OAuthActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

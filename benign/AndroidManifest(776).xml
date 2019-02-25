@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mg.smplan" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.mg.smplan.App" android:sharedUserId="com.mg.smplan" android:sharedUserLabel="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.mg.smplan.BaseActivity"/>
+        <activity android:configChanges="layoutDirection|locale" android:label="@string/app_name" android:name="com.mg.smplan.MainActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="layoutDirection|locale" android:exported="true" android:name="com.mg.smplan.NewTaskActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:exported="false" android:label="@string/title_activity_settings" android:name="com.mg.smplan.SettingsActivity"/>
+        <receiver android:exported="false" android:name="com.mg.smplan.StatusBarNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.mg.smplan.STATUS_BAR_NOTIFICATION_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.mg.smplan.StatusBarNotification"/>
+        <provider android:authorities="com.mg.smplan.contentprovider" android:exported="false" android:name="com.mg.smplan.AppContProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="com.mg.smplan.AlarmService"/>
+        <receiver android:exported="false" android:name="com.mg.smplan.AlarmReceiver"/>
+        <receiver android:enabled="false" android:exported="false" android:name="com.mg.smplan.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.mg.smplan.ButtonListener">
+            <intent-filter>
+                <action android:name="com.mg.smplan.add_task_button_clicked"/>
+                <action android:name="com.mg.smplan.setting_button_clicked"/>
+                <action android:name="com.mg.smplan.done_task_button_clicked"/>
+                <action android:name="com.mg.smplan.repeat_task_button_clicked"/>
+                <action android:name="com.mg.smplan.stop_snooze_button_clicked"/>
+                <action android:name="com.mg.smplan.add_snooze_button_clicked"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:label="@string/title_activity_cat_list" android:name="com.mg.smplan.CatListActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <receiver android:exported="false" android:name="com.mg.smplan.NewAppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/new_app_widget_info"/>
+        </receiver>
+        <service android:exported="false" android:name="com.mg.smplan.NewAppWidgetUpdateService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.mg.smplan.SetSnoozeActivity" android:theme="@style/AppTheme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+    </application>
+</manifest>

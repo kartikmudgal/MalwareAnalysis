@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.eyefilter.nightmode.bluelightfilter" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.HARDWARE_TEST"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="false" android:xlargeScreens="true"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_launcher" android:label="@string/app_full_name" android:name="com.eyefilter.nightmode.bluelightfilter.App" android:resizeableActivity="false" android:supportsPictureInPicture="false" android:supportsRtl="false" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:multiprocess="true" android:name="com.eyefilter.nightmode.bluelightfilter.ui.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/BackgroudnTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.eyefilter.nightmode.bluelightfilter.ui.FilterAnimActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.Tran"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.FlashActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.HelpActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.eyefilter.nightmode.bluelightfilter.ui.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.SystemSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.ui.MobVistaActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleInstance" android:multiprocess="true" android:name="com.eyefilter.nightmode.bluelightfilter.ui.AlertDialogActivity" android:theme="@style/TranBackgroundAppTheme"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.RemoveAdsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.DrawPermissionGuideActivity" android:theme="@style/TranBackgroundAppTheme"/>
+        <service android:configChanges="keyboardHidden|orientation|screenSize" android:enabled="true" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.service.FilterService" android:process=":background"/>
+        <service android:exported="false" android:name="com.eyefilter.nightmode.bluelightfilter.service.HelperService" android:process=":Helper">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <action android:name="com.popularapp.colorfilter.service.HELPER"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.receiver.HelperReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.service.NotificationKillerService" android:process=":background"/>
+        <service android:enabled="true" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.service.HelperNotificationKillerService" android:process=":Helper"/>
+        <service android:enabled="true" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.service.AdService"/>
+        <service android:name="com.cc.promote.service.DownloadService"/>
+        <service android:name="com.eyefilter.nightmode.bluelightfilter.service.CheckJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="false" android:label="@string/app_name" android:name="com.eyefilter.nightmode.bluelightfilter.service.BLAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":background" class=".service.BLAccessibilityService">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/serviceconfig"/>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <receiver android:name="com.eyefilter.nightmode.bluelightfilter.receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.popularapp.colorfilter.action.check"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.eyefilter.nightmode.bluelightfilter.receiver.ReminderReceiver">
+            <intent-filter>
+                <action android:name="com.eyefilter.nightmode.bluelightfilter.reminder.cycle"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.eyefilter.nightmode.bluelightfilter.PREFFERENCE_AUTHORITY" android:exported="true" android:name="com.eyefilter.nightmode.bluelightfilter.utils.MultiprocessPreferences"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="155874d0c957ced5305d297bf11e82036de721b8"/>
+        <activity android:name="com.eyefilter.nightmode.bluelightfilter.ui.InterstitialActivity" android:theme="@style/TranBackgroundAppTheme"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.mobvista.msdk.shell.MVActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="3.52966989E14"/>
+        <meta-data android:name="appKey" android:value="@string/altamob_app_key"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.MMActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.VideoPlayer"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <receiver android:name="com.mobi.sdk.AR">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.mobi.sdk.HelperService"/>
+        <receiver android:enabled="false" android:exported="false" android:name="com.mobi.sdk.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.internal.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.internal.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.zjlib.permissionguide.OuterPermissionActivity"/>
+    </application>
+</manifest>

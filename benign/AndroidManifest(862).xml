@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.nautilus.abakus" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher_abacus" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.nautilus.abakus.OpeningActivity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.nautilus.abakus.SignActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="com.nautilus.abakus.LoginActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_firmalar" android:name="com.nautilus.abakus.FirmalarActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="@string/title_activity_settings" android:name="com.nautilus.abakus.SettingsActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="com.nautilus.abakus.UrunSetActivity"/>
+        <activity android:label="@string/title_activity_selling" android:name="com.nautilus.abakus.SellingActivity" android:screenOrientation="portrait"/> /&gt;
+<activity android:label="Satın Al" android:name="com.nautilus.abakus.BuyingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Ekstreler" android:name="com.nautilus.abakus.EkstreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Yapılacak işlemler" android:name="com.nautilus.abakus.IslemTakvimiActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_urunler" android:name="com.nautilus.abakus.UrunlerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Raporlar" android:name="com.nautilus.abakus.RaporActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_urunler" android:name="com.nautilus.abakus.UrunlerActivityEski" android:noHistory="true" android:parentActivityName="com.nautilus.abakus.FirmalarActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.nautilus.abakus.FirmalarActivity"/>
+        </activity>
+        <activity android:label="İade" android:name="com.nautilus.abakus.GivingBackActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

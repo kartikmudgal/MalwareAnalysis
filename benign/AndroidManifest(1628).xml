@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="tv.ello">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="tv.ello.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true"/>
+    <permission android:name="tv.ello.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="tv.ello.activitytry.ElloApp" android:theme="@style/AppBaseTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/fb_login_protocol_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleInstance" android:name="tv.ello.activitytry.ui.activity.SplashScreenActivity" android:noHistory="true" android:theme="@style/BlackNoTitleBarTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:label="@string/deep_link_test">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="ello.tv" android:pathPrefix="/video" android:scheme="http"/>
+                <data android:host="tv.ello" android:scheme="ellotv"/>
+                <data android:host="www.ello.tv" android:pathPrefix="/video" android:scheme="http"/>
+                <data android:host="ello.tv" android:pathPrefix="/video"/>
+                <data android:host="www.ello.tv" android:pathPrefix="/video"/>
+                <data android:host="ello.tv" android:pathPrefix="/artist" android:scheme="http"/>
+                <data android:host="www.ello.tv" android:pathPrefix="/artist" android:scheme="http"/>
+                <data android:host="ello.tv" android:pathPrefix="/artist"/>
+                <data android:host="www.ello.tv" android:pathPrefix="/artist"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="tv.ello.activitytry.ui.activity.NavigationDrawerActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <data android:host="ello.tv/" android:scheme="ello"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/authentication" android:name="tv.ello.activitytry.ui.activity.SocialAuthActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <receiver android:name="tv.ello.utils.MusicIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="io.fabric.ApiKey" android:value="96bcb8ac62fb8193a22143f03716cccc99de6995"/>
+        <provider android:authorities="tv.ello.database.pagehome.MainPageContentProvider" android:exported="false" android:name="tv.ello.database.pagehome.MainPageContentProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.pagehome.MainPageLoadService"/>
+        <provider android:authorities="tv.ello.database.dragview.related.DragViewRelatedPageContentProvider" android:exported="false" android:name="tv.ello.database.dragview.related.DragViewRelatedPageContentProvider"/>
+        <provider android:authorities="tv.ello.database.banners.BannerContentProvider" android:exported="false" android:name="tv.ello.database.banners.BannerContentProvider"/>
+        <provider android:authorities="tv.ello.database.dragview.body.DragViewVideoObjectContentProvider" android:exported="false" android:name="tv.ello.database.dragview.body.DragViewVideoObjectContentProvider"/>
+        <provider android:authorities="tv.ello.database.dragview.sync.DragViewSyncContentProvider" android:exported="false" android:name="tv.ello.database.dragview.sync.DragViewSyncContentProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.dragview.body.DragViewVideoObjectLoadService"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.feedpage.FeedPageLoadService"/>
+        <provider android:authorities="tv.ello.database.loadingsync.LoadingSyncContentProvider" android:exported="false" android:name="tv.ello.database.loadingsync.LoadingSyncContentProvider"/>
+        <provider android:authorities="tv.ello.database.feedpage.FeedPageContentProvider" android:exported="false" android:name="tv.ello.database.feedpage.FeedPageContentProvider"/>
+        <provider android:authorities="tv.ello.database.profile.MyProfileContentProvider" android:exported="false" android:name="tv.ello.database.profile.MyProfileContentProvider"/>
+        <provider android:authorities="tv.ello.database.profile.MyPlayListContentProvider" android:exported="false" android:name="tv.ello.database.profile.MyPlayListContentProvider"/>
+        <provider android:authorities="tv.ello.database.profile.MyFolowersContentProvider" android:exported="false" android:name="tv.ello.database.profile.MyFolowersContentProvider"/>
+        <provider android:authorities="tv.ello.database.profile.MyFolowingsContentProvider" android:exported="false" android:name="tv.ello.database.profile.MyFolowingsContentProvider"/>
+        <provider android:authorities="tv.ello.database.recomendations.RecPlayListContentProvider" android:exported="false" android:name="tv.ello.database.recomendations.RecPlayListContentProvider"/>
+        <provider android:authorities="tv.ello.database.userplaylist.UserPlayListContentProvider" android:exported="false" android:name="tv.ello.database.userplaylist.UserPlayListContentProvider"/>
+        <provider android:authorities="tv.ello.database.artistpage.ArtistInstagramFeedContentProvider" android:exported="false" android:name="tv.ello.database.artistpage.ArtistInstagramFeedContentProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.profile.MyProfileService"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.profile.FollowService"/>
+        <service android:enabled="true" android:exported="false" android:name="tv.ello.database.userplaylist.UserPlayListService"/>
+        <provider android:authorities="tv.ello.database.fastbanner.FastBannerContentProvider" android:name="tv.ello.database.fastbanner.FastBannerContentProvider"/>
+        <service android:enabled="true" android:exported="true" android:name="tv.ello.database.artistpage.ArtistInstagramFeedService"/>
+        <provider android:authorities="tv.ello.database.shoppage.ShopContentProvider" android:name="tv.ello.database.shoppage.ShopContentProvider"/>
+        <receiver android:enabled="true" android:exported="true" android:name="tv.ello.broadcastrecievers.ConnectionBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="tv.ello.exoplayer.ExoPlayerService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="tv.ello.exoplayer.PlayerReceiver">
+            <intent-filter>
+                <action android:name="myaction.TOGGLE_PLAYBACK"/>
+                <action android:name="myaction.NEXT"/>
+                <action android:name="myaction.RELEASE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="tv.ello.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:label="ServiceActivity" android:name="com.vk.sdk.VKServiceActivity" android:theme="@style/VK.Transparent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.twitter.sdk.android.tweetui.PlayerActivity" android:theme="@style/MediaTheme"/>
+        <activity android:name="com.twitter.sdk.android.tweetui.GalleryActivity" android:theme="@style/MediaTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="tv.ello"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="tv.ello.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity"/>
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity"/>
+        <activity android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.ComposerActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.TweetUploadService"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+    </application>
+</manifest>

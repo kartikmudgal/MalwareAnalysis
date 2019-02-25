@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.alibaba.aliexpress.itao" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.alibaba.aliexpress.itao.base.ITaoApp" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="com.aaf.image.glide.AAFGlideModule" android:value="GlideModule"/>
+        <activity android:label="@string/app_name" android:name="com.alibaba.aliexpress.itao.modules.main.view.SplashActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar.Splash" android:title="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.account.view.activity.UserRecommendActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.aliexpress.itao.modules.main.view.MainActivity" android:theme="@style/AppTheme.Main" android:windowSoftInputMode="adjustPan"/>
+        <meta-data android:name="android.app.default_searchable" android:value=".modules.postsearch.view.PostSearchActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.alibaba.aliexpress.itao.modules.account.view.activity.LoginEntranceActivity" android:theme="@style/AppTheme.NoActionBar.Welcome" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.explore.view.ExploreActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.alibaba.aliexpress.itao.modules.common.view.TutorialActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.detail.view.activity.DetailActivity" android:theme="@style/AppTheme.Base"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.account.view.activity.UserListActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.common.view.SimpleWebViewActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.category.view.CategoryActivity">
+            <meta-data android:name="android.app.default_searchable" android:value=".modules.postsearch.view.PostSearchActivity"/>
+        </activity>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.post.view.PostActivity" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.post.view.PostCategoryListActivity" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.post.view.PostUserPhotosActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.post.view.PostPhotoViewerActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.message.view.ConversationDetailActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.account.view.activity.ProfileActivity"/>
+        <activity android:label="@string/title_activity_setting" android:name="com.alibaba.aliexpress.itao.modules.settings.view.SettingActivity" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/test_config" android:name="com.alibaba.aliexpress.itao.modules.settings.view.ConfigTestActivity"/>
+        <activity android:label="@string/title_activity_comment" android:name="com.alibaba.aliexpress.itao.modules.comment.view.CommentActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.alibaba.aliexpress.itao.common.protocol.DispatcherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="itao"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.common.view.IdleBridgeActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.common.view.PicViewActivity" android:process=":remote" android:theme="@style/AppTheme.TransparentStatusBar"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="com.alibaba.aliexpress.itao.modules.postsearch.view.PostSearchActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/post_searchable"/>
+        </activity>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.common.view.HashTagPostListActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.account.view.activity.BlackListActivity"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.common.view.AllHashTagListActivity"/>
+        <activity android:name="com.aaf.sns.auth.SnsAuthActivity" android:theme="@style/AuthActivityTheme.Transparent" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.vk.sdk.VKOpenAuthActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ServiceActivity" android:name="com.vk.sdk.VKServiceActivity" android:screenOrientation="portrait" android:theme="@style/VK.Transparent"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/facebook_app_name"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider142454562827127" android:exported="false" android:name="com.facebook.FacebookContentProvider"/>
+        <provider android:authorities="com.alibaba.aliexpress.itao.modules.postsearch.model.PostSearchSuggestionProvider" android:exported="false" android:name="com.alibaba.aliexpress.itao.modules.postsearch.model.PostSearchSuggestionProvider"/>
+        <activity android:name="com.aaf.album.ImageWallActivity"/>
+        <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+        <permission android:name="com.alibaba.aliexpress.itao.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+        <uses-permission android:name="com.alibaba.aliexpress.itao.permission.MAPS_RECEIVE"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCYLsEnvB7uUDO0SCNlFrNCmsQd-2twWJs"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.alibaba.aliexpress.idle.modules.common.view.IdleMainActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.imagePicker.view.PhotoWallActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.post.view.IdlePostActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.post.view.IdleCategoryActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.post.view.IdleConditionActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:label="@string/title_activity_idle_detail" android:name="com.alibaba.aliexpress.idle.modules.detail.view.IdleDetailActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.profile.view.IdleProfileActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:label="@string/title_activity_idle_pic_view" android:name="com.alibaba.aliexpress.idle.modules.detail.view.IdlePicViewActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:label="@string/title_activity_idle_comment" android:name="com.alibaba.aliexpress.idle.modules.detail.view.IdleCommentActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.setting.view.IdleAboutUsActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.setting.view.IdleHelpCenterActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.message.view.IdleConversationDetailActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.TestMainActivity" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.search.view.IdleSearchListActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.manager.view.IdleManageMyPostActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.manager.view.IdleManageMyWatchActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.location.view.IdleLocationSearchActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.detail.view.IdleMakeOfferActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.post.view.IdleAeOrderReSellActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.evaluation.view.EvaluationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.evaluation.view.EvaluationReplyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.topicchannel.view.TopicChannelDetailActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TransparentStatusBar"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.search.view.IdleSearchKwdListActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.search.view.IdleSearchActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.search.view.IdleFilterActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.post.view.SelectCountryActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.idle.modules.setting.view.IdleMyPhoneNumberActivity" android:screenOrientation="portrait" android:theme="@style/IdleAppTheme"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.post.view.PostRepostActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:name="com.alibaba.aliexpress.itao.modules.detail.view.activity.RepostUserListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.alibaba.app.common.widget.crop.CropActivity"/>
+        <activity android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.aaf.sns.share.ShareActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="false" android:name="com.alibaba.aliexpress.itao.modules.post.presenter.ItaoPublishPostIntentService"/>
+        <service android:exported="false" android:name="com.alibaba.app.common.service.FileUploadIntentService"/>
+        <service android:exported="false" android:name="com.alibaba.aliexpress.idle.modules.common.presenter.FetchAddressIntentService"/>
+        <service android:exported="false" android:name="com.alibaba.aliexpress.idle.modules.common.presenter.IdlePhotoUploadIntentService"/>
+        <meta-data android:name="CHANNEL" android:value="play"/>
+        <receiver android:exported="true" android:name="com.alibaba.aliexpress.itao.modules.common.receiver.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.alibaba.aliexpress.itao.modules.common.receiver.LocaleChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.aaf.net.engine.io.HeartbeatReceiver"/>
+        <service android:exported="true" android:name="com.taobao.accs.ChannelService" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.taobao.accs.data.MsgDistributeService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.taobao.accs.EventReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.taobao.accs.ServiceReceiver" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="anet.channel.heartbeat.HeartbeatManager$Receiver">
+            <intent-filter>
+                <action android:name="anetwork.channel.intent.action.COMMAND"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="org.android.agoo.accs.AgooService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.alibaba.aliexpress.itao.TaobaoIntentService">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.aliexpress.itao.intent.mipush.action.COMMAND"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.taobao.agoo.AgooCommondReceiver">
+            <intent-filter>
+                <action android:name="com.alibaba.aliexpress.itao.intent.action.COMMAND"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.alibaba.app.common.service.VkSlientShareService"/>
+        <receiver android:name="com.alibaba.aliexpress.itao.iTaoSecretCodeReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:host="\ 15995112589" android:scheme="android_secret_code"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.alibaba.aliexpress.itao.common.tlog.AccsTlogService" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.alibaba.aliexpress.itao.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:name="com.alibaba.photopicker.PhotoSelectionActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name="com.alibaba.photopicker.PhotoViewerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.FullscreenOverlay" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="@string/photo_crop" android:name="com.alibaba.photopicker.CropImageActivity" android:theme="@style/Theme.Fullscreen"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService"/>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="false" android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.activity.CollectionActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.activity.CollectionHashTagActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.report.ReportActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.report.ReportConditionActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.activity.CollageDetailActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.comment.view.CommentActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.comment.view.MyCommentActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.follow.view.FollowListActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.like.view.activity.LikeListActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.profile.view.ProfileBioActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:name="com.alibaba.ugc.modules.profile.view.ProfileNickNameActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.block.view.BlockListActivity" android:theme="@style/UgcAETheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.profile.view.UGCProfileActivity" android:theme="@style/UgcAETheme.TransparentStatusBar"/>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.activity.UGCWishListActivity" android:theme="@style/UgcAETheme.TransparentStatusBar"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.alibaba.ugc.modules.mastershow.view.HomeSpotlightActity" android:theme="@style/UgcMasterShowAETheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="com.alibaba.ugc.modules.mastershow.view.HomeSpotlightListActity" android:theme="@style/UgcMasterShowAETheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.alibaba.ugc.modules.mastershow.view.DASpotlightListActity" android:theme="@style/UgcMasterShowAETheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.CollageBannerEditDialog" android:theme="@style/ActivityDialogTheme"/>
+        <service android:exported="false" android:name="com.aaf.upload.UploadIntentService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.collection.view.activity.CollagePublishActivity" android:theme="@style/UgcAETheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name="com.alibaba.ugc.modules.collection.view.CollageProductDialog" android:theme="@style/ActivityDialogTheme"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.alibaba.ugc.modules.collection.view.activity.UGCProductListActivity" android:theme="@style/UgcAETheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.alibaba.ugc.modules.collection.view.activity.UGCSearchActivity" android:theme="@style/UgcAETheme" android:windowSoftInputMode="stateAlwaysVisible|adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.collection.view.activity.CollectionBannerLibraryActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.festival.collection.view.CollectionVenueActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.festival.collection.view.CollectionVenueListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.festival.collection.view.CollectionPreVenueActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.alibaba.ugc.modules.festival.collection.view.CollectionVenueTopActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.bravetheskies.ghostracer" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="com.sonyericsson.extras.liveware.aef.EXTENSION_PERMISSION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:logo="@drawable/ic_ghost" android:name="com.bravetheskies.ghostracer.GhostracerApp" android:theme="@style/Theme.MyTheme">
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="com.bravetheskies.ghostracer.MainActivity" android:theme="@style/Theme.MyThemeNoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAYNE4MTBlsNO0U-1VeLRiYm_6HrcPApnw"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:enabled="true" android:exported="true" android:label="RecordService" android:name="com.bravetheskies.ghostracer.RecordService"/>
+        <service android:enabled="true" android:exported="true" android:label="DownloadDataService" android:name="com.bravetheskies.ghostracer.strava.DownLoadSegmentData"/>
+        <activity android:label="@string/title_activity_settings" android:name="com.bravetheskies.ghostracer.SettingsActivity"/>
+        <activity android:label="@string/add_ghost" android:name="com.bravetheskies.ghostracer.AddGhostActivity"/>
+        <activity android:label="@string/title_activity_strava_auth" android:name="com.bravetheskies.ghostracer.accounts.StravaAuth" android:noHistory="true"/>
+        <activity android:label="@string/title_activity_ghost_detail" android:name="com.bravetheskies.ghostracer.GhostDetailActivity"/>
+        <activity android:label="@string/title_activity_finish" android:name="com.bravetheskies.ghostracer.FinishActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_create_ghost_strava" android:name="com.bravetheskies.ghostracer.CreateGhostStravaActivity"/>
+        <service android:name="com.bravetheskies.ghostracer.DataLayerListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED"/>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED"/>
+                <data android:host="*" android:scheme="wear"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="com.bravetheskies.ghostracer.strava.DownloadGhostFromEffort"/>
+        <service android:enabled="true" android:exported="true" android:name="com.bravetheskies.ghostracer.smartwatch.WatchExtensionService"/>
+        <receiver android:name="com.bravetheskies.ghostracer.smartwatch.ExtensionReceiver" android:permission="com.sonyericsson.extras.liveware.aef.HOSTAPP_PERMISSION">
+            <intent-filter>
+                <action android:name="com.sonyericsson.extras.liveware.aef.registration.EXTENSION_REGISTER_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.registration.ACCESSORY_CONNECTION"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.notification.VIEW_EVENT_DETAIL"/>
+                <action android:name="com.sonyericsson.extras.liveware.aef.notification.REFRESH_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.aef.widget.START_REFRESH_IMAGE_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.aef.widget.STOP_REFRESH_IMAGE_REQUEST"/>
+                <action android:name="com.sonyericsson.extras.aef.widget.ONTOUCH"/>
+                <action android:name="com.sonyericsson.extras.liveware.extension.util.widget.scheduled.refresh"/>
+                <action android:name="com.sonyericsson.extras.aef.control.START"/>
+                <action android:name="com.sonyericsson.extras.aef.control.STOP"/>
+                <action android:name="com.sonyericsson.extras.aef.control.PAUSE"/>
+                <action android:name="com.sonyericsson.extras.aef.control.RESUME"/>
+                <action android:name="com.sonyericsson.extras.aef.control.ERROR"/>
+                <action android:name="com.sonyericsson.extras.aef.control.KEY_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.TOUCH_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.SWIPE_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.OBJECT_CLICK_EVENT"/>
+                <action android:name="com.sonyericsson.extras.aef.control.MENU_ITEM_SELECTED"/>
+                <action android:name="com.sonyericsson.extras.aef.control.ACTIVE_POWER_SAVE_MODE_STATUS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/title_activity_smart_watch2" android:name="com.bravetheskies.ghostracer.SmartWatch2"/>
+        <activity android:label="@string/title_activity_wear_settings" android:name="com.bravetheskies.ghostracer.wear.WearPageSettingsActivity"/>
+        <activity android:label="@string/title_activity_rflkt" android:name="com.bravetheskies.ghostracer.wahoo.RFLKTActivity"/>
+        <activity android:label="@string/title_activity_history" android:name="com.bravetheskies.ghostracer.HistoryActivity"/>
+        <service android:exported="false" android:name="com.bravetheskies.ghostracer.strava.StravaUploadIntentService"/>
+        <activity android:label="@string/signed_in" android:name="com.bravetheskies.ghostracer.accounts.RunkeeperAuthActivity"/>
+        <activity android:label="@string/signed_in" android:name="com.bravetheskies.ghostracer.accounts.SmashRunAuthActivity"/>
+        <service android:exported="false" android:name="com.bravetheskies.ghostracer.accounts.RunkeeperUploadIntentService"/>
+        <activity android:label="@string/title_activity_ghost_interval" android:name="com.bravetheskies.ghostracer.GhostIntervalActivity"/>
+        <activity android:label="@string/app_name" android:name="com.bravetheskies.ghostracer.GhostHistoryActivity" android:parentActivityName="com.bravetheskies.ghostracer.AddGhostActivity" android:theme="@style/Theme.MyThemeNoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.bravetheskies.ghostracer.AddGhostActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="*" android:mimeType="*/*" android:scheme="file"/>
+                <data android:pathPattern=".*\\.gpx"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_finished_map" android:name="com.bravetheskies.ghostracer.FinishedMapActivity"/>
+        <activity android:label="@string/title_activity_chart" android:name="com.bravetheskies.ghostracer.ChartActivity"/>
+        <activity android:label="@string/title_activity_sensors" android:name="com.bravetheskies.ghostracer.SensorsActivity"/>
+        <service android:exported="false" android:name="com.bravetheskies.ghostracer.wear.WearSaveIntentService"/>
+        <activity android:label="@string/title_activity_accounts" android:name="com.bravetheskies.ghostracer.AccountsActivity"/>
+        <service android:exported="false" android:name="com.bravetheskies.ghostracer.accounts.SmashRunUploadIntentService"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="79ab04bcc21654b0176749db6705e8e0fc5af939"/>
+        <service android:name="com.mapbox.mapboxsdk.telemetry.TelemetryService"/>
+        <meta-data android:name="com.google.android.wearable.beta.app" android:resource="@xml/android_wear_micro_apk"/>
+    </application>
+</manifest>

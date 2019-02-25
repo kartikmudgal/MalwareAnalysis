@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.omni.cleaner" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>  
+<uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BIND_INPUT_METHOD"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.omni.cleanmaster.DCApp" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="shell_scenery_dispatcher_version" android:value="1"/>
+        <meta-dataclear android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.omni.cleanmaster.InstallReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:name="com.omni.cleanmaster.CleanerMainActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.omni.cleanmaster.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@style/ThemeSplash" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.omni.cleanmaster.AboutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:name="com.omni.cleanmaster.RecommendBoosterActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.omni.cleanmaster.HelperActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan"/>
+        <receiver android:exported="false" android:name="com.omni.cleanmaster.model.db.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.omni.cleanmaster.model.db.PackageChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.omni.cleanmaster.DCMReceiver">
+            <intent-filter>
+                <action android:name="com.omni.cleaner.action.DCMR"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.omni.cleanmaster.common.CommonIntentService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.omni.cleanmaster.model.db.TrashAppInstallOrUninstallDialog" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/MyTheme.CustomDialog"/>
+        <service android:name="com.dianxinos.dxservice.core.DXCoreService"/>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.DownloadService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CANCEL_DOWNLOAD"/>
+            </intent-filter>
+            <meta-data android:name="com.dianxinos.appupdate.DOWNLOAD_PROGRESS_LISTENER" android:value="com.dianxinos.optimizer.update.DownloadProgressListenerImpl"/>
+        </service>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.AppUpdateService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CHECK_UPDATE"/>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD_RETRY"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.dianxinos.appupdate.NotifyInstalledReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.NOTIFY_INSTALLED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="app_license" android:value="@string/license_id_release"/>
+        <provider android:authorities="com.omni.cleaner.DuAdCacheProvider" android:exported="true" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.omni.cleanmaster.AliveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.lazyswipe.utils.PhoneReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.ImageBucketActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.ImageShowActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.MediaShowActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.VideoLargeFileaActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.apprecommend.BoosterRecommendActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.apprecommend.BatteryRecommendActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <service android:exported="false" android:name="com.omni.cleanmaster.BService"/>
+        <activity android:excludeFromRecents="true" android:name="com.omni.cleanmaster.base.BaseFragmentActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="scenery_dispatcher_version" android:value="1"/>
+        <provider android:authorities="com.omni.cleaner.duscene.MobulaCacheProvider" android:exported="false" android:name="com.baidu.mobula.reportsdk.MobulaCacheProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser" android:noHistory="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <service android:name="com.dl.shell.reflux.silentdownload.DownloadFileService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.dl.shell.reflux.ui.RefluxDialogActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/shelldlsdk_reflux_dialogstyle">
+            <intent-filter>
+                <action android:name="android.intent.action.shelldlsdk.reflux"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="duscene_version" android:value="2"/>
+        <activity android:excludeFromRecents="true" android:name="com.duapps.scene.LandingPageActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.duapps.scene.CpuCoolActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.duapps.scene.SceneEmptyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.SceneTestActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:name="com.omni.cleanmaster.language.LanguageSettingsActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="search_buzz_appid" android:value="LWoiRB5c"/>
+        <activity android:name="com.dianxinos.lazyswipe.TriggerAreaActivity" android:screenOrientation="portrait" android:theme="@style/SwipeTriggerAreaDialogTransparent"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.lazyswipe.EmptyActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.lazyswipe.DuWebActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.omni.cleanmaster.module.swipe.SwipeSettingAcivity" android:screenOrientation="portrait" android:taskAffinity=".duswipe" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.lazyswipe.ACTION_SWIPE_SETTING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.lazyswipe.BrightnessChangeActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.dl.shell.scenerydispatcher.ui.ShellDialogActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/Shell_dlsdk_activitydialog_style"/>
+        <receiver android:name="com.omni.cleanmaster.timemonitor.TimeElapsedReceiver">
+            <intent-filter>
+                <action android:name="com.omni.cleaner.period.action"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.duapps.search.ui.act.FloatSearchSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.duapps.search.ui.act.SearchFragmentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.duapps.search.internal.receiver.NewUserProtectReceiver">
+            <intent-filter>
+                <action android:name="com.omni.cleaner.action.NewUserProtect"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.duapps.search.DuSearchPackageChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.dxservice.stat.AlarmReceiver">
+            <intent-filter>
+                <action android:name="DXCoreAlarmReceiver"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.omni.cleaner.SearchCacheProvider" android:exported="false" android:name="com.duapps.search.internal.db.SearchCacheProvider"/>
+        <meta-data android:name="du_search_action" android:value="com.du.action.private"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.duapps.search.internal.receiver.FloatWindowRefreshReceiver">
+            <intent-filter>
+                <action android:name="com.duapps.search.action.FloatWindowRefresh"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.duapps.procad.ProcFullAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dianxinos.outerads.ad.interstitial.InterstitialAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dianxinos.outerads.ad.popup.PopupAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dl.shell.grid.view.GridRemmendActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/MyCustomTheme"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dl.shell.grid.innerpop.HomeSceneActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider2060348597588172" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <provider android:authorities="com.omni.cleaner.provider.toolbox.configs" android:exported="false" android:name="com.duapps.ad.stats.SharedPrefsProviderToolbox"/>
+        <activity android:name="com.dianxinos.outerads.ad.splash.SplashScreenAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.omni.cleanmaster.settings.SettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.omni.cleanmaster.FirstPageActivity" android:theme="@style/TabActivityTheme"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.outerads.ad.notification.NotificationAdActivity" android:screenOrientation="portrait" android:taskAffinity="notify.ad" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dianxinos.outerads.ad.exit.ExitAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dianxinos.outerads.ad.trigger.TriggerAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTop" android:name="com.omni.boost.memorybooster.main.BoosterMainActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.omni.cooler.ui.CpuGuardActivity" android:screenOrientation="portrait" android:theme="@style/TabActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.omni.cooler.ui.CPUGuardFinishActivity" android:screenOrientation="portrait" android:theme="@style/TabActivityTheme"/>
+        <service android:name="com.android.apps.pros.LocalCService" android:process=":local"/>
+        <receiver android:name="com.android.apps.pros.LocalAReceiver" android:process=":local"/>
+        <receiver android:name="com.android.apps.pros.LocalCReceiver" android:process=":local">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.apps.pros.LocalMService"/>
+        <service android:enabled="true" android:exported="true" android:name="io.presage.PresageService" android:process=":remote">
+            <intent-filter>
+                <action android:name="io.presage.PresageService.PIVOT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="io.presage.activities.PresageActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="io.presage.intent.action.LAUNCH_WEBVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="io.presage.receiver.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="io.presage.receiver.NetworkChangeReceiver.ONDESTROY"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="io.presage.receiver.AlarmReceiver"/>
+        <provider android:authorities="com.omni.cleaner.PresageProvider" android:enabled="true" android:exported="true" android:name="io.presage.provider.PresageProvider"/>
+        <activity android:name="com.avocarrot.androidsdk.VideoActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dl.shell.grid.view.GridPopActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <meta-data android:name="shell_reflux_version" android:value="1"/>
+        <receiver android:name="com.dl.shell.grid.NetworkConnectChangedReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.dl.shell.grid.view.ShortcutActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/shelldlsdk_reflux_dialogstyle">
+            <intent-filter>
+                <action android:name="android.intent.action.shelldlsdk.grid"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="outer_game_action" android:value="com.outergame.action"/>
+        <provider android:authorities="com.omni.cleaner.DuOuterGameCooProvider" android:exported="true" android:name="com.dianxinos.outergame.DuOuterGameCooProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <service android:name="com.daemon.keepalive.DaemonService"/>
+        <service android:name="com.daemon.keepalive.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.daemon.keepalive.KeepAliveReciver">
+            <intent-filter>
+                <action android:name="com.daemon.action.KEEP_ALIVE"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

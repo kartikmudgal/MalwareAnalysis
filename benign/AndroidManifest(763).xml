@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.maxwen.deskclock" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.maxwen.deskclock.worldclock.permissions.WRITE_DATABASE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.maxwen.deskclock.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.maxwen.deskclock.permission.C2D_MESSAGE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:icon="@mipmap/ic_launcher_alarmclock" android:label="@string/app_label_new" android:name="android.support.multidex.MultiDexApplication" android:requiredForAllUsers="true" android:supportsRtl="true">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <provider android:authorities="com.maxwen.deskclock" android:exported="false" android:name="com.maxwen.deskclock.provider.ClockProvider"/>
+        <provider android:authorities="com.maxwen.deskclock.worldclock.db" android:exported="true" android:name="com.maxwen.deskclock.worldclock.db.DbCityProvider" android:writePermission="com.maxwen.deskclock.worldclock.permissions.WRITE_DATABASE"/>
+        <activity android:icon="@mipmap/ic_launcher_alarmclock" android:label="@string/app_label_new" android:launchMode="singleTask" android:name="com.maxwen.deskclock.DeskClock" android:theme="@style/DeskClock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="@bool/config_dockAppEnabled" android:icon="@mipmap/ic_launcher_alarmclock" android:label="@string/app_label_new" android:launchMode="singleTask" android:name="com.maxwen.deskclock.DockClock" android:targetActivity="com.maxwen.deskclock.DeskClock" android:theme="@style/DeskClock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DESK_DOCK"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:excludeFromRecents="true" android:label="@string/settings" android:name="com.maxwen.deskclock.SettingsActivity" android:taskAffinity="" android:theme="@style/SettingsTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/cities_activity_title" android:name="com.maxwen.deskclock.worldclock.CitiesActivity" android:taskAffinity="" android:theme="@style/DeskClock">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:name="com.maxwen.deskclock.alarms.AlarmActivity" android:showOnLockScreen="true" android:taskAffinity="" android:theme="@style/AlarmAlertFullScreenTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.maxwen.deskclock.ScreensaverActivity" android:taskAffinity="" android:theme="@style/ScreensaverActivityTheme"/>
+        <receiver android:exported="false" android:name="com.maxwen.deskclock.alarms.AlarmStateManager"/>
+        <service android:exported="false" android:name="com.maxwen.deskclock.alarms.AlarmService"/>
+        <activity android:excludeFromRecents="true" android:name="com.maxwen.deskclock.HandleApiCalls" android:permission="com.android.alarm.permission.SET_ALARM" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.SET_ALARM"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SHOW_ALARMS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SET_TIMER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:exported="true" android:name="com.maxwen.deskclock.HandleSetAlarm" android:targetActivity="com.maxwen.deskclock.HandleApiCalls"/>
+        <receiver android:name="com.maxwen.deskclock.AlarmInitReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:icon="@mipmap/ic_launcher_alarmclock" android:label="@string/analog_gadget" android:name="com.maxwen.alarmclock.CustomAnalogAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.maxwen.deskclock.ON_QUARTER_HOUR"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/custom_analog_appwidget"/>
+        </receiver>
+        <receiver android:icon="@mipmap/ic_launcher_alarmclock" android:label="@string/custom_gadget" android:name="com.maxwen.alarmclock.CustomAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.maxwen.deskclock.ON_QUARTER_HOUR"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED"/>
+                <action android:name="com.maxwen.deskclock.worldclock.update"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/custom_appwidget"/>
+        </receiver>
+        <service android:exported="false" android:name="com.maxwen.alarmclock.CustomAppWidgetProvider$ClockUpdateService"/>
+        <service android:exported="false" android:name="com.maxwen.alarmclock.CustomAnalogAppWidgetProvider$AnalogClockUpdateService"/>
+        <service android:exported="false" android:name="com.maxwen.alarmclock.DigitalAppWidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <receiver android:exported="false" android:name="com.maxwen.alarmclock.DigitalWidgetViewsFactory"/>
+        <activity android:name="com.maxwen.alarmclock.CustomAppWidgetConfigure" android:theme="@style/DeskClock">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:label="@string/app_label_new" android:name="com.maxwen.deskclock.Screensaver" android:permission="android.permission.BIND_DREAM_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService"/>
+                <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.service.dream" android:resource="@xml/dream_info"/>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/screensaver_settings" android:name="com.maxwen.deskclock.ScreensaverSettingsActivity" android:taskAffinity="" android:theme="@style/ScreensaverSettingsActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.maxwen.deskclock.timer.TimerAlertFullScreen" android:showOnLockScreen="true" android:taskAffinity="" android:theme="@style/TimerAlertFullScreenTheme"/>
+        <service android:description="@string/timer_ring_service_desc" android:exported="false" android:name="com.maxwen.deskclock.TimerRingService">
+            <intent-filter>
+                <action android:name="com.maxwen.deskclock.TIMER_ALERT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.maxwen.deskclock.timer.TimerReceiver">
+            <intent-filter>
+                <action android:name="start_timer"/>
+                <action android:name="delete_timer"/>
+                <action android:name="times_up"/>
+                <action android:name="timer_stop"/>
+                <action android:name="timer_reset"/>
+                <action android:name="timer_done"/>
+                <action android:name="timer_update"/>
+                <action android:name="notif_in_use_show"/>
+                <action android:name="notif_in_use_cancel"/>
+                <action android:name="notif_times_up_stop"/>
+                <action android:name="notif_times_up_plus_one"/>
+                <action android:name="notif_times_up_show"/>
+                <action android:name="notif_times_up_cancel"/>
+                <action android:name="notif_delete"/>
+                <action android:name="notif_delete_timer"/>
+                <action android:name="notif_toggle_state"/>
+            </intent-filter>
+        </receiver>
+        <service android:description="@string/stopwatch_service_desc" android:exported="false" android:name="com.maxwen.deskclock.stopwatch.StopwatchService">
+            <intent-filter>
+                <action android:name="start_stopwatch"/>
+                <action android:name="lap_stopwatch"/>
+                <action android:name="stop_stopwatch"/>
+                <action android:name="reset_stopwatch"/>
+                <action android:name="share_stopwatch"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/Theme.AppInvite.Preview">
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"/>
+        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"/>
+        <service android:name="com.google.android.gms.cast.framework.ReconnectionService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.maxwen.deskclock"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.maxwen.deskclock.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <service android:name="com.google.firebase.crash.internal.service.FirebaseCrashReceiverService" android:process=":background_crash"/>
+        <service android:name="com.google.firebase.crash.internal.service.FirebaseCrashSenderService" android:process=":background_crash"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.tagmanager.TagManagerService"/>
+        <activity android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity" android:noHistory="true">
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.maxwen.deskclock"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

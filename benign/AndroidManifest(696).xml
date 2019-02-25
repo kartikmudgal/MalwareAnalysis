@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ksmobile.launcher" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.LOCATION" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.GPS" android:required="false"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.ksmobile.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ksmobile.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WEATHERCLOCK_PROVIDER"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="com.ksmobile.launcher.plugin.unread.permission.READ"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.asus.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.tct.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tct.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.gionee.amisystem.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.gionee.amisystem.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.zte.mifavor.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.ksmobile.launcher.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.ksmobile.launcher.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+ 
+<uses-permission android:name="android.permission.READ_CALENDAR"/>
+ 
+<uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"/>
+    <uses-permission android:name="com.android.launcher3.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="com.google.android.gm.permission.READ_CONTENT_PROVIDER"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="true"/>
+    <instrumentation android:name="android.test.InstrumentationTestRunner" android:targetPackage="com.ksmobile.launcher"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL"/>
+    <uses-permission android:name="com.android.voicemail.permission.WRITE_VOICEMAIL"/>
+    <uses-permission android:name="com.android.voicemail.permission.READ_VOICEMAIL"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/a94" android:label="@string/bb" android:largeHeap="@bool/b" android:name="com.ksmobile.launcher.LauncherApplication" android:persistent="true" android:supportsRtl="true" android:theme="@style/d">
+        <uses-library android:name="android.test.runner"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="fb478486302299599"/>
+        <meta-data android:name="app_license" android:value="f607129cfbaa1d8507955d15026bffe2"/>
+        <meta-data android:name="com.ksmobile.launcher.theme.glide.ThemeGlideConfig" android:value="GlideModule"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.ksmobile.launcher.setting.ActivityPicker"/>
+        <activity android:finishOnCloseSystemDialogs="true" android:name="com.ksmobile.launcher.setting.AppWidgetPickActivity" android:theme="@android:style/Theme.Holo.Light.Dialog">
+            <intent-filter android:priority="1">
+                <action android:name="android.appwidget.miui.action.APPWIDGET_PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.Launcher" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/au" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cmlauncher" android:path="/" android:scheme="diy.cmt"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+            <intent-filter android:label="@string/wd">
+                <action android:name="android.intent.action.ASSIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="cmlauncher"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cml.ksmobile.com" android:path="/theme_search" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.ksmobile.launcher.theme.diy.ThemeDIYShareActivity" android:screenOrientation="portrait" android:theme="@style/au"/>
+        <activity android:excludeFromRecents="true" android:name="com.ksmobile.launcher.SplashActivity" android:theme="@style/au">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.ksmobile.launcher.wizard.KResolverActivity" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/a3"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.ksmobile.launcher.wizard.KResolverActivity17" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/a3"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.ksmobile.launcher.wizard.KResolverActivity21" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/a3"/>
+        <activity android:clearTaskOnLaunch="true" android:enabled="false" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.wizard.FakeHomeEx" android:screenOrientation="nosensor" android:stateNotNeeded="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.MONKEY"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.ksmobile.launcher.wizard.SetDefaultRetryActivity" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/o"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.SettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.SettingActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.extrascreen.NoteBookActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.extrascreen.CheetahPetMoreActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.extrascreen.NoteBookEditActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.TermsPrivacyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.SettingAboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.SettingAboutWebView" android:process=":search" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.TempSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.cleanmaster.ui.app.market.MarketAppWebActivity" android:screenOrientation="portrait" android:theme="@style/t" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.cleanmaster.ui.app.market.MarketLoadingDialog" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:name="com.ksmobile.launcher.safe.ui.SecurityDialogActivity" android:screenOrientation="portrait" android:theme="@style/o"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ksmobile.launcher.business.magic_show.MagicShowViewActivity" android:screenOrientation="portrait" android:theme="@style/p"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.switchpanel.SwitchPanelActivity" android:screenOrientation="portrait" android:theme="@style/at"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.ksmobile.launcher.menu.setting.feedback.activity.FeedBackActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.FeedBackActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.ksmobile.launcher.menu.setting.ExitActivity" android:screenOrientation="portrait" android:theme="@style/b3" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ksmobile.launcher.customitem.view.SearchAddressActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.HideAppSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.gesturepassword.GesturePasswordSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.gesturepassword.ForgotPasswordActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmaster.boost.onetap.OneTapCleanerActivity" android:theme="@style/bf"/>
+        <activity android:name="com.ksmobile.launcher.externals.battery.BatterySavingActivity" android:screenOrientation="portrait" android:theme="@style/b"/>
+        <activity android:name="com.ksmobile.launcher.externals.battery.BatteryDetailActivity" android:screenOrientation="portrait" android:theme="@style/b"/>
+        <activity android:name="com.ksmobile.launcher.externals.battery.BatteryRankActivity" android:screenOrientation="portrait" android:theme="@style/b"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.ksmobile.launcher.webview.SSLDialog" android:process=":search" android:screenOrientation="userPortrait" android:theme="@style/az" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="true" android:name="com.ksmobile.launcher.customitem.view.AllAppsWebActivity" android:process=":search" android:screenOrientation="userPortrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ksmobile.launcher.externals.battery.BatteryAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.externals.battery.ACTION_BATTERY_30_MINS_ALARM"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.externals.battery.ACTION_BATTERY_30_MINS_ALARM"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.locker.LockerProcessReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.lockerprocess"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.locker.LockerLauncherMemoryReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.lockerlauncher.memory"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ksmobile.launcher.UserPresentReceiver" android:process=":gcm_service">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ksmobile.launcher.locker.LockerHandleService"/>
+        <service android:name="com.ksmobile.launcher.locker.LockerMemoryLauncherService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.wallpaper.PersonalizationActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@style/ao">
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cmlauncher" android:scheme="cmdeeplink"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.ksmobile.launcher.wallpaper.PersonalizationActivity$ClosePersonlizationActivityService" android:process=":wallpaper"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.theme.diy.ThemeDIYActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.wallpaper.WallpaperNativeAdActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.theme.cmclub.ThemeCmClubActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.theme.ThemeSubmitActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.wallpaper.upload.UploadWallpaperActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.wallpaper.WallpaperOnLineActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@style/an"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.weather.WeatherDetailedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.WeatherSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.NotificationSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:exported="true" android:name="com.ksmobile.launcher.wallpaper.WallpaperActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.theme.ThemeDetailActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@style/an"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.launcher.wizard.SetDefaultGuideActivity" android:screenOrientation="portrait" android:taskAffinity="com.ksmobile.launcher.setdefaultlauncher.task" android:theme="@style/b3"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.launcher.business.lottery.ui.LotteryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.mobvista.msdk.shell.MVActivity" android:process=":mobvista" android:screenOrientation="portrait" android:theme="@style/c">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.ksmobile.launcher.webview.WebViewActivity" android:process=":wallpaper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.live_wallpaper.LiveWallpaperGuideActivity" android:screenOrientation="portrait" android:theme="@style/ao"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.menu.setting.SettingSubActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.customitem.view.CommonWebActivity" android:process=":wlockerp" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.launcher.wizard.NewSetDefaultAnimGuideActivity" android:screenOrientation="portrait" android:taskAffinity="com.ksmobile.launcher.setdefaultlauncher.task" android:theme="@style/b3"/>
+        <activity android:name="com.ksmobile.launcher.wizard.AfterCleanSettingDefaultGuideActivity" android:screenOrientation="portrait" android:theme="@style/b3"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.CortanaSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <service android:exported="false" android:name="com.cleanmaster.service.LocalService"/>
+        <service android:exported="false" android:name="com.ksmobile.launcher.menu.setting.feedback.util.LocalService"/>
+        <service android:name="com.ksmobile.launcher.crash_upload.CrashUploadService" android:process=":crash_service"/>
+        <service android:name="com.ksmobile.launcher.theme.ThemePushService">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.THEME_PUSH"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.ksmobile.launcher.wallpaper.upload.UploadWallpaperService" android:process=":wallpaper">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.UPLOAD_WALLPAPER"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.ksmobile.launcher.HDSettingService">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.HDSettingService"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.ksmobile.infoc.userbehavior.UserBehaviorLogService"/>
+        <service android:label="@string/bb" android:name="com.ksmobile.launcher.wallpaper.LiveWallPaperService" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/e"/>
+        </service>
+        <service android:exported="true" android:name="com.ksmobile.theme.core.ThemeManagerService">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.service.theme.ManagerService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="com.ksmobile.launcher.plugin.PluginService">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.plugin.action.APPLY_LIVEWALLPAPER"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.ksmobile.launcher.UserInitializeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_INITIALIZE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ksmobile.launcher.PackageChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.notification.shortcutbar.ShortcutBarReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_SHORTCUTBAR_CLICK_TORCH"/>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_SHORTCUTBAR_CLICK_MOBILE_DATA"/>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_SHORTCUTBAR_CLICK_WIFI"/>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_SHORTCUTBAR_CLICK_BOOST"/>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_SHORTCUTBAR_CLICK_BATTERY"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.notification.push.NotificationPushReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.constants.IntentConstants.ACTION_NOTIFICATION_PUSH_DELETE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.util.CampaignTrackingReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ksmobile.launcher.phone.PhoneStateChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cleanmaster.receiver.UninstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cleanmaster.receiver.ACTION_REMOVED_SYSTEM_APP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.external.ExternalClientEventReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.external.action.UPDATE_SHORTCUT"/>
+                <action android:name="com.ksmobile.launcher.external.action.UPDATE_SETTING"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:icon="@drawable/tf" android:label="@string/j6" android:name="com.ksmobile.launcher.externals.battery.BatteryWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.PROVIDER_CHANGED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/c"/>
+        </receiver>
+        <receiver android:name="com.cmcm.push.gcm.sdk.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:process=":gcm_service">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.ksmobile.launcher"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cmcm.push.gcm.GCMIntentService" android:process=":gcm_service"/>
+        <service android:name="com.ksmobile.launcher.push.report.GCMReportService" android:process=":gcm_service"/>
+        <service android:name="com.ksmobile.launcher.theme.pull.ThemePullService" android:process=":gcm_service"/>
+        <service android:name="com.ksmobile.launcher.theme.pull.PullStubService" android:process=":gcm_service"/>
+        <receiver android:name="com.ksmobile.launcher.theme.pull.PowerStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.baidu.location.f" android:process=":BaiduLocate"/>
+        <meta-data android:name="android.nfc.disable_beam_default" android:value="true"/>
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="B1rqMOaA1pnzkbXV4lAtGeZP"/>
+        <receiver android:exported="false" android:name="com.ksmobile.launcher.weather.alert.WeatherNotifacationHelper$NotifycationCacelReceiver" android:process=":gcm_service">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.notifycation_cacel"/>
+                <action android:name="com.ksmobile.launcher.notifycation_upgrade_remove"/>
+                <action android:name="com.ksmobile.launcher.notifycation_upgrade_click"/>
+                <action android:name="com.ksmobile.launcher.notifycation_upgrade_button"/>
+                <action android:name="com.ksmobile.launcher.theme_push_notification_click"/>
+                <action android:name="com.ksmobile.launcher.theme_push_notification_remove"/>
+                <action android:name="com.ksmobile.launcher.theme_pull_notification_remove"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:exported="true" android:multiprocess="true" android:name="com.mnt.MntActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.cortana.impl.ui.CortanaResultActivity" android:process=":search" android:screenOrientation="portrait" android:taskAffinity=":cortana" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <receiver android:exported="true" android:multiprocess="true" android:name="com.mnt.MntBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.ksmobile.launcher.SettingService"/>
+        <service android:name="com.ksmobile.launcher.theme.ThemeService"/>
+        <service android:label="@string/aq" android:name="com.ksmobile.launcher.locker.NotificationListener" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.gesture.GestureSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.action.ActionSelectorActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:launchMode="singleInstance" android:name="com.ksmobile.launcher.InstallActivity" android:process=":install" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.ksmobile.launcher.bubble.MessageElves.MessageElvesActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.ksmobile.launcher.bubble.MessageElves.MoreAppActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.ksmobile.launcher.market.MarketRevisionActivity" android:process=":game" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.eyeprotect.MaskFullscreenActivity" android:theme="@style/az"/>
+        <service android:exported="false" android:name="com.ksmobile.launcher.InstallService" android:process=":install"/>
+        <service android:exported="false" android:name="com.ksmobile.launcher.memory.AlarmReportIntentService"/>
+        <service android:exported="false" android:name="com.ksmobile.launcher.leakcanary.LauncherHprofService">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.leakcanary.LauncherHprofCollector.ALARM"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/b8" android:name="com.ksmobile.launcher.locker.AccessibilityKillService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/a"/>
+        </service>
+        <service android:exported="true" android:name="com.ksmobile.launcher.eyeprotect.EyeProtectService" android:process=":eyeprocess">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.ksmobile.launcher.bubble.RemoveReceiver">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.action.clickapp"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/a5"/>
+        <activity android:name="com.ksmobile.launcher.menu.setting.contact.ContactSettingsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ksmobile.launcher.menu.setting.contact.ContactSettingsActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name="com.ksmobile.launcher.extrascreen.boost.BoostActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.cleanmaster.boost.onetap.ShortCutBoostActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleInstance" android:name="com.ksmobile.launcher.extrascreen.battery.BatteryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.ksmobile.launcher.wizard.GuideViewMonitorActivity" android:screenOrientation="portrait" android:theme="@style/ro"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="CM Launcher"/>
+        <provider android:authorities="com.ksmobile.launcher.DuAdCacheProvider" android:exported="false" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.settings" android:exported="false" android:name="com.ksmobile.launcher.LauncherProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.wallpaper" android:name="com.ksmobile.launcher.wallpaper.WallpaperContentProvider" android:process=":wallpaper"/>
+        <provider android:authorities="com.ksmobile.launcher.ArticleProvider" android:enabled="true" android:exported="false" android:name="com.cmcm.newssdk.db.provider.ArticleProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.TrendingContentProvider" android:exported="false" android:name="com.ksmobile.business.trendingwords.provider.TrendingContentProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.ThemeCmClubProvider" android:exported="false" android:name="com.ksmobile.launcher.theme.ThemeCmClubProvider"/>
+        <service android:name="com.ksmobile.launcher.wallpaper.PersonalizationService"/>
+        <service android:name="com.ksmobile.launcher.AFReportService"/>
+        <service android:exported="false" android:name="com.ksmobile.launcher.applayout.UploadLauncherDbIntentService"/>
+        <service android:name="com.ksmobile.launcher.insertpage.TimerAdService">
+            <intent-filter>
+                <action android:name="AD_PRELOAD_TIMER_ACTION"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.wizard.MiddleVivoActivity" android:theme="@style/ro"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.wizard.MiddleForResolverActivity" android:theme="@style/ro"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.ksmobile.launcher.wizard.MiddleOtherActivity" android:theme="@style/ro"/>
+        <activity android:excludeFromRecents="true" android:name="com.ksmobile.launcher.charge.ChargeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.ksmobile.launcher.notification.activity.KNoticationAccessGuideActivity" android:process=":settings" android:screenOrientation="portrait" android:theme="@style/av"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.ksmobile.launcher.insertpage.InterstitialFbActivity" android:screenOrientation="portrait" android:taskAffinity=".ad" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.ksmobile.launcher.insertpage.AdMobAdMainActivity" android:screenOrientation="portrait" android:taskAffinity=".ad" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.ksmobile.launcher.extrascreen.extrapage.dragsettings.ExtraDragEditActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:launchMode="singleTop" android:name="com.ksmobile.launcher.guide.DragGuideActivity" android:screenOrientation="portrait" android:theme="@style/a5"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.launcher.cortana.news.CortanaNewsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <meta-data android:name="com.bumptech.glide.integration.volley.VolleyGlideModule" android:value="GlideModule"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.activity.CleanContactActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.activity.CleanContactDetailActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.activity.CleanContactResultActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:clearTaskOnLaunch="true" android:finishOnTaskLaunch="true" android:launchMode="singleTask" android:name="com.launcher.dialer.activity.DialtactsActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.launcher.dialer.activity.CallDetailActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:name="com.launcher.dialer.activity.ContactsDetailActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:name="com.launcher.dialer.activity.CallLogListActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:name="com.launcher.dialer.activity.EditContactActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:name="com.launcher.dialer.activity.DialerDialogActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/rp" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:launchMode="singleTask" android:name="com.launcher.dialer.activity.BlockedContactsActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.activity.DialerMarketActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.activity.DialerMarketDetailActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.guide.permission.DialerPermissionNormalActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/ay"/>
+        <activity android:excludeFromRecents="true" android:name="com.launcher.dialer.guide.permission.DialerPermissionMulti7Activity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/ay"/>
+        <activity android:name="com.launcher.dialer.activity.CallHistoryDeleteActivity" android:process=":dialer" android:screenOrientation="portrait" android:theme="@style/qe"/>
+        <receiver android:name="com.launcher.dialer.component.UndemoteOutgoingCallReceiver" android:process=":dialer">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.launcher.dialer.component.CountryDetector$LocationChangedReceiver" android:process=":dialer"/>
+        <service android:exported="false" android:name="com.launcher.dialer.component.ContactUpdateService" android:process=":dialer"/>
+        <service android:exported="false" android:name="com.launcher.dialer.component.UpdateCountryService" android:process=":dialer"/>
+        <service android:name="com.launcher.dialer.call.CallService" android:process=":dialer"/>
+        <provider android:authorities="com.ksmobile.launcher.kfilterednumberprovider" android:exported="false" android:multiprocess="false" android:name="com.launcher.dialer.component.KFilteredNumberProvider" android:process=":dialer"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.my.target.ads.MyTargetActivity"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/aw"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.cmcm.orion.picks.PicksLoadingActivity" android:taskAffinity="com.cmcm.orion.adsdk.nativead" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.cmcm.orion.utils.internal.PicksTransparentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.cmcm.orion.picks.webview.PicksBrowser" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.cmcm.orion.picks.impl.PicksInterstitialActivity"/>
+        <service android:exported="true" android:name="com.cmcm.orion.picks.init.DownloadService" android:process=":PickService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.cmcm.orion.picks.impl.FullScreenVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.cmcm.orion.picks.impl.BrandFeedDetailVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.cmcm.orion.picks.impl.BrandFeedDetailImageActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.cmcm.orion.picks.impl.BrandFeedItemVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.cmcm.orion.picks.impl.BrandScreenDetailVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.cmcm.orion.picks.impl.BrandScreenDetailImageActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.cmcm.orion.picks.impl.BrandScreenCardVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.cmcm.orion.picks.impl.BrandPGVideoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.cmcm.orion.picks.impl.IncentiveVideoPlayActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.cmcm.orion.picks.impl.VideoAdDetailActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|navigation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cmcm.orion.picks.api.NotiActivity" android:taskAffinity="com.cmcm.qrcmd.nullact" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.CortanaListeningActivity" android:screenOrientation="portrait" android:taskAffinity=":cortana" android:theme="@android:style/Theme.Holo.NoActionBar" android:windowSoftInputMode="adjustPan"/>
+        <service android:name="com.ksmobile.thirdsdk.cortana.service.TelephoneService"/>
+        <service android:name="com.ksmobile.thirdsdk.cortana.service.CalendarService"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.ResultMultiContactersActivity" android:screenOrientation="portrait" android:taskAffinity=":cortana" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.ResultMultiPhoneNumActivity" android:screenOrientation="portrait" android:taskAffinity=":cortana" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.LogInActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.NoActionBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.CortanaEditCalendarActivity" android:screenOrientation="portrait" android:taskAffinity=":cortanacal" android:theme="@android:style/Theme.Holo.NoActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.ksmobile.thirdsdk.cortana.ui.CortanaLaunchActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.ksmobile.thirdsdk.cortana.ui.CortanaCalendarListActivity" android:screenOrientation="portrait" android:taskAffinity=":cortana" android:theme="@android:style/Theme.Holo.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/oh"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.microsoft.cortana.services.msaoxo.ui.OAuthActivity" android:screenOrientation="portrait" android:taskAffinity="com.microsoft.cortana.core.auth"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.microsoft.cortana.sdk.internal.BrowserActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.microsoft.cortana.sdk.internal.auth.SignInReceiver">
+            <intent-filter>
+                <action android:name="com.microsoft.bing.dss.action.SIGN_IN"/>
+                <action android:name="com.microsoft.bing.dss.action.SIGN_IN_CANCELLED_ACTION"/>
+                <action android:name="com.microsoft.cortana.sdk.action.ON_SIGN_IN_ERROR"/>
+                <action android:name="com.microsoft.bing.dss.action.SIGN_IN_SUCCESS_ACTION"/>
+                <action android:name="com.microsoft.bing.dss.action.SHOW_SIGN_IN_PAGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.microsoft.bing.dss.xdevice.BatteryLevelReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.microsoft.bing.dss.xdevice.PhoneCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.microsoft.bing.dss.xdevice.IncomingSmsReceiver">
+            <intent-filter>
+                <action android:name="com.microsoft.cortana.incoming.sms"/>
+                <action android:name="com.microsoft.cortana.incoming.mms"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.microsoft.bing.dss.servicelib.client.DssServiceReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.microsoft.bing.dss.xdevice.dedup.XDeviceDedupResultReceiver">
+            <intent-filter>
+                <action android:name="com.microsoft.bing.dss.xdevice.X_DEVICE_SETTING_RESULT_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.microsoft.cortana.services.msaoxo.ui.OAuthDialogService"/>
+        <provider android:authorities="com.ksmobile.launcher.weather" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider" android:process=":service">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/g"/>
+        </provider>
+        <service android:exported="false" android:name="com.ksmobile.leakcanary.leakanalyzer.LeakAnalyzerService" android:process=":leak">
+            <intent-filter>
+                <action android:name="com.cleanmaster.leakanalyzer.ACTION_REPORT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.ksmobile.leakcanary.view.DisplayLeakService">
+            <intent-filter>
+                <action android:name="com.cleanmaster.view.ACTION_REPORT"/>
+            </intent-filter>
+        </service>
+        <activity android:launchMode="singleInstance" android:name="com.ksmobile.leakcanary.view.DisplayLeakActivity"/>
+        <uses-permission android:name="android.permission.INTERNET"/>
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.ksmobile.business.sdk.search.webview.SSLDialog" android:process=":search" android:screenOrientation="userPortrait" android:theme="@style/az" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.ksmobile.business.sdk.search.views.search_options.ChoiceSearchEngineActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.ksmobile.business.sdk.search.webview.SearchWebViewActivity" android:process=":search" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <provider android:authorities="com.ksmobile.launcher.infocservice.config" android:exported="false" android:name="com.ksmobile.infoc.depends.InfocServiceConfigProvider"/>
+        <activity android:configChanges="keyboardHidden" android:name="com.cleanmaster.base.crash.LogActivity" android:process=":crash.feedback" android:screenOrientation="portrait"/>
+        <service android:name="com.cleanmaster.base.crash.CrashReportService" android:process=":crash.feedback">
+            <intent-filter>
+                <action android:name="com.cleanmaster.crash.report"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.ksmobile.launcher.cmlauncherprovider.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.commonpre.CMLauncherPrefProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.kslauncherprovider.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.launcherpre.KSMobileLauncherProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.settingsprovider.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.settingsmodel.SettingsConfigProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.settingforinterprocess.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.settingslocker.SettingForInterProcessConfigProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.cmlauncherncmanager.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.ncmanager_launcher.NCManagerSettingPrefProvider" android:process=":service"/>
+        <provider android:authorities="com.ksmobile.launcher.dependsserviceprovider.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.dependsconfig.DependsConfigProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.incmanagerconfig.config" android:exported="false" android:name="com.ksmobile.basesdk.sp.impl.cross.nc_setting_process.INCConfigSpProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.stable.config.launcher" android:exported="false" android:name="com.cleanmaster.stable.provider.LauncherProcessProvider"/>
+        <provider android:authorities="com.ksmobile.launcher.stable.config.service" android:exported="false" android:name="com.cleanmaster.stable.provider.ServiceProcessProvider" android:process=":service"/>
+        <activity android:launchMode="singleTask" android:name="com.ncmanagerimpl.guide.NotificationGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.cleanmaster.notificationclean.NotificationBlackListWhiteThemeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.cleanmaster.ui.msgdistrub.NotificationDisturbSettingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.cleanmaster.ui.msgdistrub.NotificationManagerService" android:process=":service"/>
+        <provider android:authorities="com.ksmobile.launcher.ncProvider" android:exported="true" android:name="com.cleanmaster.provider.NCDatebaseProvider" android:process=":service"/>
+        <activity android:name="com.cmcm.game.view.EditNameActivity" android:theme="@style/l"/>
+    </application>
+</manifest>

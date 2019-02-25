@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.overchunk.videosformusical" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="org.cocos2dx.Y" android:theme="@style/AppTheme">
+        <meta-data android:name="APPLICATION_CLASS_NAME" android:value="com.lightcone.minecraftvideo.MyApplication"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.lightcone.minecraftvideo.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.lightcone.minecraftvideo.youtube.play.PlayerActivity" android:screenOrientation="landscape"/>
+        <activity android:name="com.lightcone.minecraftvideo.PlaylistActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lightcone.minecraftvideo.ChannelActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lightcone.minecraftvideo.SplashActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="org.gzy.adproject.AdActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.gzy.feedback.FeedbackActivity"/>
+    </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="air.SeamC">
+    <application android:icon="@drawable/icon" android:label="Seam-C Q-PIZ">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Seam-C Q-PIZ" android:launchMode="singleTask" android:name=".AppEntry" android:screenOrientation="nosensor" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="aspectRatio" android:value="portrait"/>
+            <meta-data android:name="autoOrients" android:value="false"/>
+            <meta-data android:name="fullScreen" android:value="true"/>
+            <meta-data android:name="uniqueappversionid" android:value="55b8ba0e-b0a6-453a-a8bb-e96e83672a7c"/>
+            <meta-data android:name="initialcontent" android:value="Seam-C Q-PIZ.swf"/>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

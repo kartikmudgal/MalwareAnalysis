@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.snda.cloudary.singlebook.book_20100_6187398">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.snda.cloudary.singlebook.SingleBookApplication" android:theme="@style/CloudaryTheme">
+        <meta-data android:name="woa_key_appid" android:value="800000536"/>
+        <meta-data android:name="woa_key_channelid" android:value="20100_6187398_ND"/>
+        <meta-data android:name="woa_key_productid" android:value="800000832"/>
+        <activity android:label="@string/app_name_springboard" android:name="com.snda.cloudary.singlebook.SingleBookStartActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.snda.cloudary.singlebook.bookreader.BookReaderActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.snda.cloudary.singlebook.RecommondActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

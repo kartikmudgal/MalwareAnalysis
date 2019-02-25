@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.easymobile.view">
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:icon="@drawable/deskicon" android:label="@string/app_name">
+        <activity android:name=".Welcome" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".register" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/Title_Channel_List" android:name="Show_Channel_Config"/>
+        <activity android:label="@string/Channel_Config" android:name="Show_Channel_Modify"/>
+        <activity android:label="@string/Device_Commend" android:name="Show_Device_Management"/>
+        <activity android:name="Show_Device_Modify" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/Title_Add_Group" android:name="Show_Group_Add"/>
+        <activity android:label="@string/Group_Setting" android:name="Show_Group_Config"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/Video_View" android:name="Show_Video_View" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/Help" android:name="Show_Help"/>
+        <activity android:label="@string/Local_Config" android:name="Show_Local_Config"/>
+        <activity android:name="Show_Login" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="Show_Main_Menu" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/Image_Config" android:name="Show_Picture_Config"/>
+        <activity android:label="@string/Account_Config" android:name="Show_User_Config"/>
+        <activity android:label="@string/Title_Alert_Select_Channel" android:name="Show_Video_Add" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/Title_Alert_Select_Channel" android:name="Show_Group_Add_Channel"/>
+        <activity android:label="@string/Title_About" android:name="Show_About"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="Show_PlayBack_Query" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/PlayBack" android:name="Show_PlayBack_View" android:theme="@android:style/Theme.NoTitleBar"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+</manifest>

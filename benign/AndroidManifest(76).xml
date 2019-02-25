@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.apcurium.MK.Cinqs">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="CINQ-S" android:largeHeap="true" android:name="mono.android.app.Application" android:screenOrientation="portrait" android:supportsRtl="true" android:theme="@android:style/Theme.Holo">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+        <receiver android:name="apcurium.mk.booking.mobile.client.platformintegration.PushHandlerBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.apcurium.MK.Cinqs"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.apcurium.MK.Cinqs"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.apcurium.MK.Cinqs"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyC7mmaFQoqp37jnX8sTZWyW4TQNwyQ-TaM"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity"/>
+        <activity android:name="io.card.payment.DataEntryActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/DateTimePickerPickTitle" android:name="apcurium.mk.booking.mobile.client.activities.book.DateTimePickerActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="About" android:name="apcurium.mk.booking.mobile.client.activities.setting.AboutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="PushSettingsActivity" android:name="apcurium.mk.booking.mobile.client.activities.setting.NotificationSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Tutorial" android:name="apcurium.mk.booking.mobile.client.activities.TutorialActivity" android:screenOrientation="portrait" android:theme="@style/TutorialDialog"/>
+        <activity android:label="History Details" android:name="apcurium.mk.booking.mobile.client.activities.history.HistoryDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Login" android:name="apcurium.mk.booking.mobile.client.activities.account.LoginActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:label="Password Recovery" android:name="apcurium.mk.booking.mobile.client.activities.account.PasswordRecoveryActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:icon="@drawable/icon" android:label="@string/ApplicationName" android:name="apcurium.mk.booking.mobile.client.activities.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="RideSettingsActivity" android:name="apcurium.mk.booking.mobile.client.activities.setting.RideSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="apcurium.mk.booking.mobile.client.activities.SelectItemDialogActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="UpdatePasswordActivity" android:name="apcurium.mk.booking.mobile.client.activities.account.UpdatePasswordActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="CreditCardAddActivity" android:name="apcurium.mk.booking.mobile.client.activities.setting.CreditCardAddActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <service android:name="apcurium.mk.booking.mobile.client.platformintegration.PushHandlerService"/>
+        <activity android:label="BookPaymentActivity" android:name="apcurium.mk.booking.mobile.client.activities.book.BookPaymentActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="BookPayPalActivity" android:name="apcurium.mk.booking.mobile.client.activities.book.BookPayPalActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:finishOnTaskLaunch="true" android:label="Book" android:name="apcurium.mk.booking.mobile.client.activities.book.RideSummaryActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Terms and Conditions" android:name="apcurium.mk.booking.mobile.client.activities.account.TermsAndConditionsActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:label="Book Status" android:name="apcurium.mk.booking.mobile.client.activities.book.BookingStatusActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="ConfirmPairActivity" android:name="apcurium.mk.booking.mobile.client.activities.ConfirmPairActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="ConfirmPaymentActivity" android:name="apcurium.mk.booking.mobile.client.activities.book.ConfirmPaymentActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Create Account" android:name="apcurium.mk.booking.mobile.client.activities.account.CreateAccountActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:label="History" android:name="apcurium.mk.booking.mobile.client.activities.history.HistoryListActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Location Details" android:name="apcurium.mk.booking.mobile.client.activities.geolocation.LocationDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="Locations" android:name="apcurium.mk.booking.mobile.client.activities.geolocation.LocationListActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:clearTaskOnLaunch="true" android:finishOnTaskLaunch="true" android:label="Home" android:launchMode="singleTask" android:name="apcurium.mk.booking.mobile.client.activities.book.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="Terms and Conditions" android:name="apcurium.mk.booking.mobile.client.activities.account.UpdatedTermsAndConditionsActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:name="apcurium.mk.booking.mobile.client.activities.geolocation.AddressPickerContainerActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="InitializeOrderForAccountPaymentActivity" android:name="apcurium.mk.booking.mobile.client.activities.book.InitializeOrderForAccountPaymentActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:name="apcurium.mk.booking.mobile.client.activities.EditTextDialogActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="BookingRateActivity" android:name="apcurium.mk.booking.mobile.client.activities.book.BookingRateActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:label="Account Confirmation" android:name="apcurium.mk.booking.mobile.client.activities.account.AccountConfirmationActivity" android:screenOrientation="portrait" android:theme="@style/LoginTheme"/>
+        <activity android:name="crossui.droid.dialog.elements.HtmlActivity"/>
+        <provider android:authorities="com.apcurium.MK.Cinqs.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+    <permission android:name="com.apcurium.MK.Aexid.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <permission android:name="com.apcurium.MK.Aexid.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.apcurium.MK.Cinqs.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.location"/>
+    <uses-permission android:name="android.permission.gps"/>
+    <uses-permission android:name="android.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.apcurium.MK.Cinqs.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <permission android:name="com.apcurium.MK.Cinqs.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.apcurium.MK.Cinqs.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+</manifest>

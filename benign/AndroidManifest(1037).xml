@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.reverbnation.artistapp.i231319">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="ReverbNationApplication" android:theme="@style/ReverbTheme">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.BandInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.BiographyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.BlogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.BlogPostActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.BrowserActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.FilmstripActivity" android:theme="@style/ReverbTheme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.LinksActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.MailingListActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.MapShowsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:name=".activities.NotificationActivity" android:screenOrientation="portrait" android:theme="@style/ReverbTheme.Notification"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.NotificationsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.NewsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.PastShowsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.PhotoGalleryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.PhotosAndVideosActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SharingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.ShowsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.ShowDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SocialActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SongsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SongDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.TwitterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.TwitterDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.TwitterLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.UpcomingShowsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.VideosActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.VideoDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".activities.SplashActivity" android:screenOrientation="portrait" android:theme="@style/ReverbTheme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.reverbnation.artistapp.i231319.intent.action.VIEW_NOTIFICATIONS"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".services.ReverbMusicService"/>
+        <receiver android:name=".services.ReverbMusicService$MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <action android:name="com.reverbnation.artistapp.i231319.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.reverbnation.artistapp.i231319.receivers.IntentReceiver"/>
+        <receiver android:name="com.urbanairship.CoreReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.urbanairship.push.PushService"/>
+        <uses-library android:name="com.google.android.maps"/>
+    </application>
+</manifest>

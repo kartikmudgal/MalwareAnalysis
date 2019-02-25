@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hk.gov.wsd.ccbs.activity" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <permission android:name="hk.gov.wsd.ccbs.activity.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="hk.gov.wsd.ccbs.activity.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <instrumentation android:label="Test for my app" android:name="android.test.InstrumentationTestRunner" android:targetPackage="hk.gov.wsd.ccbs.activity"/>
+    <application android:allowBackup="true" android:icon="@drawable/logo" android:label="@string/app_name" android:name="hk.gov.wsd.application.BaseApplication" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBo2wbqVZY-SwmbQi3YN_wD4juTqF7Ga5M"/>
+        <uses-library android:name="android.test.runner"/>
+        <activity android:label="@string/app_name" android:name="hk.gov.wsd.ccbs.activity.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Droidus">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="hk.gov.wsd.ccbs.activity.MainTabActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.BillSummaryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.PaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.MainMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.NullActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.ReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.WaterSuspensionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.CofcActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.gov.wsd.ccbs.activity.OtherFunctionsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="hk.gov.wsd.ccbs.activity.FilterActivity" android:screenOrientation="portrait"/>
+        <service android:name="hk.gov.wsd.ccbs.activity.GCMIntentService"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="hk.gov.wsd.ccbs.activity"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

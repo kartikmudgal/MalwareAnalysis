@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.app.p1697EG" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/appicon" android:label="Discover Manassas" android:largeHeap="true" android:name="app.AMApplication" android:theme="@style/Theme.Appmachine">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="md5951ca1f60a9ac9b4028c99ff0abf6946.PushHandlerBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.app.p1697EG"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.app.p1697EG"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.app.p1697EG"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md5951ca1f60a9ac9b4028c99ff0abf6946.PushHandlerService"/>
+        <receiver android:name="md5507387d97c4e836f381781939f2215f9.AudioActionReceiver">
+            <intent-filter>
+                <action android:name="com.appmachine.audio.AudioAction"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md595a9bba76182e3007f22a27bee7f0b9f.BaseActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md548ee44add062efa90065e7079a98ed6b.ZO" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md548ee44add062efa90065e7079a98ed6b.BYY" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="md50edbeffb157982e29ff9a55941a3b251.Camera_InternalCropImage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md548ee44add062efa90065e7079a98ed6b.LYY" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md548ee44add062efa90065e7079a98ed6b.DYY_1" android:windowSoftInputMode="adjustResize"/>
+        <receiver android:name="md595a9bba76182e3007f22a27bee7f0b9f.AlarmBroadcastReceiver"/>
+        <receiver android:name="md595a9bba76182e3007f22a27bee7f0b9f.RemoteControlReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:label="Discover Manassas" android:name="app.Main" android:noHistory="true" android:theme="@style/Theme.Splash" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md548ee44add062efa90065e7079a98ed6b.BKY" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <receiver android:name="md595a9bba76182e3007f22a27bee7f0b9f.ConnectivityReciever">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" android:name="md5651fd91521eb3899e10052ed6fa1696a.ZxingActivity"/>
+        <provider android:authorities="com.app.p1697EG.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDYmpV9_Y01dltf0P_CX2iyhLoh9zzRUQ0"/>
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.location"/>
+    <uses-feature android:name="android.hardware.location.network"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="com.app.p1697EG.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.app.p1697EG.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+</manifest>

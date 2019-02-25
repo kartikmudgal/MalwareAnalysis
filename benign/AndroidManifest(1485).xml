@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="lnw.prettysecretshop" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="lnw.prettysecretshop.YourApplication" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="lnw.prettysecretshop.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.MainActivity" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:path="/lnwaccc" android:scheme="@string/schema"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".MainActivity"/>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider448968218502479_229716" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <meta-data android:name="DATABASE" android:value="lnwshop.db"/>
+        <meta-data android:name="VERSION" android:value="1"/>
+        <meta-data android:name="QUERY_LOG" android:value="true"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="lnw.lnwshop"/>
+        <receiver android:name="lnw.lnwshoplib.LnwBaseActivity$KillReceiver"/>
+        <receiver android:enabled="true" android:name="mike.utils.LnwBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="mike.utils.LnwNotiCancelReceiver">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="lnw.lnwshoplib.MsgReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_shop_view" android:name="lnw.lnwshoplib.ShopView"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_shop_view" android:name="lnw.lnwshoplib.ShopViewContainer">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="@string/title_activity_forum_topic_view" android:name="lnw.lnwshoplib.ForumTopicViewContainer"/>
+        <activity android:hardwareAccelerated="true" android:label="@string/title_activity_forum_topic_view" android:name="lnw.lnwshoplib.TopicAndComment"/>
+        <activity android:label="@string/title_activity_comment_edit" android:name="lnw.lnwshoplib.CommentEdit" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:label="@string/app_name" android:name="lnw.lnwshoplib.BlogContentView"/>
+        <activity android:label="About us" android:name="lnw.lnwshoplib.AboutView"/>
+        <service android:label="Lnw HTTP Service" android:name="mike.utils.BackService"/>
+        <service android:icon="@drawable/sample_logo" android:label="Lnw Notification Service" android:name="mike.utils.LnwNotificationService"/>
+        <activity android:label="@string/title_activity_featured_list" android:name="lnw.lnwshoplib.FeaturedList"/>
+        <activity android:label="@string/title_activity_featured_of_the_day" android:name="lnw.lnwshoplib.FeaturedOfTheDay"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.LoginView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.FavouriteView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.AccountInfoView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.HistoryView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.ShopHow2BuyView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.ShopHow2PayView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.ShopArticleView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.ShopArticleContentView"/>
+        <activity android:label="@string/app_name" android:name="lnw.lnwshoplib.ShopCategoryViewContainer">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="lnw.lnwshoplib.ProductView"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="lnw.lnwshoplib.ProductSubView"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="lnw.lnwshoplib.ProductImageFullView" android:theme="@style/FullImageTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Contact Shop" android:name="lnw.lnwshoplib.ShopContactView"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Message To Us" android:name="lnw.lnwshoplib.ShopMessageView" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Contact us" android:name="lnw.lnwshoplib.LnwContact"/>
+        <activity android:configChanges="orientation|screenSize" android:exported="true" android:label="Messages" android:name="lnw.lnwshoplib.MeMessageView" android:parentActivityName="lnw.lnwshoplib.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="lnw.lnwshoplib.MainActivity"/>
+        </activity>
+        <activity android:name="lnw.lnwshoplib.SearchViews">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="mike.utils.LnwNotiRedirectService"/>
+        <activity android:name="lnw.lnwshoplib.OrderSelctShopView"/>
+        <activity android:name="lnw.lnwshoplib.OrderSelectOrderView"/>
+        <activity android:name="lnw.lnwshoplib.OrderDetailView"/>
+        <activity android:name="lnw.lnwshoplib.PaymentDetailView"/>
+        <activity android:name="lnw.lnwshoplib.CartSelectShopView"/>
+        <activity android:name="lnw.lnwshoplib.CartBasketView"/>
+        <activity android:name="lnw.lnwshoplib.CartAddressView"/>
+        <activity android:name="lnw.lnwshoplib.CartAddressAddView"/>
+        <activity android:name="lnw.lnwshoplib.CartConfirmView"/>
+        <activity android:name="lnw.lnwshoplib.CartCompleteView"/>
+        <activity android:name="lnw.lnwshoplib.InformBankView"/>
+        <activity android:name="lnw.lnwshoplib.InformPayView"/>
+        <activity android:name="lnw.lnwshoplib.PaySelectOrderView"/>
+        <activity android:name="lnw.lnwshoplib.LnwBrowserView"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ValentinesLiveWallpaper">
+    <uses-feature android:name="android.software.live_wallpaper"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:configChanges="keyboardHidden|orientation" android:icon="@drawable/ic_launcher" android:label="@string/name" android:name=".WallpaperActivity" android:permission="android.permission.BIND_WALLPAPER" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/test"/>
+        </service>
+        <activity android:exported="true" android:label="Settings" android:name=".WallpaperSettings" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light"/>
+        <activity android:name=".Reklama" android:screenOrientation="portrait"/>
+        <activity android:name=".AppWall" android:screenOrientation="portrait"/>
+        <activity android:name="com.playhaven.src.publishersdk.content.PHContentView" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.chartboost.sdk.CBDialogActivity" android:theme="@android:style/Theme.Translucent" android:windowSoftInputMode="adjustResize"/>
+        <meta-data android:name="com.nvNve.mYqTV111048.APPID" android:value="95764"/>
+        <meta-data android:name="com.nvNve.mYqTV111048.APIKEY" android:value="mYqTV111048*1346255686111048131"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.nvNve.mYqTV111048.OptinActivity" android:theme="@android:style/Theme.Translucent"/>
+        <service android:exported="false" android:name="com.nvNve.mYqTV111048.PushService"/>
+        <receiver android:exported="false" android:name="com.nvNve.mYqTV111048.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.nvNve.mYqTV111048.SmartWallActivity"/>
+        <receiver android:name="com.pad.android.xappad.AdNotification"/>
+        <receiver android:name="com.pad.android.xappad.AdReminderNotification"/>
+    </application>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.dlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.motorola.dlauncher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.lge.launcher.permission.INSTALL_SHORTCUT"/>
+</manifest>

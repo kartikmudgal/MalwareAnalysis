@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ehawk.proxy.freevpn" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.ehawk.proxy.freevpn.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.ehawk.proxy.freevpn.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.free.vpn.proxy.shortcut.base.BaseApplication" android:supportsRtl="false" android:theme="@style/AppTheme">
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.free.vpn.proxy.shortcut.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.free.vpn.proxy.shortcut.SplashActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SplashActivityTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="layoutDirection" android:name="com.free.vpn.proxy.shortcut.LoadSplashAdActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection" android:name="com.free.vpn.proxy.shortcut.GuideActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection" android:name="com.free.vpn.proxy.shortcut.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection" android:name="com.free.vpn.proxy.shortcut.FAQActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.free.vpn.proxy.shortcut.ui.activity.ServerRegionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.free.vpn.proxy.shortcut.ui.activity.StartGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.FeedBackActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.BuySuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.InnerBrowserActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.ui.activity.ConnectInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.NetWorkSpeedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.ConnectDiagnoseActitvity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.DiagnosisResultActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenSize" android:name="com.free.vpn.proxy.shortcut.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleTask" android:name="com.free.vpn.proxy.shortcut.VipTrafficActivity" android:screenOrientation="portrait" android:theme="@style/TranslucentFullScreenTheme"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.free.vpn.proxy.shortcut.NoNetWorkActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.hawk.vpn.protector.activity.RecommendGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.hawk.vpn.protector.activity.PermissionRequestActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="6028d01e9826988a4be160603620f07c16e4b74b"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="AppID" android:value="10001"/>
+        <meta-data android:name="CID" android:value="c01"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <meta-data android:name="app_license" android:value="97398bae5f887e1d20ac33971baf7f31"/>
+        <provider android:authorities="com.ehawk.proxy.freevpn.DuAdCacheProvider" android:exported="false" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.ehawk.proxy.freevpn.provider.config" android:exported="false" android:name="com.free.vpn.proxy.shortcut.utils.VpnConfigProvider"/>
+        <receiver android:name="com.free.vpn.proxy.shortcut.receiver.NetworkStateChangedReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.free.vpn.proxy.shortcut.receiver.PackageRemoveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.free.vpn.proxy.shortcut.service.VpnService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.free.vpn.proxy.shortcut.service.PrivacyService"/>
+        <service android:name="com.free.vpn.proxy.shortcut.service.JobScheService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.free.vpn.proxy.shortcut.service.JobScheKeepService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.appsflyer.SingleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.free.vpn.proxy.shortcut.receiver.TimingAlarmReceiver"/>
+        <activity android:configChanges="layoutDirection" android:name="com.free.vpn.proxy.shortcut.FakeLocationActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.ehawk.proxy.freevpn.applockprovider" android:name="com.hawk.vpn.protector.function.db.AppLockProvider"/>
+        <activity android:label="@string/title_activity_app_protector_list" android:launchMode="singleTop" android:name="com.free.vpn.proxy.shortcut.ProtectorAppListActivity" android:screenOrientation="portrait" android:taskAffinity=".a" android:theme="@style/AppTheme.ProtectorAppListActivity"/>
+        <activity android:label="@string/title_activity_app_protector_list" android:launchMode="singleInstance" android:name="com.free.vpn.proxy.shortcut.QuickAppProtectorActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.PrimaryColorStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.free.vpn.proxy.shortcut.view.WindowViewActivity" android:screenOrientation="portrait" android:taskAffinity=".ad" android:theme="@style/AppThemeTransparent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.free.vpn.proxy.shortcut.view.VpnPermissionRequestActivity" android:screenOrientation="portrait" android:taskAffinity=".permission" android:theme="@style/AppThemeTransparent"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.free.vpn.proxy.shortcut.ui.activity.PlayActivity" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.1"/>
+        <provider android:authorities="com.ehawk.proxy.freevpn.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.ehawk.proxy.freevpn"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.ehawk.proxy.freevpn.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.mobvista.msdk.shell.MVActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyInterstitialActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.adcolony.sdk.AdColonyAdViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.duapps.ad.InterstitialAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.duapps.ad.offerwall.ui.OfferWallAct"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.duapps.ad.video.VideoFullScreenActivity" android:theme="@style/AppThemeNoTitle"/>
+        <receiver android:name="com.duapps.ad.video.NetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.NET.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.Net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.myopenvpn.lib.openvpn.OpenVpnService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

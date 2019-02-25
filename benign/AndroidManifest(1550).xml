@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.agencyy.android" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <permission android:description="@string/trip_service_perm_description" android:label="@string/trip_service_perm_label" android:name="org.agencyy.android.permission.TRIP_SERVICE" android:protectionLevel="normal"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="org.agencyy.android.permission.TRIP_SERVICE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="org.onebusaway.android.app.Application" android:theme="@style/Theme.OneBusAway">
+        <meta-data android:name="android.app.default_searchable" android:value="org.onebusaway.android.ui.SearchActivity"/>
+        <activity android:launchMode="singleTop" android:name="org.onebusaway.android.ui.SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="org.onebusaway.android.ui.ArrivalsListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.StopInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.RouteInfoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.TripInfoActivity"/>
+        <activity android:name="org.onebusaway.android.ui.MyRemindersActivity"/>
+        <activity android:name="org.onebusaway.android.ui.TripDetailsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/stop_shortcut" android:name="org.onebusaway.android.ui.MyStopsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/recent_stops_shortcut" android:name="org.onebusaway.android.ui.MyRecentStopsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/starred_stops_shortcut" android:name="org.onebusaway.android.ui.MyStarredStopsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/route_shortcut" android:name="org.onebusaway.android.ui.MyRoutesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/recent_routes_shortcut" android:name="org.onebusaway.android.ui.MyRecentRoutesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.PreferencesActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:name="org.onebusaway.android.ui.RegionsActivity"/>
+        <activity android:name="org.onebusaway.android.ui.AgenciesActivity"/>
+        <activity android:name="org.onebusaway.android.report.ui.ReportActivity"/>
+        <activity android:name="org.onebusaway.android.report.ui.InfrastructureIssueActivity"/>
+        <activity android:label="@string/situation_activity_label" android:name="org.onebusaway.android.ui.SituationActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/report_problem_stop_activity_label" android:name="org.onebusaway.android.report.ui.ReportStopProblemActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/report_problem_trip_activity_label" android:name="org.onebusaway.android.report.ui.ReportTripProblemActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/my_recent_title" android:name="org.onebusaway.android.ui.MyRecentStopsAndRoutesActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/stop_info_option_night_light" android:name="org.onebusaway.android.ui.NightLightActivity" android:parentActivityName="org.onebusaway.android.ui.HomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.HomeActivity"/>
+        </activity>
+        <provider android:authorities="org.agencyy.android.provider" android:name="org.onebusaway.android.provider.ObaProvider"/>
+        <service android:name="org.onebusaway.android.tripservice.TripService" android:permission="org.agencyy.android.permission.TRIP_SERVICE">
+            <intent-filter>
+                <action android:name="org.agencyy.android.AlarmReceiver"/>
+                <action android:name="org.agencyy.android.BootstrapService"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="org.onebusaway.android.tripservice.AlarmReceiver">
+            <intent-filter>
+                <action android:name="org.agencyy.android.action.SCHEDULE"/>
+                <action android:name="org.agencyy.android.action.POLL"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.onebusaway.android.tripservice.BootstrapService">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/apiv2_key"/>
+        <activity android:label="@string/title_activity_about" android:name="org.onebusaway.android.ui.AboutActivity" android:parentActivityName="org.onebusaway.android.ui.PreferencesActivity" android:theme="@style/Theme.OneBusAway.NoActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.onebusaway.android.ui.PreferencesActivity"/>
+        </activity>
+    </application>
+</manifest>

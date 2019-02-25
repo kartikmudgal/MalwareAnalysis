@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jb.gorealis" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INSTALL_DRM"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <permission android:name="com.jb.gorealis.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jb.gorealis.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/gorealis_app_icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.jb.gorealis.GoRealisApp" android:supportsRtl="false" android:theme="@style/d_">
+        <meta-data android:name="io.fabric.ApiKey" android:value="com.jb.gorealis"/>
+        <meta-data android:name="gomo_firebase_channel" android:value="101"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/notification_icon"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/colorPrimaryDark"/>
+        <activity android:label="@string/app_name" android:name="com.jb.gorealis.main.ui.GoRealisMainActivity" android:process="com.jb.gorealis" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="jb.gorealis.com" android:scheme="gorealis"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jb.gorealis.message.ui.MessageDetailActivity"/>
+        <activity android:name="com.jb.gorealis.message.ui.SnapchatDetailActivity"/>
+        <activity android:name="com.jb.gorealis.message.ui.CommentListActivity"/>
+        <provider android:authorities="com.jb.gorealis.provider.message" android:name="com.jb.gorealis.message.database.MessageDataProvider"/>
+        <activity android:name="com.jb.gorealis.login.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gorealis.ui.ShareMyTopicActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gorealis.ui.ShareMyTopicNewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gorealis.ui.ShareActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gorealis.login.UserProfileActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:name="com.jb.gorealis.ui.FeedbackActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.jb.gorealis.push.PushMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.jb.gorealis.push.PushInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.jb.gorealis.push.PushClickService"/>
+        <service android:name="com.jb.gorealis.push.PushDeleteService"/>
+        <receiver android:name="com.jb.gorealis.background.OnStatistic19AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gorealis.TASK_LOOPER_STATISTIC19_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gorealis.background.OnAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gorealis.TASK_LOOPER_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.jb.gorealis.analytic.ReferrerInfoReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.jb.gorealis.widget.FloatWindowsService"/>
+        <provider android:authorities="com.jb.gorealis.staticsdkprovider" android:name="com.gau.go.gostaticsdk.StaticDataContentProvider"/>
+        <provider android:authorities="com.jb.gorealis.commerce.MultiprocessSharedPreferences" android:exported="false" android:name="com.jb.ga0.commerce.util.io.MultiprocessSharedPreferences"/>
+        <provider android:authorities="com.jb.gorealis.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/a"/>
+        </provider>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.monet.bidder.AdActivity"/>
+        <service android:enabled="true" android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"/>
+        <service android:label="Intelligent Preload Service" android:name="com.jiubang.commerce.service.IntelligentPreloadService" android:process=":com.jiubang.commerce.service.IntelligentPreloadService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.jb.gorealis.process.PersistentProcessService"/>
+        <receiver android:name="com.jb.gorealis.process.PersistentProcessReceiver"/>
+        <service android:name="com.jb.gorealis.process.PersistentProcessService$InnerService1"/>
+        <service android:name="com.jb.gorealis.process.SecondProcessService" android:process=":process2"/>
+        <receiver android:name="com.jb.gorealis.process.SecondProcessReceiver" android:process=":process2"/>
+        <service android:name="com.jb.gorealis.process.SecondProcessService$InnerService2" android:process=":process2"/>
+        <service android:name="com.jb.gorealis.process.ThridProcessService" android:process=":process3"/>
+        <service android:name="com.jb.gorealis.process.ThridProcessService$InnerService3" android:process=":process3"/>
+        <service android:name="com.jb.gorealis.process.ThourProcessService" android:process=":process4"/>
+        <service android:name="com.jb.gorealis.process.ThourProcessService$InnerService4" android:process=":process4"/>
+        <service android:name="com.jiubang.commerce.daemon.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.jiubang.commerce.daemon.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jiubang.alock.ACTION_LOCKER_ACCOUNT_CHANGE"/>
+                <action android:name="com.jiubang.alocker.theme.change"/>
+                <action android:name="com.jiubang.alocker.monitor.vip"/>
+                <action android:name="com.jiubang.alocker.refresh.vip"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.jb.gorealis.report.CrashReportReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gorealis.report.CRASH_REPORT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.gorealis.selectimage.PhotoFileSelectActivity"/>
+        <activity android:name="com.jb.gorealis.selectimage.PhotoImageSelectActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gorealis.cropimage.CropImageActivity" android:process=":CropImage" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gorealis.ui.ProfileActivity"/>
+        <activity android:name="com.jb.gorealis.ui.GuideLineActivity"/>
+        <activity android:name="com.jb.gorealis.ui.NotificationActivity"/>
+        <activity android:name="com.jb.gorealis.ui.MainSettingActivity"/>
+        <activity android:name="com.jb.gorealis.ui.SearchWebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gorealis.main.ui.GoStartPageActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.jb.gorealis.login.AsyncInitServices"/>
+        <provider android:authorities="com.jb.gorealis.commerce.MPSharedPreferences" android:exported="false" android:name="com.jiubang.commerce.buychannel.MPSharedPreferences"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.jiubang.commerce.ad.url.AdUrlPreParseLoadingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.jiubang.commerce.ad.h5.H5AdActivity" android:screenOrientation="portrait"/>
+        <service android:label="Ad Service" android:name="com.jiubang.commerce.service.AdService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.AppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <activity android:name="com.google.android.gms.ads.InterstitialAd"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:exported="true" android:icon="@drawable/cl_def_app_icon" android:label="" android:multiprocess="true" android:name="com.jiubang.commerce.dyload.core.proxy.activity.StandarProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.gomo.liveaccountsdk.login.instagram.InsLoginActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/lx"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.jb.gorealis.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/jg"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.gomo.firebasesdk.notification.ClickService"/>
+        <service android:name="com.gomo.firebasesdk.notification.DeleteService"/>
+        <receiver android:exported="true" android:name="com.gomo.firebasesdk.statistic.AlarmStatisticReceiver">
+            <intent-filter>
+                <action android:name="com.firebase.STATISTIC"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.gorealis.lifecycle-trojan" android:exported="false" android:multiprocess="true" android:name="android.arch.lifecycle.LifecycleRuntimeTrojanProvider"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.jiubang.commerce.buychannel.GaTrackerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.commerce.notification.main.core.HandleNotificaionClickActivity" android:taskAffinity="com.commerce.notification" android:theme="@style/jp"/>
+        <service android:name="com.commerce.notification.main.core.NotificationSdkService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.mobileads.MraidVideoPlayerActivity"/>
+        <service android:name="com.jb.commerce.fwad.api.FwadServiceProxy"/>
+        <activity android:exported="true" android:icon="@drawable/cl_def_app_icon" android:label="Lock" android:launchMode="singleInstance" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeBatteryProxyActivity" android:process="com.assist.ano.service" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <service android:exported="true" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeLockerProxyService" android:persistent="true" android:process="com.assist.ano.service"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService" android:process=":filedownloader"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.jb.gorealis"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jb.gorealis.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+    </application>
+</manifest>

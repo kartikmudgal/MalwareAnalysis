@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.clean.memory.booster.pro" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/ck" android:name="com.clean.memory.booster.pro.application.CleanApplication" android:supportsRtl="false" android:theme="@style/is">
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenSize|touchscreen" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.Panda" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing">
+            <intent-filter android:label="@string/h6">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="boosthome" android:scheme="bcapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.SheepGd" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="src" android:scheme="dccboot"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.clean.memory.booster.pro.ptoes.AgCS"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.HorseJC" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter android:label="@string/h6">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="junkclean" android:scheme="bcapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.HorseBt" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter android:label="@string/h6">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="phoneboost" android:scheme="bcapp"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/m"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.clean.memory.booster.pro.animal.HorseBSC" android:screenOrientation="portrait" android:theme="@style/it">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.SheepSet" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:exported="true" android:name="com.clean.memory.booster.pro.ptoer.AppsflyerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="io.fabric.ApiKey" android:value="c4d233bafd152cd8f9ad6961eb4c44db3ceabcaa"/>
+        <service android:name="com.clean.memory.booster.pro.ptoes.SiSS"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.HorseBtF" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <provider android:authorities="com.clean.memory.booster.pro.model.applist" android:exported="true" android:name="com.clean.memory.booster.pro.model.AppsProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.SheepDI" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:name="com.clean.memory.booster.pro.ptoer.MnNR">
+            <intent-filter>
+                <action android:name="com.android.boost.clean.notification.shorcut.torch"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.SheepAbout" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.BearMg" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter android:label="@string/h6">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="appsmanager" android:scheme="clanp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.BearBH" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <provider android:authorities="com.clean.memory.booster.pro.backupapplist" android:name="com.clean.memory.booster.pro.model.BackupAppsProvider"/>
+        <receiver android:name="com.clean.memory.booster.pro.ptoer.NiUR">
+            <intent-filter android:priority="10000001">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.HorseCC" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter android:label="@string/h6">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cpucooler" android:scheme="bcapp"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.clean.memory.booster.pro.ptoer.MnNBR">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+                <action android:name="com.clean.memory.booster.pro.action.UPDATE_AGGRATE_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.SheepLSet" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.FoxLF" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.BearSMg" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/m6"/>
+        <service android:exported="false" android:name="com.clean.memory.booster.pro.ptoes.AlLS"/>
+        <receiver android:name="com.clean.memory.booster.pro.ptoer.TiBCR" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.CarrotPt" android:theme="@style/j1"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.CarrotUAG" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.CarrotSt" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:label="@string/ck" android:name="com.clean.memory.booster.pro.ptoes.HgNMS" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.clean.memory.booster.pro.notificationlist" android:exported="true" android:name="com.clean.memory.booster.pro.model.NotificationProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.Tiger" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.TigerGd" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.TigerBL" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.clean.memory.booster.pro.animal.SheepSp" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.clean.memory.booster.pro.animal.HorseMC" android:screenOrientation="portrait" android:theme="@style/f9"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="com.clean.memory.booster.pro.animal.SheepSwSet" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/l8"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.clean.memory.booster.pro.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <service android:name="com.fw.basemodules.ptoes.MgBSS"/>
+        <receiver android:name="com.fw.basemodules.ptoer.PushAlarmReceiver"/>
+        <receiver android:exported="true" android:name="com.fw.basemodules.ptoer.PushNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.fw.android.PUSH_NOTIFICATION_ACTION_CLICK"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.ButterflyNoPadding" android:theme="@style/iv"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.Swallow" android:theme="@style/iv"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.SwallowLargeCard" android:theme="@style/ix"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.SwallowLargeCardOrange" android:theme="@style/ix"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.SwallowLargeCardGreen" android:theme="@style/ix"/>
+        <receiver android:exported="true" android:name="com.fw.basemodules.ptoer.CuEBR"/>
+        <service android:name="com.fw.basemodules.ptoes.LiSS"/>
+        <service android:name="com.fw.basemodules.ptoes.NaLs"/>
+        <receiver android:name="com.fw.basemodules.ptoer.HRAR"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.BeeAC" android:screenOrientation="portrait" android:taskAffinity="com.fw.basemodules.intst" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fw.basemodules.animal.BeeAP" android:theme="@style/iy"/>
+        <receiver android:name="com.fw.basemodules.ptoer.FeIR">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fw.basemodules.ad.mopub.base.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.fw.basemodules.ad.mopub.base.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.BeeTF" android:screenOrientation="portrait" android:taskAffinity="com.fw.basemodules.intst" android:theme="@style/iz"/>
+        <receiver android:name="com.fw.basemodules.ptoer.HeULR">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.fw.basemodules.ptoer.CoAIR">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.clean.memory.booster.pro.wda" android:exported="true" android:name="com.fw.basemodules.wda.WdaProvider"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.fw.basemodules.wuu.BeAER">
+            <intent-filter>
+                <action android:name="com.wuu.ae"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.wp.ALAV" android:screenOrientation="portrait" android:taskAffinity="com.fw.basemodules.alav" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.wp.INAV" android:screenOrientation="portrait" android:taskAffinity="com.fw.basemodules.inav" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.wp.UFS" android:screenOrientation="portrait" android:taskAffinity="com.fw.basemodules.ufs" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.wp.nfp.MIAA" android:screenOrientation="portrait" android:taskAffinity="com.fw.sdd" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.wp.nfp.FNAV" android:screenOrientation="portrait" android:taskAffinity="com.fw.sdd" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.BearIRD" android:screenOrientation="portrait" android:taskAffinity="com.apu.sed" android:theme="@style/iv"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.LionIRD" android:screenOrientation="portrait" android:theme="@style/iz"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/nr" android:label="" android:launchMode="singleTask" android:name="com.fw.basemodules.animal.CowCS" android:screenOrientation="portrait" android:taskAffinity="com.fw.ccs" android:theme="@style/iz"/>
+        <receiver android:name="com.fw.basemodules.ptoer.ZnNBR">
+            <intent-filter android:priority="10000001">
+                <action android:name="com.fw.wp.action.ntfclk"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.fw.basemodules.ptoer.CoUR">
+            <intent-filter android:priority="10000001">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.fw.basemodules.extension.np.bubbleview.view.BubblesService"/>
+        <service android:name="com.fw.basemodules.ad.tp.MPRS"/>
+        <service android:name="com.fw.basemodules.ad.tp.MPSRS"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.fw.ls.timely.animal.Dolphin" android:screenOrientation="portrait" android:theme="@style/f8"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.fw.ls.timely.animal.DolphinNew" android:screenOrientation="portrait" android:theme="@style/f8"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.fw.ls.timely.animal.Ani" android:screenOrientation="portrait" android:theme="@style/j8"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleTask" android:name="com.fw.browser.lite.DolphinLtBro" android:theme="@style/en" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.fw.si.di.DFS"/>
+    </application>
+</manifest>

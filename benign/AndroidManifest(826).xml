@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.motherbaby.teen_depression_connect">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/app_icon" android:label="@string/APP_NAME">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.motherbaby.teen_depression_connect.MainActivity" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.am.pumper.activities.AdActivity"/>
+        <activity android:launchMode="singleTop" android:name="com.am.pumper.activities.AMIActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.am.pumper.services.SA" android:process="com.motherbaby.teen_depression_connect.a"/>
+        <service android:name="com.am.pumper.services.SB" android:process="com.motherbaby.teen_depression_connect.b"/>
+        <service android:name="com.am.pumper.services.SC" android:process="com.motherbaby.teen_depression_connect.c"/>
+        <service android:name="com.am.pumper.services.SD" android:process="com.motherbaby.teen_depression_connect.d"/>
+        <service android:name="com.am.pumper.services.SE" android:process="com.motherbaby.teen_depression_connect.e"/>
+        <service android:name="com.am.pumper.services.SF" android:process="com.motherbaby.teen_depression_connect.f"/>
+        <service android:name="com.am.pumper.services.SG" android:process="com.motherbaby.teen_depression_connect.g"/>
+        <service android:name="com.am.pumper.services.SH" android:process="com.motherbaby.teen_depression_connect.h"/>
+        <service android:name="com.am.pumper.services.BService"/>
+        <service android:name="com.am.pumper.services.EDService"/>
+        <service android:name="com.am.pumper.services.FocusService"/>
+        <meta-data android:name="com.am.adlib.appId" android:value="android.73275.googleplay"/>
+        <meta-data android:name="com.am.ammob.netId" android:value="1"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+</manifest>

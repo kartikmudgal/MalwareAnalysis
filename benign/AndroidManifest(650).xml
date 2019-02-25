@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.kahverengi.sfulite">
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.kahverengi.sfu.MainActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.kahverengi.sfu.StudentActivity" android:parentActivityName="com.kahverengi.sfu.MainActivity"/>
+        <activity android:label="@string/title_activity_teaching_class_list" android:name="com.kahverengi.sfu.admin.TeachingClassList" android:parentActivityName="com.kahverengi.sfu.MainActivity"/>
+        <activity android:label="@string/title_activity_teaching_class_edit" android:name="com.kahverengi.sfu.admin.TeachingClassEdit" android:parentActivityName="com.kahverengi.sfu.admin.TeachingClassList" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_evaluationdefinition_select" android:name="com.kahverengi.sfu.admin.EvaluationDefinitionSelect" android:parentActivityName="com.kahverengi.sfu.TeachingClassEdit"/>
+        <activity android:label="@string/title_activity_student_list" android:name="com.kahverengi.sfu.admin.StudentList" android:parentActivityName="com.kahverengi.sfu.MainActivity"/>
+        <activity android:label="@string/title_activity_student_edit" android:name="com.kahverengi.sfu.admin.StudentEdit" android:parentActivityName="com.kahverengi.sfu.admin.StudentList" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_evaluationdefinition_list" android:name="com.kahverengi.sfu.admin.EvaluationDefinitionList" android:parentActivityName="com.kahverengi.sfu.MainActivity"/>
+        <activity android:label="@string/title_activity_evaluationdefinition_edit" android:name="com.kahverengi.sfu.admin.EvaluationDefinitionEdit" android:parentActivityName="com.kahverengi.sfu.admin.EvaluationDefinitionList" android:windowSoftInputMode="stateHidden"/>
+    </application>
+</manifest>

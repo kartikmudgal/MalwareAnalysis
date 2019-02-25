@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.musixmatch.android.lyrify">
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>F<uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <permission android:name="com.musixmatch.android.lyrify.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.musixmatch.android.lyrify.permission.SCROBBLET_PRIVATE_SERVICE" android:protectionLevel="signature"/>
+    <permission android:description="@string/APKTOOL_DUMMYVAL_0x7f1103af" android:label="@string/APKTOOL_DUMMYVAL_0x7f1103af" android:name="com.musixmatch.android.lyrify.permission.WRITE_ENTITY" android:protectionLevel="normal"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.musixmatch.android.lyrify.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.musixmatch.android.lyrify.permission.SCROBBLET_PRIVATE_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <application android:allowBackup="false" android:allowTaskReparenting="true" android:icon="@drawable/mxm_icon_manifest" android:label="@string/APKTOOL_DUMMYVAL_0x7f110050" android:name="o.aaR" android:roundIcon="@drawable/mxm_icon_manifest" android:supportsRtl="true" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab">
+        <activity android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110021" android:launchMode="singleTop" android:name="com.musixmatch.android.ui.phone.DashBoardActivity" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ae">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MUSIC_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.musixmatch.com" android:scheme="http"/>
+                <data android:host="www.musixmatch.com" android:scheme="https"/>
+                <data android:pathPattern="/main"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140005"/>
+        </activity>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110050" android:name="com.musixmatch.android.ui.phone.MXMActionCatcherActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bc">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="mxm"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.facebook.application.131314396964274"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="lyr.cx" android:pathPrefix="/t/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmt.ch" android:pathPrefix="/t/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmt.ch" android:pathPrefix="/r/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmt.ch" android:pathPrefix="/a/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="lyrics.musixmatch.com" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.musixmatch.com" android:scheme="http"/>
+                <data android:host="www.musixmatch.com" android:scheme="https"/>
+                <data android:pathPattern="/lyrics/.*"/>
+                <data android:pathPattern="/es/letras/.*"/>
+                <data android:pathPattern="/it/testo/.*"/>
+                <data android:pathPattern="/fr/paroles/.*"/>
+                <data android:pathPattern="/ja/lyrics/.*"/>
+                <data android:pathPattern="/de/songtext/.*"/>
+                <data android:pathPattern="/pt/letras/.*"/>
+                <data android:pathPattern="/pt-br/letras/.*"/>
+                <data android:pathPattern="/ko/lyrics/.*"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="o.afj" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:name="o.aft" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c0"/>
+        <activity android:launchMode="singleInstance" android:name="o.afm" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201be"/>
+        <activity android:allowTaskReparenting="false" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="o.aeq" android:screenOrientation="sensorPortrait" android:taskAffinity="com.task.mxm.lockscreen" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c4"/>
+        <activity android:name="o.afy" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b6"/>
+        <activity android:configChanges="keyboard|orientation|screenSize" android:exported="false" android:name="o.aff" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b9" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110023" android:name="o.aeL" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b0" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110035" android:name="o.afl" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110458" android:name="o.afd" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f11002f" android:name="o.afb" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="" android:name="o.aeM" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110036" android:name="o.afk" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f11002b" android:launchMode="singleInstance" android:name="com.musixmatch.android.ui.phone.TwitterOAuthActivity" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmplayer" android:scheme="twitter-oauth"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.musixmatch.android.ui.phone.AudioPreviewActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c8">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:host="media"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110050" android:launchMode="singleTask" android:name="com.musixmatch.android.ui.phone.PLBLActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b7">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.musixmatch.android.ui.phone.DashBoardActivity"/>
+        </activity>
+        <activity android:excludeFromRecents="false" android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="com.musixmatch.android.ui.phone.LBLActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c3" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:launchMode="singleTop" android:name="com.musixmatch.android.activities.LyricsActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201bb" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:launchMode="singleTop" android:name="com.musixmatch.android.ui.phone.ExternalNotificationActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201bc" android:windowSoftInputMode="adjustPan"/>
+        <activity android:excludeFromRecents="false" android:exported="true" android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="com.musixmatch.android.ui.phone.BLBLActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c3" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.aew" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b6"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.aeE" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ad"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.aeF" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ad"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.aeD" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ad"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.aeB" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ad"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110170" android:name="o.afo" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ad"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110031" android:launchMode="singleTask" android:name="com.musixmatch.android.ui.phone.SearchLyricActivity" android:parentActivityName="com.musixmatch.android.ui.phone.DashBoardActivity" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.musixmatch.android.ui.phone.DashBoardActivity"/>
+            <intent-filter>
+                <action android:name="com.googlenow.actions.START_MUSICID"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.action.IDENTIFY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110033" android:launchMode="singleTask" android:name="com.musixmatch.android.ui.phone.SearchTextLyricActivity" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201bd" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MEDIA_SEARCH"/>
+                <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140004"/>
+        </activity>
+        <activity android:name="com.musixmatch.android.ui.phone.AlbumDetailActivity" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.musixmatch.cursor.dir/track"/>
+                <data android:mimeType="vnd.musixmatch.cursor.dir/album"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110024" android:name="o.aeG" android:screenOrientation="sensorPortrait"/>
+        <activity android:exported="false" android:name="o.YU" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.YY" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.YW" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.Zc" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.YT" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.YS" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.YV" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:name="o.aeO" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bd"/>
+        <activity android:exported="false" android:name="o.afD" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="o.afw" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c3"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="o.aeT" android:noHistory="true" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f11039a" android:name="o.afu" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f11002a" android:launchMode="singleInstance" android:name="o.afs" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201bf"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110490" android:name="o.afr" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="" android:name="o.afA" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c2"/>
+        <activity android:exported="false" android:name="o.Zd" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200c0"/>
+        <activity android:exported="false" android:label="@string/APKTOOL_DUMMYVAL_0x7f110039" android:name="o.aeH" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:name="o.afh" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b8"/>
+        <activity android:name="o.afg" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:exported="false" android:label="@string/APKTOOL_DUMMYVAL_0x7f11003b" android:name="o.afa" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:exported="true" android:name="com.musixmatch.android.ui.lockscreen.LockscreenSettingsActivity" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110285" android:name="o.afq" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f1103da" android:name="o.afi" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f1101fe" android:name="o.afc" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f110200" android:name="o.afe" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <service android:name="com.musixmatch.android.service.WearDataService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.musixmatch.android.service.AndroidWearService">
+            <intent-filter>
+                <action android:name="AndroidWearService.ACTION_DISMISS_PLAYER_NOTIFICATION"/>
+                <action android:name="AndroidWearService.ACTION_DISMISS_SCROBBLING_NOTIFICATION"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.musixmatch.android.service.MusicIDService">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.service.MusicIDService.CONFIGURE"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.START_MUSICID"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.STOP_MUSICID"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.START_ID_NOW"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.INTERRUPT"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.abO"/>
+        <service android:exported="false" android:name="o.abK"/>
+        <service android:exported="false" android:name="o.akl" android:process=":media"/>
+        <service android:exported="false" android:name="o.abS"/>
+        <service android:name="o.abV"/>
+        <service android:name="o.abQ"/>
+        <service android:name="o.abB"/>
+        <service android:name="o.abF"/>
+        <service android:name="o.abI"/>
+        <service android:name="o.abJ"/>
+        <service android:exported="false" android:name="o.abH"/>
+        <service android:exported="false" android:name="com.musixmatch.android.MediaPlaybackService" android:process=":media"/>
+        <receiver android:enabled="true" android:name="com.musixmatch.android.receiver.AndroidWearReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="com.musixmatch.android.lyrify_ACTION_DISMISS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f11005b" android:name="com.musixmatch.android.appwidget.AppWidgetSearch">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140009" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f110058" android:name="com.musixmatch.android.appwidget.AppWidgetPlayer4x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140006" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f110059" android:name="com.musixmatch.android.appwidget.AppWidgetPlayer4x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140007" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f11005a" android:name="com.musixmatch.android.appwidget.AppWidgetPlayer4x4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140008" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f110052" android:name="com.musixmatch.android.appwidget.AppWidgetFingerprintIcon">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.WIDGET_START_MUSICID_ICON"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140002" android:value="fingerprint"/>
+        </receiver>
+        <receiver android:label="@string/APKTOOL_DUMMYVAL_0x7f110053" android:name="com.musixmatch.android.appwidget.AppWidgetFingerprint">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.musixmatch.android.appwidget.AppWidgetFingerprint.START_MUSICID_PERMISSION_AWARE"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.NO_MIC"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.NO_CONNECTION"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.NO_GN_CONFIG"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.ERROR_RECORDER_INIT"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.WIDGET_START_MUSICID"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.RECORD_START"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.RECORD_NEW_CHUNK"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.RECORD_INTERUPTED"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_START"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_ERROR"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_NO_RESULT"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_PROGRESS"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_RESULT"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_SEARCH_LYRICS"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_RESULT_WIDGET"/>
+                <action android:name="com.musixmatch.android.service.MusicIDService.GN_REQUEST_INTERRUPTED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140001" android:value="fingerprint"/>
+        </receiver>
+        <receiver android:name="com.musixmatch.android.receiver.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.musixmatch.android.lyrify"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.musixmatch.android.MediaButtonIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider131314396964274" android:exported="true" android:name="o.ฅ"/>
+        <meta-data android:name="com.google.android.wearable.beta.app" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140003"/>
+        <meta-data android:name="android.app.default_searchable" android:value="com.musixmatch.android.ui.phone.SearchTextLyricActivity"/>
+        <activity android:label="" android:name="o.aeU" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b3"/>
+        <activity android:label="" android:name="o.afp" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201c1"/>
+        <activity android:label="@string/APKTOOL_DUMMYVAL_0x7f11002c" android:name="o.aeW" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b5" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="o.aeZ" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bd"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/APKTOOL_DUMMYVAL_0x7f120232"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="o.aeJ" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ac" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="" android:launchMode="singleTask" android:name="o.aeN" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b1"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.musixmatch.android.ui.floating.story.FloatingBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="o.aeY" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bd"/>
+        <activity android:exported="false" android:name="o.afx" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201af"/>
+        <activity android:exported="false" android:name="o.aeQ" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201af"/>
+        <activity android:exported="false" android:name="o.aeI" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ab"/>
+        <activity android:name="o.aeS" android:screenOrientation="sensorPortrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201b2"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="o.aer" android:noHistory="true" android:process=":lockscreen" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bc"/>
+        <activity android:configChanges="keyboard|orientation|screenSize" android:exported="false" android:name="o.afn" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1201ba" android:windowSoftInputMode="adjustResize"/>
+        <activity android:exported="false" android:name="o.aeK" android:screenOrientation="portrait" android:theme="@style/APKTOOL_DUMMYVAL_0x7f12019c"/>
+        <activity android:exported="false" android:name="o.aeP" android:theme="@style/APKTOOL_DUMMYVAL_0x7f1200bd"/>
+        <service android:enabled="true" android:exported="true" android:name="com.musixmatch.android.ui.lockscreen.LockscreenService" android:process=":lockscreen">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_START"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_LOCKSCREEN_ENABLED"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_LOCKSCREEN_DISABLED"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_SCROBBLED_TRACK"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_MEDIA_CONTROLLER_ACTION"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_MEDIA_CONTROLLER_SESSION_DESTROYED"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenService.ACTION_PLAYER_LOCKSCREEN_ENABLED"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="o.abG"/>
+        <service android:name="o.abD"/>
+        <service android:exported="false" android:name="o.abT"/>
+        <service android:enabled="@bool/APKTOOL_DUMMYVAL_0x7f050009" android:exported="true" android:name="com.musixmatch.android.scrobbler.notifications.MXMNotificationListenerService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":notifications">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.musixmatch.android.core.utils.openuid.OpenUDID_service">
+            <intent-filter>
+                <action android:name="org.OpenUDID.GETUDID"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.abz"/>
+        <service android:name="o.abN"/>
+        <service android:name="o.abC"/>
+        <service android:enabled="true" android:exported="true" android:name="com.musixmatch.android.services.ScrobblerService">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.services.RemoteScrobblingService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="o.abW" android:process=":ultron"/>
+        <service android:name="o.abP"/>
+        <service android:name="com.musixmatch.android.service.TrackService">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.TrackService.ACTION_MISSING_LYRICS"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.abM"/>
+        <service android:name="o.aV"/>
+        <service android:name="o.abL"/>
+        <service android:exported="false" android:name="o.abR"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.receivers.SpotifyActiveReceiver">
+            <intent-filter>
+                <action android:name="com.spotify.music.active"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.musixmatch.android.ui.lockscreen.LockscreenEnableNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenEnableNotificationReceiver.ACTION_ENABLE"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenEnableNotificationReceiver.ACTION_DISMISS"/>
+                <action android:name="com.musixmatch.android.ui.lockscreen.LockscreenEnableNotificationReceiver.ACTION_DONT_SHOW_AGAIN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.musixmatch.android.ui.lockscreen.LockscreenEnableExternalReceiver">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lockscreen.ACTION_LOCKSCREEN_ENABLE_REQUEST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.musixmatch.android.receivers.MyPackageReplacedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.musixmatch.android.receivers.RestartServiceReceiver">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.action.START_NOTIFICATION_LISTENER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.AndroidMusicReceiver">
+            <intent-filter>
+                <action android:name="com.android.music.metachanged"/>
+                <action android:name="com.android.music.playstatechanged"/>
+                <action android:name="com.android.music.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.AndroidMusicJRTStudioBuildReceiver">
+            <intent-filter>
+                <action android:name="com.jrtstudio.music.metachanged"/>
+                <action android:name="com.jrtstudio.music.playstatechanged"/>
+                <action android:name="com.jrtstudio.music.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.SpotifyMusicReceiver">
+            <intent-filter>
+                <action android:name="com.spotify.mobile.android.playbackstatechanged"/>
+                <action android:name="com.spotify.mobile.android.queuechanged"/>
+                <action android:name="com.spotify.mobile.android.metadatachanged"/>
+                <action android:name="com.spotify.music.playbackstatechanged"/>
+                <action android:name="com.spotify.music.queuechanged"/>
+                <action android:name="com.spotify.music.metadatachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.RdioMusicReceiver">
+            <intent-filter>
+                <action android:name="com.rdio.android.playstatechanged"/>
+                <action android:name="com.rdio.android.metachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.HeroMusicReceiver">
+            <intent-filter>
+                <action android:name="com.htc.music.metachanged"/>
+                <action android:name="com.htc.music.playbackcomplete"/>
+                <action android:name="com.htc.music.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.WinampMusicReceiver">
+            <intent-filter>
+                <action android:name="com.nullsoft.winamp.metachanged"/>
+                <action android:name="com.nullsoft.winamp.playbackcomplete"/>
+                <action android:name="com.nullsoft.winamp.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.MyTouch4GMusicReceiver">
+            <intent-filter>
+                <action android:name="com.real.IMP.metachanged"/>
+                <action android:name="com.real.IMP.playbackcomplete"/>
+                <action android:name="com.real.IMP.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.MIUIMusicReceiver">
+            <intent-filter>
+                <action android:name="com.miui.player.metachanged"/>
+                <action android:name="com.miui.player.playstatechanged"/>
+                <action android:name="com.miui.player.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.SEMCMusicReceiver">
+            <intent-filter>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PLAYBACK_PLAY"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PLAYBACK_PAUSE"/>
+                <action android:name="com.sonyericsson.music.metachanged"/>
+                <action android:name="com.sonyericsson.music.playbackcomplete"/>
+                <action android:name="com.sonyericsson.music.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.WalkmanReceiver">
+            <intent-filter>
+                <action android:name="com.sonyericsson.mediaproxy.playerservice.playercallbacks.ACTION_PLAYER_STATE"/>
+                <action android:name="com.sonyericsson.music.TRACK_COMPLETED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_SKIPPED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PAUSED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.SamsungMusicReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.sec.android.MusicPlayer.metachanged"/>
+                <action android:name="com.samsung.sec.android.MusicPlayer.playbackcomplete"/>
+                <action android:name="com.samsung.sec.android.MusicPlayer.playstatechanged"/>
+                <action android:name="com.samsung.music.metachanged"/>
+                <action android:name="com.samsung.music.playbackcomplete"/>
+                <action android:name="com.samsung.music.playstatechanged"/>
+                <action android:name="com.samsung.sec.metachanged"/>
+                <action android:name="com.samsung.sec.playbackcomplete"/>
+                <action android:name="com.samsung.sec.playstatechanged"/>
+                <action android:name="com.samsung.sec.android.metachanged"/>
+                <action android:name="com.samsung.sec.android.playbackcomplete"/>
+                <action android:name="com.samsung.sec.android.playstatechanged"/>
+                <action android:name="com.samsung.MusicPlayer.metachanged"/>
+                <action android:name="com.samsung.MusicPlayer.playbackcomplete"/>
+                <action android:name="com.samsung.MusicPlayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.ScrobbleDroidMusicReceiver">
+            <intent-filter>
+                <action android:name="net.jjc1138.android.scrobbler.action.MUSIC_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.SLSAPIReceiver">
+            <intent-filter>
+                <action android:name="com.adam.aslfms.notify.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.LastFmAPIReceiver">
+            <intent-filter>
+                <action android:name="fm.last.android.metachanged"/>
+                <action android:name="fm.last.android.playbackpaused"/>
+                <action android:name="fm.last.android.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.LgMusicReceiver">
+            <intent-filter>
+                <action android:name="com.lge.music.metachanged"/>
+                <action android:name="com.lge.music.playstatechanged"/>
+                <action android:name="com.lge.music.endofplayback"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.AmazonMusicReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.mp3.metachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.PlayerProReceiver">
+            <intent-filter>
+                <action android:name="com.tbig.playerprotrial.metachanged"/>
+                <action android:name="com.tbig.playerprotrial.playstatechanged"/>
+                <action android:name="com.tbig.playerprotrial.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.RocketPlayerReceiver">
+            <intent-filter>
+                <action android:name="com.jrtstudio.AnotherMusicPlayer.metachanged"/>
+                <action android:name="com.jrtstudio.AnotherMusicPlayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.LayaMusicReceiver">
+            <intent-filter>
+                <action android:name="com.mjc.mediaplayer.metachanged"/>
+                <action android:name="com.mjc.mediaplayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.musixmatch.android.scrobbler.PerfectMediaMusicReceiver">
+            <intent-filter>
+                <action android:name="com.pliyr.musicmobi.pixi.musicplayer.metachanged"/>
+                <action android:name="com.pliyr.musicmobi.pixi.musicplayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.musixmatch.android.receivers.UltronReceiver" android:process=":ultron">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify_ACTION_DISMISS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.musixmatch.android.api.MXMInstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.musixmatch.android.util.captcha.CaptchaReceiver">
+            <intent-filter>
+                <action android:name="CaptchaReceiver.ACTION_NOTIFICATION_CLICK"/>
+                <action android:name="CaptchaReceiver.ACTION_DIALOG_CLICK"/>
+                <action android:name="CaptchaReceiver.ACTION_NOTIFICATION_DISMISS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.musixmatch.android.lyrify.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="o.า">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/APKTOOL_DUMMYVAL_0x7f140000"/>
+        </provider>
+        <provider android:authorities="com.musixmatch.android.lyrify" android:name="o.abw" android:writePermission="com.musixmatch.android.lyrify.permission.WRITE_ENTITY"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/APKTOOL_DUMMYVAL_0x7f0b0009"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/APKTOOL_DUMMYVAL_0x7f110050"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/APKTOOL_DUMMYVAL_0x7f11018d"/>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_abc8hX9AH5IYMS62exmG2kidqwcPmx01"/>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="9b5427800c610ad0ce9963e6f20d9bfed76af0b0"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:launchMode="singleTask" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:multiprocess="true" android:name="com.inmobi.rendering.InMobiAdActivity" android:resizeableActivity="false" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <receiver android:enabled="true" android:exported="false" android:name="o.aO"/>
+        <service android:enabled="true" android:exported="false" android:name="o.aW"/>
+        <service android:enabled="true" android:exported="false" android:name="o.aQ" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="o.cT" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="o.OT" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.musixmatch.android.lyrify"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.musixmatch.android.lyrify.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="o.SU"/>
+        <activity android:name="o.য"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="o.ᔃ" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:enabled="true" android:name="o.ajM" android:process=":media"/>
+        <provider android:authorities="com.musixmatch.android.lyrify.lifecycle-trojan" android:exported="false" android:multiprocess="true" android:name="o.AUX"/>
+        <provider android:authorities="com.musixmatch.android.lyrify.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.AUx"/>
+        <provider android:authorities="com.musixmatch.android.lyrify.crashlyticsinitprovider" android:exported="false" android:initOrder="100" android:name="o.ν"/>
+        <service android:name="o.aaH"/>
+        <receiver android:name="com.instacart.library.truetime.BootCompletedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

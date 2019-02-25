@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ponkuki.launcher.theme.pbbbbab">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="false"/>
+    <application android:allowBackup="false" android:icon="@drawable/theme_icon" android:label="@string/app_name">
+        <activity android:excludeFromRecents="true" android:icon="@drawable/theme_icon" android:label="@string/app_name" android:launchMode="singleInstance" android:name="com.campmobile.launcher.themeapp.DialogActivity" android:theme="@android:style/Theme.Dialog">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/theme_icon" android:label="@string/app_name" android:name="com.campmobile.launcher.themeapp.PreviewActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.campmobile.launcher.theme"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.campmobile.launcher.themeapp.UriHandleActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:host="com.ponkuki.launcher.theme.pbbbbab" android:scheme="theme"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.campmobile.launcher.themeapp.ThemeAppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.campmobile.launcher.action.FIRST_START"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

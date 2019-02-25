@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.kashif.TalkingCallerID" platformBuildVersionCode="8" platformBuildVersionName="2.2">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Light">
+        <activity android:label="@string/app_name" android:name="com.kashif.TalkingCallerID.TextToSpeechActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Settings - Talking Caller ID" android:name="com.kashif.TalkingCallerID.Settings"/>
+        <activity android:label="Caller ID Volume" android:name="com.kashif.TalkingCallerID.VolumeActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.kashif.TalkingCallerID.SettingsActivityTab"/>
+        <activity android:label="Talking Caller ID - Do not speak Contacts" android:name="com.kashif.TalkingCallerID.AllContacts"/>
+        <activity android:label="Battery Health Alerts - Talking Caller ID" android:name="com.kashif.TalkingCallerID.BatteryHealthActivity" android:theme="@android:style/Theme.Light"/>
+        <service android:name="com.kashif.TalkingCallerID.PhoneCallService">
+            <intent-filter>
+                <action android:name="com.kashif.TalkingCallerID.PhoneCallService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name="com.kashif.TalkingCallerID.SMSTalkingService">
+            <intent-filter>
+                <action android:name="com.kashif.TalkingCallerID.SMSTalkingService"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.kashif.TalkingCallerID.PhoneCallServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.kashif.TalkingCallerID.PhoneStateReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.kashif.TalkingCallerID.TalkingSMS">
+            <intent-filter android:priority="999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.kashif.TalkingCallerID.TalkingSpeed" android:theme="@android:style/Theme.Dialog"/>
+    </application>
+</manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.wpseek.mobile">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+        <activity android:description="@string/app_desc" android:label="@string/app_name_short" android:name="com.wpseek.mobile.WPSeekMobileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="org.apache.cordova.DroidGap"/>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="6b7411c3b8ed244cc62556d12d9f54454770c64e"/>
+    </application>
+</manifest>

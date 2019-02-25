@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tsol.tools.batterysaver" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DEVICE_POWER"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.BIND_REMOTEVIEWS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/CustomTheme">
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="com.tsol.tools.batterysaver.BatteryService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.tsol.tools.batterysaver.BatteryReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.AboutUS" android:screenOrientation="portrait" android:theme="@style/myTheme"/>
+        <activity android:name="com.ln.cleaner_batterysaver.ui.MemoryCleanActivity" android:screenOrientation="portrait" android:theme="@style/MyTranslucentAppTheme"/>
+        <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.Settings" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.tsol.tools.batterysaver.MainActivity" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.tsol.tools.batterysaver.DetailActivity" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.tsol.tools.batterysaver.OptimizeActivity" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.tsol.tools.batterysaver.TaskKiller" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.ChargingActivity" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <activity android:label="@string/Batter_Mode_Setting" android:name="com.tsol.tools.batterysaver.ModeList" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.PowerSavingMode" android:screenOrientation="portrait" android:theme="@style/ListDialogTheme"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.SleepMode" android:screenOrientation="portrait" android:theme="@style/ListDialogTheme"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.StandByTime" android:screenOrientation="portrait" android:theme="@style/ListDialogTheme"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.BrightnessProgress" android:screenOrientation="portrait" android:theme="@style/ListDialogTheme"/>
+        <activity android:label="@string/app_name" android:name="com.tsol.tools.batterysaver.CustomizedMode" android:screenOrientation="portrait" android:theme="@style/CustomTheme_window"/>
+        <service android:exported="false" android:name="com.ln.cleaner_batterysaver.service.CleanerService"/>
+        <service android:exported="false" android:name="com.ln.cleaner_batterysaver.service.CoreService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.swipedismiss.SwipeTouchListenerTestActivity"/>
+        <activity android:name="com.nhaarman.listviewanimations.itemmanipulation.dragdrop.DynamicListViewTestActivity"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

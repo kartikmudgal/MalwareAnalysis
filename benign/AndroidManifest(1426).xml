@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="hu.genius.konig">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".KonigPizzaAppApplication" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:label="@string/app_name" android:layout_height="wrap_content" android:layout_width="wrap_content" android:name=".KonigPizzaAppActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.SplashActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.MainTabActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.InfoActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.TermOfUseActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.CategoryListActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.ProductListActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.SelectedProductActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.BasketActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.SelectUserActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.SelectAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.AddAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.OverviewActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.RecommendActivity" android:screenOrientation="portrait"/>
+        <activity android:layout_height="fill_parent" android:layout_width="fill_parent" android:name="hu.genius.pizzaapp.activity.ActionsListActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

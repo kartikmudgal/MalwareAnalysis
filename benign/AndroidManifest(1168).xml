@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.sun.babyflash">
+    <original-package android:name="com.sun.babyflash"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name="com.sun.nbahightlight.ActivityMain" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".BaseActivity"/>
+        <activity android:name="com.sun.apppromote.ActivityAppPromote"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.sun.nbahightlight.ViewVideo" android:screenOrientation="landscape"/>
+        <activity android:name="com.sun.nbahightlight.NBAHightLightActivity"/>
+        <activity android:name="com.sun.nbahightlight.ActivityVideoListInfo"/>
+        <meta-data android:name="com.view.AdView.pid" android:value="SDK2012010510032998qjz49u398zpf4"/>
+        <meta-data android:name="com.view.AdView.channel" android:value="aduu"/>
+        <activity android:name="com.mobclick.android.UmengFeedback"/>
+        <activity android:name="com.feedback.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.feedback.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.feedback.ui.FeedbackConversation"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="4f53a1e55270152c2b00002f"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="cn.aduu.adsdk.AdSpotActivity"/>
+        <meta-data android:name="ADUU_SDK_APP_ID" android:value="D5E1E3B881"/>
+        <meta-data android:name="ADUU_SDK_APP_SEC" android:value="40DEE82DBC"/>
+        <meta-data android:name="ADUU_SDK_INTERVAL" android:value="10"/>
+        <meta-data android:name="ADUU_SDK_APP_CHANEL" android:value="0"/>
+        <meta-data android:name="ADUU_SDK_SPOT_TM" android:value="3"/>
+        <meta-data android:name="ADUU_SDK_CHANGE_MODE" android:value="3"/>
+        <meta-data android:name="cooId" android:value="e85cb58a12bf4194abb67015bc5aaaf8"/>
+        <meta-data android:name="channelId" android:value="kuguo"/>
+        <activity android:name="com.kuguo.openads.AdsOfferListActivity"/>
+        <activity android:name="com.kuguo.pushads.PushAdsActivity" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.android.action_PUSHADSACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.kuguo.pushads.AdsService"/>
+        <receiver android:name="com.kuguo.pushads.AdsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="cn.appmedia.ad.AdActivity"/>
+        <activity android:name="com.tencent.mobwin.MobinWINBrowserActivity"/>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_COMPONENT"/>
+    <uses-permission android:name="android.permission.BIND_WALLPAPER"/>
+    <supports-screens android:anyDensity="true"/>
+</manifest>

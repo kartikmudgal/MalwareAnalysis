@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hr.stratusit.euminia" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <application android:icon="@drawable/euminia_icon" android:label="@string/app_name" android:name="hr.stratusit.euminia.EuminiaApp">
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name="hr.stratusit.euminia.activity.Main" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/settings" android:name="hr.stratusit.euminia.activity.Settings" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/general" android:name="hr.stratusit.euminia.activity.SettingsGeneral" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/transfer_schudle" android:name="hr.stratusit.euminia.activity.SettingsTransferSchedule" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/calls" android:name="hr.stratusit.euminia.activity.SettingsCalls" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/languages" android:name="hr.stratusit.euminia.activity.SettingsLanguages" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/questionnaire" android:launchMode="singleInstance" android:name="hr.stratusit.euminia.activity.QuestionnaireActivity" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:label="@string/debug" android:name="hr.stratusit.euminia.activity.SettingsDebug" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/diagnostics" android:name="hr.stratusit.euminia.activity.DebugDiagnostics" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/data_transfer" android:name="hr.stratusit.euminia.activity.SettingsDataTransfer" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/select_ship" android:name="hr.stratusit.euminia.activity.SelectShips" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/select_language" android:name="hr.stratusit.euminia.activity.SelectLanguage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name="hr.stratusit.euminia.activity.SelectCharterCompany" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:label="@string/start" android:name="hr.stratusit.euminia.activity.StartQuestionnaire" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

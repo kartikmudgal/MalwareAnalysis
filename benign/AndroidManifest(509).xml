@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.groundhog.mcpemaster" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <permission android:name="com.groundhog.mcpemaster.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.groundhog.mcpemaster.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.GET_PERMISSIONS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.groundhog.mcpemaster.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.groundhog.mcpemaster.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:allowBackup="true" android:icon="@drawable/tbs_logo" android:label="@string/app_name" android:largeHeap="true" android:name="com.groundhog.mcpemaster.MyApplication" android:sharedUserId="android.uid.system" android:supportsRtl="true" android:theme="@style/ContentOverlay_Anim">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="FYBVideoPlayerOptionCloseButtonDelay" android:value="8000"/>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="@string/channelname"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="11bb450e0ea0ca879b428a21"/>
+        <meta-data android:name="applovin.sdk.auto_preload_ad_sizes" android:value="INTER"/>
+        <meta-data android:name="applovin.sdk.auto_preload_ad_types" android:value="NONE"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService" android:process=":remote">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.groundhog.mcpemaster"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="cn.jpush.android.ui.PushActivity">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.groundhog.mcpemaster"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="cn.jpush.android.ui.PopWinActivity" android:theme="@style/MyDialogStyle"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.DownloadService"/>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <receiver android:enabled="true" android:name="com.groundhog.mcpemaster.jpush.JPushReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/>
+                <action android:name="cn.jpush.android.intent.CONNECTION"/>
+                <category android:name="com.groundhog.mcpemaster"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:exported="true" android:name="com.groundhog.mcpemaster.util.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.MainLoginActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:label="@string/app_name" android:name="com.groundhog.mcpemaster.activity.StartActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim_Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/startpage_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.groundhog.mcpemaster.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/MainActivityStyle">
+            <intent-filter>
+                <action android:name="com.groundhog.mcpemaster.loginsuc"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.groundhog.mcpemaster.activity.memoryClean.MemoryCleanActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.mcbox.pesdk.mcfloat.McLauncherActivity" android:screenOrientation="sensorLandscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <meta-data android:name="android.app.lib_name" android:value="minecraftpe"/>
+        </activity>
+        <activity android:name="com.groundhog.mcpemaster.activity.basemodification.BaseModificationActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.ModifyCreatureActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.ModifyPlayerLevelActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.ModifyRebornPositionActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.map.MapFolderSelectActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.resource.BannerArticleDetailActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.bagitems.EditInventorySlotActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.groundhog.mcpemaster.activity.bagitems.BrowseItemsActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.plug.PluginImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.plug.PluginWithTextureImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.groundhog.mcpemaster.activity.bagitems.BagItemsEditActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.ModifyAnimalActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.AddNewAnimalActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.modify.ModifyChangeAnimalActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.usercomment.view.map.MapNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.usercomment.view.texture.TextureNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.usercomment.view.seed.SeedNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.usercomment.view.plugin.PluginNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.usercomment.view.skin.SkinNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.usercomment.view.addon.AddonNewResDetailActivity" android:screenOrientation="portrait" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.usercomment.view.article.ArticleCommentActivity" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.usercomment.view.reply.ReplyCommentListActivity" android:theme="@style/ActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.skin.ResourceDetailBigImageActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.skin.SkinBigImageActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.skin.SkinImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.skin.SkinSelectActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.skin.SkinPreviewActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.about.AboutActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.international.LanguageActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.groundhog.mcpemaster.activity.web.WebDirectionsActivity" android:theme="@style/ContentOverlay_Anim"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="@string/appkey"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="@string/channelname"/>
+        <meta-data android:name="HIIDO_CHANNEL" android:value="@string/channelname"/>
+        <meta-data android:name="HIIDO_APPKEY" android:value="@string/hiidoAppkey"/>
+        <meta-data android:name="encrypt_cmd" android:value="0"/>
+        <meta-data android:name="encrypt_version" android:value="1.4.2"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="00da80505a9c15d5fda7ebdf9d34b9c4299f3710"/>
+        <meta-data android:name="applovin.sdk.key" android:value="_QuUUkOeXulJT5zTkv0kUx438TcucnqbCi5gQTKzM4Gv9ERu8SbcNfgV8INm4CMGwRyKwGHGKTAUobMw3zXQdC"/>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="http"/>
+            <data android:scheme="https"/>
+            <data android:scheme="about"/>
+            <data android:scheme="javascript"/>
+        </intent-filter>
+        <activity android:exported="true" android:name="com.groundhog.mcpemaster.activity.list.map.MapLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:exported="true" android:name="com.groundhog.mcpemaster.activity.list.skin.SkinLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.plug.PluginLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.texture.TextureImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.texture.TextureLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.seed.SeedLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:exported="true" android:name="com.groundhog.mcpemaster.activity.base.ImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim">
+            <intent-filter>
+                <action android:name="com.groundhog.mcpemaster.action.SET_TEXTUREPACK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.map.BackupManagerActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.map.BackupRestoreActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.UserSubmitActivity" android:parentActivityName="com.groundhog.mcpemaster.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.SubmittingActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.LocalFileSelectActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.ScreenshotsListActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.ScreenshotsGridActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.ImagePreviewActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.SubmitStatusActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.LoginActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.UserSettingAcitivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.ReNameAcitity" android:screenOrientation="portrait" android:theme="@style/customAppTheme" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.MyCreditsActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.contribute.TutorialsAcitivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.resource.McResourceSearchActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.feedback.FeedbackActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.resource.HomeSearchActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.chartboost.sdk.CBImpressionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.resource.MyResourcesActivity" android:screenOrientation="portrait" android:theme="@style/customAppTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <activity android:exported="true" android:name="com.groundhog.mcpemaster.activity.list.addons.AddonsLibraryActivity" android:screenOrientation="portrait" android:theme="@style/List_Page_them"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.list.addons.AddonImportActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.GameSettingActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.UserInfoSettingActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.GameHistoryActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.UserNameInputActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:name="com.groundhog.mcpemaster.common.download.RxDownloadService"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.SignInActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.SignInInstructionActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.AdsViewActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.usersystem.view.activities.AdsRulesActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.pay.view.ChargeActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:name="com.groundhog.mcpemaster.wallet.view.activities.MyWalletActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.wallet.view.activities.MyWalletChargeHistoryActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.wallet.view.activities.MyWalletOrdersActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.wallet.view.activities.MyWalletUnLockResHistoryActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.wallet.view.activities.MyWalletHelpCenterActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.messagecenter.activity.MessageActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.messagecenter.activity.NotificationDetailActivity" android:theme="@style/BaseActivityTheme"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.masterclub.view.activities.MasterNewClubActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.masterclub.view.activities.MasterClubSettingActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.masterclub.view.activities.ClubAgreementActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.masterclub.view.activities.MasterClubCommonIssueActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.groundhog.mcpemaster.StampSystem.activity.StampActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.groundhog.mcpemaster.community.view.activities.DiscoveryDetailsActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.groundhog.mcpemaster.StampSystem.activity.StampInstructionActivity" android:screenOrientation="portrait" android:theme="@style/BaseActivityTheme"/>
+        <activity android:name="com.groundhog.mcpemaster.activity.resource.QualityResourceActivity" android:screenOrientation="portrait" android:theme="@style/ContentOverlay_Anim"/>
+        <activity android:configChanges="orientation" android:name="com.groundhog.mcpemaster.usersystem.view.activities.LoginDialog" android:theme="@style/Theme.LoginDialog"/>
+        <activity android:configChanges="orientation" android:name="com.groundhog.mcpemaster.activity.dialog.MasterClubPackageDialog" android:theme="@style/Theme.LoginDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.groundhog.mcpemaster.StampSystem.activity.FloatStampActivity" android:theme="@style/stampDialog"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:icon="@drawable/tw__transparent" android:label="@string/kit_name" android:name="com.twitter.sdk.android.core.identity.ShareEmailActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.fyber.ads.ofw.OfferWallActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.fyber.ads.videos.RewardedVideoActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.fyber.ads.interstitials.InterstitialActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:label="Integration Test Suite" android:name="com.fyber.utils.testsuite.TestSuiteActivity"/>
+        <service android:exported="false" android:name="com.fyber.cache.CacheVideoDownloadService"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.groundhog.mcpemaster.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.groundhog.mcpemaster"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+    </application>
+</manifest>

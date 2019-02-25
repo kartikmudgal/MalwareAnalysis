@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.tekla.feedback" platformBuildVersionCode="15" platformBuildVersionName="4.0.4-1406430">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/icon" android:label="Trimble Feedback" android:name="android.app.Application" android:theme="@style/Feedback">"<activity android:name="md56356afc9796ad57aa7135630d714ebb9.SplashScreen" android:noHistory="true" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Choose service" android:name="md571774878e775e37dcf9377075df9e7f5.ChooseServiceView"/>
+        <activity android:label="Choose Type" android:name="md571774878e775e37dcf9377075df9e7f5.ChooseTypeView"/>
+        <activity android:label="Thank you" android:name="md571774878e775e37dcf9377075df9e7f5.ThankYouView"/>
+        <activity android:label="Send feedback" android:name="md571774878e775e37dcf9377075df9e7f5.SendFeedbackView"/>
+        <provider android:authorities="com.tekla.feedback.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+</manifest>

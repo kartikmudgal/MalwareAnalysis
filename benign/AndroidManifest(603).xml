@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ireal.GoodHospital">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:label="@string/app_name" android:name=".Intro" android:screenOrientation="portrait" android:theme="@style/Theme.IntroBg">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".GoodHospital" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_main" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_guide_babyup" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_guide_babyup_imageview" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="Mom_check_checksum" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_check_main" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_check_special" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_check_special_view" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_check_anomaly" android:screenOrientation="portrait"/>
+        <activity android:name="Mom_check_anomalyView" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_diary" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_diary_view" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_diary_write" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Mom_info" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_set" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Mom_set_auto" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".ViewFlipperActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_guide_main" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_guide_sexlife" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_guide_error" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_guide_comeon" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_vitamin_main" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_primary_main" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_babyout_main" android:screenOrientation="portrait"/>
+        <activity android:name=".Mom_babyout_bok" android:screenOrientation="portrait"/>
+        <activity android:name=".MapMain" android:screenOrientation="portrait"/>
+        <activity android:name=".WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".movieplayer" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".MediaPlayerActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".MovieList" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_main" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_set" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_set_write" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_diary" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_diary_view" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_diary_write" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_info" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_emergency" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_set_image" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_EmergencyDetailAct" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Growth" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Exercise" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Toy" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Speaking" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Bath" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_feeding" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_clinic" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_clinic_view" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_guide_Toy_preparation" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_prevent" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalBaby.Baby_prevent_view" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_main" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_smoke" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_answer" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_young" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_other" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_bmi" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.Health_bmiResult" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalHealth.WebViewTest" android:screenOrientation="portrait"/>
+        <activity android:name="com.ireal.GoodHospitalView.View_main" android:screenOrientation="portrait"/>
+        <uses-library android:name="com.google.android.maps"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+</manifest>

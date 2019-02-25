@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.new5tv.zc0000836">
+    <uses-permission android:name="android.permission.WAKE_LOCK"/> //android 螢幕保持喚醒 不鎖螢幕
+<uses-permission android:name="android.permission.INTERNET"/> //開啟網路使用權限 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> //網路線路
+<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/> //開起資料夾
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> //使用內用SD權限
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/> //音效控制
+<uses-permission android:name="android.permission.READ_PHONE_STATE"/> //獲取手機訊息
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> //獲取WIFI訊息
+<uses-permission android:name="android.permission.READ_CONTACTS"/> //讀取使用者聯絡人資料
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/> //存取精確位置(如GPS)
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> //存取CellID或WiFi熱點來取得粗略的位置
+<uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/> //手機上的帳號資訊
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>//存取Wi-Fi網路狀態訊息
+<uses-permission android:name="android.permission.CLEAR_APP_CACHE"/> //清除應用緩存
+<uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> // 排除 Google Play 上架偵測裝置問題
+<uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="string" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.new5tv.zc0000836.Main" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.daisy.reader" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <service android:name=".activities.book.notification.NotificationIntentService"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name=".activities.home.DaisyReaderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_file_browser" android:name=".activities.home.explorer.FileBrowserActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_category_selection" android:name=".activities.home.explorer.CategorySelection" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_daisy_book" android:name=".activities.book.DaisyBookActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_daisy_phrase" android:name=".activities.synchronize.SessionDetailActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_display_options" android:name=".activities.synchronize.display.DisplayOptionsActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="" android:name=".activities.book.BookInfoActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_rename_category" android:name=".activities.home.RenameCategoryActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_go_to_page" android:name=".activities.synchronize.GoToPageActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_about" android:name=".activities.home.AboutActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_bookmark" android:name=".activities.synchronize.bookmark.BookmarkActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_tts_voice" android:name=".activities.book.options.BookOptionActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_search" android:name=".activities.synchronize.search.SearchActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/user_guide" android:name=".activities.home.HelpActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_move_to_category" android:name=".activities.home.MoveToCategoryActivity" android:theme="@android:style/Theme.Dialog"> &gt;
+</activity>
+        <activity android:label="@string/title_activity_policy" android:name=".activities.home.PolicyActivity"/>
+    </application>
+</manifest>

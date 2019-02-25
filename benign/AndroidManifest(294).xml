@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.cootek.smartinputv5" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="false" android:icon="@drawable/icon" android:label="@string/app_name_international" android:name="com.cootek.smartdialer.TPApplication" android:supportsRtl="true" android:theme="@style/TouchPalTheme.App">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <service android:name="com.cootek.smartinput5.TouchPalIME" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/touchpal_method"/>
+        </service>
+        <service android:name="com.google.android.voiceime.ServiceHelper"/>
+        <service android:label="@string/app_name_international" android:name="com.cootek.smartinput5.func.wallpaper.TouchPalWallPaperService" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/touchpal_wallpaper"/>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation" android:finishOnTaskLaunch="true" android:name="com.google.android.voiceime.ActivityHelper" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/icon" android:launchMode="singleTask" android:name="com.cootek.smartinputv5.SettingsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cootek.smartinput5.MainIdentifiyActivity">
+            <intent-filter>
+                <category android:name="com.cootek.smartinput.intent.category.MAIN"/>
+                <action android:name="com.cootek.smartinput.intent.action.MAIN_PKG_EXISTS"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:launchMode="singleTask" android:name="com.cootek.smartinput5.TouchPalOption" android:taskAffinity="com.cootek.smartinput5.TouchPalOption">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|navigation|orientation" android:enabled="true" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:launchMode="singleTask" android:name="com.cootek.smartinput5.TouchPalOptionInte" android:taskAffinity="com.cootek.smartinput5.TouchPalOption" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.TouchPalOptionInte.action.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.KeyboardCustomizeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.asset.LoadFailedActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.asset.UpdatePinyinActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/icon" android:launchMode="singleTask" android:name="com.cootek.smartinput5.GateActivity" android:theme="@style/NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/icon" android:launchMode="singleTask" android:name="com.cootek.smartinput5.Guide" android:taskAffinity="com.cootek.smartinput5.Guide" android:theme="@style/NoTitleBar">
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.Guide"/>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.PluginInstallerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*" android:pathPattern="/.*\\.tpp" android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*" android:mimeType="*/*" android:pathPattern="/.*\\.tpp" android:scheme="file"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.cust.CustomizeSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.func.contactscanner.ContactScannerActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.func.vip.PurchaseVipActivity" android:taskAffinity="com.cootek.smartinput5.TouchPalOption">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="standard" android:name="com.cootek.smartinput5.func.vip.VipRenewActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.func.contactscanner.ContactScannerFollowActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.cust.ShortcutSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.HandwriteActivity" android:theme="@style/TouchPalTheme.App"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.func.UserDictReportActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.PluginSettings" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.learnmanager.TwitterLearnSuccessActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.UsrWordManageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.learnmanager.LearnRetryActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.learnmanager.TwitterProgressDialogActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.SkinActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:theme="@style/ThemeSkinPage" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="*" android:mimeType="*/*" android:pathPattern="/.*tps" android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.ui.settings.SkinActivity.action.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.cootek.smartinput5.ui.settings.SkinDownloadActivity" android:process=":skinDownload">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.cootek.smartinput5.func.asset.DummyNotificationActionReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.func.asset.DummyNotificationActionReceiver.action"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.net.DownloadReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.skindownload"/>
+                <action android:name="com.cootek.smartinputv5.action.download_notification"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.func.SuperDictDownloadReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.superdict_download"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.func.PresentVipNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.PRESENT_VIP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.func.LocaleLanguageDownloadReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.download_locale_langauge"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.func.OemSkinDownloadReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.download_oem_skin"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.cootek.smartinput5.func.ExternalPackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.cootek.smartinput5.func.CloudSyncTipReceiver"/>
+        <provider android:authorities="com.cootek.smartinputv5.plugin.provider" android:exported="true" android:name="com.cootek.smartinput5.provider.PluginContentProvider"/>
+        <provider android:authorities="com.cootek.smartinputv5.commitcontent.ime.inputcontent" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/imagekeyboard_share_files"/>
+        </provider>
+        <service android:name="com.cootek.rnstore.StoreService" android:process=":rnstoreEntrance"/>
+        <service android:name="com.cootek.smartinput5.engine.SettingsService"/>
+        <receiver android:name="com.cootek.smartinput5.func.learnmanager.LearnTextReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.action.learn_text_notification"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.dialerlite.DialerGuideReceiver"/>
+        <activity android:name="com.cootek.smartinput.utilities.ShortcutParseActivity" android:taskAffinity="com.cootek.smartinput5.shortcut" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.PARSE_SHORTCUT_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.LanguageListActivity" android:taskAffinity="com.cootek.smartinput5.TouchPalOption" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.LanguageListActivityInte" android:taskAffinity="com.cootek.smartinput5.TouchPalOption" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.LanguageEditActivityInte" android:screenOrientation="portrait" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.teaching.TutorialMissionActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.teaching.TutorialActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.learnmanager.SmsSettingActivity" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.SpecialThanksActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.OpenResourceLicensesActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.RateUsActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.vip.InviteGetVipActivity" android:taskAffinity="com.cootek.smartinput5.func.vip.InviteGetVipActivity" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_INVITE_PRESENT_VIP"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.LanguageMixInputActivityInte" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.CurveDictActivity" android:screenOrientation="portrait" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.TouchPalCloudActivity" android:taskAffinity="com.cootek.smartinput5.TouchPalOption" android:theme="@style/TouchPalTheme.App"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.CellDictListActivity" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.action.START_CELL_DICT_LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.JoinBetaActivity"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.CloudBackupGuide" android:process=":baidu" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.settings.BaiduAuthActivity" android:process=":baidu" android:screenOrientation="portrait" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.cootek.smartinput5.func.component.AutoUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.auto_update"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.cootek.smartinput5.func.AttachedPackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"/>
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_EJECT"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.control.CancelDownloadActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.ui.settings.InvitationDialog" android:theme="@style/Theme.Material.Dialog"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.ui.settings.EmotionKeyDialog" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.ui.settings.EditShortcutDialog" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:multiprocess="true" android:name="com.cootek.smartinput5.ui.control.RetryDownloadActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.TouchPalUpdateActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name_international" android:name="com.cootek.smartinput5.func.PluginAgent"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.share.ShareDialogActivity" android:taskAffinity="com.cootek.smartinput5.func.share.ShareDialogActivity" android:theme="@style/ShareDialog"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput.utilities.ShortcutPermissionDialogActivity" android:taskAffinity="com.cootek.smartinput.utilities.ShortcutPermissionDialogActivity" android:theme="@style/Theme.Material.Dialog"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.WebPageLoader" android:process=":webpageloader" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.urlnavigator.FavoritesItemEditDialog" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.plugin.quickswitcher.Options" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.plugin.quickswitcher.action.Options"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.plugin.messagepal.MessageList" android:process=":message" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.plugin.messagepal.action.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.cootek.smartinput5.plugin.messagepal.MessageReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.plugin.messagepal.action.SEND"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput.upgrade.PackageUninstallerActivty" android:process=":uninstaller" android:theme="@style/Theme.Material.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="@string/app_name_international" android:name="com.cootek.smartinput5.plugin.weibo.AuthorizeActivity" android:process=":weibo" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <data android:host="OAuthActivity" android:scheme="weibo4andriod"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.plugin.weibo.FollowActivity" android:process=":weibo" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="FollowActivity" android:scheme="weiboandroidsdk"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.weibo.net.ShareActivity" android:process=":weibo"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.weibo.net.WeiboDialog" android:process=":weibo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:label="@string/app_name_international" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.plugin.twitter.AuthorizeActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.plugin.twitter.FollowActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="FollowActivity" android:scheme="twitterandroidsdk"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.plugin.twitter.ShareActivity"/>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.plugin.twitter.TwitterDialog" android:process=":twitterDialog"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.cootek.smartinput5.ui.settings.TypingSpeedActivity" android:process=":typingSpeed" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.func.mainentrance.MainEntranceActivity" android:process=":mainEntrance" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.cootek.smartinput5.ui.settings.MainEntranceActivity.action.START"/>
+                <action android:name="com.cootek.smartinput5.ui.settings.MainEntranceActivity.action.HOTWORD"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput.utilities.LogViewActivity" android:theme="@style/NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.devconsole.DevOptionActivity" android:theme="@style/TouchPalTheme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.control.GetImageActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleTop" android:name="com.cootek.smartinput5.cropimage.CropImageActivity"/>
+        <receiver android:enabled="true" android:name="com.cootek.smartinput5.presentations.NotificationActionReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.PresentationClient.ACTION_DELETE_NOTIFICATION"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.PresentationClient.ACTION_CLICK_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.cootek.smartinput5.presentations.PresentationWebviewActivity" android:process=":presentationWebview" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.presentations.DownloadInStatusActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.presentations.ActionConfirmActivity" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.cootek.smartinput5.presentations.PresentationLaunchLocalPageActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.HOTWORD"/>
+                <action android:name="com.cootek.smartinputv5.BACKUP"/>
+                <action android:name="com.cootek.smartinputv5.IMPORT_CONTACTS"/>
+                <action android:name="com.cootek.smartinputv5.CLOUD_BACKUP"/>
+                <action android:name="com.cootek.smartinputv5.CHECK_ANONYMOUS_CALL_LOG"/>
+                <action android:name="com.cootek.smartinputv5.LEARN_TEXT"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_TOUCHPAL_CLOUD"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_PURCHASE_VIP"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_SKIN"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_LANGUAGE"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_CELL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_MORE"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_BOOMTEXT"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_DEALS"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_TRENDS_RECOMMENDER"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_TRENDS_DETAIL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_SKIN_DETAIL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_CELL_DETAIL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_MORE_DETAIL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_DEALS_DETAIL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_SKIN_FONT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_SKIN"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_LANGUAGE"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_CELL"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_MORE"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_SHOP_DEALS"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="shop" android:pathPattern="/.*" android:scheme="ime"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.LOCAL_PAGE_PURCHASE_THEME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="purchase" android:scheme="ime"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.LOCAL_PAGE_JACKPOT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.ACTION_SUMMARY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.ACTION_APP_WALL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.SHOW_EMOJI_STORE_PAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.SHOW_STICKER_STORE_PAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.SHOW_BOOMTEXT_STORE_PAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.net.login.TCloudShowActivity" android:taskAffinity="com.cootek.smartinput5.TouchPalOption"/>
+        <activity android:configChanges="keyboardHidden|screenSize" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.net.login.TLoginActivity" android:taskAffinity="com.cootek.smartinput5.net.login.TLoginActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.net.login.FindPasswordActivity"/>
+        <activity android:name="com.cootek.smartinput5.net.login.GoogleLoginWebviewActivity" android:process=":googleLoginWebview"/>
+        <activity android:name="com.cootek.smartinput5.net.login.TwitterLoginWebviewActivity" android:process=":twitterLoginWebview"/>
+        <receiver android:name="com.cootek.presentation.service.PresentationServiceReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.presentation.action.CHECK_DESKTOP_SHORTCUT_TOAST"/>
+                <action android:name="com.cootek.presentation.action.REMOVE_DESKTOP_SHORTCUT_TOAST"/>
+                <action android:name="com.cootek.presentation.action.CONFIG_UPDATE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cootek.presentation.service.PresentationService"/>
+        <service android:exported="true" android:name="com.cootek.smartinput5.presentations.BindService"/>
+        <receiver android:name="com.cootek.smartinput5.presentations.ActionCallbackReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.presentation.action.START_WORK"/>
+                <action android:name="com.cootek.presentation.action.NEED_TOKEN"/>
+                <action android:name="com.cootek.presentation.action.REFRESH_TOKEN"/>
+                <action android:name="com.cootek.presentation.action.CHECK_STATUS_TOAST"/>
+                <action android:name="com.cootek.presentation.action.CHECK_DUMMY_TOAST"/>
+                <action android:name="com.cootek.presentation.action.MESSAGE_READY"/>
+                <action android:name="com.cootek.presentation.action.ALL_PRESENTS_CLEARED"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.noah_invest_temp"/>
+                <action android:name="com.cootek.presentation.action.CHECK_BALLOON_TOAST"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:name="com.cootek.smartinput.utilities.ShareMessageActivity" android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.iab.google.ControlActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.iab.PurchaseChannelChooseActivity" android:process=":purchaseChooser" android:theme="@style/PurchasePage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.cootek.smartinput5.daemon.DaemonReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.SOCKET_SETUP"/>
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleInstance" android:name="com.cootek.presentation.service.ShortcutActionHandler" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="intent.action.desktop.SHORTCUT_HANDLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.cootek.smartinput5.func.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.cootek.smartinput5.func.PhoneStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.cootek.usage.UsageAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.usage.alarm_operation"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.cootek.smartinput5.func.appwidget.TouchPalAppWidgeProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider"/>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.SkinCustomizeActivity" android:screenOrientation="portrait" android:theme="@style/TouchPalTheme.App" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.ui.settings.TouchPalFAQActivity" android:process=":faq">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.func.yahoosearch.YahooSearchActivity" android:process=":yahooSearch" android:screenOrientation="portrait" android:theme="@style/SearchPopup" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.yahoo.mobile.client.share.search.ui.activity.SearchActivity" android:process=":yahooSearch" android:screenOrientation="portrait" android:theme="@style/SearchPopup" android:windowSoftInputMode="adjustPan"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.yahoo.mobile.client.share.search.ui.activity.SearchToLinkActivity" android:process=":yahooSearch" android:theme="@style/SearchPopup" android:windowSoftInputMode="stateHidden"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.func.yahoosearch.BrowserActivity" android:process=":yahooSearch" android:screenOrientation="portrait" android:theme="@style/SearchPopup"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.smartinput5.func.yahoosearch.ImagePreviewActivity" android:process=":yahooSearch" android:screenOrientation="portrait" android:theme="@style/SearchPopup"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.skin.purchase.PurchaseThemeActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.Purchase" android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="false" android:name="com.cootek.smartinput5.func.skin.SponsorThemeReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.ACTION_SHOW_SPONSOR_NOTIFICATION"/>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.ACTION_LAUNCH_SPONSOR_THEME"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.cootek.smartinput5.func.skin.PopupAdsActivity" android:screenOrientation="portrait" android:theme="@style/TransParentAds"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.cootek.smartinput5.func.adsplugin.turntable.TurntableAdsActivity" android:screenOrientation="portrait" android:theme="@style/TransParentAds"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.func.skin.SponsorThemeActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.dialerlite.TakeOverActivity" android:screenOrientation="portrait" android:theme="@style/ShareDialog" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.cootek.dialerlite.DialerGuideActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.dialerlite.DialerGuide"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.cootek.smartinput5.func.skin.SponsorThemeAdsActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:theme="@style/TransParentAds"/>
+        <receiver android:exported="true" android:name="com.cootek.smartinput5.func.skin.purchase.PurchaseReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.PLUGIN_PURCHASE_FINISH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.SAVE_PAID_THEME"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.facebook.ads.InterstitialAdActivity" android:process=":enrichLife" android:taskAffinity="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.skinappshop.StoreActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.cootek.smartinput5.ui.settings.MainEntranceActivity.action.START"/>
+                <action android:name="com.cootek.smartinput5.ui.settings.MainEntranceActivity.action.HOTWORD"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="*" android:mimeType="*/*" android:pathPattern="/.*tps" android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.smartinput.intent.action.SHOW_FONT_PAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cootek.smartinput5.func.adsplugin.turntable.GrouponActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.TrendsDetailActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.skinappshop.StoreDetailActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.skinappshop.EmojiStoreActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.skinappshop.StickerStoreActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.smartinput5.ui.skinappshop.BoomTextStoreActivity" android:process=":mainEntrance" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartinput5.ui.skinappshop"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.nativeads.DrawerAdsActivity" android:taskAffinity="com.cootek.smartinput5.DrawerAds" android:theme="@style/TransParentAds">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.DRAWER_ADS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:process=":enrichLife" android:taskAffinity="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:exported="false" android:name="com.cootek.smartinput5.func.adsplugin.AdsPluginRRReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.INTERNAL_ACTION.ACTION_ADS_PLUGIN_RR"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.adsplugin.turntable.TurntableActivity" android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+        <activity android:launchMode="singleTask" android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="com.cootek.smartinputv5.braintree"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.braintreepayments.api.dropin.BraintreePaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PayPalTouchActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="false" android:name="com.paypal.android.sdk.payments.PayPalService"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.permission.RequestPermissionActivity" android:taskAffinity="com.cootek.smartinputv5.RequestPermission" android:theme="@style/Theme.Material.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.smartinput5.func.iab.braintree.BraintreePaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.cootek.commercialplugins.searchassist.SearchBrowser" android:taskAffinity="com.cootek.commercialplugins.searchassist.SearchBrowser" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.batteryboost.BatteryBoostActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.batteryboost" android:theme="@style/BatteryBoostStyle"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.batteryboost.LabaLockActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.batteryboost" android:theme="@style/BatteryBoostStyle"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.batteryboost.BatteryBoostSettingActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.batteryboost"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cootek.batteryboost.LabaGuideActivity" android:screenOrientation="portrait" android:theme="@style/TransParentGuide"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.jackpot.LabaActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.batteryboost" android:theme="@style/TransParentGuide"/>
+        <service android:name="com.cootek.batteryboost.BatteryBoostService"/>
+        <receiver android:name="com.cootek.batteryboost.BatteryBoostReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.applock.AppLockListActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock" android:theme="@style/TouchPalTheme.App.AppLock"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.applock.AppLockOptionActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock" android:theme="@style/TouchPalTheme.App.AppLock"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.applock.AppLockSetPatternActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock.set" android:theme="@style/AppLockSetPattern"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.applock.PatternLockActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock" android:theme="@style/AppLockSetPattern">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.applock.AppLockQuestionActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock.question" android:theme="@style/TouchPalTheme.App.AppLock"/>
+        <activity android:name="com.cootek.permission.OuterPermissionActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.AppLock.Permission" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.cootek.smartinput5.func.ThemePackService">
+            <intent-filter>
+                <action android:name="com.cootek.smartinput5.func.ThemePackService.action.BIND"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.cootek.smartinput5.TPAboutPageActivity"/>
+        <service android:name="com.cootek.smartinput5.func.nativeads.EnrichLifeService" android:process=":enrichLife"/>
+        <activity android:name="com.cootek.tark.ads.ads.DaVinciInterstitialActivity" android:process=":enrichLife" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.my.target.ads.MyTargetActivity" android:process=":enrichLife"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.cootek.smartinput5.func.adsplugin.newsfeed.SummaryFeedActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smarinput5.NewsFeed" android:theme="@style/SummaryFeedsActivityStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.tark.funfeed.sdk.WebViewActivity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smarinput5.NewsFeed" android:theme="@style/WebViewActivityStyle"/>
+        <activity android:launchMode="singleTask" android:name="com.cootek.tark.ads.ads.DaVinciAdsActivity" android:process=":daVinciAds" android:screenOrientation="portrait"/>
+        <receiver android:name="com.cootek.tark.ads.utility.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.cootek.tark.ads.utility.ACTION_INSTALL_AD_CLICKED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.cootek.tark.ads.utility.SSPReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.tark.ads.utility.ACTION_SEND_SSP"/>
+                <action android:name="com.cootek.tark.ads.utility.ACTION_CHECK_GP_LAUNCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:label="@string/accessibility_service_name" android:name="com.cootek.smartinput5.func.smileypanel.emojigif.SendGifAction.WindowAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/tp_accessibility_service_for_emoji_gif"/>
+        </service>
+        <activity android:label="IntentSendActivity" android:name="com.cootek.smartinput5.func.smileypanel.emojigif.SendGifAction.MetadataSendActivity" android:screenOrientation="portrait"/>
+        <activity android:label="IntentSendActivity" android:name="com.cootek.smartinput5.func.smileypanel.sticker.ShareStickerActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.cootek.smartinput5.func.smileypanel.emojigif.presenter.TouchPalClickThroughOverlay"/>
+        <receiver android:exported="true" android:name="com.cootek.smartinput5.receiver.MainReceiver">
+            <intent-filter>
+                <action android:name="com.cootek.smartinputv5.action.ACTION_SEND_FROM_HANGUP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.facebook.react.devsupport.DevSettingsActivity" android:process=":rnstoreEntrance"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.rnstore.StoreEntryActivity" android:process=":rnstoreEntrance" android:screenOrientation="portrait" android:theme="@style/StoreEntryStartLoad"/>
+        <service android:name="com.cootek.rnstore.StoreForegroundService" android:process=":rnstoreEntrance"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.rnstore.mybox.StoreMyBoxActivity" android:process=":rnstoreEntrance" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.rnstore.mybox.StoreMyBoxAdsActivity" android:process=":rnstoreEntrance" android:screenOrientation="portrait" android:theme="@style/TransParentAds"/>
+        <activity android:excludeFromRecents="true" android:name="com.cootek.rnstore.deals.StoreDealsActivity" android:process=":mainEntrance" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:process=":facebookloginactivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.cootek.TPDeepLinkActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.touchpal.com" android:pathPrefix="/store" android:scheme="http"/>
+                <data android:host="store" android:scheme="touchpal"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.cootek.smartinput5.func.schemes.InternalSchemesGateActivity" android:taskAffinity="com.cootek.smartinput5.func.schemes.SchemesGateActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="touchpal" android:pathPrefix="/internalapi" android:scheme="ime"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.braintreepayments.api.threedsecure.ThreeDSecureWebViewActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity"/>
+        <activity android:name="com.riffsy.android.sdk.activities.SystemAlertWindowPermissionActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:exported="true" android:name="com.riffsy.android.sdk.services.ClickThroughOverlay"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <service android:enabled="true" android:exported="true" android:name="com.yandex.metrica.MetricaService" android:process=":Metrica">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.yandex.metrica.IMetricaService"/>
+                <data android:scheme="metrica"/>
+            </intent-filter>
+            <meta-data android:name="metrica:api:level" android:value="43"/>
+        </service>
+        <receiver android:enabled="true" android:exported="true" android:name="com.yandex.metrica.MetricaEventHandler">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.yandex.mobile.ads.AdActivity"/>
+        <provider android:authorities="com.cootek.smartinputv5.com.cootek.tark.ads" android:exported="false" android:name="com.cootek.tark.ads.utility.SharedPreferenceContentProvider"/>
+        <service android:name="com.cootek.tark.ads.sdk.AutoCacheService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.inneractive.api.ads.sdk.InneractiveInternalBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.inneractive.api.ads.sdk.InneractiveInterstitialAdActivity"/>
+        <receiver android:name="com.cootek.tark.funfeed.notification.FeedNotificationClickReceiver"/>
+        <receiver android:name="com.cootek.tark.funfeed.notification.FeedNotificationReceiver"/>
+        <service android:name="com.cootek.tark.funfeed.notification.FeedNotificationDownloadService"/>
+        <activity android:icon="@drawable/ic_ime_dialer_lite" android:name="com.cootek.smartdialer.TMainSlide" android:process=":dialer" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartdialer.TMainSlide">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.smartdialer.hangup.HangupActivity" android:process=":dialer" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartdialer.Hangup" android:theme="@style/HangupTheme"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.cootek.smartdialer.hangup.HangupV2Activity" android:screenOrientation="portrait" android:taskAffinity="com.cootek.smartdialer.HangupV2" android:theme="@style/DialerLite_ShareDialog"/>
+        <provider android:authorities="com.cootek.smartinputv5.dialer.provider.PreferenceProvider" android:exported="true" android:multiprocess="true" android:name="com.cootek.smartdialer.model.provider.PreferenceProvider" android:process=":dialer"/>
+        <provider android:authorities="com.cootek.smartinputv5.dialer.provider.DialerProvider" android:exported="false" android:name="com.cootek.smartdialer.model.provider.DialerProvider" android:process=":dialer"/>
+        <provider android:authorities="com.cootek.smartinputv5.dialer.provider.PreferenceEssentialProvider" android:exported="false" android:name="com.cootek.smartdialer.model.provider.PreferenceEssentialProvider" android:process=":dialer"/>
+        <provider android:authorities="com.cootek.smartinputv5.dialer.provider.ContactSmartSearchProvider" android:exported="false" android:name="com.cootek.smartdialer.model.provider.ContactSmartSearchProvider" android:process=":dialer"/>
+        <provider android:authorities="com.cootek.smartinputv5.dialer.provider.CalllogProvider" android:exported="false" android:name="com.cootek.smartdialer.model.provider.CalllogProvider" android:process=":dialer"/>
+        <receiver android:name="com.cootek.smartdialer.listener.CallStateReceiver" android:process=":dialer">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.DUAL_PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE_2"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.cootek.smartinputv5.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.cootek.smartinputv5.action.INCOMING_CALL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.cootek.boomtext.BoomTextActivity" android:screenOrientation="portrait" android:theme="@style/boomtextstyle" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:label="IntentSendActivity" android:name="com.cootek.boomtext.sendutil.MetadataSendActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.cootek.abtest.ConfigUpdateService">
+            <intent-filter>
+                <action android:name="com.cootek.abtest.ACTION_UPDATE_CONFIG"/>
+                <action android:name="com.cootek.abtest.ACTION_RANDOM_UPDATE"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.cootek.smartinputv5.com.cootek.tark.balloon" android:exported="false" android:name="com.cootek.tark.balloon.settings.SharedPreferenceContentProvider"/>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleInstance" android:name="com.mobvista.msdk.shell.MVActivity" android:screenOrientation="portrait" android:taskAffinity="com.mobvista.msdk.shell">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:hardwareAccelerated="true" android:label="DefaultWebviewActivity" android:name="com.cootek.tpwebcomponent.defaultwebview.DefaultWebviewActivity" android:taskAffinity="defaultwebview.DefaultWebviewActivity"/>
+        <activity android:label="CustomTabsGateActivity" android:name="com.cootek.tpwebcomponent.customtabhelper.CustomTabsGateActivity" android:taskAffinity="customtabhelper.CustomTabsGateActivity" android:theme="@android:style/Theme.NoDisplay"/>
+        <receiver android:name="com.cootek.tpwebcomponent.PackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

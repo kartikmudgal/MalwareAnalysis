@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.kkkeyboard.emoji.keyboard.theme.mGlassNebula" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.kkkeyboard.emoji.keyboard.theme.ThemeApplication" android:supportsRtl="true" android:theme="@style/Theme.Keyboard">
+        <activity android:configChanges="orientation|screenSize" android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.CategoryActivity" android:parentActivityName="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_gift" android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.GiftActivity" android:parentActivityName="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.ThemeDetailActivity" android:parentActivityName="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/navdrawer_item_privacy" android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.PrivacyActivity" android:parentActivityName="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_help" android:name="com.kkkeyboard.emoji.keyboard.theme.ui.activity.HelpActivity" android:parentActivityName="com.kkkeyboard.emoji.keyboard.theme.ui.activity.MainDrawerActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.kkkeyboard.emoji.keyboard.theme.service.DataBootstrapService"/>
+        <service android:exported="false" android:name="com.kkkeyboard.emoji.keyboard.theme.service.SyncService"/>
+        <service android:name="com.kkkeyboard.emoji.keyboard.theme.service.CheckRecentRun"/>
+        <provider android:authorities="com.kkkeyboard.emoji.keyboard.theme.mGlassNebula.provider" android:exported="false" android:name="com.kkkeyboard.emoji.keyboard.theme.provider.ThemesProvider" android:syncable="false"/>
+        <receiver android:label="NetworkChangeReceiver" android:name="com.kkkeyboard.emoji.keyboard.theme.receiver.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:name="com.kkkeyboard.emoji.keyboard.theme.receiver.SampleBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <service android:name="com.appnext.core.DownloadService"/>
+        <activity android:hardwareAccelerated="true" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

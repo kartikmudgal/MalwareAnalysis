@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="fr.irigo.mobile">
+    <compatible-screens>
+        <screen android:screenDensity="ldpi" android:screenSize="small"/>
+        <screen android:screenDensity="mdpi" android:screenSize="small"/>
+        <screen android:screenDensity="hdpi" android:screenSize="small"/>
+        <screen android:screenDensity="xhdpi" android:screenSize="small"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="small"/>
+        <screen android:screenDensity="ldpi" android:screenSize="normal"/>
+        <screen android:screenDensity="mdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="hdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="xhdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="ldpi" android:screenSize="large"/>
+        <screen android:screenDensity="mdpi" android:screenSize="large"/>
+        <screen android:screenDensity="hdpi" android:screenSize="large"/>
+        <screen android:screenDensity="xhdpi" android:screenSize="large"/>
+        <screen android:screenDensity="xxhdpi" android:screenSize="large"/>
+    </compatible-screens>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:allowBackup="true" android:enabled="true" android:icon="@drawable/launcher" android:label="@string/app_name" android:theme="@style/irigoMobileTheme">
+        <uses-library android:name="com.google.android.maps" android:required="true"/>
+        <activity android:enabled="true" android:launchMode="standard" android:name=".activity.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.HorairesRechercheActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activity.HorairesResultatActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ItinerairesRechercheActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ItinerairesResultatActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ProchainPassageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activity.ProchainPassageResultatActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.TravauxActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.TravauxListActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.TravauxDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PlansActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PlansPDFActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PlansDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AtoutActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".activity.AtoutDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AtoutNoteCreationActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.FavorisActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.MentionsLegalesActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.AlerteMobileActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

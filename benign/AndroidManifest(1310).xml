@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.wework.mobile" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <permission android:name=".permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.wework.mobile.permission.C2D_MESSAGE"/>
+    <permission android:name=".permission.UA_DATA" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.wework.mobile.permission.UA_DATA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/wework_v2_launcher_icon_original" android:label="@string/app_name" android:largeHeap="true" android:name="com.wework.mobile.GlobalApplication" android:supportsRtl="true" android:testOnly="false" android:theme="@style/Theme.WeWorkMaterial">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="6f7849dff6aeda6c25bf99689e6d65b853095ab4"/>
+        <service android:enabled="true" android:exported="false" android:name="com.wework.mobile.models.Jackson2GoogleHttpClientSpiceServiceExt"/>
+        <service android:enabled="true" android:name="com.wework.mobile.v2.models.GenericCompanyService"/>
+        <service android:enabled="true" android:name="com.wework.mobile.v2.models.GenericMemberService"/>
+        <receiver android:name="com.urbanairship.CoreReceiver"/>
+        <receiver android:name="com.urbanairship.push.GCMPushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.wework.mobile"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:label="Push Notification Service" android:name="com.urbanairship.push.PushService"/>
+        <service android:label="Event Service" android:name="com.urbanairship.analytics.EventService"/>
+        <provider android:authorities="com.wework.mobile.urbanairship.provider" android:exported="true" android:multiprocess="true" android:name="com.urbanairship.UrbanAirshipProvider" android:permission="com.wework.mobile.permission.UA_DATA"/>
+        <service android:label="Segments Service" android:name="com.urbanairship.location.LocationService"/>
+        <receiver android:name="com.wework.mobile.v2.services.UrbanAirshipIntentReceiver"/>
+        <service android:exported="false" android:name="com.wework.mobile.v2.services.UrbanAirshipIntentService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.wework.mobile.v2.activities.messages.MessagesBroadcastReciever">
+            <intent-filter>
+                <action android:name=".v2.activities.messages.BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.wework.mobile.v2.activities.login.SplashStartupActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/v3_activity_landing_login" android:name="com.wework.mobile.v2.activities.login.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="login" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_logout" android:name="com.wework.mobile.v2.activities.login.LogoutActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="logout" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/v2.title_activity_contact_community_managers" android:name="com.wework.mobile.v3.help.ContactCommunityManagersActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="support" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_new_message" android:name="com.wework.mobile.v2.activities.messages.NewMessageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_messages" android:name="com.wework.mobile.v2.activities.messages.InboxActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="conversations" android:pathPattern="/" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_messages" android:name="com.wework.mobile.v2.activities.messages.StaticConversationActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial" android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="conversations" android:pathPattern="/0.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/1.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/2.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/3.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/4.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/5.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/6.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/7.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/8.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="conversations" android:pathPattern="/9.*" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_super_special" android:name="com.wework.mobile.v2.activities.messages.SSRNChooseActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_report_issue" android:name="com.wework.mobile.v3.help.ReportIssueActivity" android:theme="@style/Theme.WeWorkMaterial" android:windowSoftInputMode="adjustResize|stateVisible">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="report_issue" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_home_feed_compose" android:name="com.wework.mobile.v3.compose.ComposeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.wework.mobile.v2.services.PusherService"/>
+        <activity android:label="" android:name="com.wework.mobile.v3.home.ImagePreview" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial"/>
+        <activity android:label="@string/title_activity_order_lunch" android:name="com.wework.mobile.v3.orderlunch.OrderLunchActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_order_food" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wework.mobile.v3.login.FirstLandingPageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar"/>
+        <activity android:label="@string/title_activity_join_web" android:name="com.wework.mobile.v3.signup.SignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/notifications" android:name="com.wework.mobile.v3.settings.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_settings" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_anywhere_guide" android:name="com.wework.mobile.v3.building_guide.AnywhereGuideActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_guides_anywhere" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_generic_web_view" android:name="com.wework.mobile.v3.utils.GenericWebView"/>
+        <activity android:label="@string/events_title_activity" android:name="com.wework.mobile.v3.events.EventsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_events" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wework.mobile.v3.events.FullEventActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/members_url" android:pathPrefix="/events" android:scheme="@string/web_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_about" android:name="com.wework.mobile.v3.about.AboutActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_about" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_account" android:name="com.wework.mobile.v3.account.AccountActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_account" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_events_categories" android:name="com.wework.mobile.v3.events.EventsCategoriesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_change_password" android:name="com.wework.mobile.v3.account.ChangePasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_my_check_web_view" android:name="com.wework.mobile.v3.utils.MyCheckWebView" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="mycheck" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_rate_ticket" android:name="com.wework.mobile.v3.support.RateTicketActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="goto_support" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_new_benefits" android:name="com.wework.mobile.v3.benefits.NewBenefitsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="benefits" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_search" android:name="com.wework.mobile.v3.search.SearchActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar"/>
+        <activity android:label="@string/title_activity_search_results" android:name="com.wework.mobile.v3.search.SearchResultsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_locations" android:name="com.wework.mobile.v3.locations.LocationsActivity" android:parentActivityName="com.wework.mobile.v3.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".v3.home.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_building_guide" android:name="com.wework.mobile.v3.building_guide.BuildingGuideActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="guides" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_surveys" android:name="com.wework.mobile.v3.surveys.SurveysActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="surveys" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Company Profile" android:name="com.wework.mobile.v3.profiles.company.CompanyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="companies" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="company" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/members_url" android:pathPrefix="/companies" android:scheme="@string/web_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="User Profile" android:name="com.wework.mobile.v3.profiles.user.UserActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="members" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+                <data android:host="user" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/members_url" android:pathPrefix="/members" android:scheme="@string/web_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_edit_user_profile" android:name="com.wework.mobile.v3.profiles.user.EditUserActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_edit_company_activity_v3" android:name="com.wework.mobile.v3.profiles.company.EditCompanyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:hardwareAccelerated="true" android:name="com.jumio.netverify.sdk.activity.NetverifyActivity" android:theme="@style/Theme.Netverify"/>
+        <activity android:label="@string/title_activity_netverify_we_work" android:name="com.wework.mobile.v3.netverify.RegisterCardActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="keycard_id_verification" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_home" android:name="com.wework.mobile.v3.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial.NoActionBar"/>
+        <activity android:label="@string/post" android:name="com.wework.mobile.v3.posts.PostStatusActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/uri_detail_post" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/members_url" android:pathPrefix="/posts" android:scheme="@string/web_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/job" android:name="com.wework.mobile.v3.posts.PostJobActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="jobs" android:pathPattern="/.*" android:scheme="@string/uri_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_notifications" android:name="com.wework.mobile.v3.notifications.NotificationsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.WeWorkMaterial">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/notification_updates" android:scheme="@string/uri_scheme"/>
+                <data/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

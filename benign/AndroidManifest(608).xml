@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:amazon="http://schemas.amazon.com/apk/res/android" xmlns:android="http://schemas.android.com/apk/res/android" package="com.jacobsmedia.WMJX" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="com.jacobsmedia.WMJX.permission.UA_DATA" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jacobsmedia.WMJX.permission.UA_DATA"/>
+    <permission android:name="com.jacobsmedia.WMJX.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jacobsmedia.WMJX.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.amazon.device.messaging.permission.RECEIVE"/>
+    <permission android:name="com.jacobsmedia.WMJX.permission.RECEIVE_ADM_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jacobsmedia.WMJX.permission.RECEIVE_ADM_MESSAGE"/>
+    <application android:allowBackup="true" android:fullBackupContent="@xml/backup" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.jacapps.wallaby.WallabyApplication" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="com.jacapps.wallaby.MainActivity" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="jav4-92"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.jacapps.medialibrary.version" android:value="@integer/jacapps_media_library_version"/>
+        <activity android:label="@string/app_name" android:name="com.jacapps.wallaby.FragmentContainerActivity" android:parentActivityName="com.jacapps.wallaby.MainActivity" android:screenOrientation="sensorPortrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jacapps.wallaby.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:label="@string/app_name" android:name="com.jacapps.wallaby.FullscreenFragmentContainerActivity" android:parentActivityName="com.jacapps.wallaby.MainActivity" android:theme="@style/FullScreenTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jacapps.wallaby.MainActivity"/>
+        </activity>
+        <activity android:hardwareAccelerated="true" android:label="@string/app_name" android:name="com.jacapps.wallaby.AudioFeedActivity" android:parentActivityName="com.jacapps.wallaby.MainActivity" android:screenOrientation="sensorPortrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jacapps.wallaby.MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:label="@string/app_name" android:name="com.jacapps.wallaby.VideoActivity" android:parentActivityName="com.jacapps.wallaby.MainActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jacapps.wallaby.MainActivity"/>
+        </activity>
+        <receiver android:name="com.jacapps.wallaby.AlarmReceiver"/>
+        <service android:name="com.jacapps.media.MediaService" android:stopWithTask="false"/>
+        <service android:name="com.jacapps.wallaby.DownloadService"/>
+        <activity android:name="xappmedia.sdk.inappbrowser.WebViewActivity"/>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.google.android.libraries.cast.companionlibrary.cast.player.VideoCastControllerActivity" android:parentActivityName="com.jacapps.wallaby.MainActivity" android:screenOrientation="sensorPortrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.jacapps.wallaby.MainActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.google.android.libraries.cast.companionlibrary.remotecontrol.VideoIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.toggleplayback"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.stop"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.google.android.libraries.cast.companionlibrary.notification.VideoCastNotificationService">
+            <intent-filter>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.toggleplayback"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.stop"/>
+                <action android:name="com.google.android.libraries.cast.companionlibrary.action.notificationvisibility"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.google.android.libraries.cast.companionlibrary.cast.reconnection.ReconnectionService"/>
+        <activity android:configChanges="keyboard|keyboardHidden" android:excludeFromRecents="true" android:label="@string/share_twitter_title" android:name="com.jacobsmedia.view.TwitterShareActivity" android:screenOrientation="sensorPortrait" android:theme="@style/DialogTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.openx.sdk.browser.AdBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <provider android:authorities="com.jacobsmedia.WMJX.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.quantcast.measurement.service.QCReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="OtherName" android:name="com.quantcast.measurement.service.AboutQuantcastScreen"/>
+        <amazon:enable-feature android:name="com.amazon.device.messaging" android:required="false"/>
+        <activity android:name="com.urbanairship.actions.ActionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.urbanairship.CoreActivity"/>
+        <activity android:name="com.urbanairship.google.PlayServicesErrorActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.urbanairship.messagecenter.MessageActivity"/>
+        <activity android:label="@string/ua_message_center_title" android:name="com.urbanairship.messagecenter.MessageCenterActivity"/>
+        <activity android:exported="false" android:name="com.urbanairship.actions.LandingPageActivity" android:theme="@style/LandingPageStyle">
+            <meta-data android:name="com.urbanairship.action.LANDING_PAGE_VIEW" android:resource="@layout/ua_activity_landing_page"/>
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.urbanairship.actions.SHOW_LANDING_PAGE_INTENT_ACTION"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="message"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:label="Push Notification Service" android:name="com.urbanairship.push.PushService"/>
+        <service android:label="Event Service" android:name="com.urbanairship.analytics.EventService"/>
+        <service android:name="com.urbanairship.actions.ActionService"/>
+        <service android:name="com.urbanairship.richpush.RichPushUpdateService"/>
+        <service android:label="Segments Service" android:name="com.urbanairship.location.LocationService"/>
+        <service android:exported="false" android:name="com.urbanairship.push.UAInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.urbanairship.CoreReceiver">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <category android:name="com.jacobsmedia.WMJX"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.urbanairship.push.GcmPushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.jacobsmedia.WMJX"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.urbanairship.push.AdmPushReceiver" android:permission="com.amazon.device.messaging.permission.SEND">
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION"/>
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE"/>
+                <category android:name="com.jacobsmedia.WMJX"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jacobsmedia.WMJX.urbanairship.provider" android:exported="true" android:multiprocess="true" android:name="com.urbanairship.UrbanAirshipProvider" android:permission="com.jacobsmedia.WMJX.permission.UA_DATA"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.jacobsmedia.activity.WebActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.jacobsmedia.activity.VideoPlayerActivity" android:theme="@style/FullScreenTheme"/>
+        <receiver android:name="com.jacapps.media.MediaButtonReceiver"/>
+    </application>
+</manifest>

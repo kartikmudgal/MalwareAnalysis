@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.swings.cacheclear" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera2" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/mi" android:label="@string/cn" android:name="com.swings.cacheclear.App" android:supportsRtl="true" android:theme="@style/fk">
+        <activity android:exported="true" android:launchMode="standard" android:name="com.swings.cacheclear.ASplash" android:screenOrientation="portrait" android:theme="@style/fk">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.MainActivity" android:screenOrientation="portrait" android:theme="@style/fk" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.boost.MemoryBoostActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.AboutActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.applock.AppListActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.applock.LockSettingActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.applock.PickNumberActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.applock.PickPatternActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.LocalWebActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.setting.ASetting" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.setting.ASettingForAppManager" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.setting.ASettingForClean" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.setting.ASettingForBoost" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.whitelist.AWhitelist2" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.swings.cacheclear.whitelist.AIgnorelist" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.clean.DuplicatePhotoActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.clean.PhotoDetailActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:name="com.swings.cacheclear.notification.NotificationActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:launchMode="singleTask" android:name="com.swings.cacheclear.notification.GuideActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.notification.NotificationListActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:name="com.swings.cacheclear.notification.AppSettingActivity" android:screenOrientation="portrait" android:theme="@style/fk" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.swings.cacheclear.notification.AccessTipActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.clean.PhotoRestoreActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.clean.WhatsappActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.swings.cacheclear.clean.GridItemActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.swings.cacheclear.clean.ListItemActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.clean.JunkCleanActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.batterysaver.BatterySaverActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.uninstall.ASlimUninstall" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.uninstall.ASlimRestore" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.swings.cacheclear.clean.leftover.LeftoverWindow" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="imoblife.startupmanager.StartupAddActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="imoblife.startupmanager.ChoiceAppStartupActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.startup.StartupManager" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.recycle.ARecycle" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:launchMode="singleTask" android:name="com.swings.cacheclear.skin.SkinActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.applock.LockSplashActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.swings.cacheclear.applock.PassWordGuideActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <service android:name="com.swings.cacheclear.reminder.SmartReminderService" android:process=":service"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.swings.cacheclear.widget.AWidget" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:launchMode="singleTask" android:name="com.swings.cacheclear.TorchActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.cooler.CpuCoolerActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTop" android:name="com.swings.cacheclear.appmanager.view.appmove.Sd2PhoneActivity" android:screenOrientation="portrait" android:theme="@style/fk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.boost.UnlockActivity2" android:screenOrientation="portrait" android:taskAffinity="com.swings.cacheclear.unlock" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/le" android:label="@string/a2s" android:launchMode="singleTask" android:name="com.swings.cacheclear.boost.OneKeyActivity2" android:screenOrientation="portrait" android:taskAffinity="com.swings.cacheclear.shortonkey" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:icon="@drawable/le" android:label="@string/a2s" android:name="com.swings.cacheclear.boost.OneKeyShortcutAddActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <service android:label="@string/cn" android:name="com.swings.cacheclear.notification.NotificationMonitor" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.swings.cacheclear.receiver.ConfigEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.swings.cacheclear.receiver.BootEventReceiver">
+            <intent-filter android:priority="9999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="9999">
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+            <intent-filter android:priority="9999">
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+            <intent-filter android:priority="9999">
+                <action android:name="android.intent.action.QUICKBOOT_POWEROFF"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.swings.cacheclear.receiver.PackageEventReceiver">
+            <intent-filter android:priority="9999">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.swings.cacheclear.receiver.CommandReceiver">
+            <intent-filter>
+                <action android:name="command_kill_process"/>
+                <action android:name="command_kill_threshold"/>
+                <action android:name="command_request_memory"/>
+                <action android:name="command_clean_cache"/>
+                <action android:name="command_clean_history"/>
+                <action android:name="command_clean_trash"/>
+                <action android:name="com.imoblife.reopen"/>
+                <action android:name="com.imoblife.porkey"/>
+                <action android:name="com.pro.provider"/>
+                <action android:name="com.swings.cacheclear.notifier.remind"/>
+                <action android:name="com.swings.cacheclear.notifier.show_notifier_window"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.swings.cacheclear.notifier.NotifierService"/>
+        <service android:name="com.swings.cacheclear.appmanager.view.BackupService"/>
+        <service android:name="com.swings.cacheclear.recycle.RecycleService"/>
+        <service android:description="@string/bt" android:label="@string/cn" android:name="com.swings.cacheclear.boost.BoostPlusService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":service">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/a"/>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.swings.cacheclear.lockscreen.LockScreenActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.Wallpaper.NoTitleBar"/>
+        <service android:name="com.swings.cacheclear.lockscreen.LockScreenService"/>
+        <service android:name="com.swings.cacheclear.receiver.ScreenOffService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:launchMode="singleTask" android:name="com.swings.cacheclear.appmanager.AppManagerActivity" android:screenOrientation="portrait" android:theme="@style/fk" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <provider android:authorities="com.swings.cacheclear.applockprovider" android:name="com.swings.cacheclear.db.AppLockProvider" android:process=":PrivacyService"/>
+        <provider android:authorities="com.swings.cacheclear.configprovicer" android:name="com.swings.cacheclear.provider.ConfigProvider" android:process=":PrivacyService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.swings.cacheclear.service.PrivacyService" android:process=":PrivacyService"/>
+        <receiver android:name="com.swings.cacheclear.service.ScreenEventReceiver">
+            <action android:name="android.intent.action.USER_PRESENT"/>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/m"/>
+        <provider android:authorities="@string/a8i" android:exported="false" android:multiprocess="false" android:name="net.grandcentrix.tray.provider.TrayContentProvider"/>
+        <activity android:label="RecyclerViewTestActivity" android:name="android.support.v7.widget.TestActivity"/>
+    </application>
+</manifest>

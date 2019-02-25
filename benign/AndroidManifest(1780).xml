@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="be.cri.mlab" platformBuildVersionCode="27" platformBuildVersionName="8.1.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="CRI MLab" android:name="md584309d0618ae1cb08570e3dbce9a0c51.MainApplication">
+        <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="CRI MLab" android:name="md584309d0618ae1cb08570e3dbce9a0c51.MainActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="CRI MLab" android:name="md584309d0618ae1cb08570e3dbce9a0c51.SplashScreen" android:noHistory="true" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Web Authenticator" android:name="md588920fb9403ed228b036d6919cddd329.FormAuthenticatorActivity"/>
+        <activity android:label="Web Authenticator" android:name="md588920fb9403ed228b036d6919cddd329.WebAuthenticatorActivity"/>
+        <provider android:authorities="be.cri.mlab.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+</manifest>

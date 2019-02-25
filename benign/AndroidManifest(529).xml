@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.healthifyme.basic">
+    <supports-screens android:anyDensity="true"/>
+    <permission android:name="com.healthifyme.basic.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.healthifyme.basic.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <android:uses-permission android:maxSdkVersion="18" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="HealthifyMe" android:name="com.healthifyme.basic.HealthifymeApp" android:theme="@style/AppBaseTheme">
+        <provider android:authorities="@string/PROVIDER_LOG" android:exported="false" android:name="com.healthifyme.basic.providers.LogProvider"/>
+        <provider android:authorities="@string/GAMIFICATION_PROVIDER" android:exported="false" android:name="com.healthifyme.basic.providers.GamificationProvider"/>
+        <receiver android:exported="false" android:name="com.healthifyme.basic.receiver.NotificationAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.healthifyme.ACTION_REMINDER_MEAL_LOG"/>
+                <action android:name="com.healthifyme.ACTION_REMINDER_MEAL_LOG_B"/>
+                <action android:name="com.healthifyme.ACTION_REMINDER_MEAL_LOG_L"/>
+                <action android:name="com.healthifyme.ACTION_REMINDER_MEAL_LOG_S"/>
+                <action android:name="com.healthifyme.ACTION_REMINDER_MEAL_LOG_D"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.healthifyme.basic"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.healthifyme.basic.receiver.UserEventReceiver">
+            <intent-filter>
+                <action android:name="com.healthifyme.USER_ACTION_MEAL_LOGGED"/>
+                <action android:name="com.healthifyme.USER_ACTION_STARTED_APP"/>
+                <action android:name="com.healthifyme.USER_ACTION_FITNESS_LOGGED"/>
+                <action android:name="com.healthifyme.USER_ACTION_PROFILE_UPDATE"/>
+                <action android:name="com.healthifyme.USER_ACTION_RATE_APP"/>
+                <action android:name="com.healthifyme.APP_ACTION_EVENT_CRASH"/>
+                <action android:name="com.healthifyme.PROMPT_EDIT_PROFILE_SHOWN"/>
+                <action android:name="com.healthifyme.PROMPT_RATE_APP_SHOWN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.healthifyme.basic.receiver.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.healthifyme.basic.receiver.NetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.healthifyme.basic.receiver.TimeZoneChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.healthifyme.basic.receiver.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.healthifyme.basic.receiver.FoodDbPopulateReceiver">
+            <intent-filter>
+                <action android:name="com.healthifyme.BROADCAST_POPULATE_DB"/>
+                <action android:name="com.healthifyme.basic.services.DBUpdateService.DB_UDPATED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:icon="@drawable/search_menu_eaten" android:label="HealthifyMe" android:name="com.healthifyme.basic.widgets.MyWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+        </receiver>
+        <service android:name="com.healthifyme.basic.services.CopyWorkoutDBOnInstallIntentService"/>
+        <service android:name="com.healthifyme.basic.services.PopulateDBOnLoadIntentService"/>
+        <service android:name="com.healthifyme.basic.services.PointsLogSyncIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FoodLogSyncIntentService"/>
+        <service android:name="com.healthifyme.basic.services.WorkoutLogSyncIntentService"/>
+        <service android:name="com.healthifyme.basic.services.WeightLogSyncIntentService"/>
+        <service android:name="com.healthifyme.basic.services.PhotoSyncIntentService"/>
+        <service android:name="com.healthifyme.basic.services.GetEnergyDetailsIntentService"/>
+        <service android:name="com.healthifyme.basic.services.VerifySignatureIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FoodRecommendationFetchService"/>
+        <service android:name="com.healthifyme.basic.services.GCMIntentService"/>
+        <service android:name="com.healthifyme.basic.services.IFLUpdateService"/>
+        <service android:name="com.healthifyme.basic.services.ProfileFetchService"/>
+        <service android:name="com.healthifyme.basic.services.ProfileSaveService"/>
+        <service android:name="com.healthifyme.basic.services.DBUpdateService"/>
+        <service android:name="com.healthifyme.basic.services.InsertNewNotification"/>
+        <service android:name="com.healthifyme.basic.services.NotificationUserResponseService"/>
+        <service android:name="com.healthifyme.basic.services.HandleUserActionIntentService"/>
+        <service android:name="com.healthifyme.basic.services.PopulateEventsToPointsMappingTable"/>
+        <service android:name="com.healthifyme.basic.services.LeaderboardFetchService"/>
+        <service android:name="com.healthifyme.basic.services.LocalReminderHandlerService"/>
+        <service android:name="com.healthifyme.basic.services.ProfilePicUploadIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FetchTriviaIntentService"/>
+        <service android:name="com.healthifyme.basic.services.UninstallPingIntentService"/>
+        <service android:exported="false" android:name="com.healthifyme.basic.services.MealAnalysisFetchService"/>
+        <service android:exported="false" android:name="com.healthifyme.basic.services.ExpertConnectIntentService"/>
+        <service android:exported="false" android:name="com.healthifyme.basic.services.FetchPaymentOfferIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FetchMyPlanIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FetchJarvisAnalysisIntentService"/>
+        <service android:name="com.healthifyme.basic.services.MovesAuthService"/>
+        <service android:name="com.healthifyme.basic.services.BecomeUserService"/>
+        <service android:name="com.healthifyme.basic.services.FetchPlansPricingIntentService"/>
+        <service android:name="com.healthifyme.basic.services.FetchNewMyPlanIntentService"/>
+        <service android:name="com.healthifyme.basic.services.PopulateFoodDbUpdatesIntentService"/>
+        <service android:name="com.healthifyme.basic.services.ReferralCreditsIntentService"/>
+        <activity android:label="HealthifyMe" android:name="com.healthifyme.basic.activities.LoginOptionsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Light.NoActionBar">
+            <intent-filter android:label="HealthifyMe">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="healthifyme.com" android:pathPattern="\\/view\\/.*" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="android.healthifyme.com" android:pathPattern=".*" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:label="@string/app_name" android:name="com.healthifyme.basic.activities.FreeTrialOBActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.healthifyme.basic.activities.PaymentOBActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.healthifyme.basic.activities.WorkoutTrackActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Fitness Status" android:name="com.healthifyme.basic.activities.WorkoutDetailsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/health_valet" android:name="com.healthifyme.basic.activities.CameraActivity"/>
+        <activity android:label="@string/title_activity_login" android:name="com.healthifyme.basic.activities.LoginActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.LoginOptionsActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_create_account" android:name="com.healthifyme.basic.activities.CreateAccountActivity" android:parentActivityName="com.healthifyme.basic.activities.LoginOptionsActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysVisible">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.LoginOptionsActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_registration" android:name="com.healthifyme.basic.activities.RegistrationActivity" android:parentActivityName="com.healthifyme.basic.activities.LoginOptionsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Light.NoActionBar" android:windowSoftInputMode="adjustResize">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.LoginOptionsActivity"/>
+        </activity>
+        <activity android:label="@string/at_nutrition_search" android:name="com.healthifyme.basic.activities.NutritionSearchActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Light.NoActionBar"/>
+        <activity android:label="@string/at_workout_search" android:name="com.healthifyme.basic.activities.WorkoutSearchActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Light.NoActionBar" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:label="@string/title_activity_user_profile" android:launchMode="singleTop" android:name="com.healthifyme.basic.activities.UserProfileActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Nutrition Status" android:name="com.healthifyme.basic.activities.NutritionDetailsPreHCActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Nutrition Status" android:name="com.healthifyme.basic.activities.NutritionDetailsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_premium_plans" android:name="com.healthifyme.basic.activities.MembershipInfoActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_premium_plans" android:name="com.healthifyme.basic.activities.PremiumPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_post_purchase" android:name="com.healthifyme.basic.activities.PostPurchaseActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_about_page" android:name="com.healthifyme.basic.activities.AboutPageActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_weight_goal_details" android:name="com.healthifyme.basic.activities.WeightDetailsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_set_weight_goal" android:name="com.healthifyme.basic.activities.SetWeightGoalActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_web_view" android:name="com.healthifyme.basic.activities.WebViewActivity"/>
+        <activity android:label="Payzippy Payment" android:name="com.healthifyme.basic.activities.PaymentWebView"/>
+        <activity android:label="Payment Response" android:name="com.healthifyme.basic.activities.ProcessPaymentResponseActivity"/>
+        <activity android:label="@string/title_activity_notification_list" android:name="com.healthifyme.basic.activities.NotificationListActivity"/>
+        <activity android:label="@string/title_points_activity" android:name="com.healthifyme.basic.activities.PointsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_how_to_earn_points" android:name="com.healthifyme.basic.activities.HowToEarnPointsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/at_leaderboard" android:name="com.healthifyme.basic.activities.LeaderboardActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_preferences" android:name="com.healthifyme.basic.activities.SettingsActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:theme="@style/AppTheme.Light.DarkActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Diary" android:name="com.healthifyme.basic.activities.TempDiaryActivity"/>
+        <activity android:label="Diary" android:name="com.healthifyme.basic.activities.DiaryActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Diary" android:name="com.healthifyme.basic.activities.DiaryDayViewActivity" android:parentActivityName="com.healthifyme.basic.activities.DiaryActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DiaryActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_tabbed_dashboard" android:name="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait" android:theme="@style/Theme.PageIndicatorDefaults"/>
+        <activity android:label="@string/title_activity_main" android:name="com.healthifyme.basic.activities.MainActivity"/>
+        <activity android:label="" android:name="com.healthifyme.basic.activities.NutritionTrackActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait" android:theme="@style/Theme.PageIndicatorDefaults">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/update_required" android:name="com.healthifyme.basic.activities.ForceUpdateApkActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/activity_meal_analysis" android:name="com.healthifyme.basic.activities.MealAnalysisActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/at_coach" android:name="com.healthifyme.basic.activities.ExpertConnectActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="Expert Connect" android:name="com.healthifyme.basic.activities.ExpertMessagesActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="My Plan" android:name="com.healthifyme.basic.activities.MyPlanTimelineActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="My Plan" android:name="com.healthifyme.basic.activities.MyPlanCurrentPhaseActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/at_analysis" android:name="com.healthifyme.basic.activities.ConsolidatedAnalysisActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:name="com.healthifyme.basic.activities.StaticPaymentActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:name="com.healthifyme.basic.activities.FreeTrialEndedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.healthifyme.basic.activities.OBActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:name="com.healthifyme.basic.activities.SUDashboardActivity" android:parentActivityName="com.healthifyme.basic.activities.UserProfileActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.UserProfileActivity"/>
+        </activity>
+        <activity android:name="com.uservoice.uservoicesdk.activity.PortalActivity"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.ForumActivity"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.ArticleActivity"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.TopicActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.uservoice.uservoicesdk.activity.ContactActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.uservoice.uservoicesdk.activity.PostIdeaActivity"/>
+        <activity android:label="@string/at_logout" android:name="com.healthifyme.basic.AlertDialogActivity" android:theme="@style/TransparentTheme"/>
+        <activity android:label="Weight Log" android:name="com.healthifyme.basic.activities.WeightLogActivity" android:parentActivityName="com.healthifyme.basic.activities.DashboardActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/at_premium_plans" android:name="com.healthifyme.basic.activities.PremiumPlansActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/at_my_plans" android:name="com.healthifyme.basic.activities.NewMyPlanActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/at_referral_credits" android:name="com.healthifyme.basic.activities.ReferralCreditsActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.healthifyme.basic.activities.DashboardActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_main2" android:name="com.healthifyme.basic.activities.Main2Activity"/>
+    </application>
+</manifest>

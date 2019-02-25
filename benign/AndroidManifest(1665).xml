@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="air.com.playtika.slotomania">
+    <application android:allowClearUserData="true" android:hardwareAccelerated="false" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name=".AppEntry" android:screenOrientation="user" android:theme="@style/Theme.NoShadow" android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data android:name="namespaceVersion" android:value="3.8"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fb169545139744270enandroid"/>
+                <data android:scheme="fb195053007196177enandroid"/>
+                <data android:scheme="fb174237909299335enandroid"/>
+                <data android:scheme="fb212463788775254enandroid"/>
+                <data android:scheme="fb228389400532645enandroid"/>
+                <data android:scheme="fb123360827767737enandroid"/>
+                <data android:scheme="fb372723329441569enandroid"/>
+                <data android:scheme="fb450924011629312enandroid"/>
+                <data android:scheme="fb282815515164489enandroid"/>
+                <data android:scheme="fb298252096954412enandroid"/>
+                <data android:scheme="fb212463788775254enandroid"/>
+                <data android:scheme="fb456176381146660enandroid"/>
+                <data android:scheme="fb200609910118716enandroid"/>
+                <data android:scheme="fb449681148445977enandroid"/>
+                <data android:scheme="fb1383499841871214enandroid"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="apps.facebook.com" android:pathPattern="/slotomania.*" android:scheme="http"/>
+                <data android:host="apps.facebook.com" android:pathPattern="/slotomania.*" android:scheme="https"/>
+            </intent-filter>
+            <meta-data android:name="aspectRatio" android:value="landscape"/>
+            <meta-data android:name="autoOrients" android:value="false"/>
+            <meta-data android:name="fullScreen" android:value="true"/>
+            <meta-data android:name="uniqueappversionid" android:value="7c495b9a-5c38-4096-b170-c29a7ba3b873"/>
+            <meta-data android:name="initialcontent" android:value="VideoSlots.swf"/>
+            <meta-data android:name="containsVideo" android:value="false"/>
+        </activity>
+        <service android:exported="false" android:name="com.playtika.extensions.concurrency.logging.GraylogLoggerService"/>
+        <service android:exported="false" android:name="com.playtika.extensions.notifications.NotificationTimerService"/>
+        <activity android:name="com.appoxee.WebViewActivity"/>
+        <activity android:name="com.appoxee.inbox.DatabaseHelper"/>
+        <service android:name="com.appoxee.gcm.GCMIntentService"/>
+        <receiver android:name="com.appoxee.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="air.com.playtika.slotomania"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="air.com.playtika.slotomania"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.appoxee.activities.Inbox"/>
+        <activity android:name="com.appoxee.activities.MoreApps"/>
+        <activity android:name="com.appoxee.activities.Feedback"/>
+        <activity android:name="com.appoxee.activities.InboxMessage"/>
+        <activity android:name="com.playtika.extensions.fbsdk.FbSdkAuthActivity" android:theme="@style/Theme.Transparent"/>
+        <service android:name="com.playtika.nativecode.payments.BillingService"/>
+        <receiver android:name="com.playtika.nativecode.payments.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.inapp.purchasing.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.paypal.android.MEP.PayPalActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.playtika.extensions.paypal.PaypalSlotomaniaActivity" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.playhaven.src.publishersdk.content.PHContentView" android:theme="@android:style/Theme.Dialog"/>
+        <receiver android:exported="true" android:name="com.AdX.tag.AdXAppTracker">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="APP_NAME" android:value="air.com.playtika.slotomania"/>
+        <meta-data android:name="ADX_CLIENT_ID" android:value="t42R5awtL2"/>
+        <activity android:label="login" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.playtika.extensions.tools.screenlistener.ScreenListenerService"/>
+        <receiver android:name="com.playtika.extensions.tools.screenlistener.ScreenListenerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <permission android:name="air.com.playtika.slotomania.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="air.com.playtika.slotomania.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <compatible-screens>
+        <screen android:screenDensity="ldpi" android:screenSize="small"/>
+        <screen android:screenDensity="mdpi" android:screenSize="small"/>
+        <screen android:screenDensity="hdpi" android:screenSize="small"/>
+        <screen android:screenDensity="xhdpi" android:screenSize="small"/>
+        <screen android:screenDensity="ldpi" android:screenSize="normal"/>
+        <screen android:screenDensity="mdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="hdpi" android:screenSize="normal"/>
+        <screen android:screenDensity="ldpi" android:screenSize="large"/>
+        <screen android:screenDensity="mdpi" android:screenSize="large"/>
+        <screen android:screenDensity="ldpi" android:screenSize="xlarge"/>
+        <screen android:screenDensity="mdpi" android:screenSize="xlarge"/>
+    </compatible-screens>
+</manifest>

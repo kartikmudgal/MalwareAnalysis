@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.seven.tarotmachine">
+    <application android:icon="@drawable/ic_star" android:label="@string/app_name" android:theme="@android:style/Theme.Light">
+        <activity android:label="@string/app_name" android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".today.TodayActivity"/>
+        <activity android:name=".love.LoveActivity"/>
+        <activity android:name=".week.WeekActivity"/>
+        <activity android:name=".today.TodayResult"/>
+        <activity android:name=".love.LoveResult"/>
+        <activity android:name=".week.WeekResult"/>
+        <activity android:name="HelpActivity"/>
+        <activity android:name="Pref"/>
+        <provider android:authorities="com.seven.tarotmachine.provider.resultprovider" android:name=".provider.ResultProvider"/>
+        <provider android:authorities="com.seven.tarotmachine.provider.tarotprovider" android:name=".provider.TarotProvider"/>
+        <activity android:name="mediba.ad.sdk.android.openx.MasAdClickWebview"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>

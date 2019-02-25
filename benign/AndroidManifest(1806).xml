@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="co.com.bancolombia.canalesmoviles.filialesbancolombia" platformBuildVersionCode="27" platformBuildVersionName="8.1.0">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="co.com.bancolombia.canalesmoviles.filialesbancolombia.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="cco.com.bancolombia.canalesmoviles.filialesbancolombia.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/ApplicationName" android:name="md55a2bee168a9ed8e1249add893dd13f22.MainApplication" android:theme="@style/AppTheme">
+        <activity android:name="com.worklight.wlclient.ui.UIActivity"/>
+        <activity android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushNotificationHandler" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:name=".Activities.SecurityQuestions" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Activities.AutomaticDebit" android:windowSoftInputMode="adjustResize"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="co.com.bancolombia.canalesmoviles.filialesbancolombia"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.ibm.mobilefirstplatform.clientsdk.android.push.api.MFPPushInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.appsee.AppseeBackgroundUploader"/>
+        <activity android:icon="@mipmap/icon" android:label="@string/ApplicationName" android:name="md55a2bee168a9ed8e1249add893dd13f22.MainActivity" android:screenOrientation="portrait"/>
+        <service android:name="md5530e760a58dfcb45dca25d001dc07bf7.PushServiceIntent">
+            <intent-filter android:icon="@drawable/icon">
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <activity android:label="TermsAndConditionsRead" android:name="md5ac1ae1555edb45b0dbd6c6ba41977e26.TermsAndConditionsRead" android:screenOrientation="portrait"/>
+        <activity android:label="MovementCards" android:name="md5088a3bbe29da1f8f446857a4d0af78c2.MovementCards" android:screenOrientation="portrait"/>
+        <activity android:label="MovementResume" android:name="md5088a3bbe29da1f8f446857a4d0af78c2.MovementResume" android:screenOrientation="portrait"/>
+        <activity android:label="BaseActivity" android:name="md5e144b6b60664629b6932fb4e1ac907b9.BaseActivity" android:screenOrientation="portrait"/>
+        <activity android:label="Document" android:name="md5e5df3cc328852ce06db2e635ecb566b8.Document" android:screenOrientation="portrait"/>
+        <activity android:label="Home" android:name="md5ae71a3d965402c90f60dc0fd12c5d8f8.Home" android:screenOrientation="portrait"/>
+        <activity android:label="@string/ApplicationName" android:launchMode="singleTop" android:name="md5d9bb659593cb531496bdf4b4f9bf61ec.SplashActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="TermsAndConditions" android:name="md598f46322a8745467b5007d3ab023aa7e.TermsAndConditions" android:screenOrientation="portrait"/>
+        <activity android:label="InformationAutomaticDebit" android:name="md5d345530c92b72753a8e800f1dda66e1c.InformationAutomaticDebit" android:screenOrientation="portrait"/>
+        <activity android:label="LoginDirection" android:name="md5fc799443ebde68b0a4d9de7d04abf75f.LoginDirection" android:screenOrientation="portrait"/>
+        <activity android:label="SecurityQuestions" android:name="md5fc799443ebde68b0a4d9de7d04abf75f.SecurityQuestions" android:screenOrientation="portrait"/>
+        <activity android:label="AutomaticDebit" android:name="md50f5f54ad9b924f40b3ef72b1de1e305b.AutomaticDebit" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md55acd92097db1193d6a1e7330cb14252a.ConnectivityChangeBroadcastReceiver"/>
+        <provider android:authorities="co.com.bancolombia.canalesmoviles.filialesbancolombia.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

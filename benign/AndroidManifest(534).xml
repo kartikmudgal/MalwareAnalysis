@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.Hello_Hello_Franch">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name=".HHLaunchScreen" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.Hello_FlashCard.Hello_FlashCard" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Help.Hello_Help" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Lesson.Hello_Lesson" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Notes.Hello_Notes" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Setting.Hello_Setting" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_AboutUs.Hello_About" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_FlashCard.Hello_Flash_Detail" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Lesson.Hello_Lesson_Description" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_WebSite.Hello_WebSite" android:screenOrientation="portrait"/>
+        <activity android:name="com.Hello_Notes.NotesDialog" android:screenOrientation="portrait" android:theme="@style/CustomDialogTheme"/>
+        <activity android:name="com.Hello_Lesson.HelloVocList" android:screenOrientation="portrait" android:theme="@style/CustomDialogTheme"/>
+        <activity android:name="com.Hello_SplashScreen.SplashScreen" android:screenOrientation="portrait"/>
+        <activity android:name="com.facebook.android.Example" android:screenOrientation="portrait"/>
+        <service android:name="com.Hello_Lesson.BillingService"/>
+        <receiver android:name="com.Hello_Lesson.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

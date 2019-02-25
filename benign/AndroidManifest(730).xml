@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.longzhuzmu.longzhuzmucpc">
+    <application android:debuggable="true" android:icon="@drawable/app_icon" android:label="@string/app_label">
+        <activity android:configChanges="keyboardHidden|orientation" android:name="MainA">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tiger.gba.MainActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tiger.gba.GView"/>
+        <activity android:name="com.tiger.gameshark.GameSharkActivity" android:process=":emulator" android:theme="@style/Theme.Translucent"/>
+        <activity android:name="com.tiger.gba.RomChooser"/>
+        <activity android:name="com.tiger.gba.GameStateActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="GameStateActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.tiger.gba.HelpActivity"/>
+        <activity android:name="com.tiger.gba.EmulatorSettings" android:process=":emulator"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.tiger.gba.EmuActivity" android:process=":emulator">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="tigeremu/x-gba-rom"/>
+                <data android:mimeType="application/x-gba-rom"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.tiger.gba.EmuService" android:process=":emulator"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="4f8e21c4527015248d0000c0"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="wadtwop"/>
+        <activity android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="cooId" android:value="3154857cf3c745b2865204d69dc6b457"/>
+        <meta-data android:name="channelId" android:value="k-appchina"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.kuguo.ad.MainActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.kuguo.ad.BoutiqueActivity" android:theme="@android:style/Theme.Dialog"/>
+        <service android:name="com.kuguo.ad.MainService"/>
+        <receiver android:name="com.kuguo.ad.MainReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.feedback.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.feedback.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.feedback.ui.FeedbackConversation"/>
+    </application>
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+</manifest>

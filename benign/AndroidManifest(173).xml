@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.baek.Gatalk3" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <supports-screens android:anyDensity="true" android:largeScreens="true"/>
+    <permission android:name="com.baek.Gatalk3.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.baek.Gatalk3.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name=".AnalyticsV4" android:theme="@style/Theme.Favorite">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="com.facebook.LoginActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:label="Ad Activity" android:name="com.skplanet.tad.AdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:label="Ad Video Player" android:name="com.skplanet.tad.AdVideoPlayer" android:theme="@android:style/Theme.NoTitleBar"/>
+        <meta-data android:name="tnkad_app_id" android:value="20008010-40e1-0389-9830-1e0401040003"/>
+        <activity android:name="com.tnkfactory.ad.AdWallActivity"/>
+        <activity android:name="com.tnkfactory.ad.AdMediaActivity" android:screenOrientation="landscape"/>
+        <receiver android:exported="true" android:name="com.tnkfactory.ad.TnkReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="intro" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:host="@string/kakaolink_host" android:scheme="@string/kakao_scheme"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.baek.Gatalk3"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+        <receiver android:name=".GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.baek.Gatalk3"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentServiceNew"/>
+        <activity android:configChanges="keyboard|orientation" android:label="가짜톡" android:name="TabsActivity"/>
+        <activity android:configChanges="keyboard|orientation" android:label="가짜톡" android:name="TabMain_fragment"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="Friendlist_fragment"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="Friendlist"/>
+        <activity android:configChanges="keyboard|orientation" android:name="Friendlist_del"/>
+        <activity android:configChanges="keyboard|orientation" android:name="Friendlist_choose"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="Chatlist"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="quot"/>
+        <activity android:configChanges="keyboard|orientation" android:name="Chatlist_del"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="more"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="friend_add"/>
+        <activity android:configChanges="keyboard|orientation" android:name="makefriend"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/trans" android:name="Chat_WALL" android:theme="@style/Theme.Favorite"/>
+        <service android:name="Chat_DB"/>
+        <service android:name="Chat_DB_al"/>
+        <service android:name="Chat_DB_gcm"/>
+        <service android:name="getkakao"/>
+        <activity android:configChanges="keyboard|orientation" android:name="teach" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode" android:name="TeachSmart"/>
+        <activity android:configChanges="keyboard|orientation" android:name="manage" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboard|orientation" android:name="ProfileView"/>
+        <activity android:configChanges="keyboard|orientation" android:name="Editmode"/>
+        <activity android:configChanges="keyboard|orientation" android:name="friendrecover"/>
+        <activity android:name="lock" android:screenOrientation="portrait" android:theme="@style/Theme.Custom2"/>
+        <activity android:configChanges="keyboard|orientation" android:name="Setting"/>
+        <activity android:configChanges="keyboard|orientation" android:name="theme"/>
+        <activity android:configChanges="keyboard|orientation" android:name="lock_set"/>
+        <activity android:configChanges="keyboard|orientation" android:name="backgroundcrop"/>
+        <activity android:configChanges="keyboard|orientation" android:name="backgroundcolor"/>
+        <receiver android:name="com.baek.Gatalk3.noti_chat"/>
+        <receiver android:name="com.baek.Gatalk3.noti_alarm"/>
+        <receiver android:name="com.baek.Gatalk3.noti_intent"/>
+        <activity android:configChanges="keyboard|orientation" android:name="receiveset"/>
+        <activity android:configChanges="keyboard|orientation" android:name="TTSset"/>
+        <activity android:configChanges="keyboard|orientation" android:name="news"/>
+        <activity android:configChanges="keyboard|orientation" android:name="TermView"/>
+        <activity android:configChanges="keyboard|orientation" android:name="ImagePopup" android:theme="@style/Theme.Favorite2"/>
+        <activity android:configChanges="keyboard|orientation" android:name="choosefriend2"/>
+        <activity android:configChanges="keyboard|orientation" android:name="choosesecond"/>
+        <activity android:configChanges="keyboard|orientation" android:name="choosemode"/>
+        <activity android:configChanges="keyboard|orientation" android:name="chatmore"/>
+        <activity android:configChanges="keyboard|orientation" android:name="itemstore"/>
+        <activity android:configChanges="keyboard|orientation" android:name="itempurchase"/>
+        <activity android:configChanges="keyboard|orientation" android:name="tapadd"/>
+        <activity android:configChanges="keyboard|orientation" android:name="point"/>
+        <activity android:configChanges="keyboard|orientation" android:name="myprofile" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="ActMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="ActMainActivity_sk" android:screenOrientation="portrait"/>
+        <activity android:name="ActMainActivity_sk_recover" android:screenOrientation="portrait"/>
+        <activity android:name="ImgViewTouch" android:screenOrientation="portrait" android:theme="@style/Theme.Custom2"/>
+        <activity android:name="Interstitial" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.baek.Gatalk3.Intentreceiver" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.baek.TextGame.sendintent"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.baek.Gatalk3.crop.CropImage" android:process=":CropImage"/>
+        <service android:name="com.baek.Gatalk3.BillingService"/>
+        <receiver android:name="com.baek.Gatalk3.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.baek.Gatalk3.billing"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:name="com.inmobi.androidsdk.IMBrowserActivity"/>
+        <activity android:name="com.nbpcorp.mobilead.sdk.MobileAdBrowserActivity"/>
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.TJCOffersWebView"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.TapjoyFullScreenAdWebView"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.TapjoyDailyRewardAdWebView"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.TapjoyVideoView"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.tapjoy.TJAdUnitView" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.mraid.view.ActionHandler"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.mraid.view.Browser"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.mocoplex.adlib.AdlibDialogActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.mocoplex.adlib.AdlibVideoPlayer" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <meta-data android:name="com.axonix.APPLICATION_ID" android:value="5999b283-6735-4082-9d1c-6547989bb6bd"/>
+        <activity android:hardwareAccelerated="true" android:name="com.axonix.android.sdk.AxonixBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="GPS_USE" android:value="0"/>
+        <meta-data android:name="MEZZO_WINDOW_ID" android:value="banner"/>
+        <meta-data android:name="MAN_PUBLISHER_CODE" android:value="code:1229"/>
+        <meta-data android:name="MAN_MEDIA_CODE" android:value="code:30450"/>
+        <meta-data android:name="MAN_BANNER_SECTION_CODE" android:value="code:301012"/>
+        <meta-data android:name="MAN_INTERSTITIAL_SECTION_CODE" android:value="code:301013"/>
+        <activity android:name="com.mapps.android.view_old.InterstitialView_old" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mapps.android.view_new.InterstitialView_new" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <meta-data android:name="DEBUG_MODE" android:value="0"/>
+        <meta-data android:name="MEZZO_WINDOW_ID" android:value="banner"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.mapps.android.view_old.MultimediaView_old"/>
+        <activity android:name="com.mapps.android.view_old.AlertNotiView_old" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.mapps.android.view.InterstitialView" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.amazon.device.ads.AdActivity"/>
+        <receiver android:name="com.co.shallwead.sdk.ShallWeAdReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.co.shallwead.sdk.SApplicationService"/>
+        <meta-data android:name="ShallWeAd_Application_Key" android:value="77284693"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.co.shallwead.sdk.activity.ShallWeAdActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.herodealer.saihero" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="com.herodealer.saihero.Home" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_home1" android:name="com.herodealer.saihero.Home1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_about" android:name="com.herodealer.saihero.About" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_webbikes" android:name="com.herodealer.saihero.Webbikes" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_upcoming" android:name="com.herodealer.saihero.Upcoming" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_news" android:name="com.herodealer.saihero.News" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_reviews" android:name="com.herodealer.saihero.Reviews" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_videos" android:name="com.herodealer.saihero.Videos" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_dealers" android:name="com.herodealer.saihero.Dealers" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_heroweb" android:name="com.herodealer.saihero.Heroweb" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_used" android:name="com.herodealer.saihero.Used" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_compare" android:name="com.herodealer.saihero.Compare" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_specialoffers" android:name="com.herodealer.saihero.Specialoffers" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_extras" android:name="com.herodealer.saihero.Extras" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

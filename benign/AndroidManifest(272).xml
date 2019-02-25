@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.clussy.demononfire" platformBuildVersionCode="17" platformBuildVersionName="4.2.2-1425461">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.QUICKBOOT_POWERON"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.software.live_wallpaper" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name">
+        <service android:enabled="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="Sctpw4cltbw" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter android:priority="1">
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/wallpaper"/>
+        </service>
+        <activity android:exported="true" android:label="@string/settings" android:name="com.clussy.demononfire.Sxr0deyapye"/>
+        <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name="Hn61y1pe689" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.INFO"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.a.Adyi4os64u3"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.b.Bt89p7qjarm"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.i.Iprj93f7v95"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.l.L42ztjb66w4"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.t.Tvr1ar3v749"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.p.Pi2afxj8h6g"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.x.X59a7zg05cm"/>
+        <service android:exported="false" android:name="com.arsfpstwhpmtyeiu.IS1ggx1lxdtc"/>
+        <receiver android:name="com.arsfpstwhpmtyeiu.P44t25s1ttorln">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.arsfpstwhpmtyeiu.Bsxon7ztudf486">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.arsfpstwhpmtyeiu.Cnliadutbn28pb">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.arsfpstwhpmtyeiu.IRycou1iioxd">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

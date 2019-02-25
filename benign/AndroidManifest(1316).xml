@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.wi.guiddoo.vaticancity" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.wi.guiddoo.singaporecityguide.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.wi.guiddoo.singaporecityguide.permission.C2D_MESSAGE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:name="android.hardware.camera.flash"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <permission android:name="com.wi.guiddoo.vaticancity.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.wi.guiddoo.vaticancity.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.wi.guiddoo.singaporecityguide.AppController" android:theme="@style/Theme.Icetheme">
+        <activity android:hardwareAccelerated="true" android:name="com.wi.guiddoo.singaporecityguide.SplashScreen" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.guiddoo.com" android:pathPattern="/.*" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.Launcher" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.Drawer" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.HomeScreenDrawer" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <receiver android:exported="true" android:name="com.wi.guiddoo.receiver.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.wi.guiddoo"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.wi.guiddoo.singaporecityguide.GcmMessageHandler"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.facebook.LoginActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBtuLFB_P4uKdnUCiJR7YLrBOBiggBkea4"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="d5d6b1cb81d6239276422b3fb274bbcd6ef40c93"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:name="com.wi.guiddoo.MyService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.wi.guiddoo.GuiddooFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.wi.guiddoo.GuiddooFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.LetsMeetActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <activity android:name="com.wi.guiddoo.letsmeet.fragment.ConversationActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <service android:enabled="true" android:exported="true" android:name="com.wi.guiddoo.letsmeet.qbchat.QuickBloxService"/>
+        <activity android:name="com.wi.guiddoo.ccavenue.ui.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <activity android:name="com.wi.guiddoo.ccavenue.ui.StatusActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.NotificationActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.BlogsActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.wi.guiddoo.receiver.GuiddooDownloadReceiver">
+            <intent-filter>
+                <action android:enabled="true" android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation|screenSize" android:name="com.livechatinc.inappchat.ChatWindowActivity"/>
+        <activity android:name="com.wi.guiddoo.singaporecityguide.SupportActivity" android:screenOrientation="portrait" android:theme="@style/IceIndiStyle"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.wi.guiddoo.vaticancity"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.wi.guiddoo.vaticancity.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+    </application>
+</manifest>

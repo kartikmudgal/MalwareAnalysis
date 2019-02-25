@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.koobt.koob1357526143">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="org.geometerplus.android.fbreader.FBReaderApplication" android:theme="@style/AppTheme">
+        <meta-data android:name="UMENG_APPKEY" android:value="50df0f97527015038e00000b"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="ch15"/>
+        <service android:exported="true" android:name="com.umeng.common.net.DownloadingService" android:process=":DownloadingService"/>
+        <activity android:name="com.koobt.activity.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.koobt.activity.BookTOCActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.koobt.activity.BookmarkActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.koobt.activity.DetailSettingActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.koobt.activity.MoreBookActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.koobt.activity.BookSearchActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="stateHidden"/>
+        <receiver android:name="com.koobt.service.BootReceiver" android:process=":push">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <service android:launchMode="singleTask" android:name="com.koobt.service.AlarmService"/>
+        <service android:launchMode="singleTask" android:name="com.koobt.service.DownloadService"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="org.geometerplus.android.fbreader.crash.FixBooksDirectoryActivity" android:process=":crash" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.fbreader.action.CRASH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="CachedCharStorageException"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="org.geometerplus.android.fbreader.crash.MissingNativeLibraryActivity" android:process=":crash" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.fbreader.action.CRASH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="ExceptionInInitializerError"/>
+            </intent-filter>
+        </activity>
+        <service android:name="org.geometerplus.android.fbreader.api.ApiService">
+            <intent-filter>
+                <action android:name="android.fbreader.action.API"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="org.geometerplus.android.fbreader.FBReader">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="org.geometerplus.android.fbreader.CancelActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="org.geometerplus.android.fbreader.image.ImageViewActivity" android:process=":imageView"/>
+        <service android:launchMode="singleTask" android:name="org.geometerplus.android.fbreader.libraryService.LibraryService" android:process=":libraryService"/>
+        <receiver android:name="org.geometerplus.android.fbreader.library.KillerCallback" android:process=":library"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="org.geometerplus.android.fbreader.tips.TipsActivity" android:theme="@android:style/Theme.Dialog"/>
+    </application>
+</manifest>

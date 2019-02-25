@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.app.p4696CB" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/appicon" android:label="Human Harmony" android:largeHeap="true" android:name="app.AMApplication" android:theme="@style/Theme.Appmachine">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="md53f9f24c5c70830f3a598904a8580ccba.PushHandlerBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.app.p4696CB"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.app.p4696CB"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.app.p4696CB"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md53f9f24c5c70830f3a598904a8580ccba.PushHandlerService"/>
+        <receiver android:name="md57d1fd64441b4f31e53ace81311f31939.AudioActionReceiver">
+            <intent-filter>
+                <action android:name="com.appmachine.audio.AudioAction"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md587c825f77e64631493db78f6c44b0731.BaseActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md57a4326120f2cbd9e7829645175df6715.HU" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md57a4326120f2cbd9e7829645175df6715.ZRR" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="md57799e60e645d608a73e0affb41ba87b6.Camera_InternalCropImage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md57a4326120f2cbd9e7829645175df6715.TRR" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md57a4326120f2cbd9e7829645175df6715.XRR_1" android:windowSoftInputMode="adjustResize"/>
+        <receiver android:name="md587c825f77e64631493db78f6c44b0731.AlarmBroadcastReceiver"/>
+        <receiver android:name="md587c825f77e64631493db78f6c44b0731.RemoteControlReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:label="Human Harmony" android:name="app.Main" android:noHistory="true" android:theme="@style/Theme.Splash" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="fffforlife.com" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="fffforlife.com" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="md57a4326120f2cbd9e7829645175df6715.KXR" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <receiver android:name="md587c825f77e64631493db78f6c44b0731.ConnectivityReciever">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" android:name="md5651fd91521eb3899e10052ed6fa1696a.ZxingActivity"/>
+        <provider android:authorities="com.app.p4696CB.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCBr4le4_4Y8Uk1zPpUHRJUNrhWoeo_Ubw"/>
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.location"/>
+    <uses-feature android:name="android.hardware.location.network"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="com.app.p4696CB.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.app.p4696CB.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+</manifest>

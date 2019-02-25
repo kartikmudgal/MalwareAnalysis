@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.game.jjffmmzzcc129">
+    <application android:icon="@drawable/ic_launcher" android:label="金发MM找茬">
+        <activity android:label="金发MM找茬" android:name="com.game.app.MainActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="file" android:value="jjffmmzzcc.swf"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.uapush.manage.UAActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.uapush.manage.UAActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.game.jjffmmzzcc129"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.uapush.manage.AutoService">
+            <intent-filter>
+                <action android:name="com.uapush.manage.AutoService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.game.jjffmmzzcc129"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.uapush.manage.SrcService">
+            <intent-filter>
+                <action android:name="com.uapush.manage.SrcService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.game.jjffmmzzcc129"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.uapush.manage.UAReceiver" android:permission="com.uapush.android.permission.SEND">
+            <intent-filter>
+                <action android:name="com.uapush.android.intent.REGISTRATION"/>
+                <category android:name="com.game.jjffmmzzcc129"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.uapush.android.intent.RECEIVE"/>
+                <category android:name="com.game.jjffmmzzcc129"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.uapush.android.service.UAService">
+            <intent-filter>
+                <action android:name="com.uapush.android.intent.REGISTER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.uapush.android.intent.UNREGISTER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.uapush.android.intent.REPORT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.uapush.android.service.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.uapush.android.service.MyAlarmReceiver"/>
+    </application>
+    <permission android:name="com.uapush.android.permission.SEND" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.uapush.android.permission.SEND"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission android:name="com.game.jjffmmzzcc129.permission.UAPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.game.jjffmmzzcc129.permission.UAPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+</manifest>

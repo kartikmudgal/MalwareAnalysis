@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.appslovers.taxirinconadataxista">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.appslovers.application.MyApplication" android:theme="@android:style/Theme.NoTitleBar">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCSc27C--8-9iqcf_qnz80SliIUjYqPXdc"/>
+        <activity android:label="@string/app_name" android:name="com.appslovers.taxirinconadataxista.LoginActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.appslovers.taxirinconadataxista.PresentacionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.appslovers.taxirinconadataxista.RankingActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.appslovers.taxirinconadataxista.MapaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.appslovers.taxirinconadataxista.FormaDePagoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.appslovers.taxirinconadataxista.WaitingActivity" android:screenOrientation="portrait"/>
+        <uses-library android:name="com.google.android.maps"/>
+    </application>
+</manifest>

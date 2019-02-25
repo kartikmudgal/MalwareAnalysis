@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.dianxinos.optimizer.duplay" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <permission android:name="com.dianxinos.optimizer.duplay.permission.UPDATE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.dianxinos.optimizer.duplay.permission.UPDATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <meta-data android:name="scenery_dispatcher_version" android:value="1"/>
+    <receiver android:name="com.baidu.grid.NetworkConnectChangedReceiver">
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+        </intent-filter>
+    </receiver>
+    <application android:allowBackup="false" android:configChanges="locale" android:hardwareAccelerated="false" android:icon="@drawable/dxopt_icon" android:label="@string/app_name" android:manageSpaceActivity="com.dianxinos.optimizer.module.applock.AppLockManageSpaceAcitivty" android:name="com.dianxinos.optimizer.OptimizerApp">
+        <meta-data android:name="presage_key" android:value="269864"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="app_license" android:value="2a1fc83e3843362920a11ee28dbfca2b"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.DuAdCacheProvider" android:exported="false" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.SearchCacheProvider" android:exported="false" android:name="com.duapps.search.internal.db.SearchCacheProvider"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.provider.configs" android:exported="false" android:name="com.dianxinos.optimizer.SharedPrefsProviderOptimizer" android:process=":service"/>
+        <receiver android:exported="true" android:name="com.dianxinos.optimizer.InstallReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.dianxinos.optimizer.PService" android:process=":p"/>
+        <service android:exported="false" android:name="com.dianxinos.optimizer.UService"/>
+        <service android:name="com.dianxinos.optimizer.CommonIntentService"/>
+        <service android:name="com.dianxinos.optimizer.module.notificationmgr.NotificationMonitorService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.MainActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.duplay.action.DIAGNOSTIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.splash.EnteringSplashActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gau.go.launcherex.gowidget"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.splash.SplashWelcomeActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.dianxinos.optimizer.module.splash.SplashAdActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.space.TrashCleanActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.space.TrashResultActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.triggerad.TriggerAdActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Percent9TransparentNoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.space.TrashResultByTypeActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.space.pkgnotifylogic.TrashAppInstallOrUninstallDialog" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.optimizer.module.space.TrashFeedbackDialog" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.space.TrashCleanWhiteActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="settings" android:name="com.dianxinos.optimizer.settings.GlobalSettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.settings.LanguageSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.ui.noticetools.NotificationConfigActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:name="com.dianxinos.optimizer.ui.noticetools.NotificationShortcutCustomActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="cn.com.opda.android.sevenkey.SevenKeyActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <service android:exported="false" android:name="com.dianxinos.optimizer.BService" android:process=":service"/>
+        <receiver android:enabled="true" android:name="com.dianxinos.optimizer.PackageChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.dianxinos.optimizer.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.battery.BatteryGuideActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.battery.DuGroupRecommendActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.DF_RECOMMEND_FOR_BOOSTER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.dianxinos.optimizer.module.dufamily.DuGroupPackageReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.taskman.TaskManTabActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.advancedaccelerate.AccMainTabActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_module_accelerate" android:name="com.dianxinos.optimizer.module.taskman.TapCleanActivity" android:taskAffinity="cn.com.opda.android.launcher" android:theme="@style/MyTheme.HalfTransparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.taskman.RegularCleanSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <service android:name="com.dianxinos.optimizer.module.taskman.ProcessKillService"/>
+        <receiver android:label="@string/dxfast_widget" android:name="com.dianxinos.optimizer.dxfastwidget.DXFastWidget" android:process=":service">
+            <intent-filter android:priority="10000">
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.conn.BACKGROUND_DATA_SETTING_CHANGED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.DATA_STATE"/>
+                <action android:name="android.media.RINGER_MODE_CHANGED"/>
+                <action android:name="android.media.VIBRATE_SETTING_CHANGED"/>
+                <action android:name="android.location.PROVIDERS_CHANGED"/>
+                <action android:name="com.dianxinos.optimizer.duplay.action.LANGUAGE_CHANGE_UPDATE_WIDGET"/>
+                <action android:name="com.dianxinos.optimizer.duplay.action.REFERSH_WIDGET"/>
+                <action android:name="com.dianxinos.optimizer.duplay.action.UPDATE_BRIGHT_TRACKER_STATE"/>
+                <action android:name="com.dianxinos.optimizer.duplay.action.DX_WIDGET_UPDATE_ACC_STAT"/>
+            </intent-filter>
+            <intent-filter android:priority="10000">
+                <action android:name="com.dianxinos.optimizer.duplay.action.DXFAST_SW_TOGGLE"/>
+                <data android:scheme="switch"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/dxfast_widget_info"/>
+        </receiver>
+        <service android:exported="true" android:name="com.dianxinos.optimizer.dxfastwidget.DXFastRefershService" android:process=":service">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.duplay.action.DX_WIDGET_SERVICE_DO_REFERSH"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.dxfastwidget.DXFastWidgetMoreSwitchActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.dxfastwidget.DXFastWidget" android:theme="@style/MyTheme.CustomDialog" android:windowNoTitle="true"/>
+        <activity android:excludeFromRecents="true" android:name="cn.com.opda.android.sevenkey.BrightnessSettingsActivity" android:taskAffinity="cn.com.opda.android.launcher" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.NewGuideDetailActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.AppMgrActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.OldAppMgrActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.ApkMgrActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/my_phone_module_title" android:name="com.dianxinos.optimizer.module.deviceinfo.DeviceInfoActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.View"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.deviceinfo.HardwareDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.module.deviceinfo.CpuDetailInfoActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.accelerate.PhoneAccActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.accelerate.momeryopt.MemoryOptimizeActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.advancedaccelerate.ui.AdvancedAccelerateActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.module.advancedaccelerate.ui.AccShortcutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.accelerate.accessibility.OpenAccessibilityRemindActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.task.deepacc.remind" android:theme="@style/MyDialogFooterStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.accelerate.accessibility.OpenAccessibilityFailedActivity" android:screenOrientation="portrait" android:theme="@style/MyDialogStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/main_avtivity_startup_manager" android:name="com.dianxinos.optimizer.module.bootmgr.BootManagerActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.settings.SettingShortcutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.ContributorsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.AboutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.accelerate.momeryopt.MemoryOptimizeAboutActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.HelperActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <service android:exported="false" android:name="com.dianxinos.optimizer.floatwindow.QuickHelperFloatWindow" android:process=":service"/>
+        <activity android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.floatwindow.QuickHelperSettingsActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.task.fwsettings" android:theme="@style/MyTheme.CustomDialog"/>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.DownloadService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CANCEL_DOWNLOAD"/>
+            </intent-filter>
+            <meta-data android:name="com.dianxinos.appupdate.DOWNLOAD_PROGRESS_LISTENER" android:value="com.dianxinos.optimizer.update.DownloadProgressListenerImpl"/>
+        </service>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.AppUpdateService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CHECK_UPDATE"/>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD_RETRY"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.dianxinos.appupdate.NotifyInstalledReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.NOTIFY_INSTALLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.optimizer.update.UpdateReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.NEW_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.optimizer.ui.noticetools.NotifyToolReciver" android:process=":service">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.duplay.action.CMDRECIVER"/>
+                <action android:name="com.dianxinos.optimizer.duplay.action.LANGUAGE_CHANGE_UPDATE_WIDGET"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.optimizer.ui.noticetools.NotificationEventReciver">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.duplay.d"/>
+                <action android:name="com.dianxinos.optimizer.duplay.hd"/>
+                <action android:name="com.dianxinos.optimizer.duplay.pc"/>
+                <action android:name="com.dianxinos.optimizer.duplay.2h"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.optimizer.ui.noticetools.NotificationShortcutReciver">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.duplay.notification.main"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.update.DownloadActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <receiver android:name="com.dianxinos.optimizer.utils.AliveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.optimizer.utils.AntiVirusReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.antivirus_update"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.AppsUninstallerActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.SystemAppsBackupActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.CannotUninstallActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:name="com.dianxinos.optimizer.module.gamescene.GameSceneQuitLandingPage" android:process=":service" android:screenOrientation="portrait" android:taskAffinity=".gamescene4" android:theme="@style/MyTheme.Transparent"/>
+        <service android:name="com.dianxinos.optimizer.module.gamescene.GameSceneService" android:process=":service"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.toolbox.ToolboxMainActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.ad.offerwall.ui.OfferWallAct2" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.dianxinos.optimizer.settings.feedback.FeedbackActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.optimizer.module.speedtest.NetSpeedFeedbackDialog" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.PermissionManagerActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.PermissionListActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.PermissionDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.antivirus.AntivirusSettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.antivirus.AntivirusIgnorelistActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.security.antivirus.AntivirusResultDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.optimizer.module.security.antivirus.AVMonitorInstallReportActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/MyTheme.CustomDialog"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.FsdkContentProvider" android:exported="false" android:name="com.ducaller.fsdk.provider.FsdkContentProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.ui.DxUpdateTips" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.speedtest.NetSpeedTestActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.speedtest.NetSpeedMapActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.speedtest.NetPKActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.speedtest.NetSpeedHistoryActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.speedtest.NetSpeedTestGuideActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.ui.noticetools.EmptyActivity" android:noHistory="true" android:process=":service" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.launchrocket" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.EmptyActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.module.scene.SceneEmptyActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.scene" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.dianxinos.notify.ui.view.NotifySimplePushActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.accelerate.AdvancedAccelerateTurnVoiceActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <receiver android:name="com.dianxinos.notify.ui.NotifyUIReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.library.notify.DO_FIRST_WORK"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.dianxinos.dxservice.core.DXCoreService" android:process=":service"/>
+        <receiver android:name="com.dianxinos.dxservice.stat.AlarmReceiver">
+            <intent-filter>
+                <action android:name="DXCoreAlarmReceiver"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="@bool/is_accessibility_enable" android:label="@string/app_name" android:name="com.dianxinos.optimizer.module.accessibility.BoosterAccessibityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_config"/>
+        </service>
+        <activity android:exported="true" android:launchMode="singleInstance" android:name="com.dianxinos.optimizer.update.EmergencyUpadateHideActivity" android:theme="@style/MainTheme"/>
+        <activity android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.module.messagebox.MessageBoxActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.messagebox.WebActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.space.TrashLargeVideoFileActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.trash.media.TrashImageActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.trash.media.TrashImageDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.trash.media.SimilarImagefilterActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.trash.media.ImageViewPageActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.dianxinos.optimizer.module.trash.media.CameraReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.hardware.action.NEW_PICTURE"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.similar_image_scan"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.optimizer.module.trash.media.TrashImageShowActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.landingpage.ui.LandingPageActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <receiver android:name="com.dianxinos.optimizer.module.accelerate.momeryopt.NativeReceiver"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.appmanager.ui.activity.AppsMoverActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.applock.FirstEnterAppLockActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_INIT_APP_LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.applock.AppLockShowListActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_SHOW_APP_LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.applock.AppLockSetPasswordActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_SETTING_PWD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.dianxinos.optimizer.module.applock.AppLockSetPwdCompletedActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_PWD_COMPLETE_APP_LIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.applock.AppLockSingleCheckActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_SINGLE_CHECK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.applock.AppLockChangePwdResultActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_PWD_SET_COMPLETE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleInstance" android:name="com.dianxinos.applock.activity.AppLockFindPasswordActivity" android:screenOrientation="portrait" android:taskAffinity=".applock" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.accelerate.cpucool.CpuCoolActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <service android:exported="true" android:name="com.dianxinos.applock.LockService">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.CORE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.dufamily.FamilyActivityExtend" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.common.dufamily.core.activity.DuWebActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.lazyswipe.BrightnessChangeActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:name="com.dianxinos.lazyswipe.DuSwipeSettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:name="com.dianxinos.lazyswipe.TriggerAreaActivity" android:screenOrientation="portrait" android:theme="@style/HalfTransparent"/>
+        <activity android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.swipe.SwipeSettingActivity" android:screenOrientation="portrait" android:taskAffinity=".duswipe" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.lazyswipe.ACTION_SWIPE_SETTING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.dianxinos.lazyswipe.EmptyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleInstance" android:name="com.dianxinos.optimizer.module.scene.ui.PreSceneActivity" android:noHistory="true" android:process=":service" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.optimizer.scene" android:theme="@style/MyTheme.HalfTransparent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:hardwareAccelerated="false" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.security.antivirus.AntivirusFragmentActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.space.appclean.AppCleanActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:name="com.dianxinos.optimizer.module.applock.AppLockManageSpaceCheckPasswordActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_MANAGE_SPACE_CHECK_PASSWORD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.optimizer.module.applock.AppLockManageSpaceAcitivty" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_MANAGE_SPACE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.optimizer.module.applock.AppLockSettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme">
+            <intent-filter>
+                <action android:name="com.dianxinos.applock.ACTION_SET"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:name="com.dianxinos.cooperate.CooperateService">
+            <intent-filter>
+                <action android:name="com.dianxinos.lazyswipe.cooperate.CORE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="false" android:name="com.dianxinos.optimizer.monitor.PackageRetainedMonitor">
+            <intent-filter>
+                <action android:name="dianxinos.action.PKG_RETAINED_MONITOR_LAST_REPORT"/>
+                <action android:name="dianxinos.action.PKG_RETAINED_MONITOR_HEART_BEAT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.optimizer.module.battery.ui.BatteryFullDialog" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dianxinos.common.ui.DxCommonActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.optimizer.test.FunctionTestActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.battery.ui.BatteryDialogRecommendActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.battery.ui.BatteryNotifyRecommendActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.lockscreen.ui.LockScreenSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.ducaller.ui.DuCallerSettingsActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:name="com.dianxinos.optimizer.module.space.appclean.AppCleanByTypeDetailActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.notificationmgr.NotificationDisturbSettingActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.notificationmgr.NotificationDisturbGuideActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.dianxinos.optimizer.module.notificationmgr.SettingsMaskGuideActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@style/MyTheme.Transparent"/>
+        <activity android:launchMode="singleTask" android:name="com.dianxinos.optimizer.module.notificationmgr.view.NotificationListActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <meta-data android:name="flurry_api_key" android:value="@string/flurry_api_key"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.dianxinos.optimizer.permission.PermissionEmptyActivity" android:process=":service" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.dianxinos.optimizer.permission.ACTION_PERMISSION_EMPTY"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.dianxinos.optimizer.module.advancedaccelerate.ui.DeepAccShortcutEmptyActivity" android:noHistory="true" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:exported="false" android:name="com.dianxinos.optimizer.module.resultcards.AdViewTypeTestActivity" android:screenOrientation="portrait" android:theme="@style/MainTheme"/>
+        <meta-data android:name="scenery_dispatcher_version" android:value="1"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.duscene.MobulaCacheProvider" android:exported="false" android:name="com.baidu.mobula.reportsdk.MobulaCacheProvider" android:process=":service"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.baidu.grid.view.GridRemmendActivity" android:screenOrientation="portrait" android:theme="@style/MyBoosterTheme"/>
+        <receiver android:name="com.baidu.grid.NetworkConnectChangedReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="search_buzz_appid" android:value="LWoiRB5c"/>
+        <activity android:configChanges="layoutDirection|locale" android:exported="true" android:launchMode="singleInstance" android:name="com.duapps.search.ui.act.SearchFragmentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <meta-data android:name="du_lockscreen_action" android:value="com.du.action.private"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleInstance" android:name="com.lemon.sweetcandy.SweetCandyContainer" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity="com.lemon.sweetcandy.containertask" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.optimizer.module.scenarized.module.internel.EmptyActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.dianxinos.lazyswipe.DuWebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser" android:noHistory="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <meta-data android:name="batmobi_appid" android:value="WJU7H7TM3MEYFKWYEUN03KNE"/>
+        <service android:name="com.baidu.security.avp.api.service.AvpIntentService"/>
+        <receiver android:name="com.baidu.security.scansdk.receiver.AutoUpdateReceiver">
+            <intent-filter>
+                <action android:name="com.baidu.acs.UPDATE_LOCAL_LIBRARY"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.baidu.acs.UPDATE_LOCAL_ENGINE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.mnt.MntBroadcastReceiver"/>
+        <activity android:name="pic.com.updateguidelib.NotificationJumpActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="pic.com.updateguidelib.AlarmBroadcastReceiver"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.DuCandyCooProvider" android:exported="true" android:name="com.lemon.sweetcandy.DuCandyCooProvider"/>
+        <service android:name="com.android.apps.pros.LocalCService" android:process=":local"/>
+        <receiver android:name="com.android.apps.pros.LocalAReceiver" android:process=":local"/>
+        <receiver android:name="com.android.apps.pros.LocalCReceiver" android:process=":local">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.apps.pros.LocalMService"/>
+        <service android:enabled="true" android:exported="true" android:name="io.presage.PresageService" android:process=":remote">
+            <intent-filter>
+                <action android:name="io.presage.PresageService.PIVOT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="io.presage.activities.PresageActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="io.presage.intent.action.LAUNCH_WEBVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="io.presage.receiver.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="io.presage.receiver.NetworkChangeReceiver.ONDESTROY"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="io.presage.receiver.AlarmReceiver"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.PresageProvider" android:enabled="true" android:exported="true" android:name="io.presage.provider.PresageProvider"/>
+        <activity android:name="com.avocarrot.androidsdk.VideoActivity"/>
+        <provider android:authorities="com.dianxinos.optimizer.duplay.provider.toolbox.configs" android:exported="false" android:name="com.duapps.ad.stats.SharedPrefsProviderToolbox"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.callmonitor.component.CallMonitorReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.callmonitor.component.CallMonitorService"/>
+        <receiver android:exported="true" android:name="com.ducaller.fsdk.callmonitor.reveiver.BootstrapReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.hardware.usb.action.USB_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ducaller.fsdk.callmonitor.reveiver.SyncGlobalCallerReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.sync.caller_state"/>
+                <action android:name="android.intent.action.fsdk.state.changed"/>
+                <action android:name="com.fsdk.caller.sync.self"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.ad.DUCallerADService"/>
+        <service android:exported="true" android:name="com.ducaller.fsdk.task.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.ducaller.fsdk.ad.ADFillReceiver"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.ui.BaseCallCardActivity" android:screenOrientation="portrait" android:theme="@style/window_transparent" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.ui.SettingActivity" android:screenOrientation="portrait" android:theme="@style/window_transparent" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.dialog.CommonActivityDialog" android:screenOrientation="portrait" android:theme="@style/dialog2" android:windowSoftInputMode="adjustNothing"/>
+    </application>
+</manifest>

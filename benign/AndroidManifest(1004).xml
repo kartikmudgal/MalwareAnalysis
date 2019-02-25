@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.qd.marketlist">
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="@string/app_name" android:name="com.qd.marketlist.MainActivity" android:screenOrientation="portrait" android:theme="@style/Theme.MyTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.qd.marketlist.AddItemActivity" android:screenOrientation="portrait" android:theme="@style/Theme.MyTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <provider android:authorities="com.qd.marketlist" android:multiprocess="false" android:name="MyProvider"/>
+    </application>
+</manifest>

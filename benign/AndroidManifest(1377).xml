@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="edu.byu.android" android:sharedUserLabel="@string/shared_user_label_BYU" package="edu.byu.suite">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <application android:allowBackup="false" android:debuggable="false" android:icon="@drawable/icon_byu_suite" android:label="@string/app_name" android:name=".BYUApplication" android:theme="@style/Theme">
+        <uses-library android:name="com.google.android.maps" android:required="false"/>
+        <service android:exported="false" android:name="edu.byu.android.login.manifest.AuthenticationService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/lib__login_authenticator"/>
+            <meta-data android:name="android.accounts.AccountAuthenticator.customTokens" android:value="true"/>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="BYU Login" android:name="edu.byu.android.login.manifest.BYUAuthenticatorActivity" android:theme="@style/lib__login.Dialog"/>
+        <activity android:label="Application Requires Reinstall" android:name=".ForceReinstallActivity" android:theme="@style/Theme.Dialog"/>
+        <activity android:label="Feedback" android:name=".FeedbackActivity"/>
+        <activity android:label="Settings" android:name=".SettingsActivity"/>
+        <activity android:label="Share This App" android:name=".apps.share.ShareAppActivity"/>
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:theme="@style/Theme">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value=".search.AppSearchActivity"/>
+        </activity>
+        <activity android:icon="@drawable/icon_course_catalog" android:label="Course Catalog" android:name=".apps.coursecatalog.CourseCatalogActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Browse course offerings."/>
+            <meta-data android:name="appid" android:value="courseCatalog"/>
+            <meta-data android:name="analytics_id" android:value="courseCatalog"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_academic"/>
+        </activity>
+        <activity android:icon="@drawable/icon_device_registration" android:label="Manage Devices" android:name=".apps.deviceregistration.DeviceListActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Allows you to unregister devices from the BYU wireless network."/>
+            <meta-data android:name="appid" android:value="deviceregistration"/>
+            <meta-data android:name="analytics_id" android:value="networkDeviceRegistration"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_services"/>
+        </activity>
+        <activity android:icon="@drawable/icon_byu_homepage" android:label="BYU Home Page" android:name=".apps.external.ByuHomepageActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value=""/>
+            <meta-data android:name="appid" android:value="byuHomepage"/>
+            <meta-data android:name="analytics_id" android:value="byuHomepage"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_facebook" android:label="BYU Facebook" android:name=".apps.external.ByuFacebookActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Go to the BYU Facebook page."/>
+            <meta-data android:name="appid" android:value="facebook"/>
+            <meta-data android:name="analytics_id" android:value="facebook"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_twitter" android:label="BYU Twitter" android:name=".apps.external.ByuTwitterActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Go to the BYU Twitter page."/>
+            <meta-data android:name="appid" android:value="twitter"/>
+            <meta-data android:name="analytics_id" android:value="twitter"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_youtube" android:label="BYU YouTube" android:name=".apps.external.ByuYoutubeActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Go to the BYU YouTube page."/>
+            <meta-data android:name="appid" android:value="byuyoutube"/>
+            <meta-data android:name="analytics_id" android:value="youtube"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_filmfinder" android:label="Film Finder" android:name=".apps.external.FilmFinderActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value=""/>
+            <meta-data android:name="appid" android:value="FilmFinder"/>
+            <meta-data android:name="analytics_id" android:value="FilmFinder"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_multimedia_lab" android:label="Multimedia Lab" android:name=".apps.external.MultimediaLabActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value=""/>
+            <meta-data android:name="appid" android:value="multimedialab"/>
+            <meta-data android:name="analytics_id" android:value="multimedialab"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_mybyu" android:label="myBYU" android:name=".apps.external.MyByuActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value=""/>
+            <meta-data android:name="appid" android:value="myByu"/>
+            <meta-data android:name="analytics_id" android:value="myByu"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_slccenter" android:label="Salt Lake Center" android:name=".apps.external.SaltLakeCenterActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value=""/>
+            <meta-data android:name="appid" android:value="slCenter"/>
+            <meta-data android:name="analytics_id" android:value="slCenter"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_daily_universe" android:label="Digital Universe" android:name=".apps.external.DailyUniverseActivity" android:theme="@style/Theme.NoDisplay">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Read the latest edition."/>
+            <meta-data android:name="appid" android:value="dailyuniverse"/>
+            <meta-data android:name="analytics_id" android:value="dailyuniverse"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+        </activity>
+        <activity android:icon="@drawable/icon_sports" android:label="Sports" android:name=".apps.external.SportsActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Go to the BYU Athletics web site."/>
+            <meta-data android:name="appid" android:value="sports"/>
+            <meta-data android:name="analytics_id" android:value="sports"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_library" android:label="Library" android:name=".apps.external.LibraryActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Search library catalog. Renew checked out materials."/>
+            <meta-data android:name="appid" android:value="library"/>
+            <meta-data android:name="analytics_id" android:value="library"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_ed_week" android:label="Education Week" android:name=".apps.external.EducationWeekActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Check out what's hot at this years education week."/>
+            <meta-data android:name="appid" android:value="educationWeek"/>
+            <meta-data android:name="analytics_id" android:value="educationWeek"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="ed,education,week"/>
+        </activity>
+        <activity android:icon="@drawable/icon_nso" android:label="New Student Orientation" android:name=".apps.external.NewStudentOrientationActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Check out new student orientation"/>
+            <meta-data android:name="appid" android:value="newStudentOrientation"/>
+            <meta-data android:name="analytics_id" android:value="newStudentOrientation"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="ed,education,week"/>
+        </activity>
+        <activity android:icon="@drawable/icon_instagram" android:label="Instagram" android:name=".apps.external.InstagramActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Check out BYU's instagram profile"/>
+            <meta-data android:name="appid" android:value="instagram"/>
+            <meta-data android:name="analytics_id" android:value="instagram"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="ed,education,week"/>
+        </activity>
+        <activity android:icon="@drawable/icon_business_card" android:label="Business Card" android:name=".apps.businessCard.ShowQrCodeActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Share your contact information."/>
+            <meta-data android:name="appid" android:value="businessCard"/>
+            <meta-data android:name="analytics_id" android:value="businessCard"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="contact,share,phone,address,email,vcard"/>
+        </activity>
+        <activity android:icon="@drawable/icon_campus_reservation" android:label="Campus Services" android:name=".apps.campusReservation.CampusReservationActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Contact information for various services on campus."/>
+            <meta-data android:name="appid" android:value="campusReservations"/>
+            <meta-data android:name="analytics_id" android:value="campusReservations"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_services"/>
+            <meta-data android:name="@string/search_keyword" android:value="rooms,reserve,order,study,facilities"/>
+        </activity>
+        <activity android:icon="@drawable/icon_byu_id_card" android:label="ID Card" android:name=".apps.idCard.IdCardActivity" android:screenOrientation="landscape">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Display your BYU ID Card."/>
+            <meta-data android:name="appid" android:value="IDCard"/>
+            <meta-data android:name="analytics_id" android:value="IDCard"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="id,id card,byuid,byu id"/>
+        </activity>
+        <activity android:icon="@drawable/icon_byuradio" android:label="BYU Broadcasting" android:name=".apps.external.ByutvActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Go to BYU Broadcasting web site."/>
+            <meta-data android:name="appid" android:value="byuRadio"/>
+            <meta-data android:name="analytics_id" android:value="byuRadio"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_person_directory" android:label="Person Directory" android:name=".apps.persondirectory.PersonDirectoryActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Search for people."/>
+            <meta-data android:name="appid" android:value="personDirectory"/>
+            <meta-data android:name="analytics_id" android:value="personDirectory"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+        </activity>
+        <activity android:icon="@drawable/icon_speech_finder" android:label="Speech Finder" android:name=".apps.external.SpeechFinderActivity">
+            <meta-data android:name="is_app" android:value="false"/>
+            <meta-data android:name="description" android:value="Search for speeches."/>
+            <meta-data android:name="appid" android:value="speechfinder"/>
+            <meta-data android:name="analytics_id" android:value="speechfinder"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/search_keyword" android:value="speech,talk,devotional,forum"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_report_card" android:label="Academic Summary" android:name=".apps.academicsummary.AcademicSummaryActivity">
+            <meta-data android:name="is_app" android:value="false"/>
+            <meta-data android:name="description" android:value="View Academic Summary &amp; GPA Calculator."/>
+            <meta-data android:name="appid" android:value="gpacalculator"/>
+            <meta-data android:name="analytics_id" android:value="gpacalculator"/>
+            <meta-data android:name="@string/app_categories" android:value="student"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="gpa,summary,academic,standing"/>
+        </activity>
+        <activity android:icon="@drawable/icon_permission_to_add" android:label="Reg Permission-To-Add" android:name=".apps.permissiontoadd.PermissionToAddActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Grant Registration Permission-To-Add"/>
+            <meta-data android:name="appid" android:value="permissionToAdd"/>
+            <meta-data android:name="analytics_id" android:value="permissionToAdd"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_academic"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="registration,class,classes,permission,add"/>
+        </activity>
+        <activity android:icon="@drawable/icon_class_schedule" android:label="My Classes" android:name=".apps.classschedule.ClassScheduleActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="View Class Schedule &amp; Grades"/>
+            <meta-data android:name="appid" android:value="class-schedule"/>
+            <meta-data android:name="analytics_id" android:value="StudentClasses"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/is_website_app" android:value="true"/>
+            <meta-data android:name="@string/search_keyword" android:value="class,classes,schedule,grade,grades"/>
+        </activity>
+        <activity android:icon="@drawable/icon_cameras" android:label="Campus Cameras" android:name=".apps.cameras.CampusCamerasActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Webcams from across campus."/>
+            <meta-data android:name="appid" android:value="campus-cameras"/>
+            <meta-data android:name="analytics_id" android:value="campuscameras"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="testing,center,camera,cameras,webcam,webcams,line,lines,condition"/>
+        </activity>
+        <activity android:icon="@drawable/icon_calendar" android:label="Campus Calendars" android:name=".apps.campusCalendar.CampusCalendarActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Campus-wide calendars"/>
+            <meta-data android:name="appid" android:value="calendars"/>
+            <meta-data android:name="analytics_id" android:value="calendars"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="calendar,event"/>
+        </activity>
+        <activity android:icon="@drawable/icon_locker_rental" android:label="Lockers" android:name=".apps.lockerrental.CurrentLockersActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="View rented lockers. Rent a new one or renew an old one."/>
+            <meta-data android:name="appid" android:value="lockers"/>
+            <meta-data android:name="analytics_id" android:value="lockerRental"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_services"/>
+            <meta-data android:name="@string/search_keyword" android:value="locker,lockers"/>
+        </activity>
+        <activity android:icon="@drawable/icon_learning_suite" android:label="@string/learning_suite" android:name=".apps.ls.activity.LearningSuiteMainActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="@string/learning_suite_description"/>
+            <meta-data android:name="appid" android:value="learningSuite"/>
+            <meta-data android:name="analytics_id" android:value="learningSuite"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_academic"/>
+            <meta-data android:name="@string/search_keyword" android:value="learning,suite,learning suite"/>
+        </activity>
+        <activity android:label="@string/learning_suite" android:name=".apps.ls.activity.CourseDetailActivity"/>
+        <activity android:label="@string/learning_suite" android:name=".apps.ls.activity.ContentDetailWebViewActivity"/>
+        <activity android:label="@string/learning_suite" android:name=".apps.ls.activity.ExternalCourseDetailWebViewActivity"/>
+        <activity android:icon="@drawable/icon_next_class" android:label="@string/title_activity_next_class_main" android:name=".apps.nextclass.activity.NextClassMainActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="@string/next_class_description"/>
+            <meta-data android:name="appid" android:value="nextClass"/>
+            <meta-data android:name="analytics_id" android:value="mynextclass"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_academic"/>
+            <meta-data android:name="@string/search_keyword" android:value="Next Class, Next, Class"/>
+        </activity>
+        <activity android:icon="@drawable/icon_missionary_deferment" android:label="Missionary Deferment" android:name=".apps.missionaryDeferment.MissionaryDefermentActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Defer enrollment due to missionary service."/>
+            <meta-data android:name="appid" android:value="missionarydeferment"/>
+            <meta-data android:name="analytics_id" android:value="missionarydeferment"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_services"/>
+            <meta-data android:name="@string/search_keyword" android:value="missionary, mission, deferment, scholarship, enrollment, mtc"/>
+        </activity>
+        <activity android:icon="@drawable/icon_class_roll" android:label="Class Rolls" android:name=".apps.classroll.ListClassesActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="View class rolls for classes you teach."/>
+            <meta-data android:name="appid" android:value="classRolls"/>
+            <meta-data android:name="analytics_id" android:value="classRolls"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_academic"/>
+            <meta-data android:name="@string/search_keyword" android:value="class roll,picture"/>
+        </activity>
+        <activity android:icon="@drawable/icon_map" android:label="Map My Classes" android:name=".apps.map.classes.MyClassesTermSelectionActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="See where your classes are on campus."/>
+            <meta-data android:name="appid" android:value="mapmyclasses"/>
+            <meta-data android:name="analytics_id" android:value="mapMyClasses"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+        </activity>
+        <activity android:icon="@drawable/icon_map" android:label="Map My Classes" android:name=".apps.map.classes.MyClassesLoadingActivity"/>
+        <activity android:icon="@drawable/icon_map" android:label="Map My Finals" android:name=".apps.map.classes.MyFinalsTermSelectionActivity" android:noHistory="true" android:theme="@style/Theme.NoDisplay">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="See where on campus your finals will be held."/>
+            <meta-data android:name="appid" android:value="mapmyfinals"/>
+            <meta-data android:name="analytics_id" android:value="finalsSchedule"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+        </activity>
+        <activity android:icon="@drawable/icon_map" android:label="Map My Finals" android:name=".apps.map.classes.MyFinalsLoadingActivity"/>
+        <activity android:icon="@drawable/icon_vending" android:label="Vending" android:name=".apps.map.vending.VendingMapActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Find vending machines and search for products."/>
+            <meta-data android:name="appid" android:value="vending"/>
+            <meta-data android:name="analytics_id" android:value="vending"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus_and_services"/>
+        </activity>
+        <activity android:icon="@drawable/icon_housing" android:label="Off Campus Housing" android:name=".apps.map.housing.HousingMainActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Find Off-Campus Housing listings."/>
+            <meta-data android:name="appid" android:value="offhousing"/>
+            <meta-data android:name="analytics_id" android:value="offCampusHousing"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_services"/>
+        </activity>
+        <activity android:icon="@drawable/icon_building" android:label="Campus Buildings" android:name=".apps.map.buildings.BuildingListActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Find buildings on campus."/>
+            <meta-data android:name="appid" android:value="campusBuildings"/>
+            <meta-data android:name="analytics_id" android:value="campusBuildings"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/icon_parking" android:label="Parking Lots" android:name=".apps.parking.ParkingLotTypesActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Find campus parking lots."/>
+            <meta-data android:name="appid" android:value="parkinglots"/>
+            <meta-data android:name="analytics_id" android:value="parking"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+        </activity>
+        <activity android:icon="@drawable/icon_byu_suite" android:label="My Paychecks" android:name=".apps.paycheck.PaycheckListActivity">
+            <meta-data android:name="description" android:value="View your paychecks from the University."/>
+            <meta-data android:name="appid" android:value="paycheck"/>
+            <meta-data android:name="analytics_id" android:value="paycheck"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="paycheck,paychecks,pay,payroll,employment"/>
+        </activity>
+        <activity android:icon="@drawable/icon_department_directory" android:label="Department Directory" android:name=".apps.departments.DepartmentDirectoryActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Contact BYU Departments."/>
+            <meta-data android:name="appid" android:value="DepartmentDirectory"/>
+            <meta-data android:name="analytics_id" android:value="DepartmentDirectory"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+        </activity>
+        <activity android:icon="@drawable/icon_stowaway" android:label="Stowaway Magazine" android:name=".apps.stowawayMag.StowawayActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Read Stowaway Magazine"/>
+            <meta-data android:name="appid" android:value="stowaway"/>
+            <meta-data android:name="analytics_id" android:value="stowaway"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_media"/>
+            <meta-data android:name="@string/search_keyword" android:value="magazine,stowaway,travel"/>
+        </activity>
+        <activity android:label="Stowaway Magazine" android:name=".apps.stowawayMag.DownloadStowawayActivity"/>
+        <activity android:icon="@drawable/icon_dining" android:label="Cannon Commons" android:name=".apps.dining.DiningActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="See the Cannon Commons menu."/>
+            <meta-data android:name="appid" android:value="cannonCommons"/>
+            <meta-data android:name="analytics_id" android:value="cannonCommons"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="dining,eating,food"/>
+        </activity>
+        <activity android:icon="@drawable/icon_dining" android:label="Dining Account" android:name=".apps.diningAccount.DiningAccountActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="View your dining account balance."/>
+            <meta-data android:name="appid" android:value="diningaccount"/>
+            <meta-data android:name="analytics_id" android:value="diningaccount"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="dining,eating,food,account"/>
+        </activity>
+        <activity android:icon="@drawable/icon_need_icon" android:label="Y Time" android:name=".apps.yTime.YTimeActivity">
+            <meta-data android:name="is_app" android:value="false"/>
+            <meta-data android:name="@string/sandbox_activity_key" android:value="true"/>
+            <meta-data android:name="description" android:value="Clock in and out of your Y Time account."/>
+            <meta-data android:name="appid" android:value="ytime"/>
+            <meta-data android:name="analytics_id" android:value="ytime"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="time,job,work,account"/>
+        </activity>
+        <activity android:icon="@drawable/icon_sick_vacation" android:label="Sick and Vacation" android:name=".apps.sickVacation.SickVacationActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="appid" android:value="sickvacation"/>
+            <meta-data android:name="analytics_id" android:value="sickvac"/>
+            <meta-data android:name="description" android:value="View work Sick and Vacation balances."/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="time,job,work,sick,vacation,leave,balances"/>
+        </activity>
+        <activity android:icon="@drawable/icon_restrooms" android:label="Restrooms" android:name=".apps.restrooms.RestroomsActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="appid" android:value="restrooms"/>
+            <meta-data android:name="analytics_id" android:value="restroom"/>
+            <meta-data android:name="description" android:value="Find the restrooms nearest to you."/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="restroom, bathroom, loo, toilet, outhouse"/>
+        </activity>
+        <activity android:icon="@drawable/icon_booklist" android:label="My Book List" android:name=".apps.booklist.BookListActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="View your book list."/>
+            <meta-data android:name="appid" android:value="booklist"/>
+            <meta-data android:name="analytics_id" android:value="booklist"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="booklist,class,classes,textbook"/>
+        </activity>
+        <activity android:icon="@drawable/icon_booklist" android:label="My Book List" android:name=".apps.booklist.BookListCourseActivity"/>
+        <activity android:icon="@drawable/icon_booklist" android:label="My Book List" android:name=".apps.booklist.BooklistNonBookstoreItemActivity"/>
+        <activity android:icon="@drawable/icon_booklist" android:label="My Book List" android:name=".apps.booklist.BookListItemActivity"/>
+        <activity android:icon="@drawable/icon_gpa_calculator" android:label="GPA Calculator" android:name=".apps.gpaCalculator.GpaCalculatorActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Calculate your GPA from projected grades."/>
+            <meta-data android:name="appid" android:value="nfegpa"/>
+            <meta-data android:name="analytics_id" android:value="nfegpa"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="gpa, calculator, grades, marks"/>
+        </activity>
+        <activity android:icon="@drawable/icon_sick_vacation" android:label="Individual Plan" android:name=".apps.sickVacation.IndividualPlanActivity"/>
+        <activity android:icon="@drawable/icon_sick_vacation" android:label="Plan Accrual at Date" android:name=".apps.sickVacation.PlanDateInfoActivity"/>
+        <activity android:icon="@drawable/icon_dining" android:label="Cannon Center Map" android:name=".apps.dining.CannonCenterMapActivity"/>
+        <activity android:icon="@drawable/icon_dining" android:label="Recipes" android:name=".apps.dining.RecipeListActivity"/>
+        <activity android:icon="@drawable/icon_dining" android:label="Recipe" android:name=".apps.dining.ViewRecipeActivity"/>
+        <activity android:icon="@drawable/icon_device_registration" android:label="View Device" android:name=".apps.deviceregistration.ViewDeviceActivity"/>
+        <activity android:label="Housing List" android:name=".apps.map.housing.google.HousingDisplayActivity"/>
+        <activity android:label="Housing List" android:name=".apps.map.housing.mapquest.HousingDisplayActivity"/>
+        <activity android:label="Building" android:name=".apps.map.buildings.mapquest.BuildingDisplayActivity"/>
+        <activity android:label="Vending Machines" android:name=".apps.map.vending.MachinesVendingActivity" android:noHistory="true" android:theme="@style/Theme.NoDisplay">
+            <meta-data android:name="@string/map_vending_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="@string/map_vending_activity_order" android:value="0"/>
+        </activity>
+        <activity android:label="Microwaves" android:name=".apps.map.vending.MicrowavesVendingActivity" android:noHistory="true" android:theme="@style/Theme.NoDisplay">
+            <meta-data android:name="@string/map_vending_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="@string/map_vending_activity_order" android:value="1"/>
+        </activity>
+        <activity android:label="Products" android:name=".apps.map.vending.ProductsVendingActivity">
+            <meta-data android:name="@string/map_vending_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="@string/map_vending_activity_order" android:value="2"/>
+        </activity>
+        <activity android:label="Product Types" android:name=".apps.map.vending.ProductTypesVendingActivity">
+            <meta-data android:name="@string/map_vending_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="@string/map_vending_activity_order" android:value="3"/>
+        </activity>
+        <activity android:name=".apps.map.classes.ClassesLoadingActivity" android:noHistory="true" android:theme="@style/Theme.NoDisplay"/>
+        <activity android:label="My Classes" android:name=".apps.map.classes.mapquest.CourseDisplayActivity"/>
+        <activity android:name=".apps.map.vending.display.google.VendingMachineDisplayActivity"/>
+        <activity android:name=".apps.map.vending.display.google.MicrowaveDisplayActivity"/>
+        <activity android:name=".apps.map.vending.display.mapquest.VendingMachineDisplayActivity"/>
+        <activity android:name=".apps.map.vending.display.mapquest.MicrowaveDisplayActivity"/>
+        <activity android:label="Machine Details" android:name=".apps.map.vending.display.VendingMachineDetailsActivity"/>
+        <activity android:name=".apps.map.vending.display.google.VendingItemDisplayActivity"/>
+        <activity android:name=".apps.map.vending.display.mapquest.VendingItemDisplayActivity"/>
+        <activity android:name=".apps.map.buildings.google.BuildingDisplayActivity"/>
+        <activity android:label="Map My Classes" android:name=".apps.map.classes.google.CourseDisplayActivity"/>
+        <activity android:name=".apps.coursecatalog.ViewDepartmentsActivity"/>
+        <activity android:name=".apps.coursecatalog.ViewCoursesActivity"/>
+        <activity android:name=".apps.coursecatalog.ViewCourseDetailsActivity"/>
+        <activity android:name=".apps.coursecatalog.ViewCourseSectionsActivity"/>
+        <activity android:name=".apps.coursecatalog.ViewSectionDetailsActivity"/>
+        <activity android:icon="@drawable/icon_byu_tv" android:label="Byu TV" android:name=".apps.media.ByuTvActivity"/>
+        <activity android:name=".apps.persondirectory.PersonDisplayActivity"/>
+        <activity android:icon="@drawable/icon_sandbox" android:label="Sandbox" android:name=".apps.sandbox.SandboxActivity">
+            <meta-data android:name="is_app" android:value="false"/>
+            <meta-data android:name="description" android:value="Dev Sandbox"/>
+            <meta-data android:name="appid" android:value="sandbox"/>
+            <meta-data android:name="analytics_id" android:value="sandbox"/>
+            <meta-data android:name="@string/app_categories" android:value="student,employee,faculty"/>
+        </activity>
+        <activity android:icon="@drawable/icon_sandbox" android:label="Test" android:name=".apps.sandbox.test.TestActivity">
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="description" android:value="Test Sandbox App"/>
+        </activity>
+        <activity android:icon="@drawable/icon_sandbox" android:label="Paging List View Test" android:name=".apps.sandbox.test.PagingListViewTest">
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="description" android:value="Test Sandbox App"/>
+        </activity>
+        <activity android:label="Login Test" android:name=".apps.sandbox.test.LoginTestActivity">
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="description" android:value="Test Sandbox App"/>
+            <meta-data android:name="appid" android:value="login-test"/>
+            <meta-data android:name="analytics_id" android:value="login-test"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+        </activity>
+        <activity android:label="Map Test" android:name=".apps.sandbox.test.MapTestActivity">
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+            <meta-data android:name="description" android:value="Test Sandbox App"/>
+        </activity>
+        <activity android:label="Class List" android:name=".apps.classroll.ClassRollActivity"/>
+        <activity android:label="View Student" android:name=".apps.classroll.ViewStudentActivity"/>
+        <activity android:label="App Search" android:name=".search.AppSearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/app_searchable"/>
+        </activity>
+        <activity android:name=".apps.cameras.RefreshingFeedActivity"/>
+        <activity android:label="View Calendar" android:name=".apps.campusCalendar.ViewCalendarActivity"/>
+        <activity android:name=".apps.campusCalendar.ViewEventActivity"/>
+        <activity android:label="Connectivity Check" android:name=".common.ConnectivityCheckingActivity" android:theme="@style/Theme.NoDisplay"/>
+        <activity android:name=".apps.campusCalendar.ViewAllCalendarsActivity"/>
+        <activity android:label="Business Card" android:name=".apps.businessCard.InformationToDisplayActivity"/>
+        <activity android:label="Rent Locker" android:name=".apps.lockerrental.RentLockerActivity"/>
+        <activity android:label="View Agreement" android:name=".apps.lockerrental.ViewAgreementActivity"/>
+        <activity android:label="Parking Lot" android:name=".apps.parking.google.ParkingLotDisplayActivity"/>
+        <activity android:label="Parking Lot" android:name=".apps.parking.mapquest.ParkingLotDisplayActivity"/>
+        <activity android:label="Paycheck Details" android:name=".apps.paycheck.PaycheckDetailActivity"/>
+        <activity android:label="Listing Details" android:name=".apps.map.housing.ListingDisplayActivity" android:theme="@style/Theme.Dialog"/>
+        <activity android:label="Filter Listings" android:name=".apps.map.housing.filters.FilterActivity" android:theme="@style/Theme.Dialog"/>
+        <activity android:icon="@drawable/icon_job_openings" android:label="Job Openings" android:name=".apps.jobopenings.JobOpeningsActivity_">
+            <meta-data android:name="is_app" android:value="false"/>
+            <meta-data android:name="description" android:value="View available campus job openings."/>
+            <meta-data android:name="appid" android:value="jobOpenings"/>
+            <meta-data android:name="analytics_id" android:value="jobOpenings"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="job, openings, offerings"/>
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_alumni_connect" android:label="Alumni Connect" android:name=".apps.alumniconnect.AlumniConnectActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Help BYU identify outstanding alumni"/>
+            <meta-data android:name="appid" android:value="alumni"/>
+            <meta-data android:name="analytics_id" android:value="alumni"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="alumni, connect"/>
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+        </activity>
+        <activity android:icon="@drawable/icon_cougar_cash" android:label="Cougar Cash" android:name=".apps.cougarcash.CougarCashActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="@string/cougar_cash_desc"/>
+            <meta-data android:name="appid" android:value="cougarCash"/>
+            <meta-data android:name="analytics_id" android:value="cougarCash"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="cougar, cash, signature, card, money, funds"/>
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+        </activity>
+        <activity android:label="Confirm Transaction" android:name=".apps.cougarcash.LegaleseActivity"/>
+        <activity android:icon="@drawable/ic_lab_computers" android:label="Lab Computers" android:name=".apps.labcomputers.LabComputersActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Find available on-campus computers"/>
+            <meta-data android:name="appid" android:value="labcomputers"/>
+            <meta-data android:name="analytics_id" android:value="labcomputers"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="lab,labs,campus,computer,computers"/>
+        </activity>
+        <activity android:name=".apps.labcomputers.LabComputersWebViewActivity"/>
+        <activity android:icon="@drawable/icon_information" android:label="BYU Operators" android:name=".apps.information.InformationActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Get in contact with BYU operators"/>
+            <meta-data android:name="appid" android:value="campusOperators"/>
+            <meta-data android:name="analytics_id" android:value="campusOperators"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="info,information,operator,operators"/>
+        </activity>
+        <activity android:icon="@drawable/icon_byu_translate" android:label="BYU Translate" android:name=".apps.external.ByuTranslateActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="For all your translating needs"/>
+            <meta-data android:name="appid" android:value="byuTranslate"/>
+            <meta-data android:name="analytics_id" android:value="byuTranslate"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_me"/>
+            <meta-data android:name="@string/search_keyword" android:value="translate,translator"/>
+        </activity>
+        <activity android:label="Job Openings Collection Factory" android:name=".apps.sandbox.test.JobOpeningCollectionFactoryActivity"/>
+        <activity android:label="Add Funds" android:name=".apps.cougarcash.AddFundsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="byusuite"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/icon_international_studies" android:label="International Study" android:name=".apps.external.InternationalStudiesActivity">
+            <meta-data android:name="is_app" android:value="true"/>
+            <meta-data android:name="description" android:value="Expand your world and start your adventure abroad today."/>
+            <meta-data android:name="appid" android:value="internationalStudies"/>
+            <meta-data android:name="analytics_id" android:value="internationalStudies"/>
+            <meta-data android:name="@string/app_categories" android:value="@string/app_category_campus"/>
+            <meta-data android:name="@string/search_keyword" android:value="international,studies"/>
+        </activity>
+        <activity android:icon="@drawable/icon_job_openings" android:label="Job Openings" android:name=".apps.jobopenings.JobOpeningsActivity">
+            <meta-data android:name="@string/sandbox_activity_key" android:value="@string/boolean_true"/>
+        </activity>
+    </application>
+</manifest>

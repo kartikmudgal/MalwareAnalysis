@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.toplivestats" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <permission android:name="com.toplivestats.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.toplivestats.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/TLS_Football" android:name="md5d5eb68299c4202bc1dfaa9bfbdd59202.MainApplication" android:theme="@style/MainTheme">
+        <receiver android:name="MyReceiver">
+            <intent-filter>
+                <action android:name="com.toplivestats.TlsPushNotificationCanceledReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="md5d5eb68299c4202bc1dfaa9bfbdd59202.TlsGcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.toplivestats"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.toplivestats"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.toplivestats"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md5d5eb68299c4202bc1dfaa9bfbdd59202.PushNotificationsService"/>
+        <receiver android:enabled="true" android:name="md5e4b976675a7c842e0e017d2fea3f49cc.SubscritionUpdatedReceiver">
+            <intent-filter>
+                <action android:name="SubscritionUpdatedReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="md5e4b976675a7c842e0e017d2fea3f49cc.FavPushUpdatedReceiver">
+            <intent-filter>
+                <action android:name="FavPushUpdatedReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="md5e4b976675a7c842e0e017d2fea3f49cc.LogosDownloadedReceiver">
+            <intent-filter>
+                <action android:name="LogosDownloadedReceiver"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="md5e4b976675a7c842e0e017d2fea3f49cc.TlsPushNotificationCanceledReceiver">
+            <intent-filter>
+                <action android:name="TlsPushNotificationCanceledReceiver"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="md5ede5e23fe37b355739c95d2a21c97505.SyncIntentService"/>
+        <activity android:label="PlayerActivity" android:name="md563b4c03c5efad0d773616ee308796cb6.PlayerActivity" android:screenOrientation="nosensor"/>
+        <activity android:name="md563b4c03c5efad0d773616ee308796cb6.SplashScreenActivity" android:screenOrientation="nosensor" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Match Day" android:name="md563b4c03c5efad0d773616ee308796cb6.HomeActivity" android:screenOrientation="nosensor"/>
+        <activity android:label="Match Details" android:name="md563b4c03c5efad0d773616ee308796cb6.MatchActivity" android:screenOrientation="nosensor"/>
+        <activity android:label="Competition Detail" android:name="md563b4c03c5efad0d773616ee308796cb6.CompetitionActivity" android:screenOrientation="nosensor"/>
+        <activity android:label="Find Team" android:name="md563b4c03c5efad0d773616ee308796cb6.FindTeam"/>
+        <activity android:label="Team Details" android:name="md563b4c03c5efad0d773616ee308796cb6.TeamActivity" android:screenOrientation="nosensor"/>
+        <provider android:authorities="com.toplivestats.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+        <meta-data android:name="android.support.VERSION" android:value="25.4.0"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.toplivestats.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

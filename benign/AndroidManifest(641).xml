@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.joongang.jmedia.xl" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.joongang.jmedia.xl.joinstablet.AppInstance" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.joongang.jmedia.xl.joinstablet.InitActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.home.HomeActivity" android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.home.DetailActivity" android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.home.MoreActivity" android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:name="com.joongang.jmedia.xl.joinstablet.login.LoginActivity" android:theme="@style/AppTheme.Toolbar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.joongang.jmedia.xl.joinstablet.articles.ArticleActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.joongang.jmedia.xl.joinstablet.articles.WebViewActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.joongang.jmedia.xl.joinstablet.articles.ArticleWebViewActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.joongang.jmedia.xl.joinstablet.articles.CommentLoginActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.joongang.jmedia.xl.joinstablet.photopop.PhotoActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.papermain.PaperViewContentActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.search.SearchActivity" android:theme="@style/Theme.AppCompat.NoActionBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.ctrl.OldJoinsActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.paper.PaymentActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.detail.OnairActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.joongang.jmedia.xl.joinstablet.old.modul.scrap.ScrapActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.joongang.jmedia.xl.joinstablet.piki.media.VideoPlayerActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.joongang.jmedia.xl.joinstablet.piki.PikiActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.joongang.jmedia.xl.joinstablet.piki.WebviewActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.joongang.jmedia.xl.joinstablet.gcm.NotificationActivity" android:showOnLockScreen="true" android:theme="@style/TransparentTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibDialogActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibWebBrowserActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mocoplex.adlib.AdlibVideoPlayer" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:name="com.joongang.jmedia.xl.joinstablet.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.joongang.jmedia.xl"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.joongang.jmedia.xl.joinstablet.gcm.GcmIntentService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="053db05fef9020ac30fc9d00cf35507034ad0dee"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

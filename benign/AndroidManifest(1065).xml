@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.SandJ.privatecloud.yinsh" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="Android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.SEND"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.sjCorp.catalogviewer_plus.permission.C2D_MESSAGE"/>
+    <permission android:name="com.sjCorp.catalogviewer_plus.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <application android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_display_name" android:largeHeap="true" android:name="com.sj.catalogviewer.ui.GlobalVariable" android:theme="@style/noneTheme">
+        <activity android:label="@string/title_activity_main" android:name="com.sj.catalogviewer.ui.main.Activity_oWelcome_page" android:screenOrientation="portrait" android:theme="@style/myAppTheme4">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.sj.catalogviewer.ui.main.Activity_oMain_Page" android:theme="@style/noneTheme"/>
+        <activity android:name="com.sj.catalogviewer.ui.main.Activity_oChose_Language" android:theme="@style/itkt_style"/>
+        <activity android:name="com.sj.catalogviewer.ui.main.Activity_oChose_Company" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.sj.catalogviewer.ui.photo.Activity_Image_Single" android:theme="@style/noneTheme"/>
+        <activity android:name="com.sj.catalogviewer.ui.photo.Activity_Image_Show"/>
+        <activity android:name="com.sj.catalogviewer.ui.photo.Activity_Image_List" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name="com.sj.catalogviewer.ui.video.Activity_Video_List"/>
+        <activity android:name="com.sj.catalogviewer.ui.catalog.Activity_Catalog_List"/>
+        <activity android:name="com.sj.catalogviewer.ui.tree.Activity_oTree_Category" android:theme="@style/AppTheme7"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.sj.catalogviewer.ui.video.Activity_Video_Single" android:theme="@style/noneTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.sj.catalogviewer.ui.video.Activity_Video_Play"/>
+        <activity android:name="com.sj.catalogviewer.ui.catalog.Activity_Catalog_Single"/>
+        <activity android:name="com.sj.catalogviewer.ui.catalog.Activity_Catalog_Single_Tab"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.sj.catalogviewer.ui.search.Activity_oSearch_Tab"/>
+        <activity android:name="com.sj.catalogviewer.ui.catalog.Activity_Catalog_Read" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.sj.catalogviewer.ui.webview.Activity_WebView"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.sj.catalogviewer.ui.webview.OnlineActivity"/>
+        <activity android:name="com.sj.catalogviewer.ui.search.Activity_oSearch_Result" android:screenOrientation="portrait"/>
+        <activity android:name="com.sj.catalogviewer.ui.search.Activity_oSearch" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name="com.sj.catalogviewer.ui.profile.Activity_oProfile_Page" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.sj.catalogviewer.lib.Catalog_Videoplay" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.sj.catalogviewer.ui.Activity_File_Manage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.sj.catalogviewer.ui.main.Activity_Login_Dialog" android:theme="@style/Transparent1" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.sj.catalogviewer.lib"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.sj.catalogviewer.lib.MyGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.sj.catalogviewer.lib.GcmInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.sj.catalogviewer.lib.GcmRegistrationIntentService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.SandJ.privatecloud.yinsh.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+    </application>
+</manifest>

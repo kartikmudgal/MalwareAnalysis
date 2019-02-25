@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.smileradar.doc" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <permission android:name="com.smileradar.doc.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="com.smileradar.doc.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/logo" android:label="@string/app_name" android:name="com.smileradar.doc.DoctorApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyAu8MzKA4h7IV-IBw-8MSREoev0QPFyszM"/>
+        <activity android:label="@string/app_name" android:name="com.smileradar.doc.SplashActivity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.smileradar.doc.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.ProfileActivty" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.OptionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.SigupActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.cropper.CropImage" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.GenerateBarCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.PatientDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.AlbumAcceptActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.AlbumDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.smileradar.doc.OptionMenuActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.smileradar.doc.NoteDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.smileradar.doc.AddNotes" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.smileradar.doc.PatientNotesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.SlideShowActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.EditProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.CreateBannerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.BannerPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.AddBannerActivty" android:screenOrientation="portrait"/>
+        <activity android:name="com.smileradar.doc.ChangePassword" android:screenOrientation="portrait"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.mlsmooditt"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.smileradar.doc.GCMIntentService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.smileradar.doc"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.smileradar.doc.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

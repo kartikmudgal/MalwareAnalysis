@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.quindev.dillonmusic">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="MyApplication">
+        <activity android:label="@string/app_name" android:name=".HomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".BrowseOurStoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".VideoClipActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".EmailUsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".CallUsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".FindUsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".HelpAndInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ScheduleRepaireActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".MapActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".CategoryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".BrandActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".SocialActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".FagActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".AboutUsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".InfoActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".ProductsActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".ProductActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".LoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".ShoppingCartActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".SignupActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".LargerIconActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name=".ShippingMethodsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name=".CreditCardInfoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".ShippingAddressInfoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name=".ProductDescriptionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".OrderConfirmationActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".OrderReceivedActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".SocialWebActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".OrderTrackingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.paypal.android.MEP.PayPalActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name=".ContactUsActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

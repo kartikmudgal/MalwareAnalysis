@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="es.roid.and.widgets.rss">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <provider android:authorities="es.roid.and.widgets.rss" android:name=".providers.RSSProvider"/>
+        <service android:name=".services.UpdateService"/>
+        <receiver android:label="@string/app_name" android:name=".AppWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget"/>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:label="@string/app_name" android:name=".DetailsActivity" android:theme="@android:style/Theme.Dialog"/>
+    </application>
+</manifest>

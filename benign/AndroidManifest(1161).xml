@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.strong.love_edge8" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.strong.love_edge8.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.strong.love_edge8.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher1" android:label="@string/iw" android:name="com.common.data.app.EasyController" android:supportsRtl="true" android:theme="@style/lg">
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <service android:enabled="true" android:name="com.baidu.location.f" android:process=":remote"/>
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="@string/j_"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/k9"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/n"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.common.tool.wallpaper.Activity_CategoryItem" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.common.tool.wallpaper.Activity_CategoryItem_Theme" android:theme="@style/g5"/>
+        <activity android:name="com.common.tool.wallpaper.SlideImageActivity" android:screenOrientation="portrait" android:theme="@style/di"/>
+        <activity android:name="com.common.activity.PrivacyPolicyActivity" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.common.tool.wallpaper.PinchZoom" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:icon="@drawable/launcher_theme_ic_app_swap_wallpaper" android:label="@string/gb" android:name="com.strong.edge8.MaterialDesign.NavigationDrawerMain" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:excludeFromRecents="true" android:label="@string/iw" android:name="com.strong.edge8.MainActivity" android:screenOrientation="portrait" android:theme="@style/g5">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/weather_enter" android:label="@string/h1" android:name="com.common.tool.weather.CitiesWeatherActivity" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:name="com.common.tool.weather.SelectCityActivity" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:excludeFromRecents="true" android:label="@string/iw" android:launchMode="singleTask" android:name="com.strong.edge8.EdgeActivity" android:screenOrientation="portrait" android:theme="@style/dk"/>
+        <activity android:icon="@drawable/clean_icon" android:label="@string/dx" android:name="com.common.tool.clean.CleanActivity" android:screenOrientation="portrait" android:theme="@style/dk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/iw" android:name="com.common.activity.AppEdgeActivity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/iw" android:name="com.common.activity.ContactActivity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/iw" android:name="com.common.activity.PeopleDetailSetting" android:screenOrientation="portrait" android:theme="@style/g5" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.common.data.app.OtherAppsActivity" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:label="@string/iw" android:name="com.common.activity.EdgePanelsActivity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:label="@string/iw" android:name="com.strong.edge8.ColorNotificationActivity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:label="@string/iw" android:name="com.common.tool.feedback.FeedbackActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.common.tool.feedback.FeedbackRecordActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/iw" android:name="com.common.activity.IconSettingActivity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:label="@string/iw" android:name="com.common.activity.Effect_select_activity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:label="@string/iw" android:name="com.common.activity.Activity_support_activity" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <activity android:name="com.common.activity.HelpActivity" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:name="com.common.activity.AppsEdgeSetting" android:screenOrientation="portrait" android:theme="@style/lg"/>
+        <activity android:name="com.common.tool.gift.MainActivityGift" android:screenOrientation="portrait" android:theme="@style/dk"/>
+        <service android:name="com.strong.edge8.EdgePeopleService"/>
+        <service android:exported="false" android:name="com.strong.edge8.daemon.DaemonService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.strong.edge8.daemon.JobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <provider android:authorities="com.strong.love_edge8.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/d"/>
+        </provider>
+        <service android:name="com.common.tool.music.service.PlayService"/>
+        <receiver android:name="com.common.tool.music.receiver.DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.common.tool.music.receiver.RemoteControlReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.common.tool.music.receiver.StatusBarReceiver">
+            <intent-filter>
+                <action android:name="com.common.tool.music.STATUS_BAR_ACTIONS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.strong.edge8.lock.receiver.AutoStartReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.common.tool.music.activity.SplashActivity" android:screenOrientation="portrait" android:theme="@style/dl"/>
+        <activity android:label="@string/iw" android:name="com.common.tool.music.activity.MusicActivity" android:screenOrientation="portrait" android:theme="@style/dl"/>
+        <activity android:name="com.common.tool.music.activity.PlaylistActivity" android:screenOrientation="portrait" android:theme="@style/dl"/>
+        <activity android:name="com.common.tool.music.activity.SearchMusicActivity" android:screenOrientation="portrait" android:theme="@style/dl"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="d50030308714c16ac2390d6500c419331fb7e4cf"/>
+        <service android:label="@string/iw" android:name="com.lulingfeng.edgelighting.NotificationService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.lulingfeng.edgelighting.EdgeLightingSettingActivity" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.lulingfeng.edgelighting.RoundCornerSettingActivity" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.lulingfeng.edgelighting.ForeHeadSettingActivity" android:theme="@style/g5"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/l4"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.strong.love_edge8.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.strong.love_edge8.crashlyticsinitprovider" android:exported="false" android:initOrder="100" android:name="com.crashlytics.android.CrashlyticsInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.strong.love_edge8"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.strong.love_edge8.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

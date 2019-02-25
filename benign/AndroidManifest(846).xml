@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.musixmatch.android.lyrify" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:glEsVersion="0x00010001"/>
+    <original-package android:name="com.musixmatch.android.lyrify"/>
+    <permission android:name="com.musixmatch.android.lyrify.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.musixmatch.android.lyrify.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <permission android:name="com.musixmatch.android.lyrify.permission.SCROBBLET_PRIVATE_SERVICE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.musixmatch.android.lyrify.permission.SCROBBLET_PRIVATE_SERVICE"/>
+    <permission android:description="@string/permission_write" android:label="@string/permission_write" android:name="com.musixmatch.android.lyrify.permission.WRITE_ENTITY" android:protectionLevel="normal"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <application android:allowBackup="false" android:allowTaskReparenting="true" android:icon="@drawable/mxm_icon_manifest" android:label="@string/musicbrowserlabel" android:name="com.designfuture.music.global.Global" android:theme="@style/Theme.Music">
+        <meta-data android:name="com.google.android.wearable.beta.app" android:resource="@xml/mxm_wear"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="android.app.default_searchable" android:value="com.designfuture.music.ui.phone.SearchTextLyricActivity"/>
+        <service android:name="com.designfuture.music.util.openudid.OpenUDID_service">
+            <intent-filter>
+                <action android:name="org.OpenUDID.GETUDID"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.designfuture.music.service.WearDataService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.designfuture.music.receiver.AndroidWearReceiver">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="com.musixmatch.android.lyrify_ACTION_DISMISS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.designfuture.music.service.AndroidWearService">
+            <intent-filter>
+                <action android:name="AndroidWearService.ACTION_DISMISS_PLAYER_NOTIFICATION"/>
+                <action android:name="AndroidWearService.ACTION_DISMISS_SCROBBLING_NOTIFICATION"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.ﮈ"/>
+        <service android:name="o.Ÿ"/>
+        <service android:name="o.ﻥ"/>
+        <service android:name="com.designfuture.music.service.MusicIDService">
+            <intent-filter>
+                <action android:name="com.designfuture.music.service.MusicIDService.CONFIGURE"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.START_MUSICID"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.STOP_MUSICID"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.START_ID_NOW"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.INTERRUPT"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.ť"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.AndroidMusicReceiver">
+            <intent-filter>
+                <action android:name="com.android.music.metachanged"/>
+                <action android:name="com.android.music.playstatechanged"/>
+                <action android:name="com.android.music.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.AndroidMusicJRTStudioBuildReceiver">
+            <intent-filter>
+                <action android:name="com.jrtstudio.music.metachanged"/>
+                <action android:name="com.jrtstudio.music.playstatechanged"/>
+                <action android:name="com.jrtstudio.music.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.SpotifyMusicReceiver">
+            <intent-filter>
+                <action android:name="com.spotify.mobile.android.playbackstatechanged"/>
+                <action android:name="com.spotify.mobile.android.queuechanged"/>
+                <action android:name="com.spotify.mobile.android.metadatachanged"/>
+                <action android:name="com.spotify.music.playbackstatechanged"/>
+                <action android:name="com.spotify.music.queuechanged"/>
+                <action android:name="com.spotify.music.metadatachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.RdioMusicReceiver">
+            <intent-filter>
+                <action android:name="com.rdio.android.playstatechanged"/>
+                <action android:name="com.rdio.android.metachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.HeroMusicReceiver">
+            <intent-filter>
+                <action android:name="com.htc.music.metachanged"/>
+                <action android:name="com.htc.music.playbackcomplete"/>
+                <action android:name="com.htc.music.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.WinampMusicReceiver">
+            <intent-filter>
+                <action android:name="com.nullsoft.winamp.metachanged"/>
+                <action android:name="com.nullsoft.winamp.playbackcomplete"/>
+                <action android:name="com.nullsoft.winamp.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.MyTouch4GMusicReceiver">
+            <intent-filter>
+                <action android:name="com.real.IMP.metachanged"/>
+                <action android:name="com.real.IMP.playbackcomplete"/>
+                <action android:name="com.real.IMP.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.MIUIMusicReceiver">
+            <intent-filter>
+                <action android:name="com.miui.player.metachanged"/>
+                <action android:name="com.miui.player.playstatechanged"/>
+                <action android:name="com.miui.player.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.SEMCMusicReceiver">
+            <intent-filter>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PLAYBACK_PLAY"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PLAYBACK_PAUSE"/>
+                <action android:name="com.sonyericsson.music.metachanged"/>
+                <action android:name="com.sonyericsson.music.playbackcomplete"/>
+                <action android:name="com.sonyericsson.music.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.WalkmanReceiver">
+            <intent-filter>
+                <action android:name="com.sonyericsson.mediaproxy.playerservice.playercallbacks.ACTION_PLAYER_STATE"/>
+                <action android:name="com.sonyericsson.music.TRACK_COMPLETED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_SKIPPED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_PAUSED"/>
+                <action android:name="com.sonyericsson.music.playbackcontrol.ACTION_TRACK_STARTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.SamsungMusicReceiver">
+            <intent-filter>
+                <action android:name="com.samsung.sec.android.MusicPlayer.metachanged"/>
+                <action android:name="com.samsung.sec.android.MusicPlayer.playbackcomplete"/>
+                <action android:name="com.samsung.sec.android.MusicPlayer.playstatechanged"/>
+                <action android:name="com.samsung.music.metachanged"/>
+                <action android:name="com.samsung.music.playbackcomplete"/>
+                <action android:name="com.samsung.music.playstatechanged"/>
+                <action android:name="com.samsung.sec.metachanged"/>
+                <action android:name="com.samsung.sec.playbackcomplete"/>
+                <action android:name="com.samsung.sec.playstatechanged"/>
+                <action android:name="com.samsung.sec.android.metachanged"/>
+                <action android:name="com.samsung.sec.android.playbackcomplete"/>
+                <action android:name="com.samsung.sec.android.playstatechanged"/>
+                <action android:name="com.samsung.MusicPlayer.metachanged"/>
+                <action android:name="com.samsung.MusicPlayer.playbackcomplete"/>
+                <action android:name="com.samsung.MusicPlayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.ScrobbleDroidMusicReceiver">
+            <intent-filter>
+                <action android:name="net.jjc1138.android.scrobbler.action.MUSIC_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.SLSAPIReceiver">
+            <intent-filter>
+                <action android:name="com.adam.aslfms.notify.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.LastFmAPIReceiver">
+            <intent-filter>
+                <action android:name="fm.last.android.metachanged"/>
+                <action android:name="fm.last.android.playbackpaused"/>
+                <action android:name="fm.last.android.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.LgMusicReceiver">
+            <intent-filter>
+                <action android:name="com.lge.music.metachanged"/>
+                <action android:name="com.lge.music.playstatechanged"/>
+                <action android:name="com.lge.music.endofplayback"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.AmazonMusicReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.mp3.metachanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.PlayerProReceiver">
+            <intent-filter>
+                <action android:name="com.tbig.playerprotrial.metachanged"/>
+                <action android:name="com.tbig.playerprotrial.playstatechanged"/>
+                <action android:name="com.tbig.playerprotrial.playbackcomplete"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.RocketPlayerReceiver">
+            <intent-filter>
+                <action android:name="com.jrtstudio.AnotherMusicPlayer.metachanged"/>
+                <action android:name="com.jrtstudio.AnotherMusicPlayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.LayaMusicReceiver">
+            <intent-filter>
+                <action android:name="com.mjc.mediaplayer.metachanged"/>
+                <action android:name="com.mjc.mediaplayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.PerfectMediaMusicReceiver">
+            <intent-filter>
+                <action android:name="com.pliyr.musicmobi.pixi.musicplayer.metachanged"/>
+                <action android:name="com.pliyr.musicmobi.pixi.musicplayer.playstatechanged"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.musixmatch.android.services.ScrobblerService">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.services.RemoteScrobblingService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="o.t" android:process=":ultron"/>
+        <receiver android:name="com.musixmatch.android.receivers.UltronReceiver" android:process=":ultron">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify_ACTION_DISMISS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/musicbrowserlabel" android:name="com.designfuture.music.ui.phone.UrlCatcherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.google.android.apps.plus.VIEW_DEEP_LINK"/>
+                <data android:scheme="vnd.google.deeplink"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.facebook.application.131314396964274"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="lyr.cx" android:pathPrefix="/t/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmt.ch" android:pathPrefix="/t/" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="lyrics.musixmatch.com" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/musicbrowserlabel" android:name="com.designfuture.music.ui.phone.MXMActionCatcherActivity" android:theme="@style/Theme.Music.Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="mxm"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="o.ﻡ" android:theme="@style/Theme.Music.SpotifyConnect"/>
+        <activity android:launchMode="singleInstance" android:name="o.ｕ" android:theme="@style/Theme.Music.ShareTheLove"/>
+        <activity android:allowTaskReparenting="false" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="o.ᚁ" android:taskAffinity="com.task.mxm.lockscreen" android:theme="@style/Theme.MxMLockscreen"/>
+        <activity android:excludeFromRecents="true" android:name="o.忄" android:noHistory="true" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:label="@string/actionbar_title_dashboard" android:launchMode="singleTop" android:name="com.designfuture.music.ui.phone.DashBoardActivity" android:theme="@style/Theme.Music.Dashboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MUSIC_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="o.ℓ" android:theme="@style/Theme.Music.LyricsCard"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/actionbar_title_syncing_lyrics" android:name="o.ﾜ" android:theme="@style/Theme.Music.OverlayActionBar"/>
+        <activity android:label="@string/actionbar_title_edit_song_info" android:name="o.Ỳ" android:theme="@style/Theme.Music.FixMetadata" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/actionbar_title_settings" android:name="o.ｮ"/>
+        <activity android:label="@string/actionbar_title_notification_settings" android:name="o.ﮋ"/>
+        <activity android:label="" android:name="o.Ỵ"/>
+        <activity android:label="@string/actionbar_title_share_options" android:name="o.ｫ"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/actionbar_title_media_scanning" android:name="o.ﺏ" android:theme="@style/Theme.Music.Fullscreen"/>
+        <activity android:exported="true" android:label="@string/actionbar_title_market" android:name="com.designfuture.music.ui.phone.MarketActivity" android:screenOrientation="sensorPortrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.musixmatch.purchase"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="mxm-market"/>
+                <data android:host="android.musixmatch.com"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/actionbar_title_mxm_login" android:name="o.אּ" android:theme="@style/Theme.Music.MXMLogin" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/actionbar_title_login_twitter" android:launchMode="singleInstance" android:name="com.designfuture.music.ui.phone.TwitterOAuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mxmplayer" android:scheme="twitter-oauth"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.designfuture.music.ui.phone.AudioPreviewActivity" android:theme="@style/MXMPreview">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:host="media"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/ogg"/>
+                <data android:mimeType="application/x-ogg"/>
+                <data android:mimeType="application/itunes"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:exported="true" android:label="@string/musicbrowserlabel" android:launchMode="singleTask" android:name="com.designfuture.music.ui.phone.PLBLActivity" android:theme="@style/Theme.Music.PLBL">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.designfuture.music.ui.phone.DashBoardActivity"/>
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.PLAYBACK_VIEWER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="false" android:exported="true" android:label="@string/empty_string" android:name="com.designfuture.music.ui.phone.LBLActivity" android:theme="@style/Theme.Music.XLBL" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="true" android:label="@string/empty_string" android:launchMode="singleTop" android:name="com.musixmatch.android.activities.LyricsActivity" android:theme="@style/Theme.Music.SDK" android:windowSoftInputMode="adjustPan"/>
+        <activity android:exported="true" android:label="@string/empty_string" android:launchMode="singleTop" android:name="com.designfuture.music.ui.phone.ExternalNotificationActivity" android:theme="@style/Theme.Music.Scrobbler" android:windowSoftInputMode="adjustPan"/>
+        <activity android:excludeFromRecents="false" android:exported="true" android:label="@string/empty_string" android:name="com.designfuture.music.ui.phone.BLBLActivity" android:theme="@style/Theme.Music.XLBL" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/empty_string" android:name="o.ᔫ" android:theme="@style/Theme.Music.OverlayActionBar"/>
+        <activity android:label="@string/empty_string" android:name="o.Ḻ"/>
+        <activity android:label="@string/actionbar_title_search_fingerprint" android:launchMode="singleTask" android:name="com.designfuture.music.ui.phone.SearchLyricActivity" android:parentActivityName="com.designfuture.music.ui.phone.DashBoardActivity" android:theme="@style/Theme.Music.MusicID" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.designfuture.music.ui.phone.DashBoardActivity"/>
+            <intent-filter>
+                <action android:name="com.googlenow.actions.START_MUSICID"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/actionbar_title_search_text" android:launchMode="singleTask" android:name="com.designfuture.music.ui.phone.SearchTextLyricActivity" android:theme="@style/Theme.Music.Search" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH"/>
+                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.MEDIA_SEARCH"/>
+                <action android:name="com.google.android.gms.actions.SEARCH_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="com.designfuture.music.ui.phone.AlbumDetailActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.musixmatch.cursor.dir/track"/>
+                <data android:mimeType="vnd.musixmatch.cursor.dir/album"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/actionbar_title_eq" android:name="o.ᴫ" android:screenOrientation="sensorPortrait"/>
+        <receiver android:name="com.designfuture.music.MediaButtonIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="o.ᒉ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ᓗ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ᐳ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ᓾ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ᐸ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ᒋ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ऽ" android:theme="@style/MXMDialog"/>
+        <activity android:exported="false" android:name="o.ἶ"/>
+        <activity android:exported="false" android:name="o.ﺣ" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:exported="false" android:name="o.ᚆ" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:exported="false" android:name="o.ἷ" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:exported="false" android:name="o.č" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="o.ƫ" android:theme="@style/Theme.Music.XLBL"/>
+        <service android:exported="true" android:icon="@drawable/mxm_icon_manifest" android:label="@string/daydream_player_title" android:name="com.designfuture.music.service.daydream.PlayerDream" android:permission="android.permission.BIND_DREAM_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.designfuture.music.MediaPlaybackService" android:process=":media"/>
+        <receiver android:label="@string/appwidget_search" android:name="com.designfuture.music.appwidget.AppWidgetSearch">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_search" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/appwidget_player4x1_label" android:name="com.designfuture.music.appwidget.AppWidgetPlayer4x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_player_4x1" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/appwidget_player4x2_label" android:name="com.designfuture.music.appwidget.AppWidgetPlayer4x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_player_4x2" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/appwidget_player4x4_label" android:name="com.designfuture.music.appwidget.AppWidgetPlayer4x4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_player_4x4" android:value="player_controller"/>
+        </receiver>
+        <receiver android:label="@string/appwidget_musicid_icon" android:name="com.designfuture.music.appwidget.AppWidgetFingerprintIcon">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.WIDGET_START_MUSICID_ICON"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/fingerprint_icon_appwidget" android:value="fingerprint"/>
+        </receiver>
+        <receiver android:label="@string/appwidget_musicid_label" android:name="com.designfuture.music.appwidget.AppWidgetFingerprint">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.designfuture.music.appwidget.AppWidgetFingerprint.START_MUSICID_PERMISSION_AWARE"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.NO_MIC"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.NO_CONNECTION"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.NO_GN_CONFIG"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.ERROR_RECORDER_INIT"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.WIDGET_START_MUSICID"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.RECORD_START"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.RECORD_NEW_CHUNK"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.RECORD_INTERUPTED"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_START"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_ERROR"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_NO_RESULT"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_PROGRESS"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_RESULT"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_SEARCH_LYRICS"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_RESULT_WIDGET"/>
+                <action android:name="com.designfuture.music.service.MusicIDService.GN_REQUEST_INTERRUPTED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/fingerprint_appwidget" android:value="fingerprint"/>
+        </receiver>
+        <provider android:authorities="com.musixmatch.android.lyrify" android:name="o.ẗ" android:writePermission="com.musixmatch.android.lyrify.permission.WRITE_ENTITY"/>
+        <receiver android:name="com.designfuture.music.receiver.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.musixmatch.android.lyrify"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="o.ɜ"/>
+        <service android:name="com.designfuture.music.service.SearchMacroService"/>
+        <service android:name="o.כֿ"/>
+        <service android:name="o.ﻤ"/>
+        <service android:name="o.ｬ"/>
+        <service android:name="o.ｖ"/>
+        <service android:name="o.ƒ"/>
+        <service android:name="com.designfuture.music.service.TrackService">
+            <intent-filter>
+                <action android:name="com.musixmatch.android.lyrify.TrackService.ACTION_MISSING_LYRICS"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.ﾋ"/>
+        <service android:name="o.ｺ"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/musicbrowserlabel"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider131314396964274" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="Add lyrics" android:name="o.Ṫ" android:theme="@style/Theme.Music.AddLyrics" android:windowSoftInputMode="adjustResize"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.designfuture.music.api.MXMInstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="9b5427800c610ad0ce9963e6f20d9bfed76af0b0"/>
+        <service android:exported="false" android:name="o.ｆ"/>
+        <service android:exported="false" android:name="o.ｴ"/>
+        <service android:name="o.ﾐ"/>
+        <service android:name="o.ｉ"/>
+        <activity android:name="com.google.android.gms.tagmanager.PreviewActivity" android:noHistory="true">
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.musixmatch.android.lyrify"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="o.ﾘ"/>
+        <activity android:name="o.ﺔ" android:theme="@style/Theme.Music.Profile"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="o.ゞ" android:noHistory="true" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/nowplaying_title" android:name="o.ĉ"/>
+        <activity android:label="@string/actionbar_title_login_spotify" android:launchMode="singleInstance" android:name="o.ﾏ" android:theme="@style/Theme.Music.Spotify"/>
+        <service android:exported="false" android:name="o.ai" android:process=":media"/>
+        <receiver android:enabled="true" android:name="com.designfuture.music.util.captcha.CaptchaReceiver">
+            <intent-filter>
+                <action android:name="CaptchaReceiver.ACTION_NOTIFICATION_CLICK"/>
+                <action android:name="CaptchaReceiver.ACTION_DIALOG_CLICK"/>
+                <action android:name="CaptchaReceiver.ACTION_NOTIFICATION_DISMISS"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/sidebar_spotify" android:name="o.ｚ"/>
+        <service android:exported="false" android:name="o.v"/>
+        <service android:enabled="true" android:exported="true" android:name="com.designfuture.music.scrobbler.notifications.MXMNotificationListenerService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":notifications">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service android:name="o.ｔ"/>
+        <activity android:label="" android:launchMode="singleTask" android:name="o.ῗ" android:theme="@style/Theme.Music.FloatingPermission"/>
+        <activity android:label="" android:name="o.ƨ" android:theme="@style/Theme.Music.WhatsNew"/>
+        <activity android:exported="false" android:name="o.ᒍ" android:theme="@style/MXMDialog"/>
+        <provider android:authorities="com.musixmatch.android.lyrify.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="o.ᔉ">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_path"/>
+        </provider>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="o.ܬ" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="o.ｱ" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:exported="false" android:name="o.Ⅴ" android:theme="@style/MXM.Theme.Translucent.Dialog"/>
+        <activity android:exported="false" android:label="@string/select_language_title" android:name="o.ﾗ" android:theme="@style/Theme.Music"/>
+        <service android:exported="false" android:name="o.ﾚ"/>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_abc8hX9AH5IYMS62exmG2kidqwcPmx01"/>
+        <receiver android:name="com.musixmatch.android.receivers.MyPackageReplacedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="instal_api_key" android:value="631647fe-4b19-11e4-b79f-bc764e102d37"/>
+        <service android:exported="false" android:name="o.ᖩ"/>
+        <service android:enabled="true" android:name="com.musixmatch.chromecast.service.ChromecastService" android:process=":media"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <provider android:authorities="com.musixmatch.android.lyrify.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="true" android:name="com.google.android.gms.appinvite.PreviewActivity" android:theme="@style/Theme.AppInvite.Preview">
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.musixmatch.android.lyrify"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+    </application>
+</manifest>

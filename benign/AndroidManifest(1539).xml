@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="net.workoutinc.butt_exercises_workouts" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="net.workoutinc.butt_exercises_workouts.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="net.workoutinc.butt_exercises_workouts.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="net.workoutinc.butt_exercises_workouts.MyApplication" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/App_splitEvent">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="PlatformCode" android:value="32"/>
+        <meta-data android:name="DebugMode" android:value="false"/>
+        <meta-data android:name="ServerBaseUrl" android:value="https://services.oneothergame.com"/>
+        <meta-data android:name="Analytics Platform1" android:value="FRTRD23RHNYSCWRRXD55"/>
+        <meta-data android:name="Analytics Platform2" android:value="UA-76310164-5"/>
+        <meta-data android:name="Crosspromotion AppID" android:value="your value"/>
+        <meta-data android:name="Crosspromotion Signature" android:value="your value"/>
+        <meta-data android:name="Rewarded AppID" android:value="your value"/>
+        <meta-data android:name="Rewarded Signature" android:value="your value"/>
+        <meta-data android:name="Log_Print" android:value="-1"/>
+        <meta-data android:name="More_App_web" android:value="market://dev?id=11704737378511555683"/>
+        <meta-data android:name="Phone Banner" android:value="DFP-/50170743/OOG106GP-Phone-Banner-ID1,FAN_NATIVE-515107105511156_545005445854655,DFP-/50170743/OOG106GP-Phone-Banner-ID3,DFP-/50170743/OOG106GP-Phone-Banner-ID4"/>
+        <meta-data android:name="Pad Banner" android:value="DFP-/50170743/OOG106GP-Tablet-Banner-ID1,FAN_NATIVE-515107105511156_545005692521297,DFP-/50170743/OOG106GP-Tablet-Banner-ID3,DFP-/50170743/OOG106GP-Tablet-Banner-ID4"/>
+        <meta-data android:name="Phone Interstitial" android:value="DFP-/50170743/OOG106GP-Phone-Interstitial-ID1,FAN-515107105511156_515107462177787,DFP-/50170743/OOG106GP-Phone-Interstitial-ID3,FAN-515107105511156_545005789187954"/>
+        <meta-data android:name="Pad Interstitial" android:value="DFP-/50170743/OOG106GP-Tablet-Interstitial-ID1,FAN-515107105511156_515107528844447,DFP-/50170743/OOG106GP-Tablet-Interstitial-ID3,FAN-515107105511156_545005815854618"/>
+        <meta-data android:name="Phone Rect" android:value="DFP-/50170743/OOG106GP-Phone-Rectangle-ID1,DFP-/50170743/OOG106GP-Phone-Rectangle-ID2,DFP-/50170743/OOG106GP-Phone-Rectangle-ID3"/>
+        <meta-data android:name="Pad Rect" android:value="DFP-/50170743/OOG106GP-Tablet-Rectangle-ID1,DFP-/50170743/OOG106GP-Tablet-Rectangle-ID2,DFP-/50170743/OOG106GP-Tablet-Rectangle-ID3"/>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.startplay.PlayingActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeHome"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="net.workoutinc.butt_exercises_workouts.home.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeHome"/>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.workouts.WorkoutActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeHome"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.workoutinc.butt_exercises_workouts.workouts.PlayViedioActivity" android:screenOrientation="portrait"/>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.setting.SettingMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.calendar.CalendarMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.workoutinc.butt_exercises_workouts.LaunchMainActivity" android:screenOrientation="portrait" android:theme="@style/App_welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.weight.EnterWeightActivity" android:screenOrientation="portrait"/>
+        <activity android:name="net.workoutinc.butt_exercises_workouts.LogMainActivity"/>
+        <service android:enabled="true" android:exported="true" android:name="net.workoutinc.butt_exercises_workouts.setting.NotificationService"/>
+        <receiver android:name="net.workoutinc.butt_exercises_workouts.setting.MyReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.media.RINGER_MODE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:name="com.common.android.ads.RewardedIntentActivity"/>
+        <activity android:name="com.common.android.ads.platform.fan.MkFsNativeFANActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyInterstitialActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyAdViewActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.chartboost.sdk.CBImpressionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.google.firebase.auth.internal.FederatedSignInActivity" android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="net.workoutinc.butt_exercises_workouts.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <provider android:authorities="net.workoutinc.butt_exercises_workouts.crashlyticsinitprovider" android:exported="false" android:initOrder="100" android:name="com.crashlytics.android.CrashlyticsInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="net.workoutinc.butt_exercises_workouts"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="net.workoutinc.butt_exercises_workouts.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+    </application>
+</manifest>

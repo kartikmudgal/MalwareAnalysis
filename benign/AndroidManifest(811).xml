@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.mobitti.efrata">
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <permission android:name="com.mobitti.efrata.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.mobitti.efrata.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.permission.CALL_PHONE" android:required="false"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_label" android:theme="@style/CustomTheme">
+        <activity android:name="com.mobitti.efrata.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/main_menu" android:name="com.mobitti.efrata.MainMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/enter" android:name="com.mobitti.efrata.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/messages" android:name="com.mobitti.efrata.MessagesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/changes" android:name="com.mobitti.efrata.ChangesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/grades" android:name="com.mobitti.efrata.GradesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/grades" android:name="com.mobitti.efrata.HaifaGradesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/examines" android:name="com.mobitti.efrata.ExaminesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/examines" android:name="com.mobitti.efrata.HaifaExaminesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/schedule" android:name="com.mobitti.efrata.ScheduleActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_request" android:name="com.mobitti.efrata.RequestActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_image" android:name="com.mobitti.efrata.ImageActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_no_connection" android:name="com.mobitti.efrata.NoConnectionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_survey" android:name="com.mobitti.efrata.SurveyActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_survey_question" android:name="com.mobitti.efrata.SurveyQuestionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_request_subjects_lis" android:name="com.mobitti.efrata.RequestSubjectsLisActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_request_new" android:name="com.mobitti.efrata.RequestNewActivity1" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_phone_book" android:name="com.mobitti.efrata.PhoneBookActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/new_ariel_request" android:name="com.mobitti.efrata.ArielNewRequest" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/new_ariel_request" android:name="com.mobitti.efrata.ArielAddTextActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_ariel_request" android:name="com.mobitti.efrata.ArielRequestActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_phone_book_results" android:name="com.mobitti.efrata.PhoneBookResultsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_ariel_request_details" android:name="com.mobitti.efrata.ArielRequestDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_response_to_ariel_request" android:name="com.mobitti.efrata.ResponseToArielRequestActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="@string/title_activity_ariel_sign_up" android:name="com.mobitti.efrata.ArielSignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_ariel_sign_up_continue" android:name="com.mobitti.efrata.ArielSignUpContinueActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_ariel_forgot_password" android:name="com.mobitti.efrata.ArielForgotPasswordActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="@string/title_activity_vacant_places_search" android:name="com.mobitti.efrata.VacantPlacesSearch" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_vacant_places_list" android:name="com.mobitti.efrata.VacantPlacesList" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.NoDataActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.mobitti.efrata"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.mobitti.efrata.GCMIntentService"/>
+        <activity android:label="@string/title_activity_push_messages" android:name="com.mobitti.efrata.PushMessagesActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_push_message_details" android:name="com.mobitti.efrata.PushMessageDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_forum" android:name="com.mobitti.efrata.ForumActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.mobitti.efrata.BrowserActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_forum_message_details" android:name="com.mobitti.efrata.ForumMessageDetails" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/title_activity_forum_add_new_message" android:name="com.mobitti.efrata.ForumAddNewMessage" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_forum_messages" android:name="com.mobitti.efrata.ForumMessagesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.ForumGroups" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.TeachersExamsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.TeachersExamsDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.ScheduleStudentAttendanceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.AbsenseReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.WorkingReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mobitti.efrata.WorkinkHoursReportDetailsActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

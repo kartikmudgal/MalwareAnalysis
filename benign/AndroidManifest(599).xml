@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.investorshangout" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <application android:icon="@drawable/androidihicon" android:label="@string/app_name" android:name="com.investorshangout.AnalyticsApp" android:theme="@android:style/Theme.Light">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.analytics.globalConfigResource" android:resource="@xml/global_tracker"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="com.investorshangout.SplashActivity" android:theme="@null">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Registered_User"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Member_featurescreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Welcome" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Home"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.MailView"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Terms_condition"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Registration"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.My_Signature"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Setting_AvatarUpload"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Notification_setting"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Invite_friend"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Change_Password" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.MyRemovedPost_detail"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Forgotpassword"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.EditProfile"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Boards"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Posts"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.ShowDescription"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.investorshangout.Mysignin"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Profile"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Newpost" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Categories"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.TopVideos"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.MailBox"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Search"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.ShowVideo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.WhatsHot"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.Favorite"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.investorshangout.Setting_View"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.CrashActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.ImagePagerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.investorshangout.AccountVerification"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <service android:name="com.investorshangout.utils.FetchUnreadMailService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

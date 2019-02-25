@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.mg.wydatki" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name=".AdActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.apps.drive.APP_ID" android:value="AIzaSyBmPh50c5TeW0zcUh19LeTwJcrFy5yVuxA"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".Kategorie"/>
+        <activity android:name=".TypyKategorie"/>
+        <activity android:name=".KatDochody"/>
+        <activity android:name=".KatOsoby"/>
+        <activity android:name=".Dochody" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Password" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Rap1Kat"/>
+        <activity android:name=".WydWgLimit"/>
+        <activity android:name=".DPlan"/>
+        <activity android:name=".EPlan"/>
+        <activity android:name=".CPlan"/>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
+        <activity android:name=".Dwydatek"/>
+        <activity android:name=".Ddochod"/>
+        <activity android:name=".Cdochod"/>
+        <activity android:name=".Przelejdochod"/>
+        <activity android:name=".Edochod"/>
+        <activity android:name=".Cwydatek"/>
+        <activity android:name=".Ewydatek"/>
+        <activity android:name=".Ewydatekz"/>
+        <activity android:name=".RapOs1"/>
+        <activity android:name=".RapOs2"/>
+        <activity android:name=".RapDOs2"/>
+        <activity android:name=".RapDOs1"/>
+        <activity android:name=".Rap2Kat"/>
+        <activity android:name=".Rap3Kat"/>
+        <activity android:name=".Rap4Kat"/>
+        <activity android:name=".Rap5Kat"/>
+        <activity android:name=".Rap6Kat"/>
+        <activity android:name=".Rap7Kat"/>
+        <activity android:name=".Rap8Kat"/>
+        <activity android:name=".Rap9Kat"/>
+        <activity android:name=".Rap10Kat"/>
+        <activity android:name=".Rap11Kat"/>
+        <activity android:name=".Rap12Kat"/>
+        <activity android:name=".Rap13Kat"/>
+        <activity android:name=".Rap14KatNIEUZYWANE"/>
+        <activity android:name=".Rap1dni"/>
+        <activity android:name=".Rap7dni"/>
+        <activity android:name=".Rap16Kat"/>
+        <activity android:name=".Wykr2_mpchart"/>
+        <activity android:name=".Wykr_wgdni_mpchart"/>
+        <activity android:name=".Wykrd_wgdni_mpchart"/>
+        <activity android:name=".Wykr1"/>
+        <activity android:name=".Wykrwog"/>
+        <activity android:name=".Wykrdog"/>
+        <activity android:name=".Wykrwgkat"/>
+        <activity android:name=".Wykrwgkat_mpchart"/>
+        <activity android:name=".Wykrdkat"/>
+        <activity android:name=".Wykrbil"/>
+        <activity android:name=".Wykrstzm"/>
+        <activity android:name=".Rap15Kat"/>
+        <activity android:name=".Kopia"/>
+        <activity android:name=".Konta"/>
+        <activity android:name=".Zaplanowane"/>
+        <activity android:name=".Movewydatek"/>
+        <activity android:name=".Movedochod"/>
+        <activity android:name=".Dwydatekzapl"/>
+        <activity android:name=".Wydatki" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".Raporty"/>
+        <activity android:name=".About">
+            <intent-filter>
+                <action android:name="android.intent.action.About"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".Plan"/>
+        <activity android:name=".AdsReward"/>
+        <activity android:name=".Limityw"/>
+        <activity android:name=".BazaWydatkow"/>
+        <activity android:label="@string/title_activity_main" android:name=".PierwszaKarta"/>
+        <activity android:label="@string/title_activity_main_pref" android:name=".Prefs">
+            <intent-filter>
+                <action android:name="android.intent.action.PREFS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:label="@string/dodwyd" android:name=".Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widgetplus"/>
+        </receiver>
+        <receiver android:label="@string/doddoch" android:name=".WidgetD">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widgetplus"/>
+        </receiver>
+        <receiver android:label="@string/dodwyd" android:name=".WidgetBig">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widgetplusbig"/>
+        </receiver>
+        <receiver android:name=".CheckWydatki"/>
+        <receiver android:name=".CheckWydatki2"/>
+        <receiver android:name=".CheckWydatki3"/>
+        <receiver android:name=".CheckWidget"/>
+    </application>
+</manifest>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="sg.gov.nea" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="sg.gov.nea.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <meta-data android:name="android.support.VERSION" android:value="26.0.0-alpha1"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.hp.rum.mobile.rmapplication.RUMApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <receiver android:name="sg.gov.nea.push.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="sg.gov.nea"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="sg.gov.nea.push.GcmIntentService"/>
+        <receiver android:name="sg.gov.nea.receiver.NetworkStateChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NETWORK_CONNECTED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NETWORK_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="sg.gov.nea.activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.AddCardActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.CardsOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.TabletCardsOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.AlertsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.AlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.AirQualityAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HeatStressAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HeavyRainfallAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.BeachWaterQualityAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.DengueAlertSettingsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="sg.gov.nea.activity.ChooseLocationActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HawkerCenterOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.VectorControlOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.RecyclingMapActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SimpleStaticViewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SimpleWebviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.SimpleWebviewDialogActivity" android:theme="@style/NoTitleDialog"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.EventOverviewDialogActivity" android:theme="@style/NoTitleDialogTransparent"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.VideosActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.ReportSelectCategoryActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.ReportSubmitActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.ReportOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.ReportMyCasesActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.EventOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.FoodHygieneOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.FoodHygieneFilterActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.FoodHygieneFilterDialogActivity" android:theme="@style/NoTitleDialogTranslucent"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SearchAddressActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="sg.gov.nea.activity.QRScannerActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.google.android.youtube.api.StandalonePlayerActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SimpleShareWebviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.AskNeaActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name="sg.gov.nea.activity.FoodHygieneSearchActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SuspensionNoticeActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SuspensionNoticeOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.OnboardingTipsActivity" android:screenOrientation="sensorPortrait"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.WaterLevelOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.WaterLevelAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SelectAddressActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleFilterActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.LifeCycleFilterDialogActivity" android:theme="@style/NoTitleDialogTranslucent"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleApplianceOverviewActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleApplianceOverviewActivityTablet" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleSavedItemActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleLampInfoActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleBuyingGuideActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleBuyingGuideActivityTablet" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LifeCycleCompareMeActivity"/>
+        <activity android:label="@string/app_name" android:name="eu.janmuller.android.simplecropimage.CropImage" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyApplianceOverviewActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyApplianceSubCategoryActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyManageApplianceActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyAddApplianceActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyTipsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.HomeEnergyTipsDialogActivity" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.fragment.tablet.HomeEnergyManageApplianceDialogActivity" android:theme="@style/NoTitleDialogTransparent"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HEASelectFlatTypeActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyAuditApplianceOverviewActivityTablet" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HomeEnergyAddApplianceActivityTablet" android:theme="@style/Theme.Transparent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LightningAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LightningDetailAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LightningAlertInfoActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.LightningAlertShortInfoActivity"/>
+        <activity android:name="net.hockeyapp.android.UpdateActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.HawkerCenterAlertSettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="sg.gov.nea.activity.SelectHawkerCenterAlertSettingsActivity"/>
+        <meta-data android:name="DATABASE" android:value="myenv.db"/>
+        <meta-data android:name="VERSION" android:value="7"/>
+        <meta-data android:name="QUERY_LOG" android:value="true"/>
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="sg.gov"/>
+        <meta-data android:name="sg.gov.nea.prod" android:value="true"/>
+        <meta-data android:name="sg.gov.nea.hockeyappid" android:value="d1a7389763db8c2788d97f5e54695db2"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD61pvAX3WQiBhdXoH2lafvFAfmDgI57LM"/>
+        <activity android:label="@string/app_name" android:name="com.dm.zbar.android.scanner.ZBarScannerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="net.hockeyapp.android.FeedbackActivity"/>
+        <activity android:name="net.hockeyapp.android.PaintActivity"/>
+        <activity android:name="net.hockeyapp.android.LoginActivity"/>
+        <activity android:name="net.hockeyapp.android.ExpiryInfoActivity"/>
+        <service android:exported="false" android:name="com.hp.rum.mobile.rmservice.RUMMonitorService" android:process=":HPRumService"/>
+    </application>
+</manifest>

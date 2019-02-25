@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.triactivemedia.dollshouse">
+    <supports-screens android:largeScreens="true" android:smallScreens="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.example.gcm.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/app_theme">
+        <activity android:label="@string/app_name" android:name="standaloneui.GoogleHome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="android.app.default_searchable" android:value="search.SearchTitleUi"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="baseui.Preview" android:theme="@style/app_theme_dark"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="standaloneui.SALibraryIssues"/>
+        <activity android:label="Account" android:name="baseui.AccountCreate" android:theme="@style/pm_points"/>
+        <activity android:label="Account" android:name="baseui.AccountMain" android:theme="@style/pm_points"/>
+        <activity android:label="@string/settings_title" android:name="ui.preferences.SettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="standaloneui.SABookmarksFragment"/>
+        <activity android:label="@string/app_name" android:name="standaloneui.SABookmarksFragment$BookmarksPagesActivity"/>
+        <activity android:label="@string/app_name" android:name="standaloneui.SAMultiMediaFragment"/>
+        <activity android:label="@string/app_name" android:name="standaloneui.SAMultiMediaFragment$MultiMediaItemsActivity"/>
+        <service android:name="downloaders.IssueDownloadService2"/>
+        <activity android:label="@string/home_bookmarks" android:name="reader.ReaderBookmarks" android:theme="@style/floatingHC"/>
+        <activity android:configChanges="orientation" android:name="baseui.VideoPlayer" android:theme="@style/videoStyle"/>
+        <activity android:label="@string/menu_more_from_publisher" android:name="standaloneui.MoreFromPublisher" android:theme="@style/app_theme"/>
+        <activity android:name="baseui.WebPageView" android:theme="@style/app_theme"/>
+        <activity android:label="@string/about_title" android:name="baseui.About"/>
+        <activity android:name="reader.picker.PickerActivity" android:theme="@style/app_theme_transparent"/>
+        <activity android:label="@string/menu_contents" android:name="reader.Contents" android:theme="@style/floatingHC"/>
+        <activity android:launchMode="singleTop" android:name="reader.custombuild.ReadMagazineCustom" android:theme="@style/readingStyle"/>
+        <activity android:label="@string/home_custom_edition_downloading" android:name="baseui.CustomDownloadDialog" android:theme="@android:style/Theme.Holo.Dialog"/>
+        <activity android:launchMode="singleTop" android:name="reader.ReadMagazine" android:theme="@style/readingStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+            <meta-data android:name="android.app.default_searchable" android:value="search.SearchIssueUi"/>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="search.SearchIssueUi">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="search.SearchTitleUi">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="com.crittercism.NotificationActivity"/>
+        <receiver android:name="push.google.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.triactivemedia.airlinerworld"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="textReaderUi.TextReaderActivity"/>
+        <activity android:name="textReaderUi.TextReaderRoot"/>
+    </application>
+</manifest>

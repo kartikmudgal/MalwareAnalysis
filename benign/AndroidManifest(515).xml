@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.guatevalley">
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-feature android:name="android.hardware.location.gps"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.guatevalley.AppController_list" android:screenOrientation="portrait" android:theme="@style/Theme.Example">
+        <activity android:label="@string/app_name" android:name=".IndexNoSession" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".World"/>
+        <activity android:label="@string/t_search" android:name=".Search" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_do_you_know" android:name=".Do_you_know" android:screenOrientation="portrait"/>
+        <activity android:label="@string/buy_crafts" android:name=".Buy_Crafts" android:screenOrientation="portrait"/>
+        <activity android:label="@string/guatemala_general" android:name=".GuatemalaGeneral" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".Fragment_Photos" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".Fragment_Videos" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/menu_settings" android:name=".Adjustment" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/information" android:name=".Information" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/app_name" android:name=".GuateValley" android:screenOrientation="portrait"/>
+        <activity android:label="@string/sign_up" android:name=".Sign_up" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/log_in" android:name=".Log_in" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/load_photo" android:name=".Load_Photo_Profile" android:screenOrientation="portrait"/>
+        <activity android:label="@string/people_might_know" android:name=".FollowPeopleWelcome" android:screenOrientation="portrait"/>
+        <activity android:label="@string/conditions" android:name=".Condiciones" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".ListDirectoryOnlySites" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".ActivityProfileGeneral" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".ListDirectory" android:screenOrientation="portrait"/>
+        <activity android:name=".Arrancador" android:screenOrientation="portrait"/>
+        <activity android:name=".Article" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:name=".LoadStatus" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2">
+            <intent-filter android:label="@string/title_activity_linttugle">
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".CropImage"/>
+        <activity android:label="@string/log_out" android:name=".LogOut" android:screenOrientation="portrait"/>
+        <activity android:name=".LogOutAudioTour" android:screenOrientation="portrait"/>
+        <activity android:label="@string/search" android:name=".Buscador" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:label="@string/Emergency_phone_numbers" android:name=".Call_list" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="Acerca de..." android:name=".ChatImageReceive" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/Choose_interests" android:name=".ChooseInterest" android:screenOrientation="portrait"/>
+        <activity android:name=".Contenedor_Lugares_Tours" android:screenOrientation="portrait"/>
+        <activity android:label="@string/t_noti" android:name=".Notifications" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/t_noti" android:name=".GET_NEW_NOTIFICATIONS" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/write_success" android:name=".Registrar_Coronas" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme2"/>
+        <activity android:label="@string/title_activity_actividad_detalle" android:name=".ActividadDetalle">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.guatevalley.World_Now"/>
+        </activity>
+        <provider android:authorities="com.guatevalley.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths"/>
+        </provider>
+        <service android:name=".TimerPrueba" android:process=":TimerPrueba"/>
+        <service android:name=".TimerAudioTour" android:process=":TimerAudioTour"/>
+        <receiver android:enabled="true" android:name=".AutoArranque" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

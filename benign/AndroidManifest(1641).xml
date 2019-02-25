@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="weather.forecast.barometer.storm.radar">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:icon="@mipmap/icon_weather" android:label="@string/app_name" android:name="com.ali.mobisecenhance.ld.StubApplication" android:persistent="true" android:supportsRtl="true">
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="net.coocent.weather.worldweather_v3.MainActivity" android:screenOrientation="portrait" android:theme="@style/mainTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="net.coocent.weather.worldweather_v3.CityManagerActivity" android:parentActivityName="net.coocent.weather.worldweather_v3.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar.light"/>
+        <activity android:name="net.coocent.weather.worldweather_v3.LocationActivity" android:parentActivityName="net.coocent.weather.worldweather_v3.CityManagerActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="net.coocent.weather.worldweather_v3.SettingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="net.coocent.weather.worldweather_v3.HourWeatherActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="net.coocent.weather.worldweather_v3.HourDetailActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="net.coocent.android.xmlparser.GiftActivity" android:screenOrientation="nosensor" android:theme="@style/AppTheme"/>
+        <activity android:name="net.coocent.weather.worldweather_v3.widget.ConfigureWidget4x1Activity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="net.coocent.weather.worldweather_v3.widget.ConfigureWidget4x3Activity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="net.coocent.weather.worldweather_v3.widget.ConfigureAnotherWidget4x3Activity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="net.coocent.weather.worldweather_v3.WeatherService" android:stopWithTask="false"/>
+        <service android:exported="false" android:name="net.coocent.weather.worldweather_v3.UpdateWeatherService" android:stopWithTask="false"/>
+        <receiver android:name="net.coocent.weather.worldweather_v3.util.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="Widget 4x1" android:name="net.coocent.weather.worldweather_v3.widget.Widget4x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget4x1"/>
+        </receiver>
+        <receiver android:label="Widget 4x3" android:name="net.coocent.weather.worldweather_v3.widget.Widget4x3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget4x3"/>
+        </receiver>
+        <receiver android:label="Widget 4x3" android:name="net.coocent.weather.worldweather_v3.widget.AnotherWidget4x3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget4x3_another"/>
+        </receiver>
+        <meta-data android:name="api.worldweatheronline.API_KEY" android:value="0e857aca7ec10cba2ae53e5e14581265396d3138"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="59b0a91104e2055046002349"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="google"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

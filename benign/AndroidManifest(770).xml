@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.megahub.kingston.mtrader.activity" platformBuildVersionCode="17" platformBuildVersionName="4.2.2-1425461">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <application android:allowBackup="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.megahub.KingstonMT" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:label="@string/app_name" android:name="com.megahub.kingston.gui.loading.activity.LoadingPageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.megahub.tfa.activity.TFAIAsiaActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.megahub.kingston.main.activity.LoginPageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.megahub.mtrader.gui.setting.activity.BeforeLoginSettingsPageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.snapshot.activity.SnapshotTabActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.snapshot.quote.activity.SnapshotQuotePageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.megahub.gui.snapshot.watchlist.activity.SnapshotWatchlistPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.snapshot.marketinformation.activity.SnapshotMarketInformationPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.snapshot.indices.activity.SnapshotIndicesPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.snapshot.fundamental.activity.SnapshotFundamentalPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.streamer.activity.MainTabActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.quote.activity.StreamingQuotePageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.watchlist.activity.StreamingWatchlistPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.news.activity.StreamingNewsPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.marketinformation.activity.StreamingMarketInformationPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.fundamental.activity.StreamingFundamentalPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.fx.activity.StreamingFXPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.setting.activity.TradeInsideSettingsPageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.aboutmegahub.activity.AboutMegaHubPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.aboutbroker.activity.AboutBrokerPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.more.activity.MorePageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.toprank.activity.StreamingTopRankPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.indices.activity.StreamingIndicesPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.sector.activity.StreamingSectorPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.gui.streamer.ah.activity.StreamingAHPageActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.mtrader.gui.chart.interday.activity.ChartActivity" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.kingston.tradepage.activity.SnapshotTradePage" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.kingston.tradepage.activity.StreamingTradePage" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.kingston.accountpage.activity.SnapshotAccountPage" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.megahub.kingston.accountpage.activity.StreamingAccountPage" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+    </application>
+</manifest>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="mobi.androapp.crcniger.c8036" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="mobi.androapp.crcniger.c8036.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="mobi.androapp.crcniger.c8036.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.puzzlersworld.android.FriopinApplication" android:supportsRtl="true" android:theme="@style/CustomActionBarTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.puzzlersworld.android.FullscreenActivity" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="saharawebtv.com" android:pathPrefix="/" android:scheme="https"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="Login" android:name="com.puzzlersworld.android.ui.activity.LoginActivity" android:theme="@style/MyMaterialTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="Comments Settings" android:name="com.puzzlersworld.android.ui.activity.CommentSettingsActivity" android:theme="@style/MyMaterialTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:name="com.puzzlersworld.android.gcm.AndroAppGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.puzzlersworld.android.gcm.AndroAppIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.appnextinterstitial.FullscreenActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:hardwareAccelerated="true" android:name="com.appnext.appnextinterstitial.InterstitialActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <service android:name="com.appnext.core.DownloadService"/>
+        <activity android:name="com.puzzlersworld.android.SplashActivity" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <provider android:authorities="mobi.androapp.crcniger.c8036.provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="mobi.androapp.crcniger.c8036"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="mobi.androapp.crcniger.c8036.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:name="com.appnext.core.AdsService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <service android:exported="false" android:name="com.appnext.sdk.service.services.FetchAddressIntentService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.SaveAppsListService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.CheckObsoleteDataService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Mlas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Alas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Nlas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Resactap"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Foreapp"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Resactapcat"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Deflun"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Inslun"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dos"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Slang"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Mop"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dname"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dmod"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Blas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Geoci"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Geoco"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Bfsas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Esfs"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Ess"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Isfs"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Iss"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Isfp"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Esfp"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Bdvolas"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dvola"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dvolr"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dvolm"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dvoln"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dvolc"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Duse"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Instapcat"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Dmstat"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Savloc"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Usloc"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Photad"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Tzone"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Wifiho"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Wifiwo"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Wifipr"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.sdk.service.services.alarms.Default"/>
+        <service android:exported="true" android:name="com.appnext.sdk.service.services.CameraNotificationJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:enabled="true" android:name="com.appnext.sdk.service.receivers.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="NetworkConnection" android:name="com.appnext.sdk.service.receivers.Ctype">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appnext.sdk.service.receivers.Dchar">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.appnext.sdk.service.receivers.Camact">
+            <intent-filter>
+                <action android:name="android.intent.action.CAMERA_BUTTON"/>
+                <action android:name="com.android.camera.NEW_PICTURE"/>
+                <action android:name="android.hardware.action.NEW_PICTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appnext.sdk.service.receivers.Wifiact">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appnext.sdk.service.receivers.Wificon">
+            <intent-filter>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appnext.sdk.service.receivers.Blueact">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.appnext.sdk.service.receivers.Btconn">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.CONNECTION_STATE_CHANGED"/>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="antivirus.security.virus.removal.clean.cache.cleaner.master" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.permission.ANTI_VIRUS"/>
+    <permission android:description="@string/security_permissionDescription" android:icon="@drawable/ic_launcher" android:label="@string/security_permissionLabel" android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.permission.ANTI_VIRUS" android:permissionGroup="@string/security_permissionGroup" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.permission.C2D_MESSAGE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.ali.mobisecenhance.ld.StubApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="AVL_SDK_APPKEY" android:value="3CEEC7A0BDBB219F52C3AC5139C6DB8D"/>
+        <provider android:authorities="antivirus.security.virus.removal.clean.cache.cleaner.master.AVLprovider" android:name="com.avl.engine.security.AVLProvider" android:permission="antivirus.security.virus.removal.clean.cache.cleaner.master.permission.ANTI_VIRUS"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivitySplash" android:screenOrientation="portrait" android:theme="@style/Theme_Animation_Activity_RightInRightOut_Full_Screen" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.shortcut.entryshortcutaction"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="boost.antivirus.activity.PreGuideSeparateActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/Theme_Animation_Activity_RightInRightOut" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityCpuAnalyse" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityJunkCleaner" android:screenOrientation="portrait" android:theme="@style/JunkTheme"/>
+        <activity android:name="boost.antivirus.activity.ActivityJunkResult" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityMemoryBoost" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityBatterySave" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityFullScreenAdResult" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/short_cut_name" android:name="boost.antivirus.activity.ActivityShortCut" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.sc" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.shortcut.onetapshortcutaction"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivitySettings" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleInstance" android:name="boost.antivirus.activity.ActivityNotifToggleSetting" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityBigFile" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityBigFileList" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityFeedback" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityPrivacy" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityGameList" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityGameBoost" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityGameBoostAnim" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityGameFolderGTab" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.gf" android:theme="@style/Popup_Activity_Style">
+            <intent-filter>
+                <action android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.shortcut.gb"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityBatteryLockerS" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.bl" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.wonder.charger.util.ActivityInnerPopupActivateCharger" android:screenOrientation="portrait" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.wonder.charger.util.ActivityOuterPopupActivateCharger" android:screenOrientation="portrait" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.wonder.charger.util.ActivityChargeReport" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.ActivityChargeReport" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:label="@string/app_name" android:name="com.wonder.charger.util.ActivityChargeReportSettings" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityChargeTips" android:screenOrientation="portrait" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:excludeFromRecents="true" android:name="boost.antivirus.activity.OptimizeActivity" android:screenOrientation="portrait" android:taskAffinity="smart.cleaner.optimize" android:theme="@style/Transparent"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="boost.antivirus.activity.OptimizeOpenActivity" android:screenOrientation="portrait" android:taskAffinity="smart.cleaner.optimize" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityRemoveApkDialog" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.ActivityRemoveApkDialog" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityRemoveApkResult1" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.ActivityRemoveApkResult"/>
+        <activity android:launchMode="singleTask" android:name="activity.fivestars.FiveStarsActivity" android:screenOrientation="portrait" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:launchMode="singleTask" android:name="activity.fivestars.FiveStarsRateActivity" android:screenOrientation="portrait" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:name="boost.antivirus.activity.ActivityWhiteList" android:screenOrientation="portrait"/>
+        <activity android:name="boost.antivirus.activity.ActivityAllApps" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityNotifyCleanResult" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.nt" android:theme="@style/Popup_Activity_Style"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityNotifyRecommendAd" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.nt" android:theme="@style/Black_BG_Popup_Activity_Style"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockList" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockedList" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockSetPws" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockerForgetPws" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.fgp"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockSetting" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityOpenUsageAccessGuide" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAppLockReset" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.resetpwd"/>
+        <activity android:excludeFromRecents="true" android:finishOnCloseSystemDialogs="true" android:finishOnTaskLaunch="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityAL" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.al"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityNotifiCleanOpen" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="boost.antivirus.activity.ActivityNotifCleanMsg" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityNotifCleanSetting" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.wondercity.giftbox.ActivityTurntable" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.wondercity.giftbox.ActivityLoadingGift" android:screenOrientation="portrait" android:theme="@style/Transparent_Activity"/>
+        <activity android:launchMode="singleTask" android:name="com.wondercity.giftbox.ActivityEmptyGiftBox" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityFMemBoost_TransLine" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="boost.antivirus.activity.ActivityMemBoost" android:screenOrientation="portrait" android:theme="@style/statusBarTintStyle"/>
+        <activity android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityCleanResult" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:name="com.google.android.gms.ads.AdActivity" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.gms.adactivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.fb.adactivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:label="@string/app_name" android:name="com.facebook.ads.InterstitialAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityWifiAppScan" android:screenOrientation="portrait" android:theme="@style/statusBarTintStyle">
+            <intent-filter>
+                <action android:name="antivirus.security.virus.removal.clean.cache.cleaner.master.shortcut.netshortcutaction"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="boost.antivirus.activity.ActivityShortcutSetting"/>
+        <activity android:name="boost.antivirus.activity.SecurityLevelActivity"/>
+        <activity android:name="boost.antivirus.activity.WifiSecurityActivity"/>
+        <activity android:name="boost.antivirus.activity.ActivityVirus"/>
+        <activity android:name="boost.antivirus.activity.ActivityVirusWhiteList"/>
+        <activity android:name="boost.antivirus.activity.ActivityAppWifiSafe"/>
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="boost.antivirus.activity.ActivityVirusDialog" android:screenOrientation="portrait" android:taskAffinity="antivirus.security.virus.removal.clean.cache.cleaner.master.ActivityVirusDialog" android:theme="@style/Popup_Activity_Style"/>
+        <receiver android:name="boost.antivirus.apk.InstallUninstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="boost.antivirus.util.LockScreenReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="boost.antivirus.battery.PowerReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="wonder.city.baseutility.utility.netmanager.GpCampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="boost.antivirus.applock.ServiceRestarterBroadcastReceiver">
+            <intent-filter>
+                <action android:name="boost.antivirus.applock.restartService"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="boost.antivirus.util.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="boost.antivirus.util.WifiReceiver">
+            <intent-filter>
+                <action android:name="android.NET.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.Net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="boost.antivirus.util.LockScreenService"/>
+        <service android:exported="false" android:name="wonder.city.baseutility.utility.CoreService"/>
+        <service android:label="@string/app_name" android:name="boost.antivirus.notification.cleaner.NotificationListener" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service android:name="boost.antivirus.applock.AppLockService" android:priority="1000"/>
+        <service android:name="boost.antivirus.util.TimeTickService" android:priority="999"/>
+        <service android:name="boost.antivirus.util.FixedNotificationService"/>
+        <service android:name="boost.antivirus.virus.VirusUpdateService"/>
+        <service android:name="boost.antivirus.virus.AppScanService"/>
+        <service android:name="boost.antivirus.virus.WifiScanService"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fad"/>
+        <provider android:authorities="antivirus.security.virus.removal.clean.cache.cleaner.master.android7.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="wonder.city.utility.DiskCacheMoudle" android:value="GlideModule"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="antivirus.security.virus.removal.clean.cache.cleaner.master"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="antivirus.security.virus.removal.clean.cache.cleaner.master.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="antivirus.security.virus.removal.clean.cache.cleaner.master.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+    </application>
+</manifest>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.infoweise.falcovpn" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.infoweise.falcovpn.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.infoweise.falcovpn.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.infoweise.falcovpn.MyApp" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:clearTaskOnLaunch="true" android:launchMode="singleTask" android:name="com.infoweise.falcovpn.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.infoweise.falcovpn.SignInUpActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:name="com.infoweise.falcovpn.SignInActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_register" android:name="com.infoweise.falcovpn.RegisterActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.infoweise.falcovpn.VpnConnectivityActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:autoRemoveFromRecents="true" android:excludeFromRecents="true" android:name="com.infoweise.falcovpn.LaunchVPN" android:taskAffinity=".LaunchVPN" android:theme="@style/blinkt.dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:autoRemoveFromRecents="true" android:excludeFromRecents="true" android:name="com.infoweise.falcovpn.DisconnectVPN" android:noHistory="true" android:taskAffinity=".DisconnectVPN" android:theme="@style/blinkt.dialog"/>
+        <activity android:allowTaskReparenting="true" android:label="@string/openvpn_log" android:launchMode="singleTask" android:name="com.infoweise.falcovpn.LogWindow"/>
+        <service android:name="de.blinkt.openvpn.core.OpenVPNService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.infoweise.falcovpn.receiver.OnBootReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/title_activity_settings_screen" android:name="com.infoweise.falcovpn.activities.SettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_codsub_settings_screen" android:name="com.infoweise.falcovpn.activities.CODSubSettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_vpn_protocol_sub_settings_screen" android:name="com.infoweise.falcovpn.activities.VpnProtocolSubSettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_accounts_sub_settings_screen" android:name="com.infoweise.falcovpn.activities.AccountsSubSettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_about_usub_setting_screen" android:name="com.infoweise.falcovpn.activities.AboutUSubSettingScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_help_sub_settings_screen" android:name="com.infoweise.falcovpn.activities.HelpSubSettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_tella_friend_sub_settings_screen" android:name="com.infoweise.falcovpn.activities.TellaFriendSubSettingsScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_server_list_screen" android:name="com.infoweise.falcovpn.activities.CustomDialogFragment" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_upgrade_screen" android:name="com.infoweise.falcovpn.activities.UpgradeScreen" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <service android:enabled="true" android:exported="true" android:name="com.infoweise.falcovpn.services.SecureService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.infoweise.falcovpn.services.VpnBackgroudService"/>
+        <service android:exported="true" android:name="com.infoweise.falcovpn.receiver.MyGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.infoweise.falcovpn.push.GCMRegisterar">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.infoweise.falcovpn.dialogfragments.UpgradeDialoguActivitity" android:screenOrientation="portrait" android:theme="@style/PopupTheme"/>
+        <activity android:name="com.infoweise.falcovpn.dialogfragments.ConnectionPerApp" android:screenOrientation="portrait"/>
+        <activity android:name="com.infoweise.falcovpn.activities.SignUpActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.infoweise.falcovpn.dialogfragments.SignupDialogueActivity" android:screenOrientation="portrait" android:theme="@style/PopupTheme"/>
+        <receiver android:name="com.infoweise.falcovpn.receiver.AppInstalledRefferObserver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.infoweise.falcovpn.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.infoweise.falcovpn"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

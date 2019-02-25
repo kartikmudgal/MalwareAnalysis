@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.zts.ageoffantasy" platformBuildVersionCode="15" platformBuildVersionName="4.0.4-1406430">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <permission android:name="com.zts.ageoffantasy.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.zts.ageoffantasy.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.library.zts.ZTSApplication" android:theme="@style/Theme.Sherlock.Light.BlackBg">
+        <meta-data android:name="applovin.sdk.key" android:value="ZU1eTSfQmTrVcmOEceJFyeJKkpiBVNO4sQiPtMrdrf8RPWg1A-H6daRLO9XuWxyNLfnD1bssG-HfVzhfxzmZTC"/>
+        <activity android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.zts.strategylibrary.Google$GoogleGCMReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.example.gcm"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.GameForm"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/app_name" android:launchMode="singleTask" android:name=".SplashScreenLocal" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.MainMenu"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.RunningGamesActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.RunningGamesDetailActivity"/>
+        <activity android:configChanges="orientation" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.GameSetupActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.PredefMapsActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.achievements.AchievementsActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.CampaignSub"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_list_title" android:name="com.zts.strategylibrary.NetworkGamesActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_list_title" android:name="com.zts.strategylibrary.MarketListActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.AccountActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.MapEditActivity" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.BuildableListActivity" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.NetworkGamesSelector"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.ShopActivity" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.SettingsActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.Donate" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.Promote" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.PromoteFacebook" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.PromoteEntrance" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.GemSources" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.DocsSub"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/title_activity_main_form" android:name="com.zts.strategylibrary.messaging.GameMessagesActivity" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:label="@string/network_selector_title" android:name="com.zts.strategylibrary.gems.GemSourcesVideoActivity" android:theme="@style/Theme.Transparent.Light"/>
+        <activity android:name="com.purplebrain.adbuddiz.sdk.AdBuddizActivity" android:theme="@android:style/Theme.Translucent"/>
+        <service android:name="com.zts.strategylibrary.ServiceNetRefreshGames">
+            <intent-filter>
+                <action android:name="com.zts.ageoffantasy.GAME_REFRESH_ACTION"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".ReceiverScreenONOFF">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.zts.strategylibrary.ReceiverUserPresent">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

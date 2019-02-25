@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="gg.love.bubble44">
+    <application android:icon="@drawable/app_frozen_bubble" android:label="@string/app_name">
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleInstance" android:name=".GameEnter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name=".Splash" android:screenOrientation="portrait"/>"
+<activity android:name=".CustomListViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".FrozenBubble"/>
+        <activity android:name=".LevelSelectAct" android:screenOrientation="portrait"/>
+        <activity android:name="com.feedback.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.feedback.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.feedback.ui.FeedbackConversation"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="gg.love.bubble44.MyAdView"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="4e8da416527015319c00006d"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="hiapk"/>
+    </application>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="app.studiob">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/MyTheme">
+        <activity android:label="@string/app_name" android:name="app.studiob.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="@string/app_name" android:name="app.studiob.Main" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Reporter" android:name="app.studiob.Report" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.REPORT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Moj nalog" android:name="app.studiob.MyAccount" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.MYACCOUNT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="@string/app_name" android:name="app.studiob.Single" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.SINGLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="@string/app_name" android:name="app.studiob.SingleSec" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.SINGLESEC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Komentari" android:name="app.studiob.Comments" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.COMMENTS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Komentar" android:name="app.studiob.NewCom" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.NEWCOM"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Trenutna temperatura" android:name="app.studiob.VremenskaPrognoza" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.VREMENSKAPROGNOZA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Reporteri" android:name="app.studiob.ReporterObjave" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.REPORTEROBJAVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="Reporteri" android:name="app.studiob.ReporterSingle" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.REPORTERSINGLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:icon="@drawable/logo_beli" android:label="TestFlip" android:name="app.studiob.TestFlip" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.studiob.TESTFLIP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="app.studiob.NotificationRecieverOnReboot" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="app.studiob.NotificationReciever"/>
+        <service android:name="app.studiob.NotificationService"/>
+    </application>
+</manifest>

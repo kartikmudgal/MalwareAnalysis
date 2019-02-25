@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="jp.chikyujin.chikyujinapp" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="jp.chikyujin.chikyujinapp.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <permission android:name="jp.chikyujin.chikyujinapp.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.Globals" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="jp.chikyujin.chikyujinapp.ActivityMain" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityConfirmRule" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityDataLinkConfirm" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityDataLinkInit" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityDataLinkLater" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityDataLinkSelectSok" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityLinkComplete" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="jp.chikyujin.chikyujinapp.ActivityMessageList" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="jp.chikyujin.chikyujinapp.ActivityMessage" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityRegistClient" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityRegistStaff" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityRegistStaffInit" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityRegistStaffMove" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivitySetting" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivitySettingClear" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivitySokLinkInit" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivitySokBankConfirm" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivitySokBankReg" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityWeb" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityWorkCard" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityContact" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityProfile" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityProfileModify" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="jp.chikyujin.chikyujinapp.ActivityNumberLock" android:screenOrientation="portrait"/>
+        <service android:name="jp.chikyujin.chikyujinapp.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="jp.chikyujin.chikyujinapp.MyInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="jp.chikyujin.chikyujinapp.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="jp.chikyujin.chikyujinapp"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

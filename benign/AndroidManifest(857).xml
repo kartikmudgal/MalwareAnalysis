@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.myweblo.hemshricampingtent">
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.myweblo.hemshricampingtent.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_menu" android:name="com.myweblo.hemshricampingtent.MenuActivity"/>
+        <activity android:label="@string/title_activity_flip" android:name="com.myweblo.hemshricampingtent.FlipActivity"/>
+        <activity android:name="com.curlimg.CurlActivity"/>
+        <activity android:label="@string/title_activity_contact" android:name="com.myweblo.hemshricampingtent.ContactActivity"/>
+    </application>
+</manifest>

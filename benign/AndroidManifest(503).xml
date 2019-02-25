@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gotandem.wlbethelnazarene" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <permission android:name="com.gotandem.wlbethelnazarene.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.gotandem.wlbethelnazarene.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.gotandem.wlbethelnazarene.MainApplication" android:supportsRtl="true" android:theme="@style/Theme.NoBackground">
+        <receiver android:exported="true" android:name="com.kochava.android.tracker.ReferralCapture">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.gotandem.wlbethelnazarene.googlecloudmessaging.GoogleCloudMessagingReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.gotandem.wlbethelnazarene"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.gotandem.wlbethelnazarene.receivers.PrayerReminderAlarmReceiver"/>
+        <service android:name="com.gotandem.wlbethelnazarene.googlecloudmessaging.GoogleCloudMessagingService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.gotandem.wlbethelnazarene.activities.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/sign_up" android:name="com.gotandem.wlbethelnazarene.activities.SignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/sign_up" android:name="com.gotandem.wlbethelnazarene.activities.SlideshowActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/assessment" android:name="com.gotandem.wlbethelnazarene.activities.AssessmentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="" android:launchMode="singleTop" android:name="com.gotandem.wlbethelnazarene.activities.InboxActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/spiritual_profile" android:launchMode="singleTask" android:name="com.gotandem.wlbethelnazarene.activities.SpiritualProfileActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/spiritual_profile_popup" android:launchMode="singleTask" android:name="com.gotandem.wlbethelnazarene.activities.SpiritualPopupAnswerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/my_tracks" android:name="com.gotandem.wlbethelnazarene.activities.MyTracksActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/discover_tracks" android:name="com.gotandem.wlbethelnazarene.activities.DiscoverTracksActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/track_settings" android:name="com.gotandem.wlbethelnazarene.activities.TrackDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.gotandem.wlbethelnazarene.activities.TrackMessagesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/history" android:name="com.gotandem.wlbethelnazarene.activities.TrackHistoryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/events" android:name="com.gotandem.wlbethelnazarene.activities.EventListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/events" android:name="com.gotandem.wlbethelnazarene.activities.EventDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/organization" android:name="com.gotandem.wlbethelnazarene.activities.OrgDetailActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:label="" android:launchMode="singleTop" android:name="com.gotandem.wlbethelnazarene.activities.ContentActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activities.InboxActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/settings" android:name="com.gotandem.wlbethelnazarene.activities.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/content_types" android:name="com.gotandem.wlbethelnazarene.activities.ContentTypesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/content_schedule" android:name="com.gotandem.wlbethelnazarene.activities.ContentScheduleActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/prayer_reminders" android:name="com.gotandem.wlbethelnazarene.activities.PrayerRemindersActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:label="@string/title_activity_language" android:name="com.gotandem.wlbethelnazarene.activities.LanguageActivity" android:theme="@style/Theme.NoBackground.NoLogo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.gotandem.wlbethelnazarene.activities.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="true" android:name="com.gotandem.wlbethelnazarene.services.GTAudioService"/>
+    </application>
+</manifest>

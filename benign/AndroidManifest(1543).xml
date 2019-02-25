@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="nl.nlebv.app.mall">
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/logo" android:label="@string/app_name" android:name="com.tencent.StubShell.TxAppEntry" android:roundIcon="@mipmap/logo_round" android:supportsRtl="true" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <meta-data android:name="TxAppEntry" android:value="nl.nlebv.app.mall.MyApplication"/>
+        <activity android:name="nl.nlebv.app.mall.view.activity.FlashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="nl.nlebv.app.mall.view.activity.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AboutWeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.SaleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="nl.nlebv.app.mall.TextActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.ProductActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.ImgBrowseActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AllClassActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.OrderStatActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.ReturnOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.CollectActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AddressActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.CardPackageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.InfoListActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.SettleAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.SoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.ClassProductActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AddressApdateActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.MsgActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="nl.nlebv.app.mall.view.activity.OrderPreviewActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="nl.nlebv.app.mall.ideal" android:scheme="android"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.ExpressInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.RemoveOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.OrderEvaluateActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.RefundInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.DetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.PayBalanceActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.BankActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.RefundActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.NextRegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AfterSaleaActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="nl.nlebv.app.mall.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepath"/>
+        </provider>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.FindPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.AfterMoreActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.RegisterActivityTwo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="nl.nlebv.app.mall.view.activity.SendSucceedActivity" android:screenOrientation="portrait"/>
+        <service android:name="nl.nlebv.app.mall.exceptionCollect.KillSelfService" android:process=":remote233"/>
+        <activity android:configChanges="orientation|screenSize" android:name="lcw.nle.com.mall_library.nereo.multi_image_selector.MultiImageSelectorActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <receiver android:exported="true" android:name="org.piwik.sdk.extra.InstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>

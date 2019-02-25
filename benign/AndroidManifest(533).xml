@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.hellochinese" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.hellochinese.MainApplication" android:theme="@style/AppTheme">
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.lesson.activity.NormalLessonActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.lesson.activity.SpeakingLessonActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.lesson.activity.ShortCutActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.LessonListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.PreLoadActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SetReminderActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.FeedBackActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SetNameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.ResetPasswordActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.UpdateLessonActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.MyProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.LessonFinishActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SpeakingLessonFinishActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.PreLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SignUpActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.ForgotPasswordOneActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.ForgotPasswordTwoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.tip.TipAllActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.pinyin.PLessonListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.pinyin.PyMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.pinyin.FinalActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.DownloadMaterialActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.component.ui.PyChartActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.component.ui.ReadingPracticeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.LeadActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.TipsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.SelectLanguageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.train.WriteHanziFlashCardActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.message.MessageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.message.MessageListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.message.MessageReplyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.lesson.activity.QuestionFAQActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.GameEntranceAcitity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.listeningcomprehension.ListeningComprehensionGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.wordrecall.WordRecallGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.wordrecognition.WordRecognitionGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.voicerecall.VoiceRecallGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.grammar.GrammarGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.fluency.FluencyGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.translation.TranslationGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.classification.ClassificationGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.matching.MatchingGameActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.GameIntroductionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.GameSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.GameFailureActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.game.AllGamesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.member.MemberIntroductionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.member.GamePurchaseActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.member.PurchaseSucceededActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.ImmerseLessonActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.ImmerseUserFavoriteListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.WatchVideoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.FillBlankActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.DubbingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.DubbingPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.ImmerseMyWorkListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.DialogActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.AudioClassActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.PremiumIntroductionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.immerse.ImmersePurchaseActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ResourceReviewListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ResourceWordDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ResourceCharDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ResourceGrammarDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.member.CouponActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.SearchResourceActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ReviewLoadingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.ReviewFinishActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.NormalReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.FastReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.DifficultReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.LessonReviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale|orientation|screenSize" android:name="com.hellochinese.ui.review.VideoActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.hellochinese.ui.TokenReceiver">
+            <intent-filter>
+                <action android:name="com.wgr.learnchinese.TOKEN_INVALID"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.hellochinese.ui.NotificationAlarm"/>
+        <receiver android:name="com.hellochinese.ui.RebootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.hellochinese.ui.message.service.MessageIntentService"/>
+        <service android:exported="false" android:name="com.hellochinese.ui.immerse.business.AudioPlayService"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="5cd5f87608f9668a087a71313f54d0bd7059ddd1"/>
+        <service android:name="com.hellochinese.downloader.core.DownloadService"/>
+    </application>
+</manifest>

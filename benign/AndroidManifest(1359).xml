@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.zz.barcode">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <application android:icon="@drawable/logo" android:label="@string/app_name">
+        <activity android:name="com.zz.barcode.activity.SinaOauthWebViewActivity"/>
+        <activity android:name="com.zz.barcode.activity.SinaOAuthDoneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="SinaOAuthDoneActivity" android:scheme="zzwboauth"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.WelcomeActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.CdsbMainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.HomePageActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.HOMEPAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.DetailInfoActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.DETAILINFO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.StartCaptureActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.STARTCAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.WebviewVideoPlayActivity" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.WEBVIEWPLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.HistoryActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.HISTORY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.MoreActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.INFOMORE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.BarcodeInfoWebView" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.BarcodeInfoWebView"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="正在前往新浪微博授权页面，请稍后.." android:launchMode="singleInstance" android:name="com.zz.barcode.activity.SinaAuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="SinaAuthActivity" android:scheme="goin"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.FollowActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.UserGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.SinaShareActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.DirectoryListViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.VedioPlayActivity" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.VIDEODISPLAY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.activity.ImageZoomActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.VIDEODISPLAY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.lottery.LotteryListActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.LOTTERYLIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.zz.barcode.lottery.LotteryDetailActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.zz.barcode.activity.LOTTERYDETAIL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".client.android.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.zz.barcode.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="zxing.appspot.com" android:path="/scan" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.google.com" android:path="/m/products/scan" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.google.co.uk" android:path="/m/products/scan" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/preferences_name" android:name=".client.android.PreferencesActivity"/>
+        <activity android:name="client.android.encode.EncodeActivity">
+            <intent-filter>
+                <action android:name="com.zz.barcode.ENCODE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/x-vcard"/>
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+</manifest>

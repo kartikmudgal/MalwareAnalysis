@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="ru.kinopoisk" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.yandex.promolib.permission.SYNC_DATA"/>
+    <uses-permission android:name="com.yandex.promolib.permission.READ_DATA"/>
+    <uses-permission android:name="com.yandex.promolib.permission.WRITE_DATA"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name="ru.kinopoisk.app.KinopoiskApplication" android:supportsRtl="true" android:theme="@style/Theme">
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.MainActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:label="@string/addtitonal_settings" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.SettingsActivity" android:theme="@style/Theme.Activity.Settings"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:label="@string/country" android:name="ru.kinopoisk.activity.CountriesListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:label="@string/city" android:name="ru.kinopoisk.activity.CitiesListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|uiMode" android:name="ru.kinopoisk.activity.KPVideoPlayerActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:exported="true" android:name="ru.kinopoisk.activity.FilmDetailsActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="filmDetail" android:scheme="kp"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yandex.mobile.ads.AdActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:name="ru.kinopoisk.activity.AwardsListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation" android:exported="true" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.NewsDetailsActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="newsPreview" android:scheme="kp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.NewsListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.SimilarFilmsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.SoonFilmsActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <data android:host="soonactivity" android:scheme="soon-activity"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.SoonDvdsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.GalleryPreviewActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.GalleryActivity" android:theme="@style/Theme_NoTitleBar"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:label="@string/films" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.FilmsPreviewActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.ReviewsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.ReviewDetailsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:exported="true" android:name="ru.kinopoisk.activity.PersonDetailsActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="peopleDetail" android:scheme="kp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.TopsListActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <data android:host="top250activity" android:scheme="top250-activity"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.FoldersListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.BornInActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.PeopleActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.CinemasActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.TodayFilmsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.StaffActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.CinemaDetailsActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cinemaDetail" android:scheme="kp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.GlobalSearchActivity" android:theme="@style/Theme.Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.SearchResultActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.HistoryActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.FilmSeancesActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.TopsTabActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.FeedbackDialogActivity" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.maps.KinopoiskYandexMapActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.TabbedGalleryPreviewActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.AuthWebViewActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.TicketWebViewActivity" android:theme="@style/Theme.Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="ru.kinopoisk.activity.NewVersionActivity" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="ru.kinopoisk.activity.LocationDialogActivity" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.BestFilmsListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.CatalogFilterActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.FacetListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:launchMode="singleTop" android:name="ru.kinopoisk.activity.AuthActivity" android:theme="@style/Theme.Activity.Auth"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.RateFilmActivity" android:theme="@style/Theme.Activity.BottomToTopActivity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.RateCinemaActivity" android:theme="@style/Theme.Activity.BottomToTopActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTop" android:name="ru.kinopoisk.activity.RegistrationActivity" android:theme="@style/Theme.Activity.Registration"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.EmailNotificationActivity" android:noHistory="true" android:theme="@style/Theme.Activity.Registration"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.MyRatingsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.MyFilmsActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.MyPeopleActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.PersonFolderListActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.FriendsRatingActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.AdvertPlayerActivity" android:theme="@style/Theme.Activity.Video"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.FilmFolderSelectActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:launchMode="singleTop" android:name="ru.kinopoisk.activity.PersonFolderSelectActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.TrailersActivity" android:theme="@style/Theme.Activity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="ru.kinopoisk.activity.LiveSearchActivity" android:theme="@style/Theme.Activity.Transparent" android:windowSoftInputMode="adjustResize"/>
+        <service android:exported="false" android:name="ru.kinopoisk.service.KinopoiskService">
+            <intent-filter>
+                <action android:name="com.stanfy.app.service.ApiMethods"/>
+            </intent-filter>
+        </service>
+        <service android:name="ru.kinopoisk.service.UtilsService"/>
+        <service android:exported="true" android:name="ru.kinopoisk.service.KPGcmTaskService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyD_8vLXNoEC954X82ErGufIzZ6x084x3WI"/>
+        <meta-data android:name="ru.yandex.yandexmapkit.API_KEY" android:value="1234567890"/>
+        <service android:exported="true" android:name="ru.yandex.yandexmaps.cache.TileStorageService" android:process=":maps_cache_service">
+            <meta-data android:name="version" android:value="1"/>
+            <intent-filter>
+                <action android:name="ru.yandex.yandexmaps.cache.ITileStorageService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="yandex"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="ru.kinopoisk" android:exported="false" android:name="ru.kinopoisk.content.KinopoiskContentProvider"/>
+        <meta-data android:name="android.app.default_searchable" android:value=".activity.GlobalSearchActivity"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="abc21c07db355fc78d5dd282e403c20a9d5b4e7b"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|uiMode" android:name="ru.yandex.videoads.VideoPlayerActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/devpanel_activity_title" android:name="com.busylee.devpanel.ui.DevPanelActivity" android:theme="@style/DevPanel.BaseTheme"/>
+        <service android:enabled="true" android:exported="true" android:name="com.yandex.metrica.MetricaService" android:process=":Metrica">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.yandex.metrica.IMetricaService"/>
+                <data android:scheme="metrica"/>
+            </intent-filter>
+            <meta-data android:name="metrica:api:level" android:value="43"/>
+        </service>
+        <receiver android:enabled="true" android:exported="true" android:name="com.yandex.metrica.MetricaEventHandler">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="ru.kinopoisk.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:exported="true" android:label="@string/ypl_service_label_main" android:name="com.yandex.promolib.service.YPLService" android:process=":yandexplib">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.yandex.promolib.service.IYPLService"/>
+                <data android:scheme="promolib"/>
+            </intent-filter>
+            <meta-data android:name="promolib:API:LEVEL" android:value="220"/>
+            <meta-data android:name="promolib:BUILD_TYPE" android:value="1"/> /&gt;
+</service>
+        <service android:exported="false" android:label="@string/ypl_service_label_sync" android:name="com.yandex.promolib.service.YPLCommandsService" android:process=":yandexplib">
+            <intent-filter>
+                <action android:name="com.yandex.promolib.intent.action.YPLSynchronizingAdsService"/>
+                <action android:name="com.yandex.promolib.intent.action.YPLSynchronizingReportsService"/>
+                <action android:name="com.yandex.promolib.intent.action.YPLBackupDataService"/>
+                <action android:name="com.yandex.promolib.intent.action.YPLCleanupAdsService"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="ru.kinopoisk.YPLContentProvider" android:exported="true" android:name="com.yandex.promolib.contentprovider.YPLContentProvider" android:process=":yandexplib"/>
+    </application>
+</manifest>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.nokat3alamiya.nokatjohaCC" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/Theme.CustomDark">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="com.nokat3alamiya.nokatjohaCC.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"> &gt;
+<intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:label="@string/app_name" android:name="com.nokat3alamiya.nokatjohaCC.Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_generic"/>
+        </receiver>
+        <service android:name="com.nokat3alamiya.nokatjohaCC.AlarmService_Service" android:process=":remote"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.AuthorList" android:screenOrientation="portrait">
+&gt;
+</activity>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.AuthorQuoteList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.QuoteView" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.QuoteList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.FavouristList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.CategoryList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.FilterList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.CategoryQuoteList" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.SearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.HelpActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.nokat3alamiya.nokatjohaCC.activity.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

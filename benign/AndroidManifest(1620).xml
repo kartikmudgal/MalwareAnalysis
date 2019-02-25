@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="tinh.yeu.teen.tb">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/book_name" android:theme="@style/AppTheme">
+        <service android:name="vn.adflex.ads.AdFlexService" android:process=":adflexService"/>
+        <meta-data android:name="vn.adflex.ads.publisher.id" android:value="nghiateboma"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.startapp.android.eula.EULAActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:taskAffinity="tinh.yeu.teen.tb.AppWall" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.startapp.android.publish.AppWallActivity" android:taskAffinity="tinh.yeu.teen.tb.AppWall" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <activity android:name="tinh.yeu.teen.tb.MainActivity"/>
+        <activity android:name="tinh.yeu.teen.tb.ChapterActivity"/>
+        <activity android:name="tinh.yeu.teen.tb.ReadingActivity"/>
+        <activity android:name="tinh.yeu.teen.tb.AboutActivity"/>
+        <activity android:name="tinh.yeu.teen.tb.FaqActivity"/>
+        <activity android:label="@string/book_name" android:name="tinh.yeu.teen.tb.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

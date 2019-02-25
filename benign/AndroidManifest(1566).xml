@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="pl.byledobiec.polskiegory" platformBuildVersionCode="10" platformBuildVersionName="2.3.3">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.TYPE_GYROSCOPE"/>
+    <uses-permission android:name="android.permission.TYPE_ORIENTATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/polskiegory_launcher" android:label="@string/app_name" android:theme="@style/polskiegory_style">
+        <activity android:clearTaskOnLaunch="false" android:finishOnTaskLaunch="false" android:label="@string/app_title" android:launchMode="singleTask" android:name=".PolskieGory" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Intro" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Ustawienia" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Mapa" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Kolekcja" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".KoronaGorPolski" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Pomoc" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Panorama" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Kompas" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Pasmo" android:screenOrientation="landscape"/>
+        <activity android:finishOnTaskLaunch="true" android:label="@string/app_title" android:launchMode="singleInstance" android:name=".Wiki" android:screenOrientation="landscape"/>
+    </application>
+</manifest>

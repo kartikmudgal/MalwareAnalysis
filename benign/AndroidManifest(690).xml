@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.konsep.babyplay.wild">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:debuggable="false" android:description="@string/description" android:icon="@drawable/icon_wild" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name=".mainMenu" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".BabyPlay" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/about_title" android:name=".about" android:screenOrientation="portrait"/>
+        <activity android:label="@string/helpstring" android:name=".help" android:screenOrientation="portrait"/>
+        <activity android:name=".web" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <supports-screen android:anyDensity="true"/>
+</manifest>

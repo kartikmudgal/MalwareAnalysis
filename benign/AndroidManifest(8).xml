@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.abe.JacksonPublicSchools" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <permission android:name="com.abe.JacksonPublicSchools.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.abe.JacksonPublicSchools.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_app_logo" android:label="@string/app_name" android:largeHeap="true" android:name="net.parentlink.common.PLApplication" android:theme="@style/Theme.ParentLink">
+        <uses-library android:name="com.google.android.maps" android:required="false"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.abe.JacksonPublicSchools"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.abe.JacksonPublicSchools.LocaleChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="net.parentlink.common.NotificationClearedReceiver">
+            <intent-filter>
+                <action android:name="net.parentlink.common.action.NotificationCleared"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.abe.JacksonPublicSchools.GCMIntentService"/>
+        <activity android:label="@string/Assignments" android:name="net.parentlink.common.AccountAssignments" android:screenOrientation="portrait"/>
+        <activity android:label="@string/Assignment_Info" android:name="net.parentlink.common.AccountAssignment" android:screenOrientation="portrait"/>
+        <activity android:label="@string/Attendance" android:name="net.parentlink.common.AccountAttendance" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.AccountBusRoutes" android:screenOrientation="portrait"/>
+        <activity android:label="@string/Classes" android:name="net.parentlink.common.AccountClasses" android:screenOrientation="portrait"/>
+        <activity android:label="@string/Class_Info" android:name="net.parentlink.common.AccountClass" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/Edit_Account_Information" android:name="net.parentlink.common.AccountEdit" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.AccountEditDeliveryAddress" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.AccountInfo" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.AdvertisementDetail" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.AlertList" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Inbox"/>
+        </activity>
+        <activity android:name="com.abe.JacksonPublicSchools.ArticleViewPager" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.BusinessList" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.BusinessTypes" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.abe.JacksonPublicSchools.CafeteriaMenus" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="false" android:label="@string/calendar" android:name="com.abe.JacksonPublicSchools.Calendar" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.CalendarEventDetail" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.CalendarEventNotes" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.CalendarTracks" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.CalendarTracksEvents" android:screenOrientation="portrait"/>
+        <activity android:label="@string/web_calendars" android:name="com.abe.JacksonPublicSchools.CalendarWeb" android:screenOrientation="portrait"/>
+        <activity android:label="" android:logo="@drawable/logo_parentlink" android:name="com.abe.JacksonPublicSchools.ChooseDistrict" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:name="com.abe.JacksonPublicSchools.CommunityStream" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.CustomLink" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Directory" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeScreen"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Flyers" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.FullScreenImage" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation"/>
+        <activity android:label="@string/login_with_google" android:name="com.abe.JacksonPublicSchools.GoogleAccountChooser" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.GoogleLoginWebView" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation"/>
+        <activity android:name="com.abe.JacksonPublicSchools.HomeScreen" android:screenOrientation="portrait"/>
+        <activity android:label="@string/inbox" android:name="com.abe.JacksonPublicSchools.Inbox" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeScreen"/>
+        </activity>
+        <activity android:label="@string/Library" android:name="net.parentlink.common.Library" android:screenOrientation="portrait"/>
+        <activity android:label="@string/log_in" android:name="com.abe.JacksonPublicSchools.Login" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Marketplace" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Media" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.MessageViewPager" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".Inbox"/>
+        </activity>
+        <activity android:label="@string/News" android:name="com.abe.JacksonPublicSchools.NewsMash" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.OrganizationAccountList" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="net.parentlink.common.OrganizationAccountInfo" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoAnimation"/>
+        <activity android:name="net.parentlink.common.OrganizationInfo" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".HomeScreen"/>
+        </activity>
+        <activity android:name="com.abe.JacksonPublicSchools.OrgSplash" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoActionBar"/>
+        <activity android:name="com.abe.JacksonPublicSchools.OrgChooser" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.PLInfo" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoActionBar"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Resources" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SchoolFinder" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.abe.JacksonPublicSchools.Settings" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SetupWizard" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.SetupWizard"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SocialMedia" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SourceSelection" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SplashScreen" android:screenOrientation="portrait" android:theme="@style/Theme.ParentLink.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/Sports" android:name="com.abe.JacksonPublicSchools.Sports" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SportsPageSelector" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.StandardsBasedGradesHelpActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.SuperCorner" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.abe.JacksonPublicSchools.TipLine" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.TipLineOrgChooser" android:screenOrientation="portrait"/>
+        <activity android:name="net.parentlink.common.UserDeliveryPreferences" android:screenOrientation="portrait"/>
+        <activity android:name="com.abe.JacksonPublicSchools.WebViewSelector" android:screenOrientation="portrait"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_api_key"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="e28464f6f2085c0208e3e3da8f8ccb9a6cca148c"/>
+    </application>
+</manifest>

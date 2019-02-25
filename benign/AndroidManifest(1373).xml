@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ding.flowerapp.shopping">
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="ding.flowerapp.shopping.ShopApplication" android:theme="@style/MyTheme">
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="florisoft.shopping.SplashActivity" android:noHistory="true" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="florisoft.shopping.MainActivity"/>
+        <activity android:name="florisoft.shopping.DetailActivity"/>
+        <activity android:name="florisoft.shopping.DetailZoomActivity"/>
+        <activity android:name="florisoft.shopping.MessageReceivedActivity"/>
+        <activity android:name="florisoft.shopping.WinkelwagenActivity"/>
+        <activity android:name="florisoft.shopping.NavigatieActivity" android:theme="@android:style/Theme.Black"/>
+        <receiver android:name="florisoft.shopping.C2DMRegistrationReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="florisoft.shopping"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="florisoft.shopping.C2DMMessageReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="florisoft.shopping"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.touringclub.android.sardegna">
+    <permission android:name="com.touringclub.android.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.touringclub.android.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.touringclub.android.core.GuideVerdiApplication" android:theme="@style/Theme.Styled">
+        <receiver android:name="com.touringclub.android.broadcastReceiver.ConnectivityChange">
+            <intent-filter>
+                <action android:name="android.net.wifi.p2p.CONNECTION_STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.SplashActivity" android:theme="@style/Theme.Styled.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.StartupVideoActivity" android:theme="@style/Theme.Styled.NoTitleBar"/>
+        <activity android:name="com.touringclub.android.ar.activity.AugmentedRealityActivity" android:screenOrientation="landscape" android:theme="@style/Theme.Styled.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.FirstLevelActivity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.MapFilterActivity"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.ImageGalleryActivity" android:theme="@style/Theme.Styled.Overlay"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.EditNoteActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.EditPdiActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.touringclub.android.activities.HistorySearchActivity" android:windowSoftInputMode="adjustResize"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDSvem65wClRv1DiN-hw-w5TYk3CFdmquY"/>
+        <uses-library android:name="com.google.android.maps"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="de4e43558a926bd879b3c01c6667d9fe1821c00b"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+    </application>
+</manifest>

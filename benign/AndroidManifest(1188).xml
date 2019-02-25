@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Technicalteacher" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_splash_screen" android:name="com.Technicalteacher.Splash_screen" android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.Technicalteacher.Start" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page1" android:name="com.Technicalteacher.Page1" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page2" android:name="com.Technicalteacher.Page2" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page3" android:name="com.Technicalteacher.Page3" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page4" android:name="com.Technicalteacher.Page4a" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page5" android:name="com.Technicalteacher.Page5" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page6" android:name="com.Technicalteacher.Page6" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page7" android:name="com.Technicalteacher.Page7" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page8" android:name="com.Technicalteacher.Page8" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page9" android:name="com.Technicalteacher.Page9" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_info" android:name="com.Technicalteacher.Info" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_des" android:name="com.Technicalteacher.Des" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page10" android:name="com.Technicalteacher.Page10" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page11" android:name="com.Technicalteacher.Page11" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page12" android:name="com.Technicalteacher.Page12" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page13" android:name="com.Technicalteacher.Page13" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page14" android:name="com.Technicalteacher.Page14" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page15" android:name="com.Technicalteacher.Page15" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page16" android:name="com.Technicalteacher.Page16" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page17" android:name="com.Technicalteacher.Page17" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page18" android:name="com.Technicalteacher.Page18" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page19" android:name="com.Technicalteacher.Page19" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page20" android:name="com.Technicalteacher.Page20" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page21" android:name="com.Technicalteacher.Page21" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page22" android:name="com.Technicalteacher.Page22" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page23" android:name="com.Technicalteacher.Page23" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page24" android:name="com.Technicalteacher.Page24" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page25" android:name="com.Technicalteacher.Page25" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page26" android:name="com.Technicalteacher.Page26" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page27" android:name="com.Technicalteacher.Page27" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page28" android:name="com.Technicalteacher.Page28" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page29" android:name="com.Technicalteacher.Page29" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_page30" android:name="com.Technicalteacher.Page30" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_capsule" android:name="com.Technicalteacher.Capsule" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_qoraah" android:name="com.Technicalteacher.Qoraah" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_trello" android:name="com.Technicalteacher.Trello" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_teachekit" android:name="com.Technicalteacher.Teachekit" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_zipgrade" android:name="com.Technicalteacher.Zipgrade" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_tarsia" android:name="com.Technicalteacher.Tarsia" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_activeinspire" android:name="com.Technicalteacher.Activeinspire" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_crocodial" android:name="com.Technicalteacher.Crocodial" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_phet" android:name="com.Technicalteacher.Phet" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:label="@string/title_activity_mostafa" android:name="com.Technicalteacher.Mostafa" android:theme="@style/AppTheme.NoActionBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

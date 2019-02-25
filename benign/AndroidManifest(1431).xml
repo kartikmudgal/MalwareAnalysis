@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="in.chillr" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <permission android:name="in.mobme.chillr.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="in.mobme.chillr.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="in.mobme.chillr.ChillrContext" android:supportsRtl="true">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:launchMode="singleInstance" android:name="in.mobme.chillr.LauncherActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name="in.mobme.chillr.views.sdk.SdkActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/ChillrDialogActivityTheme" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <data android:scheme="chillrpay"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name="in.mobme.chillr.views.sdk.SdkTransactionActivity" android:screenOrientation="portrait" android:theme="@style/ChillrDialogActivityTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTop" android:name="in.mobme.chillr.views.core.CoreActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="chillr"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="go.chillr.in" android:pathPattern="/.*" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="go.chillr.in" android:pathPattern="/.*" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="in.mobme.chillr.views.registration.RegistrationActivity" android:screenOrientation="portrait" android:theme="@style/RegistrationTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/app_name" android:name="in.mobme.chillr.views.registration.WalkthroughActivity" android:screenOrientation="portrait" android:theme="@style/WalkthroughTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/nav_transaction_history" android:name="in.mobme.chillr.views.logs.TransactionLogActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="in.mobme.chillr.views.flow.ContactsActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="in.mobme.chillr.views.flow.RequestActivity" android:parentActivityName="in.mobme.chillr.views.core.CoreActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/app_name" android:name="in.mobme.chillr.views.core.APINVerifyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="in.mobme.chillr.views.lock.AppLockSettingsActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme"/>
+        <activity android:label="@string/app_name" android:name="in.mobme.chillr.views.lock.AppLockVerifyActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme"/>
+        <receiver android:name="in.mobme.chillr.notifications.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.example.gcm"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="in.mobme.chillr.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="in.mobme.chillr.notifications.GcmIntentService"/>
+        <service android:exported="false" android:name="in.mobme.chillr.views.contacts.ContactsSyncService"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:label="@string/title_activity_profile" android:name="in.mobme.chillr.views.flow.TransactionActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_nearme" android:name="in.mobme.chillr.views.nearme.NearMeActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_nearme" android:name="in.mobme.chillr.views.profile.ProfileActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="in.mobme.chillr.views.settings.SettingsActivity" android:parentActivityName="in.mobme.chillr.views.core.CoreActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".views.core.CoreActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_utilities" android:name="in.mobme.chillr.views.utilities.UtilityActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_referral" android:name="in.mobme.chillr.views.referral.ReferralActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_notification_hub" android:name="in.mobme.chillr.views.flow.NotificationHubActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_version_check" android:name="in.mobme.chillr.VersionCheckActivity" android:screenOrientation="portrait" android:theme="@style/ChillrCoreTheme" android:windowSoftInputMode="adjustResize"/>
+        <service android:exported="false" android:name="in.mobme.chillr.LocationService"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="4ec6433a17a80acd5399b64647d862767503e17f"/>
+        <service android:enabled="true" android:name="in.mobme.chillr.ContactAutoSyncService"/>
+        <receiver android:name="in.mobme.chillr.AutoSyncContactsReceiver"/>
+        <service android:exported="false" android:name="in.mobme.chillr.VersionCheckService"/>
+        <receiver android:name="com.moe.pushlibrary.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.moe.pushlibrary.AppUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:path="in.chillr" android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="in.chillr.moengage.provider" android:exported="false" android:name="com.moe.pushlibrary.providers.MoEProvider"/>
+        <activity android:label="MainMenu" android:name="com.moe.pushlibrary.activities.MoEActivity" android:parentActivityName="in.mobme.chillr.views.core.CoreActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".views.core.CoreActivity"/>
+        </activity>
+        <meta-data android:name="SKIP_GCM_REGISTRATION" android:value="true"/>
+        <meta-data android:name="APP_ID" android:value="S7AHE3TM3DYX0QCO3LDFUXPX"/>
+        <meta-data android:name="SENDER_ID" android:value="id:487298908113"/>
+        <meta-data android:name="NOTIFICATION_ICON" android:value="@drawable/chillr_notification_alpha"/>
+        <meta-data android:name="NOTIFICATION_LARGE_ICON" android:value="@drawable/chillr_notification"/>
+        <meta-data android:name="NOTIFICATION_TYPE" android:value="@integer/notification_type_multiple"/>
+        <meta-data android:name="in.mobme.chillr.views.bitmap.GlideConfig" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.moe.pushlibrary.activities.PushTracker" android:noHistory="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.moe.pushlibrary.activities.SnoozeTracker" android:taskAffinity=":NotificationDialog" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <service android:exported="false" android:name="com.moe.pushlibrary.internal.MoEService"/>
+        <service android:exported="false" android:name="com.moe.pushlibrary.MoEWorker"/>
+        <service android:exported="false" android:name="com.moe.pushlibrary.GeofenceIntentService"/>
+        <service android:exported="false" android:name="com.moengage.push.MoEPushWorker"/>
+        <activity android:name="com.helpshift.support.activities.ParentActivity" android:theme="@style/Helpshift.Theme.Activity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.helpshift.support.HSReview" android:theme="@style/Helpshift.Theme.Dialog"/>
+        <service android:label="Helpshift Service" android:name="com.helpshift.support.HSService"/>
+        <service android:label="Helpshift Service" android:name="com.helpshift.support.HSRetryService"/>
+    </application>
+</manifest>

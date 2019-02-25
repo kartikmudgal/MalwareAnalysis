@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.limo.user.nature_heals" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.limo.user.nature_heals.plants"/>
+        <activity android:name="com.limo.user.nature_heals.therapy"/>
+        <activity android:name="com.limo.user.nature_heals.healing"/>
+        <activity android:name="com.limo.user.nature_heals.introduce"/>
+        <activity android:name="com.limo.user.nature_heals.developer"/>
+        <activity android:name="com.limo.user.nature_heals.garlic"/>
+        <activity android:name="com.limo.user.nature_heals.active_c"/>
+        <activity android:label="@string/Ginger" android:name="com.limo.user.nature_heals.ginger"/>
+        <activity android:label="@string/AloeVera" android:name="com.limo.user.nature_heals.aloe"/>
+        <activity android:name="com.limo.user.nature_heals.dandalion"/>
+        <activity android:name="com.limo.user.nature_heals.comfrey"/>
+        <activity android:name="com.limo.user.nature_heals.golden"/>
+        <activity android:name="com.limo.user.nature_heals.cock"/>
+        <activity android:name="com.limo.user.nature_heals.cayenne"/>
+        <activity android:name="com.limo.user.nature_heals.chaste"/>
+        <activity android:name="com.limo.user.nature_heals.moringa"/>
+        <activity android:name="com.limo.user.nature_heals.echinacea"/>
+        <activity android:name="com.limo.user.nature_heals.eucalyptus"/>
+        <activity android:name="com.limo.user.nature_heals.mother"/>
+        <activity android:name="com.limo.user.nature_heals.sting"/>
+        <activity android:name="com.limo.user.nature_heals.yarrow"/>
+        <activity android:name="com.limo.user.nature_heals.cress"/>
+        <activity android:name="com.limo.user.nature_heals.lemon"/>
+        <activity android:name="com.limo.user.nature_heals.rasb"/>
+        <activity android:name="com.limo.user.nature_heals.onion"/>
+        <activity android:name="com.limo.user.nature_heals.poultice"/>
+        <activity android:name="com.limo.user.nature_heals.Base">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.limo.user.nature_heals.footbath"/>
+        <activity android:name="com.limo.user.nature_heals.princibles"/>
+        <activity android:name="com.limo.user.nature_heals.foment"/>
+        <activity android:name="com.limo.user.nature_heals.compressing"/>
+        <activity android:name="com.limo.user.nature_heals.contrasts"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

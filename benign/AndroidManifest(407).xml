@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.english.myEstate">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <permission android:name="com.android.myEstate.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.android.myEstate.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.english.myEstate.Login2" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_loginactivity" android:name="com.english.myEstate.Loginactivity" android:parentActivityName="com.example.login2.Login2" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.android.myEstate.Login2"/>
+        </activity>
+        <activity android:label="@string/title_activity_signupactivity" android:name="com.english.myEstate.Signupactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_menuactivity" android:name="com.english.myEstate.Menuactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_add" android:name="com.english.myEstate.AddActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_listactivity" android:name="com.english.myEstate.Listactivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/title_activity_form" android:name="com.english.myEstate.FormActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/title_activity_contactactivity" android:name="com.english.myEstate.Contactactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_contactaddactivity" android:name="com.english.myEstate.Contactaddactivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/title_activity_contactviewactivity" android:name="com.english.myEstate.Contactviewactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_retrieveactivity" android:name="com.english.myEstate.Retrieveactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_listdetailactivity" android:name="com.english.myEstate.Listdetailactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_contactviewdetailactivity" android:name="com.english.myEstate.Contactviewdetailactivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_editestateactivity" android:name="com.english.myEstate.Editestateactivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/title_activity_editcontactactivity" android:name="com.english.myEstate.Editcontactactivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/title_activity_fotosactivity" android:name="com.english.myEstate.Fotosactivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.english.myEstate.FullImageActivity"/>
+        <uses-library android:name="com.google.android.maps"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDxllnOXXgM_L6vQ0EXYkVgUZ8gl4yEwO0"/>
+        <activity android:label="@string/title_activity_infoactivity" android:name="com.english.myEstate.Infoactivity"/>
+    </application>
+</manifest>

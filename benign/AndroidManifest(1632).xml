@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="uk.co.telegraph.android" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="uk.co.telegraph.android.TMGApplication" android:theme="@style/TMGTheme">
+        <activity android:name="uk.co.telegraph.android.ui.SplashScreenActivity" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:host="uk.co.telegraph.android" android:scheme="content"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="uk.co.telegraph.android.ui.GoogleDeepLinkActivity">
+            <intent-filter>
+                <data android:host="uk.co.telegraph.android" android:scheme="android-app"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.article.ArticleActivity" android:theme="@style/TMGThemeAppCompat">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.HomeActivity"/>
+        </activity>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="uk.co.telegraph.android.ui.article.OnboardingArticleActivity" android:theme="@style/TMGThemeAppCompat">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.HomeActivity"/>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.article.SlideshowActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.article.ArticleActivity"/>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.article.MattCartoonSlideShowActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.article.ArticleActivity"/>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.article.AlexCartoonSlideShowActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.article.ArticleActivity"/>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.HomeActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.WelcomeFreshInstallActivity" android:theme="@android:style/Theme.Holo.Light.NoActionBar"/>
+        <activity android:name="uk.co.telegraph.android.billing.ui.SubscriptionTermsAndConditionsActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.section.SectionActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="uk.co.telegraph.android.ui.comments.CommentsActivity" android:theme="@style/TMGThemeAppCompat"/>
+        <activity android:name="uk.co.telegraph.android.ui.WebViewActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.preferences.MyNewsFilterActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.LogInActivity"/>
+        <activity android:name="uk.co.telegraph.android.migration.MigrationFailureLoginActivity" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:name="uk.co.telegraph.android.ui.ForgotPasswordActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.preferences.SettingsActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.preferences.CreditsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.preferences.SettingsActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="uk.co.telegraph.android.ui.article.OOYalaPlayerActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.preferences.MyAccountActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="uk.co.telegraph.android.ui.preferences.SettingsActivity"/>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name="uk.co.telegraph.android.ui.NoSubscriptionActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="uk.co.telegraph"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="uk.co.telegraph.android.ui.dialogs.TrialEndedWithExtendActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="uk.co.telegraph.android.ui.preferences.BackgroundSettingsPopup" android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+        <activity android:name="uk.co.telegraph.android.ui.HappyFeedbackActivity"/>
+        <activity android:name="uk.co.telegraph.android.ui.UnhappyFeedbackActivity"/>
+        <service android:name="uk.co.telegraph.android.services.CheckInService"/>
+        <service android:name="uk.co.telegraph.android.services.ReadSubscriptionPriceService"/>
+        <service android:exported="false" android:name="uk.co.telegraph.android.services.OfflineReadingService"/>
+        <service android:exported="false" android:name="uk.co.telegraph.android.nitro.NitroCartoonCrawlerService"/>
+        <service android:name="uk.co.telegraph.android.ui.homescreen.widget.WidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service android:name="uk.co.telegraph.android.ui.homescreen.widget.RemoteFetchService"/>
+        <service android:exported="false" android:name="uk.co.telegraph.android.services.BackgroundUpdatesService"/>
+        <service android:exported="false" android:name="uk.co.telegraph.android.services.MarkArticleAsReadService"/>
+        <receiver android:exported="false" android:name="uk.co.telegraph.android.services.CheckInStartServiceReceiver">
+            <intent-filter>
+                <action android:name="uk.co.telegraph.android.services.PERIODIC_CHECKIN_INTENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:icon="@drawable/ic_launcher" android:label="Telegraph" android:name="uk.co.telegraph.android.ui.homescreen.widget.TMGWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.telegraph.DATA_FETCHED"/>
+                <action android:name="com.telegraph.REFRESH_DATA_FETCHED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+        </receiver>
+        <receiver android:name="uk.co.telegraph.android.services.PhoneBootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.AdX.tag.AdXAppTracker">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="27d07fa190c5286b786a96fda11688f5bf7c372a"/>
+        <meta-data android:name="APP_NAME" android:value="uk.co.telegraph.android"/>
+        <meta-data android:name="ADX_CLIENT_ID" android:value="CAR448T"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="USEQASERVER" android:value="OFF"/>
+        <meta-data android:name="NOIMEI" android:value="ON"/>
+        <meta-data android:name="NOMACADDRESS" android:value="ON"/>
+        <meta-data android:name="NOSERIALID" android:value="ON"/>
+        <meta-data android:name="NOANDROIDID" android:value="ON"/>
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_launcher"/>
+        <provider android:authorities="uk.co.telegraph.android.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

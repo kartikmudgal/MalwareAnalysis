@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.m_mahdi.d_alyamani" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <permission android:name="com.m_mahdi.d_alyamani.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.m_mahdi.d_alyamani.permission.C2D_MESSAGE"/>
+    <application android:icon="@drawable/icon" android:label="دعوى اليماني" android:theme="@style/MyAppTheme">
+        <activity android:name="anywheresoftware.b4a.objects.preferenceactivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="fm.jiecao.jcvideoplayer_lib.Hitex_FullScreenActivity" android:screenOrientation="landscape"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.m_mahdi.d_alyamani.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.m_mahdi.d_alyamani"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:name="com.google.firebase.crash.internal.service.FirebaseCrashReceiverService" android:process=":background_crash"/>
+        <service android:name="com.google.firebase.crash.internal.service.FirebaseCrashSenderService" android:process=":background_crash"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".main" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".firstactivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".act_list" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".act_search" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".act_pages" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".firebasemessaging"/>
+        <receiver android:name=".firebasemessaging$firebasemessaging_BR"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".about" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".about_me" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="دعوى اليماني" android:launchMode="singleTop" android:name=".act_setting" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".starter"/>
+        <receiver android:name=".starter$starter_BR"/>
+        <service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service"/>
+        <receiver android:name="anywheresoftware.b4a.samples.httputils2.httputils2service$httputils2service_BR"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

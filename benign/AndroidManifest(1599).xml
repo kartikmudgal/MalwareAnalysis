@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="shamimsoft.shamimyas" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <permission android:name="shamimsoft.shamimyas.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="shamimsoft.shamimyas.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <permission android:name="shamimsoft.shamimyas.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+    <uses-permission android:name="shamimsoft.shamimyas.permission.C2D_MESSAGE"/>
+    <application android:icon="@drawable/icon" android:label="تقویم شمیم یاس" android:largeHeap="true" android:name="android.support.multidex.MultiDexApplication" android:supportsRtl="true" android:theme="@style/MyAppTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="ir.adad.client.AdadActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="AdadTestMode" android:value="false"/>
+        <meta-data android:name="AdadToken" android:value="ace93f968f234930bc3ca4fb76163c9d"/>
+        <activity android:name="ir.magnet.sdk.MagnetInterstitialActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:path="shamimsoft.shamimyas" android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="shamimsoft.shamimyas"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="co.ronash.pushe.service.GcmService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="co.ronash.pushe.receiver.FallbackGcmNetworkManagerReceiver">
+            <intent-filter>
+                <action android:name="co.ronash.pushe.CHECK_TASKS"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="co.ronash.pushe.service.FallbackGcmTaskRunner">
+            <intent-filter>
+                <action android:name="co.ronash.pushe.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="co.ronash.pushe.task.scheduler.gcm.GcmTaskRunner" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="co.ronash.pushe.service.IntentTaskRunner"/>
+        <service android:exported="false" android:name="co.ronash.pushe.service.InstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <activity android:name="co.ronash.pushe.activities.PopupDialogActivity" android:theme="@style/PusheTransparent"/>
+        <receiver android:name="co.ronash.pushe.receiver.BootAndScreenReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="co.ronash.pushe.service.ScreenStateService">
+            <intent-filter>
+                <action android:name="co.ronash.pushe.service.ScreenStateService"/>
+            </intent-filter>
+        </service>
+        <activity android:name="co.ronash.pushe.activities.WebviewActivity"/>
+        <receiver android:name="co.ronash.pushe.receiver.AppUsageAlarmReceiver"/>
+        <receiver android:name="co.ronash.pushe.receiver.ConnectivityReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="co.ronash.pushe.receiver.AddReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.ADD_JOB_CREATOR"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="co.ronash.pushe.receiver.AppChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_FULLY_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService"/>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_992148067668"/>
+        <meta-data android:name="co.ronash.pushe.cr" android:value="aHR0cDovL2I3NGYwZDFjMDViYTQxZjViZDFiODVhZDJhNGQ5YjE1OmFhZmU3OTU4NjA3OTQ0MjM5MmQxZDRmOTgwYjNmMjk2QGNhLnB1c2hlLmNvLzQ0NzE="/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".main" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".home" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".doa" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".ghbleh" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".tabdil" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".cornometr" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".oghat" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".hoshdar" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".liveharem" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".selctcity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".azan"/>
+        <receiver android:name=".azan$azan_BR">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".yadavri" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".widhava"/>
+        <receiver android:label="-هواشناس شمیم یاس" android:name=".widhava$widhava_BR">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widhava_info"/>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".wid"/>
+        <receiver android:label="-شمیم یاس" android:name=".wid$wid_BR">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/wid_info"/>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".nett"/>
+        <receiver android:name=".nett$nett_BR">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".bazar" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".help" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".katab" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".photodown" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".roidad" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".pushejsonservice"/>
+        <receiver android:name=".pushejsonservice$pushejsonservice_BR" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="shamimsoft.shamimyas"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="shamimsoft.shamimyas"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".zekrshomar" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".azangho" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".gallrey" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".photo" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".reader" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".weather" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".khabar" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="تقویم شمیم یاس" android:launchMode="singleTop" android:name=".minikhabar" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".nasb"/>
+        <receiver android:name=".nasb$nasb_BR"/>
+        <service android:name=".broadcastregister"/>
+        <receiver android:name=".broadcastregister$broadcastregister_BR">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service"/>
+        <receiver android:name="anywheresoftware.b4a.samples.httputils2.httputils2service$httputils2service_BR"/>
+    </application>
+</manifest>

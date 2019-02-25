@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="gkyw.kaoshi.namespace">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.Kaoshi_zcpgActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.danxuan" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.duoxuan" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.jianda" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.panduan" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.mainlist" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.TreeView" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.TreeView_cuoti" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.yijian" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.find" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.jieshao" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.software" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.news" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.newshow" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="zcpg.namespace.MainActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

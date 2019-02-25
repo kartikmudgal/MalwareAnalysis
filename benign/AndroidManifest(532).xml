@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.hecorat.acapella" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.hecorat.acapella.AcapellaApplication" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/record_audio" android:name="com.hecorat.acapella.RecordAudioActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <activity android:name="com.hecorat.acapella.EditVideoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <activity android:name="com.hecorat.acapella.PlayVideoActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <activity android:name="com.hecorat.acapella.CaptureActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault"/>
+        <activity android:name="com.hecorat.acapella.PreListenAudioActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.gms.analytics.globalConfigResource" android:resource="@xml/global_tracker"/>
+    </application>
+</manifest>

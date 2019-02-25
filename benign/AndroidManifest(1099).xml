@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.sharefaith.sfchurchapp_d28f11e757e1ee1f" platformBuildVersionCode="20" platformBuildVersionName="4.4W.2-1537038">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f_2301a316763f9ea8.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f_2301a316763f9ea8.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.base.SFApplication" android:theme="@style/AppTheme">
+        <dependency>
+            <groupId>
+org.apache.commons
+</groupId>
+            <artifactId>
+commons-compress
+</artifactId>
+            <version>
+1.0
+</version>
+        </dependency>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.SFMainActivity" android:noHistory="true" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFBlogBaseActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFPlaylistBaseActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFContactActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFBlogActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFPlaylistActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFDownloadsActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFBibleActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFInboxActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFMoreActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.ui.SFMessageActivity"/>
+        <provider android:authorities="@string/content_provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.base.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.sharefaith.kids"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.sharefaith.sfchurchapp_d28f11e757e1ee1f.base.GcmIntentService"/>
+    </application>
+</manifest>

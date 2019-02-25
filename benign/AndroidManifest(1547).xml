@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="nz.co.smartpayroll.smartpayrollmobile" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/icon" android:label="SmartPayroll" android:name="md55e9b69f73a8f924e3a9c6e0a9b3e564e.SmartPayrollApp">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="net.hockeyapp.android.UpdateActivity"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:label="Settings" android:name="md55e9b69f73a8f924e3a9c6e0a9b3e564e.SettingsActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md52122feacc7567f1b782d812c30a35ef1.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="md586549caeaa53efa0d5f35440463570ed.LoginActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myApp"/>
+        <activity android:name="md586549caeaa53efa0d5f35440463570ed.AppInfoActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md586549caeaa53efa0d5f35440463570ed.ForgotPasswordActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myApp"/>
+        <activity android:label="Change PIN" android:name="md53e31db7d3b88b56ada163770e90ba09e.ConfirmPinActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:label="Change PIN" android:name="md53e31db7d3b88b56ada163770e90ba09e.SetPinActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:label="Change PIN" android:name="md53e31db7d3b88b56ada163770e90ba09e.ConfirmPasswordActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md53e31db7d3b88b56ada163770e90ba09e.PinLoginActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myApp"/>
+        <activity android:hardwareAccelerated="true" android:label="Pay Groups" android:name="md55904b298d0e6e44e24b4f8a21014a37e.PayGroupsActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:label="Process and Authorise" android:name="md55904b298d0e6e44e24b4f8a21014a37e.ProcessAndAuthoriseActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md57fff852308fe2242e425c55c07a8f97f.EmployeePayDetailsActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:label="Leave Item" android:name="md57fff852308fe2242e425c55c07a8f97f.LeaveDetailsActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="Payment Summary" android:name="md57fff852308fe2242e425c55c07a8f97f.PaymentSummaryActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTabs"/>
+        <activity android:name="md57fff852308fe2242e425c55c07a8f97f.EditAmountActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md57fff852308fe2242e425c55c07a8f97f.EditPayActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <activity android:name="md5c4c21dd95dd3dbddc93dc1b992154e10.EditDcDateActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/myAppWithTitleBar"/>
+        <provider android:authorities="nz.co.smartpayroll.smartpayrollmobile.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+</manifest>

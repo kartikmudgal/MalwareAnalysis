@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gomo.scanner" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.gomo.scanner.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.gomo.scanner.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.gomo.scanner.ui.ScannerApp" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.gomo.scanner.ui.activity.SplashActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.CameraActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitleBar.Full"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.DocumentCameraActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitleBar.Full"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoPaletteActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.LocalImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.DocumentLocalImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.DocumentLocalImagePreviewActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.LocalImagePreviewActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.SingleModePhotoTailorActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.SingleModePhotoPaletteActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoTailorActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditForNewPhotosActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditForLocalImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditForDocumentPhotosActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditForDocumentLocalImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.PhotoEditForDocumentNewPhotoActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.SettingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:launchMode="singleTask" android:name="com.gomo.scanner.ui.activity.AboutActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:name="com.gomo.scanner.ui.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.gomo.scanner.ui.activity.DocumentActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.TranslucentStatus"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="com.gau.go.feedback.crash.CrashReportDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:name="com.gomo.scanner.ui.activity.EmptyActivityForDialog" android:theme="@style/AppTheme.Translucent"/>
+        <provider android:authorities="com.gomo.scanner.staticsdkprovider" android:name="com.gau.go.gostaticsdk.StaticDataContentProvider"/>
+        <provider android:authorities="com.gomo.scanner.MPSharedPreferences" android:exported="false" android:name="com.jiubang.commerce.buychannel.MPSharedPreferences"/>
+        <provider android:authorities="com.gomo.scanner.MultiprocessSharedPreferences" android:exported="false" android:name="com.jb.ga0.commerce.util.io.MultiprocessSharedPreferences"/>
+        <service android:exported="true" android:name="com.gomo.scanner.ui.service.UnlockAdService"/>
+        <service android:exported="true" android:name="com.gomo.scanner.statistics.service.StatisticsService" android:process="com.android.statistics"/>
+        <receiver android:name="com.gomo.scanner.ui.receiver.StatisticsReceiver" android:process="com.android.statistics"/>
+        <service android:name="com.jiubang.commerce.daemon.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:process="com.android.statistics"/>
+        <receiver android:name="com.jiubang.commerce.daemon.BootCompleteReceiver" android:process="com.android.statistics">
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jiubang.alock.ACTION_LOCKER_ACCOUNT_CHANGE"/>
+                <action android:name="com.jiubang.alocker.theme.change"/>
+                <action android:name="com.jiubang.alocker.monitor.vip"/>
+                <action android:name="com.jiubang.alocker.refresh.vip"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.gomo.scanner.ui.service.AssistService" android:process="com.android.assist"/>
+        <receiver android:name="com.gomo.scanner.ui.receiver.AssistReceiver" android:process="com.android.assist"/>
+        <service android:name="com.gomo.scanner.firebase.FireBaseMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.gomo.scanner.firebase.FireBaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="gomo_firebase_channel" android:value="200"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/icon_silhouette"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/notification_icon_backgraound_color"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.jiubang.commerce.buychannel.GaTrackerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:label="Intelligent Preload Service" android:name="com.jiubang.commerce.service.IntelligentPreloadService" android:process=":com.jiubang.commerce.service.IntelligentPreloadService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jiubang.commerce.ad.url.AdUrlPreParseLoadingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.jiubang.commerce.ad.h5.H5AdActivity" android:screenOrientation="portrait"/>
+        <service android:label="Ad Service" android:name="com.jiubang.commerce.service.AdService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.AppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:multiprocess="true" android:name="com.jiubang.commerce.dyload.core.proxy.activity.StandarProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <service android:name="com.jb.commerce.fwad.api.FwadServiceProxy"/>
+        <service android:enabled="true" android:exported="true" android:name="com.jiubang.advertisingsdk.AdSdkService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.jiubang.advertisingsdk.unlockAd.UnlockAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <service android:name="com.gomo.abtestcenter.statics.SchedulerStaticsService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.gomo.scanner"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.gomo.scanner.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <service android:name="com.gomo.firebasesdk.notification.ClickService"/>
+        <service android:name="com.gomo.firebasesdk.notification.DeleteService"/>
+        <receiver android:exported="true" android:name="com.gomo.firebasesdk.statistic.AlarmStatisticReceiver">
+            <intent-filter>
+                <action android:name="com.firebase.STATISTIC"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+    </application>
+</manifest>

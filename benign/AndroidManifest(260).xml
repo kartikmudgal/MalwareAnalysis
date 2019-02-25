@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.citysmartcashew.wholesaler" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/app" android:label="@string/app_name" android:theme="@style/PinkActionBarTheme">
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.CheckMacActivity"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.MenuActivity"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.StartActivity"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.Login"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.Register" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.DynamicListViewActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activity.MenuActivity"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.ShoppingCartActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name="com.citysmartcashew.wholesaler.activity.ProductDetailActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/title_activity_shipment_detail" android:name="com.citysmartcashew.wholesaler.activity.ShipmentDetailActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.MoreActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activity.MenuActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_facebook" android:name="com.citysmartcashew.wholesaler.more.FacebookActivity"/>
+        <activity android:label="@string/title_activity_face_book" android:name="com.citysmartcashew.wholesaler.activity.FaceBookActivity"/>
+        <activity android:label="@string/title_activity_you_tube" android:name="com.citysmartcashew.wholesaler.activity.YouTubeActivity"/>
+        <activity android:label="@string/title_activity_twitter" android:name="com.citysmartcashew.wholesaler.activity.TwitterActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.ContactUsActivity"/>
+        <activity android:label="@string/title_activity_order_details" android:name="com.citysmartcashew.wholesaler.activity.OrderDetailsActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.OrderItemDetailActivity"/>
+        <activity android:label="@string/title_activity_logout" android:name="com.citysmartcashew.wholesaler.activity.LogoutActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/title_activity_send_inquiry" android:name="com.citysmartcashew.wholesaler.activity.SendInquiryActivity" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".activity.MenuActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_partenerwithus" android:name="com.citysmartcashew.wholesaler.activity.PartenerwithusActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/title_activity_job_work" android:name="com.citysmartcashew.wholesaler.activity.JobWorkActivity"/>
+        <activity android:label="@string/title_activity_jowork_detail" android:name="com.citysmartcashew.wholesaler.activity.JoworkDetailActivity"/>
+        <activity android:label="@string/title_activity_terms_condition" android:name="com.citysmartcashew.wholesaler.activity.TermsConditionActivity"/>
+        <activity android:label="@string/title_activity_about_us" android:name="com.citysmartcashew.wholesaler.activity.AboutUsActivity"/>
+        <activity android:label="Aboutus" android:name="com.citysmartcashew.wholesaler.more.FragmentAboutus"/>
+        <activity android:label="App Link" android:name="com.citysmartcashew.wholesaler.more.AppLinkActivity"/>
+        <activity android:label="Contact us" android:name="com.citysmartcashew.wholesaler.more.Fragmentcontactus"/>
+        <activity android:label="Google Plus" android:name="com.citysmartcashew.wholesaler.more.GooglePlusActivity"/>
+        <activity android:label="Group Of Company" android:name="com.citysmartcashew.wholesaler.more.GroupOfCompanyActivity"/>
+        <activity android:label="Twitter" android:name="com.citysmartcashew.wholesaler.more.TwitterActivity"/>
+        <activity android:label="Youtube" android:name="com.citysmartcashew.wholesaler.more.YoutubeActivity"/>
+        <activity android:label="Gallery" android:name="com.citysmartcashew.wholesaler.more.Fragmentgallery"/>
+        <activity android:label="Gallery" android:name="com.citysmartcashew.wholesaler.activity.GalleryWithFooterActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CashewFarmingProjectActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CashewFarmingActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CashewPlantingActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CashewFarmingInfoActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CFarmingActivity"/>
+        <activity android:name="com.citysmartcashew.wholesaler.activity.CityCashewMachineryActivity"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

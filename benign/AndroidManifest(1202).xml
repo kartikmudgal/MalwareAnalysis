@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="com.thinkyeah" package="com.thinkyeah.galleryvault" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.thinkyeah.galleryvault.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.thinkyeah.galleryvault.permission.C2D_MESSAGE"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <compatible-screens/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@mipmap/a" android:label="@string/by" android:largeHeap="true" android:manageSpaceActivity="com.thinkyeah.galleryvault.main.ui.activity.SubLockingActivity" android:name="com.thinkyeah.galleryvault.application.MainApplication" android:supportsRtl="true" android:theme="@style/aq">
+        <meta-data android:name="com.thinkyeah.galleryvault.common.glide.GVGlideModule" android:value="GlideModule"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.LockingActivity"/>
+        <activity-alias android:excludeFromRecents="true" android:label="@string/by" android:name="com.thinkyeah.galleryvault.LockingActivity" android:targetActivity="com.thinkyeah.galleryvault.main.ui.activity.LockingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.thinkyeah.galleryvault.main.ui.activity.SubLockingActivity"/>
+        <activity-alias android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.thinkyeah.galleryvault.ui.SubLockingActivity" android:targetActivity="com.thinkyeah.galleryvault.main.ui.activity.SubLockingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="open" android:scheme="thgv"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.AlertMessageDialogActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:icon="@mipmap/a" android:label="@string/by" android:name="com.thinkyeah.galleryvault.main.ui.activity.AddByShareActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/*"/>
+                <data android:mimeType="text/*"/>
+                <data android:mimeType="multipart/*"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:icon="@mipmap/a" android:label="@string/by" android:name="com.thinkyeah.galleryvault.ui.AddByShareActivity4InternalUse" android:targetActivity="com.thinkyeah.galleryvault.main.ui.activity.AddByShareActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="com.thinkyeah.galleryvault.action.SEND"/>
+                <action android:name="com.thinkyeah.galleryvault.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@mipmap/a" android:label="@string/by" android:name="com.thinkyeah.galleryvault.main.ui.activity.OpenFileFromOutsideActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="com.thinkyeah.galleryvault.action.OPEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@mipmap/a" android:label="@string/by" android:name="com.thinkyeah.galleryvault.main.ui.activity.OpenFileWith3rdPartyViewerActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ShareActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.EditActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="@string/by" android:name="com.thinkyeah.galleryvault.main.ui.activity.main.MainActivity" android:taskAffinity="com.thinkyeah.galleryvault.main" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.MainLaunchActivity" android:taskAffinity="com.thinkyeah.galleryvault.main" android:theme="@style/dq" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="@string/by" android:name="com.thinkyeah.galleryvault.main.ui.activity.main.FakeMainActivity" android:taskAffinity="com.thinkyeah.galleryvault.main.fake" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FakeMainLaunchActivity" android:taskAffinity="com.thinkyeah.galleryvault.main.fake" android:theme="@style/dq" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.SettingActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.NavigationPinCodeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.NavigationAccountEmailActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ConfirmPasswordForRestoreDataActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.filelist.FileListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.RecycleBinActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.RecycleBinIntroActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.fileview.ImageViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.fileview.ImagePreviewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.slideshow.FadeSlideShowActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.fileview.video.VideoViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.TutorialActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.setting.ChoosePasswordActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.setting.ConfirmPasswordActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FaqActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FaqArticleActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.MessageActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.AboutActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.PrivacyPolicyActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.LogCollectActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="debug" android:scheme="gvdebug"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ThinkAccountActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ChooseLanguageActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FileAntiLostTipActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FixSdcardIssueActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FindLostFileActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.TransferSpaceActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.AddFileInSdcardTipActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.TipDialogActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.RequireDocumentApiPermissionActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.MultiSelectTip4DocumentSelectorActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.HowToEnableDocumentApiPermissionActivity" android:taskAffinity="com.thinkyeah.galleryvault.HowToEnableDocumentApiPermissionActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.HowToEnableDocumentUIActivity" android:taskAffinity="com.thinkyeah.galleryvault.HowToEnableExplorerForMiuiActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FixSdcardIssueDialogActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.DeveloperActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.AdsDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.AdPresenterDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.AdsServerConfigDisplayDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.AppConfigDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.MiscInfoDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.LogDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.PushMsgDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.WebMediaDeveloperActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.DownloadDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.CloudDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.ThemeDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.BillingDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.debug.LoginDebugActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DefaultAppsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.HideIconActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.thinkyeah.galleryvault.discovery.browser.ui.activity.WebBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.browser.ui.activity.WebBrowserEditUrlActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.browser.ui.activity.WebBrowserHistoryActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.browser.ui.activity.WebBrowserImageDownloadSelectListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.browser.ui.activity.WebBrowserVideoDownloadSelectListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ImageSelectDetailViewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DialerLoadingActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.ui.activity.DialerLoadingActivity" android:targetActivity="com.thinkyeah.galleryvault.main.ui.activity.DialerLoadingActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.AppPromotionActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.BreakInAlertsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.BreakInAlertsListActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.BreakInAlertsDetailActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.L10nSupportActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.MarketUrlRedirectActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.SetFolderCoverActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.license.ui.activity.LicenseUpgradeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.FakePasswordActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.BackupAndRestoreActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.CommonGuideActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.download.ui.activity.DownloadSelectActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.download.ui.activity.DownloadManagerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.VideoPlayerSettingActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.thinkyeah.galleryvault.main.ui.activity.DialogAppEnterAdActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.thinkyeah.galleryvault.main.ui.activity.NativeFullScreenAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.thinkyeah.galleryvault.main.ui.activity.NativeAdsDialogBaseActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.VideoShowEditResultActivity" android:theme="@style/dq">
+            <intent-filter>
+                <action android:name="com.xvideostudio.videoeditor.param.action.THIRD_PART_EDIT_RESULT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.thinkyeah.common.ad.service.IAService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ChooseFileActivityDemo"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.cloud.ui.activity.CloudFolderListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.cloud.ui.activity.CloudFileListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ChooseInsideFileActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ChooseInsideFolderActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.ChooseOutsideFileActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.SortFolderActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.AddFilesActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.thinkyeah.galleryvault.main.ui.activity.EncryptionUpgradeActivity" android:taskAffinity="com.thinkyeah.galleryvault.EncryptionUpgradeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.IconDisguiseActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DeviceMigrationActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DeviceMigrationSrcActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DeviceMigrationDestQRScannerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.DeviceMigrationDestActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.TaskResultActivity"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.AutoBackupService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.EncryptionUpgradeService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.MainService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.LaunchService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.ClearTempPathService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.CommonIntentService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.ClearExpiredRecycleBinIntentService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.TraceLogIntentService"/>
+        <service android:name="com.thinkyeah.galleryvault.discovery.browser.service.DownloadService4WebBrowser"/>
+        <service android:name="com.thinkyeah.galleryvault.discovery.browser.service.ClearWebBrowserHistoriesService"/>
+        <service android:name="com.thinkyeah.thinkcast.dlna.service.DLNAService"/>
+        <service android:name="com.thinkyeah.galleryvault.download.service.DownloadService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.DownloadService4Update"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.PreloadDocumentApiPermissionGuideService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.RefreshAllEncryptFilesMetaDataService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.DeviceMigrationSrcService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.DeviceMigrationDestService"/>
+        <receiver android:exported="true" android:name="com.thinkyeah.galleryvault.main.receiver.CallEventReceiver" android:priority="2147483647">
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.thinkyeah.galleryvault.main.receiver.InstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.thinkyeah.galleryvault.main.receiver.SdcardMountReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.thinkyeah.galleryvault.main.receiver.SystemEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.thinkyeah.galleryvault.main.receiver.PackageEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.thinkyeah.watchdog.WatchDogService"/>
+        <receiver android:exported="true" android:name="com.thinkyeah.watchdog.WatchDogReceiver">
+            <intent-filter>
+                <action android:name="engine_start"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/t"/>
+        <receiver android:description="@string/h9" android:name="com.thinkyeah.galleryvault.receiver.AntiUninstallDeviceAdminReciever" android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin" android:resource="@xml/b"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:label="@string/by" android:name="com.google.android.gms.tagmanager.PreviewActivity" android:noHistory="true">
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.thinkyeah.galleryvault"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="io.fabric.ApiKey" android:value="763a022c0e8abd213713a631d766f8b6db2f16ec"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.auth.AuthActivity" android:screenOrientation="behind"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.cloud.ui.activity.debug.CloudSettingActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.cloud.ui.activity.debug.CloudTasksManagerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.cloud.ui.activity.debug.CloudImagePreviewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.main.ui.activity.CloudSyncIntroductionActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.main.ui.activity.CloudSyncPrincipleActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.main.ui.activity.LinkGoogleDriveActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.cloudsync.main.ui.activity.CloudSyncStatusActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.main.ui.activity.LoginActivity" android:windowSoftInputMode="adjustResize"/>
+        <service android:exported="false" android:name="com.thinkyeah.tcloud.service.CloudTransferService"/>
+        <service android:exported="false" android:name="com.thinkyeah.tcloud.service.CloudDriveCleanService"/>
+        <service android:exported="false" android:name="com.thinkyeah.galleryvault.cloudsync.fssync.service.GVFsSyncService"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.NetworkChangeHandleService"/>
+        <receiver android:name="com.thinkyeah.galleryvault.main.receiver.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/a1u" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaMainActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaLoginActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaMediaDetailActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaMediaCommentsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaUserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaUserFollowsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaPhotoPreviewActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaEditChannelsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaDownloadSelectActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaSearchTagsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaTagMediaActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.thinstagram.ui.activity.InstaLoadVideoActivity" android:theme="@style/dq"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.thinkyeah.galleryvault.discovery.messenger.ui.activity.ChooseWhatsAppMediaItemsActivity"/>
+        <provider android:authorities="com.thinkyeah.galleryvault.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/c"/>
+        </provider>
+        <receiver android:name="com.thinkyeah.galleryvault.main.receiver.PushNotificationAlarmReceiver"/>
+        <service android:name="com.thinkyeah.galleryvault.main.service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.thinkyeah.galleryvault.main.service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.thinkyeah.galleryvault.main.service.DRService"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <service android:name="com.thinkyeah.thinkcast.dlna.service.HttpServerService"/>
+        <receiver android:name="com.thinkyeah.common.ad.webeye.proxy.WebeyeBroadcastReceiver">
+            <intent-filter>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="WEMOB_SECRET" android:value="97ea042e-b14d-7b9b-69a1-e4168ea020d5"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.wemob.ads.we.WeInterstitialAdActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.bmob.adsdk.InterstitialAdActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.bmob.adsdk.internal.ht.cat.CatService"/>
+        <service android:exported="false" android:name="com.bmob.adsdk.internal.ht.act.ActService"/>
+        <service android:exported="false" android:name="com.kaffnet.sdk.internal.task.HelperService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mobvista.msdk.shell.MVActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="app_license" android:value="74f08988c4f017cd4b9038e3c3b5c115"/>
+        <receiver android:name="com.thinkyeah.common.ad.baidu.proxy.BaiduAdPackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.thinkyeah.galleryvault.DuAdCacheProvider" android:exported="false" android:name="com.thinkyeah.common.ad.baidu.proxy.BaiduAdCacheContentProvider"/>
+        <activity android:name="com.duapps.ad.offerwall.ui.OfferWallAct"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.duapps.ad.InterstitialAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.duapps.ad.video.VideoFullScreenActivity" android:theme="@style/e4"/>
+        <receiver android:name="com.duapps.ad.video.NetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.NET.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.Net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:enabled="false" android:icon="@mipmap/b" android:label="@string/a4w" android:name="com.thinkyeah.galleryvault.icondisguise.calculator.CalculatorStartActivity" android:taskAffinity="com.thinkyeah.galleryvault.secretdoor.calculator" android:theme="@style/im" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.thinkyeah.galleryvault.icondisguise.calculator.CalculatorGBActivity" android:theme="@style/im" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.thinkyeah.galleryvault.icondisguise.calculator.CalculatorLActivity" android:theme="@style/im" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/l5"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.thinkyeah.galleryvault.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <uses-library android:name="android.test.runner"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.thinkyeah.galleryvault.crashlyticsinitprovider" android:exported="false" android:initOrder="100" android:name="com.crashlytics.android.CrashlyticsInitProvider"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.thinkyeah.galleryvault"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.thinkyeah.galleryvault.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+    </application>
+</manifest>

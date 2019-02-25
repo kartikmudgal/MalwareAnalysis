@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.droid27.transparentclockweather">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:allowBackup="false" android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/Theme.AppTheme">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name=".LauncherActivity" android:noHistory="true" android:theme="@style/Theme.AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.droid27.utilities.HomescreenAnimationActivity" android:theme="@style/Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/clock_theme_selection_name" android:name=".skinning.themes.WidgetThemeSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/batteryTitle" android:name=".BatteryInfoActivity" android:noHistory="true" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.droid27.utilities.SettingsSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/location_info_name" android:name=".location.LocationSetupActivity" android:theme="@style/Theme.AppTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/selectLocation_name" android:name=".SelectLocationActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/external_theme_selection_name" android:name=".skinning.externalthemes.ExternalThemeSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/font_selection_name" android:name=".skinning.fonts.FontSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/location_info_name" android:name=".location.LocationInfoActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/weather_icons_theme_selection_name" android:name=".skinning.weathericons.WeatherIconsThemeSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/my_weather_locations_name" android:name=".MyWeatherLocationsActivity" android:noHistory="true" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/forecast_name" android:name=".WeatherForecastActivity" android:noHistory="false" android:theme="@style/Theme.AppTheme.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/about_name" android:name=".About" android:noHistory="false" android:theme="@style/Theme.AppTheme.Dialog"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/application_selection_name" android:name=".ApplicationSelectionActivity" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name=".ViewHtmlActivity" android:noHistory="true" android:theme="@style/Theme.AppTheme.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/forecast_name" android:name=".WeatherForecast" android:theme="@style/Theme.AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/quick_setup_category" android:name=".QuickPreferencesActivity" android:theme="@style/Theme.AppTheme">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:label="@string/app_name" android:name=".PreferencesActivity" android:theme="@style/Theme.AppTheme"/>
+        <receiver android:label="@string/app_name_4x1" android:name=".Widget_4x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_4x1"/>
+        </receiver>
+        <receiver android:label="@string/app_name_4x1" android:name=".Weather_4x1_1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/weather_4x1_1"/>
+        </receiver>
+        <receiver android:label="@string/app_name_4x1" android:name=".Weather_4x1_2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/weather_4x1_2"/>
+        </receiver>
+        <receiver android:label="@string/app_name_4x2" android:name=".Widget_4x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_4x2"/>
+        </receiver>
+        <receiver android:label="@string/app_name_4x2" android:name=".Widget_4x2_b">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_4x2_b"/>
+        </receiver>
+        <receiver android:label="@string/app_name_5x2" android:name=".Widget_5x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_5x2"/>
+        </receiver>
+        <service android:enabled="true" android:label="@string/app_name" android:name=".ClockService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:enabled="true" android:name="com.google.ads.AdActivity"/>
+        <receiver android:name="com.google.ads.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" android:value="true"/>
+    </application>
+</manifest>

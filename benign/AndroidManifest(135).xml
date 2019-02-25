@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.app_ahac.layout">
+    <application android:icon="@drawable/icon_icon" android:label="@string/app_name" android:name="com.biznessapps.layout.BAcore">
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:name="com.biznessapps.layout.MainController" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.biznessapps.activities.HomeScreenActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.activities.TwitterLoginActivity" android:screenOrientation="portrait" android:theme="@style/Theme.TwitterLoginTheme"/>
+        <activity android:name="com.biznessapps.activities.GalleryActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.biznessapps.activities.GalleryPreviewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.activities.SingleFragmentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.activities.AroundUsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.biznessapps.layout.views.scanning.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.layout.views.map.LocationView" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name="com.paypal.android.MEP.PayPalActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name="com.biznessapps.layout.views.loyalty.LoyaltyCardListView" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <service android:name="com.biznessapps.player.PlayerService"/>
+        <receiver android:name="com.biznessapps.pushnotifications.C2DMRegistrationReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.app_ahac.layout"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.biznessapps.pushnotifications.C2DMMessagesReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.app_ahac.layout"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.app_ahac.layout.permission.C2D_MESSAGE"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <permission android:name="com.app_ahac.layout.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+</manifest>

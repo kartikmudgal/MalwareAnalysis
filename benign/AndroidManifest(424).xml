@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.expressvpn.vpn" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.VIBRATE"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <permission android:description="@string/permission_description" android:label="Control OpenVPN" android:name="com.expressvpn.vpn.REMOTE_API" android:permissionGroup="android.permission-group.NETWORK" android:protectionLevel="dangerous"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.expressvpn.vpn.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.expressvpn.vpn.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="false" android:banner="@drawable/tv_banner" android:icon="@drawable/icon_xvpn" android:label="@string/app" android:name="com.expressvpn.vpn.ApplicationExpressVpn" android:theme="@style/ExpressVpn.Theme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.expressvpn.vpn.MainActivity" android:theme="@style/SplashTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.expressvpn.vpn.MainActivity.ACTION_ACTIVATION_CODE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.expressvpn.vpn.MainActivity.ACTION_ACTIVATION_CODE_AUTO"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="expressvpn.xyz" android:path="/launch-app" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="app-bus" android:path="/app-deep-link" android:scheme="expressvpn"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.expressvpn.vpn.WelcomeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.expressvpn.vpn.FreeTrialActivationActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.expressvpn.vpn.LoginActivationActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.expressvpn.vpn.connection.TransparentConnectionApprovalActivity" android:theme="@style/Theme.NoDisplay.Evpn" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.expressvpn.vpn.LocationSearchActivity" android:theme="@style/Theme.LocationSearch">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value="com.expressvpn.vpn.LocationSearchActivity"/>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/location_searchable"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.expressvpn.vpn.WebViewActivity"/>
+        <provider android:authorities="com.expressvpn.vpn.location.search.SuggestionProvider" android:exported="false" android:name="com.expressvpn.vpn.location.search.SuggestionProvider"/>
+        <service android:exported="false" android:label="ExpressVPN Service" android:name="com.expressvpn.vpn.connection.OpenVpnService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.expressvpn.vpn.InstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:label="ExpressVPN Backend Service" android:name="com.expressvpn.vpn.config.service.ExpressVpnCommunicationService" android:stopWithTask="true"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.config.service.ExpressVpnServiceRequestReceiver">
+            <intent-filter>
+                <action android:name="com.expressvpn.SCHEDULED_SERVICE_REQUEST"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.connection.NetworkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.connection.Heartbeat.Heartbeat"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.subscription.SubscriptionStatusPollReceiver"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.config.service.VpnServersPollReceiver"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.FreeTrialDidntConnectNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.FreeTrialSetupOtherDevicesNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.FreeTrialExpiringSoonNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.FreeTrialReactivateNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.FreeTrialPrivacyExposedNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.SubscriptionExpiringSoonNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.notification.SubscriptionExpiredNotification"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.billing.GlobalPurchaseStateChangeReceiver">
+            <intent-filter>
+                <action android:name="expressvpn.ACTION_PURCHASE_REGISTRATION_FAILURE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.widget.ExpressVpnSimpleWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_info"/>
+        </receiver>
+        <service android:exported="false" android:label="ExpressVPN Widget Service" android:name="com.expressvpn.vpn.widget.ExpressVpnWidgetUpdateService"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.connection.VpnConnectivityReceiver">
+            <intent-filter>
+                <action android:name="express.vpn.connectivity"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.upgrade.OpenUpgradeNotificationReceiver"/>
+        <receiver android:enabled="true" android:exported="false" android:label="BootReceiver" android:name="com.expressvpn.vpn.boot.BootReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:label="ExpressVPN Auto Launch Service" android:name="com.expressvpn.vpn.boot.AutoLaunchStartupService"/>
+        <service android:name="com.expressvpn.vpn.services.KillNotificationsService"/>
+        <receiver android:exported="false" android:name="com.expressvpn.vpn.xvca.XvcaSubmissionServiceReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+    </application>
+</manifest>

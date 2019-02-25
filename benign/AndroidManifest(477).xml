@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.gateio.gateio">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <permission android:name="com.gateio.gateio.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.gateio.gateio.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.secshell.secData.ApplicationWrapper" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.gateio.gateio.activity.SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.gateio.gateio.activity.MainActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.gateio.gateio.activity.SearchCoinsActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.gateio.gateio.activity.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.gateio.gateio.activity.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.Login2Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.CountryCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.ResetPwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.ResetSafePwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyCenter" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyLoginPwd" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyIdentityAuth" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyGoogleAuth" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyPhoneAuth" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyEmailAuth" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.SafetyLoginAuth" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.user.UserManage" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.market.CurrencySet" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.market.CurrencySetInfo" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.market.OtherSortSet" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.CustomScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyWithdrawAddresses" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyRechargeSelect" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyRecharge" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyRechargeCode" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyWithdrawSelect" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyWithdraw" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyWithdrawCode" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyWithdrawConfirm" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbRechargeSelect" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbRecharge" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbWithdrawSelect" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbWithdraw" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbWithdrawConfirm" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyRecord" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.CurrencyRecordDetails" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbRecord" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.RmbRecordDetails" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.BankAddress" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.AreaAddress" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.BranchAddress" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.BankCardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.AddBankCardActicity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.AssertCardAndZFBActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.NewDetails" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="k线图" android:name="com.gateio.gateio.activity.KDiagramActivity" android:screenOrientation="sensor"/>
+        <activity android:name="com.gateio.gateio.activity.chartRoom.TXLTSActivity"/>
+        <activity android:name="com.gateio.gateio.activity.chartRoom.ContactSupportActivityOnlyShow"/>
+        <activity android:name="com.gateio.gateio.activity.chartRoom.ImageActivity"/>
+        <activity android:name="com.gateio.gateio.activity.chartRoom.ChatRoomSettingActivity"/>
+        <service android:name="com.gateio.gateio.activity.FloatService"/>
+        <activity android:launchMode="singleTask" android:name="com.gateio.gateio.activity.ChatActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.gateio.gateio.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <activity android:name="com.gateio.gateio.activity.asset.UserSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.AddWeChatActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.asset.AddAlipayActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.C2cOrderDetailsForBuyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.C2cOrderDetailsForSellerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.C2cChatActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.gateio.gateio.activity.asset.ShowPayCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.gateio.gateio.activity.C2cAppealActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.mob.tools.MobUIShell" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <data android:scheme="tencent1105782622"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.gateio.gateio.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="59dc2fb0cae7e73add00003a"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="google-android"/>
+        <activity android:exported="false" android:name="com.gateio.gateio.receiver.TestActivity">
+            <intent-filter>
+                <action android:name="jpush.testAction"/>
+                <category android:name="jpush.testCategory"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="cn.jpush.android.ui.PopWinActivity" android:theme="@style/MyDialogStyle"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="cn.jpush.android.ui.PushActivity" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.gateio.gateio"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService" android:process=":mult">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.gateio.gateio.DataProvider" android:exported="false" android:name="cn.jpush.android.service.DataProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.gateio.gateio"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.gateio.gateio.receiver.MyReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.CONNECTION"/>
+                <category android:name="com.gateio.gateio"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.gateio.gateio.receiver.MyJPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE"/>
+                <category android:name="com.gateio.gateio"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="google-android"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="eff46c38f6d531d47075b738"/>
+        <service android:exported="false" android:name="com.tencent.qalsdk.service.QalService" android:process=":QALSERVICE"/>
+        <service android:exported="false" android:name="com.tencent.qalsdk.service.QalAssistService" android:process=":QALSERVICE"/>
+        <receiver android:exported="false" android:name="com.tencent.qalsdk.QALBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.tencent.qalsdk.broadcast.qal"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.tencent.qalsdk.core.NetConnInfoCenter" android:process=":QALSERVICE">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.gateio.gateio.activity.user.LanguageSettingActivity"/>
+        <activity android:name="com.gateio.gateio.activity.ticker.OnlineHelpActivity"/>
+        <activity android:name="com.gateio.gateio.activity.ticker.CoinChooseActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <service android:enabled="true" android:exported="true" android:name="cn.jpush.android.service.DaemonService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService"/>
+                <category android:name="com.gateio.gateio"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <provider android:authorities="com.gateio.gateio.DownloadProvider" android:exported="true" android:name="cn.jpush.android.service.DownloadProvider"/>
+        <meta-data android:name="android.arch.lifecycle.VERSION" android:value="27.0.0-SNAPSHOT"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

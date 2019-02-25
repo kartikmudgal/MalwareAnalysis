@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="sm.live_stock_assistant_exam.test_series">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.Frist_Activity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" android:screenOrientation="portrait"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.Quiz_list" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.HideActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.QuizActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.ResultActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="sm.live_stock_assistant_exam.test_series.AnsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:label="@string/title_activity_about_us" android:name="sm.live_stock_assistant_exam.test_series.About_us"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:anroid="http://schemas.android.com/apk/res-auto" package="com.valdio.valdioveliu.recyclerview" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.valdio.valdioveliu.recyclerview.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.valdio.valdioveliu.recyclerview.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:backupAgent="com.valdio.valdioveliu.recyclerview.MyBackupAgent" android:fullBackupContent="@xml/my_backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="android.support.multidex.MultiDexApplication" android:restoreAnyVersion="true" android:supportsRtl="false" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIyxyaKLPnMfoDDS3NynPpn7djBjLfaU_gtKLbHQ"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Customer_Det_List" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.frag.Calculator" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main" android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+        <activity android:name="com.valdio.valdioveliu.recyclerview.CustomerList_edit" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Customer_Det_List_edit" android:parentActivityName="com.valdio.valdioveliu.recyclerview.Customer_Det_List"/>
+        <activity android:name="com.valdio.valdioveliu.recyclerview.Report1_customer_bal" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Report2_customer_late" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Report2_customer_late_exp" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Report3_customer_date" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Customer_Det_List_All" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Report3_balance_month" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Report3_balance_month_exp" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/help_title" android:name="com.valdio.valdioveliu.recyclerview.help" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/setting_title" android:name="com.valdio.valdioveliu.recyclerview.UserSettingActivity" android:parentActivityName="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.valdio.valdioveliu.recyclerview.FragmentStatePagerSupport_Main" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_search_results" android:launchMode="singleTop" android:name="com.valdio.valdioveliu.recyclerview.SearchResultsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:label="@string/setting_title" android:name="com.valdio.valdioveliu.recyclerview.SettingsActivity"/>
+        <activity android:label="@string/app_name" android:name="com.valdio.valdioveliu.recyclerview.LoginActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/google_drive_title" android:name="com.valdio.valdioveliu.recyclerview.Google_drive_list"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/pref_group_curr" android:name="com.valdio.valdioveliu.recyclerview.frag.GroupList_edit"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/pref_browse_ip" android:name="com.valdio.valdioveliu.recyclerview.frag.Share_IP"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.whatsapp.Conversation" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.whatsapp.ContactPicker" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.whatsapp"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="send" android:scheme="whatsapp"/>
+            </intent-filter>
+            <meta-data android:name="android.service.chooser.chooser_target_service" android:value=".ContactChooserTargetService"/>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/pref_curr" android:name="com.valdio.valdioveliu.recyclerview.frag.CurrList_edit"/>
+        <receiver android:label="PhoneStatListener" android:name="com.valdio.valdioveliu.recyclerview.online.PhoneStatListener">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.permission.READ_PHONE_STATE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.valdio.valdioveliu.recyclerview.online.DbBackupListener" android:process=":remote"/>
+        <receiver android:enabled="false" android:name="com.valdio.valdioveliu.recyclerview.online.DeviceBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.valdio.valdioveliu.recyclerview.frag.TutWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/tutlist_appwidget"/>
+        </receiver>
+        <activity android:configChanges="orientation|screenSize" android:name="com.valdio.valdioveliu.recyclerview.Customer_Det_List_edit2" android:parentActivityName="com.valdio.valdioveliu.recyclerview.Customer_Det_List"/>
+        <service android:exported="false" android:name="com.valdio.valdioveliu.recyclerview.threads.RSSPullService"/>
+        <service android:exported="false" android:name="com.valdio.valdioveliu.recyclerview.threads.HelloService"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.valdio.valdioveliu.recyclerview.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.valdio.valdioveliu.recyclerview"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+    </application>
+</manifest>

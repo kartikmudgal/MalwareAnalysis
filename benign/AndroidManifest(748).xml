@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.magzter.pokerface" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.magzter.pokerface.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.magzter.pokerface.permission.C2D_MESSAGE"/>
+    <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <application android:hardwareAccelerated="true" android:icon="@drawable/icon128" android:label="@string/app_name" android:largeHeap="true" android:name="com.newstand.utils.MagzterApp" android:theme="@style/AppTheme">
+        <service android:exported="false" android:name="com.magzter.pokerface.MyGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.magzter.pokerface.MyInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.magzter.pokerface.GcmTokenRegistrationService"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.magzter.pokerface.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:name="com.magzter.pokerface.MainActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="com.magzter.pokerface.LoginActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="com.magzter.pokerface.TwitterLogin"/>
+        <activity android:configChanges="orientation" android:name="com.magzter.pokerface.SettingsScreenNew" android:theme="@style/AppTheme"/>
+        <activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="orientation" android:name="com.artifex.mupdf.MuPDFActivity"/>
+        <activity android:configChanges="orientation" android:name="com.news.live.ReaderActivity"/>
+        <activity android:configChanges="orientation" android:name="com.magzter.pokerface.VideoPlayer"/>
+        <activity android:label="@string/app_name" android:name="com.magzter.pokerface.PaypalPurchaseActivity"/>
+        <activity android:configChanges="orientation" android:name="com.news.live.PhotoGalleryActivity"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.artifex.mupdf.WebPageActivity"/>
+        <activity android:name="com.magzter.pokerface.WebViewActivity" android:theme="@style/AppTheme"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <service android:exported="false" android:name="com.magzter.pokerface.DownloadService">
+            <intent-filter>
+                <action android:name="com.example.newstanddev.IDownloadService.aidl"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.magzter.pokerface.DownloadReceiver">
+            <intent-filter>
+                <action android:name="com.dci.magzter"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.paypal.android.sdk.payments.PayPalService"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity"/>
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="io.card.payment.CardIOActivity"/>
+        <activity android:name="io.card.payment.DataEntryActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:name="com.magzter.pokerface.LiveActivity" android:theme="@style/AppTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:name="com.news.live.NotificationActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="com.magzter.pokerface.google_measurement_service" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementContentProvider"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+    </application>
+</manifest>

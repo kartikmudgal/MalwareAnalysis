@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.imdgrup.artimesaj">
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".MainScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.MainScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".ReportScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.ReportScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".GroupScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.GroupScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".SettingScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.SettingScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".PersonScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.PersonScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".MessageScreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.imdgrup.artimesaj.MessageScreen"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

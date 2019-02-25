@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.divinglog.divelog" platformBuildVersionCode="27" platformBuildVersionName="8.1.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.divinglog.divelog.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <application android:icon="@drawable/icon" android:label="Diving Log" android:theme="@style/MyAppTheme">
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCBV3kxIVajPiOcZjaUz5y1cafuN7zavlI"/>
+        <provider android:authorities="com.divinglog.divelog.provider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".main" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmstatistics" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmdetailsdata" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frminfo" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmlogbook" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmsignature" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmdetailslist" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmmap" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmcalculator" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmlogmanager" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmimport" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmsettings" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="Diving Log" android:launchMode="singleTop" android:name=".frmsync" android:screenOrientation="unspecified" android:windowSoftInputMode="stateHidden"/>
+        <service android:name=".srvdropbox"/>
+        <receiver android:name=".srvdropbox$srvdropbox_BR"/>
+        <service android:name=".srvcontentchooser"/>
+        <receiver android:name=".srvcontentchooser$srvcontentchooser_BR"/>
+        <service android:name="anywheresoftware.b4a.samples.httputils2.httputils2service"/>
+        <receiver android:name="anywheresoftware.b4a.samples.httputils2.httputils2service$httputils2service_BR"/>
+    </application>
+</manifest>

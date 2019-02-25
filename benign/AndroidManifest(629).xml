@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="com.jb.gosms" android:sharedUserLabel="@string/app_label" package="com.jb.gosms" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <original-package android:name="com.jb.gosms"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <permission android:name="com.jb.gosms.permission.provider.CHAT_INFO_ACCESS" android:protectionLevel="signature"/>
+    <permission android:name="com.jb.gosms.permission.provider.CUSTOM_PREFERENCE_ACCESS" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jb.gosms.permission.provider.CHAT_INFO_ACCESS"/>
+    <permission android:name="com.jb.gosms.permission.SERVICE" android:protectionLevel="normal"/>
+    <uses-permission android:name="com.jb.gosms.permission.SERVICE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INSTALL_DRM"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.jb.gosms.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jb.gosms.permission.C2D_MESSAGE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:allowTaskReparenting="true" android:icon="@drawable/jb_smsmms" android:label="@string/app_label" android:largeHeap="true" android:name="com.jb.gosms.MmsApp" android:process="com.jb.gosms" android:supportsRtl="false" android:taskAffinity="com.jb.gosms" android:theme="@style/fa">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/m"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="app_license" android:value="4e6ae6ef34e4de9750393931d57ef207"/>
+        <meta-data android:name="gomo_firebase_channel" android:value="101"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/state_notify_msg_l_lock"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/notification_icon_backgraound_color"/>
+        <service android:exported="true" android:name="com.jb.gosms.transaction.TransactionService"/>
+        <service android:exported="false" android:name="com.jb.gosms.transaction.SmsReceiverService">
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_SMS_SENT_ACTION"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_SMS_RESENT_ACTION"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_TO_SEND_SMS_ACTION"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.GOIM_STARTER"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.jb.gosms.language.RestartActivity" android:theme="@style/fe"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_label" android:launchMode="singleTop" android:name="com.jb.gosms.ui.mainscreen.GoSmsMainActivity" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/mms"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android-dir/mms-sms"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.MAIN_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jiubang.gau.ACTION_GOSTATICSDK"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.ui.mycenter.MyCenterActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.mycenter.MyprofileActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.diytheme.search.DiyThemeScanActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.jb.gosms.ui.mycenter.AccountSwitchReceiver">
+            <intent-filter>
+                <action android:name="com.jiubang.integralwall.login"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_label" android:launchMode="singleTop" android:name="com.jb.gosms.ui.ComposeMessageActivity" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_CONVERSATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android-dir/mms-sms"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="mms"/>
+                <data android:scheme="mmsto"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SENDTO"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+                <data android:scheme="mms"/>
+                <data android:scheme="mmsto"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH_LONG_PRESS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/x-vcard"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.lotterywheel.LotteryWheelActivity"/>
+        <activity android:icon="@drawable/ic_mms_vcard" android:label="@string/vcard_type_vcard" android:name="com.jb.gosms.goim.ui.ContactCardListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.ui.composemessage.PicturePreViewActivity" android:theme="@style/fe"/>
+        <activity-alias android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.ForwardMessageActivity" android:targetActivity="com.jb.gosms.ui.ComposeMessageActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/delivery_report_activity" android:name="com.jb.gosms.ui.DeliveryReportActivity" android:theme="@style/fc"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.seniorconvlist.stangersms.StrangerSmsPreferenceActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.contacts.GroupsListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preference.GoSmsInfomationPreference"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preference.GoSmsWallpaperSetting"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.ConversationContentSearchActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/edit_slideshow_activity" android:name="com.jb.gosms.ui.SlideshowEditActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/edit_slide_activity" android:name="com.jb.gosms.ui.SlideEditorActivity" android:theme="@style/ft" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/slideshow_activity" android:name="com.jb.gosms.ui.SlideshowActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.pictureviewer.PictureViewerActivity" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/slideshow_activity" android:name="com.jb.gosms.ui.INewReadMMSActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="@string/class_0_message_activity" android:name="com.jb.gosms.ui.ClassZeroActivity" android:theme="@style/fe"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.intercept.SmsInterceptActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.intercept.SmsInterceptSettingActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.intercept.ContactListMgn"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.language.LanguageSettingsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.ui.preference.notification.NewSmsNotificationPreference" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.ui.SeniorPreference" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preference.notification.CustomNotifyActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.ui.security.MessageFilterPreference" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.security.KeywordNumberPreActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.gosms.game.PululuGameActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.jb.gosms.transaction.PushReceiver" android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.WAP_PUSH_GSM_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.jb.gosms.MMS_NATIVE_IS_SENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.transaction.MmsSystemEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.CONTENT_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.BootCompleteReceiver.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/sim_manage_messages_title" android:launchMode="singleTop" android:name="com.jb.gosms.ui.ManageSimMessages">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="false" android:name="com.jb.gosms.transaction.SmsReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.BootCompleteReceiver.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.MESSAGE_SENT"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_NEW_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_NEW_ONLINE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_NEW_OFFLINE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_SMS_SENT_ACTION"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.NEW_MSGEVENT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.ADD_FRIEND_BE_AGREED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.IM_FRIEND_AVATAR_UPDATED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.im.IM_LOGOUT_SUCCESS"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.LOGGED_IN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.HOST_PRESENCE_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.ROOM_FETCHED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.FRIEND_DATA_UPDATED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.SEND_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.SEND_MESSAGE_FROM_WEAR"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.transaction.MessageStatusReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.transaction.MessageStatusReceiver.MESSAGE_STATUS_RECEIVED"/>
+                <action android:name="com.jb.gosms.plugin.sinaweibo.action.sendresult"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.transaction.SimFullReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SIM_FULL"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.transaction.SmsRejectedReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_REJECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/contact" android:name="com.jb.gosms.ui.contacts.GroupMembers"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.jb.gosms.smspopup.SmsPopupActivity" android:screenOrientation="portrait" android:theme="@style/fy" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.jb.gosms.iconwidget.RECENT_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity-alias android:icon="@drawable/ic_launcher_record_audio" android:name="com.jb.gosms.SmsPopupActivityLauncher" android:screenOrientation="user" android:targetActivity="com.jb.gosms.smspopup.SmsPopupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_NOUSE"/>
+                <category android:name="android.intent.category.LAUNCHER_NOUSE"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.jb.gosms.indivipopup.IndividualyPopupActivity" android:screenOrientation="portrait" android:theme="@style/fm">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <service android:name="com.jb.gosms.smspopup.SmsReceiverService"/>
+        <service android:name="com.jb.gosms.smspopup.SmsPopupUtilsService"/>
+        <receiver android:name="com.jb.gosms.smspopup.ClearAllReceiver"/>
+        <receiver android:name="com.jb.gosms.smspopup.SmsReceiver" android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.GSM_SMS_RECEIVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_GSM_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.mms.transaction.MESSAGE_SENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="com.jb.report.CrashReportDialog" android:process=":CrashReport" android:theme="@style/fc">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTop" android:name="com.jb.gosms.themeinfo.ThemeSettingTabActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="gotheme" android:scheme="gosms"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*" android:mimeType="*/*" android:pathPattern=".*gotheme" android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.wallpaper.search"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.THEMESHOP_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.sticker.StickerActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.jb.gosms.font.FontStoreActivity" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.cropimage.CropImageActivity" android:process=":CropImage" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.security.ChooseLockPattern" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.gosms.ui.security.ConfirmLockPattern" android:taskAffinity="com.jb.security" android:theme="@style/fd">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.jb.gosms.action.LOCKPATTERN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.security.ChooseLockPassword" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.gosms.ui.security.ConfirmLockPassword" android:screenOrientation="portrait" android:taskAffinity="com.jb.security" android:theme="@style/fd">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.jb.gosms.action.LOCKPASSWORD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.security.ConfirmLockPattern2" android:screenOrientation="portrait" android:theme="@style/fd">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.ui.security.ConfirmLockPassword2" android:screenOrientation="portrait" android:theme="@style/fd">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.goim.ui.ContactCard" android:theme="@style/fd"/>
+        <service android:enabled="true" android:exported="false" android:label="@string/service_name_widgetservice" android:name="com.jb.gosms.gosmswidgetbase.GoSmsWidgetService">
+            <intent-filter>
+                <action android:name="com.jb.gosms.widgetstartservice"/>
+                <data android:host="com.jb.gosms" android:port="80" android:scheme="gosmsdef"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/service_name_widgetreceiver" android:name="com.jb.gosms.gosmswidgetbase.GoSmsWidgetReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.locktypechanged"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.unlocksuccess"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.BLACKLIST_CHANGED_ACTION"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.relockwidget"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.ConversationEncrypt_change"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.updatestatuebar"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/widget_name_icon" android:name="com.jb.gosms.iconwidget.GoSmsIconWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/q"/>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.middlewidget.GoSmsMiddleWidgetConfigureActivity" android:noHistory="true" android:theme="@style/ft">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.jb.gosms.middlewidget.GoSmsMiddleWidgetMoreActivity" android:theme="@style/i9">
+            <intent-filter>
+                <action android:name="com.jb.gosms.middlewidgetmoreactivity"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <receiver android:label="@string/receiver_name_widget_gosms" android:name="com.jb.gosms.deskwidget.DeskWidgetReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.lockview"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.updatestatus"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/widget_name_middle" android:name="com.jb.gosms.middlewidget.GoSmsMiddleWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/r"/>
+        </receiver>
+        <receiver android:name="com.jb.gosms.ui.preference.notification.ReminderReceiver"/>
+        <service android:name="com.jb.gosms.ui.preference.notification.ReminderReceiverService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preference.notification.NewMusicPickerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.RINGTONE_PICKER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preference.notification.SendNotifySettingPreference" android:theme="@style/ft"/>
+        <service android:name="com.jb.gosms.smspopup.SmsMmsObserverService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.tagversionsix.FavoriteTagBoxActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.privatebox.PrivateBoxActivity">
+            <intent-filter>
+                <action android:name="com.jb.gosms.PRIVATEBOX_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.MessageDisplayActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/tags_settings" android:name="com.jb.gosms.tag.TagsSettingsPreference" android:theme="@style/ft"/>
+        <receiver android:name="com.jb.gosms.schedule.ScheduleReceiver"/>
+        <service android:name="com.jb.gosms.schedule.ScheduleService"/>
+        <service android:exported="false" android:name="com.jb.gosms.im.CellValidateService">
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.ACTION_CELL_VALIDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.goim.ACTION_CELL_VALIDATE_HOOK"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jb.gosms.im;com.jb.gosms.chat" android:label="ImContentProvider" android:multiprocess="false" android:name="com.jb.gosms.goim.im.database.ImContentProvider" android:permission="com.jb.gosms.permission.provider.CHAT_INFO_ACCESS"/>
+        <receiver android:name="com.jb.gosms.transaction.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.util.ZCameraBrocastReceiver">
+            <intent-filter>
+                <action android:name="com.jb.zcamera.MAIN_START_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.admob.IapBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.TASK_THEMESTROE_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="go-sms" android:exported="false" android:multiprocess="false" android:name="com.jb.gosms.provider.GoSmsProvider"/>
+        <provider android:authorities="go-mms" android:exported="false" android:multiprocess="false" android:name="com.jb.gosms.provider.GoMmsProvider">
+            <grant-uri-permission android:pathPrefix="/part/"/>
+            <grant-uri-permission android:pathPrefix="/drm/"/>
+        </provider>
+        <provider android:authorities="go-mms-sms" android:exported="false" android:multiprocess="false" android:name="com.jb.gosms.provider.GoMmsSmsProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.privatebox.PrivateBoxContactActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.privatebox.PrivateBoxNewPreference" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/preferences_title" android:name="com.jb.gosms.privatebox.PrivateBoxNotifacationPreference" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.privatebox.ChangePrivacyStatusBarActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.privatebox.ChangePrivacyEntryActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.privatebox.DrawPrivacyGestureActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.SetupWizard" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.ThemeSetupWizardActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.PermissionSetupDefaultAppActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.PermissionSetupStorageActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.PermissionSetupGrantActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <receiver android:name="com.jb.gosms.download.DownloadReceiver"/>
+        <receiver android:name="com.jb.gosms.download.DownloadClickReceiver"/>
+        <service android:name="com.jb.gosms.download.DownloadManagerService"/>
+        <service android:name="com.jb.gosms.themeinfo.DownloadChargedThemeService"/>
+        <service android:name="com.jb.gosms.GOSmsProService"/>
+        <service android:name="com.jb.gosms.util.FloatWindowsService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.BackupAndRecoverMainActivity" android:theme="@style/i9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.BackupSettingActivity" android:theme="@style/i9"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jb.gosms.ui.contacts.ContactsListActivity" android:taskAffinity="launcherwidget.ContactsListActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.webapp.GoSmsWebAppActivity" android:process=":WebApp" android:screenOrientation="portrait" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.webapp.GoSmsWebPlusActivity" android:screenOrientation="portrait" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.golauex.smswidget.iconwidget.OftenContactsActivity" android:process="com.jb.gosms.golauex.smswidget" android:taskAffinity="launcherwidget.oftencontactsactivity" android:theme="@style/fe">
+            <intent-filter>
+                <action android:name="com.jb.gosms.golauncherwidget.OftenContactsActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.ui.composemessage.upload.GoShareTipsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.RecipientNameModifyView" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.QuickTextEditActivity"/>
+        <provider android:authorities="com.jb.gosms.golauex.smswidget.provider2" android:grantUriPermissions="true" android:multiprocess="true" android:name="com.jb.gosms.golauex.smswidget.SmsProvider" android:process="com.jb.gosms.golauex.smswidget"/>
+        <provider android:authorities="com.jb.gosms.golauex.smswidget.provider" android:grantUriPermissions="true" android:multiprocess="true" android:name="com.jb.gosms.golauex.smswidget.DataProvider" android:process="com.jb.gosms.golauex.smswidget"/>
+        <provider android:authorities="gopreferences" android:exported="true" android:multiprocess="false" android:name="com.jb.gosms.gopreferences.GOSmsSharedPreferencesProvider"/>
+        <provider android:authorities="gosms.provider.applytheme" android:exported="true" android:multiprocess="false" android:name="com.jb.gosms.themeplay.GOSmsApplyThemeProvider"/>
+        <provider android:authorities="gosms.provider.custom.preference" android:exported="true" android:multiprocess="false" android:name="com.jb.gosms.gopreferences.GOSmsCustomPreferencesProvider" android:permission="com.jb.gosms.permission.provider.CUSTOM_PREFERENCE_ACCESS"/>
+        <provider android:authorities="gosms.provider.purchase.super" android:exported="true" android:multiprocess="false" android:name="com.jb.gosms.purchase.GOSmaPurchaseProvider" android:permission="com.jb.gosms.permission.provider.PURCHASE_ACCESS"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:label="" android:launchMode="singleInstance" android:name="com.jb.gosms.golauex.smswidget.DeleteSmsActivity" android:process="com.jb.gosms.golauex.smswidget" android:theme="@style/fc">
+            <intent-filter>
+                <action android:name="com.gau.go.launcherex.gowidget"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.jb.gosms.golauex.smswidget.SmsSettingActivity" android:process="com.jb.gosms.golauex.smswidget">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <receiver android:exported="true" android:name="com.jb.gosms.golauex.smswidget.LauncherexRemoveReceiver" android:process="com.jb.gosms.golauex.smswidget">
+            <intent-filter>
+                <action android:name="com.gau.gowidget_action_destroy_gowidgets"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.gosms.golauex.smswidget.MessageChooserActivity" android:process="com.jb.gosms.golauex.smswidget">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.golauex.smswidget.contactwidget.ContactWidgetManagerActivity" android:taskAffinity="launcherwidget.ContactWidgetManagerActivity" android:theme="@style/fe">
+            <intent-filter>
+                <action android:name="com.jb.gosms.golauncherwidget.ContactWidgetManagerActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.golauex.smswidget.contactwidget.ContactWidgetContactsActivity" android:taskAffinity="launcherwidget.ContactWidgetContactsActivity" android:theme="@style/fe">
+            <intent-filter>
+                <action android:name="com.jb.gosms.golauncherwidget.ContactWidgetContactsActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.jb.gosms.golauex.smswidget.contactwidget3d.GoWidgetActivity3D" android:screenOrientation="portrait" android:theme="@style/fd">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.gau.go.3dwidget"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.golauex.smswidget.contactwidget3d.ContactWidget3DActionPopupActivity" android:taskAffinity="launcherwidget.ContactWidget3DActionPopupActivity" android:theme="@style/fe">
+            <intent-filter>
+                <action android:name="com.jb.gosms.golauncherwidget.ContactWidget3DActionPopupActivity"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.jb.gosms.analytic.ReferrerInfoReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jb.gosms.backup.BackupMainTabActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jb.gosms.backup.netbackup.ui.LocalBrMainActivity"> "
+<intent-filter>
+                <action android:name="dropbox.gosms.start.dropboxbr"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.ui.BrScheduleActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.ui.LocalRestoreActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.ui.WebBrFolderPersonActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.ui.WebBrManagerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.localdropbox.DropboxSettingActivity" android:theme="@style/ft"/>
+        <service android:name="com.jb.gosms.billing.BillingService"/>
+        <service android:name="com.jb.gosms.billing.BillingServiceGoStroe" android:process=":gostoretheme"/>
+        <receiver android:name="com.jb.gosms.billing.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.ui.ApkInstalledReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.jb.gosms.themeinfo.ThemeInstalledService"/>
+        <service android:exported="true" android:name="com.jb.gosms.emoji.EmojiInstalledService">
+            <intent-filter>
+                <action android:name="com.jb.gosms.emoji.ACTION_EMOJI_TYPE_SET"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.ui.purchase.PurchaseComboLevel1Activity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.jb.gosms.purchase.NetworkConnectivityReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.purchase.TimerReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.purchase.timer"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.purchase.AccountChangedReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.jb.gosms.purchase.PurchaseService"/>
+        <service android:name="com.jb.gosms.firebase.PushMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.jb.gosms.firebase.PushInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.privatebox.PrivateBoxModifySecurityQuestionActivity"/>
+        <receiver android:name="com.jb.gosms.ui.skin.DownloadGosmsthemeReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.download.gosmstheme"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.AboutActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.AppLockActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.IapPurchaseActivity" android:theme="@style/ft"/>
+        <service android:name="com.jb.gosms.GOSmsThreadService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.groupsms.GroupSmsPluginActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.groupsms.GroupSmsPluginDownActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.FeedbackActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.messagecenter.ui.MessageCenterActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.messagecenter.ui.MessageContentActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.messagecenter.ui.MessageNotifyActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.account.login.AccountNavigateLoginActivity" android:theme="@style/im"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.account.login.AccountLoginActivity">
+            <intent-filter>
+                <action android:name="com.jb.gosms.account.login.AccountLoginActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.account.regist.AccountVerifyActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.account.bind.BindMobileActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.account.bind.ChangePasswordActivity"/>
+        <provider android:authorities="com.jb.gosms.modules.account.provider" android:name="com.jb.gosms.account.AccountProvider"/>
+        <provider android:authorities="gosmsdatapro" android:exported="true" android:multiprocess="false" android:name="com.jb.gosms.background.pro.BgDataProviderPro"/>
+        <service android:name="com.jb.gosms.floatpopup.FloatingService" android:process=":floatpopup"/>
+        <service android:name="com.jb.gosms.floatpopup.floatwindow.StandOutFloatWindow" android:process=":floatpopup"/>
+        <service android:name="com.jb.gosms.monitor.InstallMonitorService"/>
+        <activity android:exported="true" android:label="@string/app_name" android:name="com.jiubang.commerce.tokencoin.integralexchange.IntegralExchangeActivity" android:theme="@style/fd"/>
+        <service android:exported="true" android:name="com.jb.gosms.application.PersistentProcessService"/>
+        <receiver android:name="com.jb.gosms.application.PersistentProcessReceiver"/>
+        <service android:name="com.jb.gosms.application.PersistentProcessService$InnerService1"/>
+        <service android:name="com.jb.gosms.application.SecondProcessService" android:process=":process2"/>
+        <receiver android:name="com.jb.gosms.application.SecondProcessReceiver" android:process=":process2"/>
+        <service android:name="com.jb.gosms.application.SecondProcessService$InnerService2" android:process=":process2"/>
+        <service android:name="com.jb.gosms.application.ThridProcessService" android:process=":process3"/>
+        <service android:name="com.jb.gosms.application.ThridProcessService$InnerService3" android:process=":process3"/>
+        <service android:name="com.jb.gosms.application.ThourProcessService" android:process=":process4"/>
+        <service android:name="com.jb.gosms.application.ThourProcessService$InnerService4" android:process=":process4"/>
+        <service android:name="com.jiubang.commerce.daemon.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.jiubang.commerce.daemon.BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jiubang.alock.ACTION_LOCKER_ACCOUNT_CHANGE"/>
+                <action android:name="com.jiubang.alocker.theme.change"/>
+                <action android:name="com.jiubang.alocker.monitor.vip"/>
+                <action android:name="com.jiubang.alocker.refresh.vip"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.ad.notification.AdNotifyAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.action.new.AD_NOTIFY_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.gosms.ad.notification.NotificationAdActivity"/>
+        <receiver android:name="com.jb.gosms.ad.notification.NotificationAdRemoveReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.action.AD_NOTIFY_REMOVE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.background.OnStatistic19AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.TASK_LOOPER_STATISTIC19_ALARM_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.gosms.staticsdkprovider" android:name="com.gau.go.gostaticsdk.StaticDataContentProvider"/>
+        <receiver android:name="com.jb.gosms.transaction.deliver.SmsDeliverReceiver" android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.fm.core.xmpp.receiver.FreeMsgXMPPReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.jb.gosms.ui.NoConfirmationSendService" android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sms"/>
+                <data android:scheme="smsto"/>
+                <data android:scheme="mms"/>
+                <data android:scheme="mmsto"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.jb.gosms.fullscreen.activity.FullscreenAdmobBannerActivity" android:screenOrientation="portrait" android:taskAffinity=".fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.media.activity.MediaSelectActivity" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.media.activity.newactivity.MediaSelectNewActivity" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.media.activity.newactivity.MediaFileSelectNewActivity" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.media.activity.newactivity.MediaSelectAblumActivity" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.pictureviewer.PictureViewerNewActivity" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.media.activity.MediaBigImageBrowserActivity" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.bigmms.ImageEditorForBigMms" android:process=":bigmms" android:screenOrientation="portrait"/>
+        <provider android:authorities="go_mms_temp_file" android:exported="true" android:multiprocess="true" android:name="com.jb.google.android.mms.TempFileProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity=".googleAd" android:theme="@style/fe"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.seniorconvlist.stangersms.StangerSmsConvListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.sticker.stickerdetail.StickerDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.holidaysbox.HolidayActivity" android:theme="@style/ft"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.setupwizard.FirstStartPage" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <service android:name="com.jb.gosms.purchase.pro.getjar.GetjarPurchaseService">
+            <intent-filter>
+                <action android:name="com.jb.gosms.theme.getjar.paid.service.local"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.privatebox.SetPrivateBoxEntryView" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.privatebox.ConfirmPrivateBoxEntryView" android:screenOrientation="portrait" android:theme="@style/fd" android:windowSoftInputMode="stateAlwaysHidden">
+            <meta-data android:name="disable_lock_guard" android:value="true"/>
+        </activity>
+        <receiver android:enabled="true" android:exported="true" android:name="com.jb.gosms.themeinfo3.ThemeApplyReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.free.theme.apply"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.jb.gosms.ui.diytheme.DIYBgProDataReceiver">
+            <intent-filter>
+                <action android:name="com.jb.diy_theme_statistics"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.gosms.themeinfo3.Theme3DetailActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:name="com.jb.gosms.themeinfo3.Theme3LocalDetailActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:name="com.jb.gosms.themeinfo3.RecommendThemeActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:name="com.jb.gosms.themeinfo3.SpecialTopicActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:name="com.jb.gosms.themeinfo3.PromotionThemeActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:launchMode="singleTop" android:name="com.jb.gosms.giphy.GiphyGifActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.jb.gosms.ui.skin.ThemeStyleSettingActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:name="com.jb.gosms.themeinfo3.MyResourceActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceAppearanceActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceGeneralActivity" android:screenOrientation="portrait" android:theme="@style/fa"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceAdvancedSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferenceInterceptSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferencePrivateBoxSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.PreferencePrivateBoxNotifyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.ui.preferences.view.PreferenceNotyInterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:launchMode="singleTop" android:name="com.jb.gosms.purchase.subscription.activity.SvipSubsMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.jb.gosms.purchase.subscription.activity.SvipSubsPurchaseActivity"/>
+        <provider android:authorities="com.jb.gosms.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/o"/>
+        </provider>
+        <activity android:launchMode="singleTask" android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.integralwall.main.award.IntegralwallAwardActivity" android:screenOrientation="portrait"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.integralwall.main.award.AwardDownloadActivity" android:screenOrientation="portrait"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.integralwall.main.IntegralwallActivity">
+            <intent-filter>
+                <action android:name="com.jb.gosms.tokencoin.integralwall"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.jiubang.commerce.tokencoin.util.IntegralBroadCastReceiver">
+            <meta-data android:name="from_where" android:value="commerce.tokencoin.IntegralBroadCastReceiver"/>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.jb.gosms.integrawall.broadcast.start"/>
+                <action android:name="com.jb.gosms.integrawall.broadcast.activate"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jiubang.commerce.tokencoin.util.IntegralBroadCastReceiver$IntegralBroadCastReceverProcess2" android:process=":gosms_process2">
+            <meta-data android:name="from_where" android:value="commerce.tokencoin.IntegralBroadCastReceiver"/>
+            <intent-filter android:priority="2147483647">
+                <action android:name="com.jb.gosms.integrawall.broadcast.start"/>
+                <action android:name="com.jb.gosms.integrawall.broadcast.activate"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.gosms.commerce.tokencoin.database.TokenCoinProvider" android:exported="false" android:name="com.jiubang.commerce.tokencoin.database.TokenCoinProvider"/>
+        <provider android:authorities="com.jb.gosms.commerce.MultiprocessSharedPreferences" android:exported="false" android:name="com.jb.ga0.commerce.util.io.MultiprocessSharedPreferences"/>
+        <activity android:launchMode="singleInstance" android:name="com.jiubang.commerce.ad.h5.H5AdActivity" android:screenOrientation="portrait"/>
+        <service android:label="Ad Service" android:name="com.jiubang.commerce.service.AdService"/>
+        <activity android:name="com.jiubang.commerce.ad.url.AdUrlPreParseLoadingActivity" android:process=":com.jb.newswidget" android:screenOrientation="portrait" android:theme="@style/ff"/>
+        <service android:label="Intelligent Preload Service" android:name="com.jiubang.commerce.service.IntelligentPreloadService" android:process=":com.jiubang.commerce.service.IntelligentPreloadService"/>
+        <receiver android:name="com.jiubang.commerce.receiver.BootBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jiubang.commerce.receiver.AppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.jb.gosms.fullscreen.ClearTaskActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.loopme.AdActivity" android:theme="@style/fe"/>
+        <activity android:name="com.loopme.AdBrowserActivity"/>
+        <meta-data android:name="applovin.sdk.key" android:value="k_gaE9QLL8hq0CQpZ-za8EQVRLFRqSTTSD8gMT1hgiVgvxUTvR22fTT6poXdE4BgIJMetNLT5sE-niRg9UiqyF"/>
+        <meta-data android:name="applovin.sdk.auto_preload_ad_types" android:value="NONE"/>
+        <activity android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <activity android:exported="true" android:icon="@drawable/cl_def_app_icon" android:label="" android:multiprocess="true" android:name="com.jiubang.commerce.dyload.core.proxy.activity.StandarProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/> --&gt;
+<activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/ff"/>
+        <provider android:authorities="com.jb.gosms.transaction.MmsFileProvider" android:enabled="true" android:exported="false" android:grantUriPermissions="true" android:name="com.jb.gosms.transaction.MmsFileProvider"/>
+        <receiver android:name="com.jb.gosms.wecloudpush.WeCloudMessageClose">
+            <intent-filter>
+                <action android:name="com.jb.gosms.wecloud.custom.notification.close"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.wecloudpush.WeCloudMessageClick">
+            <intent-filter>
+                <action android:name="com.jb.gosms.wecloud.custom.notification.click"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jb.gosms.wecloudpush.WeCloudMessageShow">
+            <intent-filter>
+                <action android:name="com.jb.gosms.wecloud.custom.notification.show"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:label="ClientService" android:name="com.jb.gosms.wecloudpush.WeCloudService" android:permission="com.jb.gosms.permission.SERVICE" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="io.wecloud.message.action.PUSH_SERVICE"/>
+                <action android:name="io.wecloud.message.service.AIDL"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:label="ClientService" android:name="com.jb.gosms.wecloudpush.WeCloudServiceTest" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="io.wecloud.message.action.PUSH_SERVICE_TEST"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.jb.gosms.ui.IntersitialAdActivity" android:theme="@style/lb"/>
+        <receiver android:name="io.wecloud.message.PushServiceReceiver" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="io.wecloud.message.action.METHOD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <meta-data android:name="APPKEY" android:value="UMO39Y5OH9WW96WV8E08CPMY"/>
+        <meta-data android:name="Channel" android:value="Market-101"/>
+        <activity android:name="com.jb.gosms.ui.emptyactivity.StardardEmptyActivity"/>
+        <receiver android:exported="false" android:name="com.jb.gosms.sms.receiver.SendStatusReceiver">
+            <intent-filter>
+                <action android:name="com.android.messaging.receiver.SendStatusReceiver.MESSAGE_SENT"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.messaging.receiver.SendStatusReceiver.MESSAGE_DELIVERED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.messaging.receiver.SendStatusReceiver.MMS_SENT"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.messaging.receiver.SendStatusReceiver.MMS_DOWNLOADED"/>
+                <data android:scheme="content"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.jb.gosms.datamodel.data.MmsFileProvider" android:grantUriPermissions="true" android:name="com.jb.gosms.datamodel.data.MmsFileProvider"/>
+        <activity android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.ui.BaseCallCardActivity" android:taskAffinity=".CallCard"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.monet.bidder.AdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jb.gosms.backup.netbackup.localdropbox.BrDropboxMainActivity"/>
+        <service android:name="com.jb.gosms.backup.netbackup.localdropbox.DropboxDealService"/>
+        <receiver android:exported="true" android:name="com.jb.gosms.backup.netbackup.localdropbox.MainReceiver">
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.authorization_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.cancelauthorization_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.upfile_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.downfile_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.filelist_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.delfile_n"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jb.gosms.dropbox.createfolder_n"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.jb.gosms.Dro"/>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleTask" android:name="com.dropbox.core.android.AuthActivity">
+            <intent-filter>
+                <data android:scheme="db-0pj47288r7rxinr"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jb.gosms.backup.BackupMainNewTabActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.jb.gosms.backup.LocalBackupTabActivity"/>
+        <activity android:name="com.jb.gomailadsdk.ui.WebViewActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.gomo.abtestcenter.statics.SchedulerStaticsService"/>
+        <receiver android:name="com.jb.gosms.modules.net.ConnChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/app_name" android:name="com.jiubang.newswidget.main.NewsWidgetActivity" android:process=":com.jb.newswidget"/>
+        <activity android:label="@string/app_name" android:name="com.jiubang.newswidget.main.DemoActivity"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.jiubang.bussinesscenter.plugin.navigationpage.view.hotwords.MoreHotWordsDetailActivity" android:process=":com.jb.newswidget" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.jiubang.newswidget.common.web.WebViewActivity" android:process=":com.jb.newswidget" android:screenOrientation="portrait" android:theme="@style/lc" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name="com.jiubang.newswidget.view.turn.NewsWidgetSwitchActivity" android:process=":com.jb.newswidget">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.jiubang.bussinesscenter.plugin.navigationpage.view.hotwords.TopSiteActivity" android:process=":com.jb.newswidget">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:label="@string/app_name" android:name="com.jiubang.newswidget.main.NewsWidgetProcessService" android:process=":com.jb.newswidget">
+            <intent-filter>
+                <action android:name="com.jb.newswidget.processservice"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.jiubang.newswidget.receiver.NewsWidgetReceiver" android:process=":com.jb.newswidget">
+            <action android:name="com.jb.newswidget.googleidgetaction"/>
+            <action android:name="com.jb.newswidget.delete.mrnews"/>
+            <action android:name="com.jb.newswidget.switchstate"/>
+            <action android:name="com.jb.newswidget.explore.servicecontrolaction"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+        </receiver>
+        <receiver android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.jiubang.newswidget.receiver.NewsWidgetForSmsReceiver">
+            <action android:name="com.jb.newswidget.loadednews"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+        </receiver>
+        <activity android:label="@string/app_name" android:name="com.jiubang.newswidget.explorenews.main.NewsWidgetExploreActivity" android:process=":com.jb.newswidget">
+            <intent-filter>
+                <action android:name="com.jb.newswidget.explore.main"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.jb.gosms.guide.GuidePageActivity"/>
+        <activity android:exported="true" android:name="com.jiubang.commerce.game.H5GameMainActivity" android:screenOrientation="portrait" android:theme="@style/fj"/>
+        <activity android:name="com.jiubang.commerce.game.H5GamePlayActivity" android:screenOrientation="portrait" android:theme="@style/fj"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.jb.gosms"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.jb.gosms.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <service android:name="com.gomo.firebasesdk.notification.ClickService"/>
+        <service android:name="com.gomo.firebasesdk.notification.DeleteService"/>
+        <receiver android:exported="true" android:name="com.gomo.firebasesdk.statistic.AlarmStatisticReceiver">
+            <intent-filter>
+                <action android:name="com.firebase.STATISTIC"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/i8"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:icon="@drawable/cl_def_app_icon" android:label="Lock" android:launchMode="singleInstance" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeBatteryProxyActivity" android:process="com.assist.ano.service" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <service android:exported="true" android:name="com.jiubang.commerce.dyload.pl.chargelocker.cell.ChargeLockerProxyService" android:persistent="true" android:process="com.assist.ano.service"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.commerce.notification.main.core.HandleNotificaionClickActivity" android:taskAffinity="com.commerce.notification" android:theme="@style/in"/>
+        <service android:name="com.commerce.notification.main.core.NotificationSdkService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.commerce.notification.main.ad.mopub.base.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.integralshop.view.IntegralDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:multiprocess="true" android:name="com.jiubang.commerce.tokencoin.integralshop.view.IntegralShopActivity" android:screenOrientation="portrait"/>
+        <activity android:multiprocess="true" android:name="com.jb.commerce.callersdk.activity.LabelProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleInstance" android:multiprocess="true" android:name="com.jb.commerce.callersdk.activity.SettingProxyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService" android:process=":filedownloader"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="false" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryShareActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryTileAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.jb.gomailadsdk.utils.ApkInstalledReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

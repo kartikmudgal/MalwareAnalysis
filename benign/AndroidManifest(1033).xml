@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.retrodreamer.IceCreamJump.android.free">
+    <application android:icon="@drawable/ic_launcher" android:label="Ice Cream Jump">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Ice Cream Jump" android:name="com.retrodreamer.IceCreamJump.android.IceCreamJump">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.chartboost.sdk.CBDialogActivity" android:theme="@android:style/Theme.Translucent" android:windowSoftInputMode="adjustResize"/>
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <supports-screen android:largeScreens="true"/>
+</manifest>

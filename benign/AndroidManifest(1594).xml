@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="scrapbook.photo.collage.maker.editing.app.fashion.love.frames" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <application android:icon="@drawable/appicon" android:label="@string/app_name" android:largeHeap="true" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadx1" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedw" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadw1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbf1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbl1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbn1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbm1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cada1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadu1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.ImagePickerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbe1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbh1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbhfour1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadbs1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cadr1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Aa" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrss1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedc1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartueda1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedetr" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedetp" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedr1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedp1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedm1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedk1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedetj1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedeth1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedete1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedetc1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedh1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedf1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedz1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Xartuedx1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdr1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdt1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdl1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdn1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsm1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrso1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsg1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsi1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdf1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdh1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsz1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsdb1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsa1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsc1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrst1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Cxrxtrsv1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Loprtaoioe1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.Loprtaoiob1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoiom1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoior1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoiot1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoiou1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoiov1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Loprtaoiow1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="scrapbook.photo.collage.maker.editing.app.fashion.love.frames.casscading.Opdacaddextrsas" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

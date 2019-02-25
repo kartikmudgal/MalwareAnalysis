@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="@string/shared_user_id" android:sharedUserLabel="@string/shared_user_id" package="com.craft.android.woodwork" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature android:name="android.hardware.camera2" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <permission android:name="com.craft.android.woodwork.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.craft.android.woodwork.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.craft.android.CraftApplication" android:supportsRtl="@bool/supports_rtl" android:theme="@style/AppTheme.Toolbar">
+        <activity android:label="@string/app_name" android:name="com.craft.android.activities.TopActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.craft.android.activities.HomeActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Home">
+            <intent-filter>
+                <data android:host="open" android:scheme="@string/branch_scheme"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:launchMode="singleInstance" android:name="com.craft.android.activities.EditorFloatingActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Dialog.Translucent" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="layoutDirection|locale" android:label="@string/editor" android:name="com.craft.android.activities.EditorActivity" android:screenOrientation="portrait" android:theme="@style/EditorStyle"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.craft.android.activities.CameraActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.craft.android.activities.WelcomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/activity_login_title" android:name="com.craft.android.activities.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.craft.android.activities.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="layoutDirection|locale" android:name="com.craft.android.activities.CraftItemActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.craft.android.woodwork.OPEN_CRAFT_ITEM"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.craft.android.activities.ImagePreviewActivity" android:theme="@style/AppTheme.Fullscreen"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/edit" android:name="com.craft.android.activities.UserProfileActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.craft.android.activities.ImageCropActivity"/>
+        <activity android:name="com.craft.android.activities.CollectionItemsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.craft.android.activities.CollectionSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.craft.android.activities.UserSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/enter_new_collection_name" android:name="com.craft.android.activities.CollectionNameEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.CollectionInviteOptionsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.Dialog.Translucent.WithDim"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.CollectionInviteOnboardingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.ForumThreadListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.ForumThreadCommentsListActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.ForumThreadEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.ForumThreadCommentFormActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="locale" android:name="com.craft.android.activities.NotificationListActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.craft.android.services.ChatHeadService"/>
+        <service android:name="com.craft.android.services.ApiService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.craft.android.receivers.CraftAuthIntentReceiver">
+            <intent-filter>
+                <action android:name="com.craft.android.receivers.ACTION_REQUESTED_AT"/>
+                <action android:name="com.craft.android.receivers.ACTION_LOGOUT"/>
+                <action android:name="com.craft.android.receivers.ACTION_RECEIVE_AT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.craft.android.receivers.CraftGlobalIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="14e43e9b63c2db93a40df53a4a66d39b912db5ce"/>
+        <meta-data android:name="com.mixpanel.android.MPConfig.ResourcePackageName" android:value="com.craft.android"/>
+        <service android:exported="false" android:name="com.craft.android.util.gcm.CraftGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.craft.android.util.gcm.CraftGcmInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.craft.android.util.gcm.CraftGcmRegistrationIntentService"/>
+        <service android:enabled="true" android:exported="true" android:name="net.gotev.uploadservice.UploadService"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.craft.android.woodwork.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.craft.android.woodwork"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

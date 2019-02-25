@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.tc.views" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.hmkcode.android.gcm.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.hmkcode.android.gcm.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/> --&gt;
+<application android:allowBackup="true" android:icon="@drawable/icon_verify" android:label="@string/app_name" android:name=".CheckAppStates" android:theme="@style/CustomActionBarTheme">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".InitScreenActivity" android:noHistory="true" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/title_activity_login" android:name=".LoginActivity"/>
+        <activity android:label="@string/title_activity_templates" android:name=".TemplatesActivity"/>
+        <activity android:label="@string/title_activity_test" android:name=".TestActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/title_activity_data_display" android:name=".DataDisplayActivity"/>
+        <activity android:label="@string/title_activity_settings" android:name=".SettingsActivity"/>
+        <activity android:label="@string/title_activity_func_selector" android:name=".FuncSelector"/>
+        <activity android:label="@string/title_activity_qrhome_screen" android:name=".QRHomeScreen"/>
+        <activity android:label="@string/title_activity_pin" android:name=".PinActivity"/>
+        <activity android:label="@string/title_activity_help" android:name=".HelpActivity"/>
+        <activity android:label="@string/title_activity_about" android:name=".AboutActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_portfolio_details" android:name=".PortfolioDetailsActivity"/>
+        <activity android:label="@string/title_activity_product_details" android:name=".ProductDetailsActivity"/>
+        <receiver android:name="com.tc.receiver.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.tc.receiver.GcmMessageHandler"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/title_activity_my_notifications" android:name=".MyNotifications"/>
+        <activity android:label="@string/title_activity_notification_details" android:name=".NotificationDetails"/>
+        <activity android:label="@string/title_activity_my_dialog" android:name=".MyDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/title_activity_youtube_popup" android:name=".YoutubePopupActivity" android:theme="@android:style/Theme.Holo.Light.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_wallet_list" android:name=".WalletListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/title_activity_coupon_details" android:name=".CouponDetailsActivity"/>
+        <activity android:label="@string/title_activity_coupon_history" android:name=".CouponHistoryActivity"/>
+    </application>
+</manifest>

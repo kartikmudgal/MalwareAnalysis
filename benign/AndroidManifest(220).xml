@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.ScanningActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.Select_image" android:screenOrientation="portrait"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.ScannerActivity_rz" android:screenOrientation="portrait"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.SplashActivity_rz" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.StartActivity_rz" android:screenOrientation="portrait"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.MainActivityrzstudio" android:screenOrientation="portrait"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.MainStartrzstudio"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.Genderrzstudio"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.frontbacck"/>
+        <activity android:name="com.bodyscannerapps.body_scanner_girls_cloth_remover_prank.portionrzstudio"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

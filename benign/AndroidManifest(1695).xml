@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="air.Thaiplaytown">
+    <application android:icon="@drawable/icon" android:label="Thaiplaytown">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Thaiplaytown" android:launchMode="singleTask" android:name=".AppEntry" android:screenOrientation="nosensor" android:theme="@style/Theme.NoShadow" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="aspectRatio" android:value="landscape"/>
+            <meta-data android:name="autoOrients" android:value="false"/>
+            <meta-data android:name="fullScreen" android:value="true"/>
+            <meta-data android:name="uniqueappversionid" android:value="011ac060-bfdc-456f-b7e5-0045bc8d55be"/>
+            <meta-data android:name="initialcontent" android:value="Thaiplaytown.swf"/>
+        </activity>
+    </application>
+</manifest>

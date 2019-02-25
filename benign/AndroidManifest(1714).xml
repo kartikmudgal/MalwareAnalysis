@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="app.com.superwifi" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" android:required="true"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" android:required="true"/>
+    <uses-permission android:name="android.permission.INTERNET" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <permission android:name="app.com.superwifi.googlemapsv2.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="app.com.superwifi.googlemapsv2.permission.MAPS_RECEIVE"/>
+    <permission android:name="app.com.superwifi.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="app.com.superwifi.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="com.sec.android.iap.permission.BILLING"/>
+    <uses-permission android:name="com.nokia.payment.BILLING"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <supports-screens android:anyDensity="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name="android.support.multidex.MultiDexApplication" android:theme="@style/Theme.AppCompat.Light">
+        <uses-library android:name="com.google.android.maps" android:required="true"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name="app.com.superwifi.MainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="mig.slider.MainMenu" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="mig.slider.MainMenuNew" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="mig.slider.MainMenuNew.New"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="app.com.superwifi.WiFiPriority" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.AutoBoosterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.PrefferedWifiActivity" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.AddLocation" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="app.com.superwifi.MiActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity=":miactivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="app.com.superwifi.WiFiScheduler_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.AddSchedule_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.EditSchedule" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.WiFiRadar" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.WiFiRadar_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.OpenNet" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.TrackMyIP" android:screenOrientation="portrait"/>
+        <activity android:name="mig.checkSpeed.CheckSpeed" android:screenOrientation="portrait"/>
+        <activity android:name="mig.checkSpeed.CheckSpeed_new" android:screenOrientation="portrait"/>
+        <activity android:name="mig.checkSpeed.CheckSpeedSettings" android:screenOrientation="portrait"/>
+        <activity android:name="mig.checkSpeed.CheckSpeedHistory" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.WiFiDataUsage" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.WiFiDataUsage_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.AppsUsageGraph" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.Settings_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.HelpContent" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.TutorialContent" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.V2_InApp" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="app.com.superwifi.BackgroundPrompt" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:excludeFromRecents="true" android:name="app.com.superwifi.BoosterAnimationActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="app.com.superwifi.WiFiPrioritySettings" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.WelcomeScreen" android:screenOrientation="portrait"/>
+        <activity android:name="mig.opennet.OpenNet" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.NotificationTutorial" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.superwifi.BackgroundPromptTutorial" android:screenOrientation="portrait"/>
+        <activity android:name="mig.password.recovery.PasswordRecovery_new" android:screenOrientation="portrait"/>
+        <activity android:name="mig.slider.ActivityLog" android:screenOrientation="portrait"/>
+        <activity android:name="mig.networkspy.NetworkSpy" android:screenOrientation="portrait"/>
+        <activity android:name="mig.datafirewall.DataFireWall" android:screenOrientation="portrait"/>
+        <activity android:name="mig.whois.WhoIsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <receiver android:name="app.com.superwifi.Widget$CheckSpeedReceiver"/>
+        <receiver android:name="app.com.superwifi.WiFiDataUsageReceiver"/>
+        <receiver android:name="app.com.superwifi.ActivityLogDataUsageReceiver"/>
+        <receiver android:name="app.com.superwifi.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="app.com.superwifi.NotificationReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="app.com.superwifi.CallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.app.analytics.AnalyticsIntentService" android:process=":analytics"/>
+        <service android:name="app.com.superwifi.AutoBooster">
+            <intent-filter>
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED"/>
+            </intent-filter>
+        </service>
+        <receiver android:icon="@drawable/icon" android:label="@string/app_name" android:name="app.com.superwifi.Widget_Small">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.forceupdate"/>
+                <data android:scheme="wordwidget"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/super_wifi_widget_small"/>
+        </receiver>
+        <receiver android:icon="@drawable/icon" android:label="@string/app_name" android:name="app.com.superwifi.Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.forceupdate"/>
+                <data android:scheme="wordwidget"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/super_wifi_widget"/>
+        </receiver>
+        <service android:name="app.com.superwifi.WidgetService">
+            <intent-filter>
+                <action android:name="android.intent.action.CONFIGURATION_CHANGED"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="mig.datafirewall.FireWallPackageBroadcast">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="mig.Route.map.Route" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="mig.Route.map.RoutePath" android:screenOrientation="portrait"/>
+        <activity android:name="mig.Route.map.PlacesMapActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mig.Route.map.PlacesMapActivity_new" android:screenOrientation="portrait"/>
+        <activity android:name="app.com.opennet.OpenNetMain" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.RateUsPrompt" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="android.engine.sdk.CacehAdsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.MigitalFullAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.MigitalRectangleAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.SDKFullAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mig.Engine.RemoveEngineAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.SDKRectangleAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mig.Engine.TrialPeriod" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.ReviewPromptActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.app.aidldemo.ShowPrompt" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.CustomizedPrompts" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.FullAds2" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.FullAds" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.ViewAppLinks" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.ViewFlurryTags" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.ViewIDs" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mig.Engine.ViewMasterDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mig.Engine.ActivityTransit" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mig.Engine.TestingModule" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.FeedBackForm" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.PurchasingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.LogoDisplay" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.SpleshScreen" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.mig.Engine.UpdateDialog" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.PrivacyPolicy" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.UpgradedApps" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.AboutUsMenu" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.AboutCompany" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.AboutProduct" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.mig.Engine.Master_Adds" android:screenOrientation="portrait"/>
+        <activity android:name="com.mig.Engine.UpdateApplication" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.inneractive.api.ads.sdk.InneractiveInternalBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.inneractive.api.ads.sdk.InneractiveInterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.inneractive.api.ads.sdk.InneractiveRichMediaVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.inneractive.api.ads.sample.InneractiveBannerTabActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:launchMode="singleTop" android:name="mobi.vserv.android.ads.VservAdManager" android:process=":vserv" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:name="mobi.vserv.org.ormma.view.Browser" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:name="mobi.vserv.org.ormma.view.OrmmaActionHandler" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.inmobi.androidsdk.IMBrowserActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.gomob.di.qa.analytics.activity.PublisherAPI"/>
+        <service android:enabled="true" android:name="com.inmobi.commons.internal.ActivityRecognitionManager"/> −
+<receiver android:enabled="true" android:exported="true" android:name="com.inmobi.commons.analytics.androidsdk.IMAdTrackerReceiver"> −
+<intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MoPubActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MraidActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name="com.mopub.common.MoPubBrowser" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MraidBrowser"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAhbz1k0kOWLCAvl-YA3uhDPV80_-igZww"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.MMActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.VideoPlayer"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.supersonicads.sdk.android.WebViewActivity"/>
+        <activity android:launchMode="singleTask" android:name="mig.app.inapp.InAppActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="mig.app.inapp.AppList" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="mig.app.inapp.LandingPageView" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="mig.app.inapp.EarnCoinActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="mig.app.inapp.ProFreeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="false" android:name="mig.app.inapp.UpdateDataService"/>
+        <receiver android:name="com.amazon.inapp.purchasing.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="mig.app.pushnotification.DummyNotificationActivity" android:screenOrientation="portrait" android:taskAffinity="mig.app.creditsystem.SubActivityName" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="app.com.superwifi.pushnotifications"/>
+                <category android:name="mig.app.inapp"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="app.com.superwifi.GCMIntentService"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/applicationId"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.Setup_page" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.FaceBookLogin" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.registrationJa" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.AppFirstPage" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.EmailVerify" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.ResetPassword" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.WelcomePage" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.NewAcnt" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.passconfirmja" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.MyAccount" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.MergeAccount" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.loginJa" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.MyGooglePlusLogin" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/app_name" android:name="mig.lib.caloriescounter.GooglePlusLogin" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="app.com.superwifi.AutoBoosterPrompt" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="app.com.superwifi.AutoBoosterPromptInside" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="app.com.superwifi.SchedularPrompt" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="mig.slider.FullAdsLauncher" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="mig.slider.FullAdsLauncherInit" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="278504ade0548e5bfd9bc28d1f30ef071227bf6b"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.vungle.publisher.FullScreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yrkfgo.assxqx4.AdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.yrkfgo.assxqx4.BrowserActivity"/>
+        <activity android:name="com.smaato.soma.interstitial.InterstitialActivity"/>
+        <activity android:name="com.smaato.soma.video.VASTAdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.smaato.soma.postroll.PostrollActivity" android:noHistory="true" android:taskAffinity=".postroll" android:theme="@android:style/Theme.Translucent"/>
+    </application>
+</manifest>

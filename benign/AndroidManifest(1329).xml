@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.workplaceoptions.wpoconnect" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="Manifest.permission.DUMP"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.workplaceoptions.wpoconnect.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.workplaceoptions.wpoconnect.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <application android:allowBackup="true" android:configChanges="locale|orientation" android:hardwareAccelerated="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.workplaceoptions.wpoconnect.MyApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <service android:name="com.workplaceoptions.wpoconnect.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.workplaceoptions.wpoconnect.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.workplaceoptions.wpoconnect.ConnectivityService">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.workplaceoptions.wpoconnect.YourPrivacy" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.workplaceoptions.wpoconnect.GreetingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.workplaceoptions.wpoconnect.ForbiddenActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/inbox_label" android:name="com.workplaceoptions.wpoconnect.InboxActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/InboxTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="com.workplaceoptions.wpoconnect"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/company_news" android:name="com.workplaceoptions.wpoconnect.NewsActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/FactoryNewsTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="News Detail" android:name="com.workplaceoptions.wpoconnect.NewsWebViewActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.NewsActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.NewsActivity"/>
+        </activity>
+        <activity android:label="@string/calender_label" android:name="com.workplaceoptions.wpoconnect.CalendarActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/CalendarTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/grievance_management" android:name="com.workplaceoptions.wpoconnect.ReportManagementActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/report_a_grievance" android:name="com.workplaceoptions.wpoconnect.ReportAGrievanceActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportManagementActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.ReportManagementActivity"/>
+        </activity>
+        <activity android:label="@string/grievanceLog_lbl" android:name="com.workplaceoptions.wpoconnect.ReportGrievanceSurveyActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportManagementActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.ReportManagementActivity"/>
+        </activity>
+        <activity android:label="@string/ask_all_question" android:name="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/ask_all_question" android:name="com.workplaceoptions.wpoconnect.AskAQuestionActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity"/>
+        </activity>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.LogQuestionActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity"/>
+        </activity>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.AskQuestionSurveyActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity"/>
+        </activity>
+        <activity android:label="@string/grievance_management" android:name="com.workplaceoptions.wpoconnect.EmergencyActivity" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportManagementActivity" android:screenOrientation="portrait" android:theme="@style/EmergencyTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.ReportManagementActivity"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.workplaceoptions.wpoconnect.PermissionActivity" android:screenOrientation="portrait" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.workplaceoptions.wpoconnect.SplashActivity" android:screenOrientation="portrait" android:theme="@style/SplashTheme"/>
+        <activity android:name="com.workplaceoptions.wpoconnect.InputFactoryCode" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".InputFactoryCode"/>
+        </activity>
+        <activity android:name="com.workplaceoptions.wpoconnect.AuthenticateOldNumber" android:parentActivityName="com.workplaceoptions.wpoconnect.InputPhoneNumber" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".InputPhoneNumber"/>
+        </activity>
+        <activity android:label="@string/setting_label" android:name="com.workplaceoptions.wpoconnect.Settings" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/select_language_lower" android:name="com.workplaceoptions.wpoconnect.SettingLanguage" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/about" android:name="com.workplaceoptions.wpoconnect.SettingTermAndCondition" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/about" android:name="com.workplaceoptions.wpoconnect.SettingPrivacyPolicy" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/support" android:name="com.workplaceoptions.wpoconnect.SettingHelp" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/support" android:name="com.workplaceoptions.wpoconnect.SettingReportProblem" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/support" android:name="com.workplaceoptions.wpoconnect.SettingReportProblemBug" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/support" android:name="com.workplaceoptions.wpoconnect.SettingReportProblemFeedback" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/account_" android:name="com.workplaceoptions.wpoconnect.SettingSetPassword" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/account_" android:name="com.workplaceoptions.wpoconnect.SetNewPassword" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/account_" android:name="com.workplaceoptions.wpoconnect.UpdatePassword" android:parentActivityName="com.workplaceoptions.wpoconnect.Settings" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.Settings"/>
+        </activity>
+        <activity android:label="@string/welcome_text" android:name="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/inbox_label" android:name="com.workplaceoptions.wpoconnect.Inbox" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.workplaceoptions.wpoconnect.InputPhoneNumber" android:screenOrientation="portrait"/>
+        <activity android:label="@string/verification_lbl" android:name="com.workplaceoptions.wpoconnect.InputVerificationCode" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".InputPhoneNumber"/>
+        </activity>
+        <activity android:label="@string/verification_lbl" android:name="com.workplaceoptions.wpoconnect.BlankActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.QuestionLog" android:parentActivityName="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity"/>
+        </activity>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.ResponseAsk" android:parentActivityName="com.workplaceoptions.wpoconnect.MainActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.QuestionDetail" android:parentActivityName="com.workplaceoptions.wpoconnect.QuestionLog" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.QuestionLog"/>
+        </activity>
+        <activity android:label="@string/grievanceLog_lbl" android:name="com.workplaceoptions.wpoconnect.GrievanceLog" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportManagementActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.ReportManagementActivity"/>
+        </activity>
+        <activity android:label="@string/grievanceLog_lbl" android:name="com.workplaceoptions.wpoconnect.GrievanceDetail" android:parentActivityName="com.workplaceoptions.wpoconnect.GrievanceLog" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.GrievanceLog"/>
+        </activity>
+        <activity android:label="@string/grievanceLog_lbl" android:name="com.workplaceoptions.wpoconnect.ResponseReport" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportAGrievanceActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.ReportAGrievanceActivity"/>
+        </activity>
+        <activity android:label="@string/factory_faq" android:name="com.workplaceoptions.wpoconnect.FactoryFAQ" android:screenOrientation="portrait" android:theme="@style/AskTheme" android:windowSoftInputMode="stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.AskQuestionManagementActivity"/>
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="com.workplaceoptions.wpoconnect.FactoryFAQ"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/factory_faq" android:name="com.workplaceoptions.wpoconnect.FAQAnswer" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.FactoryFAQ"/>
+        </activity>
+        <activity android:label="@string/questionLog_lbl" android:name="com.workplaceoptions.wpoconnect.RespondAskSurvey" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportAGrievanceActivity" android:screenOrientation="portrait" android:theme="@style/AskTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.QuestionLog"/>
+        </activity>
+        <activity android:label="@string/grievanceLog_lbl" android:name="com.workplaceoptions.wpoconnect.RespondGrievanceSurvey" android:parentActivityName="com.workplaceoptions.wpoconnect.ReportAGrievanceActivity" android:screenOrientation="portrait" android:theme="@style/GrievanceTheme">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.workplaceoptions.wpoconnect.GrievanceLog"/>
+        </activity>
+        <meta-data android:name="io.fabric.ApiKey" android:value="dcaa5ca528e77902808235da36295253d34236df"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.workplaceoptions.wpoconnect"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.workplaceoptions.wpoconnect.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.testfairy.activities.ProvideFeedbackActivity" android:theme="@android:style/Theme.Holo.Light"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.testfairy.activities.AutoUpdateActivity"/>
+        <activity android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="org.acra.dialog.CrashReportDialog" android:theme="@android:style/Theme.Dialog"/>
+        <service android:exported="false" android:name="org.acra.sender.SenderService" android:process=":acra"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

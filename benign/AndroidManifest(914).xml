@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.oneapp.max.security.pro" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.audio.low_latency" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <permission android:name="com.oneapp.max.security.pro.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.oneapp.max.security.pro.permission.C2D_MESSAGE"/>
+    <permission android:name="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_SUPERUSER"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.launcher.action.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.aspire.mm.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.aspire.mm.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.baiqi.weather.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.baiqi.weather.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.fasttrack.security.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.mediatek.launcherplus.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.mediatek.launcherplus.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.dlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.dlauncher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.dock.DesktopDock.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.dock.DesktopDock.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.motorola.mmsp.motoswitch.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.motorola.mmsp.motoswitch.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <uses-permission android:name="com.sec.android.app.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.sec.android.provider.logsprovider.permission.READ_LOGS"/>
+    <uses-permission android:name="com.sec.android.provider.logsprovider.permission.WRITE_LOGS"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sonyericsson.homescreen.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sonyericsson.homescreen.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.thunderst.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.thunderst.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.ty.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ty.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="mobi.SyndicateApps.ICS.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="mobi.SyndicateApps.ICS.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <permission android:name="com.oneapp.max.security.pro.permission.GOLDENEYE_SECURITY" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.oneapp.max.security.pro.permission.GOLDENEYE_SECURITY"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:installLocation="internalOnly" android:label="@string/a9q" android:largeHeap="true" android:name="com.optimizer.test.OptimizerApplication" android:persistent="true" android:supportsRtl="false" android:theme="@style/dd">
+        <meta-data android:name="AVL_OPENSDK_APPKEY" android:value="BD980C6009D2C3A2FF7A1338127631C7"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="50f4cb8cb05be60604ae57b7371c6e03cf8ac63e"/>
+        <meta-data android:name="com.optimizer.test.CommonGlideModule" android:value="GlideModule"/>
+        <activity android:exported="true" android:label="@string/a9q" android:name="com.optimizer.test.main.EnterAppActivity" android:screenOrientation="portrait" android:theme="@style/fh">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.optimizer.test.module.about.TermsOfServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.about.PrivacyPolicyActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:label="@string/a9q" android:name="com.optimizer.test.main.MainActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.optimizer.test.OurAppInstalledReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.framework_session" android:enabled="true" android:exported="false" android:name="com.ihs.app.framework.inner.SessionProvider" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.ihs.app.framework.inner.PendingSessionEndReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="hs.app.session.PENDING_SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.framework_remoteconfig" android:enabled="true" android:exported="false" android:name="net.appcloudbox.common.config.RemoteConfigProvider" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.ihs.commons.config.RemoteConfigReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="hs.diverse.session.SESSION_START"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.framework_analytics" android:enabled="true" android:exported="false" android:name="net.appcloudbox.common.analytics.AnalyticsProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.framework_preference" android:enabled="true" android:exported="false" android:name="net.appcloudbox.common.preference.PreferenceProvider" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="false" android:name="net.appcloudbox.common.HSFrameworkAdapter.HSFrameworkReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.AVLprovider" android:name="com.avl.engine.security.AVLProvider" android:permission="com.oneapp.max.security.pro.permission.ANTI_VIRUS" android:process=":clean"/>
+        <activity android:name="com.optimizer.test.module.security.SecurityScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.security.scanresult.ScanResultActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.security.SecurityBroadcastReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.optimizer.test.module.security.scheduledscan.SecurityScheduledScanReceiver" android:process=":work"/>
+        <receiver android:exported="true" android:name="com.ihs.device.monitor.topapp.HSCompetitorStatisticsManager$PackageInstallStateReceiver" android:process=":work">
+            <intent-filter>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.optimizer.test.module.junkclean.JunkScanActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.optimizer.test.module.junkclean.JunkDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.junkclean.JunkCleanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.junkclean.ignorelist.JunkIgnoreListActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.junkmanager.SessionReceiver" android:permission="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.optimizer.test.module.donepage.donepageresult.donepagead.PromoteAdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.recommendrule.PromoteChargingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.notificationorganizer.recommendrule.PromoteOrganizerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.callassistant.recommendrule.PromoteMessageAssistantActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.recommendrule.PromoteMessageSecurityActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.donepage.donepageresult.donepagelist.DonePageListActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.donepage.PromoteSessionReceiver" android:permission="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.setting" android:exported="false" android:name="com.optimizer.test.module.setting.SettingProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.setting.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.setting.SettingLanguageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.setting.SettingNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.memoryboost.ignorelist.BoostIgnoreListActivity" android:screenOrientation="portrait" android:theme="@style/fr"/>
+        <activity android:name="com.optimizer.test.module.memoryboost.ignorelist.IgnoreListAddingActivity" android:screenOrientation="portrait" android:theme="@style/fr"/>
+        <provider android:authorities="com.oneapp.max.security.pro.memory_boost" android:exported="false" android:name="com.optimizer.test.module.memoryboost.normalboost.NormalBoostProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.memoryboost.MemoryFastBoostActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":memory.fast.boost" android:theme="@style/mf"/>
+        <provider android:authorities="com.oneapp.max.security.pro.security" android:exported="false" android:name="com.optimizer.test.module.security.SecurityProvider"/>
+        <activity android:name="com.optimizer.test.module.security.scanresult.SecurityIgnoreListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.filescan.FileScanActivity" android:screenOrientation="portrait"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/one_tap_boost_icon" android:label="@string/uq" android:launchMode="singleInstance" android:name="com.optimizer.test.module.onetapboost.OneTapBoostActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/mf">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:exported="true" android:icon="@drawable/one_tap_boost_icon" android:label="@string/uq" android:launchMode="singleInstance" android:name="com.optimizer.test.module.memoryboost.normalboost.onetapboost.OneTapBoostActivity" android:screenOrientation="portrait" android:targetActivity="com.optimizer.test.module.onetapboost.OneTapBoostActivity" android:theme="@style/mf">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:name="com.optimizer.test.module.cpucooler.CpuScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.EasyCpuScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.CpuDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.CpuCoolDownActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.EasyCpuCoolDownActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.cpucooler.CpuBroadcastReceiver">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.cpu_cooler" android:enabled="true" android:exported="false" android:name="com.optimizer.test.module.cpucooler.CpuContentProvider"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.optimizer.test.module.chargingreport.NewChargingReportActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.report" android:theme="@style/f2"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.optimizer.test.module.chargingreport.ChargingReportActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.report" android:theme="@style/f2"/>
+        <activity android:name="com.optimizer.test.module.setting.ChargingReportSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.chargingreport.recommendrule.PromoteChargingReportActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.chargingreport.recommendrule.ChargingReportAlertActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":optimizer_alert_charging_report" android:theme="@style/lj"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.optimizer.test.module.batterymonitor.BatteryMonitorReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.optimizer.test.module.smartlocker.recommendrule.SmartLockForAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.optimizer.test.module.notificationtoggle.NotificationToggleReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.optimizer.test.module.appprotect.guide.GuideAppProtectedActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.guide.GuideEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.guide.GuidePasswordSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.intruderselfie.IntruderImageActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.intruderselfie.IntruderSelfieActivity" android:screenOrientation="portrait"/>
+        <activity android:allowTaskReparenting="false" android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.intruderselfie.IntruderSelfiePopActivity" android:screenOrientation="portrait" android:taskAffinity=":intruder.pop"/>
+        <activity android:name="com.optimizer.test.module.appprotect.intruderselfie.IntruderSelfieSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:allowTaskReparenting="false" android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.lockscreen.SelfLockActivity" android:screenOrientation="portrait" android:taskAffinity=":self.lock"/>
+        <activity android:name="com.optimizer.test.module.appprotect.settings.AppLockModifyEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.settings.AppLockSettingActivity" android:screenOrientation="portrait" android:taskAffinity=":app.lock.setting"/>
+        <activity android:name="com.optimizer.test.module.appprotect.settings.PasswordSetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.AppLockHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.appprotect.ForgetPasswordActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.oneapp.max.security.pro.app_lock" android:exported="false" android:name="com.optimizer.test.module.appprotect.AppLockProvider" android:process=":work"/>
+        <activity android:alwaysRetainTaskState="true" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="com.optimizer.test.module.appprotect.lockscreen.LockAppActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":lock.app"/>
+        <activity android:name="com.optimizer.test.module.appprotect.disguise.DisguiseHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:allowTaskReparenting="false" android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.disguise.DisguisedGuideOneActivity" android:screenOrientation="portrait" android:taskAffinity=":disguise"/>
+        <activity android:allowTaskReparenting="false" android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.disguise.DisguisedGuideTwoActivity" android:screenOrientation="portrait" android:taskAffinity=":disguise"/>
+        <activity android:name="com.optimizer.test.module.appprotect.recommendrule.AppLockForAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.datamonitor.DataMonitorGuideActivity" android:screenOrientation="portrait" android:theme="@style/fc"/>
+        <activity android:name="com.optimizer.test.module.datamonitor.DataMonitorMainActivity" android:screenOrientation="portrait" android:theme="@style/fc"/>
+        <activity android:name="com.optimizer.test.module.datamonitor.DataMonitorSettingsActivity" android:screenOrientation="portrait" android:theme="@style/fc"/>
+        <activity android:name="com.optimizer.test.module.whostealdata.WhoStealDataActivity" android:screenOrientation="portrait" android:theme="@style/ff"/>
+        <activity android:name="com.optimizer.test.module.whostealdata.TrustedAppsActivity" android:screenOrientation="portrait" android:theme="@style/ff"/>
+        <activity android:exported="false" android:name="com.optimizer.test.module.batterysaver.BatterySaverScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.batterysaver.BatterySaverDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.batterysaver.ignorelist.BatterySaverIgnoreListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.batterysaver.ignorelist.BatterySaverIgnoreListAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.batterysaver.BatteryFastBoostActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":batterysaver.fast.boost" android:theme="@style/mf"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.batterysaver.BatterySaverBroadcastReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.battery" android:exported="false" android:name="com.optimizer.test.module.batterysaver.BatterySaverContentProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.notificationorganizer.recommendrule.StaticOrganizerAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationorganizer.activity.OrganizerGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationorganizer.activity.OrganizerBlockedActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.notification.block"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationorganizer.activity.OrganizerSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationorganizer.NotificationListenerProcessActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.notification.listener" android:theme="@style/j5"/>
+        <provider android:authorities="com.oneapp.max.security.pro.notification_organizer" android:enabled="true" android:exported="false" android:name="com.optimizer.test.module.notificationorganizer.data.NotificationOrganizerProvider" android:process=":work"/>
+        <receiver android:exported="true" android:name="com.optimizer.test.module.notificationorganizer.NotificationOrganizerReceiver" android:process=":work">
+            <intent-filter>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.optimizer.test.module.notificationorganizer.NotificationOrganizerService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":work">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.memoryboost.normalboost.NormalBoostReceiver" android:permission="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.optimizer.test.module.memoryboost.normalboost.NormalBoostActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.wifi.wifispeedtest.WifiSpeedTestActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.wifi.wifiboost.scan.WifiBoostScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.wifi.wifiboost.detail.WifiBoostDetailActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.oneapp.max.security.pro.wifi_boost" android:exported="false" android:name="com.optimizer.test.module.wifi.wifiboost.WifiBoostProvider"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.wifi.wifiboost.WifiBoostReceiver" android:permission="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.optimizer.test.module.appinstallationmonitor.AppInstallationMonitorReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.optimizer.test.module.about.AboutActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.oneapp.max.security.pro.acb.adadpater.frequency_cap_provider" android:exported="false" android:name="net.appcloudbox.ads.base.FrequencyCapProvider" android:permission="com.oneapp.max.security.pro.permission.GOLDENEYE_SECURITY" android:process=":work"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity=":ad" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.optimizer.test.module.gameboost.GameBoostActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="true" android:name="com.optimizer.test.module.gameboost.GameBoostPopActivity" android:screenOrientation="portrait" android:taskAffinity=":game.boost" android:theme="@style/ly">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:allowTaskReparenting="false" android:excludeFromRecents="true" android:name="com.optimizer.test.module.gameboost.GameBoostAddGameActivity" android:screenOrientation="portrait" android:taskAffinity=":game.boost.add"/>
+        <provider android:authorities="com.oneapp.max.security.pro.top_games_db" android:exported="false" android:name="com.optimizer.test.module.gameboost.data.TopGamesDBProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.game_boost" android:enabled="true" android:exported="false" android:name="com.optimizer.test.module.gameboost.GameBoostProvider" android:process=":work"/>
+        <receiver android:exported="false" android:name="com.optimizer.test.module.gameboost.GameBoostReceiver" android:permission="com.oneapp.max.security.pro.permission.FRAMEWORK_SECURITY">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.optimizer.test.module.smartlocker.locker.screen.SmartLockerActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/lk"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.smartlocker.locker.screen.DismissKeyguardActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/lw"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.locker.vitalnotification.VitalNotificationActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/mi"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.locker.vitalnotification.VitalNotificationGuideActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/mi"/>
+        <provider android:authorities="com.oneapp.max.security.pro.vital_notification" android:name="com.optimizer.test.module.notificationorganizer.NotificationListeningProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.notification_organizer_bar" android:exported="false" android:name="com.optimizer.test.module.notificationorganizer.NotificationOrganizerBarProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.locker.vitalnotification.VitalNotificationSettingActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/mi"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.locker.screen.SmartLockerBoostActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":optimizer.charging.screen" android:theme="@style/mi"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.locker.SmartLockerAlertActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":optimizer.alert.charging.screen" android:theme="@style/lj"/>
+        <activity android:name="com.optimizer.test.luckydraw.LuckyDrawActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.lucky.draw" android:theme="@style/j5"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.optimizer.test.permission.UsageAccessProcessActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.usage.access.process" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.permission.recommendrule.PermissionForAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.activity.MessageSecurityGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.activity.MessageSecurityDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.activity.MessageSecuritySettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.recommendrule.MessageSecurityAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="true" android:name="com.optimizer.test.module.messagesecurity.MessageSecurityReceiver" android:process=":work">
+            <intent-filter>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.message_security" android:exported="false" android:name="com.optimizer.test.module.messagesecurity.data.MessageSecurityProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.callassistant.CallAssistantActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.callassistant.addtolist.ContactsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.optimizer.test.module.callassistant.CallBlockerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.callassistant.addtolist.InputNumberActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.callassistant.CallAssistantPromoteActivity" android:screenOrientation="portrait" android:theme="@style/ey"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.optimizer.test.module.callassistant.callidlealert.CallIdleAlertActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/ey"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.optimizer.test.module.callassistant.callidlealert.CallIdlePromoteActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/ey"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.optimizer.test.module.callassistant.messageassistant.MessageAssistantAlertActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/mf" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.StartBrowsingActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:name="com.optimizer.test.module.safebrowsing.SafeBrowsingMainPageActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.SafeBrowsingSettingActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.bookmark.SafeBrowsingBookmarksActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.bookmark.SafeBrowsingAddBookmarkActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.bookmark.SafeBrowsingEditBookmarkActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.SafeBrowsingPasswordSetActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.safebrowsing.SafeBrowsingProtectActivity" android:screenOrientation="portrait" android:taskAffinity=":task.safe.browsing"/>
+        <activity android:name="com.optimizer.test.module.callassistant.recommendrule.CallAssistantAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:exported="false" android:name="net.appcloudbox.autopilot.core.AutopilotAssistService" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.net.appcloudbox.autopilot.AutopilotProvider" android:enabled="true" android:exported="false" android:name="net.appcloudbox.autopilot.core.AutopilotProvider" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="false" android:name="net.appcloudbox.autopilot.core.AutopilotReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="net.appcloudbox.autopilot.SESSION_START"/>
+                <action android:name="net.appcloudbox.autopilot.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.net.appcloudbox.autopilot.PreferenceProvider" android:enabled="true" android:exported="false" android:name="net.appcloudbox.autopilot.preference.PreferenceProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.net.appcloudbox.autopilot.SessionProvider" android:enabled="true" android:exported="false" android:name="net.appcloudbox.autopilot.session.SessionProvider" android:process=":work"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.security.securityreport.SecurityReportActivity" android:screenOrientation="portrait" android:taskAffinity=":optimizer.security.report" android:theme="@style/md"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.systemshortcutcenter.applist.AppListActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":optimizer.control.center"/>
+        <activity android:name="com.optimizer.test.module.systemshortcutcenter.recommendrule.PromoteSystemShortcutCenterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.fastboost.FastBoostActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":fast.boost" android:theme="@style/mf"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.CpuBoostActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":cpucooler.fast.boost" android:theme="@style/mf"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationorganizer.recommendrule.OrganizerSpecificPeriodContentActivity" android:taskAffinity=":organizer.external.specific.period" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.junkclean.recommendrule.external.ExternalJunkAlertActivity" android:taskAffinity=":junk.external" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.cpucooler.CpuExternalContentAlertActivity" android:taskAffinity=":cpu.external" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.security.SecurityExternalContentAlertActivity" android:taskAffinity=":security.external.security" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.memoryboost.externalrecommend.RamBoostExternalContentActivity" android:taskAffinity=":boost.external.ram" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.security.ClipboardExternalContentAlertActivity" android:taskAffinity=":security.external.clipboard" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.security.BrowsingHistoryExternalContentAlertActivity" android:taskAffinity=":security.external.browsing.history" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.wifi.wifiboost.WifiBoostExternalContentAlertActivity" android:taskAffinity=":wifi.external.wifi.boost" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.wifi.wifispeedtest.WifiSpeedTestExternalContentAlertActivity" android:taskAffinity=":wifi.external.wifi.speed.test" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.memoryboost.externalrecommend.AppBoostExternalContentActivity" android:taskAffinity=":boost.external.app" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.batterysaver.recommendrule.BatteryTooLowExternalContentAlertActivity" android:taskAffinity=":battery.external.too.low" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.batterysaver.recommendrule.BatteryOverConsumedExternalContentAlertActivity" android:taskAffinity=":battery.external.over.consumed" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.memoryboost.externalrecommend.MemoryUsedBoostExternalContentActivity" android:taskAffinity=":boost.external.memory.used" android:theme="@style/j5"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.optimizer.test.module.whostealdata.recommendrule.ExternalDataThievesAlertActivity" android:screenOrientation="portrait" android:taskAffinity=":data.thieves.external" android:theme="@style/j5"/>
+        <provider android:authorities="com.oneapp.max.security.pro.user_present_placement" android:name="com.optimizer.test.module.userpresent.UserPresentPlacementProvider" android:process=":work"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.appprotect.recommendrule.external.ExternalAppLockAlertActivity" android:taskAffinity=":app.lock.external" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.messagesecurity.recommendrule.PromoteMessageWithAnimationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.chargingreport.recommendrule.ChargingReportAppLaunchFullActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.messagesecurity.recommendrule.ExternalMessageSecurityContentActivity" android:taskAffinity=":externalMessageSecurity" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.appprotect.recommendrule.PromoteAppLockActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationtoggle.NotificationToggleCloseAlertActivity" android:screenOrientation="portrait" android:taskAffinity=":notificationToggleCloseAlert" android:theme="@style/mb"/>
+        <activity android:excludeFromRecents="true" android:name="com.optimizer.test.module.notificationtoggle.DismissLockScreenActivity" android:screenOrientation="portrait" android:taskAffinity=":dismissLockScreen" android:theme="@style/lw"/>
+        <activity android:name="com.optimizer.test.module.memoryboost.recommendrule.InternalBoostPromoteContentActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.security.recommendrule.InternalSecurityPromoteContentActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.cpucooler.recommendrule.InternalCPUPromoteContentActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.notificationorganizer.recommendrule.InternalOrganizerPromoteContentActivity" android:process=":work" android:screenOrientation="portrait" android:theme="@style/j5"/>
+        <activity android:name="com.optimizer.test.module.security.InternalSecurityContentActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.optimizer.test.module.smartlocker.locker.screen.SmartLockerPreviewActivity" android:screenOrientation="portrait" android:theme="@style/ll"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.wallpaper.WallpaperActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.smartlocker.wallpaper.WallpaperDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.clipboardmanager.ClipboardManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.clipboardmanager.ClipboardManagerContentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.clipboardmanager.ClipboardManagerSettingActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.oneapp.max.security.pro.clipboard_manager" android:exported="false" android:name="com.optimizer.test.module.clipboardmanager.data.ClipboardManagerProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.acbadconfig" android:name="net.appcloudbox.goldeneye.config.AcbAdConfigProvider" android:permission="com.oneapp.max.security.pro.permission.GOLDENEYE_SECURITY" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.acb_ads_common" android:name="net.appcloudbox.ads.common.session.CommonSessionProvider" android:permission="com.oneapp.max.security.pro.permission.GOLDENEYE_SECURITY" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.interstitialProxy" android:exported="false" android:name="com.optimizer.test.module.donepage.DoneInterstitialProxyProvider" android:process=":work"/>
+        <activity android:name="com.optimizer.test.module.memoryboost.normalboost.EasyBoostActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.batterysaver.EasyBatteryScanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.optimizer.test.module.junkclean.EasyJunkScanActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="android.support.VERSION" android:value="25.4.0"/>
+        <meta-data android:name="net.appcloudbox.autopilot.version" android:value="5.1.2.beta01"/>
+        <receiver android:name="com.ihs.app.push.impl.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.gcm.intent.RETRY"/>
+                <category android:name="com.oneapp.max.security.pro"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:exported="false" android:name="com.ihs.commons.analytics.publisher.HSInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.ihs.app.alerts.impl.AlertActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.ihs.app.testAlert.TestAlertActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.TJContentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.tapjoy.TJAdUnitActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.mraid.view.ActionHandler"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.tapjoy.mraid.view.Browser"/>
+        <provider android:authorities="com.oneapp.max.security.pro.framework_appsFlyerEvent" android:enabled="true" android:exported="false" android:name="net.appcloudbox.common.analytics.AppsFlyerEventProvider"/>
+        <activity android:name="com.ihs.iap.workflow.task.PurchaseLaunchpad" android:theme="@android:style/Theme.Translucent"/>
+        <service android:exported="true" android:label="GuardService" android:name="com.ihs.device.permanent.PermanentService" android:process=":work" android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.ihs.device.permanent.StartPermanentService"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.ihs.device.permanent.PermanentService$PermanentServiceInner" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ihs.device.permanent.PermanentService$PermanentReceiver" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ihs.device.permanent.PermanentReceiver" android:process=":work">
+            <intent-filter>
+                <data android:scheme="package"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter android:priority="999">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.WALLPAPER_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code"/>
+            </intent-filter>
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="ihs.device.permanent.GUARD_PERMANENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ihs.device.permanent.GuardJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":work"/>
+        <service android:exported="true" android:name="com.ihs.device.permanent.syncaccount.AuthenticationService" android:process=":work">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/b"/>
+        </service>
+        <service android:exported="true" android:name="com.ihs.device.permanent.syncaccount.SyncService" android:process=":work">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/d" android:value="true"/>
+        </service>
+        <provider android:authorities="@string/aae" android:enabled="true" android:exported="true" android:label="@string/a6t" android:name="com.ihs.device.permanent.syncaccount.SyncContentProvider" android:process=":work" android:syncable="true"/>
+        <activity android:enabled="true" android:excludeFromRecents="true" android:exported="true" android:name="com.ihs.device.permanent.PermanentActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":libPermanent" android:theme="@style/gb">
+            <intent-filter>
+                <action android:name="com.ihs.device.permanent.StartPermanentActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:enabled="true" android:excludeFromRecents="true" android:name="com.ihs.device.permanent.foreground.ForegroundActivity" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":libPermanent" android:theme="@style/gb"/>
+        <service android:label="ClientService" android:name="com.ihs.device.monitor.usage.monitor.UsageMonitorService" android:process=":work" android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.oneapp.max.security.pro.com.ihs.device.monitor.usage.monitor.UsageMonitorService"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.oneapp.max.security.pro.com.ihs.device.monitor.usage.query.AppUsageProvider" android:exported="true" android:name="com.ihs.device.monitor.usage.query.AppUsageProvider" android:process=":work"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ihs.device.monitor.usage.UsageBroadcastReceiver" android:process=":work">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+                <action android:name="hs.commons.config.CONFIG_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ihs.device.monitor.sdcard.jobschedule.HSJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.com.ihs.device.monitor.topapp.TopAppProvider" android:exported="false" android:name="com.ihs.device.monitor.topapp.TopAppProvider" android:process=":work"/>
+        <provider android:authorities="com.oneapp.max.security.pro.recent_app" android:exported="false" android:name="com.ihs.device.monitor.topapp.RecentAppProvider" android:process=":work"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:name="com.ihs.device.clean.accessibility.task.SettingLaunchpad" android:process=":work" android:screenOrientation="portrait" android:taskAffinity=":AccLaunchpad" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:enabled="true" android:exported="true" android:name="com.ihs.device.clean.accessibility.AccessibilityTaskService" android:process=":work"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:name="com.ihs.device.clean.accessibility.agent.LaunchpadActivity" android:screenOrientation="portrait" android:taskAffinity=":AccLaunchpad"/>
+        <service android:label="AccessibilityService" android:name="com.ihs.device.accessibility.service.HSAccPartnerService" android:process=":work" android:stopWithTask="false"/>
+        <service android:enabled="true" android:label="@string/a9q" android:name="com.ihs.devicemonitor.accessibility.HSAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":work">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/a"/>
+        </service>
+        <provider android:authorities="com.oneapp.max.security.pro.com.ihs.device.accessibility.service.AccessibilityProvider" android:exported="false" android:name="com.ihs.device.accessibility.service.AccessibilityProvider" android:process=":work"/>
+        <service android:name="com.ihs.device.clean.junk.service.JunkService" android:process=":clean"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ihs.device.clean.junk.JunkBroadcastReceiver" android:process=":clean">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+                <action android:name="hs.commons.config.CONFIG_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.ihs.device.clean.memory.MemoryService" android:process=":clean"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.ihs.device.clean.memory.MemoryReceiver" android:process=":clean">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ihs.device.clean.security.SecurityService" android:process=":clean"/>
+        <provider android:authorities="com.oneapp.max.security.pro.com.ihs.device.clean.security.HSSecurityProvider" android:exported="true" android:name="com.ihs.device.clean.security.HSSecurityProvider" android:process=":clean"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ihs.device.clean.security.SecurityBroadcastReceiver" android:process=":clean">
+            <intent-filter>
+                <action android:name="hs.app.session.SESSION_START"/>
+                <action android:name="hs.app.session.SESSION_END"/>
+                <action android:name="hs.commons.config.CONFIG_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.oneapp.max.security.pro.app_info" android:exported="false" android:name="com.ihs.device.common.AppInfoProvider" android:process=":work"/>
+        <activity android:name="net.appcloudbox.ads.base.FullAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/a34" android:label="" android:launchMode="singleTask" android:name="net.appcloudbox.ads.base.QuietInterstial.BackgroundActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity=".acb_interstitial_quiet" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.appcloudbox.ads.interstitialad.NativeInterstitial.AcbNativeInterstitialActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="net.appcloudbox.ads.interstitialad.NativeInterstitial.AcbNativeInterstitalQuietActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity=".acb_interstitial_quiet"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="net.appcloudbox.ads.interstitialad.ExpressInterstitial.AcbExpressInterstitialActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="net.appcloudbox.ads.interstitialad.ExpressInterstitial.AcbExpressInterstitalQuietActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity=".acb_interstitial_quiet"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity" android:noHistory="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.fyber.inneractive.sdk.mraid.IAMraidKit">
+            <intent-filter>
+                <action android:name="com.fyber.inneractive.sdk.intent.action.REGISTER_KIT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.fyber.inneractive.sdk.video.IAVideoKit">
+            <intent-filter>
+                <action android:name="com.fyber.inneractive.sdk.intent.action.REGISTER_KIT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/lm"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="com.oneapp.max.security.pro.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

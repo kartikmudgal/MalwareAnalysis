@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.app.stclaretschool" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.app.stclaretschool.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.app.stclaretschool.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <application android:allowBackup="true" android:icon="@drawable/app_icon_new" android:label="@string/app_name" android:largeHeap="true" android:name="com.app.stclaretschool.MyApplication" android:theme="@style/AppTheme">
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.app.stclaretschool.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.WalkthroughActivity" android:screenOrientation="portrait"/>
+        <activity android:name="org.achartengine.GraphicalActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.InfoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.DatePickerForAllAttendance" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.admin.WebViewAdmin" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ChangePasswordActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherChangePassword" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ForgetPassActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Attendance" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FeaturesActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.HowToUseActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.dailydairy.DailyDiaryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyCalendarView" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyCalendarView_Teacher" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.dailydairy.DailyDiaryNotify" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.dailydairy.DetailDiaryNote" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.events.EventActivityNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.UtilityActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.LoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleInstance" android:name="com.app.stclaretschool.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleInstance" android:name="com.app.stclaretschool.StudentHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentProfileActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.NotificationActivityNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.NotificationListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:name="com.app.stclaretschool.NotificationActivityNewNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.NotificationDetail" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ProfileWithImage.StudentProfileActivityNew_PostWithImg" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ProfileWithImage.StudentProfileActivity_withoutEdit" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentProfileActivityNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentProfileActivityForOldVersion" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TransportationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FeedbackModule.FeedbackActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Teacher_AvailBusApplyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AvailBusApplyAcivity_new" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AvailBusApplyAcivity_new_new" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Teacher_TransportationActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Teacher_AvailBusListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Teacher_OtherBusesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FunNLearn.FunNLearnActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FunNLearn.FunAndLearnActivityParent" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.DailytimeTable.DailyTimeTableActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.DailytimeTable.DailyTimeTableActivity_parent" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.LibraryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.LibraryActivityForOld" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ResultActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TimeTableActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AttendanceActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentAttendanceHistoryAtParent" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentAttendanceHistoryChart" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.PhotoGalleryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.SchoolInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AboutUsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ContactUsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.SchoolTimingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FacilitiesProvidedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MakeEnquiryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClassesModule.MyClassActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClassesModule.MyClassActivityNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClassesModule.MyClassEntreMarksActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClass.MyClassActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClass.MyClassActivityNew" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.MyClass.MyClassEntreMarksActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Homework.HomeWorkTeachersActivity_New" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Homework.AttachmentDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ApplyLeaveActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.PhotoListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ImageDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.HomeWorkActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.OtherBusesActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.OtherBusDetail" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AvailBusListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AvailBusApplyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ExamDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AttendanceTeacherActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.HomeWorkTeachersActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherProfileActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherProfile_New" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherProfileActivityForOld" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherNotifyWithList.TeacherNotify_new" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherNotifyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AttendanceTeacherActivityForOld" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.CreateClass.StudentListOfExtraClass" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.CreateClass.CreateExtraClasses" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherLeaveListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.fees.FeesStudentActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentLeaveHistory" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentLeaveHistoryAtParent" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentLeaveHistoryDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.StudentLeaveHistoryDetailActivityAtParent" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherLeaveModule.TeacherLeaveActivity_New" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherLeaveModule.TeacherLeaveHistory" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherLeaveModule.TeacherLeaveHistoryDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherLeaveDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Information.InformationFeatureActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.dailydairy.DailyDiaryActivityParent" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Homework.HomeWorkHistoryDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Homework.Teacher_Homework_History" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherNotifyWithList.NotificationHistoryDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.TeacherNotifyWithList.Teacher_Notification_History" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Student_AbsentHistory" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.Student_PresentHistory" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.AppSupport" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ExamListTeacherActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ExamDetailActivityTeacher" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.result.SubjectProgressActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.FullScreenImage" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.CounselorHomeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.app.stclaretschool.ImageSelector" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name="com.app.stclaretschool.services.UpdateProfileService"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.rot.meridain"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.app.stclaretschool.GCMIntentService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDV3Lh0WKT5-eI7jp_0G-fUtTnxHJUxMRk"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.papelook" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="false" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="com.papelook.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.papelook.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.kddi.market.permission.USE_ALML"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="false" android:icon="@drawable/ic_launcher_0725" android:label="@string/app_name" android:largeHeap="true" android:name=".ui.buyproduct.activities.UILApplication" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+        <meta-data android:name="com.kii.DISTRIBUTION_ID" android:value="@string/kii_market_QQ_Id"/>
+        <activity android:label="@string/app_name" android:name=".ui.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.buyproduct.activities.ListDownloadedCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.buyproduct.activities.MoreFeatureActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.buyproduct.activities.FeaturedActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.buyproduct.activities.DownloadCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.SavePhotoActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".ui.AlbumActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name=".ui.HomeScreenActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.au.papelook.edit"/>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.dcm-b.jp" android:path="/9921FE1030C4BF200B7843162E5154C34FD5609B68778694D07919228A6AAC55" android:scheme="sugotoku"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="stg.dcm-b.jp" android:path="/9921FE1030C4BF200B7843162E5154C34FD5609B68778694D07919228A6AAC55" android:scheme="sugotoku"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.AlbumDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.PreviewPhotoActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name=".ui.PreviewPhotoShare" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="t4jsample" android:scheme="oauth"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="papelookpath"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.EditAlbumNameActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:name=".ui.ContactUsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.CreditsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.TermsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.FacebookPostActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:name=".ui.TwitterPostActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateVisible"/>
+        <activity android:label="@string/app_name" android:name=".twitter.TwitterActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="Crop Image" android:name=".ui.CropImageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name=".ui.newphotos.NewEditPhotoActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.au.papelook.edit"/>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name=".ui.newphotos.BackgroundPickerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.newphotos.FacebookAlbumsPicker" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.newphotos.FacebookPhotoPickerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.newphotos.TutorialScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.newphotos.FirstTutorialScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".ui.buyproduct.TabsFragmentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.WebViewActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="papelook"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".custom.AndroidCustomGalleryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".custom.CustomGalleryAlbumActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.AdvActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.TemplateScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".newcropimage.CropImageActivity2" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.UpdateDatabaseActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.HomeMenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.HomeMenuTermActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.SavePhotoActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.AlbumActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.AlbumDetailActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.PreviewPhotoActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.AlbumListMoveActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name=".ui.PreviewPhotoShareNew" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="t4jsample" android:scheme="oauth"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="papelookpath"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.vpadn.widget.VpadnActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.papelook"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+        <activity android:label="@string/title_activity_push_noti_setting" android:name=".ui.PushNotiSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name=".ui.buyproduct.web.WebStoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintCombiniActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintHistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintTypeOptionsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PreviewPrintedHistory" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintTermActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintConnectServerActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintProcedureNumberActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_new_year_type" android:name=".ui.print.PrintNewYearOptionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_new_year_webview" android:name=".ui.print.PrintNewYearWebviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/title_activity_print_brother_option" android:name=".ui.print.PrintBrotherOptionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_brother_list_printer" android:name=".ui.print.PrintBrotherListPrinterActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_brother_print_task" android:name=".ui.print.PrintBrotherPrintTaskActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintBrotherNoPrinterWebActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintSealOptionActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_shiru_webview" android:name=".ui.print.PrintSealWebviewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_musubi_introduction" android:name=".ui.print.PrintMusubiIntroductionActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.print.PrintMusubiChooseTypeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_print_musubi_choose_front" android:name="com.papelook.ui.print.PrintMusubiChooseFrontActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

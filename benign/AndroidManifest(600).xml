@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.appmk.book.scrollbook">
+    <application android:icon="@drawable/icon" android:label="اعرف نبيك مختصر">
+        <activity android:label="اعرف نبيك مختصر" android:name="com.appmk.book.scrollbook.ShowMatter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="" android:name="com.appmk.book.scrollbook.Catalog" android:screenOrientation="sensor" android:theme="@android:style/Theme.Light">
+            <intent-filter android:label="">
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.android.notepad.action.EDIT_NOTE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.note"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="" android:name="com.appmk.book.scrollbook.Cover" android:screenOrientation="sensor" android:theme="@android:style/Theme.Light">
+            <intent-filter android:label="">
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.android.notepad.action.EDIT_NOTE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.note"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="" android:name="com.appmk.book.scrollbook.Config" android:screenOrientation="sensor" android:theme="@android:style/Theme.Light">
+            <intent-filter android:label="">
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.android.notepad.action.EDIT_NOTE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.google.note"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.google.ads.AdActivity"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+</manifest>

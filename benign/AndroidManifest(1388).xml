@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="eu.mobile_alerts.mobilealerts">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="eu.mobile_alerts.mobilealerts.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="eu.mobile_alerts.mobilealerts.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/technoline_icon_512" android:label="Mobile-Alerts" android:largeHeap="true" android:name="com.synertronixx.mobilealerts1.RMGlobalData" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="eu.mobile_alerts.mobilealerts.MobileAlerts_TabhostViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.RMTabhostViewController" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.dashboard.RMDashBoardViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.dm.zbar.android.scanner.ZBarScannerActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.sensor.RMSensorDetailViewController" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.sensor.RM3Plus1SensorDetailViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.sensor.RMSmokeDetectorSensorDetailViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.info.RMWebViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.alerts.RMAlertEditViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.alerts.RMAlertsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.alerts.RMWindowSensorAlertEditViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.alerts.RMSmokeDetectorAlertEditViewController" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.history.RMHistoryViewController"/>
+        <activity android:name="com.synertronixx.mobilealerts1.dashboard.RMScannerViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.dashboard.RMKeyboardViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.settings.RMSettingsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.settings.RMSettingsPickerViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.configurator.RMSearchViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.configurator.RMNetworkSettingsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.configurator.RMMessageViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.sensor.RMSensorExportViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.sensor.RMExportWebserverViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.info.RMTermsAndConditionsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.dashboard.RMDashboardWebViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.dashboard.RMDashboardCloneViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.pushmessages.CIFavoritesViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.rainsensor.RMRainSensorStartViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.rainsensor.RMRainSensorAlertsEditViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.rainsensor.RMRainSensorAlertsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.rainsensor.RMRainSensorSummaryViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.rainsensor.RMRainSensorHistoryViewController" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterStartViewController" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterAlertsEditViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterAlertsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterRoseViewController" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterHistoryViewController"/>
+        <activity android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterSummaryViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.windmeter.RMWindmeterHistoryListViewController" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.synertronixx.mobilealerts1.virtualdevice.RMVirtualDeviceStartViewController" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.virtualdevice.RMVirtualDeviceConfigureViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.virtualdevice.RMVirtualDeviceConfigureViewControllerOLD" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.virtualdevice.RMVirtualDeviceAlertsViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.virtualdevice.RMVirtualDeviceHistoryViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.humiditymonitor.RMHumidityMonitorStartViewController" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateAlwaysHidden"/>
+        <activity android:name="com.synertronixx.mobilealerts1.humiditymonitor.RMHumidityMonitorAlertEditViewController" android:screenOrientation="portrait"/>
+        <activity android:name="com.synertronixx.mobilealerts1.humiditymonitor.RMHumidityMonitorConfigureViewController" android:screenOrientation="portrait"/>
+        <receiver android:name="com.synertronixx.mobilealerts1.googlecloudmessaging.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="eu.mobile_alerts.mobilealerts"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.synertronixx.mobilealerts1.googlecloudmessaging.GcmIntentService"/>
+    </application>
+</manifest>

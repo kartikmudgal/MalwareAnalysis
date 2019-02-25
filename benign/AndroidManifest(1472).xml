@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="kr.e777.daeriya.jang1337" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="kr.e777.daeriya.jang1337.DaeriyaApp" android:theme="@android:style/Theme.NoTitleBar">
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBj2WCDLrcFj9Mo3GnXz1q2AUgTrT-ksUU"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <activity android:label="@string/app_name" android:name=".ui.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleInstance" android:name=".ui.ServiceAgreeActivity"/>
+        <activity android:launchMode="singleInstance" android:name=".ui.PushPopupActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".ui.JoinUsActivity"/>
+        <activity android:name=".ui.MainActivity"/>
+        <activity android:name=".ui.MileageActivity"/>
+        <activity android:name=".ui.WithdrawalActivity"/>
+        <activity android:name=".ui.SettingActivity"/>
+        <activity android:name=".ui.UserInfoActivity"/>
+        <activity android:name=".ui.WebViewActivity"/>
+        <activity android:name=".ui.CallTaxiListActivity"/>
+        <activity android:name=".ui.TacsongListActivity"/>
+        <activity android:name=".ui.QuickListActivity"/>
+        <activity android:name=".ui.CooperateActivity"/>
+        <activity android:name=".ui.RentActivity"/>
+        <activity android:name=".ui.MapActivity"/>
+        <activity android:name=".ui.MapViewActivity"/>
+        <activity android:name=".ui.LocationActivity"/>
+        <activity android:name=".uiBarcode.BarcodeGeneration"/>
+        <activity android:name=".ui.InquireActivity"/>
+        <activity android:name=".ui.ServiceActivity"/>
+        <activity android:launchMode="singleTask" android:name=".ui.LocationListActivity"/>
+        <activity android:label="@string/title_activity_location_category" android:name=".ui.LocationCategory" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".ui.LocationWebViewActivity"/>
+        <activity android:name=".ui.CommonNoticeActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name=".ui.CommonNotifyActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="kr.e777.daeriya.jang1337"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="kr.e777.daeriya.jang1337.GCMIntentService"/>
+        <activity android:label="@string/title_activity_main2" android:name=".ui.Main2Activity"/>
+        <activity android:label="@string/title_activity_flower" android:name="kr.e777.daeriya.jang1337.ui.FlowerActivity"/>
+        <service android:name="kr.e777.daeriya.jang1337.LocationService">
+            <intent-filter>
+                <action android:name="kr.e777.daeriya.jang1337.LocationService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <permission android:name="kr.e777.daeriya.jang1337.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="kr.e777.daeriya.jang1337.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+</manifest>

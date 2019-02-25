@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.triangle.elecsaver17zhenduan">
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE"/>
+    <permission android:name="com.triangle.elecsaver17zhenduan.permission.UPDATE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.triangle.infrared.permission.UPDATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <permission android:name="com.triangle.elecsaver17zhenduan.permission.CLOSEAPP" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.triangle.infrared.permission.CLOSEAPP"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <application android:debuggable="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.dianxinos.powermanager.PowerMangerApplication" android:theme="@style/MyTheme">
+        <meta-data android:name="com.dianxinos.apikey" android:value=" dGFwYXNhcGkAAAAAAAAAAAADAAAAAQAAgdkCmVBTIsdmR4RgSyAnJC7O4w9rCRcikg4NNOZ8 /q/DBRkx/Vb1UZ61PqN2lZ7I/w+B/ffWx6NwRxr1GXnZJpcKBCapF57lajR46HVPOJmGhN0K koBG/kDNQLEUDR/w/7/T/nTTb2/NSRhGpFYUWOAjmq7vk6bqg3qHblTUsI1NNMP//cdTQCWZ +ZVAagF4DaDw7AV+oszgaYGNV5GG38nZ8D7UjExwRhhqiv/TE88JeQBwpfGS7yWoGmsHRTjy F0LziOppW2bgiisXVrK95h+6uQKcP/Swiuh/O6c7A5R1DJvhyfI+zUN9uhOg7mD5IPd541hD UhWqrCUrEufcugEAAADoAQAAAQAAAOzVp62grWVuzrm43nmeYcIOcU1/AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAY29tLmRpYW54aW5vcy5wb3dl cm1hbmFnZXIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAOj/1U4AAAAA6NXOYQAAAAABAAAAAQAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAA "/>
+        <meta-data android:name="com.dianxinos.apikey.debug" android:value=" dGFwYXNhcGkAAAAAAAAAAAADAAAAAQAAPKSh8/IYp2Kzir3RQhgVKyWTeRF9rWzvXTegKSrL dBBWe6gl1QP/BRDM8qqCMaRsxaavahe3Y6vRP7sAwk4xkvk1O+IjkvEFQT+LNouQYACniN6X +bCR9ypZVxLzE7J7mCN1FQfSNQ4pUYLz6dOUzV8893MTKgIrfjeKvznZaRuWzLgXxEcZA7lH M4c4CGWYOujn9o+B3XHdZytdpDDN0nPZhKqmIEUhpeSTGk1uHCg3eue4WP8dWfzLnZixWFab j0OidIeLD0JkNK/IIaUslQCWWLJcVLUCmo1pnN2XRFxS9aBhzgD1XDRYCLT+J7sbFO7FOZqv x6plI6oFrUD++AEAAADoAQAAAQAAALE4lE4TNyYCtqNw/UvMFZ/xkYmHAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAY29tLmRpYW54aW5vcy5wb3dl cm1hbmFnZXIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAANz/1U4AAAAAXGPhUAAAAAABAAAAAQAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAA "/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="gfan"/>
+        <receiver android:exported="true" android:name="com.dianxinos.powermanager.PowerMgrReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleTask" android:name="com.dianxinos.powermanager.PowerMgrTabActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.dianxinos.powermanager.MAINACTIVITY"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.powermanager.PowerMgrHomeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="com.dianxinos.powermanager.PowerMgrActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.triangle.elecsaver17zhenduan.FlashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".HelperActivity"/>
+        <service android:name=".NetworkService"/>
+        <activity android:exported="true" android:name="com.dianxinos.powermanager.usage.PowerUsageTabActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.dianxinos.powermanager.USAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.powermanager.usage.AppsPowerUsageRecent" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.usage.AppsPowerUsageHistory" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.usage.AppPowerUsageDetails" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.usage.HardwaresPowerUsageSummary" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.usage.HwPowerUsageDetails" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.mode.ModeMgrActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.mode.NewModeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.dianxinos.powermanager.mode.SettingListDialog" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.powermanager.mode.ModeSelectDialog" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.modeselect" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="com.dianxinos.powermanager.SETTINGLISTDIALOG"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.dianxinos.powermanager.usage.PieChartActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <service android:exported="true" android:label="@string/service_name" android:name="com.dianxinos.powermanager.PowerMgrService"/>
+        <receiver android:label="@string/mid_widget_name" android:name="com.dianxinos.powermanager.PowerMgrMidWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED"/>
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_AWAKE"/>
+                <action android:name="com.dianxinos.powermanager.ONEKEY"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/power_mid_widget_info"/>
+        </receiver>
+        <service android:label="@string/mid_widget_service_name" android:name="com.dianxinos.powermanager.WidgetUpdataService1x4"/>
+        <activity android:name="com.dianxinos.powermanager.menu.FeedbackDialog" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.powermanager.menu.HelperActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.DownloadService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CANCEL_DOWNLOAD"/>
+            </intent-filter>
+            <meta-data android:name="com.dianxinos.appupdate.DOWNLOAD_PROGRESS_LISTENER" android:value="com.dianxinos.powermanager.update.DownloadProgressListenerImpl"/>
+        </service>
+        <service android:exported="false" android:name="com.dianxinos.appupdate.AppUpdateService">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.CHECK_UPDATE"/>
+                <action android:name="com.dianxinos.appupdate.intent.DOWNLOAD_RETRY"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.dianxinos.appupdate.NetworkStatusChangedReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.appupdate.PowerOnReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.appupdate.PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.appupdate.NotifyInstalledReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.NOTIFY_INSTALLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.powermanager.update.UpdateReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.appupdate.intent.NEW_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleTop" android:name="com.dianxinos.powermanager.update.DownloadActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.powermanager.menu.MoreSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.menu.AppSettings" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.menu.AppWhiteListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.menu.AppListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.TipsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.smart.SmartSettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.smart.SmartModeTimeSettings" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.smart.SmartModeBatterySettings" android:screenOrientation="portrait"/>
+        <receiver android:name="com.dianxinos.powermanager.smart.SmartAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.powermanager.ALARMSWITCH"/>
+                <action android:name="com.dianxinos.powermanager.ALARMRESTORE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.powermanager.CommonDialogActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.common" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:excludeFromRecents="true" android:icon="@drawable/shortcut_onekey_icon" android:label="@string/shortcut_onekey_name" android:name="com.dianxinos.powermanager.ShortcutOnekeyActivity" android:taskAffinity="com.dianxinos.powermanager.shortcut.onekey" android:theme="@style/Theme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:icon="@drawable/shortcut_onekey_icon" android:label="@string/shortcut_onekey_name_long" android:name="com.dianxinos.powermanager.ShortcutOnekeyAddActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.powermanager.SavePowerSummaryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.menu.AutoCleanupSettings" android:screenOrientation="portrait"/>
+        <receiver android:name="com.dianxinos.powermanager.menu.SmartNotificationStatusBarClearReceiver"/>
+        <receiver android:label="@string/mid_widget_name" android:name="com.dianxinos.powermanager.DXWidgetProvider1x4">
+            <intent-filter>
+                <action android:name="android.dxwidget.action.DXAPPWIDGET_UPDATE"/>
+                <action android:name="android.dxwidget.action.DXAPPWIDGET_DELETED"/>
+                <action android:name="android.dxwidget.action.DXAPPWIDGET_DISABLED"/>
+                <action android:name="android.dxwidget.action.DXAPPWIDGET_ENABLED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.dxwidget_v1.1"/>
+            </intent-filter>
+            <meta-data android:name="android.dxappwidget.provider" android:resource="@xml/power_mid_widget_info_dxhome"/>
+        </receiver>
+        <service android:label="@string/mid_widget_service_name" android:name="com.dianxinos.powermanager.DXWidgetClientService1x4"/>
+        <activity android:name="com.dianxinos.powermanager.charging.HealthChargingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.menu.RootHelperActivity" android:screenOrientation="portrait"/>
+        <receiver android:icon="@drawable/icon" android:label="@string/settings_widget_name" android:name="com.dianxinos.powermanager.settings.PowerSettingsWidgetProvider1x4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED"/>
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED"/>
+                <action android:name="android.appwidget.action.APPWIDGET_AWAKE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/power_settings_widget_info"/>
+        </receiver>
+        <service android:label="@string/settings_widget_name" android:name="com.dianxinos.powermanager.settings.SettingsWidgetService1x4"/>
+        <activity android:backgroundDimEnabled="true" android:configChanges="keyboard|keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.powermanager.settings.SettingsWidgetActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.settings" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.dianxinos.powermanager.settings.PowerWidgetOrderActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.dianxinos.powermanager.settings.BrightnessChangeActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.settings" android:theme="@style/MyTheme.CustomDialogNoDim"/>
+        <activity android:name="com.dianxinos.powermanager.menu.NotificationSettings" android:screenOrientation="portrait"/>
+        <receiver android:name="com.dianxinos.powermanager.charging.ChargingDoneReceiver"/>
+        <activity android:name="com.dianxinos.powermanager.smart.CpuSelectDialog" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.dianxinos.powermanager.update.UpdateDialogActivity" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.common" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:launchMode="singleTop" android:name="com.dianxinos.powermanager.curvechart.BatteryCurveChartActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme.CustomDialog"/>
+        <activity android:name="com.dianxinos.powermanager.process.CurrentProcessActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.process.ProcessSettingActivity" android:screenOrientation="portrait"/>
+        <service android:exported="true" android:name="com.es.common.DownloadingService" android:process=":DownloadingService"/>
+        <activity android:name="com.dianxinos.powermanager.UmengRecommendActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.dianxinos.powermanager.billing.BillingService"/>
+        <receiver android:name="com.dianxinos.powermanager.billing.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.dianxinos.powermanager.diagnostic.DiagnosticMainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.papaya.cross.internal.NewPanelActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:name="com.dianxinos.powermanager.AliveReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:launchMode="singleInstance" android:name="com.dianxinos.acomponent.ui.ADMainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.dianxinos.acomponent.manager.BroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.dianxinos.acomponent.CHECK_"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="com.dianxinos.acomponent.CANCEL_SP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.acomponent.receiver.NetworkStatusChangedReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.acomponent.receiver.DelayTimeAllowReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.acomponent.NOTIFICATION_CHECK"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.dianxinos.acomponent.ui.DownLoadDialogActivity">
+            <intent-filter>
+                <action android:name="com.dianxinos.dxap.STOP_DOWNLOAD"/>
+                <action android:name="com.dianxinos.dxap.INSTALL_"/>
+                <action android:name="com.dianxinos.dxap.RETRY"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.dianxinos.powermanager.download.DownloadFileService"/>
+        <activity android:name="com.dianxinos.powermanager.menu.StatusBarSettings" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.optimizer.OptimizerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.dianxinos.powermanager.chargingrecord.ChargerRecordActivity" android:screenOrientation="portrait"/>
+        <receiver android:name="com.dianxinos.powermanager.chargingrecord.ChargerRecordReceiver">
+            <intent-filter>
+                <action android:name="com.dianxinos.powermanager.savenormalcharge"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.dianxinos.powermanager.UserExperienceProgramActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.dianxinos.powermanager.watcher.UninstallAskActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity="com.dianxinos.powermanager.uninstall.task" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.dianxinos.powermanager.ask_action"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dianxinos.ask_action_2_0"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.dianxinos.powermanager.watcher.UninstallAskReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dianxinos.powermanager.download.DaShiDownloadSdcardMountReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="com.dianxinos.powermanager.move_dashi_apk_2_sdcard"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

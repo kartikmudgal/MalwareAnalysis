@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:allowBackup="false" android:installLocation="auto" package="net.INGADE.MobsvsHerobrine" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="com.oki.babyphone.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.oki.babyphone.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <supports-screens android:largeScreens="true" android:resizeable="true"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="net.INGADE.MobsvsHerobrine.RunnerApplication">
+        <activity android:alwaysRetainTaskState="true" android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="net.INGADE.MobsvsHerobrine.RunnerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/menu_settings" android:name="net.INGADE.MobsvsHerobrine.RunnerPreferenceActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="9683000"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <meta-data android:name="xperiaplayoptimized_content" android:resource="@string/xperiaplayoptimized_content"/>
+        <meta-data android:name="game_display_name" android:resource="@string/app_name"/>
+        <meta-data android:name="YYUse24Bit" android:value="1"/>
+        <meta-data android:name="OrientLandscape" android:value="-1"/>
+        <meta-data android:name="OrientPortrait" android:value="0"/>
+        <meta-data android:name="OrientLandscapeFlipped" android:value="-1"/>
+        <meta-data android:name="OrientPortraitFlipped" android:value="0"/>
+        <meta-data android:name="SplashscreenTime" android:value="1"/>
+        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/gp_app_id"/>
+        <meta-data android:name="com.google.android.gms.appstate.APP_ID" android:value="@string/gp_app_id"/>
+        <meta-data android:name="YYHostIP" android:value="10.0.0.101"/>
+        <meta-data android:name="YYHostPort" android:value="51268"/>
+        <meta-data android:name="YYNumExtensionClasses" android:value="2"/>
+        <meta-data android:name="YYExtensionClass0" android:value="GooglePlayServicesExtension"/>
+        <meta-data android:name="GoogleMobileAds_Banner" android:value="1"/>
+        <meta-data android:name="GoogleMobileAds_MRect" android:value="2"/>
+        <meta-data android:name="GoogleMobileAds_Full_Banner" android:value="3"/>
+        <meta-data android:name="GoogleMobileAds_Leaderboard" android:value="4"/>
+        <meta-data android:name="GoogleMobileAds_Skyscraper" android:value="5"/>
+        <meta-data android:name="GooglePlayServices_SUCCESS" android:value="0"/>
+        <meta-data android:name="GooglePlayServices_SERVICE_MISSING" android:value="1"/>
+        <meta-data android:name="GooglePlayServices_SERVICE_UPDATING" android:value="18"/>
+        <meta-data android:name="GooglePlayServices_SERVICE_VERSION_UPDATE_REQUIRED" android:value="2"/>
+        <meta-data android:name="GooglePlayServices_SERVICE_DISABLED" android:value="3"/>
+        <meta-data android:name="GooglePlayServices_SERVICE_INVALID" android:value="9"/>
+        <meta-data android:name="YYExtensionClass1" android:value="UnityAdsBridge"/>
+        <meta-data android:name="UAPlacementStateReady" android:value="701"/>
+        <meta-data android:name="UAPlacementStateNotAvailable" android:value="702"/>
+        <meta-data android:name="UAPlacementStateDisabled" android:value="703"/>
+        <meta-data android:name="UAPlacementStateWaiting" android:value="704"/>
+        <meta-data android:name="UAPlacementStateNoFill" android:value="705"/>
+        <meta-data android:name="UAPlacementStateUnknown" android:value="706"/>
+        <meta-data android:name="UAFinishStateError" android:value="801"/>
+        <meta-data android:name="UAFinishStateCompleted" android:value="802"/>
+        <meta-data android:name="UAFinishStateSkipped" android:value="803"/>
+        <meta-data android:name="UAFinishStateUnknown" android:value="804"/>
+        <meta-data android:name="UAErrorNotInitialized" android:value="301"/>
+        <meta-data android:name="UAErrorInitializedFailed" android:value="302"/>
+        <meta-data android:name="UAErrorInvalidArgument" android:value="304"/>
+        <meta-data android:name="UAErrorVideoPlayerError" android:value="305"/>
+        <meta-data android:name="UAErrorAdBlockerDetected" android:value="306"/>
+        <meta-data android:name="UAErrorFileIoError" android:value="307"/>
+        <meta-data android:name="UAErrorDeviceIdError" android:value="308"/>
+        <meta-data android:name="UAErrorShowError" android:value="309"/>
+        <meta-data android:name="UAErrorInternalError" android:value="310"/>
+        <meta-data android:name="UAErrorUnknown" android:value="311"/>
+        <meta-data android:name="UADidError" android:value="401"/>
+        <meta-data android:name="UADidFinish" android:value="402"/>
+        <meta-data android:name="UADidStart" android:value="403"/>
+        <meta-data android:name="UAReady" android:value="404"/>
+        <meta-data android:name="UAErrorNoInternetConnection" android:value="312"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+    </application>
+</manifest>

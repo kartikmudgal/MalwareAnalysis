@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.fungame4all.games.chickenclickclear.lite">
+    <receiver android:exported="true" android:name="com.google.android.apps.analytics.AnalyticsReceiver">
+        <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER"/>
+        </intent-filter>
+    </receiver>
+    <application android:icon="@drawable/app_icon" android:label="@string/app_name">
+        <service android:icon="@drawable/f2fgame" android:label="@string/service_app_name" android:name="com.finger2finger.games.common.activity.F2FGameService">
+            <intent-filter>
+                <action android:name="start_service"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.finger2finger.games.common.activity.F2FGameReceiver">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:label="@string/app_name" android:launchMode="standard" android:name="com.finger2finger.games.start.StartActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:launchMode="standard" android:name="com.finger2finger.games.common.activity.F2FMsgActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:launchMode="standard" android:name="com.finger2finger.games.common.activity.F2FGameActivity" android:screenOrientation="landscape" android:theme="@style/Theme.NoBackground">	@GameActivityIntent@
+</activity>	@GameRegister4Application@
+
+		@ActivityShop@
+<activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.google.ads.AdActivity"/>
+        <activity android:name="com.millennialmedia.android.MMAdViewOverlayActivity"/>
+        <activity android:name="com.millennialmedia.android.VideoPlayer"/>
+        <meta-data android:name="Market_ID" android:value="1"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation" android:name="com.vpon.adon.android.WebInApp" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.mt.airad.MultiAD" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.adwo.adsdk.AdwoAdBrowserActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.inmobi.androidsdk.IMBrowserActivity"/>	@ActivityYoumi@
+
+		@ActivityMM@
+		
+		@Activity4CPA@		
+		@Activity4UUCum@
+		@Activity4Tapjoy@
+		@Activity4JuZi@
+		@Activity4Miidi@
+		
+		@Activity4RenRen@
+</application>	@PermissionShop@
+<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>	@PermissionMTK@
+	
+	@PermissionReadContact@
+	
+	@PermissionSystemAlertWindow@
+<uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+</manifest>

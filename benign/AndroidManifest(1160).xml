@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.streammp4.musicstream">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.streammp4.musicstream.util.ContextUtil">"
+<activity android:label="@string/app_name" android:name="com.streammp4.musicstream.StartActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".GShLActivity"/>
+        <activity android:name=".ZhJLActivity"/>
+        <activity android:name=".SearchMPActivity"/>
+        <activity android:name=".NetPlayActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="com.streammp4.musicstream.PlayMPService">
+            <intent-filter>
+                <action android:name="com.streammp4.musicstream.play"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.streammp4.musicstream.RemoteControlReceiver">
+            <intent-filter android:priority="10000">
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.MMActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.VideoPlayer" android:screenOrientation="portrait"/>
+        <activity android:name=".MPLActivity"/>
+        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".PlayMPActivity"/>
+        <activity android:name=".MPPlayActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="false" android:name="com.streammp4.musicstream.WidgetProvider">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/musicwidget_provider"/>
+            <intent-filter>
+                <action android:name="com.streammp4.musicstream.action.widget.latest"/>
+                <action android:name="com.streammp4.musicstream.action.widget.play"/>
+                <action android:name="com.streammp4.musicstream.action.widget.next"/>
+                <action android:name="com.streammp4.musicstream.action.widget.list"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

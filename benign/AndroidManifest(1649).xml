@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="yqtrack.app">
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="yqtrack.app.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <permission android:name="yqtrack.app.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="yqtrack.app.application.YQApplication" android:supportsRtl="false" android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_logo"/>
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/main_color_500"/>
+        <activity android:name="yqtrack.app.ui.splash.SplashActivity" android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.splash.GuidePagesActivity" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="guide" android:scheme="YQTRACK"/>
+                <data android:host="guide" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.donate.DonateActivity" android:screenOrientation="behind" android:theme="@style/AppTheme" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="donate" android:scheme="YQTRACK"/>
+                <data android:host="donate" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="yqtrack.app.ui.widget.YqWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="yqtrack.app.appwidget.CLICK_INPUT_ICON"/>
+                <action android:name="yqtrack.app.appwidget.CLICK_LIST_ITEM"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info"/>
+        </receiver>
+        <service android:exported="false" android:name="yqtrack.app.ui.widget.YqWidgetService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service android:name="yqtrack.app.businesslayer.fcm.FCMMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="yqtrack.app.businesslayer.fcm.FCMInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="yqtrack.app.businesslayer.appindexing.AppIndexingService" android:permission="com.google.android.gms.permission.APPINDEXING">
+            <intent-filter>
+                <action android:name="com.google.firebase.appindexing.UPDATE_INDEX"/>
+            </intent-filter>
+        </service>
+        <activity android:launchMode="singleTask" android:name="yqtrack.app.ui.track.trackmain.common.TrackMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="home" android:scheme="YQTRACK"/>
+                <data android:host="home" android:scheme="yqtrack"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="m.17track.net" android:pathPattern="/.*/track" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="m.17track.net" android:pathPattern="/.*/track" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.17track.net" android:pathPattern="/.*/track" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.17track.net" android:pathPattern="/.*/track" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.base.dialog.captcha.CaptchaDialogActivity" android:theme="@style/yq_dialog_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.base.dialog.text.TrackRetActivity" android:theme="@style/yq_dialog_style"/>
+        <activity android:name="yqtrack.app.ui.base.dialog.copyNo.CopyTrackNoActivity" android:theme="@style/yq_dialog_style"/>
+        <activity android:name="yqtrack.app.ui.track.trackresult.common.TrackResultActivity" android:parentActivityName="yqtrack.app.ui.track.trackmain.common.TrackMainActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".trackmain.common.TrackMainActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="detail" android:scheme="YQTRACK"/>
+                <data android:host="detail" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.track.trackinput.phone.TrackInputActivity" android:parentActivityName="yqtrack.app.ui.track.trackmain.common.TrackMainActivity" android:windowSoftInputMode="stateAlwaysVisible|adjustResize">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".trackmain.common.TrackMainActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="input" android:scheme="YQTRACK"/>
+                <data android:host="input" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.track.trackinputscan.TrackInputScanActivity"/>
+        <activity android:name="yqtrack.app.ui.track.trackedit.phone.TrackEditActivity"/>
+        <activity android:name="yqtrack.app.ui.track.trackcarrierselect.phone.CarrierSelectActivity" android:theme="@style/AppTheme.CarrierSelect">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="carrierlist" android:scheme="YQTRACK"/>
+                <data android:host="carrierlist" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.track.trackcarriersearch.CarrierSearchActivity" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name="yqtrack.app.ui.base.dialog.version.VersionActivity" android:theme="@style/yq_dialog_style"/>
+        <activity android:name="yqtrack.app.ui.user.userentrance.UserEntranceActivity" android:theme="@style/user_style.user_entrance">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="userentrance" android:scheme="YQTRACK"/>
+                <data android:host="userentrance" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.user.usersignup.SignUpActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.usercheckverification.CheckVerificationActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.usersignupinformation.SignUpInformationActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.userlogin.LogInActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.userforgetpassword.ForgetPasswordActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.userresetpassword.ResetPasswordActivity" android:theme="@style/user_style.show_softInput"/>
+        <activity android:name="yqtrack.app.ui.user.usercenter.UserCenterActivity" android:theme="@style/AppTheme.user_center">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="usercenter" android:scheme="YQTRACK"/>
+                <data android:host="usercenter" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.user.userinformation.UserInformationActivity"/>
+        <activity android:name="yqtrack.app.ui.user.userchangepassword.UserChangePasswordActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="yqtrack.app.ui.user.usercountry.UserCountryActivity"/>
+        <activity android:name="yqtrack.app.ui.user.usercountrysearch.UserCountrySearchActivity" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+        <activity android:name="yqtrack.app.ui.user.usersocialbinding.UserSocialBindingActivity"/>
+        <activity android:name="yqtrack.app.ui.user.help.HelpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="help" android:scheme="YQTRACK"/>
+                <data android:host="help" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.user.about.AboutActivity"/>
+        <activity android:name="yqtrack.app.ui.user.setting.SettingActivity"/>
+        <activity android:name="yqtrack.app.ui.user.applanguage.AppLanguageActivity"/>
+        <activity android:name="yqtrack.app.ui.user.translatelanguage.TranslateLanguageActivity"/>
+        <activity android:name="yqtrack.app.ui.user.msg.main.common.MessageMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="message" android:scheme="YQTRACK"/>
+                <data android:host="message" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.user.msg.detail.common.MessageDetailActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".msg.main.common.MessageMainActivity"/>
+        </activity>
+        <activity android:name="yqtrack.app.ui.base.activity.PayActivity" android:theme="@style/yq_dialog_style">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="pay" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.deal.dealMain.DealActivity" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="deal" android:scheme="yqtrack"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="yqtrack.app.ui.deal.store.StoreActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="yqtrack.app.ui.deal.store.StoreDescriptionActivity"/>
+        <activity android:name="yqtrack.app.ui.deal.searchList.DealSearchListActivity"/>
+        <activity android:name="yqtrack.app.ui.deal.searchMain.DealSearchActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="yqtrack.app.ui.base.webview.WebViewActivity" android:theme="@style/AppTheme.WithActionBar"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:label="ServiceActivity" android:name="com.vk.sdk.VKServiceActivity" android:theme="@style/VK.Transparent"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/tencent_app_id"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="behind" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="yqtrack.app"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="yqtrack.app.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.1.0"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="yqtrack.app.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <provider android:authorities="yqtrack.app.lifecycle-trojan" android:exported="false" android:multiprocess="true" android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cleanmobi.privacysecurity.applock" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <supports-screens android:anyDensity="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/a6" android:manageSpaceActivity="com.cleanmobi.lock.FristPatternActivity" android:name="com.cleanmobi.lock.MyApplication" android:persistent="true" android:screenOrientation="portrait" android:supportsRtl="true" android:theme="@style/co">
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.cleanmobi.lock.MainActivity" android:screenOrientation="portrait" android:theme="@style/co" android:windowSoftInputMode="adjustPan|stateUnchanged"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.CleanmobiQuestionActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:name="com.cleanmobi.lock.SettingSlotTimeActivity" android:screenOrientation="portrait" android:theme="@style/co"/>
+        <activity android:excludeFromRecents="true" android:name="com.cleanmobi.lock.SetupPassword" android:screenOrientation="portrait" android:theme="@style/co" android:windowSoftInputMode="adjustResize"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:name="com.cleanmobi.lock.ThemesActivity" android:screenOrientation="portrait" android:taskAffinity=".theme" android:theme="@style/co"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:name="com.cleanmobi.lock.IntrudersMaxActivity" android:screenOrientation="portrait" android:taskAffinity=".theme" android:theme="@style/co"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:excludeFromRecents="true" android:icon="@drawable/icon" android:label="@string/a6" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.FristPatternActivity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:enabled="false" android:excludeFromRecents="true" android:icon="@drawable/i8" android:label="@string/c7" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.Fakes2Activity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:enabled="false" android:excludeFromRecents="true" android:icon="@drawable/i9" android:label="@string/c9" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.Fakes3Activity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:enabled="false" android:excludeFromRecents="true" android:icon="@drawable/i7" android:label="@string/c8" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.Fakes1Activity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:enabled="false" android:excludeFromRecents="true" android:icon="@drawable/i_" android:label="@string/c6" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.Fakes4Activity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:enabled="false" android:excludeFromRecents="true" android:icon="@drawable/ia" android:label="@string/c_" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.Fakes5Activity" android:screenOrientation="portrait" android:theme="@style/e5" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.TogglesActivity" android:screenOrientation="portrait" android:theme="@style/e5"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.cleanmobiview.MoreGames" android:theme="@style/co"/>
+        <activity android:excludeFromRecents="true" android:name="com.cleanmobi.lock.ResettingPattern" android:screenOrientation="portrait" android:taskAffinity=":remote" android:theme="@style/fu"/>
+        <activity android:excludeFromRecents="true" android:name="com.cleanmobi.lock.FakesSelectorActivity" android:screenOrientation="portrait" android:theme="@style/co"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|orientation|screenSize" android:excludeFromRecents="true" android:name="com.cleanmobi.lock.MyUnlockApp" android:screenOrientation="portrait" android:theme="@style/co"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobi.lock.PreferenceActivity" android:screenOrientation="portrait" android:theme="@style/co"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:name="com.cleanmobi.lock.SecurityTansparent" android:screenOrientation="portrait" android:theme="@style/g5"/>
+        <service android:name="com.cleanmobi.lock.HandleFilesService"/>
+        <service android:name="com.cleanmobi.lock.StartService" android:process=":remote"/>
+        <service android:exported="true" android:name="com.cleanmobi.lock.Workers"/>
+        <service android:name="com.cleanmobi.lock.myservice.MyNotificationHideService" android:process=":remote"/>
+        <service android:name="com.cleanmobi.lock.myservice.CleanmobiNotificationService"/>
+        <service android:label="@string/a6" android:name="com.cleanmobi.lock.AccessService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/a"/>
+        </service>
+        <receiver android:exported="false" android:name="com.cleanmobi.lock.BootReceiverCleanmobi">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobishop.eshop.shoputils.MainActivity" android:screenOrientation="portrait" android:theme="@style/e8"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobishop.eshop.shoputils.LocalMainActivity" android:screenOrientation="portrait" android:theme="@style/e8"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobishop.eshop.shoputils.BannerActivity" android:screenOrientation="portrait" android:theme="@style/e8"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobishop.eshop.shoputils.DesignerActivity" android:screenOrientation="portrait" android:theme="@style/e8"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobishop.eshop.shoputils.WallpaperActivity" android:screenOrientation="portrait" android:theme="@style/e9"/>
+        <service android:name="com.cleanmobibattery.module.charge.saver.batteryprotectservice.ServiceBattery" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.cleanmobibattery.module.charge.saver.receiver.BroadcastReceiverStart">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.media.RINGER_MODE_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:name="com.cleanmobibattery.module.charge.saver.SetADActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.cleanmobibattery.module.charge.saver.BatteryProtectActivity" android:screenOrientation="nosensor" android:theme="@style/e0"/>
+        <service android:name="com.cleanmobik.kpa.DaemonService" android:process=":daemon"/>
+        <receiver android:name="com.cleanmobik.kpa.DaemonReceiver" android:process=":daemon"/>
+        <service android:name="com.cleanmobik.kpa.PersistService" android:process="@string/kb"/>
+        <receiver android:name="com.cleanmobik.kpa.PersistReceiver" android:process="@string/kb"/>
+        <receiver android:name="com.cleanmobik.kpa.WatchmenReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.cleanmobik.kpa.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.android.client.Unity3dPlayerActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.support.our.GameActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="standard" android:name="com.support.our.FullAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/j"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:name="com.facebook.FacebookActivity" android:theme="@style/k0"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/nf"/>
+    </application>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+</manifest>

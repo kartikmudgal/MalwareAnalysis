@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.alien.game.SharadPachunkar">
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.alien.game.SharadPachunkar.mobi.vserv.android.ads.VservAdManager" android:process=":vserv" android:theme="@style/Vserv.Theme.Sherlock" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:name="com.alien.game.SharadPachunkar.mobi.vserv.org.ormma.view.Browser" android:theme="@style/Vserv.Theme.Sherlock" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|touchscreen|uiMode" android:name="com.alien.game.SharadPachunkar.mobi.vserv.org.ormma.view.OrmmaActionHandler" android:theme="@style/Vserv.Theme.Sherlock" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="@string/app_name" android:name="com.alien.game.SharadPachunkar.Start" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.google.ads.AdActivity"/>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.android.hardware.sensor.accelerometer"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <meta-data android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" android:value="true"/>
+</manifest>

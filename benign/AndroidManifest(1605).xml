@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="snes.romenaltbattletoads.co" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_label" android:largeHeap="true" android:name="com.stub.StubApp" android:qihoo="activity">
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.novaemu.snes.SplashActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.novaemu.snes.GuideActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.novaemu.snes.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.novaemu.snes.FileChooser"/>
+        <activity android:name="com.novaemu.snes.StateSlotsActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.novaemu.snes.KeyProfilesActivity"/>
+        <activity android:name="com.novaemu.snes.HelpActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.novaemu.snes.DeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.novaemu.snes.CheatsActivity" android:process=":emulator"/>
+        <activity android:name="com.novaemu.snes.EmulatorSettings"/>
+        <activity android:launchMode="singleTask" android:name="com.novaemu.snes.EmulatorActivity" android:process=":emulator" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="application/x-snes-rom"/>
+                <data android:mimeType="application/zip"/>
+                <data android:mimeType="application/octet-stream"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.novaemu.snes.EmulatorService" android:process=":emulator"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+    </application>
+</manifest>

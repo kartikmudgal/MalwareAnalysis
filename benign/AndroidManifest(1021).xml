@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.rcreations.ipcamviewer" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/camera" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/PreAndroid30Theme">
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true"/>
+        <meta-data android:name="com.lge.support.SPLIT_WINDOW" android:value="true"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:name="com.inmobi.androidsdk.IMBrowserActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.amazon.device.ads.AdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name=".InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:banner="@drawable/ipcamviewer_lite_banner_320x180" android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="false" android:finishOnTaskLaunch="true" android:icon="@drawable/camera" android:label="@string/app_name" android:name=".WebCamViewerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/camera" android:label="@string/gallery_view_action" android:name=".GalleryViewActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/camera" android:label="@string/matrix_view_action" android:name=".MatrixViewActivity" android:screenOrientation="sensor" android:theme="@style/Theme.Black"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_help_name" android:launchMode="singleTask" android:name=".WebCamHelpActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/settings_name" android:launchMode="singleTask" android:name=".SettingsActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="false" android:label="@string/cameras_name" android:launchMode="singleTask" android:name=".CamerasActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/add_web_cam" android:launchMode="singleTask" android:name=".EditCameraActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.mjpg"/>
+                <data android:pathPattern=".*\\.mjpeg"/>
+                <data android:pathPattern=".*snapshot\\.cgi"/>
+                <data android:pathPattern=".*current\\.cgi"/>
+                <data android:pathPattern=".*image\\.cgi"/>
+                <data android:pathPattern=".*video\\.cgi"/>
+                <data android:pathPattern=".*liveimg\\.cgi"/>
+                <data android:pathPattern=".*/jpg/"/>
+                <data android:pathPattern=".*/mjpg/"/>
+                <data android:pathPattern=".*/SnapshotJPEG"/>
+                <data android:pathPattern=".*/nphMotionJpeg"/>
+                <data android:pathPattern=".*/-wvhttp-01-/"/>
+                <data android:pathPattern=".*\\.ipcam"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE"/>
+                <data android:scheme="ipcam"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_help_name" android:launchMode="singleTask" android:name=".WebActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/camera" android:label="@string/app_name" android:launchMode="singleTask" android:name=".ImageViewActivity" android:screenOrientation="sensor" android:theme="@style/Theme.Black"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/determine_type_action" android:launchMode="singleTask" android:name=".DetermineTypeActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/import_activity_name" android:launchMode="singleTask" android:name=".ImportActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:mimeType="text/xml"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.SELECTED_ALTERNATIVE"/>
+                <data android:scheme="ipcamxml"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.xml"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/reorder_activity_title" android:launchMode="singleTask" android:name=".ReorderActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/record_help_title" android:launchMode="singleTask" android:name=".RecordHelpActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/record_view_title" android:launchMode="singleTask" android:name=".RecordViewActivity" android:theme="@style/Theme.Black" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/record_setting_title" android:launchMode="singleTask" android:name=".RecordSettingsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/edit_camera_more_title" android:launchMode="singleTask" android:name=".EditCameraMoreActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/playback_view_title" android:launchMode="singleTask" android:name=".PlaybackViewActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/convert_to_video" android:launchMode="singleTask" android:name=".ConvertToVideoFileActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/background_audio_title" android:launchMode="singleTask" android:name=".BackgroundAudioViewActivity" android:theme="@style/Theme.Black" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/motion_notif_settings_title" android:launchMode="singleTask" android:name=".MotionNotificationSettingsActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/find_camera_type_title" android:name=".FindCameraTypeActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/paypal_name" android:name="com.rcreations.recreation.PaypalActivity"/>
+        <activity android:label="@string/file_explorer_name" android:name="com.lamerman.FileDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/log_viewer_title" android:launchMode="singleTask" android:name="com.rcreations.WebCamViewerCommon.LogViewerActivity" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="@string/select_camera_name" android:name=".SelectCameraActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/widget_name_small" android:name=".background.WidgetCameraProviderSmall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_camera_small"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/widget_name_medium" android:name=".background.WidgetCameraProviderMedium">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_camera_medium"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/widget_name_medium_tall" android:name=".background.WidgetCameraProviderMediumTall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_camera_medium_tall"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/widget_name_medium_narrow" android:name=".background.WidgetCameraProviderMediumNarrow">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_camera_medium_narrow"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/widget_name_small_tall" android:name=".background.WidgetCameraProviderSmallTall">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_camera_small_tall"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:label="@string/app_name" android:name=".background.OnOffReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.rcreations.ipcam.UPLOAD_NOW"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name=".background.BackgroundService"/>
+        <service android:enabled="true" android:name=".background.RecordService"/>
+        <service android:enabled="true" android:name=".background.AudioService"/>
+        <receiver android:enabled="true" android:name=".wear.WearBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.rcreations.ipcamviewer.ipc_wear_proxy.GET_CAMERA_LIST"/>
+                <action android:name="com.rcreations.ipcamviewer.ipc_wear_proxy.LOGOUT"/>
+                <action android:name="com.rcreations.ipcamviewer.ipc_wear_proxy.GET_BITMAP"/>
+                <action android:name="com.rcreations.ipcamviewer.ipc_wear_proxy.SET_RELAY"/>
+                <action android:name="com.rcreations.ipcamviewer.ipc_wear_proxy.GOTO_PRESET"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

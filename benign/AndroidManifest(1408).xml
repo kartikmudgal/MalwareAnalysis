@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <supports-screens android:anyDensity="true"/>
+    <application android:allowBackup="true" android:icon="@drawable/appicon" android:label="@string/app_name" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Commonclasses.Preferencemanager" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.HomeScreen" android:screenOrientation="portrait"/>
+        <activity android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.TrimmerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Splashscreen" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="About" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.ResultActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Setting" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.MyWork" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Setting" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Commonclasses.Setting" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Setting" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Commonclasses.Settingaudio" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="About" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Commonclasses.About" android:screenOrientation="portrait"/>
+        <receiver android:enabled="true" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Commonclasses.AlarmReceiver"/>
+        <activity android:name="net.rdrei.android.dirchooser.DirectoryChooserActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeDirectory"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="d8c839dc98e3ddb3ab7a18b47693621cbff0c952"/>
+        <activity android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.HomeScreenAudio" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|screenSize" android:label="My Collection" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.Mycollection" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.AudioCutter.RingdroidSelectActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.AudioCutter.RingdroidEditActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo" android:windowSoftInputMode="adjustResize">
+            <intent-filter android:label="@string/edit_intent">
+                <action android:name="android.intent.action.EDIT"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="globalpixel.videoeditor.videocutter.editvideo.songcutter.videoeditor.AudioCutter.ContactActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="string" android:value="string"/>
+    </application>
+</manifest>

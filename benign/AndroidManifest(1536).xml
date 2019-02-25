@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="net.twisterrob.inventory" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:manageSpaceActivity="net.twisterrob.inventory.android.activity.space.ManageSpaceActivity" android:name="net.twisterrob.inventory.android.App" android:supportsRtl="true" android:theme="@style/Theme.AppTheme">
+        <meta-data android:name="net.twisterrob.inventory.android.Constants$Pic$GlideSetup" android:value="GlideModule"/>
+        <activity android:label="@string/home_title" android:launchMode="singleTop" android:name="net.twisterrob.inventory.android.activity.MainActivity" android:windowSoftInputMode="adjustNothing">
+            <intent-filter android:label="@string/app_name_short">
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.default_searchable" android:value="net.twisterrob.inventory.android.activity.SearchResultsActivity"/>
+        </activity>
+        <activity android:label="@string/pref_activity_title" android:name="net.twisterrob.inventory.android.activity.PreferencesActivity"/>
+        <activity android:label="@string/action_search" android:launchMode="singleTop" android:name="net.twisterrob.inventory.android.activity.SearchResultsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.MainActivity"/>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable_suggest"/>
+        </activity>
+        <activity android:exported="false" android:label="@string/action_picture_take" android:name="net.twisterrob.android.activity.CaptureImage" android:screenOrientation="fullUser">
+            <intent-filter>
+                <action android:name="net.twisterrob.android.intent.action.CAPTURE_IMAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:label="@string/image_title" android:name="net.twisterrob.inventory.android.activity.ImageActivity" android:screenOrientation="fullSensor" android:theme="@style/Theme.AppTheme.FullScreen"/>
+        <activity android:label="@string/manage_space_title" android:launchMode="singleInstance" android:name="net.twisterrob.inventory.android.activity.space.ManageSpaceActivity" android:process=":managespace"/>
+        <activity android:label="Backup" android:launchMode="singleTop" android:name="net.twisterrob.inventory.android.activity.BackupActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.MainActivity"/>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/action_move" android:name="net.twisterrob.inventory.android.activity.data.MoveTargetActivity" android:theme="@style/Theme.AppTheme.Dialog.NoTitle"/>
+        <activity android:excludeFromRecents="true" android:label="@string/list_list" android:name="net.twisterrob.inventory.android.activity.ListsActivity" android:theme="@style/Theme.AppTheme.Dialog"/>
+        <activity android:label="@string/list_details" android:name="net.twisterrob.inventory.android.activity.data.ListItemsActivity" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.MainActivity"/>
+        </activity>
+        <activity android:label="@string/category_details" android:name="net.twisterrob.inventory.android.activity.data.CategoryActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.MainActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY_RECURSIVE" android:value="net.twisterrob.inventory.android.activity.data.CategoryActivity"/>
+        </activity>
+        <activity android:label="@string/property_edit" android:name="net.twisterrob.inventory.android.activity.data.PropertyEditActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/property_details" android:name="net.twisterrob.inventory.android.activity.data.PropertyViewActivity" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.MainActivity"/>
+        </activity>
+        <activity android:label="@string/room_edit" android:name="net.twisterrob.inventory.android.activity.data.RoomEditActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/room_details" android:name="net.twisterrob.inventory.android.activity.data.RoomViewActivity" android:windowSoftInputMode="adjustNothing">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.data.PropertyViewActivity"/>
+        </activity>
+        <activity android:label="@string/item_details" android:name="net.twisterrob.inventory.android.activity.data.ItemViewActivity" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.net.twisterrob.inventory.item"/>
+            </intent-filter>
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="net.twisterrob.inventory.android.activity.data.RoomViewActivity"/>
+            <meta-data android:name="android.support.PARENT_ACTIVITY_RECURSIVE" android:value="net.twisterrob.inventory.android.activity.data.ItemViewActivity"/>
+        </activity>
+        <activity android:label="@string/item_edit" android:name="net.twisterrob.inventory.android.activity.data.ItemEditActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/sunburst_title" android:name="net.twisterrob.inventory.android.sunburst.SunburstActivity"/>
+        <provider android:authorities="@string/app_package" android:exported="true" android:grantUriPermissions="true" android:name="net.twisterrob.inventory.android.content.InventoryProvider" android:readPermission="net.twisterrob.inventory.READ" android:writePermission="net.twisterrob.inventory.WRITE"/>
+        <provider android:authorities="net.twisterrob.inventory.share" android:exported="false" android:grantUriPermissions="true" android:name="net.twisterrob.inventory.android.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/paths_share"/>
+        </provider>
+        <service android:enabled="true" android:exported="false" android:label="Background Import/Export" android:name="net.twisterrob.inventory.android.backup.concurrent.BackupService" android:stopWithTask="false"/>
+        <service android:enabled="true" android:exported="false" android:label="Background Database Operations" android:name="net.twisterrob.inventory.android.content.db.DatabaseService" android:stopWithTask="true">
+            <intent-filter>
+                <action android:name="net.twisterrob.inventory.action.OPEN_DATABASE"/>
+                <action android:name="net.twisterrob.inventory.action.UPDATE_LANGUAGE"/>
+                <action android:name="net.twisterrob.inventory.action.PRELOAD_CATEGORIES"/>
+                <action android:name="net.twisterrob.inventory.action.VACUUM_INCREMENTAL"/>
+            </intent-filter>
+        </service>
+        <activity android:exported="false" android:label="@string/about_title" android:name="net.twisterrob.android.activity.AboutActivity"/>
+    </application>
+</manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="de.heinz.worktime">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <application android:allowBackup="true" android:clearTaskOnLaunch="true" android:icon="@drawable/icon" android:label="@string/app_name" android:launchMode="singleTop" android:name="de.heinz.worktime.CheckViewAd" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="de.heinz.worktime.CalendarView">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="de.heinz.worktime.CalendarViewEdit"/>
+        <activity android:name="de.heinz.worktime.Templates"/>
+        <activity android:name="de.heinz.worktime.CreateTemplate"/>
+        <activity android:name="de.heinz.worktime.ChooseColor"/>
+        <activity android:name="de.heinz.worktime.EditTemplate"/>
+        <activity android:name="de.heinz.worktime.ChooseColorEdit"/>
+        <activity android:name="de.heinz.worktime.NotesView"/>
+        <activity android:name="de.heinz.worktime.EditNotesView"/>
+        <activity android:name="de.heinz.worktime.Info"/>
+        <activity android:name="de.heinz.worktime.EntryCalendar"/>
+        <activity android:name="de.heinz.worktime.ManSync"/>
+        <activity android:name="de.heinz.worktime.ManDeleteSync"/>
+        <activity android:name="de.heinz.worktime.ExportPdf"/>
+        <activity android:name="de.heinz.worktime.Calculate"/>
+        <activity android:name="de.heinz.worktime.CalculateList"/>
+        <activity android:name="de.heinz.worktime.AutoDelete"/>
+        <activity android:name="de.heinz.worktime.AutoCycle"/>
+        <activity android:name="de.heinz.worktime.InAppBillling"/>
+        <activity android:name="de.heinz.worktime.CreateOvertime"/>
+        <activity android:name="de.heinz.worktime.EditOvertime"/>
+        <activity android:name="de.heinz.worktime.Backup"/>
+        <activity android:name="de.heinz.worktime.Help"/>
+        <activity android:name="de.heinz.worktime.More"/>
+        <activity android:name="de.heinz.worktime.ShareDataOs"/>
+        <activity android:name="de.heinz.worktime.Vacations"/>
+        <activity android:name="de.heinz.worktime.CreateVacation"/>
+        <activity android:name="de.heinz.worktime.ChooseColorVacation"/>
+        <activity android:name="de.heinz.worktime.EditVacation"/>
+        <activity android:name="de.heinz.worktime.ChooseColorVacationEdit"/>
+        <activity android:name="de.heinz.worktime.InApp"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ipsos.mysteryshopping" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="com.ipsos.mysteryshopping.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.ipsos.mysteryshopping.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <permission android:name="com.ipsos.mysteryshopping.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.ipsos.mysteryshopping.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.shopmetrics.mobiaudit.MobiAuditApplication" android:theme="@style/DefaultTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:name="com.shopmetrics.mobiaudit.opportunities.geofencing.GeoFencingService"/>
+        <service android:name="com.shopmetrics.mobiaudit.survey.HeartBeatService"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyD7XAloM2jygKmQtgBaZnYz2J0_mL3mfFY"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.shopmetrics.mobiaudit.MobiAudit" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name="com.shopmetrics.mobiaudit.opportunities.ApplyActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name="com.shopmetrics.mobiaudit.LockScreen" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name="com.shopmetrics.mobiaudit.OfficeChooser"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:icon="@drawable/aurecicon" android:label="@string/title_activity_record" android:name="com.shopmetrics.mobiaudit.audio.AudioHandler" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.provider.MediaStore.RECORD_SOUND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.shopmetrics.mobiaudit.survey.SurveyActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:name="com.shopmetrics.mobiaudit.survey.TextBoxActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.shopmetrics.mobiaudit.video.VideoPlayerActivity"/>
+        <provider android:authorities="com.ipsos.mysteryshopping.localfile" android:exported="false" android:name="com.shopmetrics.mobiaudit.survey.LocalFileContentProvider"/>
+        <receiver android:name="com.shopmetrics.mobiaudit.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.ipsos.mysteryshopping"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.shopmetrics.mobiaudit.geolocation.LocatuionBroadcastReceiver"/>
+        <receiver android:name="com.shopmetrics.mobiaudit.opportunities.geofencing.GeoFencingNotificationDeletedBroadcastReceiver"/>
+        <service android:name="com.shopmetrics.mobiaudit.gcm.GcmIntentService"/>
+        <receiver android:name="com.shopmetrics.mobiaudit.opportunities.geofencing.GeoFancingAutoStartBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

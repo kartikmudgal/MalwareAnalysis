@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="in.ifsccode.ifscapp" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name="in.ifsccode.bank.BankActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="State Name" android:name="in.ifsccode.bank.StateActivity" android:parentActivityName="in.ifsccode.bank.BankActivity"/>
+        <activity android:label="City Name" android:name="in.ifsccode.bank.CityActivity" android:parentActivityName="in.ifsccode.bank.StateActivity"/>
+        <activity android:label="Branch Name" android:name="in.ifsccode.bank.BranchActivity" android:parentActivityName="in.ifsccode.bank.CityActivity"/>
+        <activity android:label="Branch Details" android:name="in.ifsccode.bank.BranchDetailsActivity" android:parentActivityName="in.ifsccode.bank.BranchActivity"/>
+        <activity android:label="Branch By Ifsc" android:name="in.ifsccode.bank.BranchByIfsc"/>
+        <activity android:label="Branch Details By Ifsc" android:name="in.ifsccode.bank.BranchDetailsByIfscActivity" android:parentActivityName="in.ifsccode.bank.BranchByIfsc"/>
+    </application>
+</manifest>

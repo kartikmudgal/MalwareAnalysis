@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="it.threesixty.edu.com">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name">
+        <service android:name="it.threesixty.edu.com.WorkManager"/>
+        <activity android:label="@string/app_name" android:launchMode="singleInstance" android:name="it.threesixty.edu.com.ActWorkManager" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleInstance" android:name="it.threesixty.edu.com.ActNewSearch" android:screenOrientation="portrait"/>
+        <activity android:name="it.threesixty.edu.com.ActEula" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="it.threesixty.edu.com.ActMessageDialog" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:launchMode="singleInstance" android:name="it.threesixty.edu.com.FileBrowser" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleInstance" android:name="it.threesixty.edu.com.ActMainMenu" android:screenOrientation="portrait">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="com.inneractive.api.ads.InneractiveFullScreenView"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.adsdk.sdk.banner.InAppWebView"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.adsdk.sdk.mraid.MraidActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="false" android:name="com.adsdk.sdk.video.RichMediaActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.revmob.ads.fullscreen.FullscreenActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.revmob.app.id" android:value="52bf03c2a6b4c3ed54000149"/>
+        <receiver android:name="it.threesixty.edu.com.MediaButtonReceiver">
+            <intent-filter android:priority="100000">
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+            <intent-filter android:priority="100000">
+                <action android:name="android.intent.action.CAMERA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="it.threesixty.edu.com.ActInterstitialINNERACTIVE"/>
+        <activity android:label="@string/title_activity_act_update" android:name="it.threesixty.edu.com.ActUpdate"/>
+        <activity android:label="@string/title_activity_act_lyrics" android:name="it.threesixty.edu.com.ActLyrics" android:screenOrientation="portrait"/>
+        <activity android:label="@string/title_activity_act_help" android:name="it.threesixty.edu.com.ActHelp" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/title_activity_act_top100" android:name="it.threesixty.edu.com.ActTop100" android:screenOrientation="portrait"/>
+        <activity android:label="" android:name="it.threesixty.edu.com.ActHelpSeekbar" android:theme="@style/Theme.Transparent"/>
+    </application>
+</manifest>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="com.ken.weiqi">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:description="@string/app_description" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/Theme.NoBackground">
+        <meta-data android:name="UMENG_APPKEY" android:value="50827fd952701559950000e2"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="appchina"/>
+        <activity android:name="com.feedback.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.feedback.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.feedback.ui.FeedbackConversation"/>
+        <service android:name="android.client.getad.MainService"/>
+        <receiver android:name="android.client.getad.MainReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.client.getad.MAIN"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.client.getad.DELAY"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="de.agrothe.go.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="de.agrothe.go.StartActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="de.agrothe.go.PreferencesActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

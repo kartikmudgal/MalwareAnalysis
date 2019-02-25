@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.Tobit.android.Slitte6395004863">
+    <permission android:name="com.Tobit.android.Slitte6395004863.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.Tobit.android.Slitte6395004863.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/icon_96x96" android:label="@string/location_name" android:largeHeap="true" android:name="com.Tobit.android.slitte.SlitteApp" android:theme="@style/Theme.Sherlock.Light.DarkActionBar">
+        <service android:exported="false" android:name="com.Tobit.android.c2dm.C2DMReceiver"/>
+        <activity android:name="net.hockeyapp.android.UpdateActivity"/>
+        <receiver android:name="com.Tobit.android.C2DMLibrary.C2DMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.Tobit.android.Slitte6395004863"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.Tobit.android.Slitte6395004863"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="locale|orientation|screenSize" android:launchMode="singleTask" android:name="com.Tobit.android.slitte.SlitteMainActivity">
+            <intent-filter/>
+        </activity>
+        <activity android:name="com.Tobit.android.slitte.NFCIntentReceiver" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:launchMode="singleTask" android:name="com.Tobit.android.slitte.SlitteSplashScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale|orientation|screenSize" android:launchMode="singleTask" android:name="com.Tobit.android.slitte.InterComActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:exported="false" android:label="@string/settings" android:name="com.Tobit.android.slitte.SlittePreferenceActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:exported="false" android:name="com.Tobit.android.slitte.OpenSourceInfoActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.WebDetailActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.PhotoAlbumImagesActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.PhotoAlbumImagesBigActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.InterComFragmentActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:label="@string/c2dm_name" android:name="com.Tobit.android.slitte.PushPreferenceActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.OpenCardBookingsActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.UnpaidOrderActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.ArticleActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.PayPalWebDialogActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.OrderSaleActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.BlackCardWebViewActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.AccountActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.TransferMoneyActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.FullScreenImageActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.FullScreenVideoActivity"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:name="com.Tobit.android.slitte.DebugActivity"/>
+        <receiver android:enabled="true" android:name="com.Tobit.android.slitte.broadcast.BootUpBroadcastReceiver" android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.Tobit.android.slitte.service.ActivityStartService"/>
+        <service android:name="com.Tobit.android.slitte.service.SlitteDataService"/>
+        <service android:name="com.Tobit.android.slitte.service.ImageDownloadService"/>
+        <service android:name="com.Tobit.android.slitte.service.AudioStreamService"/>
+        <service android:name="com.Tobit.android.slitte.service.AppStartAudioService"/>
+        <service android:name="com.Tobit.android.slitte.service.SaveInterComToDBService"/>
+        <receiver android:enabled="true" android:name="com.Tobit.android.slitte.broadcast.NetworkStateChangedBroadcastReceiver" android:permission="android.permission.ACCESS_NETWORK_STATE">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.Tobit.android.c2dm.ShowNextNotificationBroadcastReceiver"/>
+        <receiver android:name="com.Tobit.android.c2dm.ShowPrevNotificationBroadcastReceiver"/>
+        <receiver android:name="com.Tobit.android.c2dm.ClearNotificationCounterBroadcastReceiver"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.Tobit.android.slitte.service.SlitteDream">
+            <intent-filter>
+                <action android:name="android.service.dreams.DreamService"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.Tobit.android.Slitte6395004863.provider" android:enabled="true" android:exported="true" android:name="com.Tobit.android.database.TickerDataProvider"/>
+    </application>
+</manifest>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="escapemusic.android.a701" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:anyDensity="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <permission android:name="escapemusic.android.a701.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="escapemusic.android.a701.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/gcm_icon" android:label="@string/app_name" android:largeHeap="true" android:name="mobi.escapemusic.music.standard.application.SysApplication" android:theme="@style/MyTheme">
+        <meta-data android:name="postitial-app-id" android:value="@string/IQZONE_KEY"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:icon="@drawable/gcm_icon" android:label="@string/app_name" android:launchMode="singleTask" android:name="mobi.escapemusic.music.standard.MainActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="localhost" android:scheme="@string/deeplink_scheme"/>
+            </intent-filter>
+        </activity>
+        <service android:name="mobi.escapemusic.music.standard.service.MusicService">
+            <intent-filter android:priority="1000">
+                <action android:name="mobi.escapemusic.music.kristineelezaj"/>
+            </intent-filter>
+        </service>
+        <service android:name="mobi.escapemusic.music.standard.service.LaunchAppService"/>
+        <activity android:launchMode="singleTask" android:name="mobi.escapemusic.music.standard.RewardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.DetailActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.RedeemActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.HistoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="mobi.escapemusic.music.standard.WebViewActivityNew" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.FanBoardActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.FanBoardLoginActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="mobi.escapemusic.music.standard.CommentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="mobi.escapemusic.music.standard.FanFeedCommentActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="mobi.escapemusic.music.standard.CommentReplyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="mobi.escapemusic.music.standard.FanFeedReplyActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTask" android:name="mobi.escapemusic.music.standard.NotzzSinglePageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTask" android:name="mobi.escapemusic.music.standard.FanFeedSingleActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="mobi.escapemusic.music.standard.NotzzUploadActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="mobi.escapemusic.music.standard.TrimmerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.SuperStarBoardActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="mobi.escapemusic.music.standard.StarBoardActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="mobi.escapemusic.music.standard.SuperStarSearchActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="mobi.escapemusic.music.standard.StarBoardSearchActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="mobi.escapemusic.music.standard.PlaylistSearchResultActivity" android:screenOrientation="portrait"/>
+        <activity android:name="mobi.escapemusic.music.standard.ArticonActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="mobi.escapemusic.music.standard.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="mobi.escapemusic.music.standard.WebStoreViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="mobi.escapemusic.music.standard.DetailVideoActivity"/>
+        <activity android:name="mobi.escapemusic.music.standard.DebugActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="mobi.escapemusic.music.standard.util.CloseAppBroadcastReceiver">
+            <intent-filter>
+                <action android:name="mobi.escapemusic.music.standard.CLOSEAPP"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="mobi.escapemusic.music.standard.service.ChatHeadService">
+            <intent-filter>
+                <category android:name="escapemusic.android.a701"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="mobi.escapemusic.music.standard.util.broadcast.BootCompletedIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="mobi.escapemusic.music.standard.service.DownloadContentService"/>
+        <receiver android:name="mobi.escapemusic.music.standard.apkCommunication.ApkCommunicationReceiver">
+            <intent-filter>
+                <action android:name="mobi.escapemusic.music.standard.apkCommunication.autoStart"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="escapemusic.android.a701" android:exported="true" android:name="mobi.escapemusic.music.aggregate.provider.AlbumContentProvider"/>
+        <meta-data android:name="mi_id" android:value="3b65a2ab9d11455d8c37d44239c3bcf8"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:hardwareAccelerated="true" android:name="mobi.escapemusic.music.standard.util.YouTubeViewActivity" android:screenOrientation="landscape" android:taskAffinity=".postitial" android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"/>
+        <activity android:launchMode="singleInstance" android:name="com.spotify.sdk.android.authentication.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="mobi.escapemusic.music.standard.subscribe.SubscribeActivity" android:screenOrientation="portrait" android:theme="@style/SubscriptionTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="mobi.escapemusic.music.standard.FanFeedUploadActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:icon="@drawable/gcm_icon" android:label="@string/app_name" android:launchMode="singleTask" android:name="mobi.escapemusic.music.standard.util.reminder.SplashActivity" android:screenOrientation="portrait" android:theme="@style/SplashTheme" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/esc_scheme"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="mobi.escapemusic.music.standard.util.reminder.ReminderNotification"/>
+        <service android:exported="false" android:name="com.appsflyer.InstanceIDListener">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <meta-data android:name="io.fabric.ApiKey" android:value="dff63d7a4635792d2c203fbd86e7b22d6300afb6"/>
+        <service android:name="mobi.escapemusic.music.standard.service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="mobi.escapemusic.music.standard.service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="mobi.escapemusic.music.api.CentralizeLoginActivity" android:screenOrientation="portrait" android:theme="@style/Fullscreen"/>
+        <activity android:name="mobi.escapemusic.music.api.LoginProgressActivity"/>
+        <meta-data android:name="CRYSTAL_ID" android:value="@string/crystal_id"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.intowow.sdk.WebViewActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="com.intowow.sdk.InterstitialAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <receiver android:name="com.intowow.sdk.ScheduleReceiver">
+            <intent-filter>
+                <action android:name="com.intowow.sdk.prefetch"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="true" android:name="com.spotify.sdk.android.authentication.AuthCallbackActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/com_spotify_sdk_redirect_host" android:scheme="@string/com_spotify_sdk_redirect_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <provider android:authorities="escapemusic.android.a701.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.PortalActivity" android:theme="@style/UserVoiceTheme"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.ForumActivity" android:theme="@style/UserVoiceTheme"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.ArticleActivity" android:theme="@style/UserVoiceTheme"/>
+        <activity android:name="com.uservoice.uservoicesdk.activity.TopicActivity" android:theme="@style/UserVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.uservoice.uservoicesdk.activity.ContactActivity" android:theme="@style/UserVoiceTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.uservoice.uservoicesdk.activity.PostIdeaActivity" android:theme="@style/UserVoiceTheme"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.uxcam.service.HttpPostService"/>
+        <provider android:authorities="escapemusic.android.a701.crashlyticsinitprovider" android:exported="false" android:initOrder="100" android:name="com.crashlytics.android.CrashlyticsInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="escapemusic.android.a701"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="escapemusic.android.a701.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+    </application>
+</manifest>

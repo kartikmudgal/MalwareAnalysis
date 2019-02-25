@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="net.pocketsurvey.android">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="MyApplication" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:label="@string/app_name" android:name=".PSMobileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.TabsActivity"/>
+        <activity android:excludeFromRecents="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="org.acra.CrashReportDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Survey_Selection"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Store_Tab"/>
+        <activity android:label="GUIshell" android:name="net.pocketsurvey.android.GUIshell">
+            <intent-filter android:icon="@drawable/form_ma">
+                <action android:name="net.pocketsurvey.GUIshell"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="PSreporterCaller" android:name="net.pocketsurvey.android.PSreporterCaller">
+            <intent-filter android:icon="@drawable/form_ma">
+                <action android:name="net.pocketsurvey.PSreporterCaller"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".CameraIntent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Settings_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Support_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Reports_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.About_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.CloudTab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Licence_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Licence_Tab_Download"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Survey_Design_Tab"/>
+        <activity android:label="@string/app_name" android:name="net.pocketsurvey.shell.Data_Table_View_Activity"/>
+    </application>
+</manifest>

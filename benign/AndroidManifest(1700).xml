@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="akash.akashtrackme">
+    <application android:icon="@drawable/icon" android:label="Akash_TrackMe" android:name="mono.android.app.Application">
+        <activity android:icon="@drawable/icon" android:label="Akash_TrackMe" android:name="and_test.MainActivity"/>
+        <activity android:name="and_test.SplashActivity" android:noHistory="true" android:theme="@style/Theme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Akash_TrackMe" android:name="and_test.BkashActivity"/>
+        <provider android:authorities="akash.akashtrackme.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

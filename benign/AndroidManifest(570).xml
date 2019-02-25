@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.hudee.mama4f54cb14421d9c7acd1f5e97">
+    <permission android:name="com.hudee2.pns.permission.C2D_MESSAGE" android:protectionLevel="normal"/>
+    <uses-permission android:name="com.hudee2.pns.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name=".ui.activity.MakerApplication" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name=".ui.activity.Init" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.Login" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.OAuth" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.AllServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.MessageList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.RssMessageList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.SystemMessageList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.ViewMessage" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name=".ui.activity.Main" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.Subscription" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.WebServiceList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.Settings" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.MessageView" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.TextMessageView" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.About" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.Error" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.RSSTab" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.MsgBoxTab" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.RecommendCategoryList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.RecommendAppList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.ShareBlog" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.FeedBack" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.SwitchNotifyType" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.SaveBlogImg" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.BlogList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.BlogListTab" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.FavoriteList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.FavoriteTab" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.CommentList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ui.activity.UserLogin" android:screenOrientation="portrait"/>
+        <service android:configChanges="keyboardHidden|orientation" android:name=".ui.download.DownloadService"/>
+        <receiver android:name=".ui.receiver.HudeeReceiver" android:permission="com.hudee2.pns.permission.C2D_MESSAGE">
+            <intent-filter>
+                <action android:name="com.hudee.mama4f54cb14421d9c7acd1f5e97.HUDEE_MESSAGE"/>
+                <category android:name="com.hudee.mama4f54cb14421d9c7acd1f5e97"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.hudee.mama4f54cb14421d9c7acd1f5e97.HUDEE_REGISTRATION"/>
+                <category android:name="com.hudee.mama4f54cb14421d9c7acd1f5e97"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.hudee2.pns.service.RegistrationService">
+            <intent-filter>
+                <action android:name="com.hudee2.pns.intent.REGISTER"/>
+                <action android:name="com.hudee2.pns.intent.UNREGISTER"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.hudee2.pns.service.SendMessageService">
+            <intent-filter>
+                <action android:name="com.hudee2.pns.intent.SENDMSG"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.hudee2.pns.service.PushService">
+            <intent-filter>
+                <action android:name="com.hudee2.pns.intent.START_PUSH_SERVICE"/>
+                <action android:name="com.hudee2.pns.intent.STOP_PUSH_SERVICE"/>
+                <action android:name="com.hudee2.pns.intent.RESTART_PUSH_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.hudee2.pns.service.SubscriptionService">
+            <intent-filter>
+                <action android:name="com.hudee2.pns.intent.SUBSCRIBE"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.hudee2.pns.receiver.SystemEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:path="com.hudee2.pns" android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.hudee2.pns.receiver.ScreenEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.hudee2.pns.receiver.ParametersSyncReceiver">
+            <intent-filter>
+                <action android:name="com.hudee2.pns.sync.parameters"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

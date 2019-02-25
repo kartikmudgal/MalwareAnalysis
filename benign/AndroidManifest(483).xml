@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.geniemobile.app5499329249017856" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415">
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.geniemobile.app5499329249017856.permission.MAPS_RECEIVE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <permission android:name="com.geniemobile.app5499329249017856.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.geniemobile.app5499329249017856.permission.UA_DATA" android:protectionLevel="signature"/>
+    <permission android:name="com.geniemobile.app5499329249017856.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    <permission android:name="com.geniemobile.app5499329249017856.permission.UA_DATA" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.geniemobile.app5499329249017856.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.geniemobile.app5499329249017856.permission.UA_DATA"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.eventgenie.android.EventGenieApplication" android:theme="@style/Theme.EventGenieDefault.Splash">
+        <meta-data android:name="android.app.default_searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBfUvaYkehMo-olasF77S-wDmbwu49zMm4"/>
+        <meta-data android:name="com.google.android.youtube.v3.API_KEY" android:value="AIzaSyAySGR9zIhCa-YfGfERVsgf6qbxOhF_Lag"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="locale" android:label="@string/app_name" android:name="com.eventgenie.android.activities.others.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.dashboard.DashboardTileActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault.Dashboard" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.dashboard.DashboardGridActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault.Dashboard" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.dashboard.DashboardSplitBackgroundActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault.Dashboard" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.SessionFilterActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.qrcodes.QRReaderActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.qrcodes.MyQRCodesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.products.FullScreenCarousel" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.dashboard.DashboardTabsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.SearchResultsListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.exhibitors.ExhibitorListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.activitystream.activities.ActivitystreamActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.activitystream.activities.ActivityStreamPostActivity" android:parentActivityName="com.eventgenie.android.activities.activitystream.activities.ActivitystreamActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="adjustResize|stateVisible">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.eventgenie.android.activities.activitystream.activities.ActivitystreamActivity"/>
+            <meta-data android:name="android.support.UI_OPTIONS" android:value="splitActionBarWhenNarrow"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.activitystream.activities.ReportActivityStreamActivity" android:parentActivityName="com.eventgenie.android.activities.activitystream.activities.ActivityStreamDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:windowSoftInputMode="adjustResize|stateVisible">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.eventgenie.android.activities.activitystream.activities.ActivityStreamDetailsActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.activitystream.activities.ActivityStreamDetailsActivity" android:parentActivityName="com.eventgenie.android.activities.activitystream.activities.ActivitystreamActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.eventgenie.android.activities.activitystream.activities.ActivitystreamActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.activitystream.activities.FullScreenCarouselActivity" android:parentActivityName="com.eventgenie.android.activities.activitystream.activities.ActivityStreamDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.eventgenie.android.activities.activitystream.activities.ActivityStreamDetailsActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.categories.TagListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.search_ui.SearchPlusActivity" android:screenOrientation="portrait" android:theme="@style/Theme.BreadcrumbTheme"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.search_ui.TagSearchResultsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.CalendarActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.CalendarTabsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.default_searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.ScheduleDayActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.exhibitors.ExhibitorDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.SessionDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.SubSessionDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.TwitterActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.speakers.SpeakerDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.MapVenueActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.MapLandingActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.FloorplanHallListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:hardwareAccelerated="false" android:name="com.eventgenie.android.activities.mapping.Map2DActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan">
+            <meta-data android:name="android.app.searchable" android:value="com.eventgenie.android.activities.others.SearchResultsListActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.MessageListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.FlickrGalleryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.YouTubeListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.YouTubeDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.RSSDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.FlickrPhotoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.FlickrPhotosetListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.infopages.NavigationListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.myprofile.EmailMyEventActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.infopages.InfoPageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.SocialTabsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.base.DoNothingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.RouteActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.PreferencesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.SessionFeedbackOfflineActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.sessions.SessionFeedbackActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.ArticleListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.ArticleDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.FeaturedArticlesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.NewsBlogActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.RSSFeedListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ProoferAppSelection" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.DataUpdateWaitActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.FloorplanImageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.findpeople.VisitorDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.myprofile.MyProfileActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultPreICS" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.findpeople.FindPeopleFragmentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.MyInboxActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.products.ProductDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.multievent.MultiEventSelectorActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.multievent.HolderPageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.multievent.AppsMultiEventResetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.downloads.MyDownloadsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ResourcesCheckActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.SplashPreviewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault.Splash"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.multievent.MultiEventTransformErrorActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.newsandsocial.RssMediaContentDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.poi.PoiDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MessageDetailsV2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MessageComposeV2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MeetingAvailability2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultPreICS" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MeetingDetailsV2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MeetingFinaliseV2Activity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ProoferDownloadEntitySelectionActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ProoferSelectDataversionActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.findpeople.VisitorListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.notes.NotesActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.notes.NoteEditActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.DeveloperOptionsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.networkcheck.NetworkCheckerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.debuglog.DebugLogActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.gamification.GamificationWidgetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.gamification.GameDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.gamification.TrophyDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:name="com.google.zxing.client.android.GenieCaptureActivity" android:screenOrientation="landscape" android:stateNotNeeded="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.qrcodes.QrCodeWidgetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.gamification.PlayerComparisonActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.categories.CountryListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.dbinfo.DbInfoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ForgottenPasswordActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.networking.v2.MakeUnavailableActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.ConfigFlagsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.GenericEntityWidgetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.LowLevelOptionsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.dashboard.ApplicationLockoutActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.downloads.DownloadableDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.UserNotificationsCheck" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.VisitorGroupPermissionsCheckActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.HeaderCheckActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.LocationValidatorActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.ImageEditActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.TimeDateFormatterCheckActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.LaunchWidgetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.TokenReplacementTest" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.FacilityDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.mapping.ZoneDetailsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:name="com.julysystems.appx.AppXPageActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.EntityPickerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.developer.WifiTestActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefaultAbc"/>
+        <activity android:launchMode="singleTop" android:name="com.eventgenie.android.activities.others.ProgressBarBlockingActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.SurveysListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <activity android:configChanges="locale" android:name="com.eventgenie.android.activities.others.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.EventGenieDefault"/>
+        <service android:name="com.genie_connect.android.services.dss.DataSyncService"/>
+        <service android:name="com.genie_connect.android.services.lss.LiveSyncService"/>
+        <service android:name="com.genie_connect.android.services.ffq.FireAndForgetQueueService"/>
+        <service android:name="com.genie_connect.android.services.ibeacon.BLEScanService"/>
+        <receiver android:name="com.genie_connect.android.globalreceivers.AlarmReceiver"/>
+        <receiver android:enabled="true" android:name="com.genie_connect.android.services.ffq.FireAndForgetQueueReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.genie_connect.android.globalreceivers.OnUpgradeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:path="com.geniemobile.app5499329249017856" android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.genie_connect.android.globalreceivers.OnBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.genie_connect.android.globalreceivers.OnWifiStateChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.urbanairship.CoreReceiver">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <category android:name="com.geniemobile.app5499329249017856"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.urbanairship.push.GCMPushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.geniemobile.app5499329249017856"/>
+            </intent-filter>
+        </receiver>
+        <service android:label="Push Notification Service" android:name="com.urbanairship.push.PushService"/>
+        <service android:label="Event Service" android:name="com.urbanairship.analytics.EventService"/>
+        <provider android:authorities="com.geniemobile.app5499329249017856.urbanairship.provider" android:exported="false" android:multiprocess="true" android:name="com.urbanairship.UrbanAirshipProvider" android:permission="com.geniemobile.app5499329249017856.permission.UA_DATA"/>
+        <receiver android:exported="false" android:name="com.eventgenie.android.push.PushIntentReceiverV2">
+            <intent-filter>
+                <action android:name="com.urbanairship.push.CHANNEL_UPDATED"/>
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <action android:name="com.urbanairship.push.RECEIVED"/>
+                <category android:name="com.geniemobile.app5499329249017856"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="b8543761ea2aa31bbfc1d5c4aa61b4ef29499ae1"/>
+    </application>
+</manifest>

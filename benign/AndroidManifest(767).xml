@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.Medical.Fever.Causes.Treatment" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <meta-data android:name="android.support.VERSION" android:value="26.0.0-alpha1"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:name="com.Medical.Fever.Causes.Treatment.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.ShareActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.InfoActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_1">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_2">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_3">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_4">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_5">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_6">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_7">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_8">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_9">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_10">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_11">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_12">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_13">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_14">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_15">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_16">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_17">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.Tips_18">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.Medical.Fever.Causes.Treatment.MainActivity"/>
+        </activity>
+        <activity android:name="com.Medical.Fever.Causes.Treatment.GetmoreActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

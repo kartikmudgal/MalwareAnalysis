@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.jb.gokeyboard.theme.zenthemes_striped_tiger">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <application android:allowBackup="true" android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/appName" android:name=".PushApplication">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/appName" android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.Index" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.INFO"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/appName" android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.MoreActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen"/>
+        <receiver android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.Up"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/icon"/>
+        <meta-data android:name="com.parse.push.notification_channel" android:value="zenthemes"/>
+        <service android:name="com.parse.PushService"/>
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name=".PushReceiver">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE"/>
+                <action android:name="com.parse.push.intent.DELETE"/>
+                <action android:name="com.parse.push.intent.OPEN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.appnext.core.DownloadService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <receiver android:enabled="false" android:label="Clock: Striped tiger" android:name=".k1_clock">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/k1_clock"/>
+        </receiver>
+        <receiver android:enabled="true" android:label="Clock: Striped tiger 2x2" android:name=".k1_clock_2x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/k1_clock_2x2"/>
+        </receiver>
+        <receiver android:enabled="true" android:label="Clock: Striped tiger 3x3" android:name=".k1_clock_3x3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/k1_clock_3x3"/>
+        </receiver>
+        <receiver android:enabled="true" android:label="Clock: Striped tiger 3x4" android:name=".k1_clock_3x4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/k1_clock_3x4"/>
+        </receiver>
+        <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="@string/appWallpapers" android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.WallpaperActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.Black">
+            <intent-filter>
+                <action android:name="android.intent.action.SET_WALLPAPER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:finishOnCloseSystemDialogs="true" android:icon="@drawable/icon" android:label="@string/appWallpapers" android:name="com.jb.gokeyboard.theme.zenthemes_striped_tiger.WallpaperChooserActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+    </application>
+</manifest>

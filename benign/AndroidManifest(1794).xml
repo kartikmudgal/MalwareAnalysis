@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="byfaycom.radio.congo" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <application android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_icon" android:label="@string/app_name" android:name="AndromoAcraApplication">
+        <activity android:label="@string/app_name" android:name=".Radio105641" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".AudioService">
+            <intent-filter>
+                <action android:name="byfaycom.radio.congo.audio.action.START"/>
+                <action android:name="byfaycom.radio.congo.audio.action.PLAY"/>
+                <action android:name="byfaycom.radio.congo.audio.action.PAUSE"/>
+                <action android:name="byfaycom.radio.congo.audio.action.SKIP"/>
+                <action android:name="byfaycom.radio.congo.audio.action.REWIND"/>
+                <action android:name="byfaycom.radio.congo.audio.action.STOP"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="byfaycom.radio.congo.audio.action.URL"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </service>
+        <receiver android:name=".AudioIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name=".Radio105641_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105642" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105642_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105643" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105643_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105644" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105644_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105645" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105645_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105646" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105646_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105647" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105647_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105648" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105648_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105649" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105649_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105650" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105650_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105651" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105651_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105652" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105652_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105653" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105653_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105654" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105654_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105655" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105655_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105656" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105656_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105657" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105657_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105658" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105658_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105659" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105659_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105660" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105660_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Radio105661" android:parentActivityName="byfaycom.radio.congo.Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="byfaycom.radio.congo.Dashboard_000"/>
+        </activity>
+        <service android:exported="false" android:name=".Radio105661_PlaylistManager"/>
+        <activity android:label="@string/app_name" android:name=".Dashboard_000" android:screenOrientation="unspecified" android:theme="@style/Theme.Andromo.Dashboard_000">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.startapp.android.publish.list3d.List3DActivity" android:theme="@android:style/Theme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.startapp.android.publish.AppWallActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name=".AndromoPreferencesActivity" android:theme="@style/Theme.Andromo"/>
+    </application>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+</manifest>

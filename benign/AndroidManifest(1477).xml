@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="kt.ffMobile" platformBuildVersionCode="24" platformBuildVersionName="N">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="TROVIS 55Pro" android:name="android.app.Application" android:theme="@style/KtTheme.0">
+        <activity android:label="ControllerConfigActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.ControllerConfigActivity"/>
+        <activity android:label="@string/application_name" android:name="md52ed1c2ea4be98b40598ec0099fb47954.DashboardActivity"/>
+        <activity android:label="DataLoggerActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.DataLoggerActivity"/>
+        <activity android:label="EditDeviceActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.EditDeviceActivity"/>
+        <activity android:label="DeviceDetailsActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.DeviceDetailsActivity"/>
+        <activity android:label="EditValueActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.EditValueActivity"/>
+        <activity android:icon="@drawable/icon" android:label="@string/application_name" android:name="md52ed1c2ea4be98b40598ec0099fb47954.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="SetPreferencesActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.SetPreferencesActivity"/>
+        <activity android:label="TimeProgramActivity" android:name="md52ed1c2ea4be98b40598ec0099fb47954.TimeProgramActivity"/>
+        <activity android:label="BtDeviceListActivity" android:name="md5dda1766499a0cecb5edfd7ee4208de3c.BtDeviceListActivity" android:theme="@android:style/Theme.Dialog"/>
+        <provider android:authorities="kt.ffMobile.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="2147483647" android:name="mono.MonoRuntimeProvider"/>
+    </application>
+</manifest>

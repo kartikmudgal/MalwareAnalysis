@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.screentime" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.screentime.gcm.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.screentime.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <permission android:name="com.screentime.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.screentime.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.screentime.ScreenTimeApplication" android:resizeableActivity="false" android:theme="@style/STTheme">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="com.screentime.activities.setup.ProtectedAppsActivity" android:theme="@style/STSetupTheme"/>
+        <receiver android:name="com.screentime.platform.pushmessaging.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.screentime"/>
+            </intent-filter>
+        </receiver>
+;
+<service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.screentime.metrics.AttributionReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.screentime.services.huawei.HuaweiBootAppsService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.huawei.HuaweiBootAppsService$HuaweiBootAppsReceiver"/>
+        <activity android:name="com.screentime.activities.setup.WelcomeActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.PairingCodeActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.ParentsEmailActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.NewChildActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.FindPairingCodeActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.PasswordActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.DrawOverAppsActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.AppUsageActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.AccessibilityServiceActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.SetupAssistanceActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.UnsupportedDeviceActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.setup.SetupParentActivity" android:theme="@style/STSetupTheme"/>
+        <activity android:name="com.screentime.activities.DailyTotalsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.screentime.activities.AppTotalsActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:name="com.screentime.activities.AppSessionsActivity" android:parentActivityName="com.screentime.activities.AppTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.AppTotalsActivity"/>
+        </activity>
+        <activity android:label="@string/task_title" android:name="com.screentime.activities.tasks.TaskListActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:label="@string/task_title" android:name="com.screentime.activities.tasks.TaskActivity" android:parentActivityName="com.screentime.activities.tasks.TaskListActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.tasks.TaskListActivity"/>
+        </activity>
+        <activity android:label="@string/available_apps_title" android:name="com.screentime.activities.AvailableAppsActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:label="@string/deactivate_title" android:name="com.screentime.settings.DeactivateActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:name="com.screentime.settings.LockActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:name="com.screentime.activities.LockTaskActivity"/>
+        <activity android:label="@string/settings_title" android:name="com.screentime.settings.UserSettingsActivity" android:parentActivityName="com.screentime.activities.DailyTotalsActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.screentime.activities.DailyTotalsActivity"/>
+        </activity>
+        <activity android:name="com.screentime.services.limiter.activities.BlockedAppActivity" android:theme="@style/STBlockActivityTheme"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.AccountSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.AccountSyncService$AccountSyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.AccountUserSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.AccountUserSyncService$AccountUserSyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.SettingsSyncService"/>
+        <service android:exported="false" android:name="com.screentime.services.account.PasswordReminderService"/>
+        <service android:exported="false" android:name="com.screentime.services.account.ParentAlertService"/>
+        <service android:exported="false" android:name="com.screentime.domain.time.TimeSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.domain.time.TimeSyncService$TimeSyncReceiver"/>
+        <receiver android:exported="false" android:name="com.screentime.domain.time.TimeSyncService$TimeSyncNetworkConnectivityReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.screentime.services.account.SetupIntentService"/>
+        <service android:exported="false" android:name="com.screentime.platform.pushmessaging.RegistrationService"/>
+        <receiver android:exported="false" android:name="com.screentime.platform.pushmessaging.RegistrationService$RegistrationServiceReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.notification.NotificationMessageIntentService"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.WebHistorySyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.WebHistorySyncService$WebHistorySyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.WebSearchSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.WebSearchSyncService$WebSearchSyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.logging.LoggingService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.logging.LoggingService$LoggingServiceReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.SessionSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.SessionSyncService$SessionSyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.update.AutoUpdateService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.update.AutoUpdateService$AutoUpdateReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.sync.FeaturesSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.FeaturesSyncService$FeaturesSyncReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.UserActiveService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.UserActiveService$UserActiveServiceReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.limiter.SessionLimiterService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.limiter.SessionLimiterService$SessionLimiterReceiver"/>
+        <receiver android:exported="false" android:name="com.screentime.services.limiter.ApproachingLimitNotifier"/>
+        <receiver android:exported="false" android:name="com.screentime.services.limiter.SessionLimiterService$SessionLimiterScreenControlReceiver">
+            <intent-filter>
+                <action android:name="ST_SCREEN_CONTROL_RECEIVED_INTENT"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.screentime.services.killer.BackgroundProcessService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.killer.BackgroundProcessService$BackgroundProcessReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.RecoveryService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.screentime.services.TickleRecoveryService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.screentime.services.appblocker.LightsOutService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.appblocker.LightsOutService$AlarmReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.appblocker.AppBlockingService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.appblocker.AppBlockingService$PingReceiver"/>
+        <receiver android:exported="false" android:name="com.screentime.services.appblocker.AppBlockingService$CheckStateReceiver"/>
+        <receiver android:exported="false" android:name="com.screentime.services.appblocker.AppBlockingService$WarningMessageReceiver"/>
+        <service android:exported="false" android:name="com.screentime.services.recorder.SessionRecorderService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.recorder.SessionRecorderService$SessionRecorderReceiver"/>
+        <receiver android:name="com.screentime.BootupBroadcastReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="ST_APP_STARTED_INTENT"/>
+                <action android:name="RC_TICKLE_INTENT"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.screentime.ShutdownBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.screentime.settings.ScreenTimeDeviceAdminReceiver" android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin" android:resource="@xml/admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLE_REQUESTED"/>
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED"/>
+                <action android:name="android.app.action.ACTION_PROFILE_PROVISIONING_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.screentime.domain.time.SystemTimeImpl$TimeChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.android.AndroidSystemStandard$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.screentime.android.AndroidSystemStandard$ResetPackagesReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.settings.AppLimitsPreferenceFragment$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.settings.BlockedAppsPreferenceFragment$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.settings.BedtimeCurfewPreferenceFragment$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.settings.SchoolCurfewPreferenceFragment$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.screentime.services.sync.DeviceSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.DeviceSyncService$DeviceSyncReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.services.sync.DeviceSyncService$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.screentime.services.sync.AppSyncService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.screentime.services.sync.AppSyncService$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:name="com.screentime.android.AndroidSystemDeviceOwner$PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.screentime.db.AppSessionProvider" android:exported="false" android:multiprocess="true" android:name="com.screentime.db.AppSessionProvider"/>
+        <provider android:authorities="com.screentime.db.WebHistoryProvider" android:exported="false" android:multiprocess="true" android:name="com.screentime.db.WebHistoryProvider"/>
+        <receiver android:name="com.screentime.multiwindow.SamsungMultiWindowStatusReceiver">
+            <intent-filter>
+                <action android:name="com.sec.android.action.NOTIFY_MULTIWINDOW_STATUS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.screentime.services.KitKatWakeUpReceiver"/>
+        <service android:label="@string/accessibility_service_name" android:name="com.screentime.services.accessibility.ScreenTimeAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config"/>
+        </service>
+        <provider android:authorities="com.screentime.FileProvider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.screentime.services.sync.ScheduleSyncService"/>
+        <receiver android:exported="false" android:name="com.screentime.services.sync.ScheduleSyncService$ScheduleSyncReceiver"/>
+        <activity android:name="com.screentime.settings.ScheduleBlockerActivity"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.screentime"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.screentime.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

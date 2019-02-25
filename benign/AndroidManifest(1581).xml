@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="ro.bersiher" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lenovo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="telecom.mdesk.permission.READ_SETTINGS"/>
+    <uses-permission android:name="telecom.mdesk.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="dianxin.permission.ACCESS_LAUNCHER_DATA"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.CONTENT_REDIRECT"/>
+    <uses-permission android:name="com.yulong.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.yulong.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.home.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.home.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_ACCESS_MODIFY_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.gionee.amisystem.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.miui.mihome2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.miui.mihome2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.company.contentprovider.READ_DATABASE"/>
+    <uses-permission android:name="com.company.contentprovider.WRITE_DATABASE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="ro.bersiher.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="ro.bersiher.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/yb_ic_launcher" android:label="@string/pt" android:largeHeap="true" android:name="com.leritas.app.MyApp" android:supportsRtl="false" android:theme="@style/da">
+        <activity android:configChanges="locale" android:excludeFromRecents="true" android:exported="false" android:hardwareAccelerated="true" android:label="@string/pt" android:launchMode="singleTask" android:name="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="ro.bersiher.m.m.HiddenActivity" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="mobi.andrutil.ih.ActivityWrapper" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:label="@string/ok" android:name="ro.bersiher.j.MyService"/>
+        <activity android:configChanges="locale" android:launchMode="singleTask" android:name="ro.bersiher.m.s.JCActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.r.RActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.d.DIActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.w.WLActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.s.SActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.s.LActivity" android:parentActivityName="ro.bersiher.m.s.SActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.s.SActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.s.PWActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="TA_APPKEY" android:value="AK6R9TR6Q7CW"/>
+        <meta-data android:name="InstallChannel" android:value="gp"/>
+        <meta-data android:name="MyInnerTid" android:value="734"/>
+        <meta-data android:name="app_license" android:value="b13aac9547454750cc2b3f6874e4b50f"/>
+        <receiver android:name="ro.bersiher.receiver.PIReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="ro.bersiher.service.CService"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.t.TAPActivity" android:screenOrientation="portrait"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/g"/>
+        <receiver android:name="ro.bersiher.m.appwidget.MyAppWidgets">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/b"/>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="ro.bersiher.receiver.BootReceiver">
+            <intent-filter>
+                <action android:name="com.htc.launcher.action.SET_NOTIFICATION"/>
+                <action android:name="com.sonyericsson.home.action.UPDATE_BADGE"/>
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS"/>
+                <action android:name="WEBSERVER"/>
+                <action android:name="com.facebook.workchat.chatheads.ACTION_CLOSE_CHAT_HEAD_NFC_HELPER"/>
+                <action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.facebook.rti.mqtt.ACTION_MQTT_CONFIG_CHANGED"/>
+                <action android:name="com.google.android.finsky.action.TOC_SET"/>
+                <action android:name="com.google.gservices.intent.action.GSERVICES_OVERRIDE"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.google.android.finsky.action.CONTENT_FILTERS_CHANGED"/>
+                <action android:name="com.android.launcher.action.INSTALL_SHORTCUT"/>
+            </intent-filter>
+            <intent-filter android:priority="800">
+                <action android:name="android.hardware.usb.action.USB_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.ANY_DATA_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.SERVICE_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mobimagic.action.HELLO"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="ro.bersiher.receiver.FBMGReceiver" android:permission="com.facebook.receiver.permission.prod.ACCESS">
+            <intent-filter>
+                <action android:name="com.facebook.intent.action.prod.RTC_START_CALL_ACTION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="locale" android:exported="false" android:name="ro.bersiher.m.p.PBActivity2" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="ro.bersiher.receiver.DNReceiver"/>
+        <activity android:configChanges="locale" android:launchMode="singleTask" android:name="ro.bersiher.m.c.CCActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.s.JTActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.f.FActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.s.SPActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.PMActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.b.BPActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.r.RPActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.LPActivity" android:screenOrientation="portrait"/>
+        <service android:name="ro.bersiher.m.r.w.s.WService"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.f.FRActivity" android:screenOrientation="portrait">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="ro.bersiher.m.m.MainActivity"/>
+        </activity>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.n.PDActivity" android:screenOrientation="portrait" android:theme="@style/hk"/>
+        <receiver android:name="ro.bersiher.receiver.SSCReceiver">
+            <intent-filter>
+                <action android:name="com.leritas.app.action.torch"/>
+                <action android:name="com.leritas.app.action.wifi"/>
+                <action android:name="android.media.RINGER_MODE_CHANGED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.a.BSActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.a.WLAActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.m.p.a.WLSActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.p.AcDActivity" android:screenOrientation="portrait" android:theme="@style/kj"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.b.u.BFActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.n.NMActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/pr" android:name="ro.bersiher.m.i.VActivity" android:parentActivityName="ro.bersiher.m.m.MainActivity" android:screenOrientation="portrait" android:theme="@style/de"/>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.i.VRActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="@string/i_" android:name="ro.bersiher.m.s.SBActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:name="ro.bersiher.m.f.FIActivity" android:screenOrientation="portrait" android:theme="@style/lf"/>
+        <activity android:configChanges="locale" android:name="ro.bersiher.a.u.m.AMActivity" android:screenOrientation="portrait" android:theme="@style/d3"/>
+        <activity android:configChanges="locale" android:launchMode="singleTop" android:name="ro.bersiher.b.u.BFILActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="mobi.anasutil.anay.lite.StatService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="mobi.android.ContainerActivity" android:screenOrientation="portrait" android:theme="@style/fj"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="mobi.android.ui.LockerActivity" android:screenOrientation="portrait" android:theme="@style/hi"/>
+        <service android:exported="false" android:name="mobi.android.MonService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="mobi.android.ui.ExitPopActivity" android:screenOrientation="portrait" android:theme="@style/fj"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="mobi.android.ui.CleanerPopActivity" android:screenOrientation="portrait" android:theme="@style/fj"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <receiver android:name="com.sdktool.jdn.plugin.receiver.NetWorkStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/hr"/>
+        <activity android:excludeFromRecents="true" android:name="mobi.andrutil.autolog.compon.Activity1" android:theme="@android:style/Theme.NoDisplay"/>
+        <service android:name="mobi.andrutil.autolog.compon.MnIntentService"/>
+        <service android:name="mobi.andrutil.autolog.compon.Service1"/>
+        <service android:name="mobi.andrutil.autolog.compon.Service2" android:process=":pgrd"/>
+        <receiver android:name="mobi.andrutil.autolog.compon.Receiver1">
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="mobi.andrutil.autolog.compon.Receiver2" android:process=":pgrd">
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="mobi.andrutil.cm.MnMsgService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="mobi.andrutil.cm.MnMsgInstIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="mobi.andrutil.rs.RsService">
+            <intent-filter>
+                <action android:name="android.intent.action.ANDR_STATES"/>
+                <action android:name="com.google.android.gms.rouse.ACTION_ROUSE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.update.shortcut.ShortCutService"/>
+        <activity android:name="com.google.android.gms.update.shortcut.ShortCutActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.google.android.gms.update.shortcut.Broadcast.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.gms.update.cmfamily.CmActivity$DownloadFinishReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.update.cmfamily.DownloadFinishReceiver"/>
+                <action android:name="com.google.android.gms.update.cmfamily.UnstallFinishReceiver"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.gms.update.cmfamily.CmActivity" android:theme="@style/hh"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.gms.update.view.UpdateActivity" android:screenOrientation="portrait" android:theme="@style/i0"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="ro.bersiher"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="ro.bersiher.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>

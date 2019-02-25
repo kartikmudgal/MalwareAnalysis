@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.prisvate.difccxferences">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppBaseTheme.NoTitle">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="@string/app_name" android:name="com.privatecoaching.finddifference.HomeActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.NextGameActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.SummaryActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.LostActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.StagePickActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.PlayActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.privatecoaching.finddifference.ListMobileActivity" android:screenOrientation="portrait" android:theme="@style/AppBaseTheme.NoTitle"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity"/>
+    </application>
+</manifest>

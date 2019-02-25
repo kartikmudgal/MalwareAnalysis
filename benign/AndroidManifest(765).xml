@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.mediatrust.M11004916">
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:label="@string/app_name" android:name=".MainActivity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MenuActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".AddPlanActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation" android:name=".ReaderActivity" android:screenOrientation="sensor">
+            <category android:name="android.intent.category.BROWSABLE"/>
+        </activity>
+        <activity android:configChanges="orientation" android:name=".PhotoActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation" android:name=".MusicListActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation" android:name=".SettingsActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation" android:name=".TOCActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation" android:name=".TwitterActivity" android:screenOrientation="sensor"/>
+        <activity android:configChanges="orientation" android:name=".MobiWebViewActivity" android:screenOrientation="sensor"/>
+        <meta-data android:name="ADMOB_PUBLISHER_ID" android:value="a14d33f1eeaa690"/>
+        <meta-data android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_TYPE" android:value="1"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_PAID_TYPE" android:value="1"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_FREE_PAGES" android:value="5"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_DEFAULT_DIRECTION" android:value="1"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_LINK_GET_FULL" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_LINK_NEW_RELEASE" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_LINK_MORE_EBOOKS" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_LINK_RECOMMENDED" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_USE_SNS" android:value="true"/>
+        <meta-data android:name="FORSIDE_COMMONVIEWER_USE_SEARCH" android:value="true"/>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+</manifest>

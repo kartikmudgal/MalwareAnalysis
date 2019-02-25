@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.epublisherworld.degouda" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.nowmedia.storyboard3.StoryBoard3Application" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.epublisherworld.degouda.SplashActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.epublisherworld.degouda.LoginPromptActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:label="@string/app_name" android:name="com.epublisherworld.degouda.EmagazineActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:label="@string/app_name" android:name="com.epublisherworld.degouda.LoggedInActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <receiver android:enabled="true" android:name="com.epublisherworld.degouda.PushNotificationReceiver">
+            <intent-filter>
+                <action android:name="nl.nowmedia.push.RECEIVED_MESSAGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/app_name" android:name="com.nowmedia.storyboard3.StoryBoard3Activity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.MagazineDetailActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.nowmedia.storyboard3.StoreMagazineActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.SettingActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.RegisterActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.SubscriptionActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.CategoryFilterActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.StoryBoard3MagazineActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:name="com.nowmedia.storyboard3.StoryBoard3LoginActivity" android:screenOrientation="portrait" android:theme="@style/CustomActionBarTheme"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.CoreChildActivity"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.ArticleCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.MagazineCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.MyMagazineCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.SubscriptionCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.GeneralCoreActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.InAppBillingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.ArticleDetailActivity"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.PreviewActivity"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.WebActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name="com.ee.nowmedia.core.activities.StoryBoard3MagazineActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <service android:name="com.ee.nowmedia.core.dto.magazine.MagazineService"/>
+        <service android:name="com.ee.nowmedia.core.pushnotification.GCMIntentService"/>
+        <service android:name="com.ee.nowmedia.core.utility.DownloadService"/>
+        <service android:name="com.ee.nowmedia.core.utility.GetPriceService"/>
+        <service android:name="com.ee.nowmedia.core.utility.MusicService"/>
+        <receiver android:name="com.ee.nowmedia.core.pushnotification.PushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.ee.nowmedia.core.pushnotification"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ee.nowmedia.core.utility.DownloadReceiver">
+            <intent-filter>
+                <action android:name="com.ee.nowmedia.core.utility.DOWNLOAD_COMPLETE"/>
+                <action android:name="com.ee.nowmedia.core.utility.DOWNLOAD_FAILED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ee.nowmedia.core.receiver.PDFReaderReciever">
+            <intent-filter>
+                <action android:name="intent.action.SHOW_ARTICLE_DETAIL"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="4"/>
+        <activity android:label="@string/app_name" android:name="com.artifex.mupdfdemo.ChoosePDFActivity" android:theme="@android:style/Theme.Light"/>
+        <activity android:label="@string/app_name" android:name="com.artifex.mupdfdemo.MuPDFActivity" android:theme="@style/AppBaseTheme"/>
+        <activity android:label="@string/outline_title" android:name="com.artifex.mupdfdemo.OutlineActivity" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/print" android:name="com.artifex.mupdfdemo.PrintDialogActivity" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/outline_title" android:name="nl.nowmedia.reader.DialogVideoActivity" android:theme="@android:style/Theme.Dialog"/>
+    </application>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.nowmedia.storyboard3.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+</manifest>

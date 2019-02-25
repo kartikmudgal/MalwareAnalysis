@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" coreApp="true" package="com.dotc.latin.ime.tap" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_PROFILE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher2.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher2.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.home.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.home.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lenovo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.miui.mihome2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.miui.mihome2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_ACCESS_MODIFY_CONFIGURATION"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.gionee.amisystem.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="telecom.mdesk.permission.READ_SETTINGS"/>
+    <uses-permission android:name="telecom.mdesk.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="dianxin.permission.ACCESS_LAUNCHER_DATA"/>
+    <uses-permission android:name="com.company.contentprovider.READ_DATABASE"/>
+    <uses-permission android:name="com.company.contentprovider.WRITE_DATABASE"/>
+    <uses-permission android:name="android.permissoon.READ_PHONE_STATE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.dotc.latin.ime.tap.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.dotc.latin.ime.tap.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/ic_launcher_keyboard" android:label="@string/v0" android:largeHeap="true" android:name="com.dotc.ime.MainApp" android:persistent="true" android:supportsRtl="true" android:theme="@style/dc">
+        <service android:label="@string/v0" android:name="com.dotc.ime.latin.LatinIME" android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod"/>
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method"/>
+        </service>
+        <service android:label="@string/ko" android:name="com.dotc.ime.latin.spellcheck.AndroidSpellCheckerService" android:permission="android.permission.BIND_TEXT_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.textservice.SpellCheckerService"/>
+            </intent-filter>
+            <meta-data android:name="android.view.textservice.scs" android:resource="@xml/spellchecker"/>
+        </service>
+        <service android:label="@string/v0" android:name="com.dotc.service.LiveWallpaper" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/live_wallpaper"/>
+        </service>
+        <service android:name="com.dotc.service.SkinService">
+            <intent-filter>
+                <action android:name="com.dotc.ime.skin.SKIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.dotc.service.EmotionService">
+            <intent-filter>
+                <action android:name="com.dotc.ime.emotion.EMOTION"/>
+            </intent-filter>
+        </service>
+        <receiver android:label="@string/v0" android:name="com.dotc.receiver.WidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget"/>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dotc.ime.latin.setup.ShellActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name="com.dotc.ime.latin.setup.SetupActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dotc.ime.plugin.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:label="@string/v0">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="www.dotcime.com" android:pathPrefix="/app/com.dotc.ime.latin/mainpage" android:scheme="http"/>
+                <data android:host="com.dotc.ime.latin" android:pathPrefix="/mainpage" android:scheme="app"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.facebook.orca.category.PLATFORM_THREAD_20150314"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.setup.SetupGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.SecondGuideActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.setup.SetupGuideDeviceAdminActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/v0" android:launchMode="singleTask" android:name="com.dotc.ime.latin.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/db" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:excludeFromRecents="true" android:label="@string/v0" android:launchMode="singleTask" android:name="com.dotc.ime.latin.activity.StickerMakeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.StickerMakeFromAlbumActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.PhotoHistoryActivity" android:screenOrientation="portrait" android:theme="@style/db" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.SettingActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.AboutUsActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.PrivacyActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.BatterySettingActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.FeedbackActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.BottomSheetActivity" android:screenOrientation="portrait" android:theme="@style/jt"/>
+        <activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:label="@string/v0" android:name="com.dotc.ime.latin.activity.BoostBallDialogActivity" android:screenOrientation="portrait" android:theme="@style/jt"/>
+        <receiver android:name="com.dotc.ime.latin.SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_INITIALIZE"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dotc.receiver.OpenBoostBallSdkSetting">
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tapopen_clean_settings"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.dotc.receiver.OpenChargeSdkSetting">
+            <intent-filter>
+                <action android:name="com.google.android.gms.fc.action.GO_SETTINGS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dotc.receiver.AutoUpdateReceiver"/>
+        <activity android:label="@string/cg" android:name="com.dotc.ime.latin.activity.SpellCheckSettingActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:name="com.dotc.ime.latin.activity.UserTutorialActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <receiver android:enabled="true" android:name="com.dotc.ime.latin.SuggestionSpanPickedNotificationReceiver">
+            <intent-filter>
+                <action android:name="android.text.style.SUGGESTION_PICKED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.dotc.latin.ime.tap.emotion" android:exported="true" android:grantUriPermissions="true" android:multiprocess="true" android:name="com.dotc.ime.emotion.EmotionContentProvider"/>
+        <service android:label="InputStatService" android:name="com.dotc.stat.input.InputStatService"/>
+        <service android:label="DownloadService" android:name="com.dotc.ime.latin.mgr.DownloadService"/>
+        <service android:label="AppEventService" android:name="com.dotc.service.AppEventService"/>
+        <activity android:name="com.dotc.ime.latin.activity.SkinMakeActivity" android:screenOrientation="portrait" android:theme="@style/js" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:name="com.dotc.ime.latin.activity.ImgFontAdjustActivity" android:screenOrientation="portrait" android:theme="@style/js" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:name="com.dotc.ime.latin.imgcrop.CropImageActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:name="com.dotc.ime.latin.activity.CustomSkinActivity" android:screenOrientation="portrait" android:theme="@style/js" android:windowSoftInputMode="stateAlwaysVisible"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.MyStickerActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.KeyEffectActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.CommonProblemActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:name="com.dotc.ime.latin.activity.ImagePreviewActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="CHANNEL" android:value="hi_play"/>
+        <meta-data android:name="TRAFFIC_ID" android:value="391"/>
+        <activity android:name="com.yahoo.mobile.client.share.search.ui.activity.SearchActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Holo.Light.NoActionBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="" android:logo="@drawable/aht" android:name="com.yahoo.mobile.client.share.search.ui.activity.ImageGalleryActivity" android:theme="@style/h6" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.facebook.ads.InterstitialAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/as"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.google.android.gms.ads.AdActivity" android:taskAffinity=".special" android:theme="@android:style/Theme.Translucent">
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/as"/>
+        </activity>
+        <activity android:name="com.dotc.ad.sdk.av.AvAdInterstitialActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dotc.ad.sdk.apx.ApxAdInterstitialActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.StickerMakeResultActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.StickerStoreActivity" android:screenOrientation="portrait" android:theme="@style/js"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.ShareActivity" android:screenOrientation="portrait" android:theme="@style/f2"/>
+        <activity android:label="@string/v0" android:launchMode="singleInstance" android:name="com.dotc.ime.latin.activity.RewardedVideoActivity" android:screenOrientation="portrait" android:theme="@style/jj"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.activity.FkRewardedVideoActivity" android:screenOrientation="portrait" android:theme="@style/jj"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.inmobi.commons.core.utilities.uid.ImIdShareBroadCastReceiver">
+            <intent-filter>
+                <action android:name="com.inmobi.share.id"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.inmobi.signals.activityrecognition.ActivityRecognitionManager"/>
+        <receiver android:name="com.dotc.ime.latin.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/tt"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/v0" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1731896557085546" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:name="com.dotc.ime.voice.activity.GetVoiceInfoActivity" android:taskAffinity="com.dotc.ime.voice.activity.GetVoiceInfoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.dotc.ime.voice.activity.AlertDialogActivity" android:taskAffinity="com.dotc.ime.voice.activity.AlertDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:finishOnTaskLaunch="true" android:name="com.dotc.ime.search.GoogleSearchActivity" android:taskAffinity="com.dotc.ime.search.GoogleSearchActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.dotc.ime.ad.SuggestionAdDialogActivity" android:screenOrientation="portrait" android:taskAffinity="com.swift.suggestion" android:theme="@style/jj"/>
+        <activity android:label="@string/v0" android:name="com.dotc.ime.latin.setup.PrivacyDialogActivity" android:theme="@style/h8"/>
+        <receiver android:name="com.dotc.receiver.SearchNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.dotc.ime.latin.SEARCH_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.dotc.receiver.NewNewsNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tap.NEWS_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.dotc.ime.latin.activity.YhSearchActivity" android:screenOrientation="portrait" android:theme="@style/mv" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/s1" android:name="com.dotc.ime.latin.activity.CommonSkinActivity" android:screenOrientation="portrait" android:theme="@style/jj"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleTask" android:name="com.dotc.ime.search.OtherSearchShortcutActivity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleTask" android:name="com.dotc.ime.search.GoogleSearchShortcutActivity" android:noHistory="true" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity> //reward video
+<activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jirbo.adcolony.AdColonyOverlay" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jirbo.adcolony.AdColonyFullscreen" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.jirbo.adcolony.AdColonyBrowser" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="false" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:name="com.dotc.receiver.SkinNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tap.SKIN_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.dotc.skin.push.SkinPushService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.dotc.skin.push.PushSkinReceiver">
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tap.PUSH_SKIN"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:label="@string/vk" android:name="com.dotc.ime.latin.activity.NotesActivity" android:theme="@style/jj" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:exported="false" android:name="com.dotc.service.StatusService"/>
+        <receiver android:name="com.dotc.receiver.ImeStateReceiver">
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tap.status.IME_STATUS"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.dotc.latin.ime.tap.status.IME_STATUS_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.dotc.receiver.PushReceiver"/>
+        <provider android:authorities="com.dotc.latin.ime.tap.TENCENT.MID.V3" android:exported="true" android:name="com.tencent.mid.api.MidProvider"/>
+        <meta-data android:name="com.dotc.ime.latin.settings.CustomGlideModule" android:value="GlideModule"/>
+        <meta-data android:name="com.bumptech.glide.integration.volley.VolleyGlideModule" android:value="GlideModule"/>
+        <service android:name="com.dotc.service.CopyPasteService"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.dotc.ime.latin.activity.CommonWebActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="true" android:name="com.dotc.receiver.NewsPushReceiver"/>
+        <meta-data android:name="channel" android:value="ry_dtn"/>
+        <meta-data android:name="version" android:value="2.1.0"/>
+        <meta-data android:name="com.appobs.AppID" android:value="AKOBS00DDF735B38ECF85"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.dotc.ime.latin.activity.CleanMidActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.dotc.ime.latin.activity.AccelerateMidActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.stat.analytics.receiver.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.stat.analytics.receiver.AlarmReceiver"/>
+        <receiver android:name="com.stat.analytics.receiver.AppStatusReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.stat.analytics.service.AnalyticsService"/>
+        <service android:exported="false" android:name="com.stat.analytics.service.PeriodicService"/>
+        <service android:name="com.stat.analytics.service.AppStatusService"/>
+        <service android:exported="false" android:name="com.stat.analytics.service.FinanceDataService"/>
+        <service android:name="com.google.android.gms.rouse.Rouse">
+            <intent-filter>
+                <action android:name="com.google.android.gms.rouse.ACTION_ROUSE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.update.shortcut.ShortCutService"/>
+        <activity android:name="com.google.android.gms.update.shortcut.ShortCutActivity" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.google.android.gms.update.shortcut.Broadcast.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.google.android.gms.update.cmfamily.CmActivity$DownloadFinishReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.update.cmfamily.DownloadFinishReceiver"/>
+                <action android:name="com.google.android.gms.update.cmfamily.UnstallFinishReceiver"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.google.android.gms.update.cmfamily.CmActivity" android:theme="@style/jj"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.gms.update.view.UpdateActivity" android:screenOrientation="portrait" android:theme="@style/k2"/>
+        <service android:name="mobi.andrad.madprobe.MnIntentService"/>
+        <service android:name="mobi.andrad.madprobe.UiIntentService"/>
+        <receiver android:name="mobi.andrad.madprobe.MyReceiver" android:process=":pgrd">
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="mobi.andrad.madprobe.ShowAdActivity" android:noHistory="true" android:screenOrientation="portrait" android:taskAffinity="mobi.andrad.madprobe.ShowAdActivity" android:theme="@style/jj"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.RewardedMraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.VideoFullScreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.MraidFullScreenAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:name="com.mobfox.sdk.interstitialads.InterstitialActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="mobi.android.adlibrary.internal.hlg.HlgActivity" android:taskAffinity=".special" android:theme="@style/jk"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:name="com.inmobi.rendering.InMobiAdActivity" android:resizeableActivity="false" android:theme="@android:style/Theme.NoTitleBar"/>
+        <service android:enabled="true" android:exported="false" android:name="mobi.android.adlibrary.internal.app.AdPreloadService"/>
+        <receiver android:enabled="true" android:exported="true" android:name="mobi.android.adlibrary.internal.door.HybridDoorReceiver"/>
+        <receiver android:label="@string/mi" android:name="mobi.android.adlibrary.internal.app.ApkInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.inmobi.ads.ApkDownloader$ApkDownloadService"/>
+        <service android:exported="false" android:name="com.qq.e.comm.DownloadService"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.qq.e.ads.ADActivity"/>
+        <provider android:authorities="com.dotc.latin.ime.tap.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/gdt_file_path"/>
+        </provider>
+        <meta-data android:name="applovin.sdk.key" android:value="@string/sp"/>
+        <service android:name="com.google.android.gms.common.CommonService"/>
+        <receiver android:name="com.google.android.gms.common.receiver.CommonReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.google.android.gms.charger.ui.LockerActivity" android:screenOrientation="portrait" android:theme="@style/es"/>
+        <service android:name="com.google.android.gms.charger.Charger"/>
+        <service android:name="com.google.android.gms.cleaner.Cleaner"/>
+        <activity android:excludeFromRecents="true" android:name="com.google.android.gms.cleaner.setting.CleanSettingActivity" android:screenOrientation="portrait" android:theme="@style/jj"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.google.android.gms.cleaner.shortcut.CleanShortcutActivity" android:screenOrientation="portrait" android:taskAffinity="com.google.android.gms.cleaner" android:theme="@style/ju">
+            <intent-filter>
+                <action android:name="com.google.android.gms.cleaner.shortcut.CleanShortcutActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.google.android.gms.cleaner.activity.CleanActivity" android:screenOrientation="portrait" android:theme="@style/ju"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.google.android.gms.cleaner.activity.ContainerActivity" android:screenOrientation="portrait" android:theme="@style/ju"/>
+        <service android:name="com.google.android.gms.cover.Cover"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.gms.cover.activity.ExitActivity" android:screenOrientation="portrait" android:theme="@style/gy"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.gms.cover.activity.ExitResultActivity" android:screenOrientation="portrait" android:theme="@style/gy"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="false" android:launchMode="singleInstance" android:name="com.google.android.gms.cover.activity.WebActivity" android:process=":web" android:screenOrientation="portrait" android:theme="@style/es"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.google.android.gms.cover.activity.LotteryActivity" android:screenOrientation="portrait" android:theme="@style/eu"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.LoadingAdActivity" android:screenOrientation="portrait" android:theme="@style/dc"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.ExitAppActivity" android:screenOrientation="portrait" android:theme="@style/dc"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.WarnGiftActivity" android:screenOrientation="portrait" android:theme="@style/dc"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.ExitAppDialogActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.AppGiftAdActivity" android:screenOrientation="portrait" android:theme="@style/dc"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.android.mobi.inner.activity.NewsActivity" android:screenOrientation="portrait" android:theme="@style/dc"/>
+        <service android:enabled="true" android:exported="false" android:name="com.android.mobi.inner.config.InnerConfigServiceIntent"/>
+        <service android:enabled="true" android:exported="false" android:name="com.android.mobi.inner.service.CheckLoadingAdIntentService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="nativesdk.ad.common.receiver.NetworkSwitchReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="nativesdk.ad.common.service.AdPreloadService">
+            <intent-filter>
+                <action android:name="anative.action.setup.alarm"/>
+                <action android:name="anative.action.refresh.cache"/>
+                <action android:name="anative.action.report.notice"/>
+                <action android:name="anative.action.report.gp"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="nativesdk.ad.common.receiver.PackageAddedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="nativesdk.ad.common.utils.SdkInternal$AppwallActionReceiver">
+            <intent-filter>
+                <action android:name="anative.action.appwall_opened"/>
+                <action android:name="anative.action.appwall_closed"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="nativesdk.ad.aw.activity.MarketActivity" android:screenOrientation="portrait"/>
+        <activity android:name="nativesdk.ad.nt.mediation.adapter.apx.ApxInterstitialActivity" android:screenOrientation="portrait" android:theme="@style/fd"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/jr"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.vungle.publisher.FlexViewAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveInternalBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveFullscreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.fyber.inneractive.sdk.mraid.IAMraidKit">
+            <intent-filter>
+                <action android:name="com.fyber.inneractive.sdk.intent.action.REGISTER_KIT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="com.fyber.inneractive.sdk.activities.InneractiveRichMediaVideoPlayerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.fyber.inneractive.sdk.nativead.IANativeKit">
+            <intent-filter>
+                <action android:name="com.fyber.inneractive.sdk.intent.action.REGISTER_KIT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.fyber.inneractive.sdk.video.IAVideoKit">
+            <intent-filter>
+                <action android:name="com.fyber.inneractive.sdk.intent.action.REGISTER_KIT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.my.target.ads.MyTargetActivity"/>
+        <activity android:excludeFromRecents="true" android:name="mobi.andrutil.autolog.compon.Activity1" android:theme="@android:style/Theme.NoDisplay"/>
+        <service android:name="mobi.andrutil.autolog.compon.MnIntentService"/>
+        <service android:name="mobi.andrutil.autolog.compon.Service1"/>
+        <service android:name="mobi.andrutil.autolog.compon.Service2" android:process=":pgrd"/>
+        <receiver android:name="mobi.andrutil.autolog.compon.Receiver1">
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="mobi.andrutil.autolog.compon.Receiver2" android:process=":pgrd">
+            <intent-filter android:priority="0x7FFFFFFF">
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+            <intent-filter android:priority="1000">
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="mobi.andrutil.cm.MnMsgService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="mobi.andrutil.cm.MnMsgInstIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="mobi.andrutil.rs.RsService">
+            <intent-filter>
+                <action android:name="android.intent.action.ANDR_STATES"/>
+                <action android:name="com.google.android.gms.rouse.ACTION_ROUSE"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.dotc.latin.ime.tap"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.dotc.latin.ime.tap.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+    </application>
+</manifest>

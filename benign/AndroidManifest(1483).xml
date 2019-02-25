@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="live.wallpaper.t910002091" platformBuildVersionCode="19" platformBuildVersionName="4.4.2-1456859">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/live_wallpaper_name" android:name="com.ksmobile.launcher.theme.MainApplication" android:supportsRtl="true">
+        <activity android:excludeFromRecents="true" android:name="com.ksmobile.launcher.theme.PreviewActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="WALLPAPER_ID" android:value="910002091"/>
+        <meta-data android:name="CML_INSTALL_CHANNEL" android:value="3Dtheme_livewp_910002091"/>
+        <meta-data android:name="CMLAUNCHER_THEME_SUPPORT" android:value="true"/>
+        <meta-data android:name="CMLAUNCHER_THEME_VERSION" android:value="4_0"/>
+        <meta-data android:name="IS_LIVE_WALLPAPER" android:value="true"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.InterstitialAdActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:exported="true" android:name="com.ksmobile.launcher.cmbase.utils.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ksmobile.launcher.notify.ThemeAlarmReceiver"/>
+        <receiver android:enabled="false" android:name="com.ksmobile.launcher.notify.ThemeBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.ksmobile.launcher.notify.SchedulingService"/>
+        <service android:label="@string/live_wallpaper_name" android:name="com.ksmobile.launcher.theme.livewallpaper.CMLiveWallpaperService" android:permission="android.permission.BIND_WALLPAPER" android:process=":livewallpaper">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+            <meta-data android:name="android.service.wallpaper" android:resource="@xml/livewallpaper"/>
+        </service>
+    </application>
+</manifest>

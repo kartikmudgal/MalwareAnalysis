@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="alforat.abuosamah.net" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="alforat.abuosamah.net.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="alforat.abuosamah.net.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <receiver android:name="alforat.abuosamah.net.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="@string/app_name" android:name="alforat.abuosamah.net.MainActivity" android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="alforat.abuosamah.net.LoginActivity" android:theme="@style/FullscreenTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="alforat.abuosamah.net.registerActivity" android:theme="@style/FullscreenTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="alforat.abuosamah.net.custom_gallery" android:noHistory="true" android:theme="@style/FullscreenTheme"/>
+        <activity android:name="alforat.abuosamah.net.DetailActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="alforat.abuosamah.net.OperationActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="alforat.abuosamah.net.ChatActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="alforat.abuosamah.net.ReportActivity"/>
+        <activity android:name="alforat.abuosamah.net.UpdateActivity"/>
+        <activity android:name="alforat.abuosamah.net.AbountActivity"/>
+        <activity android:name="alforat.abuosamah.net.NotesActivity"/>
+        <activity android:name="alforat.abuosamah.net.PlaceActivity"/>
+        <activity android:name="alforat.abuosamah.net.InfoBank"/>
+        <activity android:name="alforat.abuosamah.net.EditProfile"/>
+        <activity android:name="alforat.abuosamah.net.InfoActivity"/>
+        <activity android:name="alforat.abuosamah.net.NumberDevice"/>
+        <activity android:name="alforat.abuosamah.net.BagatActivity"/>
+        <activity android:name="alforat.abuosamah.net.ProductsActivity"/>
+        <activity android:name="alforat.abuosamah.net.PaidActivity"/>
+        <activity android:name="alforat.abuosamah.net.WebAccessActivity"/>
+        <service android:name="alforat.abuosamah.net.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="alforat.abuosamah.net.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:name="alforat.abuosamah.net.GroupsActivity"/>
+        <activity android:name="alforat.abuosamah.net.ServiceActivity"/>
+        <activity android:name="alforat.abuosamah.net.AdslActivity"/>
+        <activity android:name="alforat.abuosamah.net.TransferActivity"/>
+        <activity android:name="alforat.abuosamah.net.DailyActivity"/>
+        <activity android:name="alforat.abuosamah.net.OpsActivity"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.google.zxing.client.android.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/zxing_menu_help" android:name="com.google.zxing.client.android.HelpActivity" android:screenOrientation="user" android:stateNotNeeded="true"/>
+        <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:screenOrientation="user"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="alforat.abuosamah.net.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="alforat.abuosamah.net"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="hu.pocketguide" package="hu.pocketguide.bundle.Boston_lite">
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="hu.pocketguide.CustomPocketGuideApplication" android:theme="@style/Theme.Pocketguide">
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/vnd.hu.pocketguide.bundle.Boston_lite.city"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="pocketgui-de"/>
+                <data android:host="android.pocketgui.de"/>
+                <data android:path="/restore/Boston-lite-android"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="pocketguide"/>
+                <data android:host="bundle"/>
+                <data android:host="tour"/>
+                <data android:host="coupon"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTask" android:name="hu.pocketguide.HomeActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide.default_up" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="locale|orientation|screenSize" android:exported="false" android:label="@string/app_name" android:launchMode="singleTask" android:name="hu.pocketguide.VideoPlayerActivity" android:theme="@style/Theme.Sherlock.NoActionBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.CityActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.city"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.RoamingMapActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.POIsActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.feed.activity.FeedActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.feed.activity.FeedItem2DViewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.AboutActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.BonusActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.POIInfoActivity" android:screenOrientation="portrait" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.pois"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.TourInfoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide_lines_ab" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.tours"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.BundleInfoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide_lines_ab" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.bundle"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.settings.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.BundleToursActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="hu.pocketguide.VIEW_BUNDLE_TOUR"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.bundle"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.TourMapActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide_lines_ab"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.BundleRoamingMapActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide">
+            <intent-filter>
+                <action android:name="hu.pocketguide.VIEW_BUNDLE_ROAMING_MAP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.bundle"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:label="@string/app_name" android:name="hu.pocketguide.bundle.ProvisioningActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="pocketgui-de"/>
+                <data android:host="android.pocketgui.de"/>
+                <data android:path="/Boston-lite-android"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.NewsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.feed.activity.ExperienceActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.item/vnd.hu.pocketguide.bundle.Boston_lite.tracklog"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.feed.activity.FeedItemShareActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.ZippedWebPageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.OnlineWebPageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/activities_and_tickets" android:name="hu.pocketguide.tickets.ActivitiesAndTickets" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.DealWebPageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:name="hu.pocketguide.CityOverviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.HtmlTestTesterWebpageActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.HtmlTesterActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide"/>
+        <activity android:configChanges="keyboard|keyboardHidden|locale|orientation" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="hu.pocketguide.map.gallery.GalleryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Pocketguide_lines_ab" android:uiOptions="splitActionBarWhenNarrow" android:windowSoftInputMode="stateHidden"/>
+        <provider android:authorities="hu.pocketguide.provider.pocketguide.bundle.Boston_lite" android:exported="false" android:name="hu.pocketguide.bundle.Boston_lite.db.ContentProvider"/>
+        <service android:exported="false" android:name="hu.pocketguide.download.MapDownloadService"/>
+        <service android:exported="false" android:name="com.pocketguideapp.sdk.location.LocationService"/>
+        <activity android:label="@string/app_name" android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id"/>
+    </application>
+</manifest>

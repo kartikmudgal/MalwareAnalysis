@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="cn.wps.moffice_i18n" platformBuildVersionCode="27" platformBuildVersionName="8.1.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission-sdk-23 android:maxSdkVersion="26" android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.NFC" android:required="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="cn.wps.moffice_i18n.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="cn.wps.moffice_i18n.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <application android:allowBackup="true" android:icon="@drawable/public_icon" android:label="@string/public_app_name" android:largeHeap="true" android:name="cn.wps.moffice.OfficeApp" android:resizeableActivity="true" android:sharedUserId="cn.wps.moffice.share" android:supportsRtl="true" android:theme="@style/OfficeAppTheme">
+        <activity android:launchMode="singleTask" android:name="cn.wps.moffice.main.StartPublicActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/OfficeAppTheme.Transparent.NoTranslucentNavigation">
+            <intent-filter android:label="金山WPS(推荐)">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="kingsoftofficeapp"/>
+                <data android:pathPrefix="qing"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.HomeRootActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="false" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.compress.CompressFileActivity" android:taskAffinity="cn.wps.moffice_i18n.compressfile" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ImageRecognizeActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher"/>
+        <service android:exported="false" android:hardwareAccelerated="true" android:name="cn.wps.moffice.main.scan.main.ScanStartService"/>
+        <service android:exported="false" android:name="cn.wps.moffice.main.scan.util.OcrDownloadService" android:process=":scan"/>
+        <service android:exported="false" android:name="cn.wps.moffice.main.scan.util.ModelDownloadService" android:process=":scan"/>
+        <service android:exported="false" android:name="cn.wps.moffice.main.scan.main.EmptyScanService" android:process=":scan"/>
+        <activity android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.util.camera.CameraActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/doc_scan_camera_activity">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.scanner.camera"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ImageConvertEntryActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground"/>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.SelectPicActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/WriterTheme"/>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ImagePreviewActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/WriterTheme"/>
+        <activity android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/scan_pic_to_pdf" android:label="@string/doc_scan_image_to_pdf" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ThirdpartyImageToPdfActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/theme_thirdparty_pic_share_reciever_activity_style">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/png"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/png"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/scan_pic_to_text" android:label="@string/doc_scan_image_to_text" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ThirdpartyImageToTextActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/theme_thirdparty_pic_share_reciever_activity_style"/>
+        <activity android:autoRemoveFromRecents="true" android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/scan_pic_to_ppt" android:label="@string/doc_scan_image_to_ppt" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.ThirdpartyImageToPptActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/theme_thirdparty_pic_share_reciever_activity_style"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.DocScanGroupListActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.DocScanGroupDetailActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.EditActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/doc_scan_edit_activity"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.FilterActivity" android:process=":scan" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/doc_scan_edit_activity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|layoutDirection|locale|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/scan_pic_to_text" android:label="@string/doc_scan_image_to_text" android:multiprocess="false" android:name="cn.wps.moffice.main.scan.UI.MultipleImageToTextActivity" android:process=":scan" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/theme_thirdparty_pic_share_reciever_activity_style"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.recoveryshell.WPSRecoveryFileShellActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:label="@string/public_upload_wps_drive_save" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.drive.upload.UploadFileActivity" android:taskAffinity="cn.wps.moffice_i18n.uploadfile" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.compress.T3rdOpenCompressFileActivity" android:taskAffinity="cn.wps.moffice_i18n.compressfile" android:theme="@style/HomeTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/zip"/>
+                <data android:mimeType="application/zipx"/>
+                <data android:mimeType="application/x-zip"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.PadHomeActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity">
+            <layout android:minHeight="683.0dip" android:minWidth="960.0dip"/>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.WPSCloudDocsOpenActivity" android:theme="@style/OfficeAppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="wpsofficeapi"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.cooperation.OpenExternalDocsActivity" android:theme="@style/OfficeAppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.filebrowser.AllDocumentActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.filebrowser.search.home.SearchActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.filebrowser.search.model.ModelSearchActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.filebrowser.search.assistant.AssistantSearchActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.feedback.FeedbackHomeActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme.Transparent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.membershipshell.TaskShellActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.membershipshell.MemberTaskShellActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.membershipshell.MemberShipWebViewShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.push.explore.PushTipsWebActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.push.explore.PushTipsWebActivity02" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:exported="true" android:icon="@drawable/public_home_icon" android:label="@string/public_app_name" android:launchMode="singleTask" android:name="cn.wps.moffice.common.tasklauncher.TaskLauncherActivity" android:taskAffinity="cn.wps.moffice_i18n.desktopIcon" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.infoflow.internal.cards.wanderful.WonderFulContentActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.push.read.PushReadWebActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.filebrowser.BrowserFoldersActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="cn.wps.forum.filebrowser"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.commonuse.WPSCommonUseActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="cn.wps.moffice.main.tv.PublicBrowserTVActivity" android:screenOrientation="landscape" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.CloudStorageActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.cloud.storage.warning.CSWarningActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher.warning" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:multiprocess="true" android:name="cn.wps.moffice.main.cloud.storage.core.service.internal.dropbox.DropboxLoginTransferActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <data android:scheme="db-br11c2k8l4no55u"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.core.service.internal.googledrive.GoogleLoginTransferActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.core.service.internal.weiyun.extlibs.WeiyunLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.core.service.internal.weiyun.t3rdopen.OpenWeiyunFileActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <data android:scheme="qcloud-wpsoffice"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="wpsoffice-tp"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.scfolder.phone.SCFolderActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.recoverry.DocumentRecovery" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.premium.PremiumActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.common.google.pay.PremiumNoInstallActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.common.google.pay.restore.RestorePurchaseActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.common.google.pay.restore.MyRestoreListActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.common.google.pay.restore.RestorePurchaseFailActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="false" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.google.signin.GoogleSignInActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.common.overseapay.PayResultActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.NewFileActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.newfiles.template.TemplateCategoryActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.newfiles.template.TemplateNewFileActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateOnLineHomeActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateSpecifyRecommendActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.promotion.PromotionActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.push.splash.backkeysplash.BackKeySplashActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.push.splash.backkeysplash.BackKeyPhoneSplashActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplatePreviewActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateListActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateMineActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.common.infoflow.internal.cards.template.TemplateAuthorActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.common.infoflow.internal.cards.template.coupon.TemplateCouponActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateMineCNActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateMyChargeActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.ChargeSuccessActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.TemplateWeekChoiceActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.newfile.activity.EnTemplateNewFileActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.foreigntemplate.ext.newfile.activity.TemplateCustomerEnActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.OpenNewDocumentActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="false" android:name="cn.wps.moffice.main.local.passcode.PasscodeSetCodeActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.passcode.PasscodeSettingActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.passcode.PasscodeUnlockActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.passcode.PasscodeTurnOffActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:name="cn.wps.moffice.main.cloud.roaming.warning.FileRoamingWarningActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.assistant.WPSAssistantActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.assistant.ext.AssistantActivity" android:process=":shortcuts" android:screenOrientation="portrait" android:stateNotNeeded="true" android:taskAffinity="cn.wps.moffice_i18n.assistant.shortcut" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.local.assistant.ext.SearchAssistantActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:exported="true" android:multiprocess="true" android:name="cn.wps.moffice.main.local.assistant.ext.AssistantComponentActivity" android:screenOrientation="portrait" android:theme="@style/OfficeAppTheme.Transparent.NoTranslucentNavigation" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:exported="true" android:multiprocess="true" android:name="cn.wps.moffice.main.local.assistant.ext.AssistantWebActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.AccountInfoSettingShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.assistant.WPSFileRadarSettingActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.assistant.view.WPSFileRadarFileItemsActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.AddressSettingShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.wpsclouddoc.CloudDocSettingActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.settingdetail.SettingDetailActivity" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.userinfo.address.AddressProvinceListViewActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.JobTitleShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.JobShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.account.setting.HobbiesShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.HomeSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/msexcel"/>
+                <data android:mimeType="application/ms-excel"/>
+                <data android:mimeType="application/vnd.ms-excel"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.template"/>
+                <data android:mimeType="application/vnd.ms-excel.sheet.binary.macroenabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.template.macroenabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.sheet.macroEnabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.addin.macroEnabled.12"/>
+                <data android:mimeType="application/mspowerpoint"/>
+                <data android:mimeType="application/ms-powerpoint"/>
+                <data android:mimeType="application/vnd.ms-powerpoint"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.template"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.slideshow"/>
+                <data android:mimeType="application/msword"/>
+                <data android:mimeType="application/ms-word"/>
+                <data android:mimeType="application/vnd.ms-word"/>
+                <data android:mimeType="application/vnd.ms-works"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.template"/>
+                <data android:mimeType="application/octet-stream"/>
+                <data android:mimeType="application/log"/>
+                <data android:mimeType="application/kswps"/>
+                <data android:mimeType="application/kset"/>
+                <data android:mimeType="application/ksdps"/>
+                <data android:mimeType="application/wps"/>
+                <data android:mimeType="application/wpss"/>
+                <data android:mimeType="application/et"/>
+                <data android:mimeType="application/ets"/>
+                <data android:mimeType="application/dps"/>
+                <data android:mimeType="application/dpss"/>
+                <data android:mimeType="application/dpt"/>
+                <data android:mimeType="application/wpt"/>
+                <data android:mimeType="application/ett"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="application/xlsb"/>
+                <data android:mimeType="application/rtf"/>
+                <data android:mimeType="application/mht"/>
+                <data android:mimeType="multipart/related"/>
+                <data android:mimeType="message/rfc822"/>
+                <data android:mimeType="text/richtext"/>
+                <data android:mimeType="text/rtf"/>
+                <data android:mimeType="text/comma-separated-values"/>
+                <data android:mimeType="text/csv"/>
+                <data android:mimeType="text/xml"/>
+                <data android:mimeType="text/html"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.AllDocumentSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.AllDocumentNewSelectActivity" android:process=":fileselect" android:theme="@style/document_file_selector"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.BrowserFoldersSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.CloudStorageSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.SCFolderSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.WPSFileRadarFileItemsSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.scanqrcode.ScanQrCodeActivity" android:theme="@style/HomeTheme.BlackBackground">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="shareplay" android:scheme="ksoapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.shareplay2.SharePlayIndexActivity" android:process=":shareplay" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/SharePlay">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="shareplay_join" android:scheme="ksoapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.shareplay2.BackGroudActivity" android:process=":shareplay" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/HomeTheme"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.common.shareplay.StartThirdShareplayActivity" android:noHistory="true" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/OfficeAppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="cn.wps.moffice.shareplay.intent.action.THIRD_SHAREDPLAY_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:name="cn.wps.moffice.common.shareplay2.ThirdShareplayActivity" android:process=":shareplay" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.main.local.appsetting.aboutsoft.AboutSoftwareActivity" android:theme="@style/HomeTheme_NoBackground"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="cn.wps.moffice.main.local.home.myoffice.tpt.PhoneTptActivity" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.common.qing.update.UpdateActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher.updateactivity" android:theme="@style/Transluent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.main.cloud.roaming.account.PhoneAccountActivity" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.main.cloud.roaming.login.QingLoginActivity" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.cloud.roaming.login.QingLoginTransferActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:multiprocess="true" android:name="cn.wps.moffice.main.cloud.roaming.realname.RealNameIdentityActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.open.phone.OpenActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.OpenSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.newui.unread.UnReadActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.newui.theme.ThemeActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.common.download.DownloadCenterShellActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.integralwalls.Font.FontActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.integralwalls.earn.IntegralWallsActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.integralwalls.redeem.RedeemPointsActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.integralwallsbase.RedeemResultActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_tv_icon" android:launchMode="singleTask" android:name="cn.wps.moffice.main.tv.HomeTVMeetingActivity" android:screenOrientation="landscape" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_tv_icon" android:launchMode="singleTask" android:name="cn.wps.moffice.main.tv.HomeTvHreatActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_tv_icon" android:launchMode="singleTask" android:name="cn.wps.moffice.main.tv.HomeTVIntroductoryContent" android:screenOrientation="landscape" android:taskAffinity="cn.wps.moffice_i18n.lancher"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.user.UserActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.newui.star.StarActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:launchMode="singleTop" android:multiprocess="false" android:name="cn.wps.moffice.main.select.phone.StarSelectActivity" android:process=":fileselector" android:theme="@style/document_file_selector"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.SelectItemActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.NewGuideSelectActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.BatchSlimActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.apps.pdftoolkit.PDFToolkitActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.apps.pdftoolkit.PDFToolkitIntroduceActivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.main.local.home.phone.application.apps.pdftoolkit.PDFToolkitPopUpTranslucentAciivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.main.thirdapp.ThirdLoginActivity" android:theme="@style/HomeTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="KingsoftOfficeApp"/>
+                <data android:pathPrefix="auth"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.foreignmembership.wallet.MyWalletActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.foreignmembership.orders.MyOrdersActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.foreignmembershipshell.coupon.MyCouponsActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.membershipshell.MyPursingShellActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_NoBackground" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.auth.AuthActivity" android:screenOrientation="behind"/>
+        <receiver android:name="cn.wps.moffice.main.membershipshell.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/public_app_name" android:name="cn.wps.moffice_eng.wxapi.WXPayEntryActivity" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/public_app_name" android:name="cn.wps.moffice.wxapi.WXPayEntryActivity" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.thirdpayshell.ThirdPayImmediateShellActivity" android:theme="@style/OfficeAppTheme.Transparent" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="cn.wps.moffice.common.storage.lollip.GrantPermissionActivity" android:theme="@style/GrantPermissionActivityTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="cn.wps.moffice.permission.PermissionHandleActivity" android:theme="@style/PermissionHandleActivityTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.local.HomeShortcutActivity" android:taskAffinity="cn.wps.moffice_i18n.thirdad" android:theme="@style/HomeTheme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:name="cn.wps.moffice.main.tbcode.ext.EmptyActivity" android:taskAffinity="com.taobao.taobao.empty" android:theme="@style/HomeTheme"/>
+        <activity android:excludeFromRecents="true" android:name="cn.wps.moffice.main.tbcode.ext.EmptyTransActivity" android:taskAffinity="com.taobao.taobao.empty" android:theme="@style/HomeTheme.Transparent"/>
+        <activity android:name="com.jdwx.sdk.JDAdBrowser" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.jingdong.kepler.sdk.lib.jump.KeplerHandlerBackActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.roaming.historyversion.HistoryVersionActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="cn.wps.moffice.documentmanager.PreStartActivity2" android:taskAffinity="cn.wps.moffice_i18n.prestar2" android:theme="@style/OfficeAppTheme.Transparent.NoTranslucentNavigation">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/msexcel"/>
+                <data android:mimeType="application/ms-excel"/>
+                <data android:mimeType="application/vnd.ms-excel"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.template"/>
+                <data android:mimeType="application/vnd.ms-excel.sheet.binary.macroenabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.template.macroenabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.sheet.macroEnabled.12"/>
+                <data android:mimeType="application/vnd.ms-excel.addin.macroEnabled.12"/>
+                <data android:mimeType="application/mspowerpoint"/>
+                <data android:mimeType="application/ms-powerpoint"/>
+                <data android:mimeType="application/vnd.ms-powerpoint"/>
+                <data android:mimeType="application/vnd.ms-powerpoint.presentation.macroEnabled.12"/>
+                <data android:mimeType="application/vnd.ms-powerpoint.slideshow.macroEnabled.12"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.template"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.slideshow"/>
+                <data android:mimeType="application/msword"/>
+                <data android:mimeType="application/ms-word"/>
+                <data android:mimeType="application/vnd.ms-word"/>
+                <data android:mimeType="application/vnd.ms-works"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.template"/>
+                <data android:mimeType="application/octet-stream"/>
+                <data android:mimeType="application/log"/>
+                <data android:mimeType="application/kswps"/>
+                <data android:mimeType="application/kset"/>
+                <data android:mimeType="application/ksdps"/>
+                <data android:mimeType="application/wps"/>
+                <data android:mimeType="application/wpss"/>
+                <data android:mimeType="application/et"/>
+                <data android:mimeType="application/ets"/>
+                <data android:mimeType="application/dps"/>
+                <data android:mimeType="application/dpss"/>
+                <data android:mimeType="application/dpt"/>
+                <data android:mimeType="application/wpt"/>
+                <data android:mimeType="application/ett"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="application/xlsb"/>
+                <data android:mimeType="application/rtf"/>
+                <data android:mimeType="application/pptm"/>
+                <data android:mimeType="application/ppsm"/>
+                <data android:mimeType="application/potm"/>
+                <data android:mimeType="application/mht"/>
+                <data android:mimeType="multipart/related"/>
+                <data android:mimeType="message/rfc822"/>
+                <data android:mimeType="text/richtext"/>
+                <data android:mimeType="text/rtf"/>
+                <data android:mimeType="text/comma-separated-values"/>
+                <data android:mimeType="text/csv"/>
+                <data android:mimeType="text/xml"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="application/vnd.oasis.opendocument.text"/>
+                <data android:mimeType="application/vnd.oasis.opendocument.spreadsheet"/>
+                <data android:mimeType="application/vnd.oasis.opendocument.presentation"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.txt"/>
+                <data android:pathPattern=".*\\.log"/>
+                <data android:pathPattern=".*\\.lrc"/>
+                <data android:pathPattern=".*\\.c"/>
+                <data android:pathPattern=".*\\.cpp"/>
+                <data android:pathPattern=".*\\.h"/>
+                <data android:pathPattern=".*\\.asm"/>
+                <data android:pathPattern=".*\\.s"/>
+                <data android:pathPattern=".*\\.java"/>
+                <data android:pathPattern=".*\\.asp"/>
+                <data android:pathPattern=".*\\.bat"/>
+                <data android:pathPattern=".*\\.bas"/>
+                <data android:pathPattern=".*\\.prg"/>
+                <data android:pathPattern=".*\\.cmd"/>
+                <data android:pathPattern=".*\\.ppt"/>
+                <data android:pathPattern=".*\\.pot"/>
+                <data android:pathPattern=".*\\.pps"/>
+                <data android:pathPattern=".*\\.dps"/>
+                <data android:pathPattern=".*\\.dpss"/>
+                <data android:pathPattern=".*\\.dpt"/>
+                <data android:pathPattern=".*\\.pptx"/>
+                <data android:pathPattern=".*\\.potx"/>
+                <data android:pathPattern=".*\\.ppsx"/>
+                <data android:pathPattern=".*\\.pptm"/>
+                <data android:pathPattern=".*\\.potm"/>
+                <data android:pathPattern=".*\\.ppsm"/>
+                <data android:pathPattern=".*\\.doc"/>
+                <data android:pathPattern=".*\\.dot"/>
+                <data android:pathPattern=".*\\.wps"/>
+                <data android:pathPattern=".*\\.wpss"/>
+                <data android:pathPattern=".*\\.wpt"/>
+                <data android:pathPattern=".*\\.docx"/>
+                <data android:pathPattern=".*\\.dotx"/>
+                <data android:pathPattern=".*\\.docm"/>
+                <data android:pathPattern=".*\\.dotm"/>
+                <data android:pathPattern=".*\\.rtf"/>
+                <data android:pathPattern=".*\\.xls"/>
+                <data android:pathPattern=".*\\.xlt"/>
+                <data android:pathPattern=".*\\.et"/>
+                <data android:pathPattern=".*\\.ets"/>
+                <data android:pathPattern=".*\\.ett"/>
+                <data android:pathPattern=".*\\.xlsx"/>
+                <data android:pathPattern=".*\\.xltx"/>
+                <data android:pathPattern=".*\\.csv"/>
+                <data android:pathPattern=".*\\.xlsb"/>
+                <data android:pathPattern=".*\\.xlsm"/>
+                <data android:pathPattern=".*\\.xltm"/>
+                <data android:pathPattern=".*\\.xml"/>
+                <data android:pathPattern=".*\\.htm"/>
+                <data android:pathPattern=".*\\.mht"/>
+                <data android:pathPattern=".*\\.mhtm"/>
+                <data android:pathPattern=".*\\.mhtml"/>
+                <data android:pathPattern=".*\\.pdf"/>
+                <data android:pathPattern=".*\\.odt"/>
+                <data android:pathPattern=".*\\.odp"/>
+                <data android:pathPattern=".*\\.ods"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:name="cn.wps.moffice.documentmanager.PreStartActivity" android:taskAffinity="cn.wps.moffice_i18n.prestar" android:theme="@style/OfficeAppTheme.Transparent.NoTranslucentNavigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="ksofatracking"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="mo.wps.cn" android:scheme="moffice"/>
+            </intent-filter>
+            <meta-data android:name="com.huawei.android.quickaction.quick_action_service" android:value="cn.wps.moffice.main.HWQuickActionService"/>
+        </activity>
+        <service android:name="cn.wps.moffice.main.HWQuickActionService" android:permission="com.huawei.android.permission.BIND_QUICK_ACTION_SERVICE">
+            <intent-filter>
+                <action android:name="com.huawei.android.quickaction.QuickActionService"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="cn.wps.moffice.main.SearchQuickAction"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="cn.wps.moffice.main.AllDocAction"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="cn.wps.moffice.main.NewDocAction"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="cn.wps.moffice.main.ScanQrCodeAction"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="cn.wps.moffice.main.fileselect.FileSelectActivity" android:process=":fileselect" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.Writer" android:process=":writer" android:taskAffinity="cn.wps.moffice_i18n.writer" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer1" android:process=":writer1" android:taskAffinity="cn.wps.moffice_i18n.writer1" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer2" android:process=":writer2" android:taskAffinity="cn.wps.moffice_i18n.writer2" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer3" android:process=":writer3" android:taskAffinity="cn.wps.moffice_i18n.writer3" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer4" android:process=":writer4" android:taskAffinity="cn.wps.moffice_i18n.writer4" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer5" android:process=":writer5" android:taskAffinity="cn.wps.moffice_i18n.writer5" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer6" android:process=":writer6" android:taskAffinity="cn.wps.moffice_i18n.writer6" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer7" android:process=":writer7" android:taskAffinity="cn.wps.moffice_i18n.writer7" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer8" android:process=":writer8" android:taskAffinity="cn.wps.moffice_i18n.writer8" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer9" android:process=":writer9" android:taskAffinity="cn.wps.moffice_i18n.writer9" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer10" android:process=":writer10" android:taskAffinity="cn.wps.moffice_i18n.writer10" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer11" android:process=":writer11" android:taskAffinity="cn.wps.moffice_i18n.writer11" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer12" android:process=":writer12" android:taskAffinity="cn.wps.moffice_i18n.writer12" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer13" android:process=":writer13" android:taskAffinity="cn.wps.moffice_i18n.writer13" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer14" android:process=":writer14" android:taskAffinity="cn.wps.moffice_i18n.writer14" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer15" android:process=":writer15" android:taskAffinity="cn.wps.moffice_i18n.writer15" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer16" android:process=":writer16" android:taskAffinity="cn.wps.moffice_i18n.writer16" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer17" android:process=":writer17" android:taskAffinity="cn.wps.moffice_i18n.writer17" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer18" android:process=":writer18" android:taskAffinity="cn.wps.moffice_i18n.writer18" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer19" android:process=":writer19" android:taskAffinity="cn.wps.moffice_i18n.writer19" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.writer.multiactivity.Writer20" android:process=":writer20" android:taskAffinity="cn.wps.moffice_i18n.writer20" android:theme="@style/WriterTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.PDFReader" android:process=":pdfreader" android:taskAffinity="cn.wps.moffice_i18n.pdfreader" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader1" android:process=":pdfreader1" android:taskAffinity="cn.wps.moffice_i18n.pdfreader1" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader2" android:process=":pdfreader2" android:taskAffinity="cn.wps.moffice_i18n.pdfreader2" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader3" android:process=":pdfreader3" android:taskAffinity="cn.wps.moffice_i18n.pdfreader3" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader4" android:process=":pdfreader4" android:taskAffinity="cn.wps.moffice_i18n.pdfreader4" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader5" android:process=":pdfreader5" android:taskAffinity="cn.wps.moffice_i18n.pdfreader5" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader6" android:process=":pdfreader6" android:taskAffinity="cn.wps.moffice_i18n.pdfreader6" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader7" android:process=":pdfreader7" android:taskAffinity="cn.wps.moffice_i18n.pdfreader7" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader8" android:process=":pdfreader8" android:taskAffinity="cn.wps.moffice_i18n.pdfreader8" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader9" android:process=":pdfreader9" android:taskAffinity="cn.wps.moffice_i18n.pdfreader9" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader10" android:process=":pdfreader10" android:taskAffinity="cn.wps.moffice_i18n.pdfreader10" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader11" android:process=":pdfreader11" android:taskAffinity="cn.wps.moffice_i18n.pdfreader11" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader12" android:process=":pdfreader12" android:taskAffinity="cn.wps.moffice_i18n.pdfreader12" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader13" android:process=":pdfreader13" android:taskAffinity="cn.wps.moffice_i18n.pdfreader13" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader14" android:process=":pdfreader14" android:taskAffinity="cn.wps.moffice_i18n.pdfreader14" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader15" android:process=":pdfreader15" android:taskAffinity="cn.wps.moffice_i18n.pdfreader15" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader16" android:process=":pdfreader16" android:taskAffinity="cn.wps.moffice_i18n.pdfreader16" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader17" android:process=":pdfreader17" android:taskAffinity="cn.wps.moffice_i18n.pdfreader17" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader18" android:process=":pdfreader18" android:taskAffinity="cn.wps.moffice_i18n.pdfreader18" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader19" android:process=":pdfreader19" android:taskAffinity="cn.wps.moffice_i18n.pdfreader19" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_pdf" android:label="@string/activity_label_pdf" android:launchMode="singleTask" android:name="cn.wps.moffice.pdf.multiactivity.PDFReader20" android:process=":pdfreader20" android:taskAffinity="cn.wps.moffice_i18n.pdfreader20" android:theme="@style/PdfTheme" android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.MultiSpreadSheet" android:process=":spreadsheet" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet1" android:process=":spreadsheet1" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet1" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet2" android:process=":spreadsheet2" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet2" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet3" android:process=":spreadsheet3" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet3" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet4" android:process=":spreadsheet4" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet4" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet5" android:process=":spreadsheet5" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet5" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet6" android:process=":spreadsheet6" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet6" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet7" android:process=":spreadsheet7" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet7" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet8" android:process=":spreadsheet8" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet8" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet9" android:process=":spreadsheet9" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet9" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet10" android:process=":spreadsheet10" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet10" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet11" android:process=":spreadsheet11" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet11" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet12" android:process=":spreadsheet12" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet12" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet13" android:process=":spreadsheet13" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet13" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet14" android:process=":spreadsheet14" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet14" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet15" android:process=":spreadsheet15" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet15" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet16" android:process=":spreadsheet16" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet16" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet17" android:process=":spreadsheet17" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet17" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet18" android:process=":spreadsheet18" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet18" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet19" android:process=":spreadsheet19" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet19" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_et" android:label="@string/activity_label_et" android:launchMode="singleTask" android:name="cn.wps.moffice.spreadsheet.multiactivity.Spreadsheet20" android:process=":spreadsheet20" android:taskAffinity="cn.wps.moffice_i18n.spreadsheet20" android:theme="@style/SpreadsheetTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.MultiPresentation" android:process=":presentation" android:taskAffinity="cn.wps.moffice_i18n.presentation" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation1" android:process=":presentation1" android:taskAffinity="cn.wps.moffice_i18n.presentation1" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation2" android:process=":presentation2" android:taskAffinity="cn.wps.moffice_i18n.presentation2" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation3" android:process=":presentation3" android:taskAffinity="cn.wps.moffice_i18n.presentation3" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation4" android:process=":presentation4" android:taskAffinity="cn.wps.moffice_i18n.presentation4" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation5" android:process=":presentation5" android:taskAffinity="cn.wps.moffice_i18n.presentation5" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation6" android:process=":presentation6" android:taskAffinity="cn.wps.moffice_i18n.presentation6" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation7" android:process=":presentation7" android:taskAffinity="cn.wps.moffice_i18n.presentation7" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation8" android:process=":presentation8" android:taskAffinity="cn.wps.moffice_i18n.presentation8" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation9" android:process=":presentation9" android:taskAffinity="cn.wps.moffice_i18n.presentation9" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation10" android:process=":presentation10" android:taskAffinity="cn.wps.moffice_i18n.presentation10" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation11" android:process=":presentation11" android:taskAffinity="cn.wps.moffice_i18n.presentation11" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation12" android:process=":presentation12" android:taskAffinity="cn.wps.moffice_i18n.presentation12" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation13" android:process=":presentation13" android:taskAffinity="cn.wps.moffice_i18n.presentation13" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation14" android:process=":presentation14" android:taskAffinity="cn.wps.moffice_i18n.presentation14" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation15" android:process=":presentation15" android:taskAffinity="cn.wps.moffice_i18n.presentation15" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation16" android:process=":presentation16" android:taskAffinity="cn.wps.moffice_i18n.presentation16" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation17" android:process=":presentation17" android:taskAffinity="cn.wps.moffice_i18n.presentation17" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation18" android:process=":presentation18" android:taskAffinity="cn.wps.moffice_i18n.presentation18" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation19" android:process=":presentation19" android:taskAffinity="cn.wps.moffice_i18n.presentation19" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_ppt" android:label="@string/activity_label_ppt" android:launchMode="singleTask" android:name="cn.wps.moffice.presentation.multiactivity.Presentation20" android:process=":presentation20" android:taskAffinity="cn.wps.moffice_i18n.presentation20" android:theme="@style/PptTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:multiprocess="false" android:name="cn.wps.moffice.note.main.NoteMainActivity" android:process=":note" android:resizeableActivity="false" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:multiprocess="false" android:name="cn.wps.moffice.note.edit.EditNoteActivity" android:process=":note" android:resizeableActivity="false" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:exported="false" android:hardwareAccelerated="true" android:multiprocess="false" android:name="cn.wps.moffice.note.search.SearchActivity" android:process=":note" android:resizeableActivity="false" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:name="cn.wps.moffice.note.PermissionHandleActivity" android:process=":note" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+            <intent-filter>
+                <action android:name="com.permission.handle.activity.action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="cn.wps.moffice.note.noteservice.core.NoteService" android:process=":note"/>
+        <meta-data android:name="cn.wps.moffice.note.GlideCache" android:value="GlideModule"/>
+        <service android:name="cn.wps.moffice.appupdate.AppUpdateService" android:process="cn.wps.moffice_i18n"/>
+        <service android:exported="false" android:name="cn.wps.moffice.main.cloud.roaming.service.WPSQingService">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.qing.service"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="cn.wps.moffice.main.ttsservice.TTSService" android:process=":tts">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.tts.service"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="cn.wps.moffice.main.ttsservice.TTSNotificationDealService">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.tts.notificationService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="cn.wps.moffice.main.ttsservice.MediaButtonBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="cn.wps.moffice.main.cloud.storage.core.service.CSService">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.main.cloud.storage.core.service.action"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="cn.wps.impress.test.selfvalidate.lmj.TestServiceActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:icon="@drawable/public_icon_activity_writer" android:label="@string/activity_label_writer" android:launchMode="singleTask" android:name="cn.wps.moffice.main.PublicTestActivity" android:process=":writer20" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="cn.wps.moffice.common.scanqrcode.BaseWebViewActivity"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent100792067"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/public_app_name" android:multiprocess="true" android:name="cn.wps.moffice_eng.wxapi.WXEntryActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/public_app_name" android:multiprocess="true" android:name="cn.wps.moffice.wxapi.WXEntryActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:label="@string/public_app_name" android:name="cn.wps.moffice_eng.wxapi.WBEntryActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation" android:exported="false" android:name="com.xiaomi.account.openauth.AuthorizeActivity" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.xiaomi.account.openauth.action.AUTH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.common.shareplay.StartPcControlerActivity" android:noHistory="true" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/OfficeAppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="shareplay_remote" android:scheme="ksoapp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.remotecontrol.PhoneRemoteControllerActivity" android:process=":shareplay" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.shareplay" android:theme="@style/HomeTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="cn.wps.moffice.main.local.home.forum.ForumHomeActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="true" android:hardwareAccelerated="true" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.push.common.PopUpTranslucentAciivity" android:screenOrientation="portrait" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme.Transparent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="true" android:name="cn.wps.moffice.main.PaymentTransferActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.main.premium.MemberShipJumpPaySuccessActivity" android:noHistory="true" android:theme="@style/OfficeAppTheme.Transparent"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:multiprocess="false" android:name="cn.wps.moffice.main.local.appsetting.assistant.fileradar.FloatTipsActivity" android:noHistory="true" android:process=":pushservice" android:theme="@style/TransparentActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleInstance" android:multiprocess="false" android:name="cn.wps.moffice.main.sniffermonitorad.ui.AdFloatActivity" android:noHistory="true" android:process=":pushservice" android:taskAffinity="cn.wps.moffice_i18n.adfloat" android:theme="@style/TransparentWithTitleActivity"/>
+        <activity android:excludeFromRecents="true" android:hardwareAccelerated="true" android:multiprocess="true" android:name="cn.wps.moffice.common.interstitial.MoPubNativeInterstitialAdsActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="mul00004"/>
+        <meta-data android:name="Lenovo_Build_Info" android:value="88888"/>
+        <meta-data android:name="com.baidu.netdisk.sdk.app_id" android:value="100"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="android.content.APP_RESTRICTIONS" android:resource="@xml/app_restrictions"/>
+        <receiver android:label="@string/public_new_appwidget_name" android:name="cn.wps.widget.MofficeAppWidgetProvider_4x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="cn.wps.widget.NEWFILE"/>
+                <action android:name="cn.wps.widget.OPEN"/>
+                <action android:name="cn.wps.widget.NEXT"/>
+                <action android:name="cn.wps.widget.PREV"/>
+                <action android:name="ACTION_APP_WIDGET_RELOAD"/>
+                <action android:name="ACTION_APP_WIDGET_REQUEST_HISTORY_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/moffice_appwidget_4x2"/>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="cn.wps.moffice.service.impl.MOfficeService" android:process=":mofficeservice">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.service.OfficeService"/>
+                <action android:name="cn.wps.moffice.service.OemService"/>
+                <action android:name="cn.wps.moffice.service.OemInnerService"/>
+            </intent-filter>
+        </service>
+        <service android:name="cn.wps.moffice.spellcheck.service.SpellService" android:process=":spellcheck"/>
+        <service android:exported="false" android:name="cn.wps.moffice.backup.BackupService"/>
+        <provider android:authorities="cn.wps.moffice_i18n.provider" android:exported="false" android:grantUriPermissions="true" android:name="cn.wps.moffice.provider.MofficeProvider"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="cn.wps.moffice.crash.CrashActivity" android:noHistory="true" android:process=":crash" android:taskAffinity="cn.wps.moffice_i18n.crash" android:theme="@style/CrashAppTheme"/>
+        <service android:exported="false" android:name="cn.wps.moffice.service.CrashLogSenderService" android:process=":crash"/>
+        <service android:exported="false" android:name="cn.wps.moffice.feedback.upload.FeedbackSenderService"/>
+        <activity android:excludeFromRecents="true" android:name="cn.wps.moffice.deskshortcut.DeskShortcutEnterActivity" android:theme="@style/DeskShortcutHandlerTheme">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.intent.action.send.deskshortcut"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="cn.wps.moffice.main.gcm.RegistrationIntentService" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="cn.wps.moffice.main.gcm.MyGcmListenerService" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:multiprocess="true" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:theme="@style/HomeTheme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:multiprocess="true" android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:process=":gcmpush"/>
+        <activity android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:process=":gcmpush"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService" android:process=":gcmpush"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="cn.wps.moffice_i18n"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver" android:process=":gcmpush"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:process=":gcmpush">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="cn.wps.moffice_i18n.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider" android:process=":gcmpush"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:multiprocess="true" android:name="cn.wps.moffice.common.MoPubBrowserShell"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:hardwareAccelerated="true" android:launchMode="singleTask" android:multiprocess="true" android:name="cn.wps.moffice.common.interstitial.MoPubInterstitialAdActivity" android:screenOrientation="portrait" android:theme="@style/HomeTheme.Transparent"/> //facebook全屏插页广告
+<activity android:excludeFromRecents="true" android:multiprocess="true" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <service android:name="cn.wps.moffice.service.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:exported="true" android:name="cn.wps.moffice.service.SyncService" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter"/>
+        </service>
+        <service android:name="cn.wps.moffice.service.WakeService"/>
+        <provider android:authorities="cn.wps.moffice_i18n.sync.provider" android:exported="false" android:name="cn.wps.moffice.sync.StubProvider" android:syncable="true"/>
+        <service android:name="cn.wps.moffice.service.GcmControlService" android:process=":gcmpush"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:hardwareAccelerated="true" android:label="@string/home_wps_assistant" android:launchMode="singleTask" android:name="cn.wps.moffice.main.shortcut.fastaccess.FastAccessActivity" android:screenOrientation="portrait" android:stateNotNeeded="true" android:taskAffinity="cn.wps.moffice_i18n.shortcut" android:theme="@style/ShortcutTheme"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/home_wps_assistant" android:launchMode="singleTask" android:name="cn.wps.moffice.main.shortcut.fastaccess.ChooseFastAccessActivity" android:stateNotNeeded="true" android:taskAffinity="cn.wps.moffice_i18n.shortcut" android:theme="@style/ShortcutTheme">
+            <intent-filter>
+                <category android:name="cn.wps.moffice.main.shortcut.fastacess.SELECT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/home_wps_assistant" android:launchMode="singleTask" android:name="cn.wps.moffice.foldermanager.shortcut.FolderManagerActivity" android:stateNotNeeded="true" android:taskAffinity="cn.wps.moffice_i18n.shortcut" android:theme="@style/ShortcutTheme"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.foldermanager.shortcut.FolderManagerFindBigFileActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:launchMode="singleTask" android:multiprocess="false" android:name="cn.wps.moffice.foldermanager.CommonFolderActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme_HomeActivity"/>
+        <activity android:hardwareAccelerated="true" android:launchMode="singleTop" android:multiprocess="true" android:name="cn.wps.moffice.common.infoflow.internal.cards.video.SingleActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:icon="@drawable/public_home_icon" android:name="cn.wps.moffice.common.download.extlibs.task.NetConfirmDialogActivity" android:process=":gcmpush" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="false" android:name="cn.wps.moffice.common.download.extlibs.service.DownloadService" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.download.service"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.cser.clouddocs.groupsettingactivity.CloudDocsTeamSettingActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.cser.clouddocs.eventactivity.EventActivity" android:taskAffinity="cn.wps.moffice_i18n.lancher" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.storage.cser.clouddocs.padmenuactivity.GroupSettingActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.drive.WPSDriveGroupEventsActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:icon="@drawable/public_home_icon" android:multiprocess="false" android:name="cn.wps.moffice.main.cloud.drive.WPSDriveGroupSettingActivity" android:theme="@style/HomeTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <service android:exported="false" android:name="cn.wps.moffice.filedownload.ext.FileDownloadService" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="cn.wps.moffice.filedownload.ext.FileDownloadService"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:hardwareAccelerated="true" android:multiprocess="true" android:name="com.inmobi.rendering.InMobiAdActivity" android:resizeableActivity="false" android:theme="@android:style/Theme.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.power.PowerReceiver" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|orientation" android:excludeFromRecents="true" android:multiprocess="true" android:name="com.mobpower.ad.appwall.ui.AppwallActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <meta-data android:name="AD_AGENT_APPKEY" android:value="7cdd4aa9fd0face6617fe7fc9031a2b2"/>
+        <meta-data android:name="AD_AGENT_SECRET" android:value="fd298b3954047d7bff25197d9c7dbc22"/>
+        <receiver android:name="com.kika.pluto.filter.KoalaAppInstallReceiver" android:process=":gcmpush">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:name="cn.wps.moffice.main.push.service.JumpSDKActivity" android:theme="@style/jump_activity_theme"/>
+        <receiver android:name="cn.wps.moffice.main.push.util.PushPenetrateMsgReceiver">
+            <intent-filter>
+                <action android:name="push_msg.wps.common.PushPenetrateMsgReceiver"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.alibaba.app.appkey" android:value="23368278"/>
+        <meta-data android:name="com.alibaba.app.applink.backurl" android:value="moffice://mo.wps.cn"/>
+        <provider android:authorities="cn.wps.moffice_i18n.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="cn.wps.moffice.provider.MofficeFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <provider android:authorities="cn.wps.moffice_i18n.preferences" android:exported="false" android:multiprocess="false" android:name="cn.wps.moffice.persistence.AppDataProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mobpower.video.ui.VideoADActivity"/>
+        <service android:multiprocess="true" android:name="com.appnext.core.AdsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.base.services.OperationService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.appnext.base.services.ReceiverService" android:persistent="true"/>
+        <receiver android:enabled="true" android:name="com.appnext.base.receivers.imp.bootreceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTop" android:name="com.appnext.core.ResultActivity"/>
+        <activity android:name="cn.wps.note.edit.EditorActivity" android:theme="@style/AppTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="cn.wps.note.edit.share.NoteShareActivity" android:process=":note" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar.TransparentStatus.Share"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:name="cn.wps.note.edit.ui.pic.photoview.PhotoViewActivity" android:process=":note" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/AppTheme.NoActionBar.TransparentStatus.PhotoView"/>
+    </application>
+</manifest>

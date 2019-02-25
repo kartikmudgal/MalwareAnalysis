@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="preferExternal" package="jp.co.goodia.WallJumper" platformBuildVersionCode="14" platformBuildVersionName="4.0.2-1406408">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name=".WallJumper" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="orientation" android:label="@string/app_name" android:name=".SplashActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="jp.co.goodia.WallJumper" android:scheme="WallJumper"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="gamefeat_site_id" android:value="2763"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="GameFeat" android:name="jp.basicinc.gamefeat.android.sdk.view.GameFeatAppActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="GameFeat" android:name="jp.basicinc.gamefeat.android.sdk.view.GameFeatAppChildActivity" android:screenOrientation="sensor"/>
+        <receiver android:enabled="true" android:exported="false" android:name="jp.basicinc.gamefeat.android.sdk.receiver.GameFeatBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.ads.AdActivity"/>
+        <meta-data android:name="i-mobile_Publisher_ID" android:value="10529"/>
+        <service android:name=".rankplat.RankPlatService"/>
+        <activity android:name="net.gree.reward.sdk.GreeRewardPromotionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize" android:name="com.inmobi.androidsdk.IMBrowserActivity"/>
+    </application>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+</manifest>

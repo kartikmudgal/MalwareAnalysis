@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.fc2.web.takemovies.yokohamaenglishgarden1">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <uses-library android:name="com.google.android.maps"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="jp.live_aid.aid.DEFAULT_CREATIVE_STYLE" android:value="POPUP_IMAGE"/>
+        <activity android:label="@string/title_activity_main" android:name=".ControlActivities" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name=".HelloGridView" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".Activity2"/>
+        <activity android:label="@string/app_name" android:name=".HtmlViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".HtmlViewActivityUrl1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".GameMenuConActivity1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".PazzleGameActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".PazzleGameActivity2" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".PazzleGameActivity3" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".PazzleGameActivity4" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".GameBlockSP1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".GameBlockTB1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".TodayNewsCon1" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsGoogle" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsYahoo" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsNikkei" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsMainichi" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsAsahi" android:screenOrientation="portrait"/>
+        <activity android:label="@string/app_name" android:name=".NewsLivedoor" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.millennialmedia.android.MMActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="true" android:name="jp.maru.mrd.CvReceiver">
+            <intent-filter>
+                <action android:name="jp.maru.mrd.ACTION_CV"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="jp.maru.mrd.CvReporter"/>
+    </application>
+</manifest>

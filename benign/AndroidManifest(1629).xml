@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="tw.com.hme.androidviewer" platformBuildVersionCode="14" platformBuildVersionName="4.0.2-1406408">
+    <permission android:name="tw.com.hme.androidviewer.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="tw.com.hme.androidviewer.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:largeHeap="true">
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".ADvrViewerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="tw.com.hme.androidviewer"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="tw.com.hme.androidviewer"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name=".DecoderActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/device_info_name" android:name=".ModifyActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/device_list_name" android:name=".ListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/message_center_name" android:name=".MessageListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/PushNotifyConfigPage" android:name=".DvrNotifyConfigActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/PushNotifyFilterListPage" android:name=".DvrNotifyFilterListActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/message_center_name" android:name=".RemoteControlActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.google.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

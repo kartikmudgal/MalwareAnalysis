@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rayin.scanner">
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:logo="@drawable/nav_menu_selector" android:name="com.rayin.scanner.App" android:theme="@style/KokTheme">
+        <activity android:name="WelcomeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.rayin.scanner.PanelActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter android:label="@string/use_kok">
+                <action android:name="android.intent.action.INSERT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/person"/>
+                <data android:mimeType="vnd.android.cursor.dir/contact"/>
+                <data android:mimeType="vnd.android.cursor.dir/raw_contact"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.rayin.scanner.cardcase.ContactDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.rayin.scanner.cardcase.ContactEditActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden"/>
+        <service android:name="com.rayin.scanner.sync.SyncService"/>
+        <service android:name="com.rayin.scanner.sync.MsgService"/>
+        <service android:name=".carddeal.OCRService"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|touchscreen|uiMode" android:name="com.rayin.scanner.VoiceRecordActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.rayin.scanner.cardaudit.CardAuditActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="scanner.intent.action.EIDT_NEW_CARD"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:name="com.rayin.scanner.cardcapture.PreviewActivity" android:screenOrientation="landscape" android:stateNotNeeded="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name=".carddeal.CardDealActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Sherlock.NoActionBar">
+            <intent-filter>
+                <action android:name="scanner.intent.action.HANDLE_CAP_PIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="scanner.intent.action.HANDLE_PICK_PIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.rayin.scanner.cardaudit.CardAuditAddActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.rayin.scanner.cardaudit.CardAuditEditActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.rayin.scanner.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.rayin.scanner.AppUnionActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="false" android:name="com.rayin.scanner.SelectPictureActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="scanner.intent.action.SELECT_PIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.rayin.scanner.cardcase.BatchContactProcessActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:label="@string/app_name" android:name="com.rayin.scanner.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="sdksample"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:name=".wxapi.SendToWxActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".wxapi.ShowFromWXActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".user.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".user.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".user.ForgetActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name=".user.CheckEmailActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name=".user.ResetPwdActivity"/>
+        <activity android:name="com.rayin.scanner.cardcase.ImportFromSystemActivity" android:screenOrientation="portrait" android:theme="@style/KokImportTheme"/>
+        <activity android:name="com.rayin.scanner.export.ExportContactActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.rayin.scanner.secondaryfunction.SelectActivity" android:screenOrientation="portrait" android:theme="@style/KokImportTheme"/>
+        <activity android:configChanges="keyboard|orientation" android:launchMode="singleTask" android:name="com.umeng.socialize.view.ShareActivity" android:noHistory="true" android:theme="@style/Theme.UMDialog" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentActivity" android:theme="@style/Theme.UMDefault"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentDetail" android:noHistory="true" android:theme="@style/Theme.UMDefault"/>
+        <activity android:configChanges="keyboard|orientation" android:name="com.umeng.socialize.view.CommentDetailNoMap" android:noHistory="true" android:theme="@style/Theme.UMDefault"/>
+        <activity android:name="com.umeng.fb.ui.SendFeedback" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.umeng.fb.ui.FeedbackConversations"/>
+        <activity android:configChanges="keyboard" android:name="com.umeng.fb.ui.FeedbackConversation"/>
+        <provider android:authorities="com.rayin.scanner.contactprovider" android:exported="false" android:name="com.rayin.scanner.db.ContactProvider"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="appchina"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="5018e5ed5270153625000005"/>
+        <service android:exported="false" android:name="com.umeng.common.net.DownloadingService" android:process=":DownloadingService"/>
+        <receiver android:name="com.rayin.scanner.wxapi.AppRegister" android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

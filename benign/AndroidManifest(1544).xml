@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="nl.vdlp.ifks">
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:allowBackup="true" android:allowClearUserData="true" android:icon="@drawable/ic_launcher" android:killAfterRestore="false" android:label="@string/app_name" android:restoreAnyVersion="false" android:theme="@style/sksApp">
+        <activity android:label="@string/app_name" android:name=".SkutsjeActivity" android:screenOrientation="nosensor" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".NieuwsActivity"/>
+        <activity android:name=".NieuwsItemDetailActivity"/>
+        <activity android:name=".DaguitslagDetailActivity"/>
+        <activity android:name=".KlassementActivity"/>
+        <activity android:name=".AgendaActivity"/>
+        <activity android:name=".AgendaItemDetailActivity"/>
+        <activity android:name=".SkutsjesActivity"/>
+        <activity android:name=".MediaActivity"/>
+        <activity android:name=".InfoActivity"/>
+        <activity android:name=".SkutsjeDetailActivity"/>
+        <activity android:name=".WebActivity"/>
+        <activity android:name=".LinksActivity"/>
+        <activity android:name=".YouTubeActivity"/>
+        <activity android:name=".OmropFryslanRadioActivity"/>
+        <activity android:name=".OmropFryslanTvActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA3T3xhYGCW0qo0d3poYsW48rP1VYTAw4E"/>
+    </application>
+</manifest>

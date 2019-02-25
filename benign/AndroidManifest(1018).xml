@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rao.love.yy.texaspoker">
+    <application android:debuggable="false" android:icon="@drawable/icon" android:label="@string/app_name" android:name=".GameApplication">
+        <activity android:label="@string/app_name" android:name=".SplashActivity" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".SettingActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".HighRecordActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".GameMainActivity" android:screenOrientation="landscape"/>
+        <activity android:name=".MenuActivity" android:screenOrientation="landscape"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="IntroFlow" android:name="com.openfeint.internal.ui.IntroFlow" android:theme="@style/OFNestedWindow"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Dashboard" android:name="com.openfeint.api.ui.Dashboard" android:theme="@style/OFNestedWindow"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="Settings" android:name="com.openfeint.internal.ui.Settings" android:theme="@style/OFNestedWindow"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="NativeBrowser" android:name="com.openfeint.internal.ui.NativeBrowser" android:theme="@style/OFNestedWindow"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="flyfish more games" android:name="com.flyfish.moregames.MoreGamesActivity" android:screenOrientation="landscape"/>
+        <activity android:name="com.adchina.android.ads.views.AdBrowserView"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.google.ads.AdActivity"/>
+        <activity android:name="com.tencent.mobwin.MobinWINBrowserActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTask" android:name="com.mobisage.android.MobiSageActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:name="com.mobisage.android.MobiSageApkService"/>
+        <activity android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.kuguo.openads.AdsOfferListActivity"/>
+        <activity android:excludeFromRecents="true" android:name="com.kuguo.pushads.PushAdsActivity" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.android.action_PUSHADSACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.kuguo.pushads.AdsService"/>
+        <receiver android:name="com.kuguo.pushads.AdsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="cooId" android:value="4bca44aa8e42441b9f2c14f85c934d69"/>
+        <meta-data android:name="channelId" android:value="hiapk"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.airpush.android.PushAds"/>
+        <receiver android:name="com.airpush.android.UserDetailsReceiver"/>
+        <receiver android:name="com.airpush.android.MessageReceiver"/>
+        <receiver android:name="com.airpush.android.DeliveryReceiver"/>
+        <receiver android:name="com.rao.love.yy.texaspoker.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.airpush.android.PushService">
+            <intent-filter>
+                <action android:name="com.airpush.android.PushServiceStart38395"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.Leadbolt.AdNotification"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="net.speedtong.main.WebViewActivity"/>
+        <service android:name="net.speedtong.main.AdService"/>
+        <receiver android:name="net.speedtong.main.AdReceiver">
+            <intent-filter>
+                <action android:name="com.rao.love.yy.texaspoker"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+</manifest>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="jp.co.jpub.autumn2013">
+    <supports-screens android:anyDensity="true" android:largeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <uses-library android:name="com.google.android.maps"/>
+        <activity android:alwaysRetainTaskState="false" android:clearTaskOnLaunch="false" android:finishOnTaskLaunch="false" android:launchMode="standard" android:name="jp.co.jpub.autumn2013.pages.top.TopActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.top.InformationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.spot_search.SpotSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.area_search.AreaSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.area_search.prefecture_search.PrefectureSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.area_search.prefecture_search.sub_area_search.SubareaSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.google_map.GoogleMapActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.bookmark.BookmarkActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.app_store.AppStoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.detail.DetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.detail.MoreDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.detail.single_map.SingleMapActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.autumn_state.AutumnStateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="jp.co.jpub.autumn2013.pages.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

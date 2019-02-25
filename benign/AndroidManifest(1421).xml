@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="hk.tooeasy">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <permission android:name="hk.tooeasy.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="hk.tooeasy.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name=".App" android:theme="@android:style/Theme.Light.NoTitleBar">
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.LoginActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="cn.jpush.android.ui.PushActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="hk.tooeasy"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.DownloadService"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="hk.tooeasy"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <receiver android:enabled="true" android:name="hk.tooeasy.message.MessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/>
+                <category android:name="hk.tooeasy"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="易兔消息" android:launchMode="singleTop" android:name="hk.tooeasy.message.MessageActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔消息_詳情" android:launchMode="singleTop" android:name="hk.tooeasy.message.MessageDetailActivity" android:screenOrientation="portrait"/>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="8f1128e90d1627085dee2c42"/>
+        <activity android:label="註冊" android:launchMode="singleTop" android:name="hk.tooeasy.activity.RegisterActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="hk.tooeasy.activity.directbuy.DirectBuyBaseActivity"/>
+        <activity android:label="首頁" android:launchMode="singleTask" android:name="hk.tooeasy.activity.HomeActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="hk.tooeasy.activity.TabHostActivity" android:screenOrientation="portrait"/>
+        <activity android:label="關於易兔" android:launchMode="singleTask" android:name="hk.tooeasy.activity.AboutActivity" android:screenOrientation="portrait"/>
+        <activity android:label="WebView" android:launchMode="singleTask" android:name="hk.tooeasy.activity.WelcomeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"/>
+        <activity android:label="用戶信息" android:launchMode="singleTask" android:name="hk.tooeasy.activity.UserActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="hk.tooeasy.activity.WebviewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄" android:name="hk.tooeasy.activity.RecordActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_代付記錄" android:launchMode="singleTask" android:name="hk.tooeasy.activity.records.PeerListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_支付寶購物卡" android:name="hk.tooeasy.activity.records.AlipayListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_儲值記錄" android:name="hk.tooeasy.activity.records.ChargeListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_網匯E卡" android:name="hk.tooeasy.activity.records.ECardListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_儲值記錄詳情" android:launchMode="singleTask" android:name="hk.tooeasy.activity.records.ChargeInfoHKActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_儲值記錄詳情" android:launchMode="singleTask" android:name="hk.tooeasy.activity.records.ChargeInfoTWActivity" android:screenOrientation="portrait"/>
+        <activity android:label="交易記錄_查看過數紙" android:launchMode="singleTask" android:name="hk.tooeasy.activity.records.ChargeImageActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.BankActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_輸入金額" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.ChargeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_過數方式" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.PaymethodActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_申請成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.ShowAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_輸入過數資料" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.TransferActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_上傳過數紙" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.UpPicActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔荷包儲值_儲值成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.charge.SuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:label="支付寶購物卡" android:launchMode="singleTask" android:name="hk.tooeasy.activity.card.AliCardActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="支付寶購物卡_購買成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.card.AliCardSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:label="網匯E卡" android:launchMode="singleTask" android:name="hk.tooeasy.activity.card.ECardActivity" android:screenOrientation="portrait"/>
+        <activity android:label="網匯E卡_購買成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.card.ECardSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔代付" android:launchMode="singleTask" android:name="hk.tooeasy.activity.peer.PeerActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔代付_複製支付寶賬號" android:launchMode="singleTask" android:name="hk.tooeasy.activity.peer.GetAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔代付_綁定支付寶帳號" android:launchMode="singleTask" android:name="hk.tooeasy.activity.peer.InputAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔代付_確認申請" android:launchMode="singleTask" android:name="hk.tooeasy.activity.peer.PeerConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.TransPortActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.TransPortTabhostActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_新增登記" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.RecordGoodsActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_新增登記" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.RecordGoodsTWActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_登記成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.RecordSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_集運訂單信息" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_訂單詳情" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareOrderDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_訂單詳情" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareOrderDetailTWActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_入庫詳情" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareHouseDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_支付確認" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareOrderConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_支付成功" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareOrderSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_自取服務" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareSelfActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_快遞服務" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.WareExpressActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_收貨地址設置" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.SetAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_添加收貨地址" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.AddAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:label="易兔集運_二維碼" android:launchMode="singleTask" android:name="hk.tooeasy.activity.transport.QueryEcodingActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="hk.tooeasy.activity.directbuy.MainActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.SearchActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Translucent"/>
+        <activity android:name="hk.tooeasy.activity.directbuy.GoodsListWaterFallActivity" android:screenOrientation="portrait"/>
+        <activity android:name="hk.tooeasy.activity.directbuy.GoodsListNormalActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.GoodsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.GoodsImageActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.MoreGoodsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.GoodsEvaluateActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.OrderConfirmActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.SelectServiceActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.SelfServiceInputActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.UserCenterActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.ManageAddressActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.FavoriteListActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.ShoppingCartListActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.OrderListActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.DeliverSelectServiceActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.OrderDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="hk.tooeasy.activity.directbuy.ExpressDetailActivity" android:screenOrientation="portrait"/>
+        <uses-library android:name="android.test.runner"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+    <instrumentation android:name="android.test.InstrumentationTestRunner" android:targetPackage="hk.tooeasy"/>
+</manifest>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.mobitronix.gauravchauhan.alarmplus.free" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.mobitronix.gauravchauhan.alarmplus.free.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.mobitronix.gauravchauhan.alarmplus.free.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@mipmap/launcher_icon" android:label="@string/app_name" android:name="com.example.gauravchauhan.alarmplus.Application.MyApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <provider android:authorities="com.your.package.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.example.gauravchauhan.alarmplus.FileProvider.MyOwnFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:launchMode="singleTop" android:name="com.example.gauravchauhan.alarmplus.Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <receiver android:enabled="true" android:exported="true" android:name="com.example.gauravchauhan.alarmplus.BroadcastReceivers.SystemRebootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.example.gauravchauhan.alarmplus.BroadcastReceivers.WakefulBCastReceiver"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.AlarmTriggeredActivity" android:screenOrientation="portrait" android:theme="@style/TriggeredActivtyFullscreenTheme"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.example.gauravchauhan.alarmplus.BroadcastReceivers.WakefulBCastReceiverTriggeredActivity"/>
+        <service android:exported="false" android:name="com.example.gauravchauhan.alarmplus.Services.AlarmNotificationService"/>
+        <service android:exported="false" android:name="com.example.gauravchauhan.alarmplus.Services.DetectAppClosed_startService"/>
+        <service android:exported="false" android:name="com.example.gauravchauhan.alarmplus.Services.DatabaseRestoreIntentService"/>
+        <service android:exported="false" android:name="com.example.gauravchauhan.alarmplus.Services.ReschedRestoredAlarmsIntentService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.example.gauravchauhan.alarmplus.Services.TimeAnnounceService"/>
+        <activity android:label="@string/title_activity_settings" android:name="com.example.gauravchauhan.alarmplus.Activity.SettingsActivity" android:theme="@style/AppThemeSettings"/>
+        <activity android:label="@string/title_widget_settings" android:name="com.example.gauravchauhan.alarmplus.Activity.WidgetActivity" android:theme="@style/AppThemeSettings"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.RestoreActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.BuyProActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.RateUsActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.ContactUsActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.RestoreFromDefaultLocationActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.ContactAppDeveloperActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.ShareAppActivity"/>
+        <activity android:name="com.example.gauravchauhan.alarmplus.Activity.TutorialsActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.mobitronix.gauravchauhan.alarmplus.free"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.mobitronix.gauravchauhan.alarmplus.free.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+    </application>
+</manifest>

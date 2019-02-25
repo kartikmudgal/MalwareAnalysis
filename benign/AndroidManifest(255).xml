@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.chrystianvieyra.physicstoolboxsuite" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <service android:enabled="true" android:name="com.chrystianvieyra.physicstoolboxsuite.GPSService"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/app_name" android:name="com.chrystianvieyra.physicstoolboxsuite.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesActivity" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesGyroscope" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesMagnetometer" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesAccelerometer" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesLinear" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesLight" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesSound" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesColor" android:theme="@style/SettingsTheme"/>
+        <activity android:label="@string/app_name" android:name="com.chrystianvieyra.physicstoolboxsuite.Intro"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesTone" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesRoller" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesThermometer" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesHygrometer" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesBarometer" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesGPS" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesRuler" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesOrientation" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesProximeter" android:theme="@style/SettingsTheme"/>
+        <activity android:name="com.chrystianvieyra.physicstoolboxsuite.PreferencesAltimeter" android:theme="@style/SettingsTheme"/>
+        <activity android:label="@string/calibrate_gforce" android:name="com.chrystianvieyra.physicstoolboxsuite.CalibrateGForceFragment" android:theme="@style/AppTheme"/>
+        <activity android:label="@string/calibrate_linear_accelerometer" android:name="com.chrystianvieyra.physicstoolboxsuite.CalibrateLinearActivity" android:theme="@style/AppTheme"/>
+        <activity android:label="@string/app_name" android:name="com.nononsenseapps.filepicker.FilePickerActivity" android:theme="@style/FilePickerTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.2"/>
+    </application>
+</manifest>

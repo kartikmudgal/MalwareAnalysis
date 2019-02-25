@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.litewhite.callblocker" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/theme">
+        <receiver android:name="org.litewhite.callblocker.BootReceiver">
+            <intent-filter>
+                <action android:name="org.litewhite.callblocker.BootReceiver"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="org.litewhite.callblocker.ResetReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.MainActivity" android:theme="@style/transparent_light_theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.CallLogActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.ContactsActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.SettingsActivity"/>
+        <service android:name="org.litewhite.callblocker.service.CallBlockerService" android:stopWithTask="false"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.AboutActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.WhitelistActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.PermissionsScreenActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="org.litewhite.callblocker.activity.LockScreenActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="org.litewhite.callblocker.activity.FacebookInterstitialAdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="org.litewhite.callblocker.activity.TransparentActivity" android:theme="@style/transparent_light_theme"/>
+        <receiver android:name="org.litewhite.callblocker.service.CallReceiver">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="org.litewhite.callblocker.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.0"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.appbrain.AppBrainActivity"/>
+        <service android:name="com.appbrain.AppBrainService"/>
+        <receiver android:exported="true" android:name="com.appbrain.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

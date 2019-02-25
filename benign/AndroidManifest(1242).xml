@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="internalOnly" package="com.trendmicro.freetmms.gmobi" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="com.trendmicro.androidmup.MUP_PRODUCTS_COMMUNICATION"/>
+    <permission android:name="com.trendmicro.androidmup.ACCESS_TMMSMU_REMOTE_SERVICE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.trendmicro.androidmup.ACCESS_TMMSMU_REMOTE_SERVICE"/>
+    <permission android:name="com.trendmicro.freetmms.gmobi.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.trendmicro.InternalBroadcast"/>
+    <uses-permission android:name="com.trendmicro.freetmms.gmobi.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.trendmicro.InternalBroadcast"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="com.trendmicro.socialprivacyscanner.provider.ACCESS_DATA"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+    <service android:enabled="true" android:name="com.trendmicro.tmmssuite.core.util.QueryPackageService" android:process=":qry_pkg_process"/>
+    <receiver android:name="com.trendmicro.tmmssuite.antimalware.rtscan.RtScanReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+            <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:scheme="package"/>
+        </intent-filter>
+    </receiver>
+    <provider android:authorities="com.trendmicro.tmmssuite.provider.scanhistory.gmobi" android:exported="false" android:grantUriPermissions="true" android:name="com.trendmicro.tmmssuite.antimalware.provider.ScanHistoryProvider"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/ic_launch" android:label="@string/app_name" android:manageSpaceActivity="com.trendmicro.tmmssuite.uninstallprotection.ManageSpace" android:name="com.trendmicro.tmmssuite.consumer.TmmsSuiteConsumerApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <service android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.MainService"/>
+        <activity android:launchMode="singleTask" android:name="com.trendmicro.freetmms.gmobi.ui.MainActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators">
+            <intent-filter>
+                <data android:host="com.trendmicro.freetmms.gmobi" android:scheme="tmms"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.trendmicro.tmmssuite.consumer.login.ui.LandingPage" android:screenOrientation="portrait" android:theme="@style/MyActionBarThemeNoTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="net.hockeyapp.android.appIdentifier" android:value="c3f5a2e8a9d44bd3a666868fe231d353"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="com.trendmicro.socialprivacyscanner.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/title_activity_main" android:name="com.trendmicro.socialprivacyscanner.MainActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.socialprivacyscanner.NoNetworkActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="com.trendmicro.socialprivacyscanner.LoginProgressActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/title_activity_main" android:name="com.trendmicro.socialprivacyscanner.ui.PrivacyScanActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <provider android:authorities="packageName_placeholder.provider.private" android:exported="false" android:name="com.trendmicro.socialprivacyscanner.provider.PrivateResultProvider"/>
+        <receiver android:name="com.trendmicro.socialprivacyscanner.receiver.NetworkStatusBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.trendmicro.totalsolution.notificationcenter.receiver.AWSNotificationReceiver">
+            <intent-filter>
+                <action android:name="aws.notification.INFORMATION_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.LockScreenActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.mup.PromptInstallMUActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.mup.PromptActivateMUActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.mup.AuthkeyExpireBlockPage" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.mup.CommonErrorBlockActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.calling.DetectActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.SharedRemiderActivity" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.SwitchAccountActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.TransferLicense" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.LicenseExtend"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.supporttool.ui.ConfirmUploadLog" android:taskAffinity="com.trendmicro.tmmssuite.supporttool.ui.ConfirmUploadLog" android:theme="@style/MyDialog"/>
+        <activity android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.scanner.ScanningActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.ThreatScannerMain" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.FirstScanAlert" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.UninstallAskActivity" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.trendmicro.tmmssuite.uninstallprotection.UninstallCheckWrapper" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.UpdateResultDialog" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.AboutPageActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.Tutorial.PermissionTutorialActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.trendmicro.tmmssuite.consumer.main.ui.TmmsSuiteComMainEntry" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.trendmicro.tmmssuite.uninstallprotection.ManageSpace" android:taskAffinity="com.anderson" android:theme="@style/MyDialog"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.wtp.WtpMainActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.safesurfing.SafeSurfingHistoryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.wtp.WtpHistoryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.wtp.WtpLogDetailActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.trendmicro.tmmssuite.consumer.wtp.WtpBWListActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.uninstall.Uninstall" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:name="com.trendmicro.tmmssuite.tracker.TrackedLauncher" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.AppStoreWebView" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="true" android:name="com.trendmicro.freetmms.gmobi.ui.scanner.ThreatScanActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.consumer.scanner.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.scanner.PrivacyScanActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.scanner.PrivacyScanResultActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.callblock.CallBlockHistoryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.scanner.PrivacyExtraSettingsActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="layoutDirection|locale" android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.scanner.ThreatExtraSettingsActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.privacy.PrivacyScannerMainActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.privacy.PrivacyAddInstalledApprovalActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.privacy.PrivacyAddHistoryApprovalActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.privacy.PrivacyAppDetailActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.privacy.PrivacyHistoryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.scanner.ScanResultActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.scanner.ScanSummaryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.CleanToolCleanActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.scanner.ScanSummaryHistoryActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.scanner.ScanSummaryDetailActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.facebook.FacebookScannerSettingActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.facebook.FacebookScannerMainActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.trendmicro.tmmssuite.consumer.main.ui.ThirdPartyLicenseActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <service android:label="@string/accessibility_name" android:name="com.trendmicro.tmmssuite.wtp.browseroper.WTPService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibilityservice"/>
+        </service>
+        <service android:exported="false" android:name="com.trendmicro.tmmssuite.service.NetworkCommunicationService"/>
+        <service android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.GuardService"/>
+        <service android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.LockScreenUIService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.tmmssuite.service.C2DMRegistSuccessReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.registerToC2DM.succ"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.watchdog.WatchDogReceiver">
+            <intent-filter>
+                <action android:name="tmms_start"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.trendmicro.watchdog.WatchDogService"/>
+        <service android:name="com.trendmicro.tmmssuite.antimalware.update.UpdatePatternService"/>
+        <receiver android:enabled="true" android:name="com.trendmicro.tmmssuite.consumer.service.TmmsBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.PROXY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.tmmssuite.alarmcheck.AlarmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.UPDATE_CHECK"/>
+                <action android:name="com.trendmicro.tmmssuite.SCAN_AFTER_FIRST_AUTO_UP"/>
+                <action android:name="com.trendmicro.tmmssuite.FEEDBACK_CHECK"/>
+                <action android:name="com.trendmicro.tmmssuite.LOCATION_SERVICE_CHECK"/>
+                <action android:name="com.trendmicro.tmmssuite.OVERDUE_SCAN_CHECK"/>
+                <action android:name="com.trendmicro.tmmssuite.PUSH_NOTIFICATION"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.trendmicro.tmmssuite.antimalware.update.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.trendmicro.totalsolution.serverapi.receiver.SyncFeedbackReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.trendmicro.tmmssuite.consumer.calling.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.trendmicro.tmmssuite.wtp.provider.gmobi" android:exported="false" android:name="com.trendmicro.tmmssuite.wtp.provider.WtpProvider"/>
+        <activity android:exported="false" android:label="@string/feature_call_text" android:name="com.trendmicro.tmmssuite.consumer.antispam.CallTextMainActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antispam.SMSAnnoySetting" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antispam.ReplySMS" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/add_message" android:name="com.trendmicro.tmmssuite.consumer.antispam.AddAutoReplyMessage" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/edit_message" android:name="com.trendmicro.tmmssuite.consumer.antispam.EditAutoReplyMessage" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antispam.BWListActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antispam.BWListImportActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/add_contact" android:name="com.trendmicro.tmmssuite.consumer.antispam.ManualAddPhoneNumber" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/call_blocked_history" android:name="com.trendmicro.tmmssuite.consumer.antispam.RecordActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/app_name" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.antispam.RecordActivity4SMS" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_name" android:name="com.trendmicro.tmmssuite.consumer.antispam.smsContent" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <provider android:authorities="com.trendmicro.tmmssuite.antispam.provider.gmobi" android:exported="false" android:grantUriPermissions="true" android:name="com.trendmicro.tmmssuite.antispam.provider.AntiSpamProvider" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:label="@string/help_center" android:name="com.trendmicro.tmmssuite.HelpActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_name" android:name="com.trendmicro.tmmssuite.password.ui.PasswordCheckActivity" android:screenOrientation="portrait" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_name" android:name="com.trendmicro.tmmssuite.consumer.login.ui.SignInPopupActivity" android:theme="@style/MyDialog"/>
+        <provider android:authorities="com.trendmicro.freetmms.gmobi.provider.scan.gmobi" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.db.ScanDbProvider"/>
+        <provider android:authorities="com.trendmicro.freetmms.gmobi.provider.update.gmobi" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.db.UpdateDbProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.UpdateLog" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.ScanLog" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.RealtimeAlert" android:taskAffinity="com.trendmicro.tmmssuite.antimalware.realtimescan" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.RealTimeAlert4Privacy" android:taskAffinity="com.trendmicro.tmmssuite.antimalware.realtimescan4privacy" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.ConflictDialog" android:taskAffinity="com.trendmicro.tmmssuite.antimalware.conflictdialog" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.NetworkAlert4Cloud" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.NetworkAlert4Privacy" android:theme="@style/MyDialog"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.scanner.threat.LogDetail" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.trendpromo.TrendPromoActivity" android:theme="@style/StyledIndicators"/>
+        <receiver android:name="com.trendmicro.tmmssuite.antimalware.rtscan.RtScanReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_CHANGED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.trendmicro.tmmssuite.antimalware.scan.AppUninstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.trendmicro.tmmssuite.service.C2DMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.trendmicro.tmms.syncInfo"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.service.C2DMBroadcastReceiverInternal">
+            <intent-filter>
+                <action android:name="com.trendmicro.job.retry"/>
+                <action android:name="com.trendmicro.job.recovery.network"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.trendmicro.tmms.syncInfo"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.service.GetLicenseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.GetLicenseRequest.succ"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.GetLicenseRequest.erro"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.trendmicro.tmmssuite.consumer.antitheft.receiver.BatteryChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.analytics.tracking.android.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="com.trendmicro.tmmssuite.tracker.InstallTracking">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+            <meta-data android:name="forward.TmmsAnalytics" android:value="com.trendmicro.tmmssuite.tracker.AnalyticsReceiver"/>
+            <meta-data android:name="forward.GoogleAnalytics" android:value="com.google.analytics.tracking.android.CampaignTrackingReceiver"/>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="Activity" android:name="com.trendmicro.tmmssuite.license.LicenseAlertDialog" android:taskAffinity="com.trendmicro.tmmssuite.license.LicenseAlertDialog" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="Activity" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.LocationServiceAlert" android:taskAffinity="com.trendmicro.tmmssuite.consumer.antitheft.ui.LocationServiceAlert" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.Login4AntiThief" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.SetupGoogleAccountActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.AntiTheftMain" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.EditLockMessage" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.login.ui.Login" android:screenOrientation="portrait" android:theme="@style/MyActionBarThemeNoTitle" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:launchMode="singleTop" android:name="com.trendmicro.tmmssuite.consumer.login.ui.LoginLDP" android:screenOrientation="portrait" android:theme="@style/StyledIndicators" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.login.ui.EulaCheckPage" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.login.ui.ActivatePremiumActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.createaccount.ui.CreateAccount" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.main.ui.FeedbackActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.trendmicro.tmmssuite.consumer.antitheft.ui.ScreamActivity" android:theme="@style/MyDialog"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.settings.ui.SecondEmailSetupActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.settings.ui.ManualAddEmailAddress" android:theme="@style/StyledIndicators"/>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.receiver.AntitheftReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.ConfirmCommandRequest.succ"/>
+                <action android:name="com.trendmicro.tmmssuite.LOCK"/>
+                <action android:name="com.trendmicro.tmmssuite.UNLOCK"/>
+                <action android:name="com.trendmicro.tmmssuite.WIPE"/>
+                <action android:name="com.trendmicro.tmmssuite.SYNC"/>
+                <action android:name="com.trendmicro.tmmssuite.LOCATE"/>
+                <action android:name="com.trendmicro.tmmssuite.UPDATE"/>
+                <action android:name="com.trendmicro.tmmssuite.ADMIN_DEACTIVE"/>
+                <action android:name="com.trendmicro.tmmssuite.ADMIN_ACTIVE"/>
+                <action android:name="com.trendmicro.tmmssuite.REGSUCCESS"/>
+                <action android:name="com.trendmicro.tmmssuite.UNREGSUCCESS"/>
+                <action android:name="com.trendmicro.tmmssuite.ENABLE_FEATURELOCK"/>
+                <action android:name="com.trendmicro.tmmssuite.DISABLE_FEATURELOCK"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.FileRecoverNotifyReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.ConfirmCommandRequest.succ"/>
+                <action android:name="com.trendmicro.tmmssuite.BLOCK"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="@string/app_name" android:name="com.trendmicro.tmmssuite.featurelocker.receiver.TMMSDeviceAdminReceiver" android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin" android:resource="@xml/device_admin"/>
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.antitheft.receiver.UploadRebootLocationReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.consumer.antitheft.receiver.UploadRebootLocation"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.service.PmacMessageReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.GetPopupByDeviceRequest.succ"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.trendmicro.tmmssuite.supporttool.service.BackendService"/>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.supporttool.receiver.LogCollectionReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.TMMS_LOG_COLLECT_TASK"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.STOP_LOG_COLLECT_TASK"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.SEND_FILE_TO_CTIS_TASK"/>
+                <category android:name="com.trendmicro.tmmssuite.supporttool.taskcategory"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.trendmicro.tmmssuite.supporttool.receiver.LogCollectionCallbackReceiver">
+            <intent-filter>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_NO_TEMP_FILE_NEED_TO_SEND"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_UPLOAD_TO_CTIS_SUCCESSFUL"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_UPLOAD_TO_CTIS_FAIL"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_CONNECT_TO_CITS_WS_FAIL"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_NETWORK_NOT_AVAILABLE"/>
+                <action android:name="com.trendmicro.tmmssuite.supporttool.NOTIFY_LOG_COLLECTOR_INTERNAL_ERROR"/>
+                <category android:name="com.trendmicro.tmmssuite.supporttool.callBackcategory"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.supporttool.ui.LogHistoryActivity" android:theme="@style/StyledIndicators"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.trendmicro.tmmssuite.PromoteWhoscallActivity" android:theme="@style/StyledIndicators"/>
+        <service android:exported="true" android:name="com.trendmicro.androidmup.MupProductRemoteService" android:permission="com.trendmicro.androidmup.ACCESS_TMMSMU_REMOTE_SERVICE">
+            <intent-filter>
+                <action android:name="trendmicro.intent.action.MUP_PRODUCTS_COMMUNICATION"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.trendmicro.androidmup.AppUninstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.trendmicro.tmmssuite.antimalware.scan.AppInstalledBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver> // for app upgraded broadcast
+<receiver android:enabled="true" android:name="com.trendmicro.tmmssuite.consumer.service.AppUpgradedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:name="com.trendmicro.totalsolution.upgrade.CheckUpgradeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.trendmicro.totalsolution.upgrade.UPGRADE.safety"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.trendmicro.totalsolution.upgrade.UpgradeService"/>
+        <receiver android:name="com.trendmicro.totalsolution.upgrade.PackageReplaceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.trendmicro.tmmssuite.consumer.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:hardwareAccelerated="true" android:name="com.vm5.adplay.AdplayActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.report.DeviceReportActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.permission.PermissionActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.permission.PermissionDescActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:name="com.trendmicro.tmmssuite.consumer.login.ui.EulaAgreementActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name="com.trendmicro.tmmssuite.consumer.login.ui.HelpImprovementActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:excludeFromRecents="true" android:name="com.trendmicro.freetmms.gmobi.ui.TranslucentTutorialActivity" android:taskAffinity="com.trendmicro.freetmms.gmobi.ui.translucent" android:theme="@style/Theme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:name="com.trendmicro.freetmms.gmobi.ui.UninstallProtectActivity" android:screenOrientation="portrait" android:taskAffinity="com.trendmicro.freetmms.gmobi.ui.translucent" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.trendmicro.freetmms.gmobi.ui.TransPhotosafeTutorialActivity" android:taskAffinity="com.trendmicro.freetmms.gmobi.ui.translucent" android:theme="@style/Theme.Transparent"/>
+        <activity android:name="com.trendmicro.freetmms.gmobi.ui.TransPhotosafeTutorialActivityPage2" android:taskAffinity="com.trendmicro.freetmms.gmobi.ui.translucent" android:theme="@style/Theme.Transparent"/>
+        <activity android:excludeFromRecents="true" android:name="com.trendmicro.freetmms.gmobi.ui.TranPhotoSafeGiveATryActivity" android:taskAffinity="com.trendmicro.freetmms.gmobi.ui.translucent" android:theme="@style/Theme.TransparentWithTitleBar"/>
+        <activity android:autoRemoveFromRecents="true" android:excludeFromRecents="true" android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.photosafe.PhotoSafeActivity" android:screenOrientation="portrait" android:taskAffinity="com.trendmicro.tmmssuite.consumer.photosafe.PhotoSafeActivity" android:theme="@style/PhotoSafeStyledIndicators"/>
+        <service android:exported="false" android:name="com.trendmicro.tmmssuite.consumer.photosafe.gallery.services.CameraMonitorService"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.mailscanner.MailScannerActivity" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <service android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.dialog.PermissionDescDialog"/>
+        <service android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.dialog.TranslucentTutorialDialog"/>
+        <service android:exported="false" android:name="com.trendmicro.freetmms.gmobi.util.ShowTutorialService"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.gogolook.whoscallsdk.service.WCCallendActivity" android:taskAffinity="com.gogolook.whoscallsdk.scallendtask" android:theme="@style/Transparent"/>
+        <activity android:name="com.gogolook.whoscallsdk.service.WCCallendSettingActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryFullscreenTakeoverActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:label="@string/app_name" android:name="com.trendmicro.tmmssuite.feedback.RateActivity" android:theme="@style/MyDialog"/>
+        <receiver android:name="com.gogolook.whoscallsdk.WCBroadcastReceiver">
+            <intent>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent>
+        </receiver>
+        <receiver android:name="com.trendmicro.tmmssuite.consumer.service.WCCallProxyReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE_EXT"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.gogolook.whoscallsdk.service.WCCallDialogService"/>
+        <meta-data android:name="com.gogolook.whoscall.appId" android:value="wc23845252"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.optimizer.ui.OptimizerMainEntry" android:screenOrientation="portrait" android:theme="@style/StyledIndicators"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.optimizer.ui.AdvancedJAFActivity" android:screenOrientation="portrait" android:theme="@style/MyActionBarTheme"/>
+        <activity android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.optimizer.ui.AutoSaverActivity" android:screenOrientation="portrait" android:theme="@style/MyActionBarTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.optimizer.ui.JAFScheduleWifiReminderActivity" android:screenOrientation="portrait" android:taskAffinity="com.trendmicro.optimizer.ui.JAFScheduleWifiReminderActivity" android:theme="@style/MyDialog"/>
+        <service android:exported="false" android:name="com.trendmicro.freetmms.gmobi.ui.optimizer.service.OptimizerService"/>
+        <activity android:label="@string/app_name" android:name="com.trendmicro.watchdog.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="net.hockeyapp.android.UpdateActivity"/>
+        <activity android:name="net.hockeyapp.android.FeedbackActivity"/>
+        <activity android:name="net.hockeyapp.android.PaintActivity"/>
+        <activity android:name="net.hockeyapp.android.LoginActivity"/>
+        <activity android:name="net.hockeyapp.android.ExpiryInfoActivity"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.trendmicro.freetmms.gmobi"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.trendmicro.freetmms.gmobi.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryTileAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.flurry.android.FlurryBrowserActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

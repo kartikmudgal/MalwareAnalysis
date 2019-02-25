@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.timesmusic.gitabitanrabindrasangeet" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <permission android:name="com.timesmusic.gitabitanrabindrasangeet.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.timesmusic.gitabitanrabindrasangeet.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="android.permission.WAKE_LOCK" android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.winjit.code.activities.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.winjit.automation.activities.BaseActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.winjit.automation.activities.VideoActivity" android:screenOrientation="sensorLandscape" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.winjit.automation.activities.YoutubeActivity" android:screenOrientation="sensorLandscape" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:label="@string/wallpaper_title" android:name="com.winjit.automation.activities.PhotoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.winjit.rateus.Feedback" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.winjit.automation.activities.PlayerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.winjit.rateus.RateDialog" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.winjit.code.activities.CategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.winjit.code.activities.CategorySearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.winjit.code.activities.SubCategoryActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.winjit.dm.DownloadActivity"/>
+        <receiver android:name="com.winjit.dm.NetworkMonitor">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.winjit.dm.SDCardMoniter">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_SHARED"/>
+                <action android:name="android.intent.action.MEDIA_REMOVED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.winjit.pushnotification.android.GCMReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.timesmusic.gitabitanrabindrasangeet"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.winjit.code.notification.EntityMonitor">
+            <intent-filter>
+                <action android:name="com.timesmusic.gitabitanrabindrasangeet.RESTART_APP"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.winjit.code.notification.NotificationMonitor">
+            <intent-filter>
+                <action android:name="com.timesmusic.gitabitanrabindrasangeet.NOTIFICATION_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.winjit.pushnotification.android.GCMIntentService"/>
+        <service android:name="com.winjit.pushnotification.android.NotificationService"/>
+        <activity android:name="com.winjit.code.campaign.CampaignActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

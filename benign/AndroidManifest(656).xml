@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:sharedUserId="com.kascend" package="com.kascend.video">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.kascend.video.VideoBoxApp">
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name=".VideoBox" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.kascend.video.intent.notification"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="kasvideobox"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.kascend.video.SuggestionProvider" android:name=".SearchSuggestionSampleProvider"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_Online" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_WebView" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_History" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_ShotAlbumVideo" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_PersonalMSG" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_UserInfoDynamic" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_VideoBar" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_KKTV" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_VideoBarDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_NewProfile" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_Favorite" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_FavoriteDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Message" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_DynamicDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_LocalVideo" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="standard" android:name=".ui.Activity_InBox" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.kascend.video.intent.notification"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_ShareShot" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_Search" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Setting" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Copyright" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:label="@string/str_scan_title" android:name=".ui.Activity_Scan" android:screenOrientation="portrait" android:theme="@style/Theme.Dialog.Alert"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_OnlineAlbum" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.kascend.video.intent.notification"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_AlbumVideoSummary" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.kascend.video.intent.notification"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Pay" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Friend" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_FriendWatching" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_AddFriend" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_Invite" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".widget.KasGlobalDialog" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_ModifyMyInfo" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_Receive" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:exported="true" android:launchMode="singleTop" android:name=".ui.Activity_Send" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:exported="true" android:launchMode="singleTop" android:name=".ui.Activity_Select" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:launchMode="singleTop" android:name=".ui.Activity_HotTimeline" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:launchMode="singleTop" android:name=".ui.Activity_CaptureSelect" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:launchMode="singleTop" android:name=".ui.Activity_KasChannel" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:launchMode="singleTop" android:name=".ui.Activity_NewAllChannel" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_ChannelSearch" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTop" android:name=".ui.Activity_TopicDetail" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".crop.CropActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.kascend.video.intent.CROP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name="com.kascend.video.ui.capture.ActivityAlbum" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="vnd.android.cursor.dir/image"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.GET_CONTENT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="vnd.android.cursor.dir/image"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:name="com.kascend.video.ui.capture.ActivityCaptureShow" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name=".player.VideoPlayer" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="kasvideo"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name=".player.VideoPlayer_basic" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:mimeType="video/*" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="rtsp"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="singleTop" android:name=".player.EmbededPlayer" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <provider android:authorities="videocache" android:name=".download.DownloadProvider"/>
+        <service android:name=".download.DownloadService"/>
+        <service android:name=".webdownload.WebDownloadService"/>
+        <receiver android:name=".webdownload.WebDownloadReciever"/>
+        <service android:name=".msgpush.MessageService"/>
+        <receiver android:name=".msgpush.BootCompleteReciever">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <category android:name="android.intent.category.HOME"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:label="@string/s_about" android:name=".ui.Activity_About" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|locale|navigation|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name=".ui.Activity_UserLogin" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="com.kascend.view"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|locale|navigation|orientation" android:name=".ui.Activity_UserRegister" android:screenOrientation="portrait" android:theme="@android:style/Theme.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|locale|navigation|orientation" android:launchMode="singleTask" android:name="com.tencent.tauth.TAuthView">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http://video.kascend.com"/>
+            </intent-filter>
+        </activity>
+        <service android:name=".usermanager.KasAccountsService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <meta-data android:name="appid" android:value="appid:001333392243167634"/>
+        <activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent100285675"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.qq.e.comm.DownloadService"/>
+        <activity android:name="com.qq.e.ads.AdActivity"/>
+        <activity android:name="com.qq.e.ads.GdtBrowserActivity"/>
+    </application>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+</manifest>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.myappengine.lakenorman">
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <permission android:name="com.myappengine.lakenorman.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.myappengine.lakenorman.permission.C2D_MESSAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="false" android:smallScreens="true" android:xlargeScreens="true"/>
+    <application android:allowClearUserData="true" android:debuggable="false" android:enabled="true" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name=".MyApplication">
+        <uses-library android:debuggable="false" android:name="com.google.android.maps" android:required="false"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:name=".PhoenixActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.myappengine.lakenorman.PushPreferencesActivity"/>
+        <activity android:name="com.myappengine.lakenorman.LocationActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".AppChooserActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".Setting" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".DownloadProgress" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".FirstTimeSetup" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name=".Main"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".UpdateScreen" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".ShowDefaultImage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name=".WebPageDisplay"/>
+        <activity android:name="com.myappengine.lakenorman.location.LocationList"/>
+        <activity android:name=".location.PlaceInfoWithMap"/>
+        <activity android:name=".location.PlaceInfoWithoutMap"/>
+        <activity android:name="com.myappengine.lakenorman.location.PlaceCall"/>
+        <activity android:name="com.myappengine.lakenorman.location.PlaceTimeGroups"/>
+        <activity android:name="com.myappengine.lakenorman.location.PlaceHours"/>
+        <activity android:name="com.myappengine.lakenorman.location.PlaceLocation"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rates.RatesGroupes" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rates.RatesTablet"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rates.Rates" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rates.RatesDisclosure" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.events.Events" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.events.EventInfo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.news.News" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.news.NewsTablet"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.news.NewsInfo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.messages.Messages" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.messages.MessageInfo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.messages.MessagesTablet"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.twitter.Twitts" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.qrscan.QRScanActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.qrscan.QRScanVideoPlayer" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.qrscan.PlayVideo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.atm.ATMs" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".atm.ATMInfoWithMap" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".atm.ATMInfoWithoutMap" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.misctab.PrayerRequest" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.misctab.MoreList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.menu.MenuLayout"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.misctab.UnknownClass" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.misctab.QuickDial"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.misctab.FlashLightControl" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".carparking.CarParkingWithMap" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".carparking.CarParkingWithoutMap" android:screenOrientation="portrait"/>
+        <service android:configChanges="keyboardHidden|orientation" android:enabled="true" android:name="com.myappengine.lakenorman.carparking.CarParkedTimerService" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.misctab.TipCalc" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.facebook.android.FacebookActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.mapoverlay.MapOverlay"/>
+        <activity android:name="com.myappengine.lakenorman.links.Links"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.links.LinkPager"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.facebook.android.FacebookInfo" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.foodmenu.FoodMenu"/>
+        <activity android:name="com.myappengine.lakenorman.foodmenu.MenuItems"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.foodmenu.MenuLocations" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.foodmenu.MenuItemInfo"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.inventory.InventoryList" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.inventory.InventoryItemInfo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.inventory.InventoryItemDescription" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.inventory.InventoryItemImages"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.inventory.InventoryItemFullImage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.inventory.InventoryWebView" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.inventory.InventoryVehicleList"/>
+        <activity android:name="com.myappengine.lakenorman.inventory.InventoryVehicleDetails"/>
+        <activity android:name="com.myappengine.lakenorman.inventory.InventoryVehicleMore"/>
+        <activity android:name="com.myappengine.lakenorman.inventory.InventoryVehicleItemFullImage"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.finacialcalcs.CalcMain" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.finacialcalcs.SimpleLoanCalc"/>
+        <activity android:name="com.myappengine.lakenorman.finacialcalcs.MortgageCalc"/>
+        <activity android:name="com.myappengine.lakenorman.finacialcalcs.AmortizationCalc"/>
+        <activity android:name="com.myappengine.lakenorman.finacialcalcs.AutoLoanCalc"/>
+        <activity android:name="com.myappengine.lakenorman.videos.VideoCategories"/>
+        <activity android:name="com.myappengine.lakenorman.videos.VideoList"/>
+        <activity android:configChanges="orientation" android:name="com.myappengine.lakenorman.videos.VideoPlaying"/>
+        <activity android:name="com.myappengine.lakenorman.audio.AudioCategories"/>
+        <activity android:name="com.myappengine.lakenorman.audio.AudioList"/>
+        <activity android:name="com.myappengine.lakenorman.audio.AudioPlaying"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCGroupActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCCheckSecurityOption"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCPinCodeScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCLoginScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCSignUpScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCAddAccountScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCMenuScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCDepositScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCAmountScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCSubmitScreen"/>
+        <activity android:name="com.myappengine.lakenorman.rdc.RDCTransactionDetailsScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCReviewScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCReviewDetailsScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCBetaScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".rdc.RDCLockedMessageScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCAccountInfo" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCCheckFront" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.CameraOverlayActivity" android:screenOrientation="landscape"/>
+        <activity android:name="com.myappengine.lakenorman.rdc.RDCFullImage"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCCheckBack" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCVerifyInfo" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCEndorseInstruct" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.formbuild.FormBuilder"/>
+        <activity android:name="com.myappengine.lakenorman.formbuild.Signature"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCSubmit" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.rdc.RDCTerms" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingLogin" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingQuestion" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingMenu" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingAccounts" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingAccountsDetails" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingTransaction" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingTransactionDetail" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnlineBankingCheckFullImage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.onlinebanking.OnLineBankingTransfer" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SevenFiveSevenLanding" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SFSHood" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SFSCategory" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SFSCategoryItem" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".custom.SevenFiveSeven.SFSResultItemWithMap" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name=".custom.SevenFiveSeven.SFSResultItemWithoutMap" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SFSResult" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.custom.SevenFiveSeven.SFSItemLocation" android:screenOrientation="portrait"/>
+        <activity android:name="com.myappengine.lakenorman.specialscreen.SpecialScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.google.zxing.client.android.CaptureActivity" android:screenOrientation="landscape" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="com.google.zxing.client.android.SCAN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.mygarage.MyGarageScreen"/>
+        <activity android:name="com.myappengine.lakenorman.mygarage.AddVehicle"/>
+        <activity android:name="com.myappengine.lakenorman.mygarage.AddVehicleNotes"/>
+        <activity android:name="com.myappengine.lakenorman.mygarage.MaintenanceList"/>
+        <activity android:name="com.myappengine.lakenorman.mygarage.AddMaintenance"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.identities.IdentitiesScreen"/>
+        <activity android:name="com.myappengine.lakenorman.identities.AddIdentity"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.myappengine.lakenorman.service.ServiceScreen"/>
+        <activity android:name="com.myappengine.lakenorman.screencapture.ScreenCaptureSettings"/>
+        <receiver android:name="com.myappengine.lakenorman.carparking.TimeBroadCast"/>
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.myappengine.lakenorman"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService"/>
+    </application>
+</manifest>

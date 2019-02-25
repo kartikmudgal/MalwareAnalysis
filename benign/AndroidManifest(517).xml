@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.gujaratishaadi.android" platformBuildVersionCode="23" platformBuildVersionName="6.0-2704002">
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.shaadi.android.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <application android:allowBackup="false" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.shaadi.android.MyApplication" android:theme="@style/AppTheme">
+        <activity android:name="com.shaadi.android.activity.ui.RogIdProofActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.SplashScreenActivity" android:screenOrientation="portrait" android:theme="@style/SplashScreenTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="Processing your payment" android:name="in.juspay.godel.PaymentActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.shaadi.android.activity.ui.RateusDialogActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.shaadi.android.ChangePasswordEmailActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.shaadi.android.ResetPasswordActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/app_name" android:name="com.shaadi.android.SplashActivity" android:screenOrientation="portrait" android:theme="@style/SplashScreenTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.LoginActivity" android:screenOrientation="portrait" android:theme="@style/SplashScreenTheme" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter android:label="shaadi.com">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="dl" android:scheme="shaadiapp"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="touch.shaadi.com" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.shaadi.android.MatchMailAct" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.ForceUpdateActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.MainActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="list" android:pathPrefix="/recently-joined" android:scheme="shaadi"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="profile" android:scheme="shaadi"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.coach_marks.ShaadiCoachMark" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.shaadi.android.LayerBannerActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.RegistrationActivity" android:screenOrientation="portrait" android:theme="@style/SplashScreenTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.shaadi.android.activity.ui.MyPhotosActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light.BlueAccent">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.shaadi.android.PhotosUpload.MyPhotosActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light.BlueAccent">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.shaadi.android.SurpriseMeActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light.BlueAccent">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:name="com.shaadi.android.RefineActivity" android:screenOrientation="portrait" android:theme="@style/MyTheme"/>
+        <activity android:name="com.shaadi.android.PrivateChatActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize|stateHidden">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.FullScreenImageActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="" android:launchMode="singleTask" android:name="com.shaadi.android.UploadPhotoAlbumActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.ShowInboxCommunicationActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.NumberVerificationActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light.BlueAccent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.shaadi.android.payment.PaymentOptionActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.payment.MembershipPlanActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.CreditCardActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.MakePaymentActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.NetBankingActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.PayatBankActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.PaypalActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.DoorstepCollectionActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.payment.ShaadiCentrePaymentActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.activity.ui.AddHoroscopeDetailActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.HoroscopeStyleActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="" android:name="com.shaadi.android.ProfileDetailActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <receiver android:name="com.shaadi.android.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.displayManNotification"/>
+                <category android:name="com.shaadi.android"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.shaadi.android.gcm.GcmIntentService"/>
+        <service android:enabled="true" android:name="com.shaadi.android.GServices.GetAuthCodeService"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="177a3c0e114521f5b84184f6d6622b3d9d138099"/>
+        <activity android:label="@string/title_activity_report_misuse" android:name="com.shaadi.android.ReportMisuseActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:launchMode="singleTask" android:name="com.shaadi.android.activity.ui.ProfileVisitorViewedFilteredDeletedActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.shaadi.android.MailBoxActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:label="@string/title_activity_terms_and_condition" android:name="com.shaadi.android.widgets.TermsAndConditionActivity" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_short_listed" android:name="com.shaadi.android.ShortListedActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.MatchesActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_settings" android:name="com.shaadi.android.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.activity.ui.NotificationActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:name="de.duenndns.ssl.MemorizingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <activity android:label="@string/title_activity_reg_photo_upload" android:name="com.shaadi.android.activity.ui.RegPhotoUploadActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <activity android:label="" android:name="com.shaadi.android.activity.ui.StopPageActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/title_activity_rog" android:name="com.shaadi.android.activity.ui.ROGFBIDProofActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.activity.ui.RogFacebookActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_rogmultiple_profile" android:name="com.shaadi.android.activity.ui.ROGMultipleProfileActivity" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_rogstop_page" android:name="com.shaadi.android.activity.ui.ROGStopPageActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <service android:exported="false" android:name="com.shaadi.android.chat.backgroundservice.DeliveryReportsSenderService"/>
+        <activity android:name="com.shaadi.android.activity.ui.PartnerPreferenceAct" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.shaadi.android.HideDeleteProfileActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.DeleteProfileOtherSiteActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.DeletedProfileSuccessStoryActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_rog_id_prf_suc" android:name="com.shaadi.android.activity.ui.RogIdPrfSucActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.activity.ui.FamilyDetailActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="@string/title_activity_rogphoto_screening" android:name="com.shaadi.android.stop_page.ROGPhotoScreeningActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <service android:exported="false" android:name="com.shaadi.android.chat.backgroundservice.CanSendMessageService"/>
+        <service android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.shaadi.android.AstroViewsSelectionActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.FacebookPhotoAlbumsActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:label="Help and Support" android:name="com.shaadi.android.activity.ui.HelpAndSupportActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light"/>
+        <activity android:name="com.shaadi.android.MultiChipSelectActivity" android:screenOrientation="portrait" android:theme="@style/SampleTheme.Light" android:windowSoftInputMode="stateHidden"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService"/>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

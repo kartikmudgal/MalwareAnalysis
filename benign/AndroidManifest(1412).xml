@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="gsshop.mobile.v2" platformBuildVersionCode="22" platformBuildVersionName="5.1.1-1819727">
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <permission android:name="gsshop.mobile.v2.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="gsshop.mobile.v2.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@drawable/app_icon" android:label="@string/app_name" android:largeHeap="true" android:name="gsshop.mobile.v2.MainApplication" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTop" android:name="gsshop.mobile.v2.intro.IntroActivity" android:screenOrientation="portrait" android:theme="@style/NoTitleBlackBackgroundTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="gsshop.mobile.v2.home.HomeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.APP_HOME"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:launchMode="singleTop" android:name="gsshop.mobile.v2.web.WebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:launchMode="singleTask" android:name="gsshop.mobile.v2.web.NalbangWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.WEB_NALBANG"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:launchMode="singleTask" android:name="gsshop.mobile.v2.web.LiveTalkWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.WEB_LIVETALK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="gsshop.mobile.v2.web.ModalWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="gsshop.mobile.v2.web.FullModalWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTop" android:name="gsshop.mobile.v2.web.NoTabWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.NO_TAB_WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.web.MyShopWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.MY_SHOP_WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.web.OrderWebActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.ORDER_WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.web.DirectOrderWebActivity" android:screenOrientation="portrait" android:theme="@style/DirectOrder" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.DIRECT_ORDER_WEB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="false" android:exported="true" android:launchMode="singleTask" android:name="gsshop.mobile.v2.support.scheme.SchemeGatewayActivity" android:noHistory="false">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="gsshopmobile"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="@string/kakaolink_host" android:scheme="@string/kakao_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.search.HomeSearchActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="stateAlwaysVisible|adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.search.QRCodeActivity" android:screenOrientation="portrait" android:theme="@style/NoTitleNullBackgroundTheme"/>
+        <activity android:exported="false" android:name="gsshop.mobile.v2.user.LoginActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.LOGIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.user.DummyAppBrowserActivity"/>
+        <activity android:exported="false" android:name="gsshop.mobile.v2.user.SimpleLoginSettingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.SIMPLE_LOGIN_SETTING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.setting.SettingActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="gsshop.mobile.v2.setting.PushSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="gsshop.mobile.v2.setting.VersionActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="gsshop.mobile.v2.review.ReviewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:excludeFromRecents="true" android:name="gsshop.mobile.v2.attach.FileAttachTakePictureActivity" android:noHistory="true" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="gsshop.mobile.v2.attach.MobileTalkActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="gsshop.mobile.v2.attach.GalleryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.GALLERY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:launchMode="singleTask" android:name="gsshop.mobile.v2.home.shop.nalbang.ShortbangActivity" android:screenOrientation="portrait" android:theme="@style/Shortbang" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.SHORT_BANG"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:exported="false" android:launchMode="singleTask" android:name="gsshop.mobile.v2.home.shop.nalbang.ShortbangEventActivity" android:screenOrientation="portrait" android:theme="@style/Shortbang" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.SHORT_BANG_EVENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.home.shop.nalbang.ListViewActivity" android:theme="@style/AppTheme"/>
+        <activity android:name="gsshop.mobile.v2.home.shop.nalbang.SubActivity" android:theme="@style/AppTheme"/>
+        <activity android:exported="false" android:name="gsshop.mobile.v2.pms.InboxActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation" android:excludeFromRecents="true" android:name="gsshop.mobile.v2.pms.GsPushPopupActivity" android:screenOrientation="portrait" android:theme="@style/push_popup_theme">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.GSPUSH_POPUP"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="PMS_DEFAULT_POPUP_ACTIVITY" android:value="gsshop.mobile.v2.pms.GsPushPopupActivity"/>
+        <receiver android:name="gsshop.mobile.v2.support.appwidget.MainAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_info"/>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="gsshop.mobile.v2.support.appwidget.LiveTVPopupActivity" android:screenOrientation="portrait" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="gsshop.mobile.v2.support.tv.VideoPlayerActivity" android:noHistory="true" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.VIDEO_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="gsshop.mobile.v2.support.tv.LiveVideoPlayerActivity" android:noHistory="true" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.LIVE_VIDEO_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="gsshop.mobile.v2.support.tv.NalbangFullPlayerActivity" android:noHistory="true" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.NALBANG_FULL_VIDEO_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="gsshop.mobile.v2.support.tv.VideoBasePlayerActivity" android:noHistory="true" android:screenOrientation="landscape" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.VIDEO_BASE_PLAYER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.support.promotion.PromotionSmallActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.support.promotion.PromotionMediumActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.support.promotion.PromotionLargeActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.pms.PushApproveActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="gsshop.mobile.v2.support.permission.UpdatePassActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.UPDATE_PASS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <receiver android:exported="true" android:name="gsshop.mobile.v2.support.advertise.ReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+        <receiver android:name="com.pms.sdk.push.PushReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <action android:name="org.mosquitto.android.mqtt.MSGRECVD"/>
+                <category android:name="gsshop.mobile.v2"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="gsshop.mobile.v2.pms.PushNotiReceiver">
+            <intent-filter>
+                <action android:name="gsshop.intent.action.NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="gsshop.mobile.v2.support.callgate.CallgateGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="gsshop.mobile.v2.support.callgate.CallgateRegistrationIntentService"/>
+        <receiver android:name="com.callgate.launcher.NotificationReceiver"/>
+        <service android:name="com.callgate.launcher.FCCIntentService"/>
+        <service android:name="com.callgate.launcher.fcc.FCCLockService"/>
+        <activity android:name="com.callgate.launcher.view.LauncherWebView" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.callgate.launcher.view.LauncherView" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.callgate.launcher.fcc.FCCServicePopUp" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.callgate.launcher.fcc.FCCEmptyActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.callgate.launcher.jsg.PSActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="@string/com_kakao_login_button" android:launchMode="singleTop" android:name="com.kakao.auth.authorization.authcode.KakaoWebViewActivity" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:label="OAuth2.0 In-app" android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"/>
+        <meta-data android:name="PMS_APP_KEY" android:value="64e50123e2a84ca58d11"/>
+        <meta-data android:name="PMS_MQTT_FLAG" android:value="N"/>
+        <meta-data android:name="PMS_API_SERVER_URL" android:value="http://pmsapi.gsshop.com/msg-api/"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.pms.sdk.push.mqtt.RestartReceiver">
+            <intent-filter>
+                <action android:name="ACTION_MQTT_PING"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.ACTION_PACKAGE_RESTARTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="NetworkConnection" android:name="com.pms.sdk.push.mqtt.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:label="PushService" android:name="com.pms.sdk.push.mqtt.MQTTService" android:process="com.pms.sdk.HumusonPushService"/>
+        <meta-data android:name="PMS_MQTT_SERVER_URL_SSL" android:value="ssl://pmsapi.gsshop.com:10001"/>
+        <meta-data android:name="PMS_MQTT_SERVER_URL_TCP" android:value="tcp://pmsapi.gsshop.com:10002"/>
+        <meta-data android:name="PMS_MQTT_SERVER_KEEPALIVE" android:value="180"/>
+        <meta-data android:name="PMS_NOTI_CONTENT" android:value="두손가락을 이용해 아래로 당겨주세요."/>
+        <meta-data android:name="PMS_SET_ICON" android:resource="@drawable/ic_noti_an"/>
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="gsshop.mobile.v2"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="gsshop.mobile.v2"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="gsshop.mobile.v2.support.gcm.CustomInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider940243329375632" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <provider android:authorities="gsshop.mobile.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <meta-data android:name="gsshop.mobile.v2.util.GlideConfiguration" android:value="GlideModule"/>
+        <activity android:name="com.appboy.ui.AppboyWebViewActivity"/>
+        <receiver android:name="com.appboy.AppboyGcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="gsshop.mobile.v2"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <provider android:authorities="gsshop.mobile.v2.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <service android:name="com.appboy.services.AppboyDataSyncService"/>
+        <receiver android:name="com.tune.TuneTracker">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="gsshop.mobile.v2"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="jp.konami.pesm" platformBuildVersionCode="24" platformBuildVersionName="7.0">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        <activity android:configChanges="keyboardHidden|locale|orientation|screenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name=".Main" android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="konaminet.jp" android:scheme="pesm"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="applilink-campaign00094"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="zzzz3674f9fabdbae4bb514efaed8aa7842f.VFSProvider" android:exported="false" android:multiprocess="true" android:name="com.ideaworks3d.marmalade.VFSProvider"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="jp.konami.pesm"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="jp.konami.pesm.GCMExtendReceiver" android:process=":remote"/>
+        <service android:exported="false" android:name="jp.konami.pesm.GCMExtendListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="jp.konami.pesm.GCMExtendInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="jp.konami.pesm.GCMExtendRegistrationIntentService"/>
+        <activity android:name="com.ideaworks3d.marmalade.s3eAndroidGooglePlayBilling.PurchaseProxy" android:theme="@style/Theme.Transparent"/>
+        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/gps_app_id"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:exported="true" android:name="jp.appAdForce.android.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="APPADFORCE_APP_ID" android:value="1999"/>
+        <meta-data android:name="APPADFORCE_SERVER_URL" android:value="01c2039212f54cebb80526f880beaa11c1fee0f08bcb85e8cb084b8b9557754645"/>
+        <meta-data android:name="APPADFORCE_CRYPTO_SALT" android:value="8ea6032f1be128521e70c0a37b009ea438d1d900"/>
+        <meta-data android:name="ANALYTICS_APP_KEY" android:value="0bb74504258a4128a195ace3ce5b2bbe8e709342"/>
+        <meta-data android:name="APPADFORCE_FORWARD_RECEIVER" android:value="com.CustomReceiver.CustomReceiver"/>
+        <receiver android:exported="true" android:name="com.CustomReceiver.CustomReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.SET_ORIENTATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <permission android:name="jp.konami.pesm.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="jp.konami.pesm.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+</manifest>

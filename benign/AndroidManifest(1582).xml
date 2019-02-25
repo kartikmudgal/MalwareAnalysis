@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="roid.spikesroid.tv_remote_for_sharp">
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/Theme.kakaTheme">
+        <activity android:configChanges="locale|orientation" android:label="@string/app_name" android:name="roid.spikesroid.tv_remote_for_sharp.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:icon="@drawable/ic_launcher" android:name="SleepService"/>
+        <activity android:label="@string/title_activity_settings" android:name="roid.spikesroid.tv_remote_for_sharp.SettingsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black"/>
+        <activity android:label="@string/title_activity_quick_remote" android:name="roid.spikesroid.tv_remote_for_sharp.QuickRemote" android:screenOrientation="portrait" android:theme="@style/Theme.FullScreen"/>
+        <activity android:label="@string/title_activity_misc_remote" android:name="roid.spikesroid.tv_remote_for_sharp.MiscRemote" android:screenOrientation="portrait" android:theme="@style/Theme.FullScreen"/>
+        <activity android:label="@string/title_activity_custom_remote" android:name="roid.spikesroid.tv_remote_for_sharp.CustomRemote" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/title_activity_favourite_channels" android:name="roid.spikesroid.tv_remote_for_sharp.FavouriteChannels" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/title_activity_fancy_settings" android:name="roid.spikesroid.tv_remote_for_sharp.FancySettings" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/title_activity_about" android:name="roid.spikesroid.tv_remote_for_sharp.About" android:screenOrientation="portrait" android:theme="@style/Theme.TitleFree"/>
+        <activity android:label="@string/title_activity_voice_cmd" android:name="roid.spikesroid.tv_remote_for_sharp.VoiceCmd" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/title_activity_voice_help" android:name="roid.spikesroid.tv_remote_for_sharp.VoiceHelp" android:screenOrientation="portrait" android:theme="@style/Theme.TitleFree"/>
+        <activity android:label="cool apps" android:name="roid.spikesroid.tv_remote_for_sharp.CoolApps" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Share Media" android:name="roid.spikesroid.tv_remote_for_sharp.ShareMedia" android:screenOrientation="portrait" android:theme="@style/Theme.FullScreen"/>
+        <activity android:configChanges="orientation|screenSize" android:label="Share Media" android:name="roid.spikesroid.tv_remote_for_sharp.showImage" android:screenOrientation="portrait" android:theme="@style/Theme.FullScreen1"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+    </application>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.TRANSMIT_IR"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <meta-data android:name="ADMOB_ALLOW_LOCATION_FOR_ADS" android:value="true"/>
+</manifest>

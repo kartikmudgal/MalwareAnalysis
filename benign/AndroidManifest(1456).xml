@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="jp.gr.java_conf.matchama.SceneSwitch" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS"/>
+　
+<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <application android:excludeFromRecents="true" android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitch">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.ACTION_APPWIDGET_DELETED"/>
+                <action android:name="android.appwidget.action.ACTION_APPWIDGET_ENABLED"/>
+                <action android:name="android.appwidget.action.ACTION_APPWIDGET_DISABLED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/sceneswitch" android:theme="@android:style/Theme.Translucent"/>
+        </receiver>
+        <service android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchService">
+            <intent-filter>
+                <action android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchService.WIDGET_CLICK"/>
+                <action android:name="android.intent.action.SCREEN_ON"/>
+                <action android:name="android.intent.action.SCREEN_OFF"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchSceneSelect" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchSceneEdit"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchIconSelect"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchInitial"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchOption"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchSchedule"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchSetSchedule"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.DummyActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchAppSelect"/>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchShortCut" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:icon="@drawable/r_ic_x_shortcut_icon" android:label="@string/def_text_shortcut_title" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchCreateShortCut"/>
+        <activity-alias android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:icon="@drawable/r_ic_x_shortcut_icon" android:label="@string/def_text_shortcut_title" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchCreateShortCutFromLauncher" android:targetActivity="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchCreateShortCut">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="keyboardHidden|locale|orientation" android:excludeFromRecents="true" android:label="@string/app_name" android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchSceneSwap"/>
+        <receiver android:excludeFromRecents="true" android:name="jp.gr.java_conf.matchama.SceneSwitch.TimerAlarmBroadcastReceiver">
+            <intent-filter>
+                <action android:name="jp.gr.java_conf.matchama.SceneSwitch.SceneSwitchService.EVENT_SCHEDULE_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:excludeFromRecents="true" android:name="jp.gr.java_conf.matchama.SceneSwitch.BootBroadCastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

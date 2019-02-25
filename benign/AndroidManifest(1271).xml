@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.ushareit.listenit" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.ushareit.listenit.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.ushareit.listenit.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:name="com.ushareit.listenit.ListenItApp" android:supportsRtl="true">
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.main.StartupActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ushareit.listenit.action.NOTIFICATION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.ushareit.listenit.action.WIDGET"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:launchMode="singleTask" android:name="com.ushareit.listenit.main.MainActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/*"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.browser.BrowserActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ushareit.listenit.action.BROWSER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.browser.WebClientActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ushareit.listenit.action.WEB_CLIENT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.settings.FullScanActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.settings.UserSettingsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.settings.ProductSettingsActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.about.AboutActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Light.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:excludeFromRecents="true" android:exported="false" android:launchMode="singleInstance" android:name="com.ushareit.listenit.lockscreen.LockScreenActivity" android:screenOrientation="portrait" android:taskAffinity="com.ushareit.listenit.lockscreen" android:theme="@style/LockScreenBase"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.nearby.view.NearbyActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.nearby.view.SongMenuActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.nearby.view.MyHomePageActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.equalizer.EqualizerActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.invite.InviteActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.musicfolders.MusicFoldersActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.login.LoginActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:launchMode="singleTop" android:name="com.ushareit.listenit.login.UserProfileActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.login.SyncLogActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.lyrics.LyricEditorActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.theme.ThemeSettingsActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.cutter.AudioCutterActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.cutter.AudioClipsActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.cutter.RingEditActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.listenit.album.SearchAlbumArtActivity" android:screenOrientation="portrait" android:theme="@style/activityTheme" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <receiver android:name="com.ushareit.listenit.receiver.RemotePlaybackReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY"/>
+                <action android:name="com.ushareit.listenit.action.favorite"/>
+                <action android:name="com.ushareit.listenit.action.close"/>
+                <action android:name="com.ushareit.listenit.action.play"/>
+                <action android:name="com.ushareit.listenit.action.playpause"/>
+                <action android:name="com.ushareit.listenit.action.playnext"/>
+                <action android:name="com.ushareit.listenit.action.playprev"/>
+                <action android:name="com.ushareit.listenit.action.playmode"/>
+                <action android:name="com.ushareit.listenit.action.shuffle"/>
+                <action android:name="com.ushareit.listenit.action.refreshremoteviews"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ushareit.listenit.service.CommonReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.ushareit.listenit.analytics.UtmSourceBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:label="LISTENit(S)" android:name="com.ushareit.listenit.appwidget.AppWidgetProvider4x1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.ushareit.listenit.action.widget4x1.update_all"/>
+                <action android:name="com.ushareit.listenit.action.widget4x1.update_progress"/>
+                <action android:name="com.ushareit.listenit.action.widget4x1.update_playmode"/>
+                <action android:name="com.ushareit.listenit.action.widget4x1.update_favorite"/>
+                <action android:name="com.ushareit.listenit.action.widget4x1.update_skin"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider_info_4x1"/>
+        </receiver>
+        <receiver android:label="LISTENit(M)" android:name="com.ushareit.listenit.appwidget.AppWidgetProvider4x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.ushareit.listenit.action.widget4x2.update_all"/>
+                <action android:name="com.ushareit.listenit.action.widget4x2.update_progress"/>
+                <action android:name="com.ushareit.listenit.action.widget4x2.update_playmode"/>
+                <action android:name="com.ushareit.listenit.action.widget4x2.update_favorite"/>
+                <action android:name="com.ushareit.listenit.action.widget4x2.update_skin"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider_info_4x2"/>
+        </receiver>
+        <receiver android:label="LISTENit(L)" android:name="com.ushareit.listenit.appwidget.AppWidgetProvider4x4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.ushareit.listenit.action.widget4x4.update_all"/>
+                <action android:name="com.ushareit.listenit.action.widget4x4.update_progress"/>
+                <action android:name="com.ushareit.listenit.action.widget4x4.update_playmode"/>
+                <action android:name="com.ushareit.listenit.action.widget4x4.update_favorite"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider_info_4x4"/>
+        </receiver>
+        <service android:name="com.ushareit.listenit.service.PlayService"/>
+        <service android:name="com.ushareit.listenit.service.CommonService"/>
+        <service android:name="com.ushareit.listenit.cloudsync.CloudSyncService"/>
+        <service android:exported="false" android:name="com.ushareit.cmd.CmdService">
+            <intent-filter>
+                <action android:name="com.ushareit.cmd.action.COMMAND_ALARM"/>
+                <action android:name="com.ushareit.cmd.action.COMMAND_SYSTEM_EVENT"/>
+                <action android:name="com.ushareit.cmd.action.COMMAND_WRAPPER_EVENT"/>
+                <action android:name="com.ushareit.cmd.action.COMMAND_OPERATE_APP"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.ushareit.cmd.CmdMsgBox" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.ushareit.cmd.action.COMMAND_SHOW_MSGBOX"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="UMENG_APPKEY" android:value="56e1370de0f55abfeb000b0e"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="GOOGLEPLAY"/>
+        <meta-data android:name="BEYLA_APPTOKEN" android:value="LISTENIT_A"/>
+        <meta-data android:name="BEYLA_CHANNEL" android:value="GOOGLEPLAY"/>
+        <meta-data android:name="CLOUD_APPID" android:value="com.ushareit.listenit"/>
+        <meta-data android:name="appKey" android:value="08634c65-91a1-3329-5950-086ad17639ff"/>
+        <meta-data android:name="com.ushareit.listenit.imageloader.LISTENitGlideModule" android:value="GlideModule"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <receiver android:name="com.mobi.sdk.AR" android:process=":mobi">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.mobi.sdk.HelperService" android:process=":mobi"/>
+        <receiver android:enabled="false" android:exported="false" android:name="com.mobi.sdk.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.internal.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="false" android:name="com.altamob.sdk.internal.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.ushareit.listenit"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.ushareit.listenit.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+    </application>
+</manifest>

@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.quvideo.xiaoying" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <supports-screens android:largeScreens="true"/>
+    <uses-permission android:name="com.vivavideo.mobile.settings.READ"/>
+    <supports-screens android:largeScreens="true"/>
+    <uses-permission android:name="com.vivavideo.mobile.settings.READ"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <permission android:name="com.quvideo.xiaoying.permission.JPUSH_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.quvideo.xiaoying.permission.JPUSH_MESSAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <permission android:name="com.quvideo.xiaoying.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.quvideo.xiaoying.permission.MIPUSH_RECEIVE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.quvideo.xiaoying.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.quvideo.xiaoying.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission-sdk-23 android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <application android:allowBackup="false" android:configChanges="keyboardHidden|orientation" android:icon="@drawable/ic_launcher" android:label="@string/xiaoying_str_com_app_name" android:largeHeap="true" android:name="com.quvideo.xiaoying.app.ApplicationBase" android:screenOrientation="portrait" android:supportsRtl="false" android:theme="@style/Theme_Common">
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_lmunGYUOO1rmGaZJTaaABolbvwb7AHp2"/>
+        <receiver android:exported="true" android:name="io.branch.referral.InstallListener">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.adjust.sdk.AdjustReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.quvideo.xiaoying.luckycoinfileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/files"/>
+        </provider>
+        <meta-data android:name="app_license" android:value="@string/baidu_ad_key"/>
+        <meta-data android:name="baiDu.assets.fileName" android:value="json.txt"/>
+        <meta-data android:name="baiDuCaller.assets.fileName" android:value="caller_json.txt"/>
+        <meta-data android:name="applovin.sdk.key" android:value="@string/applovin_key"/>
+        <meta-data android:name="yeahmobi.assets.id" android:value="@string/cloudmobi_id"/>
+        <meta-data android:name="digGoods.assets.appId" android:value="@string/digoods_appid"/>
+        <meta-data android:name="digGoods.assets.slotId" android:value="@string/digoods_slotid"/>
+        <meta-data android:name="allinone.appKey" android:value="@string/allinone_appkey"/>
+        <meta-data android:name="firebase_performance_logcat_enabled" android:value="true"/>
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="true" android:launchMode="singleTask" android:name="com.quvideo.xiaoying.app.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Theme_XiaoYing" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="xiaoying"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="xiaoyinglinkedme"/>
+            </intent-filter>
+            <intent-filter>
+                <data android:host="open" android:scheme="xiaoyingbranch"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+            <meta-data android:name="entry" android:value="0"/>
+            <meta-data android:name="linkedme.sdk.auto_link_keys" android:value="linkedme"/>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/icon_viva_share_transform" android:label="@string/xiaying_share_change_speed" android:name="com.quvideo.xiaoying.intent.VideoTransformPreActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/icon_viva_share_meme" android:label="@string/xiaoing_share_video_meme" android:name="com.quvideo.xiaoying.intent.VideoMemePreActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:icon="@drawable/icon_viva_share_trim" android:label="@string/xiaoying_share_quick_trim" android:name="com.quvideo.xiaoying.intent.VideoTrimPreActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.XiaoYingActivity" android:screenOrientation="portrait" android:theme="@style/Theme_XiaoYingNoSplash" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="video/m4v"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/png"/>
+                <data android:mimeType="image/bmp"/>
+                <data android:mimeType="image/x-ms-bmp"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.Camera_Laucher"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.quvideo.xiaoying.camera.framework.CameraActivityNew" android:screenOrientation="portrait" android:theme="@style/CameraTheme">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.CAMERA_New"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.quvideo.xiaoying.camera.framework.CameraActivity" android:screenOrientation="portrait" android:theme="@style/CameraTheme">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.CAMERA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.quvideo.xiaoying.videoeditor.simpleedit.SimpleVideoEditorV4" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorBasicV4" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.BASIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorFilter" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.FILTER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorTransition" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.TRANSITION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorMusic" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.MUSIC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorDubbingV4" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.DUB"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorSubtitleV4" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorAnimateFrame" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.EFFECT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorSticker" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDIT.STICKER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorPIPClipDesignerNew" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.simpleedit.PrjectExportVideoActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_myFullScreenTranslucent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.simpleedit.XiaoYingPreLoadActivity" android:screenOrientation="portrait" android:theme="@style/Theme_XiaoYingNoSplash">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorPickCoverActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.instagram.InstagramActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.quvideo.xiaoying.editor.VideoTrimActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.FILEPICKER"/>
+                <action android:name="com.quvideo.xiaoying.intent.action.EDITORFILEPICKER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.quvideo.xiaoying.studio.StudioActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.quvideo.xiaoying.gallery.activity.GalleryPreviewActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:name="com.quvideo.xiaoying.template.category2.TemplateCategoryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.quvideo.xiaoying.template.TemplateInfoActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name="com.quvideo.xiaoying.template.pack.TemplatePackActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:launchMode="singleTop" android:name="com.quvideo.xiaoying.template.TemplatePreviewActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_myTranslucent"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.template.manager.TemplateMgrActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.template.FontListActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.quvideo.xiaoying.app.videoplayer.VideoPlayerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:name="com.quvideo.xiaoying.common.ui.banner.CommonWebPage" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorSort" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.community.user.infoedit.AccountInfoEditor" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.community.user.infoedit.IntroduceEditor" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.community.user.infoedit.NicknameEditor" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.community.user.XYBlackListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.community.search.SearchPage" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.community.search.SearchListPage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.community.user.RecommendFollowsPage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.community.user.RegisterFollowsPage" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.community.user.RecommendTagUserPage" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.PublishActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoActionBar.FullScreen" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.IntlPublishActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoActionBar.FullScreen" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.IntlSocialPublishActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoActionBar.FullScreen" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.SocialMiniPublishActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoActionBar.FullScreen" android:windowSoftInputMode="adjustPan|stateVisible"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.PublishInviteActivity" android:screenOrientation="portrait" android:theme="@style/Theme.NoActionBar.FullScreen"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.MapSelectActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.SettingAboutActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.sns.SettingBindSNSActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.sns.SettingBindAccountActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_myTranslucent"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.SettingNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.message.MessageDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.message.OfficialMessageDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.privacypage.PrivacyPage" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.activity.XYActivityVideoListActivityNew" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light" android:windowSoftInputMode="adjustPan"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.activity.UserVideoDetailActivityForViewPager" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.community.videodetail.VideoDetailActivityV2" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.quvideo.xiaoying.app.im.ChatActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.im.IMSetting" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.setting.sns.SettingBindInternationalSnsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.publish.ResultPageActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.template.TemplateRollDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.v5.activity.videocardlist.SearchedVideoCardListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.v5.activity.videocardlist.ActivityVideoCardListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.v5.activity.videocardlist.TopicVideoCardListActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.community.user.infoedit.SexEditor" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.v5.videoexplore.VideoExploreActivity" android:screenOrientation="portrait"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.v5.activity.videocardlist.VideoShowCardListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.v5.mixedpage.TopUserActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.v5.nearby.NearByActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.community.usergrade.UserGradePage" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.community.usergrade.UserGradeUpActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_myTranslucent"/>
+        <activity android:name="com.quvideo.xiaoying.template.filter.FilterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.template.filter.FilterDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.activity.ExtraHelpActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.v5.nearby.NearByGridActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.iaputils.vip.VipHomeSingleTabActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name="com.quvideo.xiaoying.app.iaputils.vip.VipHomeMultiTabsActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.app.utils.AppStateInitIntentService"/>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.app.alarm.AlarmIntentService"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.XYActivityPublishActivity"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.InviteCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.setting.AutoPlaySetting" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.sns.sina.SinaWeiboShareActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_myTranslucent">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.quvideo.xiaoying.sns.SNSShareHandler" android:theme="@style/xiaoying_myTranslucent">
+            <intent-filter>
+                <action android:name="com.meitu.mp.sdk.action.ACTION_SDK_RESP_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:exported="true" android:name="com.quvideo.xiaoying.app.notification.NotificationReceiver"/>
+        <service android:exported="true" android:label="Android Phone" android:name="com.quvideo.xiaoying.app.test.TestService"/>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.datacenter.SocialService">
+            <intent-filter>
+                <action android:name="socialservice.action.USER"/>
+                <action android:name="socialservice.action.VIDEO"/>
+                <action android:name="socialservice.action.MISC"/>
+                <action android:name="socialservice.action.CONTENTS"/>
+                <action android:name="socialservice.action.INTERACTION"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.datacenter.DownloadService">
+            <intent-filter>
+                <action android:name="socialservice.action.DOWNLOAD"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.datacenter.TaskService">
+            <intent-filter>
+                <action android:name="socialservice.action.TASK"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.datacenter.ShareService">
+            <intent-filter>
+                <action android:name="socialservice.action.SHARE"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:name="com.baidu.location.f" android:process=":baidu"/>
+        <provider android:authorities="com.quvideo.xiaoying.datacenter" android:exported="false" android:multiprocess="false" android:name="com.quvideo.xiaoying.datacenter.SocialProvider"/>
+        <receiver android:name="com.quvideo.xiaoying.socialclient.MonitorBroadReceiver">
+            <intent-filter android:priority="1001">
+                <action android:name="android.intent.action.MEDIA_BAD_REMOVAL"/>
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.MEDIA_EJECT"/>
+                <action android:name="android.intent.action.MEDIA_REMOVED"/>
+                <action android:name="android.intent.action.MEDIA_SHARED"/>
+                <data android:scheme="file"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="socialservice.action.DOWNLOAD.completed"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.quvideo.xiaoying.app.alarm.AlarmReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.android.xiaoying.alarm.receive"/>
+                <action android:name="com.android.xiaoying.alarm.click"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="linkedme.sdk.key" android:value="62c76821ded51de826ec88276aa112a0"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent100368508"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="@string/xiaoying_str_com_app_name" android:launchMode="singleTop" android:name="com.quvideo.xiaoying.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|orientation" android:exported="true" android:name="jp.line.android.sdk.activity.LineAuthCompleteActivity" android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="line.1494027009"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|orientation" android:exported="false" android:name="jp.line.android.sdk.activity.WebLoginActivity" android:screenOrientation="sensor"/>
+        <meta-data android:name="jp.line.sdk.ChannelId" android:value="1494027009"/>
+        <meta-data android:name="jp.line.sdk.AuthScheme" android:value="line.1494027009"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="610cd89cf1a1583026bfe1da717cfb47fc9b3938"/>
+        <meta-data android:name="io.fabric.auth.ApiKey" android:value="ZdZO1JOnjBxzLOEM6Ku0DPb3H"/>
+        <meta-data android:name="io.fabric.auth.Secret" android:value="9UOHMgtQAqQDCECV44trtkYBVz7o7X3jBkY68I2HUd2xL9ogBz"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/xiaoying_str_com_app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.accountkit.ApplicationName" android:value="@string/xiaoying_str_com_app_name"/>
+        <meta-data android:name="com.facebook.accountkit.ClientToken" android:value="@string/account_ket_client_token"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider604323706295082" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:label="@string/com_accountkit_toolbar_title" android:name="com.facebook.accountkit.ui.AccountKitActivity" android:theme="@style/FBAccountKitLoginTheme" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/ak_login_protocol_scheme"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="cn.jpush.android.ui.PushActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.quvideo.xiaoying"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.DownloadService"/>
+        <service android:enabled="true" android:exported="false" android:name="cn.jpush.android.service.PushService">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER"/>
+                <action android:name="cn.jpush.android.intent.REPORT"/>
+                <action android:name="cn.jpush.android.intent.PushService"/>
+                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:name="cn.jpush.android.service.PushReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <category android:name="com.quvideo.xiaoying"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver"/>
+        <receiver android:enabled="true" android:name="com.quvideo.xiaoying.pushclient.JpushReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.UNREGISTRATION"/>
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/>
+                <action android:name="cn.jpush.android.intent.CONNECTION"/>
+                <category android:name="com.quvideo.xiaoying"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.xiaomi.push.service.XMPushService" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="false" android:name="com.xiaomi.push.service.XMJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler"/>
+        <service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService"/>
+        <receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.xiaomi.push.service.receivers.PingReceiver" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.quvideo.xiaoying.pushclient.MyXMReceiver">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.pushclient.MyXMReceiver.opened"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.quvideo.xiaoying.pushclient.XMPushReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="6727bb8f881785c1233a9d4c"/>
+        <meta-data android:name="GCM_SENDER_ID" android:value="@string/sdk_keys_gcm_sender_id_release"/>
+        <meta-data android:name="MIPUSH_APP_ID" android:value="@string/sdk_keys_pipush_appid_release"/>
+        <meta-data android:name="MIPUSH_APP_KEY" android:value="@string/sdk_keys_pipush_appkey_release"/>
+        <meta-data android:name="UMENG_APPKEY" android:value="5264ead656240b0b7c006b8f"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="googleplay"/>
+        <meta-data android:name="XiaoYing_Channel" android:value="XiaoYing"/>
+        <meta-data android:name="XiaoYing_AppKey" android:value="10018601"/>
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="900MN5nVtcaSTzQt9fgAXjO3"/>
+        <meta-data android:name="GA_TRACKER_ID" android:value="UA-60675348-1"/>
+        <meta-data android:name="WECHAT_APP_KEY" android:value="@string/wechat_app_key"/>
+        <meta-data android:name="WECHAT_APP_SECRET" android:value="@string/wechat_app_secret"/>
+        <meta-data android:name="MEIPAI_APP_KEY" android:value="1089867388"/>
+        <meta-data android:name="com.quvideo.xiaoying.GlideConfiguration" android:value="GlideModule"/>
+        <meta-data android:name="appKey" android:value="@string/altamob_app_key"/>
+        <meta-data android:name="exo_support_min_version" android:value="21"/>
+        <activity android:launchMode="singleTask" android:name="com.quvideo.xiaoying.app.ads.shuffle.ShuffleAdActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="io.rong.imlib.ipc.RongService" android:process=":ipc"/>
+        <service android:name="io.rong.imlib.ReConnectService"/>
+        <receiver android:name="io.rong.imlib.ConnectChangeReceiver"/>
+        <receiver android:name="io.rong.imlib.HeartbeatReceiver" android:process=":ipc"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.analytics.CampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:name="com.quvideo.xiaoying.luckycoin.LuckyCoinEntityActivity"/>
+        <service android:name="com.quvideo.xiaoying.pushclient.XYFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.quvideo.xiaoying.app.activity.LoadResActivity" android:process=":mini" android:screenOrientation="portrait" android:theme="@style/Theme_XiaoYing" android:windowSoftInputMode="adjustPan"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.activity.XYMessageActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.quvideo.xiaoying.app.v5.common.publish.HotTagActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.ads.ui.AdHelperActivity" android:screenOrientation="portrait" android:theme="@style/xiaoying_all_translucent"/>
+        <activity android:name="com.quvideo.xiaoying.app.activity.XYMessageLikeListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.activity.XYMessageFollowActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.welcomepage.WelcomeV6Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.publish.LastStepUploadActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name="com.quvideo.xiaoying.app.welcomepage.LoginWelcomeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.welcomepage.LoginCommunityResetActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.app.activity.SnapchatShareActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.quvideo.xiaoying.optimise.lockscreen.LockscreenService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.quvideo.xiaoying.optimise.daemon.service.RemoteService" android:process=":romoteservice"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.optimise.daemon.receiver.WakeReceiver">
+            <intent-filter>
+                <action android:name="com.wake.gray"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.optimise.daemon.service.GrayService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.optimise.daemon.service.GrayService$GrayInnerService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.optimise.daemon.receiver.WakeReceiver$WakeNotifyService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.optimise.daemon.receiver.WakeReceiver$WakeGrayInnerService"/>
+        <activity android:hardwareAccelerated="true" android:name="com.quvideo.xiaoying.app.IntentHomeActivity" android:screenOrientation="portrait" android:taskAffinity=".intent" android:theme="@style/Theme_XiaoYing">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intenthome"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.altamob.sdk.internal.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.altamob.sdk.internal.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.altamob.sdk.internal.task.HelperService"/>
+        <receiver android:name="com.altamob.sdk.receiver.AppInstallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.altamob.sdk.receiver.ConnectionChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.diggds.adsdk.DGReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.diggds.adsdk.DGService"/>
+        <provider android:authorities="com.quvideo.xiaoying.FsdkContentProvider" android:exported="false" android:name="com.ducaller.fsdk.provider.FsdkContentProvider"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.callmonitor.component.CallMonitorReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.callmonitor.component.CallMonitorService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.callmonitor.component.ADCardActivity" android:taskAffinity="com.ducaller.callderid.callDialog" android:theme="@style/AfterCallDialog.Theme"/>
+        <receiver android:exported="true" android:name="com.ducaller.fsdk.callmonitor.reveiver.BootstrapReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.hardware.usb.action.USB_STATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.ducaller.fsdk.callmonitor.reveiver.SyncGlobalCallerReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.sync.caller_state"/>
+                <action android:name="android.intent.action.fsdk.state.changed"/>
+                <action android:name="com.fsdk.caller.sync.self"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="true" android:name="com.ducaller.fsdk.ad.DUCallerADService"/>
+        <service android:exported="true" android:name="com.ducaller.fsdk.task.JobSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.ducaller.fsdk.ad.ADFillReceiver"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.ui.BaseCallCardActivity" android:screenOrientation="portrait" android:theme="@style/window_transparent" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.ui.SettingActivity" android:screenOrientation="portrait" android:theme="@style/window_transparent" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.ducaller.fsdk.ad.dialog.CommonActivityDialog" android:screenOrientation="portrait" android:theme="@style/dialog2" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name="com.batmobi.BatMobiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:name="com.batmobi.BatMobiBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.arrkii.nativesdk.core.Receiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.arrkii.nativesdk.core.Provider9863-601" android:name="com.arrkii.nativesdk.core.Provider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <provider android:authorities="com.quvideo.xiaoying.DuAdCacheProvider" android:exported="false" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="applovin.sdk.verbose_logging" android:value="true"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <service android:name="com.cloudtech.ads.core.AdGuardService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.zeus.ads.service.OptimizeService" android:process=":zeus"/>
+        <service android:name="com.zeus.ads.service.OptimizeService$AwareService" android:process=":zeus"/>
+        <receiver android:name="com.zeus.ads.receiver.OptimizeReceiver" android:process=":zeus">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.luckycoin.sdk.LuckyCoinWBActivity" android:screenOrientation="portrait" android:theme="@style/LuckyCoinSdkTheme"/>
+        <activity android:name="com.xiaoying.imcore.plugin.image.PictureSelectorActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.xiaoying.imcore.plugin.image.PicturePreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.xiaoying.imcore.plugin.image.TakingPicturesActivity" android:screenOrientation="portrait"/>
+        <service android:exported="false" android:name="io.rong.push.core.PushRegistrationService"/>
+        <service android:exported="false" android:name="io.rong.push.PushService" android:process="io.rong.push"/>
+        <service android:exported="true" android:name="io.rong.push.core.MessageHandleService"/>
+        <receiver android:name="io.rong.push.PushReceiver" android:process="io.rong.push">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.action.HEART_BEAT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.ComposerActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.TweetUploadService"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:icon="@drawable/tw__transparent" android:label="@string/kit_name" android:name="com.twitter.sdk.android.core.identity.ShareEmailActivity"/>
+        <activity android:name="com.quvideo.xiaoying.community.at.UserAtChooserActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.community.invitecode.InviteCodeUseSuccessActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.quvideo.xiaoying.verify.VerifyBaseActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name="com.quvideo.xiaoying.test.TestAPIActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.quvideo.xiaoying.gallery.activity.XYGalleryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.quvideo.xiaoying.videoeditor.advanceedit.AdvanceEditorGif" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" android:windowSoftInputMode="adjustNothing"/>
+        <service android:enabled="true" android:exported="false" android:name="com.quvideo.xiaoying.services.TemplateDownloadService">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.services.action.DownloadXyt"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.quvideo.xiaoying.services.ProjectScanService">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.services.action.ScanProject"/>
+            </intent-filter>
+        </service>
+        <activity android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.quvideo.xiaoying.CameraActivityNew" android:screenOrientation="portrait" android:theme="@style/CameraTheme">
+            <intent-filter>
+                <action android:name="com.quvideo.xiaoying.intent.action.CAMERA_NEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.quvideo.xiaoying.file.FileExplorerActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"/>
+        <activity android:exported="true" android:name="com.facebook.accountkit.ui.AccountKitEmailRedirectActivity"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <category android:name="com.quvideo.xiaoying"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.quvideo.xiaoying.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <activity android:name="com.quvideo.xiaoying.activity.FeedbackActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.quvideo.xiaoying.activity.FeedbackHistoryActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.FeedbackDetailActivity"/>
+        <service android:name="com.quvideo.xiaoying.plugin.downloader.business.DownloadService"/>
+        <activity android:name="com.quvideo.xiaoying.activity.CoinEarnActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.CoinRecordActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.CoinDepositActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.CoinDepositResultActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.CoinBindAccountActivity"/>
+        <activity android:name="com.quvideo.xiaoying.activity.XYCoinActivity"/>
+        <activity android:name="com.vivavideo.mobile.xypaycore.PaySDKActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTop" android:name="com.pingplusplus.android.PaymentActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity-alias android:exported="true" android:name="com.quvideo.xiaoying.wxapi.WXPayEntryActivity" android:targetActivity="com.pingplusplus.android.PaymentActivity"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation" android:exported="false" android:name="com.alipay.sdk.auth.AuthActivity" android:screenOrientation="behind"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:name="com.unionpay.uppay.PayActivity"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+    </application>
+</manifest>

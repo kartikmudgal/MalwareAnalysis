@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.lionmobi.powerclean" platformBuildVersionCode="26" platformBuildVersionName="8.0.0">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true" android:xlargeScreens="true"/>
+    <permission android:label="PowerBoost communication" android:name="com.lionmobi.powerclean.PowerBoost" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.lionmobi.powerclean.PowerBoost"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.CAMERA" android:required="false"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <permission android:name="com.lionmobi.powerclean.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.lionmobi.powerclean.permission.C2D_MESSAGE"/>
+    <application android:allowBackup="true" android:excludeFromRecents="true" android:icon="@drawable/lion_icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.lionmobi.powerclean.ApplicationEx" android:persistent="true" android:theme="@style/main_activity_style">
+        <meta-data android:name="channel" android:value="gp_new"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fbapp_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="LionMobiClientID" android:value="1"/>
+        <meta-data android:name="android.max_aspect" android:value="2.1"/>
+        <activity android:name="com.lionmobi.powerclean.activity.SplashActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="PowerBoostPage" android:name="com.lionmobi.powerclean.activity.PowerBoostActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:name="com.lionmobi.powerclean.activity.GetPermissionBackActivity"/>
+        <activity android:label="MemoryBoostPage" android:name="com.lionmobi.powerclean.activity.TaskActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:label="JunkCleanPage" android:launchMode="singleTop" android:name="com.lionmobi.powerclean.activity.JunkClearActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <action android:name="com.lionmobi.powerclean.junkclean"/>
+        </activity>
+        <activity android:label="AppIgnoreListPage" android:name="com.lionmobi.powerclean.activity.WhiteListViewActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.lionmobi.powerclean.activity.WhiteListViewActivity"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="AddIgnoreListPage" android:name="com.lionmobi.powerclean.activity.WhiteListAddActivity" android:screenOrientation="portrait"/>
+        <activity android:label="InterstitialAdActivity" android:name="com.facebook.ads.InterstitialAdActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AutoKillSettingsPage" android:name="com.lionmobi.powerclean.activity.ProcessAutoKillSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="MainPage" android:name="com.lionmobi.powerclean.activity.MainActivity" android:screenOrientation="portrait" android:theme="@style/main_activity_style_type"/>
+        <activity android:label="AppManagerPage" android:name="com.lionmobi.powerclean.activity.ApkManagerActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="PreinstalledAppsPage" android:name="com.lionmobi.powerclean.activity.PreinstallActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="PreinstalledUnDisabledPage" android:name="com.lionmobi.powerclean.activity.PreinstallUnDisabledActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="MovedAppListPage" android:name="com.lionmobi.powerclean.activity.MovedAppActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:excludeFromRecents="true" android:label="ResidualCleanDialog" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.ResidualCleanDialogActivity" android:screenOrientation="portrait" android:theme="@style/ProcessCleanDialog"/>
+        <activity android:excludeFromRecents="true" android:label="OpenSysWidgetDialogActivity" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.widget.OpenBoostWidgetDialogActivity" android:screenOrientation="portrait" android:theme="@style/ProcessCleanDialog"/>
+        <activity android:label="CustomFilesandFoldersPage" android:name="com.lionmobi.powerclean.activity.CustomListViewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AddCustomFilesandFoldersPage" android:name="com.lionmobi.powerclean.activity.CustomListAddActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AddCustomFilesandFoldersTypePage" android:name="com.lionmobi.powerclean.activity.CustomListAddTypesActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.savespace.whatsapp.SpecialCleanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.savespace.whatsapp.SpecialCleanGridViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.savespace.whatsapp.SpecialCleanListViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.savespace.whatsapp.SpecialCleanSentActivity" android:screenOrientation="portrait"/>
+        <service android:label="LocaleService" android:name="com.lionmobi.powerclean.service.lionmobiService"/>
+        <service android:label="LockService" android:name="com.lionmobi.powerclean.locker.service.LockService"/>
+        <service android:label="ResentService" android:name="com.lionmobi.powerclean.locker.service.ResentService"/>
+        <service android:name="com.lionmobi.powerclean.service.NotificationMonitorService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <service android:label="@string/app_name" android:name="com.lionmobi.powerclean.service.accessibility.PowerAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:process=":service_accessibility">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/power_accessibility"/>
+        </service>
+        <receiver android:label="@string/widget_label_1" android:name="com.lionmobi.powerclean.widget.OneBoostWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.lionmobi.powerclean.widget.click"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/boost_appwidget_info"/>
+        </receiver>
+        <receiver android:label="@string/widget_label_4" android:name="com.lionmobi.powerclean.widget.SpeedyWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.lionmobi.powerclean.widget.click"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/speedy_appwidget_info"/>
+        </receiver>
+        <receiver android:name="com.lionmobi.powerclean.broadcast.NotifiCanceReceiver">
+            <intent-filter>
+                <action android:name="notif_cancelled"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.lionmobi.powerclean.broadcast.InstallRefererReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lionmobi.powerclean.broadcast.ServiceMonitor" android:process=":service">
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lionmobi.powerclean.broadcast.BootServiceReceiver">
+            <intent-filter android:priority="99999">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lionmobi.powerclean.broadcast.UpdataBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.lionmobi.powerclean.broadcast.ShortCutReceiver"/>
+        <receiver android:exported="true" android:name="com.google.ads.conversiontracking.InstallReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="app_license" android:value="e725f679d1c342e401ac8aa3b6f05527"/>
+        <provider android:authorities="com.lionmobi.powerclean.DuAdCacheProvider" android:exported="false" android:name="com.duapps.ad.stats.DuAdCacheProvider"/>
+        <receiver android:name="com.duapps.ad.base.PackageAddReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="locale" android:label="AboutUsPage" android:name="com.lionmobi.powerclean.activity.AboutUsActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="locale" android:label="SettingsPage" android:launchMode="singleTask" android:name="com.lionmobi.powerclean.activity.MainSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="CPUDeviceCoolerPage" android:name="com.lionmobi.powerclean.activity.CPUBoostActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:label="JunkIgnoreListPage" android:name="com.lionmobi.powerclean.activity.JunksWhiteListActivity" android:screenOrientation="portrait"/>
+        <activity android:label="PhotoRecycleBinPage" android:name="com.lionmobi.powerclean.activity.FileRecycleNewActivity" android:screenOrientation="portrait"/>
+        <activity android:label="LanguageSettingsPage" android:name="com.lionmobi.powerclean.activity.LanguageSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="ShortCutAnimationPage" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.AnimationActivity" android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="SDBenchMarkPage" android:name="com.lionmobi.powerclean.activity.SDBenchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SDOptimizePage" android:name="com.lionmobi.powerclean.activity.SDOptimizeActivity" android:screenOrientation="portrait"/>
+        <activity android:label="AppGoogleSearchPage" android:name="com.lionmobi.powerclean.activity.AppGoogleSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="DownloadManagerPage" android:name="com.lionmobi.powerclean.activity.DownloadManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:label="QuickChargingPage" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.QuickChargingActivity" android:screenOrientation="portrait" android:taskAffinity="quick.charging.task" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:label="QuickChargingPage" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.NewQuickChargingActivity" android:screenOrientation="portrait" android:taskAffinity="quick.charging.task" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:excludeFromRecents="true" android:name="com.lionmobi.powerclean.activity.DismissKeyguardActivity" android:screenOrientation="portrait" android:taskAffinity="quick.charging.task" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:label="ToolBarBoostPage" android:launchMode="singleTop" android:name="com.lionmobi.powerclean.activity.ToolBarBoostActivity" android:screenOrientation="portrait" android:taskAffinity="toolbar.boost.task" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:label="CleanResultPage" android:name="com.lionmobi.powerclean.activity.CleanResultActivity" android:screenOrientation="portrait"/>
+        <activity android:label="TorchPage" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.TorchActivity" android:screenOrientation="portrait"/>
+        <activity android:label="BatteryLPPage" android:name="com.lionmobi.powerclean.activity.BatteryLPPageActivity" android:screenOrientation="portrait"/>
+        <activity android:label="SimilarPicsPage" android:name="com.lionmobi.powerclean.activity.PicSimilarActivity" android:screenOrientation="portrait"/>
+        <activity android:label="DetailSimilarImagePage" android:name="com.lionmobi.powerclean.activity.DetailSimilarImageActivity" android:process="com.lionmobi.powerclean.DetailSimilarImageActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme1"/>
+        <activity android:label="GameBoostPage" android:name="com.lionmobi.powerclean.activity.GameBoostActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="Games" android:name="com.lionmobi.powerclean.activity.GameBoostShortcutActivity" android:screenOrientation="portrait" android:taskAffinity="com.lionmobi.powerclean.gameboost" android:theme="@style/AppTheme_Gray">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.lionmobi.util.SimpleSuggestionProvider" android:name="com.lionmobi.util.SimpleSuggestionProvider"/>
+        <activity android:label="GameBoostFullScreenPage" android:name="com.lionmobi.powerclean.activity.GameBoostFullScreenActivity" android:screenOrientation="portrait"/>
+        <activity android:label="GameBoostListPage" android:name="com.lionmobi.powerclean.activity.GameBoostListActivity" android:screenOrientation="portrait" android:taskAffinity="com.lionmobi.powerclean.gameboost"/>
+        <activity android:name="com.lionmobi.powerclean.quietnotifications.QuietNotificationsIntroActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.quietnotifications.QuietNotificationSettingsActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme1"/>
+        <activity android:name="com.lionmobi.powerclean.quietnotifications.QuietNotificationsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.activity.DefaultOpenNotificationActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.activity.NetSpeedActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:allowTaskReparenting="true" android:excludeFromRecents="true" android:name="com.lionmobi.powerclean.activity.InterstitialAdsActivity" android:screenOrientation="portrait" android:taskAffinity="com.quick.admob.interstitial" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.lionmobi.powerclean.activity.CleanSysCacheActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:name="com.lionmobi.powerclean.activity.FullScreenResultActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="WidgetBoostResultActivity" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.widget.WidgetBoostResultActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:excludeFromRecents="true" android:label="Boost" android:name="com.lionmobi.powerclean.activity.CleanShortcutActivity" android:screenOrientation="portrait" android:taskAffinity="com.lionmobi.powerclean.shortcutcleaner" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.lionmobi.powerclean.activity.LionFamilyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.activity.ResidualCleanActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.activity.PowerBoostAnimationActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:label="UnLockBoostPage" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.UnLockBoostActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.SmartLockCleanResultActivity" android:screenOrientation="portrait" android:theme="@style/smartlock_boost_style"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.NewQuickChargingNotificationActivity" android:screenOrientation="portrait" android:theme="@style/smartlock_boost_style"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.activity.ChargeMonitorActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name="com.lionmobi.powerclean.activity.ChargeMonitorSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.activity.ChooseTonesActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.lionmobi.powerclean.activity.FinishSettingHelperActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.locker.AppLockSettingActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.smartlock.SmartLockSettingOpenActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.locker.ApplockStep1Activity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.antivirus.AntivirusResultActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.antivirus.AntivirusActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.antivirus.AntivirusListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.locker.EmptyPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lionmobi.powerclean.smartlock.GetPermissionActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.common.MoPubBrowser"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidVideoPlayerActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MoPubActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.mopub.mobileads.MraidActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:excludeFromRecents="true" android:exported="true" android:name="com.lionmobi.powerclean.activity.AliveActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="com.lionmobi.powerclean.action.alive"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.mopub.test.activity.TestActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.lionmobi.powerclean.antivirus.VirusDataBaseActivity" android:screenOrientation="portrait"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleInstance" android:name="com.lionmobi.powerclean.locker.InterstitialActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <provider android:authorities="com.lionmobi.powerclean.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.lionmobi.powerclean"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"/>
+        <service android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

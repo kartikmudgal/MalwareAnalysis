@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.smile.gifmaker" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="getui.permission.GetuiService.com.smile.gifmaker"/>
+    <permission android:name="getui.permission.GetuiService.com.smile.gifmaker" android:protectionLevel="normal"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <permission android:name="com.smile.gifmaker.permission.MIPUSH_RECEIVE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.smile.gifmaker.permission.MIPUSH_RECEIVE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <application android:allowBackup="false" android:hardwareAccelerated="true" android:icon="@drawable/kwai_icon" android:label="@string/kwai_app_name" android:largeHeap="true" android:name="com.yxcorp.gifshow.App" android:supportsRtl="true" android:theme="@style/Theme.Light">
+        <meta-data android:name="UMENG_APPKEY" android:value="52d774b856240b841e0c51f5"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="GENERIC"/>
+        <meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="UEnH61ElxrwvKKBOA6oTgio7"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="io.fabric.ApiKey" android:value="PUHClEBwYUypquABbbH6E089hEcORyXH5nB2FFRfqss"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="f47c3c01c7e54a378fd3be8cba4c778f"/>
+        <meta-data android:name="jp.line.sdk.ChannelId" android:value="1446754979"/>
+        <meta-data android:name="jp.line.sdk.AuthScheme" android:value="line.1446754979"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="KSY_LIVE_APPID" android:value="QYA0F2E7BC5C220188A6"/>
+        <meta-data android:name="KSY_LIVE_AK" android:value="a5e410441532dda6bbf274a5bb1682ca"/>
+        <meta-data android:name="KSY_LIVE_SK" android:value="s76c4fde3b85660396ef23b086d565cc"/>
+        <meta-data android:name="PUSH_APPID" android:value="xjwm1r9wGe5HIBB1S1FL67"/>
+        <meta-data android:name="PUSH_APPKEY" android:value="UXguzFPhGz6oQpnng53Vz"/>
+        <meta-data android:name="PUSH_APPSECRET" android:value="HqHLM5RK7N6rbzTsoN5Xt5"/>
+        <activity android:label="ServiceActivity" android:name="com.vk.sdk.VKServiceActivity" android:theme="@style/VK.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.GiftHistoryActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.MyWalletActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.WithdrawActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.GiftsGivenActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.ExchangeKwaiCoinActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.RechargeKwaiCoinActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.RechargeKwaiCoinListActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.WithdrawVerifyPhoneActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.MyBillActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.ProfitAnalysisActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.ExchangeKwaiCoinVerifyCodeActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.plugin.activity.FansTopActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.smile.gifmaker.wxapi.WXPayEntryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Dialog.Activity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="behind" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.payment.activity.VerifyIdActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:name="com.yxcorp.gifshow.activity.UriRouterActivity" android:theme="@style/Theme.AppCompat.Transparent.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="home" android:scheme="kwai"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="action" android:scheme="kwai"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="WEIBO_APPKEY" android:value="2.45926707E9"/>
+        <meta-data android:name="WEIBO_CHANNEL" android:value="weibo"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.activity.login.TwitterSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.activity.login.WeChatSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.smile.gifmaker.wxapi.WXEntryActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Light"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.activity.login.LineSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="keyboard|orientation" android:exported="true" android:name="jp.line.android.sdk.activity.LineAuthCompleteActivity" android:screenOrientation="sensor">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="line.1446754979"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|orientation" android:exported="false" android:name="jp.line.android.sdk.activity.WebLoginActivity" android:screenOrientation="sensor"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent100228415"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.plugin.activity.login.WeiboSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Light"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.activity.login.QQSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Light"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.share.WeiboShareProxyActivity" android:screenOrientation="portrait" android:theme="@style/Theme.TransparentActivity" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.qrcode.QRCodeScanActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.qrcode.MyQRCodeActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.qrcode.QRCodeLoginActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false" android:name="com.yxcorp.plugin.live.LivePushActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false" android:name="com.yxcorp.plugin.live.LivePlayActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Live" android:windowSoftInputMode="adjustNothing|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="live" android:pathPrefix="/play" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:name="com.yxcorp.plugin.live.LiveAuthenticateEntryActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="live" android:pathPrefix="/authenticate" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.plugin.live.record.LiveAuthenticateCameraActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:name="com.yxcorp.plugin.tag.activity.TagMagicFaceActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <service android:name="com.igexin.download.DownloadService" android:process=":pushservice"/>
+        <receiver android:exported="true" android:name="com.igexin.download.DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="downloads.com.smile.gifmaker" android:exported="true" android:name="com.igexin.download.DownloadProvider" android:process=":pushservice"/>
+        <service android:exported="true" android:label="NotificationCenter" android:name="com.igexin.sdk.PushService" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.igexin.sdk.action.service.message"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.yxcorp.gifshow.push.getui.GetuiPushIntentService"/>
+        <receiver android:name="com.igexin.sdk.PushReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="com.igexin.sdk.action.refreshls"/>
+                <action android:name="android.intent.action.MEDIA_MOUNTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.igexin.sdk.PushActivity" android:process=":pushservice" android:taskAffinity="com.igexin.sdk.PushActivityTask" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:name="com.igexin.sdk.GActivity" android:process=":pushservice" android:taskAffinity="com.igexin.sdk.PushActivityTask" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="false" android:name="com.yxcorp.gifshow.push.getui.GetuiPushReceiver"/>
+        <service android:enabled="true" android:name="com.xiaomi.push.service.XMPushService" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="false" android:name="com.xiaomi.push.service.XMJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":pushservice"/>
+        <service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler"/>
+        <service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService"/>
+        <receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.xiaomi.push.service.receivers.PingReceiver" android:process=":pushservice">
+            <intent-filter>
+                <action android:name="com.xiaomi.push.PING_TIMER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.yxcorp.gifshow.push.xiaomi.XiaomiPushReceiver">
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.xiaomi.mipush.ERROR"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:name="com.baidu.location.f" android:process=":remote"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.yxcorp.gifshow.receiver.GSCampaignTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.google.android.gms.analytics.AnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.analytics.ANALYTICS_DISPATCH"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:name="com.google.android.gms.analytics.CampaignTrackingService"/>
+        <activity android:name="com.yxcorp.gifshow.advertisement.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Splash"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.HomeActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Home" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.MyProfileActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Profile"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.record.CameraActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.WaitingPreviewProcessActivity" android:process=":preview" android:screenOrientation="portrait" android:theme="@style/Theme.TransparentActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.WaitingActivity" android:screenOrientation="portrait" android:theme="@style/Theme.TransparentActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.record.TakePictureActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen"/>
+        <activity android:activityCloseExitAnimation="@anim/slide_out_to_right" android:activityOpenEnterAnimation="@anim/slide_in_from_right" android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.preview.PhotoPreviewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.record.MediaSelectorActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Light"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.preview.MusicPickerActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.users.UserListActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="users" android:scheme="ks"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.ReviewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*" android:mimeType="image/gif" android:pathPattern="/.*\\.gif" android:scheme="content"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*" android:mimeType="image/gif" android:pathPattern="/.*\\.gif" android:scheme="file"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.plugin.activity.record.VideoClipActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.record.JointActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.preview.PreviewActivity" android:process=":preview" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.preview.AdvEditorActivity" android:process=":preview" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Video"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.share.ShareActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.share.LocationActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.share.ForwardActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.PicViewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.PhotoActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Photo.White" android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="work" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.ProfileActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Profile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="profile" android:scheme="kwai"/>
+                <data android:host="profile" android:scheme="ks"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.MessageActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.webview.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.advertisement.AdWebViewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.AccountAppealActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.FeedbackActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.WebAuthActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider257429317626902" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.FacebookSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:label="@string/kwai_app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.GoogleSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.plugin.activity.login.KakaoTalkSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.plugin.activity.login.VkSSOActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Transparent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.SignupActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Transparent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.RetrievePsdActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.BindPhoneActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="bind" android:pathPrefix="/phone" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.login.SelectCountryActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:hardwareAccelerated="false" android:label="@string/clip" android:name="android.camera.ImageCropActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Light"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.UserInfoEditActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.ContactsListActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.PlatformFriendsActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.BlacklistActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.share.UploadToPlatformActivity" android:screenOrientation="portrait" android:theme="@style/Theme.Transparent"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.SelectFriendsActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:launchMode="singleTop" android:name="com.yxcorp.gifshow.activity.RecommendUsersActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.PreviewFloatEditorActivity" android:process=":preview" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.FloatEdit.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.FloatEditorActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.FloatEdit.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.LiveTitleFloatEditorActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.FloatEdit.White" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.yxcorp.gifshow.tag.activity.TagDetailActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="tagdetail" android:scheme="ks"/>
+                <data android:host="tag" android:pathPrefix="/topic" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yxcorp.gifshow.tag.activity.TagMusicActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="tag" android:pathPrefix="/bgm" android:scheme="kwai"/>
+                <data android:host="tag" android:pathPrefix="/kara" android:scheme="kwai"/>
+                <data android:host="tag" android:pathPrefix="/lip" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.yxcorp.gifshow.tag.activity.TagDescriptionActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:exported="false" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.tag.activity.TagEditActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.LocationAggregationActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="tag" android:pathPrefix="/location" android:scheme="kwai"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.AboutUsActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.yxcorp.gifshow.activity.login.ChangePhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.yxcorp.gifshow.activity.login.ChangePhoneVerifyActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.yxcorp.gifshow.activity.login.VerifyPhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vk.sdk.VKOpenAuthActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.music.MusicActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.music.MusicClipActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Black.FullScreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.music.MusicPreviewActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Black.WebView" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.music.singer.ArtistActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.FullScreen"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.SearchActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.LocalAlbumActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.ReminderActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.login.AccountSecurityActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:name="com.yxcorp.gifshow.activity.login.ModifyTrustDeviceNameActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <service android:enabled="true" android:exported="false" android:name="com.yxcorp.gifshow.service.LogService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.yxcorp.gifshow.postwork.PostWorkService"/>
+        <receiver android:exported="true" android:name="com.yxcorp.gifshow.util.UpdateManager$DownloadBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.baidu.bplus.service.BPlusService" android:process=":remote"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="@bool/bd_wallet_switch_global_debug" android:hardwareAccelerated="false" android:name="com.baidu.wallet.passport.PassLoginActivity" android:theme="@style/EbpayThemeActivitTranslucent" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:hardwareAccelerated="true" android:name="com.baidu.paysdk.ui.LightappBrowseActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.WelcomeActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivityWelcome" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PayResultActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PwdCheckActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PwdSetAndConfirmActivity" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PwdPayActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivitTranslucent" android:windowSoftInputMode="stateVisible"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.SelectBindCardActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.SecurityCenterActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PrivacyProtectionActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PassWordFreeActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.wallet.core.plugins.pluginproxy.WalletProxyActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.wallet.core.plugins.pluginproxy.WalletProxyActivity2" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivitTranslucent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.wallet.core.plugins.pluginmanager.WalletPluginActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivityWelcome" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:hardwareAccelerated="false" android:name="com.baidu.paysdk.ui.PassNormalizeActivity" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.ConfirmPayOrderActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.DiscountListActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:launchMode="singleTop" android:name="com.baidu.paysdk.ui.SelectPayWayActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivitTranslucent" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.H5PayWebViewActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:launchMode="singleTask" android:name="com.baidu.paysdk.ui.BindCardImplActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.SignChannelListActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.WalletSmsActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.paysdk.ui.PwdManagerActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.home.HomeWebViewActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivit" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:excludeFromRecents="true" android:exported="@bool/bd_wallet_switch_global_debug" android:name="com.baidu.scancode.ui.ScanCodePwdPayActivity" android:screenOrientation="portrait" android:theme="@style/EbpayThemeActivitTranslucent" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.photoad.PhotoAdvertisementWebActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/kwai_app_name" android:name="com.yxcorp.gifshow.activity.ReportActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.LoginActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.Transparent" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.SignupEmailActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.LoginEmailActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.LoginPhoneActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.RetrieveEmailPsdActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.RetrievePhonePsdActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.SignupPhoneActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.googlelogin.VerifyEmailActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.Login" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:label="@string/app_name" android:name="com.yxcorp.gifshow.activity.AntispamActivity" android:screenOrientation="portrait" android:theme="@style/Kwai.Theme.White.WebView"/>
+        <service android:exported="false" android:name="com.yxcorp.gifshow.service.UploadContactsService"/>
+        <provider android:authorities="KWAI_PROVIDER_AUTHORITY.com.smile.gifmaker" android:exported="false" android:grantUriPermissions="true" android:name="com.yxcorp.gifshow.util.KwaiPreferenceProvider"/>
+        <service android:name="com.getui.gtc.GtcService">
+ 
+<intent-filter>
+ 
+<action android:name="com.getui.gis.sdk.GInsightService.action"/>
+ 
+</intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.getui.gis.GInsightEventReceiver">
+            <intent-filter>
+ 
+<action android:name="com.getui.gis.action.xjwm1r9wGe5HIBB1S1FL67"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.yxcorp.gifshow.advertisement.download.DownloadReceiver">
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_PAUSE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_RESUME"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="download.intent.action.DOWNLOAD_CANCEL"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.ComposerActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.TweetUploadService"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:icon="@drawable/tw__transparent" android:label="@string/kit_name" android:name="com.twitter.sdk.android.core.identity.ShareEmailActivity"/>
+        <service android:enabled="true" android:exported="false" android:name="com.yxcorp.gifshow.log.service.LogService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService" android:process=":filedownloader"/>
+    </application>
+</manifest>
